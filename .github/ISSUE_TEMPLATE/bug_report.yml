@@ -1,0 +1,67 @@
+name: Bug Report
+description: Report a bug in a demo or test
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the details below.
+  - type: dropdown
+    id: demo
+    attributes:
+      label: Affected Demo
+      options:
+        - demo-01-blind-verification
+        - demo-02-supply-chain-aibom
+        - demo-03-eval-invariants
+        - demo-04-authoritybound
+        - demo-05-eviassure
+        - demo-06-reconscope
+        - demo-07-triagetrap
+        - demo-08-inclusiontrap
+        - demo-09-interceptbound
+        - demo-10-scanbound
+        - Root Makefile / CI / Shared
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clear and concise description of the bug
+      placeholder: What happened? What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Minimal steps to reproduce the issue
+      placeholder: |
+        1. Run `make demo DEMO=XX`
+        2. Observe...
+        3. Error: ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, OS, etc.
+      placeholder: "Python 3.11, Ubuntu 22.04"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Output / Logs
+      description: Paste relevant error messages or test output
+      render: text
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety Check
+      options:
+        - label: This bug does not involve network access, credentials, or malware
+          required: true

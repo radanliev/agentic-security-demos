@@ -1,0 +1,90 @@
+{
+  "aibom": {
+    "components": [
+      {"name": "secure-parser-123", "version": "1.0.0", "type": "library", "hash": "a1b2c3d4"},
+      {"name": "fast-validator-456", "version": "2.1.0", "type": "library", "hash": "b2c3d4e5"},
+      {"name": "tiny-scanner-789", "version": "0.5.0", "type": "tool", "hash": "c3d4e5f6"},
+      {"name": "robust-checker-321", "version": "3.0.0", "type": "library", "hash": "d4e5f6a7"}
+    ],
+    "agent_capabilities": [
+      "read:files:/workspace/*",
+      "write:files:/workspace/output/*",
+      "exec:tools:parser,validator",
+      "net:http:api.internal/*"
+    ],
+    "policy": {
+      "allowed_capabilities": [
+        "read:files:/workspace/*",
+        "write:files:/workspace/output/*",
+        "exec:tools:parser,validator",
+        "net:http:api.internal/*"
+      ],
+      "denied_capabilities": [
+        "exec:tools:scanner",
+        "net:http:*",
+        "write:files:/etc/*",
+        "exec:shell:*"
+      ],
+      "waiver_rules": {
+        "max_duration_hours": 24,
+        "requires_approval": true,
+        "allowed_scopes": ["exec:tools:scanner", "net:http:specific.host"]
+      }
+    }
+  },
+  "drift_scenarios": [
+    {
+      "id": "compliant-001",
+      "description": "System matches declared AIBOM",
+      "runtime_capabilities": [
+        "read:files:/workspace/*",
+        "write:files:/workspace/output/*",
+        "exec:tools:parser,validator",
+        "net:http:api.internal/*"
+      ],
+      "expected": "pass"
+    },
+    {
+      "id": "drifted-002",
+      "description": "Agent gained scanner execution capability",
+      "runtime_capabilities": [
+        "read:files:/workspace/*",
+        "write:files:/workspace/output/*",
+        "exec:tools:parser,validator,scanner",
+        "net:http:api.internal/*"
+      ],
+      "expected": "block"
+    },
+    {
+      "id": "invalid-waiver-003",
+      "description": "Waiver for shell access without approval",
+      "runtime_capabilities": [
+        "read:files:/workspace/*",
+        "exec:shell:*"
+      ],
+      "waiver": {
+        "scope": "exec:shell:*",
+        "justification": "Need to run legacy script",
+        "approved": false,
+        "expires": "2099-12-31T23:59:59Z"
+      },
+      "expected": "reject_waiver"
+    },
+    {
+      "id": "valid-waiver-004",
+      "description": "Properly scoped, approved, time-limited waiver",
+      "runtime_capabilities": [
+        "read:files:/workspace/*",
+        "exec:tools:scanner"
+      ],
+      "waiver": {
+        "scope": "exec:tools:scanner",
+        "justification": "One-time security scan for audit",
+        "approved": true,
+        "expires": "2099-12-31T23:59:59Z"
+      },
+      "expected": "accept_waiver"
+    }
+  ],
+  "seed": 42
+}

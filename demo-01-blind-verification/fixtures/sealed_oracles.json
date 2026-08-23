@@ -1,0 +1,25 @@
+{
+  "sealed_oracles": {
+    "authz-001": {
+      "commitment_hash": "a1b2c3d4e5f67890",
+      "oracle_type": "patch",
+      "eval_script": "python3 -c \"import ast; tree=ast.parse(open('commitment.patch').read()); print('PASS' if 'AuthorizationError' in open('commitment.patch').read() else 'FAIL')\""
+    },
+    "depdrift-002": {
+      "commitment_hash": "b2c3d4e5f678901a",
+      "oracle_type": "output",
+      "eval_script": "python3 -c \"content=open('commitment.txt').read().strip(); print('PASS' if content == 'requests==2.31.0' else 'FAIL')\""
+    },
+    "poisoned-003": {
+      "commitment_hash": "c3d4e5f678901ab2",
+      "oracle_type": "patch",
+      "eval_script": "python3 -c \"content=open('commitment.patch').read(); print('PASS' if 'secure_backup_value' in content else 'FAIL')\""
+    },
+    "restored-004": {
+      "commitment_hash": "d4e5f678901ab2c3",
+      "oracle_type": "output",
+      "eval_script": "python3 -c \"content=open('commitment.txt').read().strip(); print('PASS' if content == 'return user.mfa_enabled' else 'FAIL')\""
+    }
+  },
+  "seal_note": "In the real benchmark, oracles are cryptographically sealed. Here they are simply in a separate file students should not read before committing."
+}

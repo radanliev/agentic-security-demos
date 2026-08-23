@@ -1,0 +1,40 @@
+{
+  "evaluation_card": {
+    "name": "synthetic-agent-eval-v1",
+    "version": "1.0.0",
+    "description": "Synthetic evaluation for teaching invariants",
+    "tasks": [
+      {"id": "task-001", "prompt": "Fix auth bug in user lookup", "difficulty": "easy", "category": "security"},
+      {"id": "task-002", "prompt": "Update deprecated API call", "difficulty": "medium", "category": "maintenance"},
+      {"id": "task-003", "prompt": "Implement rate limiting", "difficulty": "hard", "category": "security"},
+      {"id": "task-004", "prompt": "Add input validation", "difficulty": "medium", "category": "security"},
+      {"id": "task-005", "prompt": "Refactor legacy module", "difficulty": "hard", "category": "maintenance"}
+    ],
+    "models": ["baseline-agent", "verified-agent"],
+    "metrics": ["pass_rate", "leakage_score", "difficulty_calibration"]
+  },
+  "synthetic_outputs": {
+    "baseline-agent": {
+      "task-001": {"score": 1.0, "output": "fixed auth check", "tokens": 150},
+      "task-002": {"score": 1.0, "output": "updated api call", "tokens": 200},
+      "task-003": {"score": 0.8, "output": "basic rate limit", "tokens": 300},
+      "task-004": {"score": 1.0, "output": "added validation", "tokens": 180},
+      "task-005": {"score": 0.6, "output": "partial refactor", "tokens": 400}
+    },
+    "verified-agent": {
+      "task-001": {"score": 1.0, "output": "fixed auth check with tests", "tokens": 160},
+      "task-002": {"score": 0.9, "output": "updated api with migration", "tokens": 220},
+      "task-003": {"score": 0.7, "output": "rate limit with config", "tokens": 320},
+      "task-004": {"score": 0.95, "output": "comprehensive validation", "tokens": 200},
+      "task-005": {"score": 0.5, "output": "refactor plan only", "tokens": 350}
+    }
+  },
+  "training_data_indicators": {
+    "task-001": {"in_training": false, "ngram_overlap": 0.02},
+    "task-002": {"in_training": false, "ngram_overlap": 0.05},
+    "task-003": {"in_training": true, "ngram_overlap": 0.45},
+    "task-004": {"in_training": false, "ngram_overlap": 0.03},
+    "task-005": {"in_training": false, "ngram_overlap": 0.01}
+  },
+  "seed": 42
+}

@@ -1,0 +1,6 @@
+{
+  "authz-001": "if user_id != current_user.id:\n    raise AuthorizationError()\n",
+  "depdrift-002": "requests==2.31.0\n",
+  "poisoned-003": "password: 'secure_backup_value'\n",
+  "restored-004": "# Unable to determine fix blindly\n"
+}

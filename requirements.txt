@@ -1,0 +1,7 @@
+# Root requirements for agentic-security-demos
+# Each demo may have its own additional requirements
+
+# Core dependencies
+pytest>=7.4.0
+pyyaml>=6.0
+cryptography>=41.0.0

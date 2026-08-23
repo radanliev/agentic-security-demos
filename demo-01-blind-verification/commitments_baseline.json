@@ -1,0 +1,6 @@
+{
+  "authz-001": "+    commitment.patch\n",
+  "depdrift-002": "requests",
+  "poisoned-003": "+    commitment.patch\n",
+  "restored-004": "return user.mfa_enabled"
+}

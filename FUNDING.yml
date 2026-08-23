@@ -1,0 +1,15 @@
+# Funding configuration for GitHub Sponsors
+# These usernames will be displayed in the "Sponsor" button
+
+# Individual sponsors
+github: ["agentic-security-demos"]
+
+# Organization sponsors (if applicable)
+# orgs: ["my-org"]
+
+# Custom funding platforms
+# custom: ["https://patreon.com/...", "https://ko-fi/..."]
+
+# Package manager funding (for PyPI, npm, etc.)
+# pypi: "agentic-security-demos"
+# npm: "agentic-security-demos"

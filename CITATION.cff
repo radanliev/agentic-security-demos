@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Agentic Security Demos Contributors"
+    name: "Agentic Security Demos Contributors"
+title: "Agentic Security Demos: Teaching Modules for Agentic AI Security"
+version: 0.1.0
+doi: ""
+date-released: "2024-08-23"
+url: "https://github.com/agentic-security-demos/agentic-security-demos"
+repository-code: "https://github.com/agentic-security-demos/agentic-security-demos"
+repository-artifact: ""
+repository-notes: ""
+description: |
+  A collection of 10 educational modules for teaching security concepts in agentic AI systems.
+  All demonstrations use local synthetic fixtures only — no live network access,
+  real credentials, malware, or private data.
+keywords:
+  - agentic-ai
+  - ai-security
+  - llm-security
+  - autonomous-agents
+  - security-education
+  - teaching-materials
+  - blind-verification
+  - aibom
+  - supply-chain-security
+  - evaluation-invariants
+  - authority-confinement
+  - confused-deputy
+  - evidence-backed-release
+  - network-reconnaissance
+  - malware-triage
+  - file-inclusion
+  - traffic-interception
+  - vulnerability-scanning
+  - synthetic-fixtures
+  - reproducible-evaluation
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+contact:
+  - name: "Agentic Security Demos Maintainers"
+    email: "maintainers@agentic-security-demos.example"
+    role: "maintainer"
+preferred-citation:
+  type: software
+  authors:
+    - family-names: "Agentic Security Demos Contributors"
+  title: "Agentic Security Demos: Teaching Modules for Agentic AI Security"
+  year: 2024
+  version: 0.1.0
+  doi: ""
+  url: "https://github.com/agentic-security-demos/agentic-security-demos"

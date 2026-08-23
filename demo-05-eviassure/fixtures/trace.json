@@ -1,0 +1,12 @@
+{
+  "trace": [
+    {"step": 1, "action": "init", "data": {"agent": "demo-agent", "version": "1.0"}, "timestamp": "2024-01-15T10:00:00Z"},
+    {"step": 2, "action": "load_config", "data": {"config_hash": "a1b2c3d4"}, "timestamp": "2024-01-15T10:00:01Z"},
+    {"step": 3, "action": "run_tests", "data": {"passed": 95, "failed": 2, "skipped": 3}, "timestamp": "2024-01-15T10:05:00Z"},
+    {"step": 4, "action": "security_scan", "data": {"vulns_found": 0, "scan_id": "scan-123"}, "timestamp": "2024-01-15T10:10:00Z"},
+    {"step": 5, "action": "build_artifact", "data": {"artifact_hash": "e5f6a7b8", "size": 1024000}, "timestamp": "2024-01-15T10:15:00Z"},
+    {"step": 6, "action": "sign_release", "data": {"key_id": "DEMO_KEY_RELEASE_001"}, "timestamp": "2024-01-15T10:20:00Z"}
+  ],
+  "closing_counts": {"total_steps": 6, "expected_hash": "final_hash_placeholder"},
+  "seed": 42
+}

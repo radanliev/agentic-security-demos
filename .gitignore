@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated keys and secrets (never commit)
+*.pem
+*.key
+*.crt
+*_key.*
+demo_keys/
+*.secret
+
+# Results and outputs (student-generated)
+results/
+*.result.json
+demo-*/results/
+
+# Logs
+*.log
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Local development
+.env
+.env.local
+
+# Private instructor materials (excluded from public repo)
+solutions/
+instructor/
+*.instructor.md

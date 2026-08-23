@@ -1,0 +1,65 @@
+name: Feature Request
+description: Suggest a new exercise, demo, or improvement
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement! Please describe your idea.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of Enhancement
+      options:
+        - New exercise (beginner/standard/extension)
+        - New demo module
+        - Improved explanation or documentation
+        - Better test coverage
+        - Reproducibility improvement
+        - New safety check
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: demo
+    attributes:
+      label: Target Demo (if applicable)
+      options:
+        - demo-01-blind-verification
+        - demo-02-supply-chain-aibom
+        - demo-03-eval-invariants
+        - demo-04-authoritybound
+        - demo-05-eviassure
+        - demo-06-reconscope
+        - demo-07-triagetrap
+        - demo-08-inclusiontrap
+        - demo-09-interceptbound
+        - demo-10-scanbound
+        - Multiple / New demo
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clear description of the proposed feature
+      placeholder: What would you like to add or improve?
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation / Educational Value
+      description: Why is this valuable for teaching?
+      placeholder: What concept does this teach? What level (beginner/standard/extension)?
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety Considerations
+      description: How does this maintain our safety guarantees? (no network, no credentials, synthetic only)
+      placeholder: This feature uses only local synthetic fixtures...
+    validations:
+      required: true

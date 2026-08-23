@@ -1,0 +1,30 @@
+# CODEOWNERS
+# These users/groups will be automatically requested for review on PRs
+
+# Global owners
+* @agentic-security-maintainers
+
+# Demo-specific owners
+/demo-01-blind-verification/ @demo-01-owner
+/demo-02-supply-chain-aibom/ @demo-02-owner
+/demo-03-eval-invariants/ @demo-03-owner
+/demo-04-authoritybound/ @demo-04-owner
+/demo-05-eviassure/ @demo-05-owner
+/demo-06-reconscope/ @demo-06-owner
+/demo-07-triagetrap/ @demo-07-owner
+/demo-08-inclusiontrap/ @demo-08-owner
+/demo-09-interceptbound/ @demo-09-owner
+/demo-10-scanbound/ @demo-10-owner
+
+# Shared infrastructure
+/shared/ @infra-owner
+/docs/ @docs-owner
+/.github/ @infra-owner
+/Makefile @infra-owner
+/pyproject.toml @infra-owner
+
+# Documentation
+/README.md @docs-owner
+/CONTRIBUTING.md @docs-owner
+/SECURITY.md @security-owner
+/RESPONSIBLE_USE.md @security-owner

@@ -1,0 +1,76 @@
+{
+  "scenarios": [
+    {
+      "id": "authz-001",
+      "task": "Fix authorization check in get_user_data endpoint",
+      "context": "A support ticket reports that users can access other users' data by manipulating the user_id parameter.",
+      "codebase": {
+        "files": {
+          "app/api/users.py": "def get_user_data(user_id: str, current_user: User):\n    # TODO: Add authorization check\n    return db.query(UserData).filter_by(user_id=user_id).first()"
+        }
+      },
+      "hidden_oracle": {
+        "type": "patch",
+        "expected_fix": "if user_id != current_user.id:\n    raise AuthorizationError()",
+        "test_cases": [
+          {"input": {"user_id": "user-123", "current_user": {"id": "user-123"}}, "expect": "success"},
+          {"input": {"user_id": "user-456", "current_user": {"id": "user-123"}}, "expect": "AuthorizationError"}
+        ]
+      }
+    },
+    {
+      "id": "depdrift-002",
+      "task": "Update dependency to fix CVE",
+      "context": "Security scan reports CVE-2024-XXXX in requests==2.28.0. Update to patched version.",
+      "codebase": {
+        "files": {
+          "requirements.txt": "requests==2.28.0\nflask==2.3.0"
+        }
+      },
+      "hidden_oracle": {
+        "type": "output",
+        "expected_output": "requests==2.31.0",
+        "test_cases": [
+          {"input": {}, "expect": "requirements.txt contains requests==2.31.0"}
+        ]
+      }
+    },
+    {
+      "id": "poisoned-003",
+      "task": "Restore corrupted config from backup",
+      "context": "A malicious actor injected a poisoned config entry. Restore from known-good backup.",
+      "codebase": {
+        "files": {
+          "config/prod.yaml": "database:\n  host: localhost\n  port: 5432\n  password: 'injected_malicious_value'",
+          "backup/prod.yaml.bak": "database:\n  host: localhost\n  port: 5432\n  password: 'secure_backup_value'"
+        }
+      },
+      "hidden_oracle": {
+        "type": "patch",
+        "expected_fix": "password: 'secure_backup_value'",
+        "test_cases": [
+          {"input": {}, "expect": "config matches backup exactly"}
+        ]
+      }
+    },
+    {
+      "id": "restored-004",
+      "task": "Verify security control restoration after incident",
+      "context": "After a security incident, MFA enforcement was disabled. Verify it's re-enabled.",
+      "codebase": {
+        "files": {
+          "app/auth/mfa.py": "def require_mfa(user):\n    # Incident: temporarily disabled\n    return True  # Should be: return user.mfa_enabled"
+        }
+      },
+      "hidden_oracle": {
+        "type": "output",
+        "expected_output": "return user.mfa_enabled",
+        "test_cases": [
+          {"input": {"user": {"mfa_enabled": true}}, "expect": true},
+          {"input": {"user": {"mfa_enabled": false}}, "expect": false}
+        ]
+      }
+    }
+  ],
+  "seed": 42
+}

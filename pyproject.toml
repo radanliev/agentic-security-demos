@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-security-demos"
+version = "0.1.0"
+description = "Educational modules for teaching agentic AI security concepts"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Agentic Security Demos Contributors", email = "maintainers@agentic-security-demos.example"}
+]
+maintainers = [
+    {name = "Agentic Security Demos Maintainers", email = "maintainers@agentic-security-demos.example"}
+]
+keywords = [
+    "agentic-ai",
+    "ai-security",
+    "llm-security",
+    "autonomous-agents",
+    "security-education",
+    "teaching-materials",
+    "blind-verification",
+    "aibom",
+    "supply-chain-security",
+    "evaluation-invariants",
+    "authority-confinement",
+    "confused-deputy",
+    "evidence-backed-release",
+    "network-reconnaissance",
+    "malware-triage",
+    "file-inclusion",
+    "traffic-interception",
+    "vulnerability-scanning",
+    "synthetic-fixtures",
+    "reproducible-evaluation"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing"
+]
+requires-python = ">=3.11"
+dependencies = [
+    "pytest>=7.4.0",
+    "pyyaml>=6.0",
+    "cryptography>=41.0.0"
+]
+urls = {Homepage = "https://github.com/agentic-security-demos/agentic-security-demos", Repository = "https://github.com/agentic-security-demos/agentic-security-demos", Issues = "https://github.com/agentic-security-demos/agentic-security-demos/issues", Documentation = "https://github.com/agentic-security-demos/agentic-security-demos/docs", Changelog = "https://github.com/agentic-security-demos/agentic-security-demos/CHANGELOG.md"}
+
+[project.optional-dependencies]
+dev = [
+    "pytest-cov>=4.1.0",
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+    "pre-commit>=3.5.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["demo-*/tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "exercise: marks exercise tests",
+    "slow: marks slow tests",
+    "safety: marks safety-critical tests"
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = false
+exclude = [
+    "demo-*/results",
+    "demo-*/__pycache__",
+    ".pytest_cache",
+    ".venv"
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+select = [
+    "E", "F", "I", "W", "UP", "B", "C4", "ANN", "ARG", "PTH", "T20", "TCH"
+]
+ignore = ["E501", "ANN101", "ANN102"]
+exclude = [
+    "demo-*/results",
+    "demo-*/__pycache__",
+    ".pytest_cache",
+    ".venv"
+]
