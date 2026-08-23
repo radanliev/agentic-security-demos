@@ -1,0 +1,160 @@
+# mkdocs.yml
+# GitHub Pages documentation site configuration
+# Deploy with: gh-pages branch or GitHub Actions
+
+site_name: Agentic Security Demos
+site_url: https://agentic-security-demos.github.io/agentic-security-demos/
+site_description: Educational modules for teaching agentic AI security concepts
+site_author: Agentic Security Demos Contributors
+copyright: Copyright &copy; 2024 Agentic Security Demos Contributors
+
+repo_url: https://github.com/agentic-security-demos/agentic-security-demos
+repo_name: agentic-security-demos/agentic-security-demos
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Quick Start: getting-started/quickstart.md
+    - Installation: getting-started/installation.md
+    - Safety First: getting-started/safety.md
+    - Reproducibility: getting-started/reproducibility.md
+  - Demos:
+    - Overview: demos/overview.md
+    - Blind Verification: demos/01-blind-verification.md
+    - Supply Chain AIBOM: demos/02-supply-chain-aibom.md
+    - Evaluation Invariants: demos/03-eval-invariants.md
+    - Authority Bound: demos/04-authoritybound.md
+    - Evidence Assurance: demos/05-eviassure.md
+    - ReconScope: demos/06-reconscope.md
+    - TriageTrap: demos/07-triagetrap.md
+    - InclusionTrap: demos/08-inclusiontrap.md
+    - InterceptBound: demos/09-interceptbound.md
+    - ScanBound: demos/10-scanbound.md
+  - Tutorials:
+    - Beginner Exercises: tutorials/beginner.md
+    - Standard Exercises: tutorials/standard.md
+    - Extension Exercises: tutorials/extension.md
+    - Workshop Guide: tutorials/workshop.md
+  - Reference:
+    - API Reference: reference/api.md
+    - Result Schema: reference/schema.md
+    - Safety Guarantees: reference/safety.md
+    - Glossary: reference/glossary.md
+  - Contributing:
+    - Guidelines: contributing/guidelines.md
+    - Adding Demos: contributing/new-demo.md
+    - Safety Checklist: contributing/safety.md
+    - Code Style: contributing/style.md
+  - About:
+    - Changelog: about/changelog.md
+    - License: about/license.md
+    - Citation: about/citation.md
+    - Adopters: about/adopters.md
+    - Team: about/team.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]\(\)"]+'
+      lang: en
+  - git-revision-date-localized:
+      type: date
+      timezone: UTC
+  - minify:
+      minify_html: true
+  - glightbox:
+      auto_caption: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/agentic-security-demos/agentic-security-demos
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/agenticsecurity
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/agentic-security
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+copyright: Copyright &copy; 2024 Agentic Security Demos Contributors
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css

@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: "gpt-4"
+    provider: "openai"
+    parameters:
+      temperature: 0.1
+      max_tokens: 4000
+
+prompts:
+  - name: "exercise_generator"
+    template: |
+      Generate a {level} exercise for demo {demo_num}: {demo_name}
+      
+      Learning objective: {objective}
+      Context: {context}
+      
+      Requirements:
+      - Clear problem statement
+      - Starter code with TODO comments
+      - Expected solution approach
+      - Safety considerations
+      
+      Format as markdown with code blocks.
+    variables:
+      - level
+      - demo_num
+      - demo_name
+      - objective
+      - context
+
+  - name: "safety_audit"
+    template: |
+      Review this code for safety violations:
+      
+      {code}
+      
+      Check for:
+      - Network access (sockets, HTTP, DNS)
+      - Credential patterns (API keys, tokens)
+      - External URLs
+      - Executable code (exec, eval, subprocess)
+      - Real credentials or IPs
+      
+      Report any violations with line numbers.
+    variables:
+      - code
+
+  - name: "exercise_solution"
+    template: |
+      Provide a solution for this exercise:
+      
+      Exercise: {exercise}
+      Starter code: {starter_code}
+      
+      Requirements:
+      - Complete implementation
+      - Type hints
+      - Docstrings
+      - Safety compliance
+      - Tests if applicable
+      
+      Format as complete Python file.
+    variables:
+      - exercise
+      - starter_code
