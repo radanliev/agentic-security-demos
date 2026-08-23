@@ -1,16 +1,20 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
+  - family-names: "Radanliev"
+    given-names: "Petar"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "University of Oxford"
   - family-names: "Agentic Security Demos Contributors"
     name: "Agentic Security Demos Contributors"
 title: "Agentic Security Demos: Teaching Modules for Agentic AI Security"
 version: 0.1.0
-doi: ""
+doi: "10.5281/zenodo.XXXXXX"
 date-released: "2024-08-23"
-url: "https://github.com/agentic-security-demos/agentic-security-demos"
-repository-code: "https://github.com/agentic-security-demos/agentic-security-demos"
-repository-artifact: ""
-repository-notes: ""
+url: "https://github.com/radanliev/agentic-security-demos"
+repository-code: "https://github.com/radanliev/agentic-security-demos"
+repository-artifact: "https://doi.org/10.5281/zenodo.XXXXXX"
+repository-notes: "Educational materials for teaching agentic AI security concepts"
 description: |
   A collection of 10 educational modules for teaching security concepts in agentic AI systems.
   All demonstrations use local synthetic fixtures only — no live network access,
@@ -39,15 +43,21 @@ keywords:
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
 contact:
+  - name: "Petar Radanliev"
+    email: "petar.radanliev@cs.ox.ac.uk"
+    role: "maintainer"
   - name: "Agentic Security Demos Maintainers"
     email: "maintainers@agentic-security-demos.example"
     role: "maintainer"
 preferred-citation:
   type: software
   authors:
+    - family-names: "Radanliev"
+      given-names: "Petar"
+      orcid: "https://orcid.org/0000-0000-0000-0000"
     - family-names: "Agentic Security Demos Contributors"
   title: "Agentic Security Demos: Teaching Modules for Agentic AI Security"
   year: 2024
   version: 0.1.0
-  doi: ""
-  url: "https://github.com/agentic-security-demos/agentic-security-demos"
+  doi: "10.5281/zenodo.XXXXXX"
+  url: "https://github.com/radanliev/agentic-security-demos"

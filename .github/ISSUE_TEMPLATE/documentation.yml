@@ -9,14 +9,15 @@ body:
       label: Documentation Location
       options:
         - Root README.md
-        - Demo README.md (specify which)
+        - Demo README.md (specify which in description)
         - CONTRIBUTING.md
         - SECURITY.md
         - RESPONSIBLE_USE.md
         - CODE_OF_CONDUCT.md
+        - docs/ directory (mkdocs site)
         - Docstrings / inline comments
-        - docs/ directory
         - Makefile help text
+        - Demo starter code comments
     validations:
       required: true
   - type: textarea
@@ -35,3 +36,24 @@ body:
       placeholder: Add an example showing... / Clarify that...
     validations:
       required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Target Audience
+      options:
+        - Beginner students
+        - Intermediate students
+        - Advanced students
+        - Instructors/TAs
+        - Self-learners
+        - Contributors
+      description: Who is this documentation for?
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety Check
+      options:
+        - label: This documentation change does not introduce network access, credentials, or unsafe patterns
+          required: true
