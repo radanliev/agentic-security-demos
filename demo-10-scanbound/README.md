@@ -1,5 +1,7 @@
 # Demo 10: ScanBound — Vulnerability Assessment Scope Control
 
+> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../../docs/course/lab-10-scanbound.md)
+
 ## Learning Objectives
 
 - Constrain autonomous vulnerability assessment to approved scope

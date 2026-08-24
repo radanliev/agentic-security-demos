@@ -1,5 +1,7 @@
 # Demo 04: AuthorityBound — Confused Deputy & Authority Confinement
 
+> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../../docs/course/lab-04-authoritybound.md)
+
 ## Learning Objectives
 
 - Understand the confused-deputy problem in agentic systems

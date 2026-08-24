@@ -1,5 +1,7 @@
 # Demo 09: InterceptBound — Traffic Interception & Taint Tracking
 
+> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../../docs/course/lab-09-interceptbound.md)
+
 ## Learning Objectives
 
 - Model intercepted/relayed traffic with synthetic frames
