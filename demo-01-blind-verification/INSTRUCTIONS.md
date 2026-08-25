@@ -87,10 +87,10 @@ python3 student/baseline_agent.py
 **Expected output**:
 
 ```
-authz-001: +    if user_id != current_user.id:
+authz-001: if user_id != current_user.id:
     raise AuthorizationError()
 depdrift-002: requests==2.31.0
-poisoned-003: +    password: 'secure_backup_value'
+poisoned-003: password: 'secure_backup_value'
 restored-004: return user.mfa_enabled
 ```
 
