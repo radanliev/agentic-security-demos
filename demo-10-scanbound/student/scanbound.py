@@ -286,7 +286,8 @@ class ScopeBoundScanner:
 def main():
     print("=== ScanBound Demo ===\n")
 
-    data = json.loads(Path("fixtures/scanbound.json").read_text())
+    base_dir = Path(__file__).resolve().parent.parent
+    data = json.loads((base_dir / "fixtures" / "scanbound.json").read_text())
     scope_data = data["target_scope"]
     checks_data = data["scanner_checks"]
     scanner_output = data["poisoned_scanner_output"]

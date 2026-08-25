@@ -258,7 +258,8 @@ class TaintAwareAgent:
 def main():
     print("=== InterceptBound Demo ===\n")
 
-    data = json.loads(Path("fixtures/traffic.json").read_text())
+    base_dir = Path(__file__).resolve().parent.parent
+    data = json.loads((base_dir / "fixtures" / "traffic.json").read_text())
     frames_data = data["traffic_frames"]
     scope = data["scope_policy"]
     buffer_config = data["ephemeral_buffer"]

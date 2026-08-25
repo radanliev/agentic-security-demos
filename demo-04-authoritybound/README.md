@@ -43,3 +43,31 @@ An attacker embeds instructions in untrusted content (e.g., "ignore previous ins
 | Commit | Git SHA or `local` |
 | Python | 3.11+ |
 | Command | `make demo DEMO=04` |
+
+## Conference Paper Alignment (Paper 4: IEEE S&P)
+
+This demo is the educational companion to **Conference Paper 4** (`demo-4-prompt-injection-tool-authority-ieee-sp`):
+> **AuthorityBound: Confining Tool Authority Against Indirect Prompt Injections in Multi-Agent Autonomous Systems** (IEEE S&P)
+
+### Defect Family & Scenario Mapping
+
+| Demo Scenario | Attack Vector | Security Mechanism | Mediator Action |
+|---|---|---|---|
+| `direct_injection` | Attacker injects high-risk instruction directly | Provenance tagging (`USER_DATA`) | Evaluates capability tokens and scope bounds |
+| `indirect_injection` | Prompt injection hidden inside untrusted file/web data | Provenance tracking (`UNTRUSTED_CONTENT`) | **BLOCKED**: Untrusted provenance prohibited from high-risk tools |
+| `scope_escalation` | Path traversal attempt (`/etc/shadow`) | Capability Token Scope Confinement | **BLOCKED**: Target path exceeds scoped token boundary |
+
+### Core Security Invariant: Data $\neq$ Authority
+
+In naive agentic architectures, retrieving external content places that content into the LLM context window where it is parsed as natural language instructions, enabling the **Confused Deputy** attack. AuthorityBound enforces that:
+1. Every input carries a cryptographic/runtime `Provenance` tag.
+2. High-risk mutating tools (`update_record`, `send_message`) require explicit, unforgeable `CapabilityTokens`.
+3. Untrusted provenance can only be queried by read-only, non-privileged tools.
+
+## Difference from Private Research Benchmark
+
+| Aspect | Research Benchmark (Paper 4) | This Teaching Demo (Demo 04) |
+|--------|------------------------------|-----------------------------|
+| Architecture | Multi-agent LangChain/AutoGen swarms | Lightweight Python Mediator & MockAgent |
+| Attack Suite | 250+ real-world prompt injection payloads | 3 synthetic representative attack vectors |
+| Tool Set | Production SQL, cloud APIs, bash execution | In-memory mock tool registry |

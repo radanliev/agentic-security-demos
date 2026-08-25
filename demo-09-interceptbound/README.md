@@ -36,3 +36,31 @@ This demo simulates:
 | Commit | Git SHA or `local` |
 | Python | 3.11+ |
 | Command | `make demo DEMO=09` |
+
+## Conference Paper Alignment (Paper 9: ESORICS)
+
+This demo is the educational companion to **Conference Paper 9** (`demo-9-agentic-mitm-esorics`):
+> **InterceptBound: Taint-Tracked Ephemeral Buffers for Man-in-the-Middle Network Interception in Autonomous Defense Agents** (ESORICS)
+
+### Traffic Ingestion & Taint Propagation
+
+| Frame ID | Protocol & Endpoints | Payload Content | Taint Level | Action Guard Decision |
+|---|---|---|---|---|
+| `frame_001` | HTTP (`192.168.1.10` $\rightarrow$ `192.168.1.100`) | Sensitive Session Token | `HIGH` | **BLOCKED**: `store_token` rejected (taint level too high) |
+| `frame_002` | HTTP (`192.168.1.10` $\rightarrow$ `192.168.1.100`) | Injected prompt in HTTP body | `HIGH` | **BLOCKED**: `process_injection` & `store_token` blocked |
+| `frame_003` | DNS (`192.168.1.1` $\rightarrow$ `192.168.1.100`) | Injected command in DNS answer | `HIGH` | **BLOCKED**: Injected DNS record discarded |
+| `frame_005` | Custom TCP (`192.168.1.30` $\rightarrow$ `192.168.1.100`) | System shutdown request | `HIGH` | **BLOCKED**: `execute_shutdown` prohibited |
+
+### Core Security Invariants
+
+1. **Strict Taint Propagation**: All parsed attributes from intercepted network packets inherit `Provenance.INTERCEPTED_NETWORK` and `TaintLevel.HIGH`.
+2. **Ephemeral Secure Buffers**: Intercepted payloads are stored in memory-only volatile buffers with zeroization on deletion to prevent leakage across tasks.
+3. **Privileged Action Confinement**: Sensitive operations (e.g. `store_credential`, `system_shutdown`) refuse execution when supplied with high-taint arguments.
+
+## Difference from Private Research Benchmark
+
+| Aspect | Research Benchmark (Paper 9) | This Teaching Demo (Demo 09) |
+|--------|------------------------------|-----------------------------|
+| Network Harness | DPDK high-speed packet capture & TLS proxy | Synthetic in-memory JSON traffic frame list |
+| Memory Management | Linux memfd with secure zeroization | Python `EphemeralBuffer` with dictionary deletion |
+| Scale | Multi-gigabit live traffic streams | 6 representative network frames |

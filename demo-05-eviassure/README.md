@@ -38,3 +38,32 @@ This demo implements a minimal pipeline with synthetic agent traces.
 | Commit | Git SHA or `local` |
 | Python | 3.11+ (requires `cryptography`) |
 | Command | `make demo DEMO=05` |
+
+## Conference Paper Alignment (Paper 5: USENIX Security)
+
+This demo is the educational companion to **Conference Paper 5** (`demo-5-evidence-release-assurance-usenix`):
+> **EVIAssure: Cryptographic Evidence Assurance for Autonomous Multi-Agent Systems Under Malicious Release Gates** (USENIX Security)
+
+### Threat Model & Verification Guarantees
+
+| Attack Vector | Attacker Capability | EVIAssure Defense Primitive | Verification Result |
+|---|---|---|---|
+| **Event Modification** | Attacker tampers with intermediate test/scan score | SHA-256 Witness Hash Chain & Signatures | **FAIL**: Mismatched leaf hash and invalid Ed25519 signature |
+| **Event Omission** | Attacker drops security scan step to bypass check | Sequence-bound Previous Hashes & Closing Counts | **FAIL**: Step count mismatch ($5 \neq 6$) |
+| **Closing Count Spoofing** | Attacker fabricates final summary counter | Final Hash Continuity & Signed Receipt Chain | **FAIL**: `closing_count_mismatch` |
+| **Selective Inclusion** | Attacker claims step executed without presenting full trace | Merkle Tree Audit Path ($O(\log N)$ Inclusion Proof) | **VALID / INVALID**: Mathematical root equivalence |
+
+### Core Primitives Demonstrated
+
+1. **WitnessReceipt**: Structured attestations bound by step index, action, data payload hash, previous hash, and ISO-8601 timestamp.
+2. **Sequential Hash Chain**: Formally prevents reordering, insertion, and truncation of execution steps.
+3. **Merkle Inclusion Trees**: Generates compact logarithmic inclusion proofs for selective verification.
+4. **Release Gate**: Recomputes hash chains, checks cryptographic signatures against trusted release keys, and verifies closing counts before authorizing artifact deployment.
+
+## Difference from Private Research Benchmark
+
+| Aspect | Research Framework (Paper 5) | This Teaching Demo (Demo 05) |
+|--------|------------------------------|-----------------------------|
+| Cryptography | Production Hardware HSM & KMS signing | Ephemeral Ed25519 in-memory demo keys |
+| Scale | Continuous pipeline traces ($N=10^5$ events) | 6-step synthetic deployment trace |
+| Ledger | Distributed append-only transparency log (Rekor/Sigstore) | Local JSON receipt records |

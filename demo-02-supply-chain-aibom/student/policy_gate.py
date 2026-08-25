@@ -100,7 +100,8 @@ class PolicyGate:
 
 
 def main():
-    aibom_path = Path("fixtures/aibom.json")
+    base_dir = Path(__file__).resolve().parent.parent
+    aibom_path = base_dir / "fixtures" / "aibom.json"
     gate = PolicyGate(aibom_path)
 
     scenarios = json.loads(aibom_path.read_text())["drift_scenarios"]

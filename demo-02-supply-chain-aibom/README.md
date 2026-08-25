@@ -35,8 +35,31 @@ This demo teaches:
 | Seed | 42 |
 | Commit | Git SHA or `local` |
 | Python | 3.11+ |
-| Command | `make demo DEMO=02` |
+## Conference Paper Alignment (Paper 2: IEEE S&P Workshop / Supply Chain)
 
-## Difference from Private Research
+This demo is the educational companion to **Conference Paper 2** (`demo-2-agentic-supply-chain-aibom-drift`):
+> **Agentic Supply Chain Assurance: Continuous AIBOM Verification & Runtime Capability Drift Detection**
 
-The private project uses real staged bundles, production AIBOMs, and cluster admission controllers. This demo uses local JSON fixtures and a standalone policy evaluator.
+### Defect Family & Scenario Mapping
+
+| Demo Scenario | Drift Type | Security Hazard | Policy Gate Decision |
+|---|---|---|---|
+| `compliant-001` | Baseline Alignment | No drift — declared matches runtime | **ALLOW (PASS)** |
+| `drifted-002` | Capability Escalation | Undeclared `scanner` tool added at runtime | **BLOCK (Drift Detected)** |
+| `invalid-waiver-003` | Unapproved Scope Waiver | Unsigned / unapproved `exec:shell:*` waiver | **REJECT WAIVER (Block)** |
+| `valid-waiver-004` | Approved Scoped Waiver | Approved, time-bounded waiver for `scanner` | **ACCEPT WAIVER (Allow)** |
+
+### Core Primitives Demonstrated
+
+1. **Declared vs. Observed Invariants**: A system's AI Bill of Materials (AIBOM) acts as an immutable contract; runtime capability introspection flags any drift.
+2. **Fail-Closed Default Deny**: Capabilities not explicitly permitted in declared policy or approved waivers are blocked automatically.
+3. **Cryptographic / Time-Bounded Waivers**: Emergency access requires explicit scope bounds, valid cryptographic/approval status, and unexpired ISO-8601 timestamps.
+
+## Difference from Private Research Benchmark
+
+| Aspect | Research Framework (Paper 2) | This Teaching Demo (Demo 02) |
+|--------|------------------------------|-----------------------------|
+| Enforcement | Kubernetes Admission Controller & eBPF | Standalone Python Policy Gate |
+| Inventory | Full cyclonedx/SPDX AIBOM with model weights | Synthetic JSON component declaration |
+| Waivers | Multi-signature hardware key approval | Structured in-memory waiver records |
+| CI/CD | Real GitHub Actions / GitLab CI runner gates | Local validation script (`validate_aibom.py`) |

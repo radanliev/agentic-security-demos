@@ -165,7 +165,8 @@ class ProvenanceAwareTriageAgent:
 def main():
     print("=== TriageTrap Demo ===\n")
 
-    data = json.loads(Path("fixtures/artifacts.json").read_text())
+    base_dir = Path(__file__).resolve().parent.parent
+    data = json.loads((base_dir / "fixtures" / "artifacts.json").read_text())
     artifacts_data = data["artifacts"]
     base_rates = data["base_rates"]
     threshold = data["quarantine_threshold"]

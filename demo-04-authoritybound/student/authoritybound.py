@@ -190,7 +190,8 @@ def create_scope_bound_agent() -> MockAgent:
 
 
 def main():
-    data = json.loads(Path("fixtures/authoritybound.json").read_text())
+    base_dir = Path(__file__).resolve().parent.parent
+    data = json.loads((base_dir / "fixtures" / "authoritybound.json").read_text())
     canaries = data["canaries"]
     scenarios = data["scenarios"]
 

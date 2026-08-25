@@ -154,15 +154,17 @@ class EvaluationInvariants:
 
 
 def main():
-    eval_path = Path("fixtures/eval_data.json")
+    base_dir = Path(__file__).resolve().parent.parent
+    eval_path = base_dir / "fixtures" / "eval_data.json"
     invariants = EvaluationInvariants(eval_path)
     results = invariants.run_all()
 
     print(json.dumps(results, indent=2))
 
     # Save results
-    Path("results/invariant_results.json").parent.mkdir(exist_ok=True)
-    Path("results/invariant_results.json").write_text(json.dumps(results, indent=2))
+    out_path = base_dir / "results" / "invariant_results.json"
+    out_path.parent.mkdir(exist_ok=True)
+    out_path.write_text(json.dumps(results, indent=2))
 
     if results["summary"]["all_passed"]:
         print("\n✓ All invariants passed")

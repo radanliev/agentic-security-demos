@@ -165,8 +165,9 @@ class ProvenanceAwareReconAgent(ReconAgent):
 def main():
     print("=== ReconScope Demo ===\n")
 
+    base_dir = Path(__file__).resolve().parent.parent
     # Load fixtures
-    data = json.loads(Path("fixtures/protocol_fixtures.json").read_text())
+    data = json.loads((base_dir / "fixtures" / "protocol_fixtures.json").read_text())
     fixtures = data["protocol_fixtures"]
     scope = ScopePolicy(**data["scope_policy"])
 

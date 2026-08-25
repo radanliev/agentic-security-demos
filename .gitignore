@@ -24,6 +24,8 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+.Rhistory
+*.Rhistory
 
 # Generated keys and secrets (never commit)
 *.pem

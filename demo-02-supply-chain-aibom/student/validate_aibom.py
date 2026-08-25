@@ -7,17 +7,20 @@ Exit codes: 0 = compliant, 1 = drift detected, 2 = error
 import json
 import sys
 from pathlib import Path
+from typing import Optional
 
 # Add student module to path
-sys.path.insert(0, str(Path(__file__).parent / "student"))
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from policy_gate import PolicyGate, Waiver
 
 
-def validate_aibom(aibom_path: str = "fixtures/aibom.json") -> int:
+def validate_aibom(aibom_path: Optional[str] = None) -> int:
     """Validate AIBOM compliance. Returns exit code."""
     try:
-        gate = PolicyGate(Path(aibom_path))
-        scenarios = json.loads(Path(aibom_path).read_text())["drift_scenarios"]
+        resolved_path = Path(aibom_path) if aibom_path else (base_dir / "fixtures" / "aibom.json")
+        gate = PolicyGate(resolved_path)
+        scenarios = json.loads(resolved_path.read_text())["drift_scenarios"]
 
         # In real CI, you'd check the actual runtime capabilities here
         # For demo, we test all scenarios and fail if any unexpected drift

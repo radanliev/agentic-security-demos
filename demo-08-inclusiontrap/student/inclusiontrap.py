@@ -214,7 +214,8 @@ class GuardedInclusionAgent:
 def main():
     print("=== InclusionTrap Demo ===\n")
 
-    data = json.loads(Path("fixtures/inclusion.json").read_text())
+    base_dir = Path(__file__).resolve().parent.parent
+    data = json.loads((base_dir / "fixtures" / "inclusion.json").read_text())
     files = data["files"]
     scenarios = data["inclusion_scenarios"]
     scope = ScopePolicy(
