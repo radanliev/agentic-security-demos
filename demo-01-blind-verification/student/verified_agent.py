@@ -68,13 +68,14 @@ class VerifiedAgent:
         # Produce commitment WITHOUT seeing oracle
         commitment = self.analyze_task(scenario)
 
-        # Create binding commitment hash
-        commitment_hash = hashlib.sha256(commitment.encode()).hexdigest()[:16]
+        # Create binding cryptographic commitment hash (full 256-bit SHA-256)
+        full_hash = hashlib.sha256(commitment.encode()).hexdigest()
 
         return {
             "scenario_id": scenario_id,
             "commitment": commitment,
-            "commitment_hash": commitment_hash,
+            "commitment_hash": full_hash,
+            "short_hash": full_hash[:16],
             "method": "blind_heuristic",
             "blind": True
         }

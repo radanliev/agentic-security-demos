@@ -202,12 +202,14 @@ class TestExercises:
     """Exercise validation tests."""
 
     def test_exercise_blind_commitment(self):
-        """Exercise 1: Implement blind commitment for a new scenario."""
-        # Student adds a new scenario to fixtures/scenarios.json
-        # and implements blind logic in verified_agent.py
+        """Exercise 1: Implement blind commitment with 256-bit cryptographic binding."""
         scenarios = json.loads((DEMO_DIR / "fixtures" / "scenarios.json").read_text())["scenarios"]
-        # New scenario would be added here
         assert len(scenarios) >= 4
+        from verified_agent import VerifiedAgent
+        agent = VerifiedAgent(DEMO_DIR / "fixtures" / "scenarios.json")
+        sol = agent.solve(scenarios[0]["id"])
+        assert len(sol["commitment_hash"]) == 64  # Full 256-bit SHA-256 hex digest
+        assert sol["blind"] is True
 
     def test_exercise_oracle_design(self):
         """Exercise 2: Design an oracle for a custom task."""

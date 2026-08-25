@@ -6,6 +6,7 @@ ScanBound - Vulnerability Assessment Scope Control
 import json
 import re
 import ast
+import ipaddress
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 from dataclasses import dataclass
@@ -84,7 +85,20 @@ class ScopeValidator:
     def _match_host(self, pattern: str, host: str) -> bool:
         if pattern == host:
             return True
-        # Could add CIDR matching here
+        # Wildcard domain matching (*.example.com or *.local)
+        if pattern.startswith("*."):
+            if host == pattern[2:] or host.endswith(pattern[1:]):
+                return True
+        elif pattern.endswith("*"):
+            if host.startswith(pattern[:-1]):
+                return True
+        # CIDR IP matching
+        try:
+            network = ipaddress.ip_network(pattern, strict=False)
+            if ipaddress.ip_address(host) in network:
+                return True
+        except Exception:
+            pass
         return False
 
 

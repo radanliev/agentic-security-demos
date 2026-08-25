@@ -10,7 +10,7 @@ import hmac
 import os
 import base64
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Set
 from dataclasses import dataclass, asdict
 from datetime import datetime
 from cryptography.hazmat.primitives import hashes, serialization
@@ -179,10 +179,11 @@ class DemoKeyManager:
 
 
 class ReleaseGate:
-    """Fail-closed release gate with evidence verification."""
+    """Fail-closed release gate with evidence verification and authorized signer checking."""
 
-    def __init__(self, key_manager: DemoKeyManager):
+    def __init__(self, key_manager: DemoKeyManager, authorized_signer_ids: Optional[Set[str]] = None):
         self.key_manager = key_manager
+        self.authorized_signer_ids = set(authorized_signer_ids) if authorized_signer_ids is not None else None
 
     def verify_trace(self, trace_path: Path, required_steps: int = 6) -> Dict:
         """Verify complete evidence trace."""
@@ -234,7 +235,7 @@ class ReleaseGate:
         }
 
     def verify_signed_evidence(self, evidence_path: Path) -> Dict:
-        """Verify signed evidence package."""
+        """Verify signed evidence package against authorized signers and cryptographic signatures."""
         evidence = json.loads(evidence_path.read_text())
         trace_result = self.verify_trace(Path(evidence["trace_path"]))
 
@@ -245,9 +246,14 @@ class ReleaseGate:
         if not signed_receipts:
             return {"passed": False, "reason": "no_signed_receipts"}
 
-        # Verify signatures on receipts
+        # Verify authorized signers and cryptographic signatures on receipts
         for receipt_data in signed_receipts:
             key_id = receipt_data["signer_id"]
+
+            # Trust boundary check: is signer authorized by gate?
+            if self.authorized_signer_ids is not None and key_id not in self.authorized_signer_ids:
+                return {"passed": False, "reason": f"unauthorized_signer_{key_id}"}
+
             receipt_bytes = json.dumps({k: v for k, v in receipt_data.items() if k != "signature"}, sort_keys=True).encode()
             if not self.key_manager.verify(key_id, receipt_bytes, receipt_data["signature"]):
                 return {"passed": False, "reason": f"signature_verification_failed_{key_id}"}

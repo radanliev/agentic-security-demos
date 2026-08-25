@@ -200,15 +200,28 @@ class GuardedInclusionAgent:
         )
 
     def _resolve_path(self, path: str) -> str:
-        """Safe path resolution."""
-        # Normalize path
-        if path.startswith("../") or "/../" in path:
-            # Path traversal attempt - return a blocked marker
+        """Safe canonical path resolution with traversal detection."""
+        import posixpath
+        import urllib.parse
+
+        # Decode URL-encoded traversals
+        decoded = urllib.parse.unquote(path)
+
+        # Detect traversal patterns
+        if decoded.startswith("../") or "/../" in decoded or decoded.endswith("/..") or decoded == "..":
             return "/blocked/traversal"
-        # Handle relative paths
-        if not path.startswith("/"):
-            return "/app/" + path
-        return path
+
+        # Canonical normalization
+        if not decoded.startswith("/"):
+            canonical = posixpath.normpath(posixpath.join("/app", decoded))
+        else:
+            canonical = posixpath.normpath(decoded)
+
+        # Ensure canonical path stays within root if relative was provided
+        if not decoded.startswith("/") and not canonical.startswith("/app"):
+            return "/blocked/traversal"
+
+        return canonical
 
 
 def main():

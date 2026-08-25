@@ -36,25 +36,30 @@ class ScopePolicy:
 
     def allows(self, host: str, port: int) -> bool:
         # Check allowed
-        host_allowed = any(self._match_host(pattern, host) for pattern in self.allowed_hosts)
+        host_allowed = any(self._match_host_or_cidr(pattern, host) for pattern in self.allowed_hosts)
         port_allowed = port in self.allowed_ports
 
         # Check denied
-        host_denied = any(self._match_cidr(pattern, host) for pattern in self.denied_patterns)
+        host_denied = any(self._match_host_or_cidr(pattern, host) for pattern in self.denied_patterns)
 
         return host_allowed and port_allowed and not host_denied
 
-    def _match_host(self, pattern: str, host: str) -> bool:
-        if pattern.endswith("*"):
-            return host.startswith(pattern[:-1])
-        return pattern == host
-
-    def _match_cidr(self, pattern: str, host: str) -> bool:
+    def _match_host_or_cidr(self, pattern: str, host: str) -> bool:
+        """Match host against pattern (supports hostname globs and CIDR/IP notation)."""
+        # Try CIDR network matching if pattern contains slash or looks like IP
         try:
             network = ipaddress.ip_network(pattern, strict=False)
-            return ipaddress.ip_address(host) in network
+            if ipaddress.ip_address(host) in network:
+                return True
         except Exception:
-            return False
+            pass
+
+        # Glob / prefix / exact matching
+        if pattern.endswith("*"):
+            return host.startswith(pattern[:-1])
+        if pattern.startswith("*."):
+            return host == pattern[2:] or host.endswith(pattern[1:])
+        return pattern == host
 
 
 class ProtocolParser:

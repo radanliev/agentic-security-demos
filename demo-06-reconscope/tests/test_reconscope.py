@@ -195,11 +195,18 @@ class TestExercises:
         assert len(res) >= 2
 
     def test_exercise_scope_bypass(self):
-        """Exercise: Verify strict denial when scanning out-of-scope targets."""
-        scope = ScopePolicy(["localhost"], [80, 443], ["10.0.0.0/8"])
+        """Exercise: Verify strict denial when scanning out-of-scope targets (CIDR and hostname globs)."""
+        scope = ScopePolicy(["localhost", "*.local"], [80, 443], ["10.0.0.0/8", "*.forbidden.local", "secret.local"])
+        # Denied by CIDR
         assert scope.allows("10.0.0.1", 80) is False
+        # Denied by Port
         assert scope.allows("localhost", 22) is False
+        # Denied by Hostname Glob in denied_patterns
+        assert scope.allows("admin.forbidden.local", 80) is False
+        assert scope.allows("secret.local", 80) is False
+        # Allowed in scope
         assert scope.allows("localhost", 80) is True
+        assert scope.allows("api.local", 80) is True
 
 
 if __name__ == "__main__":

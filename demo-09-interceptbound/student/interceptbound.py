@@ -164,14 +164,19 @@ class ActionGuard:
         else:
             self.max_taint = max_taint_for_action
 
-    def authorize(self, action: str, required_taint: TaintLevel, data: Any, provenance: Provenance) -> tuple[bool, str]:
-        """Authorize action based on taint level."""
+    def authorize(self, action: str, field_taint: TaintLevel = None, data: Any = None, provenance: Provenance = None, **kwargs) -> tuple[bool, str]:
+        """
+        Authorize action based on information flow lattice:
+        Ensures field_taint <= max_taint_for_action.
+        """
+        # Backward compatibility for required_taint keyword argument
+        taint = field_taint if field_taint is not None else kwargs.get("required_taint", TaintLevel.HIGH)
         taint_order = {TaintLevel.LOW: 0, TaintLevel.MEDIUM: 1, TaintLevel.HIGH: 2}
 
-        if taint_order[required_taint] > taint_order[self.max_taint]:
-            return False, f"taint_too_high: {required_taint.value} > {self.max_taint.value}"
+        if taint_order[taint] > taint_order[self.max_taint]:
+            return False, f"taint_too_high: {taint.value} > {self.max_taint.value}"
 
-        if provenance == Provenance.INTERCEPTED_NETWORK and required_taint != TaintLevel.LOW:
+        if provenance == Provenance.INTERCEPTED_NETWORK and taint != TaintLevel.LOW:
             return False, f"intercepted_network_requires_low_taint"
 
         return True, "authorized"

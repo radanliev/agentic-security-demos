@@ -135,7 +135,7 @@ class TestExercises:
     """Exercise tests."""
 
     def test_exercise_path_traversal_variants(self):
-        """Exercise: Test various path traversal patterns fail scope check."""
+        """Exercise: Test various path traversal patterns fail scope check and resolve safely."""
         scope = ScopePolicy(["/app/templates/*", "/app/config/*"], ["/etc/*", "/app/secrets/*"])
         # Standard traversal
         assert scope.can_read("../../../../etc/shadow") is False
@@ -143,6 +143,12 @@ class TestExercises:
         assert scope.can_read("/var/log/auth.log") is False
         # Explicitly denied path
         assert scope.can_read("/app/secrets/api_key.txt") is False
+
+        # Guarded agent canonical path normalization
+        agent = GuardedInclusionAgent({}, scope)
+        assert agent._resolve_path("../../../../etc/passwd") == "/blocked/traversal"
+        assert agent._resolve_path("%2e%2e%2f%2e%2e%2fetc/shadow") == "/blocked/traversal"
+        assert agent._resolve_path("templates/index.html") == "/app/templates/index.html"
 
     def test_exercise_mime_type_check(self):
         """Exercise: Verify safe content reads maintain read-only action."""

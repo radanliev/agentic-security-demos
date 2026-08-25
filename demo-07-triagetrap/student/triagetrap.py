@@ -44,16 +44,40 @@ class TriageResult:
 
 
 class BaseRateCalculator:
-    """Base-rate-aware scoring."""
+    """Base-rate-aware Bayesian scoring for triage evidence."""
 
     def __init__(self, base_rates: Dict):
         self.prior_malicious = base_rates.get("malicious_prior", 0.02)
         self.sensor_fp = base_rates.get("sensor_false_positive", 0.01)
         self.sandbox_fn = base_rates.get("sandbox_false_negative", 0.05)
 
+    def calculate_posterior(self, verdict: str) -> float:
+        """
+        Exact Bayes' Theorem calculation:
+        P(M | E) = P(E | M) * P(M) / [ P(E | M) * P(M) + P(E | ~M) * P(~M) ]
+        """
+        p_m = self.prior_malicious
+        p_not_m = 1.0 - p_m
+
+        if verdict == "malicious":
+            # True Positive Rate = 1 - False Negative Rate
+            # False Positive Rate = sensor_fp
+            p_e_given_m = 1.0 - self.sandbox_fn
+            p_e_given_not_m = self.sensor_fp
+        elif verdict == "benign":
+            # False Negative Rate
+            # True Negative Rate = 1 - False Positive Rate
+            p_e_given_m = self.sandbox_fn
+            p_e_given_not_m = 1.0 - self.sensor_fp
+        else:
+            return p_m
+
+        numerator = p_e_given_m * p_m
+        denominator = numerator + (p_e_given_not_m * p_not_m)
+        return numerator / denominator if denominator > 0 else 0.0
+
     def update(self, evidence: Dict) -> float:
-        """Bayesian update with base rate."""
-        # Simplified: combine evidence likelihoods with prior
+        """Bayesian update with base rate and prompt injection / contamination adjustments."""
         score = self.prior_malicious
 
         if evidence.get("sandbox_verdict") == "malicious":

@@ -183,6 +183,35 @@ class TestEVIAssure:
         result = gate.verify_signed_evidence(inc_path)
         assert result["passed"] is False
 
+    def test_unauthorized_signer_rejected(self, trace_path):
+        """Attacker key not in authorized_signer_ids must be rejected."""
+        km = DemoKeyManager()
+        km.generate_key("DEMO_KEY_AUTH_01")
+        km.generate_key("DEMO_KEY_ATTACKER")
+
+        # Gate only authorizes AUTH_01
+        strict_gate = ReleaseGate(km, authorized_signer_ids={"DEMO_KEY_AUTH_01"})
+
+        # Attacker signs receipt with their own valid key
+        receipt_data = {
+            "step": 1, "action": "test", "data_hash": "abc", "prev_hash": "0"*64,
+            "timestamp": "2024-01-01T00:00:00Z", "signer_id": "DEMO_KEY_ATTACKER"
+        }
+        receipt_bytes = json.dumps({k: v for k, v in receipt_data.items()}, sort_keys=True).encode()
+        receipt_data["signature"] = km.sign("DEMO_KEY_ATTACKER", receipt_bytes)
+
+        evidence = {
+            "trace_path": str(trace_path),
+            "signed_receipts": [receipt_data]
+        }
+        ev_path = DEMO_DIR / "results" / "attacker_signed_evidence.json"
+        ev_path.parent.mkdir(exist_ok=True)
+        ev_path.write_text(json.dumps(evidence, indent=2))
+
+        result = strict_gate.verify_signed_evidence(ev_path)
+        assert result["passed"] is False
+        assert "unauthorized_signer" in result["reason"]
+
 
 class TestExercises:
     """Exercise tests."""

@@ -58,8 +58,16 @@ class TestTriageTrap:
         assert not detector.detect("CANARY_BENIGN_7x9k2m")
 
     def test_base_rate_calculation(self):
-        """Base rate calculator produces reasonable scores."""
+        """Base rate calculator produces mathematically sound Bayesian scores."""
         calc = BaseRateCalculator({"malicious_prior": 0.02, "sensor_false_positive": 0.01, "sandbox_false_negative": 0.05})
+
+        # Exact Bayes Theorem: P(M | +) = (0.95 * 0.02) / (0.95 * 0.02 + 0.01 * 0.98) ~= 0.6597
+        post_mal = calc.calculate_posterior("malicious")
+        assert 0.65 <= post_mal <= 0.67
+
+        # Exact Bayes Theorem: P(M | -) = (0.05 * 0.02) / (0.05 * 0.02 + 0.99 * 0.98) ~= 0.001
+        post_benign = calc.calculate_posterior("benign")
+        assert 0.0005 <= post_benign <= 0.002
 
         # Malicious sandbox verdict -> high score
         score = calc.update({"sandbox_verdict": "malicious"})

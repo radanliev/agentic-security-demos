@@ -227,10 +227,18 @@ class TestExercises:
         assert validator.validate(destructive_check)[0] is False
 
     def test_exercise_address_validation(self):
-        """Exercise: Validate allowed vs forbidden address formats."""
-        scope = ScopeValidator(["scan-target.local"], [80], ["http"])
+        """Exercise: Validate allowed vs forbidden address formats including wildcards and CIDRs."""
+        scope = ScopeValidator(["scan-target.local", "*.internal.net", "192.168.1.0/24"], [80, 443], ["http", "https"])
+        # Exact match
         assert scope.validate(Target("scan-target.local", 80, "http"))[0] is True
+        # Suffix / domain escaping blocked
         assert scope.validate(Target("scan-target.local.evil.com", 80, "http"))[0] is False
+        # Wildcard subdomain allowed
+        assert scope.validate(Target("api.internal.net", 443, "https"))[0] is True
+        # CIDR IP allowed
+        assert scope.validate(Target("192.168.1.50", 80, "http"))[0] is True
+        # Outside CIDR blocked
+        assert scope.validate(Target("10.0.0.1", 80, "http"))[0] is False
 
     def test_exercise_fail_closed(self):
         """Exercise: Verify fail-closed behavior on unsafe check types."""
