@@ -33,7 +33,7 @@ setup:
 	@for d in $(DEMO_DIRS); do \
 		if [ -f $$d/Makefile ]; then \
 			echo "--- Setting up $$d ---"; \
-			$(MAKE) -C $$d setup || exit 1; \
+			$(MAKE) -C $$d setup PYTHON="$(PYTHON)" || exit 1; \
 		else \
 			echo "WARNING: $$d/Makefile not found, skipping"; \
 		fi \
@@ -43,15 +43,17 @@ setup:
 test:
 ifdef DEMO
 	@echo "=== Testing demo-$(DEMO) ==="
-	@$(MAKE) -C demo-$(DEMO)-* test
+	@$(MAKE) -C demo-$(DEMO)-* test PYTHON="$(PYTHON)"
 else
 	@echo "=== Testing all demos ==="
 	@for d in $(DEMO_DIRS); do \
 		if [ -f $$d/Makefile ]; then \
 			echo "--- Testing $$d ---"; \
-			$(MAKE) -C $$d test || exit 1; \
+			$(MAKE) -C $$d test PYTHON="$(PYTHON)" || exit 1; \
 		fi \
 	done
+	@echo "=== Testing shared library ==="
+	@$(PYTHON) -m pytest tests/test_shared.py -v || exit 1;
 	@echo "=== All tests passed ==="
 endif
 
@@ -60,13 +62,13 @@ ifndef DEMO
 	$(error DEMO is required. Usage: make demo DEMO=01)
 endif
 	@echo "=== Running demo-$(DEMO) ==="
-	@$(MAKE) -C demo-$(DEMO)-* demo
+	@$(MAKE) -C demo-$(DEMO)-* demo PYTHON="$(PYTHON)"
 
 clean:
 	@echo "=== Cleaning all demos ==="
 	@for d in $(DEMO_DIRS); do \
 		if [ -f $$d/Makefile ]; then \
-			$(MAKE) -C $$d clean; \
+			$(MAKE) -C $$d clean PYTHON="$(PYTHON)"; \
 		fi \
 	done
 	@rm -rf __pycache__ .pytest_cache .coverage htmlcov dist build *.egg-info
@@ -88,7 +90,7 @@ all-demos:
 	@for d in $(DEMO_DIRS); do \
 		if [ -f $$d/Makefile ]; then \
 			echo "=== Running $$d ==="; \
-			$(MAKE) -C $$d demo || exit 1; \
+			$(MAKE) -C $$d demo PYTHON="$(PYTHON)" || exit 1; \
 		fi \
 	done
 

@@ -4,11 +4,13 @@
 import json
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).parent / "student"))
+
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from reconscope import ProvenanceAwareReconAgent, ScopePolicy
 
 def main():
-    data = json.loads(Path("fixtures/protocol_fixtures.json").read_text())
+    data = json.loads((base_dir / "fixtures" / "protocol_fixtures.json").read_text())
     scope = ScopePolicy(**data["scope_policy"])
     agent = ProvenanceAwareReconAgent(scope)
     for f in data["protocol_fixtures"]:
@@ -30,7 +32,9 @@ def main():
         "injection_details": [{"source": i["source"], "field": i["name"], "snippet": i["value"][:80]} for i in injections]
     }
 
-    Path("results/evaluation.json").write_text(json.dumps(results, indent=2))
+    out_path = base_dir / "results" / "evaluation.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(results, indent=2))
     print(json.dumps(results, indent=2))
 
 if __name__ == "__main__":

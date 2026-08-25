@@ -98,29 +98,43 @@ class TestExercises:
     """Exercise tests."""
 
     def test_exercise_leakage_metric(self):
-        """Exercise: Implement n-gram leakage metric."""
-        # Student adds n-gram comparison between train/test
-        pass
+        """Exercise: Verify leakage detection catches leaked task-003."""
+        invariants = EvaluationInvariants(DEMO_DIR / "fixtures" / "eval_data.json")
+        res = invariants.check_no_leakage(threshold=0.1)
+        assert res["passed"] is False
+        assert "task-003" in res["leaked_tasks"]
 
     def test_exercise_saturation_detection(self):
-        """Exercise: Detect ceiling effects."""
-        # Student implements saturation metric
-        pass
+        """Exercise: Detect ceiling effects under tight ceiling threshold."""
+        invariants = EvaluationInvariants(DEMO_DIR / "fixtures" / "eval_data.json")
+        # With default threshold, max_score 1.0 triggers ceiling effect if max_ceiling is 0.95
+        res = invariants.check_difficulty(min_variance=0.01, max_ceiling=0.90)
+        assert res["passed"] is False
+        assert any("ceiling effect" in issue for issue in res["issues"])
 
     def test_exercise_item_response(self):
-        """Exercise: Basic item-response/difficulty analysis."""
-        # Student adds difficulty estimation
-        pass
+        """Exercise: Verify task difficulty distribution."""
+        invariants = EvaluationInvariants(DEMO_DIR / "fixtures" / "eval_data.json")
+        tasks = invariants.card["tasks"]
+        diffs = [t["difficulty"] for t in tasks]
+        assert "easy" in diffs
+        assert "medium" in diffs
+        assert "hard" in diffs
 
     def test_exercise_custom_invariant(self):
-        """Exercise: Design a 6th invariant."""
-        # Student proposes and implements new invariant
-        pass
+        """Exercise: Verify stability and metadata invariants."""
+        invariants = EvaluationInvariants(DEMO_DIR / "fixtures" / "eval_data.json")
+        res_stability = invariants.check_stability()
+        res_repro = invariants.check_reproducibility()
+        assert res_stability["passed"] is True
+        assert res_repro["passed"] is True
 
     def test_exercise_four_arm(self):
-        """Exercise: Extend four-arm comparison."""
-        # Student adds more arms (e.g., different models)
-        pass
+        """Exercise: Verify models in evaluation card."""
+        invariants = EvaluationInvariants(DEMO_DIR / "fixtures" / "eval_data.json")
+        models = invariants.card["models"]
+        assert "baseline-agent" in models
+        assert "verified-agent" in models
 
 
 if __name__ == "__main__":

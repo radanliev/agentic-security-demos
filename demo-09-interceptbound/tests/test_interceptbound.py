@@ -162,20 +162,55 @@ class TestExercises:
     """Exercise tests."""
 
     def test_exercise_replay_detection(self):
-        """Exercise: Detect replayed frames."""
-        pass
+        """Exercise: Detect replayed frames in stream."""
+        seen_ids = set()
+        frames = ["frame_001", "frame_002", "frame_001"]
+        replays = []
+        for fid in frames:
+            if fid in seen_ids:
+                replays.append(fid)
+            seen_ids.add(fid)
+        assert len(replays) == 1
+        assert replays[0] == "frame_001"
 
     def test_exercise_omission_detection(self):
         """Exercise: Detect omitted frames in sequence."""
-        pass
+        seq_nums = [1, 2, 4, 5]
+        missing = []
+        for i in range(len(seq_nums) - 1):
+            if seq_nums[i+1] != seq_nums[i] + 1:
+                missing.extend(range(seq_nums[i] + 1, seq_nums[i+1]))
+        assert missing == [3]
 
     def test_exercise_credential_canary(self):
-        """Exercise: Track credential-like canaries."""
-        pass
+        """Exercise: Track credential-like canaries in intercepted traffic."""
+        tracker = TaintTracker()
+        frame = TrafficFrame(
+            "ex_canary_01",
+            "http",
+            "10.0.0.1",
+            "10.0.0.2",
+            "inbound",
+            {"auth_header": "Bearer CANARY_SECRET_AUTH_9999"},
+            Provenance.INTERCEPTED_NETWORK,
+            TaintLevel.HIGH,
+            "CANARY_SECRET"
+        )
+        fields = tracker.parse_frame(frame)
+        assert any(f.taint == TaintLevel.HIGH for f in fields)
+        assert any("_INJECTION" in f.name for f in fields)
 
     def test_exercise_taint_propagation(self):
-        """Exercise: Propagate taint through transformations."""
-        pass
+        """Exercise: Propagate taint through transformations to action guard."""
+        guard = ActionGuard(max_taint_for_action=TaintLevel.LOW)
+        # High taint is blocked for privileged action
+        allowed_high, reason = guard.authorize("store_token", TaintLevel.HIGH, "tok_123", Provenance.INTERCEPTED_NETWORK)
+        assert allowed_high is False
+        assert "taint_too_high" in reason
+
+        # Low taint is authorized
+        allowed_low, _ = guard.authorize("log_observation", TaintLevel.LOW, "status_ok", Provenance.TRUSTED_LOCAL)
+        assert allowed_low is True
 
 
 if __name__ == "__main__":

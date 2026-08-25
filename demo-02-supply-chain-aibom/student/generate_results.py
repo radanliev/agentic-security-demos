@@ -4,12 +4,14 @@
 import json
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).parent / "student"))
+
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from policy_gate import PolicyGate, Waiver
 
 def main():
-    gate = PolicyGate(Path("fixtures/aibom.json"))
-    scenarios = json.loads(Path("fixtures/aibom.json").read_text())["drift_scenarios"]
+    gate = PolicyGate(base_dir / "fixtures" / "aibom.json")
+    scenarios = json.loads((base_dir / "fixtures" / "aibom.json").read_text())["drift_scenarios"]
     results = []
     for s in scenarios:
         waiver = None
@@ -30,7 +32,9 @@ def main():
         "notes": "Synthetic teaching fixture",
         "scenarios": results
     }
-    Path("results/drift_results.json").write_text(json.dumps(output, indent=2))
+    out_path = base_dir / "results" / "drift_results.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(output, indent=2))
     print(json.dumps(output, indent=2))
 
 if __name__ == "__main__":

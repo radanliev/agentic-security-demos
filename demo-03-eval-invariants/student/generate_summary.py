@@ -4,11 +4,13 @@
 import json
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).parent / "student"))
+
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from eval_invariants import EvaluationInvariants
 
 def main():
-    invariants = EvaluationInvariants(Path("fixtures/eval_data.json"))
+    invariants = EvaluationInvariants(base_dir / "fixtures" / "eval_data.json")
     results = invariants.run_all()
 
     print("Invariant Summary:")
@@ -24,8 +26,9 @@ def main():
     print(f"Overall: {overall}")
 
     # Save results
-    Path("results/invariant_results.json").parent.mkdir(exist_ok=True)
-    Path("results/invariant_results.json").write_text(json.dumps(results, indent=2))
+    out_path = base_dir / "results" / "invariant_results.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(results, indent=2))
 
 if __name__ == "__main__":
     main()

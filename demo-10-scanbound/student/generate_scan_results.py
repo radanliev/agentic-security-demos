@@ -4,14 +4,16 @@
 import json
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).parent / "student"))
+
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from scanbound import (
     Target, ScannerCheck, ScopeValidator, CheckValidator,
     TaintTracker, ActionPolicy, ScopeBoundScanner, TaintLevel, ActionType
 )
 
 def main():
-    data = json.loads(Path("fixtures/scanbound.json").read_text())
+    data = json.loads((base_dir / "fixtures" / "scanbound.json").read_text())
     scope = ScopeValidator(data["target_scope"]["allowed_hosts"], data["target_scope"]["allowed_ports"], data["target_scope"]["allowed_protocols"])
     check_validator = CheckValidator()
     taint_tracker = TaintTracker()
@@ -35,7 +37,9 @@ def main():
         "actions_blocked": result["actions_blocked"]
     }
 
-    Path("results/scan_results.json").write_text(json.dumps(out, indent=2))
+    out_path = base_dir / "results" / "scan_results.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(out, indent=2))
     print(json.dumps(out, indent=2))
 
 if __name__ == "__main__":

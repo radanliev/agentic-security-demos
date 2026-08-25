@@ -189,19 +189,50 @@ class TestExercises:
 
     def test_exercise_trace_size_benchmark(self):
         """Exercise: Benchmark trace size vs verification time."""
-        pass
+        leaves = [hashlib.sha256(f"step_{i}".encode()).hexdigest() for i in range(16)]
+        tree = MerkleTree(leaves)
+        root = tree.root()
+        assert len(root) == 64
+        # Verify all inclusion proofs
+        for i in range(len(leaves)):
+            proof = tree.proof(i)
+            assert MerkleTree.verify_proof(leaves[i], proof, root) is True
 
     def test_exercise_omission_detection(self):
-        """Exercise: Detect specific omission patterns."""
-        pass
+        """Exercise: Detect specific omission patterns in hash chain."""
+        chain = HashChain()
+        r1 = WitnessReceipt(1, "act1", "hash1", chain.genesis, "2024-01-01T00:00:00Z")
+        chain.add_receipt(r1)
+        r2 = WitnessReceipt(2, "act2", "hash2", r1.compute_hash(), "2024-01-01T00:01:00Z")
+        chain.add_receipt(r2)
+        r3 = WitnessReceipt(3, "act3", "hash3", r2.compute_hash(), "2024-01-01T00:02:00Z")
+        chain.add_receipt(r3)
+
+        # Create tampered subchain omitting step 2 (r1 -> r3 directly)
+        omitted_chain = HashChain()
+        omitted_chain.add_receipt(r1)
+        with pytest.raises(ValueError, match="Hash chain break"):
+            omitted_chain.add_receipt(r3)
 
     def test_exercise_key_rotation(self):
-        """Exercise: Implement key rotation in evidence chain."""
-        pass
+        """Exercise: Verify receipts across signer identities."""
+        km = DemoKeyManager()
+        km.generate_key("DEMO_KEY_signer_v1")
+        km.generate_key("DEMO_KEY_signer_v2")
+        data = b"evidence_payload_test"
+        sig1 = km.sign("DEMO_KEY_signer_v1", data)
+        sig2 = km.sign("DEMO_KEY_signer_v2", data)
+        assert km.verify("DEMO_KEY_signer_v1", data, sig1) is True
+        assert km.verify("DEMO_KEY_signer_v2", data, sig2) is True
+        assert km.verify("DEMO_KEY_signer_v1", data, sig2) is False
 
     def test_exercise_partial_verification(self):
-        """Exercise: Verify subset of trace (checkpointing)."""
-        pass
+        """Exercise: Verify subset of trace (checkpointing with Merkle proof)."""
+        leaves = [hashlib.sha256(f"event_{i}".encode()).hexdigest() for i in range(8)]
+        tree = MerkleTree(leaves)
+        proof = tree.proof(3)
+        # Leaf 3 is verifiable against root without needing leaves 0, 1, 2, 4, 5, 6, 7
+        assert MerkleTree.verify_proof(leaves[3], proof, tree.root()) is True
 
 
 if __name__ == "__main__":

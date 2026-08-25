@@ -1,7 +1,7 @@
 """Standardized result schema for all demos."""
 
 from dataclasses import dataclass, asdict
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Optional
 import json
 import subprocess
@@ -25,7 +25,7 @@ class ResultRecord:
 
     def __post_init__(self):
         if not self.timestamp:
-            self.timestamp = datetime.utcnow().isoformat() + "Z"
+            self.timestamp = datetime.now(timezone.utc).isoformat()
         if self.metadata is None:
             self.metadata = {}
 

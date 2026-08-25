@@ -199,24 +199,52 @@ class TestExercises:
     """Exercise tests."""
 
     def test_exercise_scope_escape(self):
-        """Exercise: Demonstrate and fix scope escape."""
-        pass
+        """Exercise: Demonstrate and prevent scope escape attempts."""
+        scope = ScopeValidator(["localhost", "127.0.0.1"], [80, 443], ["http", "https"])
+        assert scope.validate(Target("external-host.com", 80, "http"))[0] is False
+        assert scope.validate(Target("localhost", 22, "ssh"))[0] is False
+        assert scope.validate(Target("127.0.0.1", 443, "https"))[0] is True
 
     def test_exercise_poisoned_output(self):
-        """Exercise: Handle poisoned scanner output."""
-        pass
+        """Exercise: Verify high taint assigned to poisoned scanner output."""
+        tracker = TaintTracker()
+        output = {"details": "password: SECRET_ADMIN_TOKEN_999", "injected": "CANARY_SCANNER_INJECTION_123"}
+        taint = tracker.track_output("chk_ex_01", output)
+        assert taint == TaintLevel.HIGH
 
     def test_exercise_unsafe_check_ast(self):
-        """Exercise: Extend AST validation for more patterns."""
-        pass
+        """Exercise: AST validation rejects destructive code checks."""
+        validator = CheckValidator()
+        destructive_check = ScannerCheck(
+            "ex_ast_01",
+            "Destructive Probe",
+            "code_exec",
+            Target("localhost", 8080, "http"),
+            "rm -rf /data",
+            "safe",
+            modifies_state=True
+        )
+        assert validator.validate(destructive_check)[0] is False
 
     def test_exercise_address_validation(self):
-        """Exercise: Add DNS resolution validation."""
-        pass
+        """Exercise: Validate allowed vs forbidden address formats."""
+        scope = ScopeValidator(["scan-target.local"], [80], ["http"])
+        assert scope.validate(Target("scan-target.local", 80, "http"))[0] is True
+        assert scope.validate(Target("scan-target.local.evil.com", 80, "http"))[0] is False
 
     def test_exercise_fail_closed(self):
-        """Exercise: Verify fail-closed on validator error."""
-        pass
+        """Exercise: Verify fail-closed behavior on unsafe check types."""
+        validator = CheckValidator()
+        unsafe_check = ScannerCheck(
+            "ex_unk_01",
+            "Unsafe Check",
+            "unsafe",
+            Target("localhost", 8080, "http"),
+            "probe",
+            "safe",
+            modifies_state=False
+        )
+        assert validator.validate(unsafe_check)[0] is False
 
 
 if __name__ == "__main__":

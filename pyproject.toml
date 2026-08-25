@@ -54,7 +54,7 @@ dependencies = [
     "pyyaml>=6.0",
     "cryptography>=41.0.0"
 ]
-urls = {Homepage = "https://github.com/agentic-security-demos/agentic-security-demos", Repository = "https://github.com/agentic-security-demos/agentic-security-demos", Issues = "https://github.com/agentic-security-demos/agentic-security-demos/issues", Documentation = "https://github.com/agentic-security-demos/agentic-security-demos/docs", Changelog = "https://github.com/agentic-security-demos/agentic-security-demos/CHANGELOG.md"}
+urls = {Homepage = "https://github.com/radanliev/agentic-security-demos", Repository = "https://github.com/radanliev/agentic-security-demos", Issues = "https://github.com/radanliev/agentic-security-demos/issues", Documentation = "https://gitlab.com/radanliev/agentic-security-demos", Changelog = "https://github.com/radanliev/agentic-security-demos/blob/main/docs/about/changelog.md"}
 
 [project.optional-dependencies]
 dev = [
@@ -65,7 +65,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["demo-*/tests"]
+testpaths = ["tests", "demo-*/tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]

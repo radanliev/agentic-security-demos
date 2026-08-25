@@ -4,11 +4,13 @@
 import json
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).parent / "student"))
+
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from inclusiontrap import GuardedInclusionAgent, ScopePolicy, Provenance
 
 def main():
-    data = json.loads(Path("fixtures/inclusion.json").read_text())
+    data = json.loads((base_dir / "fixtures" / "inclusion.json").read_text())
     files = data["files"]
     scope = ScopePolicy(data["agent_scope"]["allowed_read_paths"], data["agent_scope"]["denied_read_paths"])
     agent = GuardedInclusionAgent(files, scope)
@@ -34,7 +36,9 @@ def main():
         "results": results
     }
 
-    Path("results/inclusion_results.json").write_text(json.dumps(out, indent=2))
+    out_path = base_dir / "results" / "inclusion_results.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(out, indent=2))
     print(json.dumps(out, indent=2))
 
 if __name__ == "__main__":

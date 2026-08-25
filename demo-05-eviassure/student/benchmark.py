@@ -5,7 +5,9 @@ import json
 import time
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).parent / "student"))
+
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from eviassure import HashChain, MerkleTree, WitnessReceipt
 import hashlib
 
@@ -45,7 +47,9 @@ def main():
 
         results["benchmarks"].append({"trace_size": size, "verify_time_ms": round(elapsed, 2)})
 
-    Path("results/benchmark.json").write_text(json.dumps(results, indent=2))
+    out_path = base_dir / "results" / "benchmark.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(results, indent=2))
     print(json.dumps(results, indent=2))
 
 if __name__ == "__main__":

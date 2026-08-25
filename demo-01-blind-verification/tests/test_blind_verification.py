@@ -216,19 +216,27 @@ class TestExercises:
         assert len(oracles) >= 4
 
     def test_exercise_false_positive(self):
-        """Exercise 3: Create a commitment that passes oracle but is wrong."""
-        # Student crafts a commitment that exploits oracle weakness
-        pass
+        """Exercise 3: Test that invalid answers fail the sealed oracle."""
+        evaluator = OracleEvaluator(DEMO_DIR / "fixtures" / "sealed_oracles.json")
+        res = evaluator.evaluate("depdrift-002", "requests==1.0.0")
+        assert res["passed"] is False, "Oracle should reject incorrect adversarial prediction"
 
     def test_exercise_false_negative(self):
-        """Exercise 4: Create a correct commitment that fails strict oracle."""
-        # Student shows semantic equivalence that string match misses
-        pass
+        """Exercise 4: Test exact match behavior vs whitespace variants."""
+        evaluator = OracleEvaluator(DEMO_DIR / "fixtures" / "sealed_oracles.json")
+        exact_solution = "requests==2.31.0"
+        exact_eval = evaluator.evaluate("depdrift-002", exact_solution)
+        assert exact_eval["passed"] is True
+
+        # Variant with extra text fails exact output oracle
+        modified_solution = "requests==2.31.0  # comment"
+        modified_eval = evaluator.evaluate("depdrift-002", modified_solution)
+        assert modified_eval["passed"] is False
 
     def test_exercise_leakage(self):
-        """Exercise 5: Demonstrate and fix oracle leakage."""
-        # Student finds a way oracle info could leak, then fixes it
-        pass
+        """Exercise 5: Verify honest agent does not leak or reference sealed oracle fixture."""
+        agent_src = (DEMO_DIR / "student" / "verified_agent.py").read_text()
+        assert "sealed_oracles.json" not in agent_src, "Verified agent must not reference sealed oracles directly"
 
 
 if __name__ == "__main__":
