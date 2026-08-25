@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "student"))
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
 from inclusiontrap import (
     VulnerableInclusionAgent, GuardedInclusionAgent, ScopePolicy,
     InjectionDetector, Provenance, InclusionResult
@@ -21,7 +22,7 @@ class TestInclusionTrap:
 
     @pytest.fixture
     def data(self):
-        return json.loads(Path("fixtures/inclusion.json").read_text())
+        return json.loads((DEMO_DIR / "fixtures" / "inclusion.json").read_text())
 
     @pytest.fixture
     def scope(self, data):

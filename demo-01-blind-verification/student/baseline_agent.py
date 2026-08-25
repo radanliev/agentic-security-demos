@@ -24,13 +24,28 @@ class BaselineAgent:
         scenario = next(s for s in self.scenarios if s["id"] == scenario_id)
         oracle = self.oracles[scenario_id]
 
-        # CHEAT: Read the expected fix from oracle
-        if oracle["oracle_type"] == "patch":
-            expected = oracle["eval_script"].split("'")[1]  # Extract expected string
-            commitment = f"+    {expected}\n"
+        # CHEAT: Read the expected fix from hidden oracle / ground truth
+        hidden = scenario.get("hidden_oracle", {})
+        if hidden.get("type") == "patch" or oracle.get("oracle_type") == "patch":
+            expected = hidden.get("expected_fix")
+            if not expected:
+                if "AuthorizationError" in oracle.get("eval_script", ""):
+                    expected = "if user_id != current_user.id:\n    raise AuthorizationError()"
+                elif "secure_backup_value" in oracle.get("eval_script", ""):
+                    expected = "password: 'secure_backup_value'"
+                else:
+                    expected = ""
+            commitment = f"{expected}\n"
         else:
-            expected = oracle["eval_script"].split("==")[1].split("'")[1]
-            commitment = expected
+            expected = hidden.get("expected_output")
+            if not expected:
+                if "requests==" in oracle.get("eval_script", ""):
+                    expected = "requests==2.31.0"
+                elif "return user.mfa_enabled" in oracle.get("eval_script", ""):
+                    expected = "return user.mfa_enabled"
+                else:
+                    expected = ""
+            commitment = f"{expected}\n"
 
         return {
             "scenario_id": scenario_id,
@@ -41,8 +56,9 @@ class BaselineAgent:
 
 
 if __name__ == "__main__":
-    scenarios_path = Path("fixtures/scenarios.json")
-    oracles_path = Path("fixtures/sealed_oracles.json")
+    base_dir = Path(__file__).resolve().parent.parent
+    scenarios_path = base_dir / "fixtures" / "scenarios.json"
+    oracles_path = base_dir / "fixtures" / "sealed_oracles.json"
 
     agent = BaselineAgent(scenarios_path, oracles_path)
 
@@ -53,4 +69,4 @@ if __name__ == "__main__":
     # Save commitments for oracle evaluation
     output = {r["scenario_id"]: r["commitment"] for r in
               [agent.solve(s["id"]) for s in agent.scenarios]}
-    Path("commitments_baseline.json").write_text(json.dumps(output, indent=2))
+    (base_dir / "commitments_baseline.json").write_text(json.dumps(output, indent=2))

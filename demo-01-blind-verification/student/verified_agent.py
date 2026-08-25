@@ -81,7 +81,8 @@ class VerifiedAgent:
 
 
 if __name__ == "__main__":
-    scenarios_path = Path("fixtures/scenarios.json")
+    base_dir = Path(__file__).resolve().parent.parent
+    scenarios_path = base_dir / "fixtures" / "scenarios.json"
 
     agent = VerifiedAgent(scenarios_path)
 
@@ -92,4 +93,4 @@ if __name__ == "__main__":
     # Save commitments for oracle evaluation
     output = {r["scenario_id"]: r["commitment"] for r in
               [agent.solve(s["id"]) for s in agent.scenarios]}
-    Path("commitments_verified.json").write_text(json.dumps(output, indent=2))
+    (base_dir / "commitments_verified.json").write_text(json.dumps(output, indent=2))

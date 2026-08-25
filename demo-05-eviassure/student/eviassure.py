@@ -258,13 +258,15 @@ class ReleaseGate:
 def main():
     print("=== EVIAssure Demo ===\n")
 
+    base_dir = Path(__file__).resolve().parent.parent
+
     # Setup
     key_manager = DemoKeyManager()
     release_key = key_manager.generate_key("DEMO_KEY_RELEASE_001")
     gate = ReleaseGate(key_manager)
 
     # Load trace
-    trace_path = Path("fixtures/trace.json")
+    trace_path = base_dir / "fixtures" / "trace.json"
 
     print("1. Verifying complete trace...")
     result = gate.verify_trace(trace_path)
@@ -276,7 +278,7 @@ def main():
     # Tamper: modify step 3 data
     trace_data = json.loads(trace_path.read_text())
     trace_data["trace"][2]["data"]["passed"] = 99  # Changed from 95
-    tampered_path = Path("results/tampered_trace.json")
+    tampered_path = base_dir / "results" / "tampered_trace.json"
     tampered_path.parent.mkdir(exist_ok=True)
     tampered_path.write_text(json.dumps(trace_data, indent=2))
     result2 = gate.verify_trace(tampered_path)
@@ -288,7 +290,7 @@ def main():
     trace_data2 = json.loads(trace_path.read_text())
     trace_data2["trace"].pop(3)  # Remove security_scan
     trace_data2["closing_counts"]["total_steps"] = 5
-    omitted_path = Path("results/omitted_trace.json")
+    omitted_path = base_dir / "results" / "omitted_trace.json"
     omitted_path.write_text(json.dumps(trace_data2, indent=2))
     result3 = gate.verify_trace(omitted_path)
     print(f"   Omitted trace: {'PASS' if result3['passed'] else 'FAIL'}")
@@ -297,7 +299,7 @@ def main():
     print("\n4. Testing malformed closing count...")
     trace_data3 = json.loads(trace_path.read_text())
     trace_data3["closing_counts"]["total_steps"] = 999
-    bad_count_path = Path("results/bad_count_trace.json")
+    bad_count_path = base_dir / "results" / "bad_count_trace.json"
     bad_count_path.write_text(json.dumps(trace_data3, indent=2))
     result4 = gate.verify_trace(bad_count_path)
     print(f"   Bad closing count: {'PASS' if result4['passed'] else 'FAIL'}")
@@ -325,13 +327,13 @@ def main():
     # Sign receipts
     for r in chain.receipts:
         receipt_dict = r.to_dict()
+        receipt_dict["signer_id"] = "DEMO_KEY_RELEASE_001"
         receipt_bytes = json.dumps({k: v for k, v in receipt_dict.items() if k != "signature"}, sort_keys=True).encode()
         sig = key_manager.sign("DEMO_KEY_RELEASE_001", receipt_bytes)
         receipt_dict["signature"] = sig
-        receipt_dict["signer_id"] = "DEMO_KEY_RELEASE_001"
         evidence["signed_receipts"].append(receipt_dict)
 
-    evidence_path = Path("results/evidence_package.json")
+    evidence_path = base_dir / "results" / "evidence_package.json"
     evidence_path.write_text(json.dumps(evidence, indent=2))
 
     result5 = gate.verify_signed_evidence(evidence_path)
@@ -341,7 +343,7 @@ def main():
 
     print("\n7. Testing incomplete evidence...")
     incomplete_evidence = {"trace_path": str(trace_path), "signed_receipts": []}  # No signatures
-    inc_path = Path("results/incomplete_evidence.json")
+    inc_path = base_dir / "results" / "incomplete_evidence.json"
     inc_path.write_text(json.dumps(incomplete_evidence, indent=2))
     result6 = gate.verify_signed_evidence(inc_path)
     print(f"   Incomplete evidence: {'PASS' if result6['passed'] else 'FAIL'}")

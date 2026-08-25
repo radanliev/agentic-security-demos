@@ -10,7 +10,8 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "student"))
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
 from eviassure import (
     WitnessReceipt, HashChain, MerkleTree, DemoKeyManager, ReleaseGate
 )
@@ -21,7 +22,7 @@ class TestEVIAssure:
 
     @pytest.fixture
     def trace_path(self):
-        return Path("fixtures/trace.json")
+        return DEMO_DIR / "fixtures" / "trace.json"
 
     @pytest.fixture
     def key_manager(self):
@@ -112,7 +113,7 @@ class TestEVIAssure:
         """Modified event fails verification when checked against signed receipts."""
         trace_data = json.loads(trace_path.read_text())
         trace_data["trace"][2]["data"]["passed"] = 99
-        tampered = Path("results/tampered_trace.json")
+        tampered = DEMO_DIR / "results" / "tampered_trace.json"
         tampered.parent.mkdir(exist_ok=True)
         tampered.write_text(json.dumps(trace_data, indent=2))
 
@@ -124,7 +125,7 @@ class TestEVIAssure:
         # Create evidence with original signatures (would fail in real scenario)
         # For this test, we verify that incomplete evidence is rejected
         evidence = {"trace_path": str(tampered), "signed_receipts": []}
-        inc_path = Path("results/tampered_evidence.json")
+        inc_path = DEMO_DIR / "results" / "tampered_evidence.json"
         inc_path.parent.mkdir(exist_ok=True)
         inc_path.write_text(json.dumps(evidence, indent=2))
         result = gate.verify_signed_evidence(inc_path)
@@ -136,7 +137,7 @@ class TestEVIAssure:
         trace_data = json.loads(trace_path.read_text())
         trace_data["trace"].pop(3)
         trace_data["closing_counts"]["total_steps"] = 5
-        omitted = Path("results/omitted_trace.json")
+        omitted = DEMO_DIR / "results" / "omitted_trace.json"
         omitted.parent.mkdir(exist_ok=True)
         omitted.write_text(json.dumps(trace_data, indent=2))
 
@@ -148,7 +149,7 @@ class TestEVIAssure:
         """Malformed closing count rejected."""
         trace_data = json.loads(trace_path.read_text())
         trace_data["closing_counts"]["total_steps"] = 999
-        bad = Path("results/bad_count_trace.json")
+        bad = DEMO_DIR / "results" / "bad_count_trace.json"
         bad.parent.mkdir(exist_ok=True)
         bad.write_text(json.dumps(trace_data, indent=2))
 
@@ -175,7 +176,7 @@ class TestEVIAssure:
         """Release blocked when evidence incomplete."""
         # Create evidence without signatures
         evidence = {"trace_path": str(trace_path), "signed_receipts": []}
-        inc_path = Path("results/incomplete_evidence.json")
+        inc_path = DEMO_DIR / "results" / "incomplete_evidence.json"
         inc_path.parent.mkdir(exist_ok=True)
         inc_path.write_text(json.dumps(evidence, indent=2))
 

@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "student"))
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
 from policy_gate import PolicyGate, Waiver
 
 
@@ -18,11 +19,11 @@ class TestAIBOMDrift:
 
     @pytest.fixture
     def gate(self):
-        return PolicyGate(Path("fixtures/aibom.json"))
+        return PolicyGate(DEMO_DIR / "fixtures" / "aibom.json")
 
     @pytest.fixture
     def scenarios(self):
-        return json.loads(Path("fixtures/aibom.json").read_text())["drift_scenarios"]
+        return json.loads((DEMO_DIR / "fixtures" / "aibom.json").read_text())["drift_scenarios"]
 
     def test_compliant_system_passes(self, gate):
         """Compliant system should pass."""
@@ -128,27 +129,27 @@ class TestExercises:
 
     def test_exercise_new_drift_scenario(self):
         """Exercise: Add a new drift scenario to fixtures."""
-        scenarios = json.loads(Path("fixtures/aibom.json").read_text())["drift_scenarios"]
+        scenarios = json.loads((DEMO_DIR / "fixtures" / "aibom.json").read_text())["drift_scenarios"]
         # Student adds scenario with network capability drift
         assert len(scenarios) >= 4
 
     def test_exercise_waiver_expiration(self):
         """Exercise: Test waiver expiration edge cases."""
-        gate = PolicyGate(Path("fixtures/aibom.json"))
+        gate = PolicyGate(DEMO_DIR / "fixtures" / "aibom.json")
         # Test waiver expiring exactly now
         waiver = Waiver("exec:tools:scanner", "test", True, "2020-01-01T00:00:00Z")
         assert waiver.is_valid() is False
 
     def test_exercise_pattern_matching(self):
         """Exercise: Extend pattern matching for complex capabilities."""
-        gate = PolicyGate(Path("fixtures/aibom.json"))
+        gate = PolicyGate(DEMO_DIR / "fixtures" / "aibom.json")
         # Test wildcard matching
         assert gate._match_pattern("read:files:/workspace/*", "read:files:/workspace/data.txt")
         assert not gate._match_pattern("read:files:/workspace/*", "read:files:/etc/passwd")
 
     def test_exercise_json_results(self):
         """Exercise: Generate reproducible JSON results."""
-        gate = PolicyGate(Path("fixtures/aibom.json"))
+        gate = PolicyGate(DEMO_DIR / "fixtures" / "aibom.json")
         result = gate.evaluate_system(["read:files:/workspace/*"])
         # Should be serializable
         import json

@@ -89,6 +89,23 @@ make test            # All 170 tests (offline, deterministic)
 | **09** | [InterceptBound](demo-09-interceptbound/) | Taint tracking, ephemeral buffers | Taint blocks privileged actions | 45 min |
 | **10** | [ScanBound](demo-10-scanbound/) | Vuln scan scope, AST validation | Taint-aware downstream actions | 45 min |
 
+### 🔬 Relationship to Conference Research Papers (Parts 1–10)
+
+Each demo in this repository is a lightweight, self-contained educational distillation of an advanced research paper in the Agentic AI Security programme:
+
+| # | Educational Demo | Research Conference Paper | Target Venue | Core Security Primitive |
+|---|---|---|---|---|
+| **01** | `demo-01-blind-verification` | `demo-1-blind-verification-agentic-ai` | **IEEE SaTML** | Blind commitment, pre-registration & executable patch oracles |
+| **02** | `demo-02-supply-chain-aibom` | `demo-2-agentic-supply-chain-aibom-drift` | **IEEE S&P / Workshop** | AIBOM runtime drift, signed waivers & least-privilege analysis |
+| **03** | `demo-03-eval-invariants` | `demo-3-eval-design-invariants-neurips` | **NeurIPS** | 5 evaluation invariants (leakage, difficulty, stability, classification, metadata) |
+| **04** | `demo-04-authoritybound` | `demo-4-prompt-injection-tool-authority-ieee-sp` | **IEEE S&P** | Tool authority confinement, provenance tagging & capability tokens |
+| **05** | `demo-05-eviassure` | `demo-5-evidence-release-assurance-usenix` | **USENIX Security** | Cryptographic evidence assurance, hash chains, Merkle trees & release gates |
+| **06** | `demo-06-reconscope` | `demo-6-agentic-network-recon-ndss` | **NDSS** | Network packet capture as indirect prompt injection channel |
+| **07** | `demo-07-triagetrap` | `demo-7-agentic-malware-triage-raid` | **RAID** | Safe malware triage, canary observations vs instructions, sandbox trust |
+| **08** | `demo-08-inclusiontrap` | `demo-8-agentic-file-inclusion-asiaccs` | **AsiaCCS** | Local & remote file inclusion boundaries, reading data vs executing instructions |
+| **09** | `demo-09-interceptbound` | `demo-9-agentic-mitm-esorics` | **ESORICS** | MITM traffic interception, taint propagation & ephemeral buffer security |
+| **10** | `demo-10-scanbound` | `demo-10-agentic-vuln-assessment-acsac` | **ACSAC** | Vulnerability scanning scope confinement & AST safety analysis |
+
 ---
 
 ## 🛡️ Safety Guarantees (Verified by CI)

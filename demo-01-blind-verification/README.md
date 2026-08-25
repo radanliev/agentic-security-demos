@@ -49,14 +49,31 @@ An agent that explains "I would have done X" after seeing the test is not verifi
 | OS | Linux/macOS/Windows |
 | Command | `make demo DEMO=01` |
 
+## Conference Paper Alignment (Paper 1: IEEE SaTML)
+
+This demo is the educational companion to **Conference Paper 1** (`demo-1-blind-verification-agentic-ai`):
+> **Blind Verification for Agentic AI: Making Security Assessment Falsifiable Before Reveal** (IEEE SaTML)
+
+### Defect Family & Scenario Mapping
+
+| Demo Scenario | Security Theme | Conference Paper Defect Variant | Failure Mode |
+|---|---|---|---|
+| `authz-001` | Broken authorization check | `v1-vulnerability` | Authz bypass & role drift |
+| `depdrift-002` | Vulnerable dependency CVE | `v2-supply-chain-drift` | Unpinned dependency / AIBOM drift |
+| `poisoned-003` | Poisoned config restore | `v3-poisoned-memory` | Unsigned / tampered memory / config |
+| `restored-004` | Security control restoration | `v4-controls-applied` | Security control verified / restored |
+
+### Why Baseline Scores 4/4 and Verified Scores 3/4
+
+- **Baseline Agent (Cheating / Post-Hoc)**: Peeks at `fixtures/sealed_oracles.json` before committing. It scores **4/4 (100%)**, demonstrating that post-hoc or unblinded evaluations measure oracle leakage rather than real capability.
+- **Verified Agent (Honest / Blind)**: Sees only `fixtures/scenarios.json` and commits *prior* to oracle reveal. It scores **3/4 (75%)** and honestly fails `restored-004` because blind commitment prevents guessing under underspecified conditions.
+
 ## Difference from Private Research Benchmark
 
-| Aspect | Private Research | This Teaching Demo |
-|--------|------------------|-------------------|
+| Aspect | Research Benchmark (Paper 1) | This Teaching Demo (Demo 01) |
+|--------|------------------------------|-----------------------------|
 | Data | Real repositories, PRs, issues | Synthetic support tickets + repo operations |
-| Scale | Thousands of tasks | 10-20 synthetic scenarios |
-| Oracle | Complex multi-model evaluation | Deterministic patch/output checks |
-| Claims | Performance metrics, statistical significance | **No performance claims** — teaching only |
-| Leakage control | Cryptographic commitments | Simple file-based sealing |
-
-The private benchmark uses cryptographic commitments, larger task corpora, and statistical analysis. This demo teaches the *concept* with minimal, inspectable code.
+| Scale | Multi-agent finite-run study (N=80) | 4 core synthetic scenarios |
+| Oracle | Diff-level patch oracle + executable invariants | Deterministic patch/output checks |
+| Claims | Formal statistical power & hypothesis testing | **No performance claims** — educational only |
+| Leakage control | Cryptographic SHA-256 seal prior to reveal | File-based sealing & honesty boundary |

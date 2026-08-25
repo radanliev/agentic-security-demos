@@ -49,6 +49,7 @@ htmlcov/
 # Local development
 .env
 .env.local
+test_lagrange.py
 
 # Private instructor materials (excluded from public repo)
 solutions/
