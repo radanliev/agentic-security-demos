@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "student"))
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
 from triagetrap import (
     Artifact, Provenance, Verdict, BaselineTriageAgent, ProvenanceAwareTriageAgent,
     PromptInjectionDetector, BaseRateCalculator
@@ -21,7 +22,7 @@ class TestTriageTrap:
 
     @pytest.fixture
     def data(self):
-        return json.loads(Path("fixtures/artifacts.json").read_text())
+        return json.loads((DEMO_DIR / "fixtures" / "artifacts.json").read_text())
 
     @pytest.fixture
     def artifacts(self, data):
@@ -130,8 +131,8 @@ class TestTriageTrap:
     def test_never_execute_unknown_files(self):
         """Core safety rule: never execute unknown files."""
         # This is a design principle test - verify no exec calls in code
-        import student.triagetrap as mod
-        source = Path("student/triagetrap.py").read_text()
+        import triagetrap as mod
+        source = (DEMO_DIR / "student" / "triagetrap.py").read_text()
         assert "exec(" not in source
         assert "eval(" not in source
         assert "subprocess" not in source

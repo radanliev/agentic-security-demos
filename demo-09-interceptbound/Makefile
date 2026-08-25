@@ -16,7 +16,7 @@ help:
 
 setup:
 	@echo "Setting up demo-09-interceptbound..."
-	@$(PYTHON) -m pip install -q -r ../../requirements.txt 2>/dev/null || true
+	@$(PYTHON) -m pip install -q -r ../requirements.txt 2>/dev/null || true
 	@mkdir -p $(DEMO_DIR)/results
 	@echo "Setup complete."
 

@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "student"))
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
 from scanbound import (
     Target, ScannerCheck, ScopeValidator, CheckValidator,
     TaintTracker, ActionPolicy, UnconstrainedScanner, ScopeBoundScanner,
@@ -22,7 +23,7 @@ class TestScanBound:
 
     @pytest.fixture
     def data(self):
-        return json.loads(Path("fixtures/scanbound.json").read_text())
+        return json.loads((DEMO_DIR / "fixtures" / "scanbound.json").read_text())
 
     @pytest.fixture
     def scope(self, data):

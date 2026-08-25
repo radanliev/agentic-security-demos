@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "student"))
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
 from authoritybound import (
     MockAgent, PolicyMediator, CapabilityToken, ToolCall,
     Tool, Provenance, create_baseline_agent, create_provenance_aware_agent, create_scope_bound_agent
@@ -21,7 +22,7 @@ class TestAuthorityBound:
 
     @pytest.fixture
     def data(self):
-        return json.loads(Path("fixtures/authoritybound.json").read_text())
+        return json.loads((DEMO_DIR / "fixtures" / "authoritybound.json").read_text())
 
     @pytest.fixture
     def baseline_agent(self):

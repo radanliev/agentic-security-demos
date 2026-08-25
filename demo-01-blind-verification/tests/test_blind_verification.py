@@ -14,17 +14,21 @@ from pathlib import Path
 
 import pytest
 
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
+from oracle_evaluator import OracleEvaluator
+
 
 class TestBlindVerification:
     """Tests for the blind verification workflow."""
 
     @pytest.fixture
     def scenarios(self):
-        return json.loads(Path("fixtures/scenarios.json").read_text())["scenarios"]
+        return json.loads((DEMO_DIR / "fixtures" / "scenarios.json").read_text())["scenarios"]
 
     @pytest.fixture
     def oracles(self):
-        return json.loads(Path("fixtures/sealed_oracles.json").read_text())["sealed_oracles"]
+        return json.loads((DEMO_DIR / "fixtures" / "sealed_oracles.json").read_text())["sealed_oracles"]
 
     def test_scenarios_exist(self, scenarios):
         """Verify all expected scenarios are present."""
@@ -41,36 +45,38 @@ class TestBlindVerification:
             assert "commitment_hash" in oracle
 
     def test_baseline_agent_cheats(self):
-        """Baseline agent peeks at oracles - should pass but is invalid."""
+        """Baseline agent peeks at oracles - passes all 4 (demonstrating oracle leakage)."""
         result = subprocess.run([
-            sys.executable, "student/baseline_agent.py"
-        ], capture_output=True, text=True, cwd=Path(__file__).parent.parent)
+            sys.executable, str(DEMO_DIR / "student" / "baseline_agent.py")
+        ], capture_output=True, text=True, cwd=DEMO_DIR)
 
         assert result.returncode == 0
-        commitments = json.loads(Path("commitments_baseline.json").read_text())
+        commitments = json.loads((DEMO_DIR / "commitments_baseline.json").read_text())
         assert len(commitments) == 4
+
+        evaluator = OracleEvaluator(DEMO_DIR / "fixtures" / "sealed_oracles.json")
+        results = evaluator.evaluate_all(commitments)
+        assert results["summary"]["passed"] == 4
 
     def test_verified_agent_blind(self):
         """Verified agent does not access oracles."""
         # Verify source code doesn't import oracles
-        source = Path("student/verified_agent.py").read_text()
+        source = (DEMO_DIR / "student" / "verified_agent.py").read_text()
         assert "sealed_oracles" not in source
         assert "oracle" not in source.lower() or "oracle_type" not in source
 
         # Run it
         result = subprocess.run([
-            sys.executable, "student/verified_agent.py"
-        ], capture_output=True, text=True, cwd=Path(__file__).parent.parent)
+            sys.executable, str(DEMO_DIR / "student" / "verified_agent.py")
+        ], capture_output=True, text=True, cwd=DEMO_DIR)
 
         assert result.returncode == 0
-        commitments = json.loads(Path("commitments_verified.json").read_text())
+        commitments = json.loads((DEMO_DIR / "commitments_verified.json").read_text())
         assert len(commitments) == 4
 
     def test_oracle_evaluation(self, oracles):
         """Test oracle evaluation logic."""
-        from student.oracle_evaluator import OracleEvaluator
-
-        evaluator = OracleEvaluator(Path("fixtures/sealed_oracles.json"))
+        evaluator = OracleEvaluator(DEMO_DIR / "fixtures" / "sealed_oracles.json")
 
         # Test with known good commitments
         good_commitments = {
@@ -90,7 +96,7 @@ class TestBlindVerification:
         An agent that explains after seeing the test is not verified.
         """
         # Simulate an agent that "explains" after seeing oracle
-        oracle = json.loads(Path("fixtures/sealed_oracles.json").read_text())["sealed_oracles"]["authz-001"]
+        oracle = json.loads((DEMO_DIR / "fixtures" / "sealed_oracles.json").read_text())["sealed_oracles"]["authz-001"]
 
         # Post-hoc explanation: "I would have added authorization check"
         post_hoc = "I would have added an authorization check comparing user_id to current_user.id"
@@ -102,9 +108,7 @@ class TestBlindVerification:
 
     def test_false_positive_detection(self, oracles):
         """Test that incorrect commitments are caught."""
-        from student.oracle_evaluator import OracleEvaluator
-
-        evaluator = OracleEvaluator(Path("fixtures/sealed_oracles.json"))
+        evaluator = OracleEvaluator(DEMO_DIR / "fixtures" / "sealed_oracles.json")
 
         # Wrong fix for authz - missing the actual check
         bad_commitments = {
@@ -116,9 +120,7 @@ class TestBlindVerification:
 
     def test_false_negative_detection(self, oracles):
         """Test that correct but differently-formatted commits may fail."""
-        from student.oracle_evaluator import OracleEvaluator
-
-        evaluator = OracleEvaluator(Path("fixtures/sealed_oracles.json"))
+        evaluator = OracleEvaluator(DEMO_DIR / "fixtures" / "sealed_oracles.json")
 
         # Correct logic but different formatting
         alt_commitments = {
@@ -131,7 +133,7 @@ class TestBlindVerification:
 
     def test_leakage_prevention(self):
         """Verify no oracle data leaks into agent input."""
-        verified_source = Path("student/verified_agent.py").read_text()
+        verified_source = (DEMO_DIR / "student" / "verified_agent.py").read_text()
 
         # Check no direct oracle access
         assert "json.loads" not in verified_source or "sealed_oracles" not in verified_source
@@ -147,19 +149,19 @@ class TestComparisonTable:
 
     def test_generate_comparison(self):
         """Generate a comparison table from local fixtures."""
-        from student.oracle_evaluator import OracleEvaluator
-
-        evaluator = OracleEvaluator(Path("fixtures/sealed_oracles.json"))
+        evaluator = OracleEvaluator(DEMO_DIR / "fixtures" / "sealed_oracles.json")
 
         # Baseline (cheating) commitments
+        baseline_file = DEMO_DIR / "commitments_baseline.json"
         baseline_commitments = json.loads(
-            Path("commitments_baseline.json").read_text()
-        ) if Path("commitments_baseline.json").exists() else {}
+            baseline_file.read_text()
+        ) if baseline_file.exists() else {}
 
         # Verified (blind) commitments
+        verified_file = DEMO_DIR / "commitments_verified.json"
         verified_commitments = json.loads(
-            Path("commitments_verified.json").read_text()
-        ) if Path("commitments_verified.json").exists() else {}
+            verified_file.read_text()
+        ) if verified_file.exists() else {}
 
         baseline_results = evaluator.evaluate_all(baseline_commitments) if baseline_commitments else {"summary": {"passed": 0, "total": 0}}
         verified_results = evaluator.evaluate_all(verified_commitments) if verified_commitments else {"summary": {"passed": 0, "total": 0}}
@@ -188,8 +190,9 @@ class TestComparisonTable:
             }
         }
 
-        Path("results/comparison_table.json").parent.mkdir(exist_ok=True)
-        Path("results/comparison_table.json").write_text(json.dumps(table, indent=2))
+        out_path = DEMO_DIR / "results" / "comparison_table.json"
+        out_path.parent.mkdir(exist_ok=True)
+        out_path.write_text(json.dumps(table, indent=2))
 
         assert True  # Table generated
 
@@ -202,14 +205,14 @@ class TestExercises:
         """Exercise 1: Implement blind commitment for a new scenario."""
         # Student adds a new scenario to fixtures/scenarios.json
         # and implements blind logic in verified_agent.py
-        scenarios = json.loads(Path("fixtures/scenarios.json").read_text())["scenarios"]
+        scenarios = json.loads((DEMO_DIR / "fixtures" / "scenarios.json").read_text())["scenarios"]
         # New scenario would be added here
         assert len(scenarios) >= 4
 
     def test_exercise_oracle_design(self):
         """Exercise 2: Design an oracle for a custom task."""
         # Student creates a new oracle type (e.g., score-based)
-        oracles = json.loads(Path("fixtures/sealed_oracles.json").read_text())["sealed_oracles"]
+        oracles = json.loads((DEMO_DIR / "fixtures" / "sealed_oracles.json").read_text())["sealed_oracles"]
         assert len(oracles) >= 4
 
     def test_exercise_false_positive(self):

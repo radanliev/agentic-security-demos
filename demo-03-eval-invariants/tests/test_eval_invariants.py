@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "student"))
+DEMO_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(DEMO_DIR / "student"))
 from eval_invariants import EvaluationInvariants
 
 
@@ -18,7 +19,7 @@ class TestEvalInvariants:
 
     @pytest.fixture
     def invariants(self):
-        return EvaluationInvariants(Path("fixtures/eval_data.json"))
+        return EvaluationInvariants(DEMO_DIR / "fixtures" / "eval_data.json")
 
     def test_invariant_1_no_leakage(self, invariants):
         """Invariant 1: No test leakage."""
@@ -84,10 +85,11 @@ class TestEvalInvariants:
     def test_json_results_generated(self, invariants):
         """Verify machine-readable JSON results."""
         results = invariants.run_all()
-        Path("results/invariant_results.json").parent.mkdir(exist_ok=True)
-        Path("results/invariant_results.json").write_text(json.dumps(results, indent=2))
+        out_path = DEMO_DIR / "results" / "invariant_results.json"
+        out_path.parent.mkdir(exist_ok=True)
+        out_path.write_text(json.dumps(results, indent=2))
 
-        loaded = json.loads(Path("results/invariant_results.json").read_text())
+        loaded = json.loads(out_path.read_text())
         assert "summary" in loaded
         assert "all_passed" in loaded["summary"]
 
