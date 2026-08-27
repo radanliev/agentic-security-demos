@@ -8,14 +8,6 @@
         "files": {
           "app/api/users.py": "def get_user_data(user_id: str, current_user: User):\n    # TODO: Add authorization check\n    return db.query(UserData).filter_by(user_id=user_id).first()"
         }
-      },
-      "hidden_oracle": {
-        "type": "patch",
-        "expected_fix": "if user_id != current_user.id:\n    raise AuthorizationError()",
-        "test_cases": [
-          {"input": {"user_id": "user-123", "current_user": {"id": "user-123"}}, "expect": "success"},
-          {"input": {"user_id": "user-456", "current_user": {"id": "user-123"}}, "expect": "AuthorizationError"}
-        ]
       }
     },
     {
@@ -26,13 +18,6 @@
         "files": {
           "requirements.txt": "requests==2.28.0\nflask==2.3.0"
         }
-      },
-      "hidden_oracle": {
-        "type": "output",
-        "expected_output": "requests==2.31.0",
-        "test_cases": [
-          {"input": {}, "expect": "requirements.txt contains requests==2.31.0"}
-        ]
       }
     },
     {
@@ -44,33 +29,19 @@
           "config/prod.yaml": "database:\n  host: localhost\n  port: 5432\n  password: 'injected_malicious_value'",
           "backup/prod.yaml.bak": "database:\n  host: localhost\n  port: 5432\n  password: 'secure_backup_value'"
         }
-      },
-      "hidden_oracle": {
-        "type": "patch",
-        "expected_fix": "password: 'secure_backup_value'",
-        "test_cases": [
-          {"input": {}, "expect": "config matches backup exactly"}
-        ]
       }
     },
     {
       "id": "restored-004",
       "task": "Verify security control restoration after incident",
-      "context": "After a security incident, MFA enforcement was disabled. Verify it's re-enabled.",
+      "context": "During incident INC-2291 an enforcement control in the auth module was temporarily disabled. Confirm the control is restored before the ticket is closed.",
       "codebase": {
         "files": {
-          "app/auth/mfa.py": "def require_mfa(user):\n    # Incident: temporarily disabled\n    return True  # Should be: return user.mfa_enabled"
+          "app/auth/mfa.py": "def require_mfa(user):\n    # INC-2291: temporarily disabled\n    return True"
         }
-      },
-      "hidden_oracle": {
-        "type": "output",
-        "expected_output": "return user.mfa_enabled",
-        "test_cases": [
-          {"input": {"user": {"mfa_enabled": true}}, "expect": true},
-          {"input": {"user": {"mfa_enabled": false}}, "expect": false}
-        ]
       }
     }
   ],
-  "seed": 42
+  "seed": 42,
+  "note": "This file is the ONLY input the blind (verified) agent reads. It must never contain oracle answers; see tests/test_blind_verification.py::test_leakage_prevention."
 }

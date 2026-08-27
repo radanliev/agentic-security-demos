@@ -33,9 +33,9 @@ demo: setup
 	@echo "Step 2: Run verified agent (blind commitment)"
 	@cd $(DEMO_DIR) && $(PYTHON) student/verified_agent.py
 	@echo ""
-	@echo "Step 3: Evaluate both against sealed oracles"
+	@echo "Step 3: Open the sealed oracles and evaluate both commitment sets"
 	@cd $(DEMO_DIR) && $(PYTHON) student/oracle_evaluator.py --commitments commitments_baseline.json --output results/baseline_eval.json
-	@cd $(DEMO_DIR) && $(PYTHON) student/oracle_evaluator.py --commitments commitments_verified.json --output results/verified_eval.json
+	@cd $(DEMO_DIR) && $(PYTHON) student/oracle_evaluator.py --commitments commitments_verified.json --hashes commitment_hashes_verified.json --output results/verified_eval.json
 	@echo ""
 	@echo "Step 4: Generate comparison table"
 	@cd $(DEMO_DIR) && $(PYTHON) -m pytest tests/test_blind_verification.py::TestComparisonTable::test_generate_comparison -v
@@ -44,7 +44,7 @@ demo: setup
 	@cat $(DEMO_DIR)/results/comparison_table.json | $(PYTHON) -m json.tool
 
 clean:
-	@rm -f $(DEMO_DIR)/commitments_*.json
+	@rm -f $(DEMO_DIR)/commitments_*.json $(DEMO_DIR)/commitment_hashes_*.json
 	@rm -rf $(DEMO_DIR)/results/
 	@rm -rf $(DEMO_DIR)/__pycache__
 	@rm -rf $(DEMO_DIR)/student/__pycache__

@@ -7,6 +7,7 @@ Tests for shared library modules:
 """
 
 import json
+import random
 import sys
 from pathlib import Path
 import pytest
@@ -15,7 +16,8 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR))
 
 from shared.result_schema import ResultRecord, write_result, read_results, capture_environment, format_command, get_git_commit
-from shared.reproducibility import generate_seed, deterministic_shuffle, set_global_seed, verify_offline
+from shared import reproducibility
+from shared.reproducibility import generate_seed, deterministic_shuffle, set_global_seed, enforce_offline, verify_offline
 from shared.fixtures import write_fixture, read_fixture, generate_canary, generate_fake_hash, generate_fake_package_name, make_deterministic_dict
 
 
@@ -64,7 +66,9 @@ class TestResultSchema:
         env = capture_environment()
         assert "Python" in env
         cmd = format_command("demo-05-eviassure", "benchmark")
-        assert "make demo DEMO=eviassure EXPERIMENT=benchmark" in cmd
+        assert cmd == "make demo DEMO=05 EXPERIMENT=benchmark"
+        assert format_command("05", "benchmark") == cmd
+        assert format_command("demo-10-scanbound", "scan") == "make demo DEMO=10 EXPERIMENT=scan"
         commit = get_git_commit()
         assert isinstance(commit, str) and len(commit) > 0
 
@@ -90,9 +94,25 @@ class TestReproducibility:
         assert sorted(shuffled1) == sorted(items)
         assert shuffled1 != shuffled3
 
-    def test_set_global_seed_and_offline(self):
+    def test_set_global_seed(self):
         set_global_seed(42)
+        a = random.random()
+        set_global_seed(42)
+        assert random.random() == a
+
+    def test_offline_guard_is_enforced_not_assumed(self, monkeypatch):
+        import socket
+        # Isolate the guard: restore the real socket functions afterwards.
+        for name in ("socket", "create_connection", "getaddrinfo", "gethostbyname"):
+            monkeypatch.setattr(socket, name, getattr(socket, name))
+        monkeypatch.setattr(reproducibility, "_ORIGINAL_SOCKET_ATTRS", {})
+        assert verify_offline() is False  # nothing installed yet -> not verified
+        enforce_offline()
         assert verify_offline() is True
+        with pytest.raises(RuntimeError):
+            socket.create_connection(("192.0.2.1", 80), timeout=0.1)
+        with pytest.raises(RuntimeError):
+            socket.getaddrinfo("example.com", 80)
 
 
 class TestFixtures:

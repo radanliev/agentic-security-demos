@@ -43,6 +43,8 @@ Every demo produces JSON results with this schema:
 
 ## Example Results
 
+Values below are from a real run of the patched repository (`make all-demos` at commit `71b37fc`); `commit`, `environment` and `result` are computed by every generator, never typed in.
+
 ### Demo 01: Comparison Table
 
 ```json
@@ -50,14 +52,14 @@ Every demo produces JSON results with this schema:
   "demo": "demo-01-blind-verification",
   "experiment": "comparison",
   "seed": 42,
-  "commit": "abc1234",
-  "environment": "Python 3.11, Ubuntu 22.04",
+  "commit": "71b37fc",
+  "environment": "Python 3.11.15, Linux",
   "command": "make demo DEMO=01",
   "result": "pass",
   "notes": "Synthetic teaching fixture",
   "comparison": {
-    "baseline": {"method": "post_hoc_with_oracle_access", "passed": 1, "total": 4},
-    "verified": {"method": "blind_commitment", "passed": 3, "total": 4}
+    "baseline": {"method": "post_hoc_with_oracle_access", "hash_bound": false, "passed": 4, "total": 4},
+    "verified": {"method": "blind_commitment", "hash_bound": true, "passed": 3, "total": 4}
   }
 }
 ```
@@ -69,14 +71,14 @@ Every demo produces JSON results with this schema:
   "demo": "demo-02-supply-chain-aibom",
   "experiment": "drift_detection",
   "seed": 42,
-  "commit": "local",
-  "environment": "test",
+  "commit": "71b37fc",
+  "environment": "Python 3.11.15, Linux",
   "command": "make demo DEMO=02",
   "result": "pass",
-  "notes": "Synthetic teaching fixture",
+  "notes": "Synthetic teaching fixture; evaluated at fixture evaluation_time 2025-01-14T12:00:00Z",
   "scenarios": [
-    {"scenario": "compliant-001", "expected": "pass", "compliant": true},
-    {"scenario": "drifted-002", "expected": "block", "compliant": false}
+    {"scenario": "compliant-001", "expected": "pass", "compliant": true, "drift_detected": false, "waiver_accepted": null, "matches_expected": true},
+    {"scenario": "drifted-002", "expected": "block", "compliant": false, "drift_detected": true, "waiver_accepted": null, "matches_expected": true}
   ]
 }
 ```
@@ -88,14 +90,14 @@ Every demo produces JSON results with this schema:
   "demo": "demo-05-eviassure",
   "experiment": "benchmark",
   "seed": 42,
-  "commit": "local",
-  "environment": "test",
+  "commit": "71b37fc",
+  "environment": "Python 3.11.15, Linux 6.18.44-fc-v21",
   "command": "make demo DEMO=05",
   "result": "pass",
-  "notes": "Synthetic teaching fixture",
+  "notes": "Synthetic teaching fixture; min of 5 runs; timings are machine-dependent, verdicts are not",
   "benchmarks": [
-    {"trace_size": 10, "verify_time_ms": 0.04},
-    {"trace_size": 50, "verify_time_ms": 0.18}
+    {"trace_size": 10, "chain_build_ms": 0.07, "verify_time_ms": 0.07, "proof_length": 4},
+    {"trace_size": 50, "chain_build_ms": 0.36, "verify_time_ms": 0.47, "proof_length": 6}
   ]
 }
 ```

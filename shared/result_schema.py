@@ -114,6 +114,23 @@ def capture_environment() -> str:
     return f"Python {sys.version.split()[0]}, {platform.system()} {platform.release()}"
 
 
-def format_command(demo: str, experiment: str) -> str:
-    """Format the standard command used to run this experiment."""
-    return f"make demo DEMO={demo.split('-')[-1]} EXPERIMENT={experiment}"
+def demo_number(demo: str) -> str:
+    """Return the two-digit demo number for a demo name or number.
+
+    Accepts "demo-05-eviassure", "05" or 5 and returns "05" — the form the
+    root Makefile's ``make demo DEMO=05`` expects.
+    """
+    text = str(demo)
+    if text.startswith("demo-"):
+        text = text.split("-")[1]
+    return text.zfill(2)
+
+
+def format_command(demo: str, experiment: str = "default") -> str:
+    """Format the standard command used to run this experiment.
+
+    ``EXPERIMENT`` is informational: the root Makefile runs the demo's own
+    ``make demo`` target and ignores the variable, so the command runs as
+    printed.
+    """
+    return f"make demo DEMO={demo_number(demo)} EXPERIMENT={experiment}"

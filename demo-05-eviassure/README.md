@@ -15,19 +15,22 @@
 
 **Evidence-backed release assurance** uses cryptographic evidence to support release decisions. Instead of trusting "it passed tests," you verify a tamper-evident chain of evidence:
 
-1. **Witness receipts**: Signed attestations of each step
-2. **Hash chaining**: Each receipt includes hash of previous (sequence-bound)
+1. **Witness receipts**: Attestations of each step (step, action, hash of the step's data, previous hash, timestamp)
+2. **Hash chaining**: Each receipt includes the hash of the previous one (sequence-bound)
 3. **Merkle tree**: Efficient inclusion proofs for large evidence sets
-4. **Release gate**: Verifies complete, unmodified evidence before release
+4. **Signed receipts**: Each receipt signed (Ed25519) by the release key
+5. **Release gate**: Rebuilds the chain from the trace and accepts only if every rebuilt receipt is exactly what an authorised key signed
 
 This demo implements a minimal pipeline with synthetic agent traces.
+
+**The lesson**: the hash chain alone proves only that a trace is *self-consistent*. A forger who edits a step and rebuilds the chain consistently passes every chain check (sub-demo 2 prints `Tampered trace: PASS` on purpose). Tampering is detected only where the gate holds something the forger cannot edit — the receipts signed by the release key (sub-demo 7: `receipt_mismatch_step_3_data_hash`).
 
 ## Safety Notice
 
 ⚠️ **Teaching demonstration only.**
-- Demo keys generated at runtime (labeled `DEMO_KEY_*`)
+- Demo Ed25519 keys generated in memory at runtime (labeled `DEMO_KEY_*`), never written to disk or committed
 - **Not production signing keys** — do not use for real releases
-- No private keys, certificates, or real PKI
+- No persisted private keys, certificates, or real PKI
 - Synthetic traces only
 
 ## Reproducibility
@@ -48,17 +51,19 @@ This demo is the educational companion to **Conference Paper 5** (`demo-5-eviden
 
 | Attack Vector | Attacker Capability | EVIAssure Defense Primitive | Verification Result |
 |---|---|---|---|
-| **Event Modification** | Attacker tampers with intermediate test/scan score | SHA-256 Witness Hash Chain & Signatures | **FAIL**: Mismatched leaf hash and invalid Ed25519 signature |
-| **Event Omission** | Attacker drops security scan step to bypass check | Sequence-bound Previous Hashes & Closing Counts | **FAIL**: Step count mismatch ($5 \neq 6$) |
-| **Closing Count Spoofing** | Attacker fabricates final summary counter | Final Hash Continuity & Signed Receipt Chain | **FAIL**: `closing_count_mismatch` |
-| **Selective Inclusion** | Attacker claims step executed without presenting full trace | Merkle Tree Audit Path ($O(\log N)$ Inclusion Proof) | **VALID / INVALID**: Mathematical root equivalence |
+| **Event Modification** | Attacker edits an intermediate test score and rebuilds the chain consistently | Hash chain alone: **not detected** (`Tampered trace: PASS`). Signed receipts compared with the rebuilt chain | **FAIL**: `receipt_mismatch_step_3_data_hash` |
+| **Event Omission** | Attacker drops the security-scan step (and fixes the count) | Step count held by the verifier; step numbering; sequence-bound previous hashes | **FAIL**: `step_count_mismatch: 5 != 6` |
+| **Closing Count Spoofing** | Attacker fabricates the final summary counter | Closing count re-derived from the rebuilt chain | **FAIL**: `closing_count_mismatch` |
+| **Re-signing with a rogue key** | Attacker signs the forged trace with a key of their own | Gate's authorised-signer set | **FAIL**: `unauthorized_signer_DEMO_KEY_ATTACKER` |
+| **Missing evidence** | Package carries no signed receipts | Fail-closed gate | **FAIL**: `no_signed_receipts` |
+| **Selective Inclusion** | Auditor wants to check one step without the whole trace | Merkle inclusion proof ($O(\log N)$ siblings) against a root they already trust | **VALID** for the real leaf, **INVALID** for a forged one |
 
 ### Core Primitives Demonstrated
 
 1. **WitnessReceipt**: Structured attestations bound by step index, action, data payload hash, previous hash, and ISO-8601 timestamp.
-2. **Sequential Hash Chain**: Formally prevents reordering, insertion, and truncation of execution steps.
-3. **Merkle Inclusion Trees**: Generates compact logarithmic inclusion proofs for selective verification.
-4. **Release Gate**: Recomputes hash chains, checks cryptographic signatures against trusted release keys, and verifies closing counts before authorizing artifact deployment.
+2. **Sequential Hash Chain**: Detects any *inconsistent* edit — a receipt that does not link to its predecessor. It cannot detect a forgery that was rebuilt consistently; that needs an anchor the forger cannot edit.
+3. **Merkle Inclusion Trees**: Compact logarithmic inclusion proofs for selective verification against a trusted root. (The gate does not "prove" its own leaves against a root it just computed from the same file — that can never fail.)
+4. **Release Gate**: Recomputes the chain, checks step count and numbering, verifies one signed receipt per step under an authorised key, and requires each signed receipt to equal the rebuilt one field by field, before authorising deployment.
 
 ## Difference from Private Research Benchmark
 

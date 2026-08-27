@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed (course audit, August 2026)
+- Every demo now *implements* the mechanism its slides and guides describe, instead of asserting it:
+  - demo-01: answer keys removed from `scenarios.json`; commitments are hash-published and a post-hoc edit is reported as `commitment_hash_mismatch`; the baseline cheats only through the oracle file; oracle errors are reported, not silently failed.
+  - demo-02: `validate_aibom.py --scenario/--runtime` exits 0/1/2 by compliance (drift really fails the gate); waivers require a named approver, a waivable scope and an issued/expires window within `max_duration_hours`; drift is computed (runtime ∖ declared) and reported separately from compliance; tool lists are expanded per tool.
+  - demo-03: leakage is a computed 3-gram overlap against a training corpus; stability, failure-classification and reproducibility checks can fail; ceiling effect is a share of scores at ceiling; the headline-vs-clean comparison is computed (baseline 0.88 → 0.85, verified 0.81 → 0.84).
+  - demo-04: baseline / provenance-aware / scope-bound are three genuinely different configurations of one mediator; scope is checked on the tool's named argument; the parser extracts real targets; `safe_send_005` shows a legitimate action flowing; the matrix generator compares all 21 decisions.
+  - demo-05: the release gate requires one signed receipt per step from an authorised signer and compares it field-by-field with the chain rebuilt from the trace (`receipt_mismatch_*`, `unauthorized_signer_*`, `no_signed_receipts`, `step_numbering_mismatch`); the self-referential Merkle check was removed from the gate; `sign_receipt()` helper; benchmark measures real timings.
+  - demo-06: the parser assigns `network_response` provenance itself; one decision rule decides who acts; scope is explained and re-checked on targets named by executed instructions; DNS/TLS fixtures are in scope so the documented narrative is what runs.
+  - demo-07: the score is the Bayesian posterior from the sandbox's own rates (`sandbox_false_positive` added); free text can hold a record for review but never moves the score or releases it; `verdict` is evidence only with sandbox provenance; the baseline believes notes.
+  - demo-08: scope is decided on the canonical path before any read; blocked results never carry content; a simulated `Host` records every capability call, so "reading ≠ executing" is a checked property; `lfi_004` (in-scope injection) added; URL includes have their own allowlist.
+  - demo-09: the shutdown command is on the wire (the fixture annotation is never read); named content detectors; per-action taint ceilings; the provenance rule blocks laundered labels; a bounded, zeroing ephemeral buffer; uniform scope results; destinations checked; `frame_007`/`frame_008` added.
+  - demo-10: checks are validated before execution (blocked checks never run); the AST screen parses every payload; every failing screen is reported; the action policy is consulted for every finding (MEDIUM reported, HIGH held); taint comes from the finding text; `check_006` (out of scope) and `check_007` (credential) added.
+- Result records are computed (git commit, environment, pass/fail with exit 1 on mismatch) instead of hard-coded `"result": "pass"`.
+- `shared`: `format_command` produces a runnable `make demo DEMO=NN`; one `capture_environment`; `enforce_offline()` installs a socket guard and `verify_offline()` reports whether it is active (it previously returned `True` unconditionally).
+- `make verify-safety` and CI also scan runtime modules (`demo-*/student/`, `shared/`) for network imports; the CI credential scan no longer matches its own workflow file; `make demo` failures now fail the CI reproducibility job (`pipefail`).
+- Test suites rewritten so that each mechanism has a failing-input test (154 → 294 tests); every lab guide and demo page re-run against the code, expected outputs replaced with real output, `cd ../..` → `cd ..`, test counts corrected.
+
 ### Added
 - Professional repository structure with issue templates, PR template, dependabot
 - CODEOWNERS for automatic review assignment

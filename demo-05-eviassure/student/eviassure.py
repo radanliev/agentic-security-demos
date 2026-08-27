@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
 """
 EVIAssure - Evidence-Backed Release Assurance Pipeline
-Sequence-bound receipts, hash chains, Merkle trees, inclusion proofs
+Sequence-bound receipts, hash chains, Merkle trees, inclusion proofs, signed receipts.
+
+The lesson this file demonstrates:
+  * a hash chain proves that a trace is *self-consistent*; it cannot tell a
+    genuine trace from a forged one that was rebuilt consistently;
+  * binding a trace to what actually happened needs an expectation the forger
+    cannot edit — here, receipts signed by an authorised release key that the
+    gate compares field-by-field against the chain it rebuilds from the trace.
 """
 
-import json
-import hashlib
-import hmac
-import os
 import base64
+import hashlib
+import json
+from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Set
-from dataclasses import dataclass, asdict
-from datetime import datetime
-from cryptography.hazmat.primitives import hashes, serialization
+from typing import Dict, List, Optional, Set, Tuple
+
+from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import ed25519
-from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+
+SIGNED_FIELDS = ("step", "action", "data_hash", "prev_hash", "timestamp")
 
 
 @dataclass
@@ -30,12 +36,17 @@ class WitnessReceipt:
     signer_id: Optional[str] = None
 
     def compute_hash(self) -> str:
-        """Compute hash of this receipt (excluding signature)."""
+        """Compute hash of this receipt (excluding signature and signer)."""
         content = f"{self.step}|{self.action}|{self.data_hash}|{self.prev_hash}|{self.timestamp}"
         return hashlib.sha256(content.encode()).hexdigest()
 
     def to_dict(self) -> Dict:
         return asdict(self)
+
+
+def data_hash_of(data) -> str:
+    """Canonical hash of a step's data payload (sorted keys, so dict order cannot matter)."""
+    return hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()
 
 
 class HashChain:
@@ -59,12 +70,10 @@ class HashChain:
         return receipt
 
     def verify_chain(self) -> bool:
-        """Verify entire chain integrity."""
+        """Walk the chain: every receipt's prev_hash must equal the recomputed hash of its predecessor."""
         prev = self.genesis
         for r in self.receipts:
             if r.prev_hash != prev:
-                return False
-            if r.compute_hash() != r.compute_hash():  # Recompute check
                 return False
             prev = r.compute_hash()
         return True
@@ -77,11 +86,28 @@ class HashChain:
             "genesis": self.genesis
         }
 
+    @classmethod
+    def from_trace(cls, trace: List[Dict]) -> "HashChain":
+        """Rebuild the chain from a trace's steps (the only way a verifier can derive receipts)."""
+        chain = cls()
+        for i, step in enumerate(trace):
+            prev_hash = chain.genesis if i == 0 else chain.receipts[-1].compute_hash()
+            chain.add_receipt(WitnessReceipt(
+                step=step["step"],
+                action=step["action"],
+                data_hash=data_hash_of(step["data"]),
+                prev_hash=prev_hash,
+                timestamp=step["timestamp"],
+            ))
+        return chain
+
 
 class MerkleTree:
     """Merkle tree for efficient inclusion proofs."""
 
     def __init__(self, leaves: List[str]):
+        if not leaves:
+            raise ValueError("MerkleTree needs at least one leaf")
         self.leaves = leaves
         self.tree = self._build_tree(self.leaves)
 
@@ -100,7 +126,7 @@ class MerkleTree:
         return tree
 
     def root(self) -> str:
-        return self.tree[-1][0] if self.tree else ""
+        return self.tree[-1][0]
 
     def proof(self, index: int) -> List[Dict]:
         """Generate inclusion proof for leaf at index."""
@@ -110,11 +136,11 @@ class MerkleTree:
             # Determine if index is left (even) or right (odd) child
             is_left = index % 2 == 0
             sibling_idx = index + 1 if is_left else index - 1
-            
+
             # Handle case where sibling doesn't exist (odd number of nodes, last node pairs with itself)
             if sibling_idx >= len(level_nodes):
                 sibling_idx = index  # Pair with itself
-            
+
             sibling = level_nodes[sibling_idx]
             proof.append({"level": level, "sibling": sibling, "position": "left" if is_left else "right"})
             index //= 2
@@ -122,7 +148,7 @@ class MerkleTree:
 
     @staticmethod
     def verify_proof(leaf: str, proof: List[Dict], root: str) -> bool:
-        """Verify inclusion proof."""
+        """Verify inclusion proof against a root the verifier already trusts."""
         current = leaf  # leaf is already a hex-encoded hash
         for p in proof:
             sibling = p["sibling"]
@@ -134,7 +160,10 @@ class MerkleTree:
 
 
 class DemoKeyManager:
-    """Generate and manage demo signing keys (NOT FOR PRODUCTION)."""
+    """Generate and manage demo signing keys (NOT FOR PRODUCTION).
+
+    Keys are Ed25519, generated in memory per run and never written to disk.
+    """
 
     def __init__(self):
         self.keys: Dict[str, ed25519.Ed25519PrivateKey] = {}
@@ -167,196 +196,206 @@ class DemoKeyManager:
             return False
 
     def export_public_key(self, key_id: str) -> str:
-        """Export public key as base64."""
+        """Export public key as base64 (raw 32 bytes)."""
         if key_id not in self.keys:
             raise ValueError(f"Key {key_id} not found")
         public_key = self.keys[key_id].public_key()
-        pem = public_key.public_bytes(
+        raw = public_key.public_bytes(
             encoding=serialization.Encoding.Raw,
             format=serialization.PublicFormat.Raw
         )
-        return base64.b64encode(pem).decode()
+        return base64.b64encode(raw).decode()
+
+
+def receipt_payload(receipt_data: Dict) -> bytes:
+    """Canonical bytes that are signed: every field except the signature, keys sorted.
+
+    Signer and verifier MUST use this same function, and signer_id must be set
+    before signing (it is part of the signed payload).
+    """
+    return json.dumps({k: v for k, v in receipt_data.items() if k != "signature"}, sort_keys=True).encode()
+
+
+def sign_receipt(key_manager: DemoKeyManager, key_id: str, receipt: WitnessReceipt) -> Dict:
+    """Return a signed copy of a receipt as a dict ready for an evidence package."""
+    d = receipt.to_dict()
+    d["signer_id"] = key_id
+    d["signature"] = key_manager.sign(key_id, receipt_payload(d))
+    return d
 
 
 class ReleaseGate:
-    """Fail-closed release gate with evidence verification and authorized signer checking."""
+    """Fail-closed release gate with evidence verification and authorized signer checking.
+
+    authorized_signer_ids=None means "every key this DemoKeyManager holds is trusted";
+    pass an explicit set to model a real trust store.
+    """
 
     def __init__(self, key_manager: DemoKeyManager, authorized_signer_ids: Optional[Set[str]] = None):
         self.key_manager = key_manager
         self.authorized_signer_ids = set(authorized_signer_ids) if authorized_signer_ids is not None else None
 
-    def verify_trace(self, trace_path: Path, required_steps: int = 6) -> Dict:
-        """Verify complete evidence trace."""
+    def _rebuild(self, trace_path: Path, required_steps: int) -> Tuple[Dict, Optional[HashChain]]:
+        """Rebuild the chain from a trace file and run the checks that need no external evidence."""
         trace_data = json.loads(trace_path.read_text())
         trace = trace_data["trace"]
         expected_closing = trace_data["closing_counts"]
 
-        # 1. Check step count
+        # 1. Check step count against an expectation held OUTSIDE the trace
         if len(trace) != required_steps:
-            return {"passed": False, "reason": f"step_count_mismatch: {len(trace)} != {required_steps}"}
+            return {"passed": False, "reason": f"step_count_mismatch: {len(trace)} != {required_steps}"}, None
 
-        # 2. Build hash chain and verify
-        chain = HashChain()
+        # 2. Steps must be numbered 1..n in order (sequence-bound)
+        for i, step in enumerate(trace):
+            if step["step"] != i + 1:
+                return {"passed": False, "reason": f"step_numbering_mismatch: index {i} carries step {step['step']}"}, None
+
+        # 3. Rebuild the hash chain; add_receipt raises on any broken prev link
         try:
-            for i, step in enumerate(trace):
-                data_hash = hashlib.sha256(json.dumps(step["data"], sort_keys=True).encode()).hexdigest()
-                prev_hash = chain.genesis if i == 0 else chain.receipts[-1].compute_hash()
-                receipt = WitnessReceipt(
-                    step=step["step"],
-                    action=step["action"],
-                    data_hash=data_hash,
-                    prev_hash=prev_hash,
-                    timestamp=step["timestamp"]
-                )
-                chain.add_receipt(receipt)
+            chain = HashChain.from_trace(trace)
         except ValueError as e:
-            return {"passed": False, "reason": f"hash_chain_failed: {e}"}
+            return {"passed": False, "reason": f"hash_chain_failed: {e}"}, None
 
-        # 3. Verify closing counts
+        # 4. Verify the trace's own closing declaration
         closing = chain.get_closing_count()
         if closing["total_steps"] != expected_closing["total_steps"]:
-            return {"passed": False, "reason": "closing_count_mismatch"}
+            return {"passed": False, "reason": "closing_count_mismatch"}, None
 
-        # 4. Build Merkle tree for inclusion proofs
-        leaves = [r.compute_hash() for r in chain.receipts]
-        merkle = MerkleTree(leaves)
-
-        # 5. Verify each step has valid inclusion proof
-        for i, receipt in enumerate(chain.receipts):
-            proof = merkle.proof(i)
-            if not MerkleTree.verify_proof(receipt.compute_hash(), proof, merkle.root()):
-                return {"passed": False, "reason": f"inclusion_proof_failed_step_{i}"}
+        # 5. Merkle root over the receipt hashes. NOTE: proving our own leaves against a
+        #    root we just computed from the same file can never fail, so the gate does not
+        #    do that. The root is returned so it can be anchored externally (Exercise 5.2).
+        merkle = MerkleTree([r.compute_hash() for r in chain.receipts])
 
         return {
             "passed": True,
             "closing_counts": closing,
             "merkle_root": merkle.root(),
             "steps_verified": len(trace)
-        }
+        }, chain
 
-    def verify_signed_evidence(self, evidence_path: Path) -> Dict:
-        """Verify signed evidence package against authorized signers and cryptographic signatures."""
+    def verify_trace(self, trace_path: Path, required_steps: int = 6) -> Dict:
+        """Verify a trace's internal consistency (chain, counts, numbering).
+
+        A trace that was forged consistently PASSES this check: nothing here binds the
+        trace to what really happened. Use verify_signed_evidence for that.
+        """
+        result, _chain = self._rebuild(trace_path, required_steps)
+        return result
+
+    def verify_signed_evidence(self, evidence_path: Path, required_steps: int = 6) -> Dict:
+        """Verify a signed evidence package: the trace must rebuild into exactly the receipts
+        that an authorised signer signed, one per step, with valid signatures."""
         evidence = json.loads(evidence_path.read_text())
-        trace_result = self.verify_trace(Path(evidence["trace_path"]))
-
+        trace_result, chain = self._rebuild(Path(evidence["trace_path"]), required_steps)
         if not trace_result["passed"]:
             return {"passed": False, "reason": trace_result["reason"]}
 
         signed_receipts = evidence.get("signed_receipts", [])
         if not signed_receipts:
             return {"passed": False, "reason": "no_signed_receipts"}
+        if len(signed_receipts) != len(chain.receipts):
+            return {"passed": False,
+                    "reason": f"signed_receipt_count_mismatch: {len(signed_receipts)} != {len(chain.receipts)}"}
 
-        # Verify authorized signers and cryptographic signatures on receipts
-        for receipt_data in signed_receipts:
-            key_id = receipt_data["signer_id"]
+        for rebuilt, receipt_data in zip(chain.receipts, signed_receipts):
+            key_id = receipt_data.get("signer_id")
 
-            # Trust boundary check: is signer authorized by gate?
-            if self.authorized_signer_ids is not None and key_id not in self.authorized_signer_ids:
+            # Trust boundary check: is signer authorised by the gate?
+            if not key_id or (self.authorized_signer_ids is not None and key_id not in self.authorized_signer_ids):
                 return {"passed": False, "reason": f"unauthorized_signer_{key_id}"}
 
-            receipt_bytes = json.dumps({k: v for k, v in receipt_data.items() if k != "signature"}, sort_keys=True).encode()
-            if not self.key_manager.verify(key_id, receipt_bytes, receipt_data["signature"]):
+            # Cryptographic check: did that key sign exactly this receipt?
+            if not self.key_manager.verify(key_id, receipt_payload(receipt_data), receipt_data.get("signature", "")):
                 return {"passed": False, "reason": f"signature_verification_failed_{key_id}"}
 
+            # Binding check: the signed receipt must be the receipt the trace rebuilds to
+            for field_name in SIGNED_FIELDS:
+                if receipt_data.get(field_name) != getattr(rebuilt, field_name):
+                    return {"passed": False, "reason": f"receipt_mismatch_step_{rebuilt.step}_{field_name}"}
+
         return {"passed": True, **trace_result}
+
+
+def _verdict(result: Dict) -> str:
+    return f"{'PASS' if result['passed'] else 'FAIL'}  Reason: {result.get('reason', 'ok')}"
 
 
 def main():
     print("=== EVIAssure Demo ===\n")
 
     base_dir = Path(__file__).resolve().parent.parent
+    results_dir = base_dir / "results"
+    results_dir.mkdir(exist_ok=True)
 
-    # Setup
+    # Setup: one release key, generated in memory for this run only
     key_manager = DemoKeyManager()
-    release_key = key_manager.generate_key("DEMO_KEY_RELEASE_001")
-    gate = ReleaseGate(key_manager)
+    key_manager.generate_key("DEMO_KEY_RELEASE_001")
+    gate = ReleaseGate(key_manager, authorized_signer_ids={"DEMO_KEY_RELEASE_001"})
 
-    # Load trace
     trace_path = base_dir / "fixtures" / "trace.json"
+    original = trace_path.read_text()
 
-    print("1. Verifying complete trace...")
-    result = gate.verify_trace(trace_path)
-    print(f"   Result: {'PASS' if result['passed'] else 'FAIL'}")
-    if not result['passed']:
-        print(f"   Reason: {result['reason']}")
+    def write_variant(name: str, mutate) -> Path:
+        data = json.loads(original)
+        mutate(data)
+        path = results_dir / name
+        path.write_text(json.dumps(data, indent=2))
+        return path
 
-    print("\n2. Testing tamper detection...")
-    # Tamper: modify step 3 data
-    trace_data = json.loads(trace_path.read_text())
-    trace_data["trace"][2]["data"]["passed"] = 99  # Changed from 95
-    tampered_path = base_dir / "results" / "tampered_trace.json"
-    tampered_path.parent.mkdir(exist_ok=True)
-    tampered_path.write_text(json.dumps(trace_data, indent=2))
-    result2 = gate.verify_trace(tampered_path)
-    print(f"   Tampered trace: {'PASS' if result2['passed'] else 'FAIL'}")
-    print(f"   Reason: {result2.get('reason', 'ok')}")
+    print("1. Verifying complete trace (chain check)...")
+    print(f"   Complete trace: {_verdict(gate.verify_trace(trace_path))}")
 
-    print("\n3. Testing omission detection...")
-    # Omission: remove step 4
-    trace_data2 = json.loads(trace_path.read_text())
-    trace_data2["trace"].pop(3)  # Remove security_scan
-    trace_data2["closing_counts"]["total_steps"] = 5
-    omitted_path = base_dir / "results" / "omitted_trace.json"
-    omitted_path.write_text(json.dumps(trace_data2, indent=2))
-    result3 = gate.verify_trace(omitted_path)
-    print(f"   Omitted trace: {'PASS' if result3['passed'] else 'FAIL'}")
-    print(f"   Reason: {result3.get('reason', 'ok')}")
+    print("\n2. Tampering with step 3 (tests passed 95 -> 99), chain check only...")
+    tampered_path = write_variant("tampered_trace.json", lambda d: d["trace"][2]["data"].__setitem__("passed", 99))
+    print(f"   Tampered trace: {_verdict(gate.verify_trace(tampered_path))}")
+    print("   (expected: the forged chain is self-consistent, so the chain check alone CANNOT catch it)")
 
-    print("\n4. Testing malformed closing count...")
-    trace_data3 = json.loads(trace_path.read_text())
-    trace_data3["closing_counts"]["total_steps"] = 999
-    bad_count_path = base_dir / "results" / "bad_count_trace.json"
-    bad_count_path.write_text(json.dumps(trace_data3, indent=2))
-    result4 = gate.verify_trace(bad_count_path)
-    print(f"   Bad closing count: {'PASS' if result4['passed'] else 'FAIL'}")
-    print(f"   Reason: {result4.get('reason', 'ok')}")
+    print("\n3. Omitting step 4 (security_scan) and fixing the count to 5...")
+    omitted_path = write_variant("omitted_trace.json",
+                                 lambda d: (d["trace"].pop(3), d["closing_counts"].__setitem__("total_steps", 5)))
+    print(f"   Omitted trace: {_verdict(gate.verify_trace(omitted_path))}")
 
-    print("\n5. Testing Merkle proof...")
-    trace_data4 = json.loads(trace_path.read_text())
-    chain = HashChain()
-    for i, step in enumerate(trace_data4["trace"]):
-        data_hash = hashlib.sha256(json.dumps(step["data"], sort_keys=True).encode()).hexdigest()
-        prev_hash = chain.genesis if i == 0 else chain.receipts[-1].compute_hash()
-        receipt = WitnessReceipt(step["step"], step["action"], data_hash, prev_hash, step["timestamp"])
-        chain.add_receipt(receipt)
+    print("\n4. Forging the closing count (999)...")
+    bad_count_path = write_variant("bad_count_trace.json", lambda d: d["closing_counts"].__setitem__("total_steps", 999))
+    print(f"   Bad closing count: {_verdict(gate.verify_trace(bad_count_path))}")
+
+    print("\n5. Merkle inclusion proof for step 3...")
+    chain = HashChain.from_trace(json.loads(original)["trace"])
     leaves = [r.compute_hash() for r in chain.receipts]
     merkle = MerkleTree(leaves)
     proof = merkle.proof(2)  # Step 3
-    valid = MerkleTree.verify_proof(chain.receipts[2].compute_hash(), proof, merkle.root())
-    print(f"   Merkle proof for step 3: {'VALID' if valid else 'INVALID'}")
+    valid = MerkleTree.verify_proof(leaves[2], proof, merkle.root())
+    forged_leaf = leaves[2][:-1] + ("0" if leaves[2][-1] != "0" else "1")
+    print(f"   Merkle proof for step 3: {'VALID' if valid else 'INVALID'}  ({len(proof)} sibling hashes for {len(leaves)} leaves)")
+    print(f"   Same proof, one hex digit of the leaf changed: {'VALID' if MerkleTree.verify_proof(forged_leaf, proof, merkle.root()) else 'INVALID'}")
 
-    print("\n6. Testing release gate...")
-    evidence = {
-        "trace_path": str(trace_path),
-        "signed_receipts": []
-    }
-    # Sign receipts
-    for r in chain.receipts:
-        receipt_dict = r.to_dict()
-        receipt_dict["signer_id"] = "DEMO_KEY_RELEASE_001"
-        receipt_bytes = json.dumps({k: v for k, v in receipt_dict.items() if k != "signature"}, sort_keys=True).encode()
-        sig = key_manager.sign("DEMO_KEY_RELEASE_001", receipt_bytes)
-        receipt_dict["signature"] = sig
-        evidence["signed_receipts"].append(receipt_dict)
+    print("\n6. Signing every receipt with DEMO_KEY_RELEASE_001 and verifying the package...")
+    signed = [sign_receipt(key_manager, "DEMO_KEY_RELEASE_001", r) for r in chain.receipts]
+    evidence_path = results_dir / "evidence_package.json"
+    evidence_path.write_text(json.dumps({"trace_path": str(trace_path), "signed_receipts": signed}, indent=2))
+    print(f"   Signed evidence: {_verdict(gate.verify_signed_evidence(evidence_path))}")
 
-    evidence_path = base_dir / "results" / "evidence_package.json"
-    evidence_path.write_text(json.dumps(evidence, indent=2))
+    print("\n7. Tampered trace from step 2 presented with the ORIGINAL signed receipts...")
+    tampered_evidence_path = results_dir / "tampered_evidence.json"
+    tampered_evidence_path.write_text(json.dumps({"trace_path": str(tampered_path), "signed_receipts": signed}, indent=2))
+    print(f"   Tampered evidence: {_verdict(gate.verify_signed_evidence(tampered_evidence_path))}")
+    print("   (the signatures are genuine, but they cover the receipts of the ORIGINAL step 3)")
 
-    result5 = gate.verify_signed_evidence(evidence_path)
-    print(f"   Signed evidence: {'PASS' if result5['passed'] else 'FAIL'}")
-    if not result5['passed']:
-        print(f"   Reason: {result5.get('reason', 'ok')}")
+    print("\n8. Evidence package with no signed receipts...")
+    inc_path = results_dir / "incomplete_evidence.json"
+    inc_path.write_text(json.dumps({"trace_path": str(trace_path), "signed_receipts": []}, indent=2))
+    print(f"   Incomplete evidence: {_verdict(gate.verify_signed_evidence(inc_path))}")
 
-    print("\n7. Testing incomplete evidence...")
-    incomplete_evidence = {"trace_path": str(trace_path), "signed_receipts": []}  # No signatures
-    inc_path = base_dir / "results" / "incomplete_evidence.json"
-    inc_path.write_text(json.dumps(incomplete_evidence, indent=2))
-    result6 = gate.verify_signed_evidence(inc_path)
-    print(f"   Incomplete evidence: {'PASS' if result6['passed'] else 'FAIL'}")
-    print(f"   Reason: {result6.get('reason', 'ok')}")
+    print("\n9. Tampered trace re-signed by an attacker's own key (DEMO_KEY_ATTACKER)...")
+    key_manager.generate_key("DEMO_KEY_ATTACKER")
+    attacker_chain = HashChain.from_trace(json.loads(tampered_path.read_text())["trace"])
+    attacker_signed = [sign_receipt(key_manager, "DEMO_KEY_ATTACKER", r) for r in attacker_chain.receipts]
+    attacker_path = results_dir / "attacker_signed_evidence.json"
+    attacker_path.write_text(json.dumps({"trace_path": str(tampered_path), "signed_receipts": attacker_signed}, indent=2))
+    print(f"   Attacker-signed evidence: {_verdict(gate.verify_signed_evidence(attacker_path))}")
 
     print("\n=== Demo Complete ===")
-    print("\n⚠️  DEMO KEYS ONLY - Not for production use!")
+    print("\n⚠️  DEMO KEYS ONLY - generated in memory for this run, not for production use!")
 
 
 if __name__ == "__main__":

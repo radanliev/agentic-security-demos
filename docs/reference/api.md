@@ -28,7 +28,7 @@ records = read_results("demo-01-blind-verification", "results/")
 ```python
 from shared.reproducibility import (
     generate_seed, deterministic_shuffle, set_global_seed,
-    capture_environment, format_command, verify_offline
+    capture_environment, format_command, enforce_offline, verify_offline
 )
 
 # Generate deterministic seed
@@ -37,14 +37,19 @@ seed = generate_seed("my-experiment")
 # Shuffle deterministically
 items = deterministic_shuffle(["a", "b", "c"], seed=42)
 
-# Set global seeds
+# Seed `random` for this process (PYTHONHASHSEED is exported for child processes only)
 set_global_seed(42)
+
+# Turn "offline" into an enforced property: any socket use now raises RuntimeError
+enforce_offline()
+assert verify_offline()  # True only while the guard is installed
 
 # Capture environment
 env = capture_environment()  # "Python 3.11, Linux 5.15.0"
 
 # Format command
 cmd = format_command("01", "comparison")  # "make demo DEMO=01 EXPERIMENT=comparison"
+cmd = format_command("demo-05-eviassure", "benchmark")  # "make demo DEMO=05 EXPERIMENT=benchmark"
 ```
 
 ### `shared.fixtures`

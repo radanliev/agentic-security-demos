@@ -27,9 +27,13 @@ An agent that explains "I would have done X" after seeing the test is not verifi
 
 ### Oracle Types
 
-- **Patch-level oracle**: Applies the agent's proposed patch to a codebase and runs tests
-- **Output-level oracle**: Executes the agent's output and compares against expected behavior
-- **Score oracle**: Computes a deterministic metric on the commitment
+- **Patch-level oracle**: In the research benchmark, applies the agent's proposed patch to a codebase and runs tests. **In this demo it is a string-containment check** on the commitment text (`authz-001`: contains `AuthorizationError`; `poisoned-003`: contains `secure_backup_value`) — deliberately weak, so that Exercises 1.2 and 1.4 can show false positives.
+- **Output-level oracle**: Exact-match comparison of the commitment text against the expected output (`depdrift-002`, `restored-004`).
+- **Score oracle**: Computes a deterministic metric on the commitment (not used in this demo)
+
+### What makes the commitment binding
+
+The verified agent publishes the SHA-256 of every commitment to `commitment_hashes_verified.json` *before* the oracle file is opened. The evaluator re-hashes each submitted commitment and refuses (`commitment_hash_mismatch`) any commitment that differs from the published ledger. The baseline agent publishes nothing, so its commitments are unbound — try editing `commitments_verified.json` after Step 4 of the instructions and re-running the evaluator.
 
 ## Safety Notice
 
@@ -65,8 +69,8 @@ This demo is the educational companion to **Conference Paper 1** (`demo-1-blind-
 
 ### Why Baseline Scores 4/4 and Verified Scores 3/4
 
-- **Baseline Agent (Cheating / Post-Hoc)**: Peeks at `fixtures/sealed_oracles.json` before committing. It scores **4/4 (100%)**, demonstrating that post-hoc or unblinded evaluations measure oracle leakage rather than real capability.
-- **Verified Agent (Honest / Blind)**: Sees only `fixtures/scenarios.json` and commits *prior* to oracle reveal. It scores **3/4 (75%)** and honestly fails `restored-004` because blind commitment prevents guessing under underspecified conditions.
+- **Baseline Agent (Cheating / Post-Hoc)**: Opens `fixtures/sealed_oracles.json` and copies each `expected_commitment`. It scores **4/4 (100%)**, demonstrating that post-hoc or unblinded evaluations measure oracle leakage rather than real capability.
+- **Verified Agent (Honest / Blind)**: Sees only `fixtures/scenarios.json` (task, ticket context, code snippet — no answer key) and commits *prior* to oracle reveal. It scores **3/4 (75%)**. It fails `restored-004` because its text-only heuristic knows three fix patterns (authorization check, dependency pin, restore-from-backup) and the fourth task requires reading the code; instead of guessing it commits `# Unable to determine fix blindly`. That is a genuine limitation of the toy agent, reported honestly — extend the heuristic (Exercise 1.1) and the blind score rises to 4/4 *legitimately*, which the cheating score can never tell you.
 
 ## Difference from Private Research Benchmark
 
@@ -76,4 +80,4 @@ This demo is the educational companion to **Conference Paper 1** (`demo-1-blind-
 | Scale | Multi-agent finite-run study (N=80) | 4 core synthetic scenarios |
 | Oracle | Diff-level patch oracle + executable invariants | Deterministic patch/output checks |
 | Claims | Formal statistical power & hypothesis testing | **No performance claims** — educational only |
-| Leakage control | Cryptographic SHA-256 seal prior to reveal | File-based sealing & honesty boundary |
+| Leakage control | Cryptographic SHA-256 seal prior to reveal | SHA-256 commitment ledger checked by the evaluator; oracle kept in a separate file the blind agent never opens (enforced by tests) |

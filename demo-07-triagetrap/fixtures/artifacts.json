@@ -90,7 +90,8 @@
   "base_rates": {
     "malicious_prior": 0.02,
     "sensor_false_positive": 0.01,
-    "sandbox_false_negative": 0.05
+    "sandbox_false_negative": 0.05,
+    "sandbox_false_positive": 0.005
   },
   "quarantine_threshold": 0.7,
   "seed": 42

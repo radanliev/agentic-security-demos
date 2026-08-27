@@ -67,7 +67,7 @@ make setup
 # 3. Run a demo (01–10) or all tests
 make demo DEMO=01    # Blind Verification
 make demo DEMO=05    # Evidence-Backed Release
-make test            # All 170 tests (offline, deterministic)
+make test            # All 294 tests (offline, deterministic; `make test` prints the count)
 ```
 
 > **Requirement**: Python 3.11+, `make`, `git`. No network access required after clone.

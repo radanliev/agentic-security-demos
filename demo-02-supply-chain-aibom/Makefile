@@ -30,9 +30,12 @@ demo: setup
 	@echo "Running policy gate on all drift scenarios..."
 	@cd $(DEMO_DIR) && $(PYTHON) student/policy_gate.py
 	@echo ""
-	@echo "Running GitHub Actions validation script..."
-	@cd $(DEMO_DIR) && $(PYTHON) student/validate_aibom.py
-	@echo "Exit code: $$?"
+	@echo "Running GitHub Actions validation script (self-test: every scenario behaves as labelled)..."
+	@cd $(DEMO_DIR) && $(PYTHON) student/validate_aibom.py --self-test; echo "Exit code: $$?"
+	@echo ""
+	@echo "Validating a compliant runtime (expect exit 0) and a drifted runtime (expect exit 1)..."
+	@cd $(DEMO_DIR) && $(PYTHON) student/validate_aibom.py --scenario compliant-001; echo "Exit code: $$?"
+	@cd $(DEMO_DIR) && $(PYTHON) student/validate_aibom.py --scenario drifted-002; echo "Exit code: $$?"
 	@echo ""
 	@echo "Generating JSON results..."
 	@cd $(DEMO_DIR) && $(PYTHON) student/generate_results.py

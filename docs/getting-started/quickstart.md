@@ -20,7 +20,7 @@ make setup
 ## Running Tests
 
 ```bash
-# All demos (170 tests)
+# All demos (294 tests)
 make test
 
 # Specific demo
