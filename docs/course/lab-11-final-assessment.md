@@ -25,7 +25,7 @@ Answer in `FINAL_QUIZ_ANSWERS.md`. Closed-book except: you may consult *your own
 
 **Q2.** Demo 01's oracle for `authz-001` checks that the commitment *contains* the string `AuthorizationError`. Describe a commitment that passes this oracle but does not fix the vulnerability.
 
-**Q3.** Module 3's four-arm table shows baseline+invariants at 88% (3/5 invariants) and verified+invariants at 81% (5/5). Which result would you ship to a customer, and why in two sentences?
+**Q3.** Module 3's four-arm table shows the baseline agent at 0.88 and the verified agent at 0.81 with invariants ignored; with invariants run, both get the same 3/5 verdict on this evaluation (the leaked item is `task-003`), and the clean-item means are 0.85 and 0.84. Which result would you ship to a customer, and why in two sentences?
 
 **Q4.** Name the five evaluation invariants and the single failure mode each is designed to catch.
 
@@ -63,9 +63,9 @@ Answer in `FINAL_QUIZ_ANSWERS.md`. Closed-book except: you may consult *your own
 
 ### Section 5 — Taint & Scanning (Modules 9, 10)
 
-**Q18.** Demo 09's guard has two rules: taint ceiling, and "intercepted network requires LOW." Construct an input blocked by rule 2 but allowed by rule 1 alone, and state the attack rule 2 exists for.
+**Q18.** Demo 09's guard has two rules: a per-action taint ceiling, and "a privileged action (ceiling LOW) never accepts `intercepted_network` provenance, whatever the taint label says." Construct an input blocked by rule 2 but allowed by rule 1 alone (the run's `frame_001_relabelled_low` is one), and state the attack rule 2 exists for.
 
-**Q19.** In Demo 10, check_003 is blocked *and* its output is still taint-tracked. Explain what observation-vs-action distinction this encodes.
+**Q19.** In Demo 10, check_003 is rejected by the validator and never executed, so there is nothing of it to taint-track, whereas check_001 is executed, its finding is tainted HIGH from its own text, and the action policy then holds the report. Explain the observation-vs-action distinction the pipeline encodes, and why a rejected check has nothing to observe.
 
 **Q20.** Give one payload that Demo 10's keyword screen cannot catch but its AST screen does, and explain why no keyword list can ever be sufficient.
 
@@ -149,7 +149,7 @@ Write 2 pages (`REFLECTION.md`) addressing:
 - [ ] `REFLECTION.md` — 2 pages
 - [ ] `LAB_NOTES.md` — all 11 module blocks complete with reproducibility fields
 - [ ] All demo `results/` directories populated (Modules 1–10)
-- [ ] Repository state: `make test` green (170 + your new tests), `make verify-safety` green
+- [ ] Repository state: `make test` green (all existing suites + your new tests), `make verify-safety` green
 - [ ] Git log shows incremental commits (not one final dump)
 
 ---

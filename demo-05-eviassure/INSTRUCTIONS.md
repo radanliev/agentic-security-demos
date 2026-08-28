@@ -10,12 +10,12 @@
 | What | Time | Command |
 |------|------|---------|
 | Run tests | 1 min | `python3 -m pytest tests/ -v` |
-| Run the 7-part demo | 3 min | `python3 student/eviassure.py` |
+| Run the 9-part demo | 3 min | `python3 student/eviassure.py` |
 | Run the benchmark | 1 min | `python3 student/benchmark.py` |
 | Hand-built chain experiment | 5 min | inline script (Step 4) |
 | **Total** | **~15 min** | |
 
-**Safety**: 100% offline. Keys are generated per-run and labeled `DEMO_KEY_*` — **never production signing keys**. Synthetic traces only. Requires the `cryptography` package (installed by `make setup`).
+**Safety**: 100% offline. Ed25519 keys are generated in memory per run, never written to disk, and labeled `DEMO_KEY_*` — **never production signing keys**. Synthetic traces only. Requires the `cryptography` package (installed by `make setup`).
 
 ---
 
@@ -47,35 +47,57 @@ cat fixtures/trace.json
 python3 -m pytest tests/ -v
 ```
 
-**Expected**: `14 passed`. Key tests: hash chain integrity, Merkle inclusion proofs, demo key signing (including refusal of non-`DEMO_KEY_` ids), tamper/omission/count detection, release blocked on incomplete evidence.
+**Expected**: `34 passed`. Key tests: hash chain integrity and hash coverage, Merkle inclusion proofs (valid, forged leaf, wrong leaf, swapped positions), demo key signing (including refusal of non-`DEMO_KEY_` ids), the self-consistent forgery *passing* the chain check, the same forgery *failing* the signed gate, omission/count/numbering detection, release blocked on incomplete evidence, unauthorised signer rejected.
 
 ```
-============================== 14 passed in 0.XXs ==============================
+============================== 34 passed in 0.XXs ==============================
 ```
 
 ---
 
-## Step 3 — Run the Full Demo (7 Sub-Demonstrations)
+## Step 3 — Run the Full Demo (9 Sub-Demonstrations)
 
 ```bash
 python3 student/eviassure.py
 ```
 
-**What this does**: Runs all seven demonstrations in sequence.
+**What this does**: Runs all nine demonstrations in sequence. Sub-demos 1–4 use only the trace file; 6–9 use the signed evidence package.
 
-**Expected output** (abbreviated):
+**Expected output** (verbatim, minus the hashes):
 
 ```
-1. Verifying complete trace...    PASS
-2. Testing tamper detection...    (see note below)
-3. Testing omission detection...  FAIL (step_count_mismatch)
-4. Testing malformed closing...   FAIL (closing_count_mismatch)
-5. Merkle proof for step 3:       VALID
-6. Signed evidence:               PASS (or FAIL — see note)
-7. Incomplete evidence:           FAIL (no_signed_receipts)
+1. Verifying complete trace (chain check)...
+   Complete trace: PASS  Reason: ok
+
+2. Tampering with step 3 (tests passed 95 -> 99), chain check only...
+   Tampered trace: PASS  Reason: ok
+   (expected: the forged chain is self-consistent, so the chain check alone CANNOT catch it)
+
+3. Omitting step 4 (security_scan) and fixing the count to 5...
+   Omitted trace: FAIL  Reason: step_count_mismatch: 5 != 6
+
+4. Forging the closing count (999)...
+   Bad closing count: FAIL  Reason: closing_count_mismatch
+
+5. Merkle inclusion proof for step 3...
+   Merkle proof for step 3: VALID  (3 sibling hashes for 6 leaves)
+   Same proof, one hex digit of the leaf changed: INVALID
+
+6. Signing every receipt with DEMO_KEY_RELEASE_001 and verifying the package...
+   Signed evidence: PASS  Reason: ok
+
+7. Tampered trace from step 2 presented with the ORIGINAL signed receipts...
+   Tampered evidence: FAIL  Reason: receipt_mismatch_step_3_data_hash
+   (the signatures are genuine, but they cover the receipts of the ORIGINAL step 3)
+
+8. Evidence package with no signed receipts...
+   Incomplete evidence: FAIL  Reason: no_signed_receipts
+
+9. Tampered trace re-signed by an attacker's own key (DEMO_KEY_ATTACKER)...
+   Attacker-signed evidence: FAIL  Reason: unauthorized_signer_DEMO_KEY_ATTACKER
 ```
 
-**⚠️ The most important observation in this demo** — sub-demo 2 (tamper): the gate may report the *tampered* trace as PASS. Read the printed reason carefully. This is **not a bug**: `verify_trace` rebuilds the chain from the file's own contents, so a *self-consistent* forged chain verifies. A hash chain proves events are consistent *with each other* — it does not prove they are the events that originally happened. Binding to reality requires the **signatures** (sub-demo 6). Record this lesson in your notes.
+**⚠️ The most important observation in this demo** — read sub-demos 2 and 7 together. In sub-demo 2 the gate reports the *tampered* trace as **PASS**. This is not a bug: `verify_trace` rebuilds the chain from the file's own contents, so a *self-consistent* forged chain verifies. A hash chain proves events are consistent *with each other* — it does not prove they are the events that originally happened. Sub-demo 7 is where tampering is actually detected: the gate rebuilds the chain from the tampered trace and compares each rebuilt receipt, field by field, with the receipt the release key signed. Step 3's `data_hash` no longer matches, and the forger cannot produce a matching signed receipt without the key (sub-demo 9: a signature under the attacker's own key is rejected as an unauthorised signer). Record this in your notes.
 
 ---
 
@@ -159,18 +181,18 @@ tampered leaf verifies: False
 python3 student/benchmark.py
 ```
 
-**What this does**: Builds chains of 10/50/100/500 receipts and times full Merkle verification of every leaf.
+**What this does**: Builds chains of 10/50/100/500 receipts (`chain_build_ms`), then builds the Merkle tree and verifies an inclusion proof for every leaf (`verify_time_ms`). Each size is timed five times and the minimum is reported. `result` is `pass` only if every proof verified.
 
-**Expected output** (times vary by machine — record yours):
+**Expected output** (JSON; times vary by machine — record yours):
 
 ```
-trace_size 10   -> ~0.04 ms
-trace_size 50   -> ~0.18 ms
-trace_size 100  -> ~0.40 ms
-trace_size 500  -> ~2.5  ms
+{"trace_size": 10,  "chain_build_ms": ~0.1, "verify_time_ms": ~0.1, "proof_length": 4}
+{"trace_size": 50,  "chain_build_ms": ~0.4, "verify_time_ms": ~0.5, "proof_length": 6}
+{"trace_size": 100, "chain_build_ms": ~0.9, "verify_time_ms": ~1.1, "proof_length": 7}
+{"trace_size": 500, "chain_build_ms": ~4,   "verify_time_ms": ~7,   "proof_length": 9}
 ```
 
-**Record your times** in the reproducibility table — they will differ from another participant's machine, which is itself a reproducibility lesson (timing is environment-dependent; verdicts are not).
+**Record your times** in the reproducibility table — they will differ from another participant's machine, which is itself a reproducibility lesson (timing is environment-dependent; verdicts are not). Note that `proof_length` grows like log2(n) while the total time grows like n·log n, because you verify *every* leaf.
 
 ---
 
@@ -184,12 +206,16 @@ trace_size 500  -> ~2.5  ms
 | Python version | | `python3 --version` |
 | OS | | `uname -a` / `systeminfo` |
 | Commands used | | copy from Steps 2–6 |
-| Tests passed | | `14 passed` |
+| Tests passed | | `34 passed` |
 | Complete trace verdict | | PASS (Step 3.1) |
+| Tampered trace, chain check only | | PASS (Step 3.2 — the lesson) |
 | Omission verdict | | FAIL, `step_count_mismatch` (Step 3.3) |
 | Bad count verdict | | FAIL, `closing_count_mismatch` (Step 3.4) |
-| Merkle proof | | VALID (Step 3.5) |
-| Incomplete evidence | | FAIL, `no_signed_receipts` (Step 3.7) |
+| Merkle proof | | VALID, forged leaf INVALID (Step 3.5) |
+| Signed evidence | | PASS (Step 3.6) |
+| Tampered evidence | | FAIL, `receipt_mismatch_step_3_data_hash` (Step 3.7) |
+| Incomplete evidence | | FAIL, `no_signed_receipts` (Step 3.8) |
+| Attacker-signed evidence | | FAIL, `unauthorized_signer_DEMO_KEY_ATTACKER` (Step 3.9) |
 | Benchmark (500 leaves) | | your ms from Step 6 |
 | Result files | | `results/benchmark.json`, `results/evidence_package.json` |
 
@@ -208,8 +234,8 @@ From the **repository root**: `make demo DEMO=05`
 | Level | Exercise | Hint |
 |-------|----------|------|
 | Beginner | Remove `timestamp` from `compute_hash`; show timestamp edits no longer break the chain; restore | Hash coverage = tamper-evidence scope |
-| Standard | External anchor: publish the Merkle root to a separate file; verify against it; defeat the self-consistent forgery from Step 3 | The verifier needs an expectation the attacker cannot edit |
-| Standard | Delete step 4 AND renumber steps 5–6 AND fix counts — which check catches it? | `required_steps=6` is held outside the trace |
+| Standard | External anchor: publish the Merkle root (`verify_trace` returns it) to a separate file; verify against it; defeat the self-consistent forgery from Step 3.2 *without* signatures | The verifier needs an expectation the attacker cannot edit |
+| Standard | Delete step 4 AND renumber steps 5–6 AND fix counts — which check catches it? Then run the signed gate with `required_steps=5` | `required_steps=6` is held outside the trace; so are the signed receipts |
 | Extension | Key rotation: steps 1–3 signed by key A, 4–6 by key B, with a schedule record | Gate must verify against the *scheduled* key |
 | Extension | Partial verification with checkpoints (`verify_prefix`) | What does a partial proof mean downstream? |
 
@@ -221,12 +247,12 @@ From the **repository root**: `make demo DEMO=05`
 |---------|-------|-----|
 | `ModuleNotFoundError: cryptography` | Deps not installed | Repo root: `make setup` |
 | `ValueError: Key ID must start with 'DEMO_KEY_'` | You passed a non-demo key id | This is intentional — the demo refuses production-looking key names |
-| `14 passed` fails after edits | Exercise changes | `git checkout -- student/ tests/ fixtures/` |
-| Signature verification fails on your own package | You edited a receipt after signing | Re-sign: re-run the Step in `student/eviassure.py` main |
+| `34 passed` fails after edits | Exercise changes | `git checkout -- student/ tests/ fixtures/` |
+| Signature verification fails on your own package | You edited a receipt after signing, or set `signer_id` *after* signing (it is part of the signed payload) | Sign with `sign_receipt(key_manager, key_id, receipt)`, which does it in the right order |
 | Merkle proof returns False unexpectedly | Leaves were modified after tree construction | Rebuild both from the same list |
 
 ---
 
 ## Safety Reminder
 
-⚠️ **Teaching demonstration only.** `DEMO_KEY_*` keys are generated per-run and are **not production signing keys** — do not use them for real releases. No real PKI, certificates, or live traces. See [RESPONSIBLE_USE.md](../RESPONSIBLE_USE.md).
+⚠️ **Teaching demonstration only.** `DEMO_KEY_*` keys are generated in memory per run and are **not production signing keys** — do not use them for real releases. No real PKI, certificates, or live traces. See [RESPONSIBLE_USE.md](../RESPONSIBLE_USE.md).

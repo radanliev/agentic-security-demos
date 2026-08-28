@@ -48,7 +48,8 @@ cd demo-01-blind-verification
 
 ```bash
 ls
-# Expected: Makefile  README.md  INSTRUCTIONS.md  fixtures  results  student  tests
+# Expected: INSTRUCTIONS.md  Makefile  README.md  commitments_baseline.json  commitments_verified.json  fixtures  student  tests
+# (results/ is git-ignored; it is created by `make setup` or by the first evaluation run)
 ```
 
 ---
@@ -59,7 +60,7 @@ ls
 python3 -m pytest tests/ -v
 ```
 
-**What this does**: Runs all **15 tests** that verify the demo's correctness: fixture integrity, agent behavior, oracle mechanics, and leakage prevention.
+**What this does**: Runs all **18 tests** that verify the demo's correctness: fixture integrity, agent behavior (baseline 4/4, verified 3/4 with `restored-004` failing honestly), oracle mechanics (false positives, false negatives, oracle errors reported), commitment binding (a post-hoc edit is rejected), and leakage prevention (the blind agent's only input file contains no answer key).
 
 **Why tests before demo**: If any test fails, your environment is broken. Fix it now — otherwise you won't know whether a strange demo result is your fault or the code's.
 
@@ -67,10 +68,10 @@ python3 -m pytest tests/ -v
 
 ```
 tests/test_blind_verification.py::TestExercises::test_exercise_leakage PASSED
-============================== 15 passed in 0.XXs ==============================
+============================== 18 passed in 0.XXs ==============================
 ```
 
-✅ **Checkpoint**: You must see `15 passed`. If you see failures, see [Troubleshooting](#troubleshooting) below.
+✅ **Checkpoint**: You must see `18 passed`. If you see failures, see [Troubleshooting](#troubleshooting) below.
 
 ---
 
@@ -80,7 +81,7 @@ tests/test_blind_verification.py::TestExercises::test_exercise_leakage PASSED
 python3 student/baseline_agent.py
 ```
 
-**What this does**: Runs an agent that **reads the hidden oracle file** (`fixtures/sealed_oracles.json`) before answering. It extracts the expected answer from each eval script and writes it as its "commitment" to `commitments_baseline.json`.
+**What this does**: Runs an agent that **reads the hidden oracle file** (`fixtures/sealed_oracles.json`) before answering. It copies each oracle's `expected_commitment` and writes it as its "commitment" to `commitments_baseline.json`. It publishes no hash, so nothing binds it to what it wrote.
 
 **Why this step exists**: This is the *upper bound* — what's achievable when the test leaks. Its score measures oracle leakage, not capability.
 
@@ -111,29 +112,31 @@ grep -n "sealed_oracles" student/baseline_agent.py
 python3 student/verified_agent.py
 ```
 
-**What this does**: Runs an agent that reads **only** `fixtures/scenarios.json` — never the oracle. It applies simple keyword heuristics to the task text, commits to an answer, and computes a SHA-256 commitment hash of each answer. Writes `commitments_verified.json`.
+**What this does**: Runs an agent that reads **only** `fixtures/scenarios.json` (task, ticket context, code snippet — no answer key) — never the oracle. It applies simple keyword heuristics to the ticket text, commits to an answer, computes the SHA-256 of each commitment and **publishes the hashes** to `commitment_hashes_verified.json` before any oracle is opened. Writes `commitments_verified.json`.
 
-**Why this step exists**: This is the *measurement*. Because the oracle was never in its input surface, its score reflects genuine blind capability.
+**Why this step exists**: This is the *measurement*. Because the oracle was never in its input surface, its score reflects genuine blind capability; because the hashes are published first, the commitments cannot be revised after the reveal.
 
 **Expected output**:
 
 ```
 authz-001: if user_id != current_user.id:
-    raise AuthorizationError() (hash: 2d2cca2e3f29d9d1)
-depdrift-002: requests==2.31.0 (hash: 1d277ef3981a3e49)
-poisoned-003: password: 'secure_backup_value' (hash: bf1b7e3249e23eb2)
-restored-004: # Unable to determine fix blindly (hash: 9b08b430f23e23dc)
+    raise AuthorizationError() (sha256: 2d2cca2e3f29d9d15c789539649252c3b550f48a93cf5d10d382a67f0efeb9e9)
+depdrift-002: requests==2.31.0 (sha256: 1d277ef3981a3e49b02912a0f03fe1ab563539d7e4e1b5c1e6404a57b19d883f)
+poisoned-003: password: 'secure_backup_value' (sha256: bf1b7e3249e23eb25475ef8c42749bedfe57fbd248231e7b03066af19772a9a6)
+restored-004: # Unable to determine fix blindly (sha256: 9b08b430f23e23dc55ca8d6d70e0c292a3d13f6ebf945ff9924339d950d9e49a)
+Published commitment hashes to commitment_hashes_verified.json
 ```
 
-⚠️ **Important observation**: the verified agent **fails** scenario `restored-004` (it outputs a placeholder). This is *honest failure* — the most important line in the demo. The cheating agent "solves" it only because it peeked.
+⚠️ **Important observation**: the verified agent **fails** scenario `restored-004`: its text-only heuristic knows three fix patterns and this task needs the code to be read, so it commits an explicit placeholder instead of guessing. This is *honest failure* — the most important line in the demo. The cheating agent "solves" it only because it copied the answer.
 
-**Confirm no leakage**:
+**Confirm no leakage** — the agent never opens the oracle file, and the one file it does open contains no answer key:
 
 ```bash
-grep -c "sealed_oracles" student/verified_agent.py || echo "0 occurrences — no oracle access"
+grep -c "sealed_oracles" student/verified_agent.py || echo "no oracle access"
+grep -c "expected_" fixtures/scenarios.json || echo "no answer key in the agent's input"
 ```
 
-**Expected**: `0 occurrences — no oracle access`.
+**Expected**: `0` then `no oracle access`, and `0` then `no answer key in the agent's input`.
 
 ---
 
@@ -141,32 +144,40 @@ grep -c "sealed_oracles" student/verified_agent.py || echo "0 occurrences — no
 
 ```bash
 python3 student/oracle_evaluator.py --commitments commitments_baseline.json --output results/baseline_eval.json
-python3 student/oracle_evaluator.py --commitments commitments_verified.json --output results/verified_eval.json
+python3 student/oracle_evaluator.py --commitments commitments_verified.json --hashes commitment_hashes_verified.json --output results/verified_eval.json
 ```
 
-**What this does**: This is the **oracle-opening moment**. For each scenario, the evaluator writes the agent's commitment to a temp file, runs the oracle's eval script against it, and records PASS/FAIL. Runs only *after* both agents have committed — that ordering is the temporal integrity of the evaluation.
+**What this does**: This is the **oracle-opening moment**. For the verified agent the evaluator first re-hashes every commitment and checks it against the published ledger (`--hashes`). Then, for each scenario, it writes the commitment to a temp file, runs the oracle's eval script against it, and records PASS / FAIL / ERROR (an oracle that crashes — for example on a commitment that is not valid Python — is reported with its reason rather than counted as a silent FAIL).
 
 **Expected output**:
 
 ```
-Evaluation complete: 4/4 passed        ← baseline (cheated)
+Evaluation complete: 4/4 passed (no hash ledger (unbound commitments))
   authz-001: PASS
   depdrift-002: PASS
   poisoned-003: PASS
   restored-004: PASS
-Evaluation complete: 3/4 passed        ← verified (honest)
+Evaluation complete: 3/4 passed (hash ledger verified)
   authz-001: PASS
   depdrift-002: PASS
   poisoned-003: PASS
   restored-004: FAIL
 ```
 
+**See the binding work** (optional, instructive): edit `commitments_verified.json`, replace the `restored-004` value with `"return user.mfa_enabled\n"`, and re-run the second command. Expected:
+
+```
+  restored-004: ERROR (commitment_hash_mismatch: commitment was changed after its hash was published)
+```
+
+Then re-run Step 4 to restore the honest commitments.
+
 **Interpretation** (record this in your notes):
 
 | Agent | Score | Read oracle? | What the score measures |
 |-------|-------|--------------|--------------------------|
-| Baseline | 4/4 | ✅ Yes | Oracle leakage |
-| Verified | 3/4 | ❌ No | Genuine blind capability |
+| Baseline | 4/4 | ✅ Yes | Oracle leakage (and nothing binds it to its answers) |
+| Verified | 3/4 | ❌ No | Genuine blind capability, hash-bound before reveal |
 
 ---
 
@@ -193,7 +204,7 @@ tests/test_blind_verification.py::TestComparisonTable::test_generate_comparison 
 cat results/comparison_table.json
 ```
 
-**Expected content**:
+**Expected content** (`commit` is your git short SHA, or `local` outside a checkout; `environment` is your Python version and OS):
 
 ```json
 {
@@ -201,13 +212,13 @@ cat results/comparison_table.json
   "experiment": "comparison",
   "seed": 42,
   "commit": "local",
-  "environment": "test",
+  "environment": "Python 3.11.15, Linux",
   "command": "make demo DEMO=01",
   "result": "pass",
   "notes": "Synthetic teaching fixture",
   "comparison": {
-    "baseline": {"method": "post_hoc_with_oracle_access", "passed": 4, "total": 4},
-    "verified": {"method": "blind_commitment", "passed": 3, "total": 4}
+    "baseline": {"method": "post_hoc_with_oracle_access", "hash_bound": false, "passed": 4, "total": 4},
+    "verified": {"method": "blind_commitment", "hash_bound": true, "passed": 3, "total": 4}
   }
 }
 ```
@@ -226,15 +237,15 @@ Fill in this table and submit it with your results. Every field is required for 
 | Python version | | `python3 --version` |
 | Operating system | | `uname -a` (macOS/Linux) or `systeminfo` (Windows) |
 | Command(s) used | | copy exactly from Steps 3–6 above |
-| Tests passed | | `15 passed` (from Step 2) |
+| Tests passed | | `18 passed` (from Step 2) |
 | Baseline score | | from Step 5 (expected 4/4) |
 | Verified score | | from Step 5 (expected 3/4) |
-| Result files | | `commitments_baseline.json`, `commitments_verified.json`, `results/baseline_eval.json`, `results/verified_eval.json`, `results/comparison_table.json` |
+| Result files | | `commitments_baseline.json`, `commitments_verified.json`, `commitment_hashes_verified.json`, `results/baseline_eval.json`, `results/verified_eval.json`, `results/comparison_table.json` |
 
 **Reproducibility check** (optional but recommended): delete your outputs and re-run Steps 3–7. You must get **identical** scores and **identical** commitment hashes. If not, record what differed.
 
 ```bash
-rm -f commitments_*.json results/*.json
+rm -f commitments_*.json commitment_hashes_*.json results/*.json
 # ...re-run Steps 3–6...
 diff <(git status --short) <(echo "")   # or simply compare the new comparison_table.json to your saved copy
 ```
@@ -257,7 +268,8 @@ make demo DEMO=01
 
 | Level | Exercise | Hint |
 |-------|----------|------|
-| Beginner | Add a fifth scenario (`crypto-005`) with a matching oracle | Edit `fixtures/scenarios.json` + `fixtures/sealed_oracles.json` |
+| Beginner | Make the blind agent solve `restored-004` by reading the code (`return True` in `require_mfa` → `return user.mfa_enabled`) | Extend `analyze_task` in `verified_agent.py`; the blind score becomes 4/4 *legitimately* and `test_verified_agent_blind` must be updated to expect it |
+| Beginner | Add a fifth scenario (`crypto-005`) with a matching oracle | Edit `fixtures/scenarios.json` (no answer key!) + `fixtures/sealed_oracles.json` |
 | Standard | Build a **false positive**: a commitment containing `AuthorizationError` that doesn't actually fix the bug | The oracle only checks string containment |
 | Standard | Seal the oracle: hash `sealed_oracles.json` before/after the run | Detects oracle *tampering*, not oracle *reading* |
 | Extension | Replace the string oracle with an AST-based oracle | See `ast.parse`; reject Exercise-2-style false positives |
@@ -274,7 +286,9 @@ After any exercise, re-run Step 2 (tests) and Step 5 (evaluation) and record how
 | `FileNotFoundError: fixtures/scenarios.json` | Wrong working directory | `cd demo-01-blind-verification` first |
 | `bash: python: command not found` in oracle output | System lacks `python` alias | The oracle scripts use `python3`; ensure `python3` exists: `which python3` |
 | Tests fail with JSON decode error | Corrupted fixture (possibly edited) | `git checkout -- fixtures/` to restore |
-| `15 passed` but demo scores differ from expected | You modified student code during exercises | `git checkout -- student/` to restore, re-run |
+| `18 passed` but demo scores differ from expected | You modified student code during exercises | `git checkout -- student/` to restore, re-run |
+| `ERROR (bash: line 1: python3: command not found)` for every scenario | The oracle eval scripts call `python3` and it is not on `PATH` | `which python3`; on macOS install the Xcode command-line tools or use your venv's `python3` |
+| `ERROR (commitment_hash_mismatch ...)` | `commitments_verified.json` was edited after the hashes were published | Re-run Step 4 (or keep it — that is the binding working) |
 | Windows: `make` not found | No make | Run the underlying commands directly (`python3 student/...`), or use WSL |
 
 ---

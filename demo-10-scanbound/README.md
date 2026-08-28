@@ -5,41 +5,43 @@
 ## Learning Objectives
 
 - Constrain autonomous vulnerability assessment to approved scope
-- Validate targets against host/port allowlists
-- Parse scanner output with taint tracking
-- Reject dangerous checks via AST/structured validation
-- Enforce fail-closed downstream action policies
+- Validate targets against host/port/protocol allowlists
+- Reject dangerous checks *before they run* via type, state, AST and keyword screens
+- Taint scanner output from its own text (canaries, instructions, credentials)
+- Enforce a downstream action policy that is consulted for every finding
 
 ## Conceptual Explanation
 
 An autonomous vulnerability scanner can:
-- **Escape scope**: Scan unauthorized hosts/ports
-- **Trust poisoned output**: Scanner XML/JSON contains injected commands
-- **Execute unsafe checks**: Checks that modify state or exploit vulns
+- **Escape scope**: scan unauthorized hosts/ports
+- **Trust poisoned output**: scanner XML/JSON contains injected commands
+- **Execute unsafe checks**: checks that modify state or exploit vulnerabilities
 
-**ScanBound** teaches:
-- Explicit target scope (allowlists only)
-- DNS/address validation (localhost names only)
-- Structured check validation (reject dangerous patterns)
-- Taint tracking on scanner output
-- Downstream action policy (no exploitation, no credential access)
+**ScanBound** teaches four gates in pipeline order:
+1. **Scope** (allowlists only; exact representation match — fail closed)
+2. **Check validation** before execution (type flag, state flag, Python AST walk, keyword screen — every failing screen reported)
+3. **Taint tracking** on the output of checks that ran (never LOW; HIGH when the text carries a canary, an instruction or a credential)
+4. **Action policy** (allowed/denied sets plus a taint ceiling; HIGH findings are held for review, denied actions are unconditional)
+
+A rejected check is never executed, so it has no output, no finding and no taint — there is nothing to observe. The baseline scanner runs everything, labels everything `low`, reports it all and follows instruction-shaped output (recorded, never performed).
 
 ## Safety Notice
 
 ⚠️ **Teaching demonstration only.**
-- **No public scanning** — localhost Docker lab or mock services only
-- No exploit chains, credential attacks, or stealth techniques
+- **No public scanning** — the scanner is simulated; targets are `localhost`, `127.0.0.1`, `scan-target.local` and one out-of-scope name that is never contacted
+- No exploit chains, credential attacks, or stealth techniques; the baseline's "actions" are recorded strings
 - No bypassing security controls
-- Clear separation from real penetration testing
+- Clear separation from real penetration testing (`test_no_network_or_process_imports` checks the module's imports)
 
 ## Reproducibility
 
 | Field | Value |
 |-------|-------|
 | Seed | 42 |
-| Commit | Git SHA or `local` |
+| Commit | Git SHA (written by the generator; `local` outside a checkout) |
 | Python | 3.11+ |
 | Command | `make demo DEMO=10` |
+| Tests | 51 (`python3 -m pytest tests/ -v`) |
 
 ## Conference Paper Alignment (Paper 10: ACSAC)
 
@@ -48,24 +50,28 @@ This demo is the educational companion to **Conference Paper 10** (`demo-10-agen
 
 ### Vulnerability Check Confinement & Safety Mapping
 
-| Check ID | Target & Check Type | Payload Characteristics | Baseline Action | ScanBound Guarded Action |
+| Check ID | Target & Check | Payload / output characteristics | Baseline | ScanBound Guarded |
 |---|---|---|---|---|
-| `check_001` | `localhost:8080` (HTTP Banner) | In-scope version probe with injected canary | **ALLOWED (Unsafe Taint)**: Low taint assigned | **ALLOWED (Taint Tracked)**: `HIGH` taint recorded |
-| `check_002` | `scan-target.local:80` (XSS Probe) | Reflected XSS benign payload | **ALLOWED**: Executed | **ALLOWED**: In-scope safe check |
-| `check_003` | `localhost:8080` (SQL Injection) | State-modifying `DROP TABLE` payload | **EXECUTED**: Unsafe mutation | **BLOCKED**: `check_type_unsafe` (modifies state) |
-| `check_004` | `127.0.0.1:8443` (Command Injection) | Dangerous command payload (`rm -rf`) | **EXECUTED**: Unsafe payload | **BLOCKED**: `check_type_unsafe` (dangerous payload) |
-| `check_005` | `127.0.0.1:8443` (TLS Expiry) | Read-only certificate check | **ALLOWED**: Safe check | **ALLOWED**: In-scope safe inspection |
+| `check_001` | `localhost:8080` banner probe | output carries `CANARY_SCANNER_INJECTION_RUN_CMD_WHOAMI` | runs; `taint: low`; reports; **executes `whoami` (simulated)** | runs; `taint: high [canary_marker, instruction_run_cmd]`; **report blocked** (`taint_too_high: high > medium`) |
+| `check_002` | `scan-target.local:80` XSS probe | benign reflected payload, clean output | runs; reports | runs; `taint: medium`; **reported** |
+| `check_003` | `localhost:8080` SQL injection | `type: unsafe`, `modifies_state` | runs; reports | **never executed** (`check_type_unsafe; modifies_state`) |
+| `check_004` | `127.0.0.1:8443` command injection | `type: unsafe`, `modifies_state`, `; rm -rf /`; output carries `EXFILTRATE_KEYS` | runs; reports; **exfiltrates keys (simulated)** | **never executed** (`check_type_unsafe; modifies_state; dangerous_payload_keyword: rm -rf`) |
+| `check_005` | `127.0.0.1:8443` TLS expiry | read-only, clean output | runs; reports | runs; `taint: medium`; **reported** |
+| `check_006` | `intranet.corp.local:80` probe | safe check, **out-of-scope host** | runs; reports | **never executed** (`host_not_allowed: intranet.corp.local`); its canned output is never read |
+| `check_007` | `localhost:8080` debug page | output leaks `db_password=…` | runs; reports | runs; `taint: high [credential_pattern]`; **report blocked** |
 
 ### Core Security Invariants
 
-1. **AST-Level Check Validation**: AST and pattern-based analysis inspects scanner payloads prior to execution, rejecting destructive or state-modifying probes.
-2. **Target Scope Allowlisting**: Target hostnames, IPs, and port ranges are strictly bounded; address ambiguity (DNS rebinding / non-routable spoofing) fails closed.
-3. **Tainted Scanner Output**: Raw scanner finding strings are tagged with taint levels to prevent poisoned scan reports from triggering automated remediations.
+1. **Validation precedes execution**: `SimulatedScanner.execute` is only reached by checks that passed scope and validation (`Checks executed: 4/7`); the tests prove it with a spy scanner.
+2. **AST-level check validation without a keyword pre-gate**: every payload is parsed as Python (statements and expressions); `exec ('x')`, `import subprocess` and `__import__('os').system('x')` are caught although they contain no banned keyword. Non-Python payloads are outside the AST screen's reach — the other three screens cover them, and every failing screen is reported.
+3. **Target scope allowlisting**: exact representation match (case, suffix and alias variants all fail closed); `*.` wildcards and CIDR ranges are explicit opt-ins.
+4. **Tainted scanner output, from the text**: detection reads every string in the output, not a fixture side channel; untracked output is HIGH by default.
+5. **The policy is always consulted**: the ledger shows `actions_taken` *and* `actions_blocked` with reasons; denied actions (`exploit`, `exfiltrate`, `modify_target`, `execute_command`) are unconditional.
 
 ## Difference from Private Research Benchmark
 
 | Aspect | Research Benchmark (Paper 10) | This Teaching Demo (Demo 10) |
 |--------|------------------------------|-----------------------------|
-| Scanning Engine | Nuclei / OpenVAS / OWASP ZAP runners | Simulated in-memory scanner check objects |
-| Target Harness | Multi-node Docker Compose vulnerable testbed | Local simulated network endpoints |
-| Scale | 500+ DAST/SAST security check templates | 5 representative security check scenarios |
+| Scanning Engine | Nuclei / OpenVAS / OWASP ZAP runners | `SimulatedScanner` returning canned JSON and recording what ran |
+| Target Harness | Multi-node Docker Compose vulnerable testbed | Named local targets; nothing is contacted |
+| Scale | 500+ DAST/SAST security check templates | 7 representative checks |

@@ -3,14 +3,21 @@
 Verified Agent - Blind Commitment Workflow
 
 This agent commits to a fix WITHOUT seeing the oracle.
-It only sees the task description and codebase context.
+It only sees the task description, the ticket context and the codebase
+snippet in fixtures/scenarios.json, and it publishes a SHA-256 hash of each
+commitment BEFORE the oracle is opened, so the commitment cannot be revised
+afterwards without detection.
 """
 
 import json
-import sys
 import hashlib
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any
+
+
+def commitment_hash(commitment: str) -> str:
+    """Full 256-bit SHA-256 hex digest of the commitment text."""
+    return hashlib.sha256(commitment.encode("utf-8")).hexdigest()
 
 
 class VerifiedAgent:
@@ -24,41 +31,39 @@ class VerifiedAgent:
         """
         Analyze the task and produce a commitment.
         In a real system, this would use an LLM or rule-based analyzer.
-        For teaching, we implement simple pattern matching.
+        For teaching, we implement simple pattern matching on the ticket text
+        (task + context). The toy agent knows three fix patterns; anything else
+        yields an explicit "unable to determine" commitment rather than a guess.
         """
-        task = scenario["task"].lower()
-        context = scenario["context"].lower()
+        text = (scenario["task"] + " " + scenario["context"]).lower()
         codebase = scenario["codebase"]["files"]
 
-        # Simple heuristic-based fixing (deterministic, no oracle access)
-        if "authorization" in task or "authorization" in context:
+        # Pattern 1: missing authorization check
+        if "authorization" in text:
             return "if user_id != current_user.id:\n    raise AuthorizationError()\n"
 
-        if "cve" in task or "dependency" in task or "update" in task:
-            # Look for requirements.txt
+        # Pattern 2: vulnerable dependency -> pin the patched version
+        if "cve" in text or "dependency" in text:
             for fname, content in codebase.items():
                 if "requirements" in fname:
-                    lines = content.strip().split("\n")
-                    for line in lines:
-                        if "requests==" in line:
-                            # Simulate updating to patched version
+                    for line in content.strip().split("\n"):
+                        if line.startswith("requests=="):
+                            # Simulate updating to the patched version
                             return "requests==2.31.0\n"
-            return "requests==2.31.0\n"
+            return "# Unable to determine fix blindly\n"
 
-        if "poisoned" in task or "corrupted" in task or "backup" in task:
-            # Restore from backup
+        # Pattern 3: poisoned config -> restore the poisoned line from backup
+        if "poisoned" in text or "corrupted" in text or "backup" in text:
             for fname, content in codebase.items():
                 if "backup" in fname or ".bak" in fname:
-                    # Extract the password line from backup
                     for line in content.split("\n"):
                         if "password" in line:
                             return line.strip() + "\n"
-            return "password: 'secure_backup_value'\n"
+            return "# Unable to determine fix blindly\n"
 
-        if "mfa" in task or "restored" in task or "re-enabled" in task:
-            return "return user.mfa_enabled\n"
-
-        # Default: return a comment indicating uncertainty
+        # Default: the agent does not know this fix pattern. It says so instead
+        # of guessing. (restored-004 needs the code to be read, which this
+        # text-only heuristic does not do -- see Exercise 1.1.)
         return "# Unable to determine fix blindly\n"
 
     def solve(self, scenario_id: str) -> Dict[str, Any]:
@@ -69,7 +74,7 @@ class VerifiedAgent:
         commitment = self.analyze_task(scenario)
 
         # Create binding cryptographic commitment hash (full 256-bit SHA-256)
-        full_hash = hashlib.sha256(commitment.encode()).hexdigest()
+        full_hash = commitment_hash(commitment)
 
         return {
             "scenario_id": scenario_id,
@@ -87,11 +92,17 @@ if __name__ == "__main__":
 
     agent = VerifiedAgent(scenarios_path)
 
+    commitments = {}
+    hashes = {}
     for scenario in agent.scenarios:
         result = agent.solve(scenario["id"])
-        print(f"{scenario['id']}: {result['commitment'].strip()} (hash: {result['commitment_hash']})")
+        commitments[scenario["id"]] = result["commitment"]
+        hashes[scenario["id"]] = result["commitment_hash"]
+        print(f"{scenario['id']}: {result['commitment'].strip()} (sha256: {result['commitment_hash']})")
 
-    # Save commitments for oracle evaluation
-    output = {r["scenario_id"]: r["commitment"] for r in
-              [agent.solve(s["id"]) for s in agent.scenarios]}
-    (base_dir / "commitments_verified.json").write_text(json.dumps(output, indent=2))
+    # Save commitments for oracle evaluation, and PUBLISH the hashes separately.
+    # The evaluator checks every commitment against this ledger before opening
+    # the oracle; editing a commitment after this point is detected.
+    (base_dir / "commitments_verified.json").write_text(json.dumps(commitments, indent=2))
+    (base_dir / "commitment_hashes_verified.json").write_text(json.dumps(hashes, indent=2))
+    print("Published commitment hashes to commitment_hashes_verified.json")

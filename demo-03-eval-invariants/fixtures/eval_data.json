@@ -1,40 +1,53 @@
 {
   "evaluation_card": {
     "name": "synthetic-agent-eval-v1",
-    "version": "1.0.0",
-    "description": "Synthetic evaluation for teaching invariants",
+    "version": "1.1.0",
+    "description": "Synthetic evaluation for teaching invariants. Every number in this file is invented for teaching; nothing here is a measurement.",
     "tasks": [
-      {"id": "task-001", "prompt": "Fix auth bug in user lookup", "difficulty": "easy", "category": "security"},
-      {"id": "task-002", "prompt": "Update deprecated API call", "difficulty": "medium", "category": "maintenance"},
-      {"id": "task-003", "prompt": "Implement rate limiting", "difficulty": "hard", "category": "security"},
-      {"id": "task-004", "prompt": "Add input validation", "difficulty": "medium", "category": "security"},
-      {"id": "task-005", "prompt": "Refactor legacy module", "difficulty": "hard", "category": "maintenance"}
+      {"id": "task-001", "prompt": "Fix the authentication bug in the user lookup function", "difficulty": "easy", "category": "security"},
+      {"id": "task-002", "prompt": "Update the deprecated API call in the payment client", "difficulty": "medium", "category": "maintenance"},
+      {"id": "task-003", "prompt": "Implement rate limiting for the login endpoint using a token bucket", "difficulty": "hard", "category": "security"},
+      {"id": "task-004", "prompt": "Add input validation to the profile update handler", "difficulty": "medium", "category": "security"},
+      {"id": "task-005", "prompt": "Refactor the legacy reporting module into testable units", "difficulty": "hard", "category": "maintenance"}
     ],
     "models": ["baseline-agent", "verified-agent"],
-    "metrics": ["pass_rate", "leakage_score", "difficulty_calibration"]
+    "metrics": ["pass_rate", "leakage_score", "difficulty_calibration"],
+    "pass_threshold": 0.7,
+    "failure_taxonomy": ["incomplete", "no_implementation", "wrong_approach", "timeout"]
   },
   "synthetic_outputs": {
     "baseline-agent": {
-      "task-001": {"score": 1.0, "output": "fixed auth check", "tokens": 150},
-      "task-002": {"score": 1.0, "output": "updated api call", "tokens": 200},
-      "task-003": {"score": 0.8, "output": "basic rate limit", "tokens": 300},
-      "task-004": {"score": 1.0, "output": "added validation", "tokens": 180},
-      "task-005": {"score": 0.6, "output": "partial refactor", "tokens": 400}
+      "task-001": {"score": 1.0, "runs": [1.0, 1.0, 1.0], "output": "fixed auth check", "failure_category": null, "tokens": 150},
+      "task-002": {"score": 0.9, "runs": [0.9, 0.9, 0.9], "output": "updated api call", "failure_category": null, "tokens": 200},
+      "task-003": {"score": 1.0, "runs": [1.0, 1.0, 1.0], "output": "token bucket rate limiter, identical to the reference solution", "failure_category": null, "tokens": 300},
+      "task-004": {"score": 0.9, "runs": [0.9, 0.9, 0.9], "output": "added validation", "failure_category": null, "tokens": 180},
+      "task-005": {"score": 0.6, "runs": [0.6, 0.6, 0.6], "output": "partial refactor", "failure_category": "incomplete", "tokens": 400}
     },
     "verified-agent": {
-      "task-001": {"score": 1.0, "output": "fixed auth check with tests", "tokens": 160},
-      "task-002": {"score": 0.9, "output": "updated api with migration", "tokens": 220},
-      "task-003": {"score": 0.7, "output": "rate limit with config", "tokens": 320},
-      "task-004": {"score": 0.95, "output": "comprehensive validation", "tokens": 200},
-      "task-005": {"score": 0.5, "output": "refactor plan only", "tokens": 350}
+      "task-001": {"score": 1.0, "runs": [1.0, 1.0, 1.0], "output": "fixed auth check with tests", "failure_category": null, "tokens": 160},
+      "task-002": {"score": 0.9, "runs": [0.9, 0.9, 0.9], "output": "updated api with migration", "failure_category": null, "tokens": 220},
+      "task-003": {"score": 0.7, "runs": [0.7, 0.7, 0.7], "output": "rate limit with config", "failure_category": null, "tokens": 320},
+      "task-004": {"score": 0.95, "runs": [0.95, 0.95, 0.95], "output": "comprehensive validation", "failure_category": null, "tokens": 200},
+      "task-005": {"score": 0.5, "runs": [0.5, 0.5, 0.5], "output": "refactor plan only", "failure_category": "no_implementation", "tokens": 350}
     }
   },
   "training_data_indicators": {
-    "task-001": {"in_training": false, "ngram_overlap": 0.02},
-    "task-002": {"in_training": false, "ngram_overlap": 0.05},
-    "task-003": {"in_training": true, "ngram_overlap": 0.45},
-    "task-004": {"in_training": false, "ngram_overlap": 0.03},
-    "task-005": {"in_training": false, "ngram_overlap": 0.01}
+    "task-001": {"in_training": false},
+    "task-002": {"in_training": false},
+    "task-003": {"in_training": true},
+    "task-004": {"in_training": false},
+    "task-005": {"in_training": false}
   },
-  "seed": 42
+  "training_corpus": [
+    {"doc_id": "corpus-001", "text": "Tutorial: implement rate limiting for the login endpoint using a token bucket. Reference solution: keep a bucket per client, refill at a fixed rate, reject when empty."},
+    {"doc_id": "corpus-002", "text": "Configuring structured logging levels for a Flask application in production."},
+    {"doc_id": "corpus-003", "text": "Rotating database credentials with a secrets manager without downtime."},
+    {"doc_id": "corpus-004", "text": "Release notes: the reporting dashboard now exports CSV and supports dark mode."}
+  ],
+  "run_metadata": {
+    "seed": 42,
+    "commit": "fixture-v1.1.0",
+    "environment": "synthetic fixture; no model was run",
+    "command": "make demo DEMO=03"
+  }
 }

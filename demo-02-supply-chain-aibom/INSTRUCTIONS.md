@@ -11,7 +11,7 @@
 |------|------|---------|
 | Run tests | 1 min | `python3 -m pytest tests/ -v` |
 | Run the policy gate | 2 min | `python3 student/policy_gate.py` |
-| Run the CI validator | 1 min | `python3 student/validate_aibom.py` |
+| Run the CI validator | 1 min | `python3 student/validate_aibom.py --scenario drifted-002` |
 | Generate results | 1 min | `python3 student/generate_results.py` |
 | **Total** | **~10 min** | |
 
@@ -26,7 +26,8 @@ From the **repository root**:
 ```bash
 cd demo-02-supply-chain-aibom
 ls
-# Expected: Makefile  README.md  INSTRUCTIONS.md  fixtures  results  student  tests
+# Expected: INSTRUCTIONS.md  Makefile  README.md  fixtures  student  tests
+# (results/ is git-ignored; it is created by `make setup` or by generate_results.py)
 ```
 
 **What this does**: All commands below use relative paths (`fixtures/aibom.json`), so you must be inside this directory.
@@ -39,7 +40,7 @@ ls
 cat fixtures/aibom.json
 ```
 
-**What this does**: Shows the AIBOM (declared components + capabilities), the policy (allowed / denied / waiver rules), and the four drift scenarios.
+**What this does**: Shows the AIBOM (declared components + capabilities), the policy (allowed / denied / waiver rules), the pinned `evaluation_time` (the clock every scenario is judged against, so the demo gives the same answer every day), and the four drift scenarios.
 
 **Before running anything, write down your predictions**:
 
@@ -53,6 +54,8 @@ cat fixtures/aibom.json
 **Key things to notice while reading**:
 - The deny list contains `net:http:*` (very broad) while the allow list contains `net:http:api.internal/*` (specific) — which wins?
 - `waiver_rules.allowed_scopes` lists only `exec:tools:scanner` and `net:http:specific.host` — what does that mean for a waiver requesting `exec:shell:*`?
+- `waiver_rules.max_duration_hours` is 24 and `valid-waiver-004` runs from `issued` 09:00 to `expires` 09:00 the next day — what happens if you push `expires` out by a week?
+- `exec:tools:scanner` is on the deny list *and* on the waivable list — which wins, and in which order are the checks made?
 
 ---
 
@@ -62,16 +65,16 @@ cat fixtures/aibom.json
 python3 -m pytest tests/ -v
 ```
 
-**What this does**: Runs all **12 tests**: compliant-passes, drifted-blocked, invalid-waiver-rejected, valid-waiver-accepted, expired-waiver-rejected, explicit-deny-overrides-waiver, least-privilege, CI script, plus exercises.
+**What this does**: Runs all **17 tests**: compliant-passes, drifted-blocked (scanner explicitly denied, the rest still allowed), subset-of-declared-tools-allowed, invalid-waiver-rejected, unapproved-waiver-rejected (approval checked on its own), valid-waiver-accepted (still reported as drift), expired-waiver-rejected, duration-limit-enforced, waiver-without-issue-time-rejected, unwaivable-scope-stays-denied, least-privilege, scenarios-behave-as-labelled, CI script exit codes, plus exercises.
 
 **Expected output (end of run)**:
 
 ```
 tests/test_aibom_drift.py::TestExercises::test_exercise_json_results PASSED
-============================== 12 passed in 0.XXs ==============================
+============================== 17 passed in 0.XXs ==============================
 ```
 
-✅ **Checkpoint**: `12 passed`. Fix environment before continuing if not.
+✅ **Checkpoint**: `17 passed`. Fix environment before continuing if not.
 
 ---
 
@@ -81,59 +84,80 @@ tests/test_aibom_drift.py::TestExercises::test_exercise_json_results PASSED
 python3 student/policy_gate.py
 ```
 
-**What this does**: Loads the AIBOM and policy, then evaluates each scenario's runtime capabilities against the gate. The gate's decision order is: **explicit allow → valid waiver → explicit deny → default deny (fail-closed)**.
+**What this does**: Loads the AIBOM and policy, expands composite tool lists into one capability per tool, then answers two separate questions for each scenario: **drift** (is anything used that the AIBOM does not declare?) and **compliance** (is every capability permitted?). The gate's decision order per capability is: **explicit allow → valid waiver → explicit deny → default deny (fail-closed)**. A waiver is valid only if it is approved by a named approver, in force at the evaluation time, no longer than `max_duration_hours`, and for a scope in `allowed_scopes`.
 
-**Expected output** (annotated — match each ✓ against your Step 1 predictions):
+**Expected output** (verbatim — match each ✓ against your Step 1 predictions):
 
 ```
+Declared capabilities (AIBOM): ['exec:tools:parser', 'exec:tools:validator', 'net:http:api.internal/*', 'read:files:/workspace/*', 'write:files:/workspace/output/*']
+Evaluation time: 2025-01-14T12:00:00Z (fixed by the fixture for reproducibility)
+
 === compliant-001: System matches declared AIBOM ===
-Compliant: True
+Drift detected: False
   ALLOW: read:files:/workspace/* (explicitly_allowed)
   ALLOW: write:files:/workspace/output/* (explicitly_allowed)
-  ALLOW: exec:tools:parser,validator (explicitly_allowed)
+  ALLOW: exec:tools:parser (explicitly_allowed)
+  ALLOW: exec:tools:validator (explicitly_allowed)
   ALLOW: net:http:api.internal/* (explicitly_allowed)
+Compliant: True
 ✓ Matches expected: PASS
 
 === drifted-002: Agent gained scanner execution capability ===
+Drift detected: True (undeclared: exec:tools:scanner)
+  ALLOW: read:files:/workspace/* (explicitly_allowed)
+  ALLOW: write:files:/workspace/output/* (explicitly_allowed)
+  ALLOW: exec:tools:parser (explicitly_allowed)
+  ALLOW: exec:tools:validator (explicitly_allowed)
+  DENY: exec:tools:scanner (explicitly_denied)
+  ALLOW: net:http:api.internal/* (explicitly_allowed)
 Compliant: False
-  DENY: exec:tools:parser,validator,scanner (not_allowed_default_deny)
 ✓ Matches expected: BLOCKED
 
 === invalid-waiver-003: Waiver for shell access without approval ===
-Compliant: False
+Drift detected: True (undeclared: exec:shell:*)
+Waiver exec:shell:*: REJECTED: not approved; scope exec:shell:* is not waivable
   ALLOW: read:files:/workspace/* (explicitly_allowed)
   DENY: exec:shell:* (explicitly_denied)
+Compliant: False
 ✓ Matches expected: WAIVER REJECTED
 
 === valid-waiver-004: Properly scoped, approved, time-limited waiver ===
-Compliant: True
+Drift detected: True (undeclared: exec:tools:scanner)
+Waiver exec:tools:scanner: ACCEPTED
   ALLOW: read:files:/workspace/* (explicitly_allowed)
   ALLOW: exec:tools:scanner (waiver_granted)
+Compliant: True
 ✓ Matches expected: WAIVER ACCEPTED
 ```
 
-**What to record in your notes**: the **reason string** for each decision (`explicitly_allowed`, `not_allowed_default_deny`, `explicitly_denied`, `waiver_granted`). These strings are audit evidence — being able to predict them means you understand the gate.
+**What to record in your notes**: the **reason string** for each decision (`explicitly_allowed`, `explicitly_denied`, `waiver_granted`; `not_allowed_default_deny` fires for anything on neither list — try `exec:tools:formatter`), and the waiver rejection reasons. These strings are audit evidence — being able to predict them means you understand the gate. Note that `valid-waiver-004` is *compliant* and *still drift*: the waiver is a sanctioned exception, not a change to the declaration.
 
 ---
 
 ## Step 4 — Run the GitHub Actions Validator (CI Simulation)
 
 ```bash
-python3 student/validate_aibom.py; echo "exit code: $?"
+python3 student/validate_aibom.py --scenario compliant-001; echo "exit code: $?"
+python3 student/validate_aibom.py --scenario drifted-002; echo "exit code: $?"
+python3 student/validate_aibom.py --self-test; echo "exit code: $?"
 ```
 
-**What this does**: Runs the standalone validator that CI would invoke. It re-evaluates all scenarios and asserts each behaves as its `expected` field declares.
+**What this does**: Runs the standalone validator that CI would invoke. Given one observed runtime capability set (here taken from a fixture scenario; in a pipeline you would pass `--runtime observed.json`), it exits **0 if compliant, 1 if not, 2 on error**. `--self-test` (also the default with no arguments) instead checks that every fixture scenario behaves as its `expected` label says.
 
 **Expected output**:
 
 ```
-(no output — silent success)
+compliant-001: COMPLIANT (evaluated at 2025-01-14T12:00:00+00:00)
+exit code: 0
+DENY: exec:tools:scanner (explicitly_denied)
+drift: undeclared capabilities ['exec:tools:scanner']
+drifted-002: NON-COMPLIANT (evaluated at 2025-01-14T12:00:00+00:00)
+exit code: 1
+self-test: 4/4 scenarios behave as their expected label
 exit code: 0
 ```
 
-**Exit code meaning**: `0` = all scenarios behave as declared · `1` = unexpected drift behavior · `2` = error.
-
-**Why this step exists**: This is the bridge from teaching demo to practice — in a real pipeline, a non-zero exit blocks the deployment.
+**Why this step exists**: This is the bridge from teaching demo to practice — in a real pipeline, the non-zero exit on `drifted-002` is what blocks the deployment. Try `--scenario valid-waiver-004 --now now`: judged against today's clock the 2025 waiver has lapsed, and the same runtime is now non-compliant (exit 1).
 
 ---
 
@@ -145,7 +169,7 @@ python3 student/generate_results.py
 
 **What this does**: Re-runs all scenarios through the gate and writes `results/drift_results.json` in the standardized result schema.
 
-**Expected output** (printed and saved):
+**Expected output** (printed and saved; `commit` is your git short SHA or `local`, `environment` is your Python/OS; `result` is computed from the scenarios, not hard-coded):
 
 ```json
 {
@@ -153,20 +177,20 @@ python3 student/generate_results.py
   "experiment": "drift_detection",
   "seed": 42,
   "commit": "local",
-  "environment": "test",
+  "environment": "Python 3.11.15, Linux",
   "command": "make demo DEMO=02",
   "result": "pass",
-  "notes": "Synthetic teaching fixture",
+  "notes": "Synthetic teaching fixture; evaluated at fixture evaluation_time 2025-01-14T12:00:00Z",
   "scenarios": [
-    {"scenario": "compliant-001", "expected": "pass", "compliant": true},
-    {"scenario": "drifted-002", "expected": "block", "compliant": false},
-    {"scenario": "invalid-waiver-003", "expected": "reject_waiver", "compliant": false},
-    {"scenario": "valid-waiver-004", "expected": "accept_waiver", "compliant": true}
+    {"scenario": "compliant-001", "expected": "pass", "compliant": true, "drift_detected": false, "waiver_accepted": null, "matches_expected": true},
+    {"scenario": "drifted-002", "expected": "block", "compliant": false, "drift_detected": true, "waiver_accepted": null, "matches_expected": true},
+    {"scenario": "invalid-waiver-003", "expected": "reject_waiver", "compliant": false, "drift_detected": true, "waiver_accepted": false, "matches_expected": true},
+    {"scenario": "valid-waiver-004", "expected": "accept_waiver", "compliant": true, "drift_detected": true, "waiver_accepted": true, "matches_expected": true}
   ]
 }
 ```
 
-✅ **Checkpoint**: every scenario's `compliant` value matches its `expected` semantics.
+✅ **Checkpoint**: every scenario has `"matches_expected": true` and `"result": "pass"`.
 
 ---
 
@@ -179,25 +203,27 @@ import sys
 sys.path.insert(0, "student")
 from policy_gate import PolicyGate, Waiver
 
-gate = PolicyGate(Path("fixtures/aibom.json"))
-for label, exp in [("expired (2020)", "2020-01-01T00:00:00Z"),
-                   ("valid (2099)",   "2099-12-31T23:59:59Z")]:
-    w = Waiver("exec:tools:scanner", "test", True, exp)
+gate = PolicyGate(Path("fixtures/aibom.json"))   # evaluation_time pinned at 2025-01-14T12:00Z
+for label, issued, expires in [("expired",  "2025-01-13T09:00:00Z", "2025-01-14T09:00:00Z"),
+                               ("in force", "2025-01-14T09:00:00Z", "2025-01-15T09:00:00Z"),
+                               ("too long", "2025-01-14T09:00:00Z", "2025-01-21T09:00:00Z")]:
+    w = Waiver("exec:tools:scanner", "audit scan", True, expires, issued, "security-lead@example.com")
     r = gate.evaluate_system(["exec:tools:scanner"], w)
-    print(f"{label:15} -> compliant={r['compliant']}")
+    print(f"{label:9} -> compliant={r['compliant']}  {r['waiver']['reasons']}")
 EOF
 ```
 
-**What this does**: Evaluates the same capability twice with waivers differing *only* in expiry date.
+**What this does**: Evaluates the same capability three times with waivers differing *only* in their timestamps.
 
 **Expected output**:
 
 ```
-expired (2020)  -> compliant=False
-valid (2099)    -> compliant=True
+expired   -> compliant=False  ['expired at 2025-01-14T09:00:00Z']
+in force  -> compliant=True  []
+too long  -> compliant=False  ['duration exceeds max_duration_hours=24']
 ```
 
-**Lesson**: a waiver is a *lease*. Record in your notes what happens silently the day an unmonitored waiver expires.
+**Lesson**: a waiver is a *lease*, and the lease length is policy (`max_duration_hours`), not the requester's choice. Record in your notes what happens silently the day an unmonitored waiver expires — then run `python3 student/validate_aibom.py --scenario valid-waiver-004 --now now` to watch it happen.
 
 ---
 
@@ -211,12 +237,12 @@ valid (2099)    -> compliant=True
 | Python version | | `python3 --version` |
 | OS | | `uname -a` / `systeminfo` |
 | Commands used | | copy exactly from Steps 2–5 |
-| Tests passed | | `12 passed` |
+| Tests passed | | `17 passed` |
 | Gate verdicts | | 4 × ✓ "Matches expected" (Step 3) |
-| CI exit code | | `0` (Step 4) |
+| CI exit codes | | `0`, `1`, `0` (Step 4) |
 | Result file | | `results/drift_results.json` |
 
-**Reproducibility check**: `rm -rf results/` and re-run Steps 3–5. The JSON must be byte-identical (except nothing time-dependent exists in this demo — output should match exactly).
+**Reproducibility check**: `rm -rf results/` and re-run Steps 3–5. The JSON must be byte-identical: the fixture pins `evaluation_time`, so the clock does not leak into the result (only `commit` and `environment` differ between machines).
 
 ---
 
@@ -238,8 +264,9 @@ This chains Steps 3–5 automatically and prints the results JSON.
 |-------|----------|------|
 | Beginner | Add `drifted-005`: runtime gains `net:http:evil.example/*` | Add to `drift_scenarios`, `expected: "block"`; predict the reason string first |
 | Standard | Waiver expiry monitor script | Classify waivers as EXPIRED / EXPIRES_SOON / VALID |
-| Standard | Fix composite-tool matching so `exec:tools:parser,validator,scanner` matches per-tool | Split on commas before pattern matching |
-| Extension | Reject waivers with weak justifications (< 20 chars or "TODO"/"test") | Extend `Waiver` validation; add fixtures |
+| Standard | Extend per-tool matching to host lists (`net:http:a.internal,b.internal`) | Generalise `expand_capability`; add a mixed-case test |
+| Extension | Reject waivers with weak justifications (< 20 chars or "TODO"/"test") | Extend `Waiver.validate`; add fixtures |
+| Extension | Normalise resource paths so `read:files:/workspace/../etc/passwd` no longer matches `read:files:/workspace/*` | `posixpath.normpath` on the scope part before matching; add a traversal test |
 
 After any exercise: re-run Step 2 (tests) and Step 3 (gate) and record what changed.
 
@@ -249,9 +276,9 @@ After any exercise: re-run Step 2 (tests) and Step 3 (gate) and record what chan
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `ModuleNotFoundError: cryptography` etc. | Deps not installed | Repo root: `make setup` |
+| `ModuleNotFoundError: pytest` | Deps not installed | Repo root: `make setup` |
 | `FileNotFoundError: fixtures/aibom.json` | Wrong directory | `cd demo-02-supply-chain-aibom` |
-| `valid-waiver-004` shows `compliant=False` | System clock past waiver expiry, or fixture edited | Fixture uses `2099` expiry; restore with `git checkout -- fixtures/` |
+| `valid-waiver-004` shows `compliant=False` | `evaluation_time` removed from the fixture (real clock is past the 2025 waiver), or fixture edited | Restore with `git checkout -- fixtures/` |
 | Tests fail after your edits | Exercise changes broke invariants | `git checkout -- student/ tests/ fixtures/` to reset |
 | Exit code 2 from validator | Exception in validator | Read the traceback; usually a fixture JSON typo |
 

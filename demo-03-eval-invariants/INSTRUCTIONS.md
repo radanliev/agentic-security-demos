@@ -15,7 +15,7 @@
 | Four-arm analysis | 5 min | inline script (Step 5) |
 | **Total** | **~15 min** | |
 
-**Safety**: 100% offline. Synthetic tasks and model outputs; no dataset downloads, no model API calls.
+**Safety**: 100% offline. Synthetic tasks and model outputs; no dataset downloads, no model API calls. Every number in the fixture is invented for teaching.
 
 ---
 
@@ -35,13 +35,14 @@ cd demo-03-eval-invariants
 cat fixtures/eval_data.json
 ```
 
-**What this does**: Shows the evaluation card (5 tasks), synthetic outputs for two models, and — crucially — `training_data_indicators`.
+**What this does**: Shows the evaluation card (5 tasks, a `pass_threshold` and a `failure_taxonomy`), synthetic outputs for two models (each with a `score`, three recorded scoring `runs` and a `failure_category`), the dataset's declared `training_data_indicators`, a four-document `training_corpus`, and the `run_metadata` block.
 
-**Find the planted flaw before running**: look at `training_data_indicators` for `task-003`. Write down:
+**Find the planted flaw before running**: compare the task prompts with `training_corpus`. Write down:
 
-1. Which task is leaked into training data? ______
-2. Its n-gram overlap value: ______ (threshold for the leakage invariant is 0.10)
-3. Prediction: which of the five invariants will PASS, which will FAIL?
+1. Which task's prompt appears verbatim in the corpus? ______
+2. Which task is declared `in_training: true`? ______ (the leakage invariant flags a task once, listing every reason that applies; the n-gram threshold is 0.10)
+3. Look at that task's scores: baseline ______, verified ______. Which model does the leak help?
+4. Prediction: which of the five invariants will PASS, which will FAIL?
 
 | Invariant | My prediction (PASS/FAIL) |
 |-----------|---------------------------|
@@ -59,10 +60,10 @@ cat fixtures/eval_data.json
 python3 -m pytest tests/ -v
 ```
 
-**Expected**: `13 passed`. Pay attention to `test_invariant_1_no_leakage` (asserts task-003 is caught) and `test_high_score_weak_evaluation` (the module thesis as an assertion).
+**Expected**: `25 passed`. Every invariant is tested both ways — it passes on the healthy fixture and fails on a copy that has the defect (a planted overlap, flaky runs, an unlabelled failure, a missing commit). Pay attention to `test_invariant_1_no_leakage` (asserts task-003 is caught, once) and `test_four_arm_comparison` (the module thesis computed from the data).
 
 ```
-============================== 13 passed in 0.XXs ==============================
+============================== 25 passed in 0.XXs ==============================
 ```
 
 ---
@@ -73,20 +74,25 @@ python3 -m pytest tests/ -v
 python3 student/eval_invariants.py
 ```
 
-**What this does**: Executes the five invariant checks against the fixture and saves `results/invariant_results.json`.
+**What this does**: Executes the five invariant checks against the fixture, prints one line per invariant, recomputes each model's headline with leaked tasks excluded, and saves `results/invariant_results.json` (whose `summary.run_metadata` block records this run's commit, Python version and OS).
 
-**Expected output** (key excerpts — compare with your Step 1 predictions):
+**Expected output** (compare with your Step 1 predictions):
 
 ```
-invariant_1_no_leakage: passed=False, leaked_tasks=['task-003', 'task-003']
-invariant_2_adequate_difficulty: passed=False (mean/variance issues listed)
-invariant_3_stable_scoring: passed=True
-invariant_4_correct_failure_classification: passed=True
-invariant_5_reproducible_metadata: passed=True, seed=42
-summary: all_passed=False
+invariant_1_no_leakage: passed=False  1 of 5 tasks show leakage indicators: task-003 (declared in_training, 3-gram overlap 1.00 > 0.1)
+invariant_2_adequate_difficulty: passed=False  low variance (0.032 < 0.05); ceiling effect (4/10 scores >= 0.95, limit 30%)
+invariant_3_stable_scoring: passed=True  10 items x recorded runs, max spread 0.000 <= 0.01
+invariant_4_correct_failure_classification: passed=True  2 failures below 0.7 among 10 outputs; 0 misclassified
+invariant_5_reproducible_metadata: passed=True  all of seed, commit, environment, command recorded
+summary: all_passed=False, passed_count=3/5, failed=['invariant_1_no_leakage', 'invariant_2_adequate_difficulty']
+
+baseline-agent   headline=0.88  clean-mean=0.85  (excluding task-003)
+verified-agent   headline=0.81  clean-mean=0.84  (excluding task-003)
 ```
 
-**Record**: which of your predictions were right? Note that `task-003` appears **twice** in the leaked list — flagged once for `in_training=true` and once for `ngram_overlap > 0.1`. One root cause, two flags.
+**Record**: which of your predictions were right? Note that `task-003` is listed **once** with **two** reasons: the dataset declares it in training, and the check itself found its prompt verbatim in the corpus (overlap 1.00). One root cause, two independent signals.
+
+Add `--strict` to make the script exit 1 when any invariant fails — that is how CI would gate on evaluation health.
 
 ---
 
@@ -103,16 +109,20 @@ python3 student/generate_summary.py
 ```
 Invariant Summary:
 ============================================================
-  PASS  stable_scoring:
-  PASS  correct_failure_classification:
-  PASS  reproducible_metadata:
-  FAIL  no_leakage: 1 tasks show leakage indicators
-  FAIL  adequate_difficulty: [...]
+  FAIL  no_leakage: 1 of 5 tasks show leakage indicators: task-003 (declared in_training, 3-gram overlap 1.00 > 0.1)
+  FAIL  adequate_difficulty: low variance (0.032 < 0.05); ceiling effect (4/10 scores >= 0.95, limit 30%)
+  PASS  stable_scoring: 10 items x recorded runs, max spread 0.000 <= 0.01
+  PASS  correct_failure_classification: 2 failures below 0.7 among 10 outputs; 0 misclassified
+  PASS  reproducible_metadata: all of seed, commit, environment, command recorded
 ============================================================
-Overall: SOME FAILED
+Overall: SOME FAILED (3/5 passed)
+
+Headline vs clean-task mean (leaked tasks excluded):
+  baseline-agent   0.88 -> 0.85  (-0.03)
+  verified-agent   0.81 -> 0.84  (+0.03)
 ```
 
-**Why this matters**: this table is what you would attach to a real evaluation report — five lines that summarize evaluation health.
+**Why this matters**: this table is what you would attach to a real evaluation report — five lines that summarize evaluation health, and two that say what the headline numbers are worth.
 
 ---
 
@@ -120,37 +130,38 @@ Overall: SOME FAILED
 
 ```bash
 python3 - << 'EOF'
-import json, statistics
 from pathlib import Path
 import sys
 sys.path.insert(0, "student")
 from eval_invariants import EvaluationInvariants
 
-data = json.loads(Path("fixtures/eval_data.json").read_text())
 inv = EvaluationInvariants(Path("fixtures/eval_data.json"))
 leak = inv.check_no_leakage()
-
-for model in ["baseline-agent", "verified-agent"]:
-    scores = [v["score"] for v in data["synthetic_outputs"][model].values()]
-    clean = [v["score"] for tid, v in data["synthetic_outputs"][model].items()
-             if tid not in leak["leaked_tasks"]]
-    print(f"{model:16} headline={statistics.mean(scores):.2f}  "
-          f"clean-task-mean={statistics.mean(clean):.2f}")
+for model, v in inv.headline_vs_clean(leak).items():
+    print(f"{model:16} headline={v['headline']:.2f}  clean-mean={v['clean']:.2f}  "
+          f"(excluding {', '.join(v['excluded'])})")
 
 print()
 print("Four arms:")
-print("  baseline, invariants ignored -> high score, trust: UNKNOWN")
-print("  baseline, invariants run     -> high score, trust: NO (leakage)")
-print("  verified, invariants ignored -> lower score, trust: UNKNOWN")
-print("  verified, invariants run     -> lower score, trust: YES")
+print("  baseline, invariants ignored -> 0.88, meaning: UNKNOWN")
+print("  baseline, invariants run     -> 0.88, inflated by task-003 (0.85 on clean items)")
+print("  verified, invariants ignored -> 0.81, meaning: UNKNOWN")
+print("  verified, invariants run     -> 0.81, not inflated (0.84 on clean items)")
 EOF
 ```
 
 **What this does**: Computes each model's headline mean score, then recomputes it *excluding leaked tasks*.
 
-**What to record**: the gap between headline and clean-task mean for the baseline — **that gap is the leakage inflation, quantified**.
+**Expected output** (first two lines):
 
-**The thesis**: a high headline score with failed invariants is a weak evaluation. The lower score with passing invariants is the only trustworthy result.
+```
+baseline-agent   headline=0.88  clean-mean=0.85  (excluding task-003)
+verified-agent   headline=0.81  clean-mean=0.84  (excluding task-003)
+```
+
+**What to record**: the baseline scores 1.0 on the leaked task (its output is "identical to the reference solution") — dropping it lowers the baseline by 0.03. The verified agent scored 0.7 there, below its own average, so dropping it *raises* its mean. The headline gap between the models (0.07) shrinks to 0.01 on clean items. **That shrinkage is the leakage inflation, quantified.**
+
+**The thesis**: invariants are properties of the evaluation, not of a model. A high headline score on an evaluation whose invariants fail is a weak result; the invariant tells you *which items* inflated *whom*.
 
 ---
 
@@ -170,9 +181,17 @@ for mv, mc in [(0.05, 0.95), (0.01, 0.99), (0.10, 0.90)]:
 EOF
 ```
 
-**What this does**: Re-runs the difficulty invariant with three threshold settings.
+**What this does**: Re-runs the difficulty invariant with three threshold settings (`max_ceiling` is the score at which an item counts as "at ceiling"; the invariant fails when more than 30% of scores are there).
 
-**Lesson**: invariants have parameters, and parameters encode judgment calls. Record which thresholds you would choose and why.
+**Expected output**:
+
+```
+min_var=0.05 max_ceil=0.95 -> passed=False issues=['low variance (0.032 < 0.05)', 'ceiling effect (4/10 scores >= 0.95, limit 30%)']
+min_var=0.01 max_ceil=0.99 -> passed=True issues=[]
+min_var=0.1 max_ceil=0.9 -> passed=False issues=['low variance (0.032 < 0.1)', 'ceiling effect (7/10 scores >= 0.9, limit 30%)']
+```
+
+**Lesson**: invariants have parameters, and parameters encode judgment calls. The same ten scores pass or fail depending on the thresholds. Record which thresholds you would choose and why.
 
 ---
 
@@ -182,16 +201,16 @@ EOF
 |-------|------------|---------------|
 | Date of run | | today |
 | Seed | `42` | fixed by fixture |
-| Git commit | | `git rev-parse --short HEAD` |
+| Git commit | | `git rev-parse --short HEAD` (also written to `results/invariant_results.json` under `summary.run_metadata`) |
 | Python version | | `python3 --version` |
 | OS | | `uname -a` / `systeminfo` |
 | Commands used | | copy from Steps 2–5 |
-| Tests passed | | `13 passed` |
+| Tests passed | | `25 passed` |
 | Invariants passed | | count from Step 3 summary (expected 3 of 5) |
 | Leaked task(s) | | `task-003` |
 | Result file | | `results/invariant_results.json` |
 
-**Reproducibility check**: `rm -rf results/`, re-run Steps 3–4, and confirm the JSON is identical.
+**Reproducibility check**: `rm -rf results/`, re-run Steps 3–4, and confirm the JSON is identical apart from the `summary.run_metadata` block (which records the commit, Python version and OS of *your* run).
 
 ---
 
@@ -205,11 +224,11 @@ From the **repository root**: `make demo DEMO=03`
 
 | Level | Exercise | Hint |
 |-------|----------|------|
-| Beginner | Implement word-level n-gram overlap from scratch | Jaccard over 3-gram sets |
-| Standard | Add a saturation detector (`check_saturation`) | Fail if ≥50% of scores ≥ 0.95 |
-| Standard | Difficulty ladder: rank tasks by empirical pass rate | Compare with the fixture's `difficulty` labels |
-| Extension | Real stability check with an injected flaky scorer | Wrap the scorer; score each item 10×; flag spread > 0.01 |
-| Extension | Design a 6th invariant (calibration, coverage, budget…) | Document failure mode + threshold rationale |
+| Beginner | Extend `ngram_overlap` to Jaccard similarity and compare it with containment on the fixture | On a 9-gram prompt a single shared trigram is already 0.11 > 0.10 — is the threshold right for short items? |
+| Standard | Add a saturation detector (`check_saturation`) | Fail if ≥50% of *tasks* are in `saturated_tasks` |
+| Standard | Difficulty ladder: rank tasks by empirical pass rate | Compare with the fixture's `difficulty` labels (see `test_exercise_item_response`) |
+| Extension | Real stability check with an injected flaky scorer | `check_stability(scorer=FlakyScorer(...), runs=10)` — see `test_invariant_3_with_injected_scorer` |
+| Extension | Design a 6th invariant (calibration, coverage, budget…) | Document failure mode + threshold rationale; add a failing-input test |
 
 ---
 
@@ -217,9 +236,10 @@ From the **repository root**: `make demo DEMO=03`
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `13 passed` fails after your edits | Exercise changes broke invariants | `git checkout -- student/ fixtures/` to reset |
+| `25 passed` fails after your edits | Exercise changes broke invariants | `git checkout -- student/ fixtures/` to reset |
 | `FileNotFoundError: fixtures/eval_data.json` | Wrong directory | `cd demo-03-eval-invariants` |
-| `invariant_5` fails with `missing seed` | Fixture edited; seed removed | `git checkout -- fixtures/` |
+| `invariant_5` reports `missing: seed` | Fixture edited; `run_metadata.seed` removed | `git checkout -- fixtures/` |
+| `invariant_3` reports `unverifiable` items | Fixture edited; an item lost its `runs` list | `git checkout -- fixtures/` |
 | JSON decode error | Fixture corrupted | `git checkout -- fixtures/eval_data.json` |
 
 ---

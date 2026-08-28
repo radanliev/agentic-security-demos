@@ -21,12 +21,20 @@ Headline scores (e.g., "95% accuracy") are misleading without context. **Evaluat
 4. **Correct failure classification**: Failures categorized accurately
 5. **Reproducible metadata**: Seed, environment, command recorded
 
-This demo implements a miniature evaluation suite with synthetic tasks and five invariant checks.
+This demo implements a miniature evaluation suite with synthetic tasks and five invariant checks. Every check computes its verdict from the fixture, and every check has a test that shows an input on which it fails — none of them passes by construction.
+
+| # | Invariant | What the code computes | Fails when |
+|---|-----------|------------------------|------------|
+| 1 | `no_leakage` | Word 3-gram containment of each task prompt in `training_corpus`, plus the dataset's declared `in_training` flag | any task is declared in training or overlaps > 0.10 |
+| 2 | `adequate_difficulty` | Mean, sample variance, share of scores ≥ 0.95, saturated items | variance < 0.05, more than 30% of scores at ceiling, or mean > 0.9 |
+| 3 | `stable_scoring` | Spread of the recorded scoring `runs` per item (or of an injected scorer re-run N times) | any item spreads > 0.01, its `score` is not the mean of its runs, or it has fewer than two observations |
+| 4 | `correct_failure_classification` | Every output below `pass_threshold` against the card's `failure_taxonomy` | a failure has no category, an unknown category, or a passing output is labelled as a failure |
+| 5 | `reproducible_metadata` | Presence of `seed`, `commit`, `environment`, `command` in `run_metadata` | any field is missing or empty |
 
 ## Safety Notice
 
 ⚠️ **Teaching demonstration only.**
-- Synthetic tasks and model outputs
+- Synthetic tasks and model outputs — every number in the fixture is invented
 - No external dataset downloads
 - No model API calls
 - Results are demonstrations, not research claims
@@ -36,7 +44,7 @@ This demo implements a miniature evaluation suite with synthetic tasks and five 
 | Field | Value |
 |-------|-------|
 | Seed | 42 |
-| Commit | Git SHA or `local` |
+| Commit | Git SHA or `local` (written to `results/invariant_results.json` under `summary.run_metadata`) |
 | Python | 3.11+ |
 | Command | `make demo DEMO=03` |
 
@@ -55,15 +63,24 @@ This demo is the educational companion to **Conference Paper 3** (`demo-3-eval-d
 | **4** | **Failure Classification** | Unclassified / misattributed agent failure modes | Erroneous safety / performance attribution |
 | **5** | **Reproducible Metadata** | Missing seeds, software versions, command strings | Irreproducible empirical evaluation |
 
-### Key Takeaway: The Four-Arm Evaluation Table
+### Key Takeaway: Invariants qualify the *evaluation*, not the model
 
-A headline score of **88%** on a benchmark with **0 invariants passed** is worthless because leakage and triviality inflate the score. A score of **81%** on an evaluation harness with **5/5 invariants passed** represents true, falsifiable capability.
+Invariants are properties of the evaluation (its items, its scorer, its records), so a failed invariant taints every model's headline number on that evaluation. What the demo computes:
+
+| Arm | Headline | Invariants run? | What the number means |
+|-----|----------|-----------------|-----------------------|
+| baseline, invariants ignored | 0.88 | no | unqualified |
+| baseline, invariants run | 0.88 → **0.85** on clean items | 3/5 pass; leakage localized to `task-003` | inflated: the leaked item is the baseline's best score |
+| verified, invariants ignored | 0.81 | no | unqualified |
+| verified, invariants run | 0.81 → **0.84** on clean items | 3/5 pass | not inflated: it scored *below* its average on the leaked item |
+
+The headline gap between the two agents (0.07) shrinks to 0.01 once the leaked task is excluded. A high headline score with failed invariants is a weak evaluation; the invariant does not just say "bad", it localizes which item inflated whom.
 
 ## Difference from Private Research Benchmark
 
 | Aspect | Research Benchmark (Paper 3) | This Teaching Demo (Demo 03) |
 |--------|------------------------------|-----------------------------|
 | Scale | 500+ multi-step agent trajectories | Synthetic 5-task evaluation fixture |
-| Invariant 1 | Token-level minhash + semantic embeddings | 3-gram string overlap check |
-| Invariant 2 | Item Response Theory (IRT) difficulty curves | Empirical mean & variance checks |
-| Invariant 3 | Bootstrapped confidence interval stability | Deterministic re-run verification |
+| Invariant 1 | Token-level minhash + semantic embeddings | Word 3-gram containment against a 4-document synthetic corpus, plus declared `in_training` flags |
+| Invariant 2 | Item Response Theory (IRT) difficulty curves | Empirical mean, variance and share-at-ceiling checks |
+| Invariant 3 | Bootstrapped confidence interval stability | Spread across three recorded scoring runs per item (an injected scorer can be re-run instead) |

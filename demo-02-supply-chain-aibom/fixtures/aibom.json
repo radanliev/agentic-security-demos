@@ -32,6 +32,7 @@
       }
     }
   },
+  "evaluation_time": "2025-01-14T12:00:00Z",
   "drift_scenarios": [
     {
       "id": "compliant-001",
@@ -66,7 +67,8 @@
         "scope": "exec:shell:*",
         "justification": "Need to run legacy script",
         "approved": false,
-        "expires": "2099-12-31T23:59:59Z"
+        "issued": "2025-01-14T09:00:00Z",
+        "expires": "2025-01-15T09:00:00Z"
       },
       "expected": "reject_waiver"
     },
@@ -81,10 +83,13 @@
         "scope": "exec:tools:scanner",
         "justification": "One-time security scan for audit",
         "approved": true,
-        "expires": "2099-12-31T23:59:59Z"
+        "approved_by": "security-lead@example.com",
+        "issued": "2025-01-14T09:00:00Z",
+        "expires": "2025-01-15T09:00:00Z"
       },
       "expected": "accept_waiver"
     }
   ],
-  "seed": 42
+  "seed": 42,
+  "notes": "evaluation_time pins the clock so waiver validity is reproducible; validate_aibom.py --now now evaluates against the real clock."
 }

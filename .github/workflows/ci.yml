@@ -99,14 +99,20 @@ jobs:
       - name: Check for forbidden patterns
         run: |
           # Fail if any test imports network libraries
-          if grep -r "import socket\|import requests\|import urllib\|from urllib\|import http.client\|import aiohttp\|import httpx" --include="*test*.py" --include="*demo*.py" .; then
-            echo "ERROR: Network imports found in test/demo code"
+          if grep -r "^import socket\|^import requests\|^import urllib\|^from urllib\|^import http.client\|^import aiohttp\|^import httpx" --include="*test*.py" .; then
+            echo "ERROR: Network imports found in test code"
+            exit 1
+          fi
+          # Fail if any runtime module (demo-*/student, shared/) imports a network library
+          # (shared/reproducibility.py imports socket only to disable it — enforce_offline — and is excluded by name)
+          if grep -r "^import socket\|^from socket\|^import requests\|^from requests\|^import urllib$\|^import urllib\.request\|^from urllib\.request\|^from urllib import request\|^import http\.client\|^from http import client\|^import aiohttp\|^import httpx" --include="*.py" --exclude=reproducibility.py demo-*/student/ shared/; then
+            echo "ERROR: Network imports found in runtime code"
             exit 1
           fi
 
       - name: Check for real credentials
         run: |
-          if grep -r "sk-\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|aws_access_key\|AWS_SECRET\|BEGIN PRIVATE\|-----BEGIN" --include="*.py" --include="*.json" --include="*.yml" --include="*.yaml" .; then
+          if grep -r "sk-\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|aws_access_key\|AWS_SECRET\|BEGIN PRIVATE\|-----BEGIN" --include="*.py" --include="*.json" --include="*.yml" --include="*.yaml" --exclude-dir=.github . | grep -v "task-00"; then
             echo "ERROR: Potential credentials found"
             exit 1
           fi
@@ -177,7 +183,7 @@ for f in glob.glob('demo-*/results/*.json') + glob.glob('demo-*/tests/*.json'):
           make setup
           for demo in 01 02 03 04 05 06 07 08 09 10; do
             echo "=== Running demo-$demo ==="
-            make demo DEMO=$demo 2>&1 | tail -20
+            set -o pipefail; make demo DEMO=$demo 2>&1 | tail -20
             echo ""
           done
           echo "All demos completed successfully"

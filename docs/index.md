@@ -21,7 +21,7 @@ cd agentic-security-demos
 # One-time setup
 make setup
 
-# Run all tests (170 tests, safe, offline, deterministic)
+# Run all tests (316 tests, safe, offline, deterministic)
 make test
 
 # Run a specific demo (01-10)

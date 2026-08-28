@@ -87,39 +87,58 @@ if __name__ == "__main__":
 """Generate standardized JSON results for demo."""
 
 import json
-from pathlib import Path
+import platform
+import subprocess
 import sys
-sys.path.insert(0, str(Path(__file__).parent))
+from pathlib import Path
+
+base_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(base_dir / "student"))
 from module import MyAgent, MyConfig
 
+
+def git_commit() -> str:
+    """Short git SHA of the checkout, or 'local' outside a repository — never a literal."""
+    try:
+        return subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=base_dir,
+                                       stderr=subprocess.DEVNULL, text=True).strip()
+    except Exception:
+        return "local"
+
+
 def main():
-    data = json.loads(Path("fixtures/data.json").read_text())
+    data = json.loads((base_dir / "fixtures" / "data.json").read_text())
     config = MyConfig(**data["policy"])
     agent = MyAgent(config)
-    
+
     results = []
+    mismatches = []
     for scenario in data["scenarios"]:
         result = agent.process(scenario["input"])
-        results.append({
-            "scenario": scenario["id"],
-            "result": result
-        })
-    
+        ok = result["outcome"] == scenario["expected"]      # compare with the fixture's answer key
+        if not ok:
+            mismatches.append(scenario["id"])
+        results.append({"scenario": scenario["id"], "result": result, "expected": scenario["expected"], "ok": ok})
+
     output = {
         "demo": "demo-XX-name",
         "experiment": "main",
-        "seed": 42,
-        "commit": "local",
-        "environment": "test",
+        "seed": data["seed"],
+        "commit": git_commit(),
+        "environment": f"Python {platform.python_version()}, {platform.system()} {platform.release()}",
         "command": "make demo DEMO=XX",
-        "result": "pass",
+        "result": "pass" if not mismatches else "fail",   # computed, never asserted
         "notes": "Synthetic teaching fixture",
-        "results": results
+        "results": results,
     }
-    
-    Path("results/results.json").parent.mkdir(exist_ok=True)
-    Path("results/results.json").write_text(json.dumps(output, indent=2))
+
+    out = base_dir / "results" / "results.json"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps(output, indent=2))
     print(json.dumps(output, indent=2))
+    if mismatches:
+        print(f"MISMATCH: {mismatches}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

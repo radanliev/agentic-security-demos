@@ -26,7 +26,8 @@ This demo teaches:
 - Synthetic package names (e.g., `secure-parser-123`)
 - No real dependencies, registries, or credentials
 - Local validation only — no cluster required
-- All fixtures generated at setup
+- One static fixture (`fixtures/aibom.json`); nothing is downloaded or generated
+- The fixture pins `evaluation_time` (2025-01-14T12:00Z) so waiver validity is reproducible; `validate_aibom.py --now now` uses the real clock
 
 ## Reproducibility
 
@@ -42,18 +43,20 @@ This demo is the educational companion to **Conference Paper 2** (`demo-2-agenti
 
 ### Defect Family & Scenario Mapping
 
-| Demo Scenario | Drift Type | Security Hazard | Policy Gate Decision |
-|---|---|---|---|
-| `compliant-001` | Baseline Alignment | No drift — declared matches runtime | **ALLOW (PASS)** |
-| `drifted-002` | Capability Escalation | Undeclared `scanner` tool added at runtime | **BLOCK (Drift Detected)** |
-| `invalid-waiver-003` | Unapproved Scope Waiver | Unsigned / unapproved `exec:shell:*` waiver | **REJECT WAIVER (Block)** |
-| `valid-waiver-004` | Approved Scoped Waiver | Approved, time-bounded waiver for `scanner` | **ACCEPT WAIVER (Allow)** |
+| Demo Scenario | Drift Type | Security Hazard | Drift? | Policy Gate Decision |
+|---|---|---|---|---|
+| `compliant-001` | Baseline Alignment | No drift — declared matches runtime | no | **ALLOW (PASS)** |
+| `drifted-002` | Capability Escalation | Undeclared `scanner` tool added at runtime | yes | **BLOCK** (`exec:tools:scanner` explicitly denied) |
+| `invalid-waiver-003` | Unapproved Scope Waiver | Unapproved `exec:shell:*` waiver for a scope that is not waivable | yes | **REJECT WAIVER (Block)** |
+| `valid-waiver-004` | Approved Scoped Waiver | Approved, 24-hour waiver for `scanner` | yes | **ACCEPT WAIVER (Allow)** — drift is still reported |
 
 ### Core Primitives Demonstrated
 
-1. **Declared vs. Observed Invariants**: A system's AI Bill of Materials (AIBOM) acts as an immutable contract; runtime capability introspection flags any drift.
-2. **Fail-Closed Default Deny**: Capabilities not explicitly permitted in declared policy or approved waivers are blocked automatically.
-3. **Cryptographic / Time-Bounded Waivers**: Emergency access requires explicit scope bounds, valid cryptographic/approval status, and unexpired ISO-8601 timestamps.
+1. **Declared vs. Observed Invariants**: the AIBOM's `agent_capabilities` is the declaration; every runtime capability outside it is reported as drift (`undeclared_capabilities`), independently of whether policy permits it. Composite tool lists (`exec:tools:parser,validator`) are matched per tool, so a runtime with *fewer* tools than declared is not drift.
+2. **Fail-Closed Default Deny**: capabilities not explicitly permitted by the policy or by a valid waiver are blocked. Decision order: explicit allow → valid waiver → explicit deny → default deny. (A specific allow such as `net:http:api.internal/*` therefore beats the broad `net:http:*` deny because it is checked first, not because it is more specific.)
+3. **Time-Bounded, Approved Waivers**: a waiver is honoured only if it is approved *and names an approver*, its scope is in `waiver_rules.allowed_scopes`, it is in force at evaluation time, and `expires − issued ≤ max_duration_hours`. Approval is a recorded field, not a cryptographic signature (signatures are Demo 05's topic). A waiver lifts a deny; it does not remove the drift from the report.
+
+Not checked by this demo: the `components` list and its hashes (component-level verification is covered in Demo 05), and path normalisation of resource scopes (`read:files:/workspace/../etc/passwd` matches `read:files:/workspace/*` — see the Extension exercise).
 
 ## Difference from Private Research Benchmark
 
@@ -61,5 +64,5 @@ This demo is the educational companion to **Conference Paper 2** (`demo-2-agenti
 |--------|------------------------------|-----------------------------|
 | Enforcement | Kubernetes Admission Controller & eBPF | Standalone Python Policy Gate |
 | Inventory | Full cyclonedx/SPDX AIBOM with model weights | Synthetic JSON component declaration |
-| Waivers | Multi-signature hardware key approval | Structured in-memory waiver records |
-| CI/CD | Real GitHub Actions / GitLab CI runner gates | Local validation script (`validate_aibom.py`) |
+| Waivers | Multi-signature hardware key approval | Structured waiver records with a recorded approver (no signature) |
+| CI/CD | Real GitHub Actions / GitLab CI runner gates | Local validation script (`validate_aibom.py --scenario ID` / `--runtime observed.json`; exit 0 compliant, 1 non-compliant, 2 error) |

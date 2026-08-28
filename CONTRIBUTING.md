@@ -101,7 +101,7 @@ mypy --strict --exclude "demo-*/results,demo-*/__pycache__,.pytest_cache,.venv" 
 ## 🧪 Testing
 
 ```bash
-# All tests (170 tests across 10 demos)
+# All tests (316 tests across 10 demos + shared/)
 make test
 
 # Specific demo
