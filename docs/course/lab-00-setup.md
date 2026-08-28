@@ -9,7 +9,7 @@
 By the end of this module, you will be able to:
 
 1. Set up a fully offline, reproducible lab environment
-2. Verify that all 294 tests pass on your machine
+2. Verify that all 316 tests pass on your machine
 3. Run the safety verification and understand what it checks
 4. Execute your first demo and locate its JSON results
 5. Sign the safety contract and understand legal boundaries
@@ -98,7 +98,7 @@ Setup complete.
 make test
 ```
 
-**What this does**: Enters each of the 10 demo directories (and then `shared/`) and runs `pytest tests/ -v`. This executes **294 tests** covering every concept in the course; one of them (`demo-04`'s `test_traversal_is_blocked`) is an *expected* failure (`xfailed`) that Exercise 4.3 turns green.
+**What this does**: Enters each of the 10 demo directories (and then `shared/`) and runs `pytest tests/ -v`. This executes **316 tests** covering every concept in the course; one of them (`demo-04`'s `test_traversal_is_blocked`) is an *expected* failure (`xfailed`) that Exercise 4.3 turns green.
 
 **Why it matters**: This is your **baseline sanity check**. If any test fails here, your environment is broken — fix it *before* starting Module 1, or every later lab will confuse "my code is wrong" with "my environment is wrong."
 
@@ -121,7 +121,7 @@ tests/test_blind_verification.py::TestBlindVerification::test_scenarios_exist PA
 === All tests passed ===
 ```
 
-**Checkpoint**: Count the "passed" lines. You should see **293 passed and 1 xfailed** across 11 suites (18, 17, 25, 18+1, 34, 28, 26, 26, 39, 51 for the demos, then 11 for `shared/`), ending with `=== All tests passed ===`. If yes → continue. If no → see Troubleshooting below.
+**Checkpoint**: Count the "passed" lines. You should see **315 passed and 1 xfailed** across 11 suites (18, 17, 25, 18+1, 34, 28, 30, 30, 44, 51 for the demos, then 20 for `shared/`), ending with `=== All tests passed ===`. If yes → continue. If no → see Troubleshooting below.
 
 ---
 
@@ -263,7 +263,7 @@ cat > LAB_NOTES.md << 'EOF'
 - Date: 
 - Python version: 
 - OS: 
-- Tests passed: 293 passed, 1 xfailed  [ ] yes [ ] no
+- Tests passed: 315 passed, 1 xfailed  [ ] yes [ ] no
 - Safety verification:  [ ] passed
 - Safety contract signed: [ ] yes
 
@@ -310,7 +310,7 @@ EOF
 - [ ] Python 3.11+ confirmed
 - [ ] Repository cloned
 - [ ] `make setup` completed
-- [ ] `make test` ends with `=== All tests passed ===` (293 passed, 1 xfailed)
+- [ ] `make test` ends with `=== All tests passed ===` (315 passed, 1 xfailed)
 - [ ] `make verify-safety` passes
 - [ ] `make demo DEMO=01` runs successfully
 - [ ] `results/comparison_table.json` inspected

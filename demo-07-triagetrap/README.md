@@ -18,7 +18,7 @@ Agentic malware triage processes artifacts (PCAPs, file metadata, sandbox report
 - Fake file hashes
 - Simulated sandbox verdicts
 
-**Provenance tracking** ensures every decision traces back to observed data, not injected instructions: a `verdict` field is evidence only when the record's provenance is a sandbox, and free text in a record (the canary) is logged, may hold a record for an analyst, and can never move the score. **Base-rate awareness** means the score is a Bayesian posterior computed from the fixture's prior and error rates, not a weighted guess.
+**Provenance tracking** ensures every decision traces back to observed data, not injected instructions: a `verdict` field is evidence only when the record's provenance is a sandbox, and free text in a record (the canary) is logged, may hold a record for an analyst, and can never move the score. **Base-rate awareness** means the score is a Bayesian posterior computed from the fixture's prior and error rates, not a weighted guess. **Shared-record de-identification** applies when a record leaves triage: the provenance-aware agent allowlists the artifact metadata (deny-by-default — only analytic fields go in the clear, every other field is masked to `[PII-REDACTED]`), while the baseline shares it as-is. This scrubs the shared record only; it does not change the score or the verdict.
 
 ## Safety Notice
 
@@ -58,6 +58,21 @@ Automated triage agents analyzing malware metadata must NEVER dynamically execut
 1. Complete static inspection without execution (`exec()`, `eval()`, `subprocess` strictly prohibited — checked by source inspection *and* by running the demo with those primitives poisoned).
 2. Bayes' theorem with the fixture's base rates (`P(malicious | sandbox says malicious) = 0.795`, `P(malicious | sandbox says benign) = 0.001`; a sensor flag alone would be worth 0.660, below the threshold) to prevent the base-rate fallacy under low-prevalence malware conditions.
 3. Provenance gating: a `verdict` is evidence only from sandbox provenance; free text may add scrutiny (hold), never remove it — the score never depends on text.
+
+### Shared-Record De-Identification (Allowlist)
+
+When a triage record is **shared**, the guarded agent redacts the artifact metadata against the `SHAREABLE_METADATA` allowlist — `file_hash, sample_hash, verdict, score, protocol, mime_type, src_port, dst_port, packet_count, behaviors, size`. Only those analytic fields go in the clear; every other field (submitter, owner, file name, `src_ip`/`dst_ip`, `created`, and any field never seen before) is masked to `[PII-REDACTED]`. This is deny-by-default and mirrors the RAID triage proxy's VirusTotal field allowlist (`shared/anonymize.py`, `redact_record`). The baseline shares the metadata in the clear. De-identification changes the *shared record* only — the Bayesian score and the verdict are untouched, because they come from structured evidence with sandbox provenance, not from the masked fields.
+
+art-002 (a clean invoice) and art-005 (update.exe) carry synthetic PII in their metadata — `submitter`/`owner` of `alice@corp.example` / `Alice Smith` and `bob@corp.example` / `Bob Jones`. The demo shares art-002 both ways:
+
+```
+--- Sharing the triage record: allowlist before it leaves triage ---
+  art-002 raw metadata (baseline shares this):
+    {"file_name": "invoice.pdf", "file_hash": "a1b2c3d4e5f6789012345678901234567890abcd", "mime_type": "application/pdf", "size": 2048576, "created": "2024-01-15T09:30:00Z", "submitter": "alice@corp.example", "owner": "Alice Smith"}
+  art-002 shared record (guarded, allowlisted):
+    {"file_name": "[PII-REDACTED]", "file_hash": "a1b2c3d4e5f6789012345678901234567890abcd", "mime_type": "application/pdf", "size": 2048576, "created": "[PII-REDACTED]", "submitter": "[PII-REDACTED]", "owner": "[PII-REDACTED]"}
+  Redacted before sharing: ['file_name', 'created', 'submitter', 'owner'] (kept: the hashes, verdict, and score that carry the decision)
+```
 
 ## Difference from Private Research Benchmark
 

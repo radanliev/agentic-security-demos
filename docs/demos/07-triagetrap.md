@@ -22,7 +22,7 @@ instructions and quarantine"   evidence, score floored at 0.8
 
 ### The Solution
 
-**Provenance-aware triage**: Canaries in metadata are OBSERVATIONS, not INSTRUCTIONS. The score is a Bayesian posterior over structured evidence — a sandbox `verdict`, accepted only from sandbox provenance. Free text is logged, may hold a record for an analyst (`suspicious`), and never moves the score. Base-rate awareness prevents overreacting to rare events.
+**Provenance-aware triage**: Canaries in metadata are OBSERVATIONS, not INSTRUCTIONS. The score is a Bayesian posterior over structured evidence — a sandbox `verdict`, accepted only from sandbox provenance. Free text is logged, may hold a record for an analyst (`suspicious`), and never moves the score. Base-rate awareness prevents overreacting to rare events. And when a record is shared, an allowlist keeps only analytic fields in the clear (hashes, verdict, score) and masks identities to `[PII-REDACTED]` — deny-by-default, without changing the score or verdict.
 
 ## Safety Notice
 
@@ -69,9 +69,18 @@ Bayes: prior P(malicious) = 0.020; P(malicious | sandbox says malicious) = 0.795
     Provenance-Aware: quarantine (score: 0.795)  <- label_contamination_in_sandbox_canary: note claims 'benign', verdict says 'malicious' (score untouched; held for review)
   art-003 (same 'verdict: malicious' field) relabelled untrusted_metadata:
     Provenance-Aware: benign (score: 0.020)  <- 'verdict' field ignored: provenance untrusted_metadata is not a sandbox (logged only)
+
+--- Sharing the triage record: allowlist before it leaves triage ---
+  art-002 raw metadata (baseline shares this):
+    {"file_name": "invoice.pdf", "file_hash": "a1b2c3d4e5f6789012345678901234567890abcd", "mime_type": "application/pdf", "size": 2048576, "created": "2024-01-15T09:30:00Z", "submitter": "alice@corp.example", "owner": "Alice Smith"}
+  art-002 shared record (guarded, allowlisted):
+    {"file_name": "[PII-REDACTED]", "file_hash": "a1b2c3d4e5f6789012345678901234567890abcd", "mime_type": "application/pdf", "size": 2048576, "created": "[PII-REDACTED]", "submitter": "[PII-REDACTED]", "owner": "[PII-REDACTED]"}
+  Redacted before sharing: ['file_name', 'created', 'submitter', 'owner'] (kept: the hashes, verdict, and score that carry the decision)
 ```
 
 Baseline art-004 and art-006: VULNERABLE — a string quarantines a clean record, and a note replaces a sandbox verdict. Provenance-aware: the injection is logged, the contaminated record is held with its score untouched, a "this is benign" note cannot release art-003, and a `verdict` field without sandbox provenance is ignored.
+
+When a record is **shared**, the provenance-aware agent applies an allowlist redaction: only the `SHAREABLE_METADATA` analytic fields (`file_hash, sample_hash, verdict, score, protocol, mime_type, src_port, dst_port, packet_count, behaviors, size`) leave triage in the clear; every other field is masked to `[PII-REDACTED]`, deny-by-default. art-002 and art-005 carry synthetic submitter/owner PII (`alice@corp.example` / `Alice Smith`, `bob@corp.example` / `Bob Jones`) to show it — the baseline shares that in the clear, while the guarded agent masks the file name, `created` time, submitter and owner. This is the RAID triage proxy's VirusTotal field allowlist (`shared/anonymize.py`, `redact_record`), and it scrubs the shared record only; the score and verdict are unchanged.
 
 ## Artifact Types
 
@@ -121,10 +130,11 @@ art-004: trusted_sensor:pcap_metadata -> bayes:P(malicious)=0.020 -> threshold 0
 
 | File | Purpose |
 |------|---------|
-| `fixtures/artifacts.json` | 6 synthetic artifacts with canaries, four base rates, threshold 0.7 |
+| `fixtures/artifacts.json` | 6 synthetic artifacts with canaries, four base rates, threshold 0.7; art-002/art-005 carry synthetic submitter/owner PII |
 | `student/triagetrap.py` | Triage agents, detector, Bayesian base-rate calculator |
 | `student/generate_triage_results.py` | Results generator (checks every verdict against an answer key; scores to 4 dp) |
-| `tests/test_triagetrap.py` | 26 tests |
+| `shared/anonymize.py` (repo root) | Allowlist redaction (`redact_record`) applied to the shared record — deny-by-default |
+| `tests/test_triagetrap.py` | 30 tests |
 
 ---
 

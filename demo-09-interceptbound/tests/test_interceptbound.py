@@ -22,7 +22,7 @@ sys.path.insert(0, str(DEMO_DIR / "student"))
 from interceptbound import (  # noqa: E402
     TrafficFrame, TaintTracker, EphemeralBuffer, ActionGuard, ContentDetector,
     BaselineAgent, TaintAwareAgent, Provenance, TaintLevel, ParsedField,
-    candidate_actions, load_frames,
+    candidate_actions, load_frames, frame_observation,
 )
 import generate_intercept_results  # noqa: E402
 
@@ -365,6 +365,56 @@ class TestExercises:
         refined = ParsedField("status", 200, Provenance.INTERCEPTED_NETWORK, TaintLevel.MEDIUM, "frame_001")
         assert guard.authorize("record_observation", refined.taint, refined.value, refined.provenance)[0] is True
         assert guard.authorize("store_credential", refined.taint, refined.value, refined.provenance)[0] is False
+
+
+class TestObservationDeidentification:
+    """The guarded agent may observe intercepted traffic, but what it writes
+    down must not carry identities or secrets in the clear."""
+
+    def test_guarded_log_has_no_raw_identifier_or_secret(self, frames, scope, buffer_config):
+        agent = TaintAwareAgent(scope, buffer_config)
+        for f in frames:
+            agent.process(f)
+        blob = "\n".join(agent.observations)
+        for raw in ("alice", "alice@corp.example", "DEMO_TOKEN_ABC123",
+                    "DEMO_LOCAL_TOKEN_XYZ789", "10.0.0.50"):
+            assert raw not in blob, f"{raw!r} leaked into the observation log"
+        # It did record something de-identified for every in-scope frame.
+        assert len(agent.observations) == sum(
+            1 for f in frames if TaintAwareAgent(scope, buffer_config)._in_scope(f)[0])
+
+    def test_baseline_log_keeps_everything_in_the_clear(self, frames):
+        agent = BaselineAgent()
+        for f in frames:
+            agent.process(f)
+        blob = "\n".join(agent.observations)
+        assert "alice" in blob and "DEMO_TOKEN_ABC123" in blob
+        assert len(agent.observations) == len(frames)   # no scope: observes all
+
+    def test_pseudonym_is_stable_so_records_still_join(self, frames, scope, buffer_config):
+        agent = TaintAwareAgent(scope, buffer_config)
+        for f in frames:
+            agent.process(f)
+        # alice appears in frame_001 and frame_006 (same src); the pseudonym is
+        # identical in both records, so an analyst can still join them.
+        tag = agent.anon.username("alice")
+        with_user = [line for line in agent.observations if tag in line]
+        assert len(with_user) >= 1
+        assert agent.anon.reverse(tag) == "alice"
+
+    def test_out_of_scope_frame_is_never_observed(self, frames, scope, buffer_config):
+        agent = TaintAwareAgent(scope, buffer_config)
+        for f in frames:
+            agent.process(f)
+        # frame_007 is out of scope (src 10.0.0.99): its de-identified form
+        # never appears, because you cannot de-identify what you never captured.
+        assert not any("HOST_" in line and "unauthorized" not in line
+                       and agent.anon.pseudonymize("10.0.0.99", "HOST") in line
+                       for line in agent.observations)
+
+    def test_frame_observation_picks_the_identifying_field(self, by_id):
+        assert "alice" in frame_observation(by_id["frame_001"])
+        assert "10.0.0.50" in frame_observation(by_id["frame_003"])
 
 
 if __name__ == "__main__":

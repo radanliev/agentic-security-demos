@@ -70,15 +70,15 @@ cat fixtures/artifacts.json
 python3 -m pytest tests/ -v
 ```
 
-**What this does:** Runs all **26 tests**: detector (including benign phrases that must *not* flag), exact Bayes against the hand formula, the two baseline traps (pinned), the provenance-aware properties (text never moves the score, a note can never release a malicious verdict, a `verdict` field needs sandbox provenance, unusable verdicts fail closed), determinism of the results file, and the cardinal `test_never_execute_unknown_files` plus its runtime twin `test_demo_runs_with_execution_disabled`.
+**What this does:** Runs all **30 tests**: detector (including benign phrases that must *not* flag), exact Bayes against the hand formula, the two baseline traps (pinned), the provenance-aware properties (text never moves the score, a note can never release a malicious verdict, a `verdict` field needs sandbox provenance, unusable verdicts fail closed), the shared-record allowlist (deny-by-default: only analytic fields leave triage in the clear, every other field masked to `[PII-REDACTED]`), determinism of the results file, and the cardinal `test_never_execute_unknown_files` plus its runtime twin `test_demo_runs_with_execution_disabled`.
 
 **Expected (end of run):**
 
 ```
-============================== 26 passed in 0.XXs ==============================
+============================== 30 passed in 0.XXs ==============================
 ```
 
-✅ **Checkpoint:** `26 passed`. If not, fix environment before continuing.
+✅ **Checkpoint:** `30 passed`. If not, fix environment before continuing.
 
 **Key tests to notice:** `test_baseline_vulnerable_to_injection` and `test_baseline_believes_the_note` *assert* the baseline **does** fall for both traps — the vulnerability is pinned, not hidden. `test_text_cannot_release_a_malicious_verdict` is the defence, as a property.
 
@@ -90,7 +90,7 @@ python3 -m pytest tests/ -v
 python3 student/triagetrap.py
 ```
 
-**What this does:** Runs 6 artifacts through **Baseline** (every string is evidence: an injection pattern floors the score at 0.8, and a note that asserts a label replaces the verdict) and **Provenance-Aware** (the score is a Bayesian posterior over the sandbox verdict — accepted only from sandbox provenance — and text is logged), printing verdict, score, and reasons per artifact. A third block re-runs art-003 with an attacker's note attached, and with its provenance relabelled.
+**What this does:** Runs 6 artifacts through **Baseline** (every string is evidence: an injection pattern floors the score at 0.8, and a note that asserts a label replaces the verdict) and **Provenance-Aware** (the score is a Bayesian posterior over the sandbox verdict — accepted only from sandbox provenance — and text is logged), printing verdict, score, and reasons per artifact. A third block re-runs art-003 with an attacker's note attached, and with its provenance relabelled. A fourth block shares art-002's triage record: the baseline exposes the metadata in the clear, while the provenance-aware agent applies an allowlist redaction (deny-by-default) so only analytic fields leave triage.
 
 **Expected highlights — compare with your predictions:**
 
@@ -124,6 +124,19 @@ Bayes: prior P(malicious) = 0.020; P(malicious | sandbox says malicious) = 0.795
 ```
 
 **Record the contrast:** The same string triggered a quarantine in the baseline and a *log line* in the defended agent. art-006 shows the second trap: the baseline believes the note; the defended agent keeps the Bayesian score (0.001) and *holds* the record for an analyst — a note may add scrutiny, never remove it. The third block is the proof: a "this is benign" note releases malware from the baseline and changes nothing for the defended agent, and the very same `verdict: malicious` field is worth nothing without sandbox provenance.
+
+**The shared record — allowlist before it leaves triage.** The fourth block takes art-002 (a clean invoice whose metadata now carries synthetic PII — `"submitter": "alice@corp.example"`, `"owner": "Alice Smith"`; art-005 carries `bob@corp.example` / `Bob Jones`) and shows what each agent would share onward:
+
+```
+--- Sharing the triage record: allowlist before it leaves triage ---
+  art-002 raw metadata (baseline shares this):
+    {"file_name": "invoice.pdf", "file_hash": "a1b2c3d4e5f6789012345678901234567890abcd", "mime_type": "application/pdf", "size": 2048576, "created": "2024-01-15T09:30:00Z", "submitter": "alice@corp.example", "owner": "Alice Smith"}
+  art-002 shared record (guarded, allowlisted):
+    {"file_name": "[PII-REDACTED]", "file_hash": "a1b2c3d4e5f6789012345678901234567890abcd", "mime_type": "application/pdf", "size": 2048576, "created": "[PII-REDACTED]", "submitter": "[PII-REDACTED]", "owner": "[PII-REDACTED]"}
+  Redacted before sharing: ['file_name', 'created', 'submitter', 'owner'] (kept: the hashes, verdict, and score that carry the decision)
+```
+
+The guarded agent keeps only the `SHAREABLE_METADATA` allowlist — `file_hash, sample_hash, verdict, score, protocol, mime_type, src_port, dst_port, packet_count, behaviors, size` — in the clear and masks every other field (submitter, owner, file name, addresses, `created`, and any field it has never seen) to `[PII-REDACTED]`. This is deny-by-default, mirroring the RAID triage proxy's VirusTotal field allowlist (`shared/anonymize.py`, `redact_record`). The baseline shares the metadata in the clear. De-identification touches the *shared record* only: the Bayesian score and the verdict are unchanged, because they come from structured evidence with sandbox provenance, not from the masked fields.
 
 ---
 
@@ -202,7 +215,7 @@ cat results/triage_results.json
 | Python version | | `python3 --version` |
 | OS | | `uname -a` / `systeminfo` |
 | Commands used | | copy from Steps 2–6 |
-| Tests passed | | `26 passed` |
+| Tests passed | | `30 passed` |
 | art-004 baseline verdict | | `quarantine` (Step 3) |
 | art-004 defended verdict | | `benign` (Step 3) |
 | art-006 defended verdict | | `suspicious` (Step 3) |
@@ -240,7 +253,7 @@ make demo DEMO=07
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `26 passed` fails after edits | Exercise changes | `git checkout -- student/ fixtures/ tests/` |
+| `30 passed` fails after edits | Exercise changes | `git checkout -- student/ fixtures/ tests/` |
 | `FileNotFoundError: fixtures/artifacts.json` | Wrong directory | `cd demo-07-triagetrap` |
 | Baseline no longer quarantines art-004 | You changed detector patterns | `git checkout -- student/triagetrap.py` |
 | `KeyError: base_rates is missing [...]` | A base rate was removed from the fixture | There are no silent defaults for error rates — restore all four |

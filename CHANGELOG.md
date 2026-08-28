@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added (PII de-identification, August 2026)
+- `shared/anonymize.py`: an offline, deterministic de-identification helper the demos can read in a couple of minutes — `pseudonymize`/`Anonymizer` (stable, locally reversible identifier tags that preserve joins), `redact_secrets` (deny-by-default masking of tokens/passwords/keys), `deidentify` (both, with a report of what changed), and `redact_record` (allowlist field redaction). 9 new tests.
+- **demo-09 InterceptBound**: an observation log. The guarded agent may observe intercepted traffic, but every note it writes is de-identified first — identities become stable pseudonyms, secrets are redacted — while the baseline records it in the clear. Fixtures gained a synthetic contact e-mail; 5 new tests (39 → 44).
+- **demo-08 InclusionTrap**: content the guarded agent is allowed to keep (a config with a secret, an in-scope user list) is de-identified before it is logged — usernames/e-mails pseudonymised (ids preserved, so records still join), secrets redacted — while the vulnerable agent leaks the raw `/etc/passwd` and user list. New `safe_002` read scenario, enriched synthetic `/etc/passwd` and `users.json`; 4 new tests (26 → 30).
+- **demo-07 TriageTrap**: an allowlist redaction on the shared triage record — only analytic fields (hashes, verdict, score) travel in the clear; submitter, owner, file name and addresses are masked (deny-by-default), mirroring the RAID triage proxy's VirusTotal allowlist. The score and verdict are unchanged (de-identification is about the shared record). Fixtures gained synthetic submitter/owner PII; 4 new tests (26 → 30).
+- All new PII is synthetic; `make verify-safety` still passes and no demo touches the network. Test suite 294 → 316.
+
 ### Fixed (course audit, August 2026)
 - Every demo now *implements* the mechanism its slides and guides describe, instead of asserting it:
   - demo-01: answer keys removed from `scenarios.json`; commitments are hash-published and a post-hoc edit is reported as `commitment_hash_mismatch`; the baseline cheats only through the oracle file; oracle errors are reported, not silently failed.

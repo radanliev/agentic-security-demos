@@ -165,11 +165,16 @@ class TestGuarded:
 
     def test_guarded_agent_allows_safe_reads(self, data, scenarios):
         agent, host = guarded(data)
-        for sid, path in [("safe_001", "/app/config/settings.yaml"), ("lfi_002", "/app/uploads/user_avatar.png")]:
-            result = agent.process(scenarios[sid])
-            assert (result.action, result.reason) == ("allowed", "safe_content_read_only"), sid
-            assert result.included_content == host.files[path][:100]
-        assert host.calls == [("read_file", "/app/config/settings.yaml"), ("read_file", "/app/uploads/user_avatar.png")]
+        # A file with no PII is returned unchanged; a config with a secret is redacted.
+        avatar = agent.process(scenarios["lfi_002"])
+        assert (avatar.action, avatar.reason) == ("allowed", "safe_content_read_only")
+        assert avatar.included_content == host.files["/app/uploads/user_avatar.png"][:120]
+        assert avatar.deidentified == {}
+        cfg = agent.process(scenarios["safe_001"])
+        assert (cfg.action, cfg.reason) == ("allowed", "safe_content_read_only")
+        assert "DEMO_KEY_CONFIG_123" not in cfg.included_content and "[REDACTED]" in cfg.included_content
+        assert cfg.deidentified.get("secret") == 1
+        assert host.calls == [("read_file", "/app/uploads/user_avatar.png"), ("read_file", "/app/config/settings.yaml")]
 
     def test_guarded_agent_really_reads(self, data, scenarios):
         """An injection planted in an allowed config file is caught: the screen runs on what was read."""
@@ -231,7 +236,8 @@ class TestInclusionTrap:
                 imported |= {a.name for a in node.names}
             elif isinstance(node, ast.ImportFrom):
                 imported.add(node.module or "")
-        assert imported <= {"json", "posixpath", "re", "urllib.parse", "dataclasses", "enum", "pathlib", "typing"}, imported
+        assert imported <= {"json", "posixpath", "re", "urllib.parse", "dataclasses", "enum", "pathlib",
+                            "typing", "sys", "shared.anonymize"}, imported
         calls = {n.func.id for n in ast.walk(tree) if isinstance(n, ast.Call) and isinstance(n.func, ast.Name)}
         assert not calls & {"open", "exec", "eval", "compile", "__import__"}, calls
 
@@ -246,7 +252,7 @@ class TestInclusionTrap:
             main()
         text = out.getvalue()
         assert "lfi_003: ✗ VULNERABLE" in text and "⚠️  host call: exec('rm -rf /')  [SIMULATED - recorded, not run]" in text
-        assert "Host call log: read_file x3, fetch_url x1, exec x0, network_request x0, write_file x0" in text
+        assert "Host call log: read_file x4, fetch_url x1, exec x0, network_request x0, write_file x0" in text
 
     def test_results_are_deterministic_and_checked(self):
         import generate_inclusion_results as gen
@@ -260,7 +266,7 @@ class TestInclusionTrap:
         doc = json.loads(first)
         assert doc["result"] == "pass"
         assert doc["guarded_privileged_calls"] == []
-        assert [r["action"] for r in doc["results"]] == ["blocked", "allowed", "blocked", "blocked", "blocked", "allowed"]
+        assert [r["action"] for r in doc["results"]] == ["blocked", "allowed", "blocked", "blocked", "blocked", "allowed", "allowed"]
         assert [r["provenance"] for r in doc["results"]].count("simulated_remote") == 1
 
 
@@ -302,6 +308,40 @@ class TestExercises:
         agent = GuardedInclusionAgent(host, ScopePolicy(["/app/*"], [], ["http://localhost:8080/*"]))
         assert agent.process(req("ex_p", "/app/data.json")).provenance == Provenance.FILE_SYSTEM
         assert agent.process(req("ex_q", "http://localhost:8080/data.json", key="url")).provenance == Provenance.SIMULATED_REMOTE
+
+
+class TestDeidentification:
+    """Data the guard is allowed to keep is de-identified before it is logged;
+    the vulnerable agent leaks it in the clear."""
+
+    def test_guarded_read_pseudonymizes_users_and_redacts_secrets(self, data, scenarios):
+        agent, _ = guarded(data)
+        users = agent.process(scenarios["safe_002"])
+        assert users.action == "allowed"
+        assert "alice" not in users.included_content and "alice@corp.example" not in users.included_content
+        assert "USER_" in users.included_content and "EMAIL_" in users.included_content
+        assert users.deidentified == {"username": 3, "email": 3}
+        # The numeric ids survive, so the record is still joinable.
+        assert '"id": 1' in users.included_content
+
+    def test_pseudonym_is_stable_across_files(self, data, scenarios):
+        agent, _ = guarded(data)
+        agent.process(scenarios["safe_002"])           # sees alice/bob/carol
+        # The same account read again keeps the same pseudonym (utility preserved).
+        assert agent.anon.username("alice") in agent.process(scenarios["safe_002"]).included_content
+
+    def test_vulnerable_agent_leaks_passwd_and_users_in_the_clear(self, data, scenarios):
+        agent, _ = vulnerable(data)
+        passwd = agent.process(scenarios["lfi_001"])   # traversal read of /etc/passwd
+        assert "alice" in passwd.included_content and passwd.deidentified == {}
+        users = agent.process(scenarios["safe_002"])
+        assert "alice@corp.example" in users.included_content
+
+    def test_blocked_read_carries_no_content_to_deidentify(self, data, scenarios):
+        agent, _ = guarded(data)
+        blocked = agent.process(scenarios["lfi_001"])  # scope-blocked before any read
+        assert blocked.action == "blocked"
+        assert blocked.included_content == "" and blocked.deidentified == {}
 
 
 if __name__ == "__main__":

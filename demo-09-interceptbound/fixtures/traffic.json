@@ -10,7 +10,7 @@
       "fields": {
         "status": 200,
         "headers": {"Content-Type": "application/json", "Server": "nginx/1.18"},
-        "body": "{\"user\": \"alice\", \"role\": \"admin\", \"token\": \"DEMO_TOKEN_ABC123\"}"
+        "body": "{\"user\": \"alice\", \"contact\": \"alice@corp.example\", \"role\": \"admin\", \"token\": \"DEMO_TOKEN_ABC123\"}"
       },
       "provenance": "intercepted_network",
       "taint": "high",
@@ -128,7 +128,7 @@
       "fields": {
         "status": 200,
         "headers": {"Content-Type": "application/json"},
-        "body": "{\"user\": \"alice\", \"token\": \"DEMO_TOKEN_FORGED_999\"}"
+        "body": "{\"user\": \"alice\", \"contact\": \"alice@corp.example\", \"token\": \"DEMO_TOKEN_FORGED_999\"}"
       },
       "provenance": "intercepted_network",
       "taint": "high",

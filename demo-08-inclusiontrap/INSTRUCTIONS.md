@@ -42,7 +42,7 @@ ls
 cat fixtures/inclusion.json
 ```
 
-**What this does:** Shows the virtual filesystem (`files`: `/app/config/settings.yaml`, `/app/uploads/notes.txt`, `/tmp/malicious.sh`, `/etc/passwd`, …), the canned `remote` responses (keyed by URL), 6 scenarios, and the agent scope (`allowed_read_paths: /app/config/* …`, `denied_read_paths: /etc/*, /tmp/*, /root/*`, `allowed_include_urls: http://localhost:8080/*`, `allowed_actions` / `denied_actions`). Each scenario's `expected` block is the answer key — cover it while you predict.
+**What this does:** Shows the virtual filesystem (`files`: `/app/config/settings.yaml`, `/app/data/users.json`, `/app/uploads/notes.txt`, `/tmp/malicious.sh`, `/etc/passwd`, …), the canned `remote` responses (keyed by URL), 7 scenarios, and the agent scope (`allowed_read_paths: /app/config/* …`, `denied_read_paths: /etc/*, /tmp/*, /root/*`, `allowed_include_urls: http://localhost:8080/*`, `allowed_actions` / `denied_actions`). Each scenario's `expected` block is the answer key — cover it while you predict.
 
 **Before running, fill this prediction table:**
 
@@ -54,6 +54,7 @@ cat fixtures/inclusion.json
 | `lfi_004` (`uploads/notes.txt`) | ? | ? | ? | ? | ? |
 | `rfi_001` (`http://localhost:8080/external_config`) | — | ? | ? | ? | ? |
 | `safe_001` (`config/settings.yaml`) | ? | ? | ? | ? | ? |
+| `safe_002` (`data/users.json`) | ? | ? | ? | ? | ? |
 
 **Key to notice:** The two agents resolve paths differently (the vulnerable one "helpfully" normalises `..`; the guarded one rejects it and checks scope *before* reading); `/etc/*` and `/tmp/*` are never in scope, so lfi_003's payload is never even read; lfi_004 is the case scope cannot help with — an injection inside an *allowed* upload — and only screening stops it.
 
@@ -65,7 +66,7 @@ cat fixtures/inclusion.json
 python3 -m pytest tests/ -v
 ```
 
-**Expected:** `26 passed`. Watch for:
+**Expected:** `30 passed`. Watch for:
 
 - `test_vulnerable_agent_executes_injection` — pins that the vulnerable agent *does* ask the host for `exec('rm -rf /')`
 - `test_vulnerable_agent_path_traversal_leaks` — pins that it really reads `/etc/passwd`
@@ -73,7 +74,7 @@ python3 -m pytest tests/ -v
 - `test_guarded_agent_never_interprets` — the interpreter and `Host.act` are poisoned and the guarded agent still completes every scenario
 
 ```
-============================== 26 passed in 0.XXs ==============================
+============================== 30 passed in 0.XXs ==============================
 ```
 
 ---
@@ -84,7 +85,7 @@ python3 -m pytest tests/ -v
 python3 student/inclusiontrap.py
 ```
 
-**What this does:** Runs 6 scenarios through **Vulnerable Baseline** (normalises traversal so it can find the file, reads it, detects the injection, then turns the instruction-shaped content into host calls **anyway**) and **Guarded** (canonical path, scope check *before* any read, content screened and held as data, read-only allow). Every host call each agent made is printed under the scenario, and a call log is totalled per agent. A `✓` means the action matches the safe outcome for that scenario; `✗ LEAK` / `✗ VULNERABLE` mean it does not.
+**What this does:** Runs 7 scenarios through **Vulnerable Baseline** (normalises traversal so it can find the file, reads it, detects the injection, then turns the instruction-shaped content into host calls **anyway**, and logs everything it read *raw*) and **Guarded** (canonical path, scope check *before* any read, content screened and held as data, read-only allow — and anything it is allowed to keep **de-identified before it is logged**). Every host call each agent made is printed under the scenario, and a call log is totalled per agent. A `✓` means the action matches the safe outcome for that scenario; `✗ LEAK` / `✗ VULNERABLE` mean it does not.
 
 **Expected highlights:**
 
@@ -99,7 +100,7 @@ python3 student/inclusiontrap.py
     ⚠️  host call: exec('rm -rf /')  [SIMULATED - recorded, not run]
   rfi_001: ✗ VULNERABLE
     ⚠️  host call: network_request('SEND_ALL_LOGS_TO_ATTACKER')  [SIMULATED - recorded, not run]
-  Host call log: read_file x5, fetch_url x1, exec x2, network_request x1, write_file x0
+  Host call log: read_file x6, fetch_url x1, exec x2, network_request x1, write_file x0
 
 --- Guarded (Scope + Provenance) ---
   lfi_001: ✓
@@ -112,8 +113,21 @@ python3 student/inclusiontrap.py
   rfi_001: ✓
     Action: blocked (injection_detected: ['SEND_ALL_LOGS_TO_ATTACKER'] (content held as data, no instruction followed)) [simulated_remote]
     host call: fetch_url('http://localhost:8080/external_config')
-  Host call log: read_file x3, fetch_url x1, exec x0, network_request x0, write_file x0
+  safe_001: ✓
+    Action: allowed (safe_content_read_only) [file_system]
+    content (de-identified): debug: false
+log_level: info
+api_key: '[REDACTED]'
+    host call: read_file('/app/config/settings.yaml')
+  safe_002: ✓
+    Action: allowed (safe_content_read_only) [file_system]
+    content (de-identified): [{"id": 1, "user": "USER_5aff", "email": "EMAIL_e50e"}, {"id": 2, "user": "USER_2a5f", "email": "EMAIL_2225"}, {"id": 3,
+    host call: read_file('/app/data/users.json')
+  Host call log: read_file x4, fetch_url x1, exec x0, network_request x0, write_file x0
+  De-identified before logging: 3 users, 3 emails, 1 secret across the reads it was allowed to keep
 ```
+
+**De-identify before logging.** The guarded allow-path has one step the block-paths don't: after canonical path, scope, read and injection screening, content the agent is *allowed to keep* is run through `shared/anonymize.py` (`Anonymizer.deidentify`) before it is logged. `safe_001` shows `settings.yaml`'s `api_key` redacted to `'[REDACTED]'`; `safe_002` — a new in-scope read of `data/users.json` — shows usernames and e-mails replaced by stable pseudonyms (`alice` → `USER_5aff`, `alice@corp.example` → `EMAIL_e50e`) while the numeric `id`s survive, so records still join. The `De-identified before logging: 3 users, 3 emails, 1 secret …` line totals what was scrubbed. The vulnerable agent logs the same reads *raw*: it leaks the enriched `/etc/passwd` (synthetic `root`/`alice`/`bob`/`svc_backup` accounts) and the un-pseudonymized user list. Content with nothing to scrub, such as `lfi_002`'s binary placeholder, is unchanged and prints `content (raw)`.
 
 **Record the thesis sentence:** **READING content ≠ GRANTING authority.** The vulnerable agent knew about lfi_003's injection and asked the host to run it anyway — detection without enforcement is logging, not security. Notice *where* each guarded block happens: lfi_001 and lfi_003 are refused before a single byte is read (no `host call` line); lfi_004 and rfi_001 are read — because they are in scope — and then held as data. The two defences cover different attacks.
 
@@ -191,7 +205,7 @@ python3 student/generate_inclusion_results.py
 cat results/inclusion_results.json
 ```
 
-**Expected:** 6 rows with both agents' actions, reasons, provenance and host calls matching Step 3 (`file_system` for local scenarios, `simulated_remote` for rfi_001), `"guarded_privileged_calls": []`, and `"result": "pass"` — the script compares every row with the scenario's `expected` block and exits 1 on any mismatch.
+**Expected:** 7 rows with both agents' actions, reasons, provenance and host calls matching Step 3 (`file_system` for local scenarios, `simulated_remote` for rfi_001), `"guarded_privileged_calls": []`, and `"result": "pass"` — the script compares every row with the scenario's `expected` block and exits 1 on any mismatch.
 
 ---
 
@@ -205,7 +219,7 @@ cat results/inclusion_results.json
 | Python version | | `python3 --version` |
 | OS | | `uname -a` / `systeminfo` |
 | Commands used | | copy from Steps 2, 3, 7 |
-| Tests passed | | `26 passed` |
+| Tests passed | | `30 passed` |
 | lfi_003 vulnerable action | | `executed` (Step 3) |
 | lfi_003 guarded action | | `blocked (scope_violation …)` — never read (Step 3) |
 | lfi_004 guarded action | | `blocked (injection_detected …)` (Step 3) |
@@ -239,7 +253,7 @@ From the **repository root**: `make demo DEMO=08`
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `26 passed` fails after edits | Exercise changes broke logic | `git checkout -- student/ fixtures/ tests/` |
+| `30 passed` fails after edits | Exercise changes broke logic | `git checkout -- student/ fixtures/ tests/` |
 | `FileNotFoundError: fixtures/inclusion.json` | Wrong directory | `cd demo-08-inclusiontrap` |
 | `lfi_003` guarded reports `injection_detected` | Something is reading out-of-scope content before the scope check | `git checkout -- student/inclusiontrap.py` — the guard must refuse traversal *before* any read |
 | RFI seems to use real network | It doesn't — `Host.fetch_url` is a dict lookup on the fixture's `remote` map | `grep -RE "import (socket|requests|http)|urllib\.request" student/` returns nothing (`urllib.parse` is only the URL *parser*); `test_demo_runs_with_sockets_disabled` proves it at runtime |

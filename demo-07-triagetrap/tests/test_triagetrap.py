@@ -284,5 +284,42 @@ class TestExercises:
         assert all(provenance_agent.triage(a).verdict == Verdict.BENIGN for a in clean)
 
 
+class TestSharedRecordDeidentification:
+    """When a triage record is shared, the guarded agent allowlists the metadata:
+    the decision and its hashes travel, the identities do not.  The score itself
+    is computed the same way - de-identification is about the shared record."""
+
+    def test_guarded_share_keeps_hashes_masks_identities(self, provenance_agent, artifacts):
+        result = provenance_agent.triage(artifacts["art-002"])   # a file with submitter/owner PII
+        shared = result.shared_metadata
+        assert shared["file_hash"] == artifacts["art-002"].metadata["file_hash"]  # analytic field kept
+        assert shared["submitter"] == "[PII-REDACTED]"
+        assert shared["owner"] == "[PII-REDACTED]"
+        assert shared["file_name"] == "[PII-REDACTED]"
+        assert "alice@corp.example" not in json.dumps(shared)
+        assert set(result.redacted_fields) == {"file_name", "created", "submitter", "owner"}
+
+    def test_baseline_share_leaks_everything(self, baseline_agent, artifacts):
+        result = baseline_agent.triage(artifacts["art-002"])
+        assert result.shared_metadata == artifacts["art-002"].metadata
+        assert result.redacted_fields == []
+
+    def test_allowlist_is_deny_by_default(self, provenance_agent):
+        # A metadata field the fixture has never carried is masked, not leaked.
+        art = Artifact("art-x", "file_metadata", "endpoint", Provenance.TRUSTED_SENSOR,
+                       {"file_hash": "ab" * 20, "new_field_2027": "secret-project-orion"}, "CANARY_BENIGN_0000")
+        shared = provenance_agent.triage(art).shared_metadata
+        assert shared["file_hash"] == "ab" * 20
+        assert shared["new_field_2027"] == "[PII-REDACTED]"
+
+    def test_deidentification_does_not_change_the_verdict(self, provenance_agent, baseline_agent, artifacts):
+        # The score/verdict come from structured evidence, not from the shared view.
+        for a in artifacts.values():
+            r = provenance_agent.triage(a)
+            assert r.score == BaseRateCalculator(BASE_RATES).score(
+                {"sandbox_verdict": a.metadata["verdict"]} if a.provenance == Provenance.TRUSTED_SANDBOX
+                and a.metadata.get("verdict") in ("malicious", "benign") else {})
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

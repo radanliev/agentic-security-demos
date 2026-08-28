@@ -50,6 +50,7 @@ def main():
             "reason": g.reason,
             "provenance": g.provenance.value,
             "host_calls": g.host_calls,
+            "deidentified": g.deidentified,
             "expected": exp,
             "ok": ok,
         })

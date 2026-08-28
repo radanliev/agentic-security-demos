@@ -12,10 +12,27 @@ score and never release a record.
 
 import json
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
 from typing import Dict, List, Optional
+
+try:  # the course-wide de-identification helper (single source in shared/)
+    from shared.anonymize import redact_record
+except ModuleNotFoundError:  # running the file directly from the demo folder
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+    from shared.anonymize import redact_record
+
+# When a triage record is shared, only these analytic fields go in the clear.
+# Deny-by-default: any other metadata key (submitter, owner, file_name, IPs, a
+# field a class has never seen) is masked, so the decision and its hashes travel
+# without the identities.  This mirrors the RAID triage proxy's VirusTotal
+# allowlist.
+SHAREABLE_METADATA = [
+    "file_hash", "sample_hash", "verdict", "score", "protocol", "mime_type",
+    "src_port", "dst_port", "packet_count", "behaviors", "size",
+]
 
 
 class Provenance(Enum):
@@ -50,6 +67,16 @@ class TriageResult:
     score: float
     reasons: List[str]
     provenance_chain: List[str]
+    shared_metadata: Dict = field(default_factory=dict)   # what a shared record would carry
+    redacted_fields: List[str] = field(default_factory=list)
+
+
+def _share_metadata(metadata: Dict, redact: bool):
+    """The metadata a triage record would expose when shared.  The guarded agent
+    allowlists it (analytic fields only); the baseline shares it in the clear."""
+    if redact:
+        return redact_record(metadata, allow=SHAREABLE_METADATA)
+    return dict(metadata), []
 
 
 class BaseRateCalculator:
@@ -174,12 +201,15 @@ class BaselineTriageAgent:
             reasons.append(f"prompt_injection: {injections} -> score floored at {self.INJECTION_FLOOR}")
 
         verdict = Verdict.QUARANTINE if score >= self.threshold else Verdict.BENIGN
+        shared, redacted = _share_metadata(artifact.metadata, redact=False)  # baseline shares it all
         return TriageResult(
             artifact_id=artifact.id,
             verdict=verdict,
             score=score,
             reasons=reasons,
             provenance_chain=[artifact.provenance.value, "canary text used as evidence", f"score {score:.3f}"],
+            shared_metadata=shared,
+            redacted_fields=redacted,
         )
 
 
@@ -232,12 +262,15 @@ class ProvenanceAwareTriageAgent:
 
         verdict = _decide(score, self.threshold, hold)
         chain.append(f"threshold {self.threshold} -> {verdict.value}")
+        shared, redacted = _share_metadata(artifact.metadata, redact=True)  # allowlist before sharing
         return TriageResult(
             artifact_id=artifact.id,
             verdict=verdict,
             score=score,
             reasons=reasons,
             provenance_chain=chain,
+            shared_metadata=shared,
+            redacted_fields=redacted,
         )
 
 
@@ -309,6 +342,19 @@ def main():
     print(f"    Provenance-Aware: {r.verdict.value} (score: {r.score:.3f})  <- {r.reasons[0]}")
     print()
 
+    # Sharing the record: de-identify before it leaves triage.
+    print("--- Sharing the triage record: allowlist before it leaves triage ---")
+    art_002 = next(a for a in artifacts if a.id == "art-002")
+    baseline_share = BaselineTriageAgent(base_rates, threshold).triage(art_002)
+    guarded_share = ProvenanceAwareTriageAgent(base_rates, threshold).triage(art_002)
+    print(f"  {art_002.id} raw metadata (baseline shares this):")
+    print(f"    {json.dumps(baseline_share.shared_metadata)}")
+    print(f"  {art_002.id} shared record (guarded, allowlisted):")
+    print(f"    {json.dumps(guarded_share.shared_metadata)}")
+    print(f"  Redacted before sharing: {guarded_share.redacted_fields} "
+          f"(kept: the hashes, verdict, and score that carry the decision)")
+    print()
+
     # Show provenance tracking
     print("--- Provenance Chain (Provenance-Aware Agent) ---")
     agent = ProvenanceAwareTriageAgent(base_rates, threshold)
@@ -321,6 +367,8 @@ def main():
     print("\nKey insight: Canaries in metadata are OBSERVATIONS, not INSTRUCTIONS.")
     print("The score is a Bayesian posterior over structured, sandbox-provenance evidence only;")
     print("free text is logged, may hold a record for an analyst, and can never release one.")
+    print("And when the record is shared, an allowlist keeps only the analytic fields - the")
+    print("hashes, verdict and score - and masks the submitter, owner and addresses with it.")
 
 
 if __name__ == "__main__":

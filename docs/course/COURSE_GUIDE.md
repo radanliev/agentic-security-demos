@@ -27,9 +27,9 @@ By the end of this course, students will be able to:
 4. **Implement** provenance tracking and capability-token mediation to defeat confused-deputy attacks.
 5. **Build** cryptographically verifiable evidence pipelines (hash chains, Merkle trees, inclusion proofs) for release assurance.
 6. **Recognize** indirect prompt injection in network protocol data and enforce scope-restricted reconnaissance.
-7. **Perform** safe malware triage using base-rate reasoning and provenance-aware quarantine decisions — without executing samples.
-8. **Distinguish** file *reading* from *authority granting* in local/remote inclusion scenarios.
-9. **Apply** taint tracking and downstream action guards to intercepted traffic processing.
+7. **Perform** safe malware triage using base-rate reasoning and provenance-aware quarantine decisions — without executing samples — and de-identify a triage record with a deny-by-default field allowlist before it is shared.
+8. **Distinguish** file *reading* from *authority granting* in local/remote inclusion scenarios, and de-identify file content (pseudonymise identifiers, preserve ids) before it is logged.
+9. **Apply** taint tracking and downstream action guards to intercepted traffic processing, and de-identify observations (pseudonymise identifiers, redact secrets) before they are logged.
 10. **Constrain** autonomous vulnerability scanners with scope validation, AST-based check validation, and taint-aware action policies.
 
 ---
@@ -165,7 +165,7 @@ Students must submit per module:
 # 1. Clone and verify
 git clone https://github.com/radanliev/agentic-security-demos.git
 cd agentic-security-demos
-make setup && make test   # Must end with "=== All tests passed ===" (293 passed, 1 xfailed)
+make setup && make test   # Must end with "=== All tests passed ===" (315 passed, 1 xfailed)
 
 # 2. Verify safety gates
 make verify-safety
@@ -200,4 +200,4 @@ make verify-safety
 
 ---
 
-*Course version 1.0 | Aligned with repository v0.1.0 | 294 tests, seed=42, fully offline*
+*Course version 1.0 | Aligned with repository v0.1.0 | 316 tests, seed=42, fully offline*

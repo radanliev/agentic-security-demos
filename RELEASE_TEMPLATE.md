@@ -93,7 +93,7 @@ Thanks to @username1, @username2 for their contributions!
 
 ## Pre-Release Checklist
 
-- [ ] `make test` passes (all 294 tests; 293 passed + 1 expected failure)
+- [ ] `make test` passes (all 316 tests; 315 passed + 1 expected failure)
 - [ ] `make verify-safety` passes
 - [ ] `make clean && make test` passes (clean build)
 - [ ] `CHANGELOG.md` updated

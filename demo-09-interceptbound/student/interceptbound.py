@@ -37,6 +37,13 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+try:  # the course-wide de-identification helper (single source in shared/)
+    from shared.anonymize import Anonymizer
+except ModuleNotFoundError:  # running the file directly from the demo folder
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+    from shared.anonymize import Anonymizer
+
 
 class Provenance(Enum):
     TRUSTED_LOCAL = "trusted_local"
@@ -291,6 +298,26 @@ _IPV4 = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
 OBSERVATION_FIELDS = {"status", "cert_fingerprint", "query"}
 
 
+def frame_observation(frame: TrafficFrame) -> str:
+    """The compact note an interception agent would write down about a frame:
+    its source and the one field that carries the most identifying content.
+    This is what gets *recorded*, so it is exactly what must be de-identified
+    before it is written anywhere durable."""
+    f = frame.fields
+    if frame.protocol == "http":
+        detail = str(f.get("body", ""))
+    elif frame.protocol == "dns":
+        answers = ",".join(str(a.get("value")) for a in f.get("answers", []))
+        detail = f"{f.get('query')} -> {answers}"
+    elif frame.protocol == "tls":
+        detail = str(f.get("cert_subject", ""))
+    elif frame.protocol == "custom":
+        detail = str(f.get("payload", "")).split("\n", 1)[0]
+    else:
+        detail = str(f.get("body") or f.get("record", ""))
+    return f"{frame.protocol} {frame.src} {detail}"
+
+
 def candidate_actions(frame: TrafficFrame, p: ParsedField) -> List[Tuple[str, str]]:
     """(action label, guard action) pairs derived from the wire data.
     Both agents use this; they differ only in whether a guard is consulted."""
@@ -319,8 +346,10 @@ class BaselineAgent:
 
     def __init__(self):
         self.tracker = TaintTracker()
+        self.observations: List[str] = []              # what it writes down: raw
 
     def process(self, frame: TrafficFrame) -> Dict:
+        self.observations.append(frame_observation(frame))   # recorded in the clear
         actions = []
         for p in self.tracker.parse_frame(frame):      # labels parsed, then ignored
             for label, _ in candidate_actions(frame, p):
@@ -342,6 +371,12 @@ class TaintAwareAgent:
                                  scope_policy.get("action_ceilings", {}))
         self.allowed_sources = list(scope_policy.get("allowed_sources", []))
         self.allowed_destinations = list(scope_policy.get("allowed_destinations", []))
+        # One Anonymizer for the whole run, so a pseudonym is stable across
+        # frames: USER_5aff in frame_001 is the same account in frame_004, and
+        # an analyst can still join them without learning the name.
+        self.anon = Anonymizer()
+        self.observations: List[str] = []              # what it writes down: de-identified
+        self.deid_counts: Dict[str, int] = {}
 
     @staticmethod
     def _host_of(addr: str) -> str:
@@ -368,6 +403,14 @@ class TaintAwareAgent:
             return {"frame": frame.id, "actions": [],
                     "blocked": [{"action": "process_frame", "reason": reason}],
                     "parsed_fields": 0, "taint_tracked": False, "exit": "scope_blocked"}
+
+        # 1b. Observe: record a note about the frame, de-identified first.
+        #     Identities become stable pseudonyms; secrets are redacted; the
+        #     buffer and the guard below are unchanged.
+        report = self.anon.deidentify(frame_observation(frame))
+        self.observations.append(report.text)
+        for kind, count in report.changes.items():
+            self.deid_counts[kind] = self.deid_counts.get(kind, 0) + count
 
         # 2. Parse with taint labels; hold values in the ephemeral buffer.
         parsed = self.tracker.parse_frame(frame)
@@ -449,6 +492,27 @@ def main():
         print(f"  {p.name:22} taint={p.taint.value:6} prov={p.provenance.value:20} flags={flags:16} value={str(p.value)[:40]!r}")
     print()
 
+    print("--- Observation log: what each agent writes down ---")
+    print("  Baseline (recorded in the clear):")
+    for line in baseline.observations:
+        print(f"    {line[:96]}")
+    print("  Guarded (de-identified before recording):")
+    for line in agent.observations:
+        print(f"    {line[:96]}")
+    counts = agent.deid_counts
+    order = ("username", "email", "ipv4", "secret")
+    singular = {"username": "username", "email": "email", "ipv4": "IP", "secret": "secret"}
+    summary = ", ".join(f"{counts[k]} {singular[k]}{'' if counts[k] == 1 else 's'}"
+                        for k in order if counts.get(k))
+    # Prove the claim: no raw identifier or secret survived in the guarded log.
+    leaked = [s for s in ("alice", "alice@corp.example", "DEMO_TOKEN_ABC123", "10.0.0.50")
+              if any(s in line for line in agent.observations)]
+    print(f"  De-identified before recording: {summary}; "
+          f"{len(leaked)} identities or secrets written in the clear")
+    print(f"  (frame_007 is out of scope, so the guarded agent never records it - "
+          f"the baseline logs its user and token anyway)")
+    print()
+
     print("--- Provenance rule: a laundered taint label still cannot store an intercepted token ---")
     laundered = TrafficFrame(**{**frames[0].__dict__, "id": "frame_001_relabelled_low", "taint": TaintLevel.LOW})
     print_result(laundered, agent.process(laundered))
@@ -471,6 +535,9 @@ def main():
     print("\nKey insight: Intercepted network data is OBSERVATION, not INSTRUCTION.")
     print("Taint ceilings block tainted data from privileged actions; provenance blocks")
     print("intercepted data from them even when its taint label has been laundered.")
+    print("And what may legitimately be observed is de-identified before it is written down:")
+    print("secrets are redacted, identities become stable pseudonyms, so the log stays")
+    print("useful for analysis without holding anyone's name or token in the clear.")
 
 
 if __name__ == "__main__":

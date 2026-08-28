@@ -21,6 +21,13 @@ from enum import Enum
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+try:  # the course-wide de-identification helper (single source in shared/)
+    from shared.anonymize import Anonymizer
+except ModuleNotFoundError:  # running the file directly from the demo folder
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+    from shared.anonymize import Anonymizer
+
 
 class Provenance(Enum):
     FILE_SYSTEM = "file_system"
@@ -30,11 +37,12 @@ class Provenance(Enum):
 @dataclass
 class InclusionResult:
     scenario_id: str
-    included_content: str        # first 100 chars, only when the read was allowed; "" otherwise (no leak)
+    included_content: str        # first 120 chars, only when the read was allowed; "" otherwise (no leak)
     provenance: Provenance
     action: str                  # "allowed" | "blocked" | "executed"
     reason: str
     host_calls: List[str] = field(default_factory=list)   # what the agent asked the host to do
+    deidentified: Dict[str, int] = field(default_factory=dict)   # what the guard scrubbed before logging
 
 
 # Instruction-shaped content, and the privileged action a naive interpreter would turn it into.
@@ -183,9 +191,9 @@ class VulnerableInclusionAgent:
             self.host.act(action, text)          # the vulnerability: content became a call
         calls = [f"{a}({b!r})" for a, b in self.host.calls[before:]]
         if hits:
-            return InclusionResult(scenario["id"], content[:100], provenance, "executed",
+            return InclusionResult(scenario["id"], content[:120], provenance, "executed",
                                    f"injection_detected_but_executed: {hits}", calls)
-        return InclusionResult(scenario["id"], content[:100], provenance, "allowed", "no_injection", calls)
+        return InclusionResult(scenario["id"], content[:120], provenance, "allowed", "no_injection", calls)
 
     def _resolve_path(self, path: str) -> str:
         """'Helpful' resolution: decodes and normalises traversal so the file is found (vulnerable)."""
@@ -202,6 +210,9 @@ class GuardedInclusionAgent:
         self.host = host if isinstance(host, Host) else Host(host, {}, [])   # a plain files dict is accepted
         self.scope = scope
         self.detector = InjectionDetector()
+        # One Anonymizer for the run: the same account keeps the same pseudonym
+        # across files, so records still join after de-identification.
+        self.anon = Anonymizer()
 
     def process(self, scenario: Dict) -> InclusionResult:
         kind, target = extract_target(scenario["request"])
@@ -209,8 +220,14 @@ class GuardedInclusionAgent:
 
         def result(action: str, reason: str, provenance: Provenance, content: Optional[str] = None) -> InclusionResult:
             calls = [f"{a}({b!r})" for a, b in self.host.calls[before:]]
-            shown = (content or "")[:100] if action == "allowed" else ""   # a blocked result never carries content
-            return InclusionResult(scenario["id"], shown, provenance, action, reason, calls)
+            deid: Dict[str, int] = {}
+            if action == "allowed" and content:
+                # Read-only content that will be logged is DATA that may carry
+                # PII: de-identify it before anything durable sees it.
+                report = self.anon.deidentify(content)
+                content, deid = report.text, report.changes
+            shown = (content or "")[:120] if action == "allowed" else ""   # a blocked result never carries content
+            return InclusionResult(scenario["id"], shown, provenance, action, reason, calls, deid)
 
         if kind == "url" or is_url(target):
             provenance = Provenance.SIMULATED_REMOTE
@@ -279,6 +296,7 @@ def main():
         print(f"--- {agent_name} ---")
         host, scope = build(data)
         agent = cls(host, scope)
+        deid_total: Dict[str, int] = {}
         for scenario in scenarios:
             result = agent.process(scenario)
             safe = scenario["expected"]["safe"]
@@ -290,6 +308,11 @@ def main():
                 status = f"✗ LEAK ({result.action}, should be {safe})"
             print(f"  {scenario['id']}: {status}")
             print(f"    Action: {result.action} ({result.reason}) [{result.provenance.value}]")
+            if result.action == "allowed" and result.included_content:
+                tag = "de-identified" if result.deidentified else "raw"
+                print(f"    content ({tag}): {result.included_content}")
+                for k, v in result.deidentified.items():
+                    deid_total[k] = deid_total.get(k, 0) + v
             for call in result.host_calls:
                 privileged = call.split("(")[0] in host.denied_actions
                 print(f"    {'⚠️  host call' if privileged else 'host call'}: {call}"
@@ -297,11 +320,19 @@ def main():
         counts = host.counts()
         summary = ", ".join(f"{a} x{counts.get(a, 0)}" for a in ["read_file", "fetch_url", "exec", "network_request", "write_file"])
         print(f"  Host call log: {summary}")
+        if deid_total:
+            sing = {"username": "user", "email": "email", "ipv4": "IP", "secret": "secret"}
+            line = ", ".join(f"{deid_total[k]} {sing[k]}{'' if deid_total[k] == 1 else 's'}"
+                             for k in ("username", "email", "ipv4", "secret") if deid_total.get(k))
+            print(f"  De-identified before logging: {line} across the reads it was allowed to keep")
         print()
 
     print("=== Demo Complete ===")
     print("\nKey lesson: READING content ≠ GRANTING authority.")
     print("Included files are DATA. Only explicit, verified INSTRUCTIONS drive actions.")
+    print("And data the guard is allowed to keep is de-identified before it is logged:")
+    print("the vulnerable agent leaks /etc/passwd and the raw user list; the guarded agent")
+    print("reads the same user list but records stable pseudonyms, so the ids still join.")
 
 
 if __name__ == "__main__":

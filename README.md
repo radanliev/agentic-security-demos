@@ -67,7 +67,7 @@ make setup
 # 3. Run a demo (01–10) or all tests
 make demo DEMO=01    # Blind Verification
 make demo DEMO=05    # Evidence-Backed Release
-make test            # All 294 tests (offline, deterministic; `make test` prints the count)
+make test            # All 316 tests (offline, deterministic; `make test` prints the count)
 ```
 
 > **Requirement**: Python 3.11+, `make`, `git`. No network access required after clone.
@@ -84,9 +84,9 @@ make test            # All 294 tests (offline, deterministic; `make test` prints
 | **04** | [AuthorityBound](demo-04-authoritybound/) | Confused deputy, provenance, capabilities | Data ≠ authority | 45 min |
 | **05** | [EVIAssure](demo-05-eviassure/) | Hash chains, Merkle trees, signed receipts | Tamper-evident release evidence | 45 min |
 | **06** | [ReconScope](demo-06-reconscope/) | Network recon with provenance | Network data = observation, not instruction | 30 min |
-| **07** | [TriageTrap](demo-07-triagetrap/) | Safe malware triage, base-rate awareness | Metadata ≠ authority | 30 min |
-| **08** | [InclusionTrap](demo-08-inclusiontrap/) | LFI/RFI, scope boundaries | Reading ≠ executing | 45 min |
-| **09** | [InterceptBound](demo-09-interceptbound/) | Taint tracking, ephemeral buffers | Taint blocks privileged actions | 45 min |
+| **07** | [TriageTrap](demo-07-triagetrap/) | Safe malware triage, base-rate awareness, shared-record allowlist | Metadata ≠ authority | 30 min |
+| **08** | [InclusionTrap](demo-08-inclusiontrap/) | LFI/RFI, scope boundaries, de-identified reads | Reading ≠ executing | 45 min |
+| **09** | [InterceptBound](demo-09-interceptbound/) | Taint tracking, ephemeral buffers, de-identified observation log | Taint blocks privileged actions | 45 min |
 | **10** | [ScanBound](demo-10-scanbound/) | Vuln scan scope, AST validation | Taint-aware downstream actions | 45 min |
 
 ### 🔬 Relationship to Conference Research Papers (Parts 1–10)

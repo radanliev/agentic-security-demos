@@ -59,6 +59,8 @@ def main():
             "score": round(g.score, 4),
             "reasons": g.reasons,
             "provenance_chain": g.provenance_chain,
+            "shared_metadata": g.shared_metadata,       # allowlisted before sharing
+            "redacted_fields": g.redacted_fields,
             "expected": {"baseline": exp_b, "provenance_aware": exp_g},
             "ok": ok,
         })

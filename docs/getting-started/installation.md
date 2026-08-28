@@ -55,7 +55,7 @@ CMD ["make", "test"]
 make test
 
 # Expected output: "=== All tests passed ==="
-# 294 tests across 10 demos + shared/ (293 passed, 1 expected failure)
+# 316 tests across 10 demos + shared/ (315 passed, 1 expected failure)
 
 # Quick safety check
 make verify-safety
