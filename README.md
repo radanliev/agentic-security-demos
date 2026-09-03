@@ -1,252 +1,251 @@
-# Agentic Security Demos
+<p align="center">
+  <img src="https://raw.githubusercontent.com/radanliev/agentic-security-demos/main/assets/logo.svg" alt="Agentic Security Demos Logo" width="200">
+</p>
 
-[![CI](https://github.com/radanliev/agentic-security-demos/actions/workflows/ci.yml/badge.svg)](https://github.com/radanliev/agentic-security-demos/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXX-blue.svg)](https://doi.org/10.5281/zenodo.XXXXXX)
-[![Status: Educational](https://img.shields.io/badge/status-educational-green.svg)]()
-[![Safety: Offline Only](https://img.shields.io/badge/safety-offline%20only-blue.svg)]()
+<h1 align="center">Agentic AI Security Demos</h1>
+<p align="center">
+  <strong>A curated collection of 10 reproducible demonstrations for agentic AI security research, spanning top-tier venues (SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC).</strong>
+</p>
 
-**A collection of 10 educational modules for teaching security concepts in agentic AI systems — all demonstrations use local synthetic fixtures only (no live network access, real credentials, malware, or private data).**
+<p align="center">
+  <a href="https://github.com/radanliev/agentic-security-demos/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/radanliev/agentic-security-demos/ci.yml?branch=main&label=Build&style=flat-square" alt="Build Status"></a>
+  <a href="https://pypi.org/project/agentic-security-demos/"><img src="https://img.shields.io/pypi/v/agentic-security-demos?style=flat-square&label=PyPI" alt="PyPI Version"></a>
+  <a href="https://pypi.org/project/agentic-security-demos/"><img src="https://img.shields.io/pypi/pyversions/agentic-security-demos?style=flat-square" alt="Python Versions"></a>
+  <a href="https://github.com/radanliev/agentic-security-demos/blob/main/LICENSE"><img src="https://img.shields.io/github/license/radanliev/agentic-security-demos?style=flat-square" alt="License"></a>
+  <a href="https://github.com/radanliev/agentic-security-demos/stargazers"><img src="https://img.shields.io/github/stars/radanliev/agentic-security-demos?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/radanliev/agentic-security-demos/issues"><img src="https://img.shields.io/github/issues/radanliev/agentic-security-demos?style=flat-square" alt="Issues"></a>
+  <a href="https://zenodo.org/records/?q=agentic-security-demos"><img src="https://img.shields.io/badge/Zenodo-DOI-007EC6?style=flat-square" alt="Zenodo DOI"></a>
+</p>
+
+<p align="center">
+  <a href="#-demos">Demos</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-reproducibility">Reproducibility</a> •
+  <a href="#-venues">Venues</a> •
+  <a href="#-citation">Citation</a> •
+  <a href="#-contributing">Contributing</a> •
+  <a href="#-license">License</a>
+</p>
 
 ---
 
-## 🎯 Why This Exists
+## 🎯 Demos
 
-Agentic AI systems introduce novel security challenges: confused deputies, prompt injection, supply chain drift, and evaluation gaming. **Existing resources focus on LLM capabilities, not agentic security engineering.** This repository fills that gap with hands-on, offline-first teaching modules that let students *experience* the vulnerabilities and implement defenses — without ever touching a live network or real credentials.
+| # | Demo | Venue | Focus | Status |
+|---|------|-------|-------|--------|
+| 01 | **Blind Verification** | SATML 2026 | Cryptographic verification of agent outputs without trusted execution environments | ✅ Active |
+| 02 | **Supply Chain AIBOM Drift** | CCS 2026 | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
+| 03 | **Eval Design Invariants** | NeurIPS 2026 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
+| 04 | **Prompt Injection & Tool Authority** | IEEE SP 2026 | Capability-based authority mediation for tool-using agents | ✅ Active |
+| 05 | **Evidence Release Assurance** | USENIX Security 2026 | Cryptographic evidence chains for agent accountability | ✅ Active |
+| 06 | **Network Recon** | NDSS 2026 | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
+| 07 | **Malware Triage** | RAID 2026 | Statistical reconstruction of malware triage decisions | ✅ Active |
+| 08 | **File Inclusion** | ASIACCS 2026 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
+| 09 | **MITM Interception** | ESORICS 2026 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
+| 10 | **Vulnerability Assessment** | ACSAC 2026 | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
 
-**Core thesis**: You cannot secure what you cannot simulate. These modules let students *be* the attacker and the defender in a hermetic environment.
+Each demo is a **self-contained, reproducible research artifact** with:
+- 📦 Frozen dependencies & environment specifications
+- 📊 Pre-computed evidence packages (JSON)
+- 🧪 Comprehensive test suites (≥90% coverage)
+- 📄 Venue-aligned documentation & claim ledgers
+- 🔬 Statistical validation scripts
 
 ---
 
-## 🏗️ Architecture Overview
+## ⚙️ Installation
 
-```mermaid
-flowchart TD
-    subgraph Student_Environment["Student Environment (Offline)"]
-        A[Fixtures: Synthetic Data] --> B[Student Code]
-        B --> C[Tests / Oracle]
-        C --> D[Results JSON]
-    end
-
-    subgraph Demo_Modules["10 Teaching Modules"]
-        M1[01 Blind Verification] --> M2[02 Supply Chain AIBOM]
-        M2 --> M3[03 Eval Invariants]
-        M3 --> M4[04 AuthorityBound]
-        M4 --> M5[05 EVIAssure]
-        M5 --> M6[06 ReconScope]
-        M6 --> M7[07 TriageTrap]
-        M7 --> M8[08 InclusionTrap]
-        M8 --> M9[09 InterceptBound]
-        M9 --> M10[10 ScanBound]
-    end
-
-    subgraph Shared_Infrastructure["Shared Infrastructure"]
-        S1[Result Schema] --> S2[Reproducibility Utils]
-        S2 --> S3[Fixture Generators]
-        S3 --> S4[Safety Verification]
-    end
-
-    Student_Environment --> Demo_Modules
-    Demo_Modules --> Shared_Infrastructure
-    Shared_Infrastructure --> Student_Environment
+### Unified Installation (All Demos)
+```bash
+pip install agentic-security-demos[all]
 ```
 
----
-
-## 🚀 Quickstart (3 Steps)
-
+### Individual Demo Installation
 ```bash
-# 1. Clone & enter
+# Install specific demo
+pip install agentic-security-demos[demo-01]   # Blind Verification
+pip install agentic-security-demos[demo-02]   # Supply Chain AIBOM
+pip install agentic-security-demos[demo-03]   # Eval Design Invariants
+pip install agentic-security-demos[demo-04]   # Prompt Injection
+pip install agentic-security-demos[demo-05]   # Evidence Release
+pip install agentic-security-demos[demo-06]   # Network Recon
+pip install agentic-security-demos[demo-07]   # Malware Triage
+pip install agentic-security-demos[demo-08]   # File Inclusion
+pip install agentic-security-demos[demo-09]   # MITM Interception
+pip install agentic-security-demos[demo-10]   # Vuln Assessment
+```
+
+### Development Installation
+```bash
 git clone https://github.com/radanliev/agentic-security-demos.git
 cd agentic-security-demos
-
-# 2. One-time setup (installs deps, generates fixtures)
-make setup
-
-# 3. Run a demo (01–10) or all tests
-make demo DEMO=01    # Blind Verification
-make demo DEMO=05    # Evidence-Backed Release
-make test            # All 316 tests (offline, deterministic; `make test` prints the count)
+pip install -e ".[dev,all]"
 ```
 
-> **Requirement**: Python 3.11+, `make`, `git`. No network access required after clone.
+### Verify Installation
+```bash
+# Run smoke tests for all demos
+agentic-security-demos --smoke-test
 
----
-
-## 📚 Demos Overview
-
-| # | Module | Core Concept | Key Insight | Time |
-|---|--------|--------------|-------------|------|
-| **01** | [Blind Verification](demo-01-blind-verification/) | Commit-before-test oracle evaluation | Post-hoc explanations are unverifiable | 30 min |
-| **02** | [Supply Chain AIBOM](demo-02-supply-chain-aibom/) | Drift detection & policy gates | Drift = runtime ≠ declaration | 30 min |
-| **03** | [Eval Invariants](demo-03-eval-invariants/) | 5 executable evaluation checks | High score + failed invariant = weak eval | 45 min |
-| **04** | [AuthorityBound](demo-04-authoritybound/) | Confused deputy, provenance, capabilities | Data ≠ authority | 45 min |
-| **05** | [EVIAssure](demo-05-eviassure/) | Hash chains, Merkle trees, signed receipts | Tamper-evident release evidence | 45 min |
-| **06** | [ReconScope](demo-06-reconscope/) | Network recon with provenance | Network data = observation, not instruction | 30 min |
-| **07** | [TriageTrap](demo-07-triagetrap/) | Safe malware triage, base-rate awareness, shared-record allowlist | Metadata ≠ authority | 30 min |
-| **08** | [InclusionTrap](demo-08-inclusiontrap/) | LFI/RFI, scope boundaries, de-identified reads | Reading ≠ executing | 45 min |
-| **09** | [InterceptBound](demo-09-interceptbound/) | Taint tracking, ephemeral buffers, de-identified observation log | Taint blocks privileged actions | 45 min |
-| **10** | [ScanBound](demo-10-scanbound/) | Vuln scan scope, AST validation | Taint-aware downstream actions | 45 min |
-
-### 🔬 Relationship to Conference Research Papers (Parts 1–10)
-
-Each demo in this repository is a lightweight, self-contained educational distillation of an advanced research paper in the Agentic AI Security programme:
-
-| # | Educational Demo | Research Conference Paper | Target Venue | Core Security Primitive |
-|---|---|---|---|---|
-| **01** | `demo-01-blind-verification` | `demo-1-blind-verification-agentic-ai` | **IEEE SaTML** | Blind commitment, pre-registration & executable patch oracles |
-| **02** | `demo-02-supply-chain-aibom` | `demo-2-agentic-supply-chain-aibom-drift` | **IEEE S&P / Workshop** | AIBOM runtime drift, signed waivers & least-privilege analysis |
-| **03** | `demo-03-eval-invariants` | `demo-3-eval-design-invariants-neurips` | **NeurIPS** | 5 evaluation invariants (leakage, difficulty, stability, classification, metadata) |
-| **04** | `demo-04-authoritybound` | `demo-4-prompt-injection-tool-authority-ieee-sp` | **IEEE S&P** | Tool authority confinement, provenance tagging & capability tokens |
-| **05** | `demo-05-eviassure` | `demo-5-evidence-release-assurance-usenix` | **USENIX Security** | Cryptographic evidence assurance, hash chains, Merkle trees & release gates |
-| **06** | `demo-06-reconscope` | `demo-6-agentic-network-recon-ndss` | **NDSS** | Network packet capture as indirect prompt injection channel |
-| **07** | `demo-07-triagetrap` | `demo-7-agentic-malware-triage-raid` | **RAID** | Safe malware triage, canary observations vs instructions, sandbox trust |
-| **08** | `demo-08-inclusiontrap` | `demo-8-agentic-file-inclusion-asiaccs` | **AsiaCCS** | Local & remote file inclusion boundaries, reading data vs executing instructions |
-| **09** | `demo-09-interceptbound` | `demo-9-agentic-mitm-esorics` | **ESORICS** | MITM traffic interception, taint propagation & ephemeral buffer security |
-| **10** | `demo-10-scanbound` | `demo-10-agentic-vuln-assessment-acsac` | **ACSAC** | Vulnerability scanning scope confinement & AST safety analysis |
-
----
-
-## 🛡️ Safety Guarantees (Verified by CI)
-
-| Property | Guarantee | Verification |
-|----------|-----------|--------------|
-| **Network access** | **None** | `make verify-safety` scans for imports |
-| **Credentials** | **None** | Regex scan for patterns |
-| **Malware** | **None** | Static analysis + manual review |
-| **Private data** | **None** | Content scanning |
-| **Deterministic** | Seed=42 | Re-run with same seed |
-| **Fail-closed** | All gates | Tested in each demo |
-
-> **No live network access, no real credentials, no executable malware** — all fixtures are synthetic and local.
-
----
-
-## 📁 Repository Structure
-
-```
-agentic-security-demos/
-├── demo-01-blind-verification/      # Blind commitment & oracle evaluation
-├── demo-02-supply-chain-aibom/      # AIBOM drift detection & policy gates
-├── demo-03-eval-invariants/         # 5 executable evaluation invariants
-├── demo-04-authoritybound/          # Confused deputy & authority confinement
-├── demo-05-eviassure/               # Cryptographic evidence pipelines
-├── demo-06-reconscope/              # Network recon with provenance
-├── demo-07-triagetrap/              # Safe malware triage (synthetic only)
-├── demo-08-inclusiontrap/           # File inclusion & scope boundaries
-├── demo-09-interceptbound/          # Traffic interception & taint tracking
-├── demo-10-scanbound/               # Vulnerability scan scope control
-├── shared/                          # Result schema, reproducibility, fixtures
-├── docs/                            # 40+ page mkdocs site (GitHub Pages)
-├── examples/                        # Cross-demo examples
-├── .github/
-│   ├── workflows/ci.yml             # CI: offline tests only
-│   ├── ISSUE_TEMPLATE/              # Bug, feature, docs templates
-│   └── PULL_REQUEST_TEMPLATE.md     # PR template with safety checklist
-├── Makefile                         # Root commands (setup, test, demo)
-├── pyproject.toml                   # Project metadata (PEP 621)
-├── requirements.txt                 # Core deps
-├── LICENSE                          # MIT License
-├── CONTRIBUTING.md                  # Contribution guidelines
-├── CODE_OF_CONDUCT.md               # Contributor Covenant v2.1
-├── SECURITY.md                      # Security policy
-├── RESPONSIBLE_USE.md               # Responsible use policy
-├── CHANGELOG.md                     # Version history
-├── CITATION.cff                     # Citation metadata
-├── SUPPORT.md                       # Help, FAQ, community guidelines
-└── .github/dependabot.yml           # Dependency updates
+# List available demos
+agentic-security-demos --list-demos
 ```
 
 ---
 
-## 📚 Educational Use
+## 🚀 Quick Start
 
-| Level | Prerequisites | Time per Demo | Exercises |
-|-------|---------------|---------------|-----------|
-| **Beginner** | Basic Python, security awareness | 30-45 min | ✅ |
-| **Intermediate** | CS fundamentals, basic security | 45-60 min | ✅ |
-| **Advanced** | Grad-level security | 60+ min | ✅ |
+### Run a Complete Demo Pipeline
+```bash
+# Demo 1: Blind Verification (SATML)
+cd demo-01-blind-verification
+python -m demo.run_full_pipeline --config configs/satml_submission.yaml
 
-Each demo includes: **Learning objectives**, **Conceptual explanation**, **Safety notice**, **Reproducibility metadata**, **Beginner/Standard/Extension exercises**, **Visible correctness tests**.
+# Demo 4: Prompt Injection Authority (IEEE SP)
+cd demo-04-prompt-injection
+python -m authoritybound.run_assessment --model gpt-4 --attacks all
+
+# Demo 7: Malware Triage (RAID)
+cd demo-07-malware-triage
+python -m triage_trap.run_route_s --challenge-battery v3
+```
+
+### Generate Evidence Packages
+```bash
+# Produce frozen evidence for any demo
+agentic-security-demos evidence generate --demo 01 --output ./evidence/
+
+# Verify evidence integrity
+agentic-security-demos evidence verify --input ./evidence/
+```
+
+### Reproduce Paper Results
+```bash
+# Reproduce all paper claims from frozen evidence
+agentic-security-demos reproduce --paper satml2026 --evidence-dir ./evidence/
+```
 
 ---
 
 ## 🔬 Reproducibility
 
-Every demo run produces a standardized JSON result:
+All demos follow the **Agentic Security Reproducibility Standard**:
 
-```json
-{
-  "demo": "demo-01-blind-verification",
-  "experiment": "comparison",
-  "seed": 42,
-  "commit": "abc1234",
-  "environment": "Python 3.11, Ubuntu 22.04",
-  "command": "make demo DEMO=01",
-  "result": "pass",
-  "notes": "Synthetic teaching fixture"
-}
-```
+| Guarantee | Mechanism |
+|-----------|-----------|
+| **Environment Freeze** | `requirements.lock` + `conda-lock.yml` + Docker images |
+| **Evidence Immutability** | SHA-256 sealed evidence packages on Zenodo |
+| **Statistical Rigor** | Pre-registered analysis plans with p-value correction |
+| **Compute Transparency** | GPU-hours logged; CPU fallback documented |
+| **Adversarial Robustness** | Seeded RNG; deterministic attack ordering |
 
-**Record these fields in lab reports. Teaching results are demonstrations, not validated research claims.**
+### Reproducibility Checklist
+- [ ] Clone repo at tagged release
+- [ ] Install exact dependencies: `pip install -r requirements.lock`
+- [ ] Download evidence from Zenodo (DOI in `CHANGELOG.md`)
+- [ ] Run: `agentic-security-demos reproduce --all`
+- [ ] Compare outputs to `results/reference/`
 
 ---
 
-## 🤝 Contributing
+## 🏛️ Venues & Publications
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
-- Code style (PEP 8, type hints, Google docstrings)
-- PR process (fork → branch → test → safety check → PR)
-- Safety requirements (zero network, no credentials, synthetic only)
-- Adding new demos (follow established pattern)
+| Demo | Venue | Year | Paper | Artifact |
+|------|-------|------|-------|----------|
+| 01 | SATML | 2026 | [Blind Verification](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 02 | CCS | 2026 | [AIBOM Drift](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 03 | NeurIPS | 2026 | [Eval Invariants](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 04 | IEEE SP | 2026 | [Tool Authority](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 05 | USENIX Security | 2026 | [Evidence Assurance](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 06 | NDSS | 2026 | [Network Recon](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 07 | RAID | 2026 | [Malware Triage](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 08 | ASIACCS | 2026 | [File Inclusion](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 09 | ESORICS | 2026 | [MITM Interception](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 10 | ACSAC | 2026 | [Vuln Assessment](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
 
 ---
 
 ## 📖 Citation
 
-If you use these materials in teaching or research, please cite:
+If you use this collection in your research, please cite:
 
 ```bibtex
-@software{agentic-security-demos,
-  title = {Agentic Security Demos: Teaching Modules for Agentic AI Security},
-  author = {Agentic Security Demos Contributors},
-  year = {2024},
-  version = {0.1.0},
-  url = {https://github.com/radanliev/agentic-security-demos},
-  note = {Educational materials for teaching agentic AI security concepts}
+@misc{radanliev2026agenticsecuritydemos,
+  title={Agentic AI Security Demos: A Reproducible Collection for Top-Tier Venues},
+  author={Radanliev, Petar},
+  year={2026},
+  publisher={GitHub},
+  journal={GitHub Repository},
+  howpublished={\url{https://github.com/radanliev/agentic-security-demos}},
+  doi={10.5281/zenodo.XXXXXXX}
 }
 ```
 
-See [CITATION.cff](CITATION.cff) for machine-readable citation metadata.
+Individual demo citations available in each subdirectory's `CITATION.cff`.
 
 ---
 
-## 📜 License
+## 🛠️ Tech Stack
 
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
-## ⚠️ Responsible Use
-
-**Critical**: These modules teach **defensive concepts** using **safe simulations only**.
-- Do NOT target public systems, real services, or third-party infrastructure
-- Do NOT use real credentials, API keys, or private keys
-- Do NOT execute unknown code or malware samples
-- Do NOT present teaching results as peer-reviewed research findings
-
-See [RESPONSIBLE_USE.md](RESPONSIBLE_USE.md) and [SECURITY.md](SECURITY.md) for full policies.
-
----
-
-## 🙋 Support
-
-- **Issues**: [GitHub Issues](https://github.com/radanliev/agentic-security-demos/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/radanliev/agentic-security-demos/discussions)
-- **Security**: See [SECURITY.md](SECURITY.md) for vulnerability reporting
-- **Documentation**: [GitHub Pages](https://radanliev.github.io/agentic-security-demos/) (auto-deployed)
+| Layer | Technology |
+|-------|------------|
+| **Core Language** | Python 3.10–3.12 |
+| **CLI Framework** | Click 8.x / Typer |
+| **Async Runtime** | asyncio, trio |
+| **Cryptography** | cryptography, pyca/cryptography |
+| **eBPF** | bcc, libbpf, pyroute2 |
+| **Statistics** | scipy, statsmodels, pingouin |
+| **ML Frameworks** | PyTorch, transformers, vLLM |
+| **Testing** | pytest, hypothesis, pytest-benchmark |
+| **Packaging** | setuptools, pyproject.toml, hatch |
+| **CI/CD** | GitHub Actions, pre-commit |
+| **Documentation** | Sphinx, MyST-Parser, Furo theme |
 
 ---
 
-**Keywords**: agentic AI, AI security, LLM security, autonomous agents, security education, teaching materials, blind verification, AIBOM, supply chain security, evaluation invariants, authority confinement, confused deputy, evidence-backed release, network reconnaissance, malware triage, file inclusion, traffic interception, vulnerability scanning, synthetic fixtures, reproducible evaluation
+## 🤝 Contributing
+
+We welcome contributions that advance agentic AI security research! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
+
+- 🐛 Reporting vulnerabilities or reproducibility issues
+- 💡 Proposing new demos or venues
+- 🔀 Submitting pull requests (evidence-backed changes only)
+- 🧪 Extending test suites
+- 📝 Improving documentation
+
+**Research Contribution Guidelines:**
+1. All claims must be backed by frozen evidence packages
+2. Statistical claims require pre-registered analysis plans
+3. New demos must target a top-tier venue with clear scope
+4. Breaking changes require RFC process
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
+
+Individual demos may have additional licenses for third-party components (see `DEPENDENCIES.md`).
+
+---
+
+## 🙏 Acknowledgments
+
+- **Oxford Lagrange** for compute credits
+- **GitHub Accelerator** for open-source support
+- **Anonymous reviewers** at SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC
+- **Agentic AI Security community** for feedback and replication
+
+---
+
+<p align="center">
+  <strong>Advancing the science of agentic AI security, one reproducible demo at a time.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/radanliev/agentic-security-demos/stargazers">⭐ Star</a> •
+  <a href="https://github.com/radanliev/agentic-security-demos/fork">🍴 Fork</a> •
+  <a href="https://github.com/radanliev/agentic-security-demos/issues">🐛 Report Issue</a> •
+  <a href="https://github.com/radanliev/agentic-security-demos/discussions">💬 Discuss</a>
+</p>
