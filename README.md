@@ -4,7 +4,7 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 10 reproducible demonstrations for agentic AI security research, spanning top-tier venues (SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC).</strong>
+  <strong>A curated collection of 11 reproducible demonstrations for agentic AI security research, spanning top-tier venues (SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC).</strong>
 </p>
 
 <p align="center">
@@ -44,6 +44,7 @@
 | 08 | **File Inclusion** | ASIACCS 2026 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
 | 09 | **MITM Interception** | ESORICS 2026 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
 | 10 | **Vulnerability Assessment** | ACSAC 2026 | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
+| 11 | **Degenerate Reporting** | RAID 2026 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications

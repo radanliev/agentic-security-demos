@@ -53,10 +53,11 @@ Week 5 ──┬── Module 8: InclusionTrap (File Inclusion)       (1.5 hours
          ├── Module 9: InterceptBound (Traffic & Taint)     (1.5 hours)
          └── Module 10: ScanBound (Vuln Scan Control)       (1.5 hours)
 
-Week 6 ───── Final Assessment & Portfolio Review           (2 hours)
+Week 6 ──┬── Module 11: Degenerate Reporting (Extension)    (1 hour)
+         └── Final Assessment & Portfolio Review           (2 hours)
 ```
 
-**Total: ~15 hours across 6 weeks** (or 3 intensive full days)
+**Total: ~16 hours across 6 weeks** (or 3 intensive full days)
 
 ---
 
@@ -101,6 +102,12 @@ Week 6 ───── Final Assessment & Portfolio Review           (2 hours)
        └────────────────┼────────────────┘
                         ▼
           ┌─────────────────────────┐
+          │ Module 11: Degenerate   │
+          │ Reporting [META-SCIENCE]│
+          │ (audit any evaluation)  │
+          └────────────┬────────────┘
+                       ▼
+          ┌─────────────────────────┐
           │  Final Assessment       │
           └─────────────────────────┘
 ```
@@ -132,7 +139,7 @@ Before starting, students must read and acknowledge [RESPONSIBLE_USE.md](../../R
 
 | Component | Weight | Description |
 |-----------|--------|-------------|
-| **Lab Completion** | 40% | All 10 modules run successfully with recorded results |
+| **Lab Completion** | 40% | All 11 modules run successfully with recorded results |
 | **Exercise Portfolio** | 35% | Beginner (all) + Standard (all) + Extension (≥5) exercises |
 | **Final Quiz** | 15% | 25 questions covering all learning outcomes |
 | **Reflection Report** | 10% | 2-page analysis: which defense failed hardest to implement and why |
@@ -196,6 +203,7 @@ make verify-safety
 | 8 | [InclusionTrap](lab-08-inclusiontrap.md) | `demo-08-inclusiontrap/` | Reading ≠ authority |
 | 9 | [InterceptBound](lab-09-interceptbound.md) | `demo-09-interceptbound/` | Taint tracking & action guards |
 | 10 | [ScanBound](lab-10-scanbound.md) | `demo-10-scanbound/` | Scope-bound vulnerability scanning |
+| 11 | [Degenerate Reporting](lab-11-degenerate-reporting.md) | `demo-11-degenerate-reporting/` | Audit baselines, base rates, metric sanity |
 | Final | [Assessment](lab-11-final-assessment.md) | — | Quiz + portfolio + reflection |
 
 ---

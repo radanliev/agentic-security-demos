@@ -58,6 +58,7 @@ nav:
     - InclusionTrap: demos/08-inclusiontrap.md
     - InterceptBound: demos/09-interceptbound.md
     - ScanBound: demos/10-scanbound.md
+    - Degenerate Reporting: demos/11-degenerate-reporting.md
   - Tutorials:
     - Beginner Exercises: tutorials/beginner.md
     - Standard Exercises: tutorials/standard.md

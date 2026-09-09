@@ -1,7 +1,7 @@
 # Final Assessment
 
 **Duration**: 2 hours | **Format**: Quiz (45 min) + Practical (45 min) + Reflection (30 min)
-**Prerequisites**: Modules 0–10
+**Prerequisites**: Modules 0–11
 
 ---
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 📝 Part A: Written Quiz (25 questions)
+## 📝 Part A: Written Quiz (26 questions)
 
 Answer in `FINAL_QUIZ_ANSWERS.md`. Closed-book except: you may consult *your own* `LAB_NOTES.md`.
 
@@ -81,11 +81,15 @@ Answer in `FINAL_QUIZ_ANSWERS.md`. Closed-book except: you may consult *your own
 
 **Q25.** The course's demos share a result schema (demo, experiment, seed, commit, environment, command, result, notes). Give one concrete incident where omitting `commit` or `environment` would make a result unreproducible or misleading.
 
+### Section 7 — Degenerate Reporting (Module 11)
+
+**Q26.** A paper reports its defence cuts attack success from 0.60 to 0.04 with no baseline, no base rate, and no raw counts. Name the three audit rules it violates (R1–R3), and for each state the single artefact that would fix the violation.
+
 ---
 
 ## 🛠️ Part B: Integration Practical
 
-**Task**: Build **`demo-11-memorybound/`** — a minimal module defending agent *memory* against poisoning, reusing at least three patterns from the course.
+**Task**: Build **`demo-12-memorybound/`** — a minimal module defending agent *memory* against poisoning, reusing at least three patterns from the course.
 
 ### Requirements
 
@@ -145,7 +149,7 @@ Write 2 pages (`REFLECTION.md`) addressing:
 ## 📦 Submission Checklist
 
 - [ ] `FINAL_QUIZ_ANSWERS.md` — 25 answers
-- [ ] `demo-11-memorybound/` — complete module per spec
+- [ ] `demo-12-memorybound/` — complete module per spec
 - [ ] `REFLECTION.md` — 2 pages
 - [ ] `LAB_NOTES.md` — all 11 module blocks complete with reproducibility fields
 - [ ] All demo `results/` directories populated (Modules 1–10)

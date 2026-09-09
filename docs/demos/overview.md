@@ -18,6 +18,8 @@ graph TD
     H --> K
     I --> K
     J --> K
+    F --> L[11 Degenerate Reporting]
+    E --> L
 ```
 
 ## Quick Comparison
@@ -34,6 +36,7 @@ graph TD
 | **08** | InclusionTrap | Reading ≠ executing | 45 min |
 | **09** | InterceptBound | Taint tracking blocks actions | 45 min |
 | **10** | ScanBound | Scope + taint = safe scanning | 45 min |
+| **11** | Degenerate Reporting | Baselines that rule out doing nothing | 15 min |
 
 ## Common Themes
 
@@ -41,7 +44,7 @@ graph TD
 |-------|-------|------------|
 | **Provenance Tracking** | 04, 06, 07, 08, 09 | Data source determines authority |
 | **Fail-Closed Defaults** | 02, 04, 08, 09, 10 | Default deny, explicit allow |
-| **Blind Evaluation** | 01, 03 | No peeking at test conditions |
+| **Blind Evaluation** | 01, 03, 11 | No peeking at test conditions; no free-floating headline numbers |
 | **Scope Enforcement** | 02, 06, 08, 10 | Explicit allowlists only |
 | **Taint Tracking** | 09, 10 | Track data source through pipeline |
 | **Cryptographic Evidence** | 05 | Hash chains + Merkle trees |
@@ -60,6 +63,7 @@ graph TD
 | 08 | Path resolution, AST | File inclusion, LFI/RFI |
 | 09 | Dataclasses, enums | Taint tracking, MITM |
 | 10 | AST parsing, regex | Vuln scanning, scope control |
+| 11 | Dataclasses, JSON | Meta-science: baselines, base rates, metric sanity |
 
 ## Recommended Order
 
@@ -78,6 +82,7 @@ graph TD
 ### Advanced
 9. **05** Evidence Assurance — Cryptographic pipelines
 10. **10** ScanBound — Scope + taint for safe automation
+11. **11** Degenerate Reporting — Audit any evaluation, including your own
 
 ## Cross-Demo Exercises
 

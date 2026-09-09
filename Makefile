@@ -3,7 +3,7 @@
 
 SHELL := /bin/bash
 PYTHON := python3
-DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound
+DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting
 
 .PHONY: help setup test demo clean all-demos verify-safety
 
@@ -20,7 +20,7 @@ help:
 	@echo "Demonstrations:"
 	@echo "  make demo DEMO=01       # Run demo 01 (blind-verification)"
 	@echo "  make demo DEMO=02       # Run demo 02 (supply-chain-aibom)"
-	@echo "  ...                     # DEMO=03 through DEMO=10"
+	@echo "  ...                     # DEMO=03 through DEMO=11"
 	@echo ""
 	@echo "Maintenance:"
 	@echo "  make clean              # Remove generated files, caches, results"
