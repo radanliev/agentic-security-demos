@@ -32,4 +32,4 @@ python3 student/audit_reporting.py   # both reviewers + case rescore
 python3 student/generate_audit_results.py  # writes results/audit_results.json
 ```
 
-Full step-by-step: [Execution Instructions](../../demo-11-degenerate-reporting/INSTRUCTIONS.md). Course lab: [Lab 11](../course/lab-11-degenerate-reporting.md).
+Full step-by-step: [Execution Instructions](https://github.com/radanliev/agentic-security-demos/blob/main/demo-11-degenerate-reporting/INSTRUCTIONS.md). Course lab: [Lab 11](../course/lab-11-degenerate-reporting.md).

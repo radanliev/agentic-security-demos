@@ -30,4 +30,4 @@ python3 student/provenancebound.py   # baseline + guarded pipelines
 python3 student/generate_provenance_results.py  # writes results/provenance_results.json
 ```
 
-Full step-by-step: [Execution Instructions](../../demo-12-provenancebound/INSTRUCTIONS.md). Course lab: [Lab 12](../course/lab-12-provenancebound.md).
+Full step-by-step: [Execution Instructions](https://github.com/radanliev/agentic-security-demos/blob/main/demo-12-provenancebound/INSTRUCTIONS.md). Course lab: [Lab 12](../course/lab-12-provenancebound.md).

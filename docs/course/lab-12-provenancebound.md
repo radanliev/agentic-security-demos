@@ -19,7 +19,7 @@ By the end of this module you can:
 
 ## 🧪 Demo Script (20 min, facilitator runs)
 
-Follow [`demo-12-provenancebound/INSTRUCTIONS.md`](../../demo-12-provenancebound/INSTRUCTIONS.md) Steps 0–4 live. Pause at two moments:
+Follow [`demo-12-provenancebound/INSTRUCTIONS.md`](https://github.com/radanliev/agentic-security-demos/blob/main/demo-12-provenancebound/INSTRUCTIONS.md) Steps 0–4 live. Pause at two moments:
 
 1. **After Step 1 (predictions):** poll the room — how many invites will the guarded pipeline allow? Most cohorts guess 3–4. The answer (1) lands harder for having predicted first.
 2. **After Step 4 output:** ask *why the baseline allows `cal_008` but the guarded pipeline blocks it, even though both use the same detector.* (Answer: the decision was never the detector's to make — provenance + risk decide, detection is evidence. Thresholds and signatures do not authorize.)
@@ -30,7 +30,7 @@ Follow [`demo-12-provenancebound/INSTRUCTIONS.md`](../../demo-12-provenancebound
 - **Exercise 12.2** — Low-risk lockdown: block all untrusted attempts and price the lost utility.
 - **Exercise 12.3** — Harden the detector for the `cal_008` paraphrase without flagging routine scheduling.
 
-Walkthrough with worked answers: [`demo-12-provenancebound/solutions/provenance_walkthrough.md`](../../demo-12-provenancebound/solutions/provenance_walkthrough.md) (release *after* the session).
+Walkthrough with worked answers: [`demo-12-provenancebound/solutions/provenance_walkthrough.md`](https://github.com/radanliev/agentic-security-demos/blob/main/demo-12-provenancebound/solutions/provenance_walkthrough.md) (release *after* the session).
 
 ## 🔗 Links to Earlier Modules
 

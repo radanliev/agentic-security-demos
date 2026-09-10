@@ -19,7 +19,7 @@ By the end of this module you can:
 
 ## 🧪 Demo Script (15 min, facilitator runs)
 
-Follow [`demo-11-degenerate-reporting/INSTRUCTIONS.md`](../../demo-11-degenerate-reporting/INSTRUCTIONS.md) Steps 0–5 live. Pause at two moments:
+Follow [`demo-11-degenerate-reporting/INSTRUCTIONS.md`](https://github.com/radanliev/agentic-security-demos/blob/main/demo-11-degenerate-reporting/INSTRUCTIONS.md) Steps 0–5 live. Pause at two moments:
 
 1. **After Step 1 (predictions):** poll the room — how many papers will the auditor pass? Most cohorts guess 5–7. The answer (2) lands harder for having predicted first.
 2. **After Step 3 output:** ask *why the naive reviewer rejects P-08 but accepts P-02.* (Answer: the 5% threshold punishes the honest-but-thin paper and rewards every broken one. Thresholds are not audits.)
@@ -30,7 +30,7 @@ Follow [`demo-11-degenerate-reporting/INSTRUCTIONS.md`](../../demo-11-degenerate
 - **Exercise 11.2** — Break P-05's metric: describe the perfect-scoring do-nothing policy and the one-line fix.
 - **Exercise 11.3** — Write a three-sentence review verdict for P-03 or P-04.
 
-Walkthrough with worked answers: [`demo-11-degenerate-reporting/solutions/audit_walkthrough.md`](../../demo-11-degenerate-reporting/solutions/audit_walkthrough.md) (release *after* the session).
+Walkthrough with worked answers: [`demo-11-degenerate-reporting/solutions/audit_walkthrough.md`](https://github.com/radanliev/agentic-security-demos/blob/main/demo-11-degenerate-reporting/solutions/audit_walkthrough.md) (release *after* the session).
 
 ## 🔗 Links to Earlier Modules
 
