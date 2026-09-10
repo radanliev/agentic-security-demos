@@ -1,0 +1,114 @@
+{
+  "_synthetic_notice": "SYNTHETIC TEACHING FIXTURE. These eight 'papers' are invented for classroom use. Titles, numbers and verdicts are illustrative only and describe no real publication. See README.md.",
+  "_vocabulary": {
+    "degenerate_baselines": ["always-allow", "always-block", "random", "majority-class"],
+    "note": "A degenerate (do-nothing) baseline is a trivial policy whose score any real defence must beat: always-allow admits everything, always-block denies everything, random decides by coin flip, majority-class always predicts the common class."
+  },
+  "papers": [
+    {
+      "id": "P-01",
+      "title": "Delimiter quarantine for tool-output injection",
+      "defence": "wraps untrusted tool output in non-executable delimiters",
+      "n_trials": 200,
+      "asr_before": 0.71,
+      "asr_after": 0.02,
+      "baselines_reported": ["always-allow", "random"],
+      "base_rate_reported": true,
+      "raw_counts": true,
+      "metric": "attack_success_rate",
+      "_ground_truth": "PASS: beats always-allow (0.71 ASR for doing nothing) and random; base rate and counts present."
+    },
+    {
+      "id": "P-02",
+      "title": "Instruction hierarchy for agent planning",
+      "defence": "ranks system over tool instructions by privilege level",
+      "n_trials": 150,
+      "asr_before": null,
+      "asr_after": 0.03,
+      "baselines_reported": [],
+      "base_rate_reported": false,
+      "raw_counts": false,
+      "metric": "attack_success_rate",
+      "_ground_truth": "FAIL R1+R2+R3: no baseline at all, so nothing rules out a do-nothing policy achieving 0.03; no base rate; no counts."
+    },
+    {
+      "id": "P-03",
+      "title": "Spotlighting untrusted content in prompts",
+      "defence": "marks untrusted spans with distinctive formatting",
+      "n_trials": 120,
+      "asr_before": 0.68,
+      "asr_after": 0.04,
+      "baselines_reported": ["no-defence"],
+      "base_rate_reported": true,
+      "raw_counts": true,
+      "metric": "attack_success_rate",
+      "_ground_truth": "FAIL R1 (lopsided reporting): 'no defence' IS the always-allow policy and it is the FLATTERING baseline (0.68 ASR looks bad, so 0.04 looks good). No unflattering baseline (always-block/random) is reported, so a policy that merely denies more cannot be ruled out."
+    },
+    {
+      "id": "P-04",
+      "title": "Classifier shield for indirect injection",
+      "defence": "binary classifier filters tool outputs before planning",
+      "n_trials": 500,
+      "asr_before": null,
+      "asr_after": null,
+      "accuracy_reported": 0.97,
+      "baselines_reported": ["majority-class"],
+      "base_rate_reported": false,
+      "raw_counts": true,
+      "metric": "accuracy",
+      "_ground_truth": "FAIL R2: 0.97 accuracy is unknowable without the base rate — if 97% of trials are benign, majority-class (a degenerate policy) also scores 0.97. Majority-class is listed but its score is never reported, so the comparison is decorative."
+    },
+    {
+      "id": "P-05",
+      "title": "Selective abstention for risky tool calls",
+      "defence": "abstains whenever a risk score exceeds a threshold",
+      "n_trials": 300,
+      "asr_before": 0.55,
+      "asr_after": 0.0,
+      "baselines_reported": ["always-allow"],
+      "base_rate_reported": true,
+      "raw_counts": true,
+      "metric": "abstention_rewarded_score",
+      "_ground_truth": "FAIL R4 (degenerate metric): the scoring rule rewards abstention without charging for lost utility, so an always-abstain policy — which does nothing useful — scores equal to a perfect defence. The metric cannot distinguish doing nothing from doing everything."
+    },
+    {
+      "id": "P-06",
+      "title": "Allowlist mediation for file-system tools",
+      "defence": "mediates every file operation against an explicit allowlist",
+      "n_trials": 180,
+      "asr_before": 0.64,
+      "asr_after": 0.0,
+      "baselines_reported": ["always-allow", "always-block", "majority-class"],
+      "base_rate_reported": true,
+      "raw_counts": true,
+      "metric": "attack_success_rate",
+      "_ground_truth": "PASS: unflattering baselines reported with scores; base rate and counts present."
+    },
+    {
+      "id": "P-07",
+      "title": "Prompt sandwiching for retrieval agents",
+      "defence": "repeats the user instruction after retrieved content",
+      "n_trials": 20,
+      "asr_before": 0.6,
+      "asr_after": 0.05,
+      "baselines_reported": ["always-allow", "random"],
+      "base_rate_reported": true,
+      "raw_counts": true,
+      "metric": "attack_success_rate",
+      "_ground_truth": "INCONCLUSIVE: the right baselines are reported, but n=20 is too small to rule out luck (a coin flip lands within a few points of 0.05 more often than reviewers admit). Underpowered, not wrong."
+    },
+    {
+      "id": "P-08",
+      "title": "Paraphrasing shield for e-mail agents",
+      "defence": "paraphrases incoming e-mail before the planner sees it",
+      "n_trials": 250,
+      "asr_before": 0.58,
+      "asr_after": 0.06,
+      "baselines_reported": ["always-allow", "random"],
+      "base_rate_reported": true,
+      "raw_counts": false,
+      "metric": "attack_success_rate",
+      "_ground_truth": "INCONCLUSIVE: baselines and base rate present, but only rates are reported, never raw counts — the result cannot be recomputed or pooled with other studies."
+    }
+  ]
+}

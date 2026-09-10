@@ -18,6 +18,10 @@ graph TD
     H --> K
     I --> K
     J --> K
+    F --> L[11 Degenerate Reporting]
+    E --> L
+    J --> M[12 ProvenanceBound]
+    G --> M
 ```
 
 ## Quick Comparison
@@ -34,16 +38,19 @@ graph TD
 | **08** | InclusionTrap | Reading ≠ executing | 45 min |
 | **09** | InterceptBound | Taint tracking blocks actions | 45 min |
 | **10** | ScanBound | Scope + taint = safe scanning | 45 min |
+| **11** | Degenerate Reporting | Baselines that rule out doing nothing | 15 min |
+| **12** | ProvenanceBound | Provenance-aware calendar authorization | 20 min |
 
 ## Common Themes
 
 | Theme | Demos | Key Lesson |
 |-------|-------|------------|
-| **Provenance Tracking** | 04, 06, 07, 08, 09 | Data source determines authority |
-| **Fail-Closed Defaults** | 02, 04, 08, 09, 10 | Default deny, explicit allow |
-| **Blind Evaluation** | 01, 03 | No peeking at test conditions |
-| **Scope Enforcement** | 02, 06, 08, 10 | Explicit allowlists only |
+| **Provenance Tracking** | 04, 06, 07, 08, 09, 12 | Data source determines authority |
+| **Fail-Closed Defaults** | 02, 04, 08, 09, 10, 12 | Default deny, explicit allow |
+| **Blind Evaluation** | 01, 03, 11 | No peeking at test conditions; no free-floating headline numbers |
+| **Scope Enforcement** | 02, 06, 08, 10, 12 | Explicit allowlists only |
 | **Taint Tracking** | 09, 10 | Track data source through pipeline |
+| **Oracle Separation** | 01, 11, 12 | Labels never drive attempts; attempts are observed |
 | **Cryptographic Evidence** | 05 | Hash chains + Merkle trees |
 
 ## Prerequisites by Demo
@@ -60,6 +67,8 @@ graph TD
 | 08 | Path resolution, AST | File inclusion, LFI/RFI |
 | 09 | Dataclasses, enums | Taint tracking, MITM |
 | 10 | AST parsing, regex | Vuln scanning, scope control |
+| 11 | Dataclasses, JSON | Meta-science: baselines, base rates, metric sanity |
+| 12 | Regex, Unicode normalization, dataclasses | Provenance-aware authorization, oracle separation |
 
 ## Recommended Order
 
@@ -78,6 +87,8 @@ graph TD
 ### Advanced
 9. **05** Evidence Assurance — Cryptographic pipelines
 10. **10** ScanBound — Scope + taint for safe automation
+11. **11** Degenerate Reporting — Audit any evaluation, including your own
+12. **12** ProvenanceBound — Provenance-aware authorization for untrusted content
 
 ## Cross-Demo Exercises
 
@@ -100,6 +111,8 @@ See [examples/](../examples/) for cross-demo integration exercises:
 | 08 | Reading vs executing? | Add nested inclusion test |
 | 09 | What is taint tracking? | Add new frame type |
 | 10 | How does scope prevent drift? | Add out-of-scope target |
+| 11 | What rules out doing nothing? | Score the degenerate policy |
+| 12 | Why must provenance beat the detector? | Add a paraphrase the detector misses |
 
 ## Assessment Rubric
 

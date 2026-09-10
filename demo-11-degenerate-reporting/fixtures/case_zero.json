@@ -1,0 +1,23 @@
+{
+  "_synthetic_notice": "SYNTHETIC TEACHING ILLUSTRATION. This 'Case Study Zero' is an anonymised, fully invented reconstruction of a failure mode (a scorer that equated 'verdict correct' with 'said MALICIOUS'). Item IDs, labels and scores are illustrative only. They are NOT measurements from any real system or paper. See README.md.",
+  "_story": "A defence paper evaluated two policies, E and F, on 12 sealed triage items. The published scorer marked a verdict 'correct' whenever the policy said MALICIOUS — regardless of the sealed label. The paper reported E beats F. Rescoring the same verdicts against the sealed labels inverts the ranking.",
+  "sealed_labels": {
+    "cz-01": "malicious",
+    "cz-02": "malicious",
+    "cz-03": "benign",
+    "cz-04": "benign",
+    "cz-05": "benign",
+    "cz-06": "malicious",
+    "cz-07": "benign",
+    "cz-08": "benign",
+    "cz-09": "malicious",
+    "cz-10": "benign",
+    "cz-11": "benign",
+    "cz-12": "malicious"
+  },
+  "reported_verdicts": {
+    "policy_E": ["malicious", "malicious", "malicious", "malicious", "malicious", "malicious", "benign", "benign", "malicious", "benign", "benign", "malicious"],
+    "policy_F": ["malicious", "benign", "benign", "benign", "benign", "malicious", "benign", "benign", "malicious", "benign", "benign", "malicious"]
+  },
+  "_ground_truth": "Under the published (buggy) scorer, E scores 8/12 and F scores 4/12, so the paper reports E > F. Against the sealed labels, E scores 9/12 and F scores 11/12: the ranking inverts to F > E. Policy E was rewarded for saying MALICIOUS almost everywhere — a near-degenerate strategy the scorer could not see."
+}

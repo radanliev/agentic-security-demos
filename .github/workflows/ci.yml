@@ -85,6 +85,16 @@ jobs:
           cd demo-10-scanbound
           make test
 
+      - name: Test demo-11-degenerate-reporting
+        run: |
+          cd demo-11-degenerate-reporting
+          make test
+
+      - name: Test demo-12-provenancebound
+        run: |
+          cd demo-12-provenancebound
+          make test
+
       - name: Verify no network access in tests
         run: |
           # Smoke check; real enforcement is by test design
@@ -181,7 +191,7 @@ for f in glob.glob('demo-*/results/*.json') + glob.glob('demo-*/tests/*.json'):
       - name: Run all demos and verify deterministic output
         run: |
           make setup
-          for demo in 01 02 03 04 05 06 07 08 09 10; do
+          for demo in 01 02 03 04 05 06 07 08 09 10 11 12; do
             echo "=== Running demo-$demo ==="
             set -o pipefail; make demo DEMO=$demo 2>&1 | tail -20
             echo ""

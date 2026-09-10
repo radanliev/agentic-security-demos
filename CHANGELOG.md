@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added (12-demo expansion, September 2026)
+- **demo-12-provenancebound**: teaching companion to Conference Paper 12 (`demo-12-provenance-authz-calendar-sacmat`, SACMAT 2027). Provenance-aware authorization for untrusted calendar content: derived provenance (structure-only, fail-closed), lexical detector with Unicode canonicalization, naive verb+endpoint agent (inert, oracle-refusing), provenance-aware deny policy (high-risk untrusted always blocked, even on detector miss `cal_008`). 8 synthetic invites, 44 tests, standard structure (`README`/`INSTRUCTIONS`/`Makefile`/`fixtures`/`results`/`solutions`/`student`/`tests`).
+- **demo-11-degenerate-reporting**: aligned to demos 01–10 pattern (removed stray nested `demo-11-degenerate-reporting/` subfolder, added Course Lab Guide link, Tests row in reproducibility metadata, `solutions/` in Step 0 listing, Exercises summary table, Alternative one-command run, Troubleshooting, Safety Reminder).
+- Root integration for 12 demos: `README` (12 rows, venues, install extras), root `Makefile` (`DEMO_DIRS` + `demo-11`/`demo-12` targets), `mkdocs.yml` nav, `docs/demos/12-provenancebound.md`, `docs/demos/overview.md`, `docs/course/lab-12-provenancebound.md`, `docs/course/COURSE_GUIDE.md`, `docs/index.md`, `pyproject.toml` keywords, `CITATION.cff`, CI (demo-11/12 jobs + 01–12 reproducibility loop).
+- Final assessment Part B practical renamed to `demo-13-memorybound/` (demo-12 slot now taken by ProvenanceBound); submission checklist updated to 12 modules.
+
 ### Added (PII de-identification, August 2026)
 - `shared/anonymize.py`: an offline, deterministic de-identification helper the demos can read in a couple of minutes — `pseudonymize`/`Anonymizer` (stable, locally reversible identifier tags that preserve joins), `redact_secrets` (deny-by-default masking of tokens/passwords/keys), `deidentify` (both, with a report of what changed), and `redact_record` (allowlist field redaction). 9 new tests.
 - **demo-09 InterceptBound**: an observation log. The guarded agent may observe intercepted traffic, but every note it writes is de-identified first — identities become stable pseudonyms, secrets are redacted — while the baseline records it in the clear. Fixtures gained a synthetic contact e-mail; 5 new tests (39 → 44).

@@ -33,6 +33,9 @@ keywords = [
     "file-inclusion",
     "traffic-interception",
     "vulnerability-scanning",
+    "degenerate-reporting",
+    "provenance-authorization",
+    "calendar-security",
     "synthetic-fixtures",
     "reproducible-evaluation"
 ]
