@@ -450,4 +450,4 @@ Add Module 2-style waivers to `ActionPolicy`: a waiver `{action, scope, approved
 
 ---
 
-**⬅️ Prev: [Module 9](lab-09-interceptbound.md) | ➡️ Next: [Final Assessment](lab-11-final-assessment.md)**
+**⬅️ Prev: [Module 9](lab-09-interceptbound.md) | ➡️ Next: [Module 11](lab-11-degenerate-reporting.md)**

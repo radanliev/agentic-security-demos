@@ -46,3 +46,7 @@ Walkthrough with worked answers: [`demo-11-degenerate-reporting/solutions/audit_
 - `results/audit_results.json` shows `"result": "pass"` with 8 papers audited and `ranking_inverts: true`
 - Step 1 prediction table filled *before* running (not after)
 - Exercise 11.3 verdict submitted (three sentences, names the rule and the fix)
+
+---
+
+**⬅️ Prev: [Module 10](lab-10-scanbound.md) | ➡️ Next: [Module 12](lab-12-provenancebound.md)**

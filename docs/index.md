@@ -21,10 +21,10 @@ cd agentic-security-demos
 # One-time setup
 make setup
 
-# Run all tests (316 tests, safe, offline, deterministic)
+# Run all tests (383 tests, safe, offline, deterministic)
 make test
 
-# Run a specific demo (01-10)
+# Run a specific demo (01-12)
 make demo DEMO=01
 ```
 
@@ -44,6 +44,8 @@ make demo DEMO=01
 | 08 | [InclusionTrap](demos/08-inclusiontrap.md) | File inclusion boundaries | LFI/RFI simulation, scope enforcement, authority separation | ⭐⭐⭐ |
 | 09 | [InterceptBound](demos/09-interceptbound.md) | Traffic interception | Taint tracking, ephemeral buffers, downstream action guards | ⭐⭐⭐ |
 | 10 | [ScanBound](demos/10-scanbound.md) | Vuln scan control | Scope validation, check validation, taint-aware actions | ⭐⭐⭐ |
+| 11 | [Degenerate Reporting](demos/11-degenerate-reporting.md) | Meta-science audit | Degenerate baselines, base rates, metric sanity | ⭐⭐ |
+| 12 | [ProvenanceBound](demos/12-provenancebound.md) | Calendar authorization | Derived provenance, lexical detection, provenance-aware policy | ⭐⭐⭐ |
 
 ---
 
@@ -64,7 +66,8 @@ make demo DEMO=01
 |-------|-------------------|------|
 | **Beginner** | 01, 02, 06, 07 | 2-3 hrs |
 | **Intermediate** | 03, 04, 08, 09 | 3-4 hrs |
-| **Advanced** | 05, 10 | 2-3 hrs |
+| **Advanced** | 05, 10, 12 | 3-4 hrs |
+| **Meta-science** | 11 | 15 min |
 
 ---
 

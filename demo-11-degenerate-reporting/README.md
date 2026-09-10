@@ -1,6 +1,6 @@
 # Demo 11: Degenerate Reporting
 
-> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants.
+> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../../docs/course/lab-11-degenerate-reporting.md)
 
 ## Learning Objectives
 
@@ -57,6 +57,7 @@ A defence paper's scorer equated "verdict correct" with "said MALICIOUS". Under 
 | Python | 3.11+ |
 | OS | Linux/macOS/Windows |
 | Command | `make demo DEMO=11` |
+| Tests | 23 (`python3 -m pytest tests/ -v`) |
 
 ## Conference Paper Alignment (Paper 11: RAID)
 

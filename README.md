@@ -4,7 +4,7 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 11 reproducible demonstrations for agentic AI security research, spanning top-tier venues (SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC).</strong>
+  <strong>A curated collection of 12 reproducible demonstrations for agentic AI security research, spanning top-tier venues (SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, SACMAT).</strong>
 </p>
 
 <p align="center">
@@ -45,6 +45,7 @@
 | 09 | **MITM Interception** | ESORICS 2026 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
 | 10 | **Vulnerability Assessment** | ACSAC 2026 | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
 | 11 | **Degenerate Reporting** | RAID 2026 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
+| 12 | **Provenance-Bound Authorization** | SACMAT 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -75,6 +76,8 @@ pip install agentic-security-demos[demo-07]   # Malware Triage
 pip install agentic-security-demos[demo-08]   # File Inclusion
 pip install agentic-security-demos[demo-09]   # MITM Interception
 pip install agentic-security-demos[demo-10]   # Vuln Assessment
+pip install agentic-security-demos[demo-11]   # Degenerate Reporting
+pip install agentic-security-demos[demo-12]   # Provenance-Bound Authz
 ```
 
 ### Development Installation
@@ -164,6 +167,8 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 08 | ASIACCS | 2026 | [File Inclusion](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
 | 09 | ESORICS | 2026 | [MITM Interception](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
 | 10 | ACSAC | 2026 | [Vuln Assessment](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 11 | RAID | 2026 | [Degenerate Reporting](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 12 | SACMAT | 2027 | [Provenance-Bound Authz](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
 
 ---
 
@@ -235,7 +240,7 @@ Individual demos may have additional licenses for third-party components (see `D
 
 - **Oxford Lagrange** for compute credits
 - **GitHub Accelerator** for open-source support
-- **Anonymous reviewers** at SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC
+- **Anonymous reviewers** at SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, SACMAT
 - **Agentic AI Security community** for feedback and replication
 
 ---

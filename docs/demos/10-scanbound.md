@@ -155,4 +155,4 @@ Denied actions (`exploit`, `exfiltrate`, `modify_target`, `execute_command`) are
 
 ---
 
-*This completes all 10 demos!*
+*Capstone module — continue with [Demo 11: Degenerate Reporting](11-degenerate-reporting.md) and [Demo 12: ProvenanceBound](12-provenancebound.md).*

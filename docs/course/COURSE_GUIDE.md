@@ -1,6 +1,6 @@
 # Agentic AI Security — Complete Course Guide
 
-**A 10-module hands-on course for teaching security engineering in agentic AI systems.**
+**A 12-module hands-on course for teaching security engineering in agentic AI systems.**
 
 ---
 
@@ -8,8 +8,8 @@
 
 | Attribute | Value |
 |-----------|-------|
-| **Format** | 10 hands-on lab modules + setup + final assessment |
-| **Duration** | 12–15 hours total (self-paced) |
+| **Format** | 12 hands-on lab modules + setup + final assessment |
+| **Duration** | 14–17 hours total (self-paced) |
 | **Level** | Advanced undergraduate / Master's CS |
 | **Prerequisites** | Python 3.11+, basic networking, basic security concepts |
 | **Safety** | 100% offline — synthetic fixtures only, zero live targets |
@@ -31,6 +31,8 @@ By the end of this course, students will be able to:
 8. **Distinguish** file *reading* from *authority granting* in local/remote inclusion scenarios, and de-identify file content (pseudonymise identifiers, preserve ids) before it is logged.
 9. **Apply** taint tracking and downstream action guards to intercepted traffic processing, and de-identify observations (pseudonymise identifiers, redact secrets) before they are logged.
 10. **Constrain** autonomous vulnerability scanners with scope validation, AST-based check validation, and taint-aware action policies.
+11. **Audit** any evaluation with degenerate baselines, base rates, raw counts, and metric-sanity checks before trusting a headline number.
+12. **Authorize** actions on untrusted content with derived provenance, lexical detection, observed (never oracle) attempts, and provenance-aware deny-by-default policy.
 
 ---
 
@@ -50,14 +52,15 @@ Week 4 ──┬── Module 6: ReconScope (Network Recon Safety)    (1 hour)
          └── Module 7: TriageTrap (Safe Malware Triage)     (1 hour)
 
 Week 5 ──┬── Module 8: InclusionTrap (File Inclusion)       (1.5 hours)
-         ├── Module 9: InterceptBound (Traffic & Taint)     (1.5 hours)
-         └── Module 10: ScanBound (Vuln Scan Control)       (1.5 hours)
+          ├── Module 9: InterceptBound (Traffic & Taint)     (1.5 hours)
+          └── Module 10: ScanBound (Vuln Scan Control)       (1.5 hours)
 
 Week 6 ──┬── Module 11: Degenerate Reporting (Extension)    (1 hour)
-         └── Final Assessment & Portfolio Review           (2 hours)
+          ├── Module 12: ProvenanceBound (Calendar Authz)   (1 hour)
+          └── Final Assessment & Portfolio Review           (2 hours)
 ```
 
-**Total: ~16 hours across 6 weeks** (or 3 intensive full days)
+**Total: ~18 hours across 6 weeks** (or 3–4 intensive days)
 
 ---
 
@@ -101,15 +104,21 @@ Week 6 ──┬── Module 11: Degenerate Reporting (Extension)    (1 hour)
 └──────┬───────┘ └──────┬───────┘ └──────┬───────┘
        └────────────────┼────────────────┘
                         ▼
-          ┌─────────────────────────┐
-          │ Module 11: Degenerate   │
-          │ Reporting [META-SCIENCE]│
-          │ (audit any evaluation)  │
-          └────────────┬────────────┘
-                       ▼
-          ┌─────────────────────────┐
-          │  Final Assessment       │
-          └─────────────────────────┘
+           ┌─────────────────────────┐
+           │ Module 11: Degenerate   │
+           │ Reporting [META-SCIENCE]│
+           │ (audit any evaluation)  │
+           └────────────┬────────────┘
+                        ▼
+           ┌─────────────────────────┐
+           │ Module 12: ProvenanceBound│
+           │ [AUTHORIZATION]         │
+           │ (authorize untrusted content) │
+           └────────────┬────────────┘
+                        ▼
+           ┌─────────────────────────┐
+           │  Final Assessment       │
+           └─────────────────────────┘
 ```
 
 **Recommended paths:**
@@ -139,7 +148,7 @@ Before starting, students must read and acknowledge [RESPONSIBLE_USE.md](../../R
 
 | Component | Weight | Description |
 |-----------|--------|-------------|
-| **Lab Completion** | 40% | All 11 modules run successfully with recorded results |
+| **Lab Completion** | 40% | All 12 modules run successfully with recorded results |
 | **Exercise Portfolio** | 35% | Beginner (all) + Standard (all) + Extension (≥5) exercises |
 | **Final Quiz** | 15% | 25 questions covering all learning outcomes |
 | **Reflection Report** | 10% | 2-page analysis: which defense failed hardest to implement and why |
@@ -172,7 +181,7 @@ Students must submit per module:
 # 1. Clone and verify
 git clone https://github.com/radanliev/agentic-security-demos.git
 cd agentic-security-demos
-make setup && make test   # Must end with "=== All tests passed ===" (315 passed, 1 xfailed)
+make setup && make test   # Must end with "=== All tests passed ===" (382 passed, 1 xfailed)
 
 # 2. Verify safety gates
 make verify-safety
@@ -204,8 +213,9 @@ make verify-safety
 | 9 | [InterceptBound](lab-09-interceptbound.md) | `demo-09-interceptbound/` | Taint tracking & action guards |
 | 10 | [ScanBound](lab-10-scanbound.md) | `demo-10-scanbound/` | Scope-bound vulnerability scanning |
 | 11 | [Degenerate Reporting](lab-11-degenerate-reporting.md) | `demo-11-degenerate-reporting/` | Audit baselines, base rates, metric sanity |
+| 12 | [ProvenanceBound](lab-12-provenancebound.md) | `demo-12-provenancebound/` | Provenance-aware calendar authorization |
 | Final | [Assessment](lab-11-final-assessment.md) | — | Quiz + portfolio + reflection |
 
 ---
 
-*Course version 1.0 | Aligned with repository v0.1.0 | 316 tests, seed=42, fully offline*
+*Course version 1.1 | Aligned with repository v0.1.0 | 383 tests, seed=42, fully offline*

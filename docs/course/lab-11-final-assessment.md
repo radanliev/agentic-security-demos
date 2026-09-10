@@ -1,7 +1,7 @@
 # Final Assessment
 
 **Duration**: 2 hours | **Format**: Quiz (45 min) + Practical (45 min) + Reflection (30 min)
-**Prerequisites**: Modules 0–11
+**Prerequisites**: Modules 0–12
 
 ---
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 📝 Part A: Written Quiz (26 questions)
+## 📝 Part A: Written Quiz (28 questions)
 
 Answer in `FINAL_QUIZ_ANSWERS.md`. Closed-book except: you may consult *your own* `LAB_NOTES.md`.
 
@@ -85,11 +85,17 @@ Answer in `FINAL_QUIZ_ANSWERS.md`. Closed-book except: you may consult *your own
 
 **Q26.** A paper reports its defence cuts attack success from 0.60 to 0.04 with no baseline, no base rate, and no raw counts. Name the three audit rules it violates (R1–R3), and for each state the single artefact that would fix the violation.
 
+### Section 8 — Provenance-Bound Authorization (Module 12)
+
+**Q27.** In Demo 12, `cal_008` is clean to every detector signature yet the guarded pipeline blocks it. State the exact policy rule that produces this verdict, and explain why a detector-conditioned baseline cannot replicate it.
+
+**Q28.** Demo 12's `observe_case` raises on any fixture containing `expected_malicious`. Explain in two sentences what headline number would become meaningless if the agent were allowed to read that label, using the paper's own admitted `40/40` blocker as the example.
+
 ---
 
 ## 🛠️ Part B: Integration Practical
 
-**Task**: Build **`demo-12-memorybound/`** — a minimal module defending agent *memory* against poisoning, reusing at least three patterns from the course.
+**Task**: Build **`demo-13-memorybound/`** — a minimal module defending agent *memory* against poisoning, reusing at least three patterns from the course.
 
 ### Requirements
 
@@ -148,11 +154,11 @@ Write 2 pages (`REFLECTION.md`) addressing:
 
 ## 📦 Submission Checklist
 
-- [ ] `FINAL_QUIZ_ANSWERS.md` — 25 answers
-- [ ] `demo-12-memorybound/` — complete module per spec
+- [ ] `FINAL_QUIZ_ANSWERS.md` — 28 answers
+- [ ] `demo-13-memorybound/` — complete module per spec
 - [ ] `REFLECTION.md` — 2 pages
-- [ ] `LAB_NOTES.md` — all 11 module blocks complete with reproducibility fields
-- [ ] All demo `results/` directories populated (Modules 1–10)
+- [ ] `LAB_NOTES.md` — all 12 module blocks complete with reproducibility fields
+- [ ] All demo `results/` directories populated (Modules 1–12)
 - [ ] Repository state: `make test` green (all existing suites + your new tests), `make verify-safety` green
 - [ ] Git log shows incremental commits (not one final dump)
 
@@ -164,4 +170,4 @@ Students completing all components meet the course learning outcomes stated in [
 
 ---
 
-**⬅️ Prev: [Module 10](lab-10-scanbound.md) | ↩️ Back to: [Course Guide](COURSE_GUIDE.md)**
+**⬅️ Prev: [Module 12](lab-12-provenancebound.md) | ↩️ Back to: [Course Guide](COURSE_GUIDE.md)**

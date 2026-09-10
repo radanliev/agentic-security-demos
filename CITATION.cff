@@ -16,7 +16,7 @@ repository-code: "https://github.com/radanliev/agentic-security-demos"
 repository-artifact: "https://doi.org/10.5281/zenodo.XXXXXX"
 repository-notes: "Educational materials for teaching agentic AI security concepts"
 description: |
-  A collection of 10 educational modules for teaching security concepts in agentic AI systems.
+  A collection of 12 educational modules for teaching security concepts in agentic AI systems.
   All demonstrations use local synthetic fixtures only — no live network access,
   real credentials, malware, or private data.
 keywords:
@@ -38,6 +38,8 @@ keywords:
   - file-inclusion
   - traffic-interception
   - vulnerability-scanning
+  - degenerate-reporting
+  - provenance-authorization
   - synthetic-fixtures
   - reproducible-evaluation
 license: MIT

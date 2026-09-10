@@ -32,7 +32,7 @@ cd demo-11-degenerate-reporting
 
 ```bash
 ls
-# Expected: Makefile  README.md  INSTRUCTIONS.md  fixtures  results  student  tests
+# Expected: Makefile  README.md  INSTRUCTIONS.md  fixtures  results  solutions  student  tests
 ```
 
 All remaining commands use relative paths (`fixtures/papers.json`), so you must be inside this directory.
@@ -150,7 +150,13 @@ EOF
 
 ---
 
-## Step 6 — Exercises
+## Exercises (Optional)
+
+| Level | Exercise | Hint |
+|-------|----------|------|
+| Beginner | 1. Score the degenerate policy against sealed labels (Exercise 11.1) | Always-MALICIOUS scores 5/12 true, 12/12 buggy; the scorer confuses "said MALICIOUS" with "was right" |
+| Standard | 2. Break P-05's metric (Exercise 11.2) | Always-abstain pays no utility cost; charge abstention at foregone benign utility |
+| Standard | 3. Write a three-sentence review verdict for P-03 or P-04 (Exercise 11.3) | Claim, violated rule + why, single fixing experiment; compare with `solutions/audit_walkthrough.md` |
 
 ### Exercise 11.1 — Score the degenerate policy (5 min)
 Using only `fixtures/case_zero.json`: what does a policy that says MALICIOUS on all 12 items score against the sealed labels? What does it score under the published (buggy) scorer? Write two sentences explaining why the buggy scorer cannot rank defences. (Answer key: `solutions/audit_walkthrough.md`. Covered by `test_exercise_always_allow_on_case_zero`.)
@@ -160,6 +166,29 @@ P-05's scoring rewards abstention without charging lost utility. Describe a poli
 
 ### Exercise 11.3 — Write the review verdict (5 min)
 Pick P-03 or P-04. Write a three-sentence peer-review verdict: (1) what the paper claims, (2) which audit rule it violates and why, (3) the single experiment or analysis that would fix it. Compare with `solutions/audit_walkthrough.md`.
+
+---
+
+## Alternative: One-Command Run
+
+From the **repository root**: `make demo DEMO=11`
+
+---
+
+## Troubleshooting
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| `23 passed` fails after edits | Exercise changes | `git checkout -- student/ fixtures/ tests/` |
+| `FileNotFoundError: … fixtures/papers.json` | Fixture missing or renamed | paths are resolved relative to the script, so the working directory does not matter; restore with `git checkout -- fixtures/` |
+| Generator exits 1 with `MISMATCH` | Code or fixture edited | the `EXPECTED` answer key in `generate_audit_results.py` is the answer key; update it deliberately or revert |
+| Naive accepts 7/8 surprises you | Thresholds are not audits | Re-read Step 3: the 5% threshold rejects honest-but-thin P-08 while accepting every broken paper |
+
+---
+
+## Safety Reminder
+
+⚠️ **Teaching demonstration only — synthetic fixtures only.** No real papers, no network, no credentials. Results are demonstrations, not validated research claims. See [RESPONSIBLE_USE.md](../RESPONSIBLE_USE.md).
 
 ---
 
