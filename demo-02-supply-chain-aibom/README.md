@@ -36,10 +36,9 @@ This demo teaches:
 | Seed | 42 |
 | Commit | Git SHA or `local` |
 | Python | 3.11+ |
-## Conference Paper Alignment (Paper 2: IEEE S&P Workshop / Supply Chain)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 2** (`demo-2-agentic-supply-chain-aibom-drift`):
-> **Agentic Supply Chain Assurance: Continuous AIBOM Verification & Runtime Capability Drift Detection**
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Defect Family & Scenario Mapping
 
@@ -60,7 +59,7 @@ Not checked by this demo: the `components` list and its hashes (component-level 
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Framework (Paper 2) | This Teaching Demo (Demo 02) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Enforcement | Kubernetes Admission Controller & eBPF | Standalone Python Policy Gate |
 | Inventory | Full cyclonedx/SPDX AIBOM with model weights | Synthetic JSON component declaration |

@@ -37,10 +37,9 @@ Agentic malware triage processes artifacts (PCAPs, file metadata, sandbox report
 | Python | 3.11+ |
 | Command | `make demo DEMO=07` |
 
-## Conference Paper Alignment (Paper 7: RAID)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 7** (`demo-7-agentic-malware-triage-raid`):
-> **TriageTrap: Provenance-Preserving and Base-Rate-Aware Autonomous Malware Triage Without Sample Execution** (RAID)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Threat Model & Triage Vectors
 
@@ -61,7 +60,7 @@ Automated triage agents analyzing malware metadata must NEVER dynamically execut
 
 ### Shared-Record De-Identification (Allowlist)
 
-When a triage record is **shared**, the guarded agent redacts the artifact metadata against the `SHAREABLE_METADATA` allowlist — `file_hash, sample_hash, verdict, score, protocol, mime_type, src_port, dst_port, packet_count, behaviors, size`. Only those analytic fields go in the clear; every other field (submitter, owner, file name, `src_ip`/`dst_ip`, `created`, and any field never seen before) is masked to `[PII-REDACTED]`. This is deny-by-default and mirrors the RAID triage proxy's VirusTotal field allowlist (`shared/anonymize.py`, `redact_record`). The baseline shares the metadata in the clear. De-identification changes the *shared record* only — the Bayesian score and the verdict are untouched, because they come from structured evidence with sandbox provenance, not from the masked fields.
+When a triage record is **shared**, the guarded agent redacts the artifact metadata against the `SHAREABLE_METADATA` allowlist — `file_hash, sample_hash, verdict, score, protocol, mime_type, src_port, dst_port, packet_count, behaviors, size`. Only those analytic fields go in the clear; every other field (submitter, owner, file name, `src_ip`/`dst_ip`, `created`, and any field never seen before) is masked to `[PII-REDACTED]`. This is deny-by-default and mirrors the reference triage proxy's VirusTotal field allowlist (`shared/anonymize.py`, `redact_record`). The baseline shares the metadata in the clear. De-identification changes the *shared record* only — the Bayesian score and the verdict are untouched, because they come from structured evidence with sandbox provenance, not from the masked fields.
 
 art-002 (a clean invoice) and art-005 (update.exe) carry synthetic PII in their metadata — `submitter`/`owner` of `alice@corp.example` / `Alice Smith` and `bob@corp.example` / `Bob Jones`. The demo shares art-002 both ways:
 
@@ -76,7 +75,7 @@ art-002 (a clean invoice) and art-005 (update.exe) carry synthetic PII in their 
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 7) | This Teaching Demo (Demo 07) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Dataset | Real disassembled malware samples & sandboxes | Inert JSON artifact metadata records |
 | Classifier | Ensemble gradient boosting & Bayesian update | Analytical `BaseRateCalculator` |

@@ -43,10 +43,9 @@ A rejected check is never executed, so it has no output, no finding and no taint
 | Command | `make demo DEMO=10` |
 | Tests | 51 (`python3 -m pytest tests/ -v`) |
 
-## Conference Paper Alignment (Paper 10: ACSAC)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 10** (`demo-10-agentic-vuln-assessment-acsac`):
-> **ScanBound: Scope Confinement and AST-Level Safety Guardrails for Autonomous Vulnerability Assessment Agents** (ACSAC)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Vulnerability Check Confinement & Safety Mapping
 
@@ -70,7 +69,7 @@ This demo is the educational companion to **Conference Paper 10** (`demo-10-agen
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 10) | This Teaching Demo (Demo 10) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Scanning Engine | Nuclei / OpenVAS / OWASP ZAP runners | `SimulatedScanner` returning canned JSON and recording what ran |
 | Target Harness | Multi-node Docker Compose vulnerable testbed | Named local targets; nothing is contacted |
