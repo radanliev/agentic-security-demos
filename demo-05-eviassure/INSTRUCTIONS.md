@@ -1,7 +1,7 @@
 # Demo 05: EVIAssure — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-05-eviassure.md](../../docs/course/lab-05-eviassure.md).
+> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-05-eviassure.md](../docs/course/lab-05-eviassure.md).
 
 ---
 

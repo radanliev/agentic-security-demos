@@ -1,7 +1,7 @@
 # Demo 06: ReconScope — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-06-reconscope.md](../../docs/course/lab-06-reconscope.md).
+> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-06-reconscope.md](../docs/course/lab-06-reconscope.md).
 
 ---
 

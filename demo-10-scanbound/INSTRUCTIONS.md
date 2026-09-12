@@ -1,7 +1,7 @@
 # Demo 10: ScanBound — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-10-scanbound.md](../../docs/course/lab-10-scanbound.md)
+> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-10-scanbound.md](../docs/course/lab-10-scanbound.md)
 
 ---
 

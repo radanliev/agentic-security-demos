@@ -1,7 +1,7 @@
 # Demo 04: AuthorityBound — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-04-authoritybound.md](../../docs/course/lab-04-authoritybound.md).
+> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-04-authoritybound.md](../docs/course/lab-04-authoritybound.md).
 
 ---
 

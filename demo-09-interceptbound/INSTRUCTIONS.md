@@ -1,7 +1,7 @@
 # Demo 09: InterceptBound — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-09-interceptbound.md](../../docs/course/lab-09-interceptbound.md)
+> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-09-interceptbound.md](../docs/course/lab-09-interceptbound.md)
 
 ---
 

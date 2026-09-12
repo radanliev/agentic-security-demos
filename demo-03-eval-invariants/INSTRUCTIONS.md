@@ -1,7 +1,7 @@
 # Demo 03: Evaluation Invariants — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-03-eval-invariants.md](../../docs/course/lab-03-eval-invariants.md).
+> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-03-eval-invariants.md](../docs/course/lab-03-eval-invariants.md).
 
 ---
 
