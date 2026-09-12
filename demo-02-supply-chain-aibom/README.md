@@ -1,6 +1,6 @@
 # Demo 02: Supply-Chain and AIBOM Drift
 
-> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../../docs/course/lab-02-supply-chain-aibom.md)
+> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../docs/course/lab-02-supply-chain-aibom.md)
 
 ## Learning Objectives
 

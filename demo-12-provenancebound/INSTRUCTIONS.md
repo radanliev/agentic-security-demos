@@ -1,7 +1,7 @@
 # Demo 12: ProvenanceBound — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-12-provenancebound.md](../../docs/course/lab-12-provenancebound.md)
+> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-12-provenancebound.md](../docs/course/lab-12-provenancebound.md)
 
 ---
 

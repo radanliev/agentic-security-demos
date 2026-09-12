@@ -1,7 +1,7 @@
 # Demo 07: TriageTrap — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-07-triagetrap.md](../../docs/course/lab-07-triagetrap.md)
+> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-07-triagetrap.md](../docs/course/lab-07-triagetrap.md)
 
 ---
 

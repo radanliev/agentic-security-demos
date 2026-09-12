@@ -1,7 +1,7 @@
 # Demo 11: Degenerate Reporting — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md)
+> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-11-degenerate-reporting.md](../docs/course/lab-11-degenerate-reporting.md)
 
 ---
 

@@ -1,6 +1,6 @@
 # Demo 12: ProvenanceBound — Provenance-Aware Authorization for Calendar Content
 
-> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../../docs/course/lab-12-provenancebound.md)
+> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants. Full pedagogy: [Course Lab Guide](../docs/course/lab-12-provenancebound.md)
 
 ## Learning Objectives
 

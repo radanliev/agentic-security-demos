@@ -1,7 +1,7 @@
 # Demo 01: Blind Verification — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> For the conceptual background see [README.md](README.md). For the full course lab with deep pedagogy see [../docs/course/lab-01-blind-verification.md](../../docs/course/lab-01-blind-verification.md).
+> For the conceptual background see [README.md](README.md). For the full course lab with deep pedagogy see [../docs/course/lab-01-blind-verification.md](../docs/course/lab-01-blind-verification.md).
 
 ---
 

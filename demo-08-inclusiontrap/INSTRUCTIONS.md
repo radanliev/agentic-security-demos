@@ -1,7 +1,7 @@
 # Demo 08: InclusionTrap — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-08-inclusiontrap.md](../../docs/course/lab-08-inclusiontrap.md)
+> Concepts: [README.md](README.md) · Full course lab: [../docs/course/lab-08-inclusiontrap.md](../docs/course/lab-08-inclusiontrap.md)
 
 ---
 

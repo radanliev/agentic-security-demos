@@ -1,7 +1,7 @@
 # Demo 02: Supply Chain & AIBOM Drift — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
-> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-02-supply-chain-aibom.md](../../docs/course/lab-02-supply-chain-aibom.md).
+> Concepts: [README.md](README.md). Full course lab: [../docs/course/lab-02-supply-chain-aibom.md](../docs/course/lab-02-supply-chain-aibom.md).
 
 ---
 
