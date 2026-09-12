@@ -45,10 +45,9 @@ A blocked attempt is never executed, so there is no outbound mail, no tool call,
 | Command | `make demo DEMO=12` |
 | Tests | 44 (`python3 -m pytest tests/ -v`) |
 
-## Conference Paper Alignment (Paper 12: SACMAT)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 12** (`demo-12-provenance-authz-calendar-sacmat`):
-> **Provenance-Aware Authorization for Untrusted Calendar Content** (SACMAT 2027, Cycle 1)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Calendar Case Confinement & Safety Mapping
 
@@ -73,9 +72,9 @@ This demo is the educational companion to **Conference Paper 12** (`demo-12-prov
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 12) | This Teaching Demo (Demo 12) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Provenance source | v2 harness supplied labels as fixture oracles (admitted blocker); Phase A derives them | Derived provenance only; oracles refused by construction |
 | Action attempts | v2 `simulated_action_attempt` defaulted to the label; mock agent in Phase A | Naive verb+endpoint agent; inert recorded attempts |
 | Scale | 100+ case controlled benchmark with splits and Wilson intervals | 8 representative invites |
-| Claims | SACMAT submission (not yet ready; 10 standing blockers) | Illustrative authorization verdicts; no empirical claims |
+| Claims | Full research prototype (work in progress) | Illustrative authorization verdicts; no empirical claims |

@@ -48,10 +48,9 @@ This demo implements a miniature evaluation suite with synthetic tasks and five 
 | Python | 3.11+ |
 | Command | `make demo DEMO=03` |
 
-## Conference Paper Alignment (Paper 3: NeurIPS)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 3** (`demo-3-eval-design-invariants-neurips`):
-> **Evaluation Invariants for Autonomous AI Agents: Auditing Leakage, Saturation, and Validity Beyond Headline Scores** (NeurIPS)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### The 5 Executable Invariants
 
@@ -78,7 +77,7 @@ The headline gap between the two agents (0.07) shrinks to 0.01 once the leaked t
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 3) | This Teaching Demo (Demo 03) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Scale | 500+ multi-step agent trajectories | Synthetic 5-task evaluation fixture |
 | Invariant 1 | Token-level minhash + semantic embeddings | Word 3-gram containment against a 4-document synthetic corpus, plus declared `in_training` flags |

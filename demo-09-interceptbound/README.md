@@ -40,10 +40,9 @@ This demo simulates:
 | Command | `make demo DEMO=09` |
 | Tests | 44 (`python3 -m pytest tests/ -v`) |
 
-## Conference Paper Alignment (Paper 9: ESORICS)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 9** (`demo-9-agentic-mitm-esorics`):
-> **InterceptBound: Taint-Tracked Ephemeral Buffers for Man-in-the-Middle Network Interception in Autonomous Defense Agents** (ESORICS)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Traffic Ingestion & Taint Propagation
 
@@ -97,7 +96,7 @@ Even the one thing the guarded agent is *allowed* to retain — a compact note p
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 9) | This Teaching Demo (Demo 09) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Network Harness | DPDK high-speed packet capture & TLS proxy | Synthetic in-memory JSON traffic frame list |
 | Memory Management | Linux memfd with secure zeroization | Python `EphemeralBuffer`: `bytearray` copy zeroed in place; other copies dropped, not zeroed |

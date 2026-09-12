@@ -59,14 +59,13 @@ A defence paper's scorer equated "verdict correct" with "said MALICIOUS". Under 
 | Command | `make demo DEMO=11` |
 | Tests | 23 (`python3 -m pytest tests/ -v`) |
 
-## Conference Paper Alignment (Paper 11: RAID)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 11** (`demo-11-degenerate-reporting-raid`):
-> **Indistinguishable from Doing Nothing: Degenerate Reporting in Indirect Prompt-Injection Defence Evaluation** (RAID)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Concept Mapping
 
-| Demo Element | Research Paper Element |
+| Demo Element | Research context |
 |---|---|
 | 8-paper fixture audit (P-01–P-08) | Literature coding study: how rarely published defences report trivial baselines |
 | PASS / FAIL / INCONCLUSIVE verdicts | Strict vs. lopsided-reporting readings of the field |
@@ -81,11 +80,11 @@ This demo is the educational companion to **Conference Paper 11** (`demo-11-dege
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 11) | This Teaching Demo (Demo 11) |
+| Aspect | Reference research prototype | This demo |
 |--------|-------------------------------|------------------------------|
 | Data | ~970-candidate systematic search, 129 full-text reads | 8 invented papers + 1 synthetic case study |
 | Scale | Multi-agent literature coding with PRISMA counts | Deterministic 4-rule checklist, runs in <1s |
 | Claims | Field-wide reporting rates with confidence intervals | Illustrative verdicts; no empirical claims |
-| Status | Research paper not yet submission-ready | Teaching demo, complete and self-contained |
+| Status | Reference research prototype (work in progress) | Demo, complete and self-contained |
 
-> **Honesty note:** the research paper behind this demo is explicitly *not* submission-ready (see its STATUS.md). This teaching demo does not reproduce its measurements and makes no claims about the field — it teaches the *audit method* on synthetic data, so students learn to spot degenerate reporting before they ever review a real paper.
+> **Note:** this demo does not reproduce any external measurements and makes no claims about the field — it teaches the *audit method* on synthetic data, so students learn to spot degenerate reporting before they ever review a real paper.

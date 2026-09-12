@@ -53,14 +53,13 @@ The verified agent publishes the SHA-256 of every commitment to `commitment_hash
 | OS | Linux/macOS/Windows |
 | Command | `make demo DEMO=01` |
 
-## Conference Paper Alignment (Paper 1: IEEE SaTML)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 1** (`demo-1-blind-verification-agentic-ai`):
-> **Blind Verification for Agentic AI: Making Security Assessment Falsifiable Before Reveal** (IEEE SaTML)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Defect Family & Scenario Mapping
 
-| Demo Scenario | Security Theme | Conference Paper Defect Variant | Failure Mode |
+| Demo Scenario | Security Theme | Defect Variant | Failure Mode |
 |---|---|---|---|
 | `authz-001` | Broken authorization check | `v1-vulnerability` | Authz bypass & role drift |
 | `depdrift-002` | Vulnerable dependency CVE | `v2-supply-chain-drift` | Unpinned dependency / AIBOM drift |
@@ -74,7 +73,7 @@ This demo is the educational companion to **Conference Paper 1** (`demo-1-blind-
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 1) | This Teaching Demo (Demo 01) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Data | Real repositories, PRs, issues | Synthetic support tickets + repo operations |
 | Scale | Multi-agent finite-run study (N=80) | 4 core synthetic scenarios |

@@ -27,7 +27,7 @@ except ModuleNotFoundError:  # running the file directly from the demo folder
 # When a triage record is shared, only these analytic fields go in the clear.
 # Deny-by-default: any other metadata key (submitter, owner, file_name, IPs, a
 # field a class has never seen) is masked, so the decision and its hashes travel
-# without the identities.  This mirrors the RAID triage proxy's VirusTotal
+# without the identities.  This mirrors the reference triage proxy's VirusTotal
 # allowlist.
 SHAREABLE_METADATA = [
     "file_hash", "sample_hash", "verdict", "score", "protocol", "mime_type",

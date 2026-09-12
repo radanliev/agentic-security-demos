@@ -136,7 +136,7 @@ Bayes: prior P(malicious) = 0.020; P(malicious | sandbox says malicious) = 0.795
   Redacted before sharing: ['file_name', 'created', 'submitter', 'owner'] (kept: the hashes, verdict, and score that carry the decision)
 ```
 
-The guarded agent keeps only the `SHAREABLE_METADATA` allowlist — `file_hash, sample_hash, verdict, score, protocol, mime_type, src_port, dst_port, packet_count, behaviors, size` — in the clear and masks every other field (submitter, owner, file name, addresses, `created`, and any field it has never seen) to `[PII-REDACTED]`. This is deny-by-default, mirroring the RAID triage proxy's VirusTotal field allowlist (`shared/anonymize.py`, `redact_record`). The baseline shares the metadata in the clear. De-identification touches the *shared record* only: the Bayesian score and the verdict are unchanged, because they come from structured evidence with sandbox provenance, not from the masked fields.
+The guarded agent keeps only the `SHAREABLE_METADATA` allowlist — `file_hash, sample_hash, verdict, score, protocol, mime_type, src_port, dst_port, packet_count, behaviors, size` — in the clear and masks every other field (submitter, owner, file name, addresses, `created`, and any field it has never seen) to `[PII-REDACTED]`. This is deny-by-default, mirroring the reference triage proxy's VirusTotal field allowlist (`shared/anonymize.py`, `redact_record`). The baseline shares the metadata in the clear. De-identification touches the *shared record* only: the Bayesian score and the verdict are unchanged, because they come from structured evidence with sandbox provenance, not from the masked fields.
 
 ---
 

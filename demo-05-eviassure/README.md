@@ -42,10 +42,9 @@ This demo implements a minimal pipeline with synthetic agent traces.
 | Python | 3.11+ (requires `cryptography`) |
 | Command | `make demo DEMO=05` |
 
-## Conference Paper Alignment (Paper 5: USENIX Security)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 5** (`demo-5-evidence-release-assurance-usenix`):
-> **EVIAssure: Cryptographic Evidence Assurance for Autonomous Multi-Agent Systems Under Malicious Release Gates** (USENIX Security)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Threat Model & Verification Guarantees
 
@@ -67,7 +66,7 @@ This demo is the educational companion to **Conference Paper 5** (`demo-5-eviden
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Framework (Paper 5) | This Teaching Demo (Demo 05) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Cryptography | Production Hardware HSM & KMS signing | Ephemeral Ed25519 in-memory demo keys |
 | Scale | Continuous pipeline traces ($N=10^5$ events) | 6-step synthetic deployment trace |

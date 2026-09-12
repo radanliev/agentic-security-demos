@@ -37,10 +37,9 @@ This demo uses a **simulated host** (`Host` in `student/inclusiontrap.py`): the 
 | Python | 3.11+ |
 | Command | `make demo DEMO=08` |
 
-## Conference Paper Alignment (Paper 8: AsiaCCS)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 8** (`demo-8-agentic-file-inclusion-asiaccs`):
-> **InclusionTrap: Confining File Inclusion and Remote Document Ingestion in Autonomous Agent Workflows** (AsiaCCS)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Threat Vectors & Scenario Mapping
 
@@ -81,7 +80,7 @@ api_key: '[REDACTED]'
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 8) | This Teaching Demo (Demo 08) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | File System | Real sandboxed container with POSIX ACLs | In-memory mock dictionary of files behind a recording `Host` |
 | Remote Retrieval | Live Web proxy with SSRF filtering | Simulated in-memory HTTP responses |

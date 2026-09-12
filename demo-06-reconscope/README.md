@@ -39,10 +39,9 @@ This demo teaches:
 | Python | 3.11+ |
 | Command | `make demo DEMO=06` |
 
-## Conference Paper Alignment (Paper 6: NDSS)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 6** (`demo-6-agentic-network-recon-ndss`):
-> **ReconScope: Provenance-Aware Confinement of Autonomous Reconnaissance Agents Against Network-Borne Indirect Prompt Injection** (NDSS)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Network Injection Vectors & Defect Mapping
 
@@ -63,7 +62,7 @@ Reconnaissance agents ingest untrusted external network packets. ReconScope guar
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 6) | This Teaching Demo (Demo 06) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Network Layer | Raw PCAP capture / live Scapy interface | Static JSON protocol fixture records |
 | Scope Validation | eBPF socket filters & Linux network namespaces | Python `ScopePolicy` host/port validator |

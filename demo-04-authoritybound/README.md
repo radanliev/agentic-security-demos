@@ -53,10 +53,9 @@ Same parser, same mediator code, different configuration:
 | Python | 3.11+ |
 | Command | `make demo DEMO=04` |
 
-## Conference Paper Alignment (Paper 4: IEEE S&P)
+## Research Connection
 
-This demo is the educational companion to **Conference Paper 4** (`demo-4-prompt-injection-tool-authority-ieee-sp`):
-> **AuthorityBound: Confining Tool Authority Against Indirect Prompt Injections in Multi-Agent Autonomous Systems** (IEEE S&P)
+This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
 ### Defect Family & Scenario Mapping
 
@@ -78,7 +77,7 @@ Known, documented gap: prefix scopes are textual, so `/workspace/../etc/passwd` 
 
 ## Difference from Private Research Benchmark
 
-| Aspect | Research Benchmark (Paper 4) | This Teaching Demo (Demo 04) |
+| Aspect | Reference research prototype | This demo |
 |--------|------------------------------|-----------------------------|
 | Architecture | Multi-agent LangChain/AutoGen swarms | Lightweight Python Mediator & MockAgent |
 | Attack Suite | 250+ real-world prompt injection payloads | 3 synthetic attack scenarios + 2 legitimate controls |
