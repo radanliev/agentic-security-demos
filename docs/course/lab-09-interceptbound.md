@@ -132,7 +132,7 @@ Two properties to record:
 ### Step 3: Run the baseline agent
 
 ```bash
-cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Unguarded Baseline/,/^$/p' && cd ..
+cd demo-09-interceptbound && PYTHONPATH=.. python3 student/interceptbound.py 2>&1 | sed -n '/Unguarded Baseline/,/^$/p' && cd ..
 ```
 
 **What this does**: Runs the demo's baseline section — the same parser and detection rules as the defended agent, but no scope, no taint, no guard: every candidate action derived from the wire data is "executed".
@@ -164,7 +164,7 @@ The baseline executes `store_token` on frame_001 (storing an attacker-forgeable 
 ### Step 4: Run the defended agent
 
 ```bash
-cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Taint-Aware/,/^$/p' && cd ..
+cd demo-09-interceptbound && PYTHONPATH=.. python3 student/interceptbound.py 2>&1 | sed -n '/Taint-Aware/,/^$/p' && cd ..
 ```
 
 **What this does**: Runs the defended section: scope check → taint-aware parse → buffer storage → guard-gated actions → buffer purge for that frame.
@@ -302,7 +302,7 @@ cd ..
 ### Step 7: Inspect the observation log
 
 ```bash
-cd demo-09-interceptbound && python3 student/interceptbound.py 2>&1 | sed -n '/Observation log/,/^$/p' && cd ..
+cd demo-09-interceptbound && PYTHONPATH=.. python3 student/interceptbound.py 2>&1 | sed -n '/Observation log/,/^$/p' && cd ..
 ```
 
 **What this does**: Prints the observation log each agent keeps — the one thing a defended interception agent is *allowed* to retain, a compact note per in-scope frame — so you can read the baseline's raw notes against the guarded agent's de-identified ones.

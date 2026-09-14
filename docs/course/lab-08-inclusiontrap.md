@@ -152,7 +152,7 @@ Scope: the first two allowed, `/etc` and `/tmp` denied, `/blocked/traversal` den
 ### Step 3: Run the vulnerable agent on the payload scenario
 
 ```bash
-cd demo-08-inclusiontrap && python3 student/inclusiontrap.py 2>&1 | sed -n '/Vulnerable Baseline/,/^$/p' && cd ..
+cd demo-08-inclusiontrap && PYTHONPATH=.. python3 student/inclusiontrap.py 2>&1 | sed -n '/Vulnerable Baseline/,/^$/p' && cd ..
 ```
 
 **What this does**: Runs the demo's vulnerable section. The vulnerable resolver *normalizes* traversal (URL-decode, then `posixpath.normpath` — so it can actually find `/tmp/malicious.sh`; a realistic bug: the app "helpfully" resolves paths), reads the file, detects the injection… **and turns the content into host calls anyway**. Each scenario lists the calls the agent made; `exec` and `network_request` are recorded requests to the simulated host, never performed.
@@ -189,7 +189,7 @@ Also observe `lfi_001` under the vulnerable agent: traversal resolves, `/etc/pas
 ### Step 4: Run the guarded agent on all scenarios
 
 ```bash
-cd demo-08-inclusiontrap && python3 student/inclusiontrap.py 2>&1 | sed -n '/Guarded/,/^$/p' && cd ..
+cd demo-08-inclusiontrap && PYTHONPATH=.. python3 student/inclusiontrap.py 2>&1 | sed -n '/Guarded/,/^$/p' && cd ..
 ```
 
 **What this does**: Runs the defended section. The guarded agent's decision order is: **(1) canonical path** — the resolver returns `None` for any traversal spelling; **(2) scope check** on that canonical path, *before any read* (for a URL: the include-URL allowlist, before any fetch); **(3) read** through the host; **(4) injection screening** on what was actually read — hits are held as data and blocked; **(5) de-identify the kept content, then return it read-only** — content the agent is allowed to keep is run through `shared/anonymize.py` (`Anonymizer.deidentify`) before it is logged. A blocked result never carries content, and a missing file fails closed (`not_found`) — there is no fallback to anything the fixture "declares".
@@ -290,7 +290,7 @@ tests/test_inclusiontrap.py::TestInclusionTrap::test_reading_not_executing PASSE
 ### Step 7: Generate the results artifact
 
 ```bash
-cd demo-08-inclusiontrap && python3 student/generate_inclusion_results.py && cd ..
+cd demo-08-inclusiontrap && PYTHONPATH=.. python3 student/generate_inclusion_results.py && cd ..
 cat demo-08-inclusiontrap/results/inclusion_results.json
 ```
 

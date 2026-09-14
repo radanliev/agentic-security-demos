@@ -10,9 +10,9 @@
 | What | Time | Command |
 |------|------|---------|
 | Run tests | 1 min | `python3 -m pytest tests/ -v` |
-| Run both agents | 3 min | `python3 student/interceptbound.py` |
+| Run both agents | 3 min | `PYTHONPATH=.. python3 student/interceptbound.py` |
 | Probe guard, buffer, scope | 6 min | inline scripts (Steps 4–6) |
-| Generate results | 1 min | `python3 student/generate_intercept_results.py` |
+| Generate results | 1 min | `PYTHONPATH=.. python3 student/generate_intercept_results.py` |
 | **Total** | **~15 min** | |
 
 **Safety:** 100% offline. All 8 frames are JSON fixtures. **No sockets, no ARP, no packet capture** — `test_no_network_or_process_imports` checks the module's imports. The demo simulates only the decision layer.
@@ -68,8 +68,10 @@ python3 -m pytest tests/ -v
 
 ## Step 3 — Run Both Agents
 
+> **Note:** direct `python3 student/...` runs below are prefixed with `PYTHONPATH=..` so the scripts resolve this repository's `shared/` helpers. Without it you may hit `ModuleNotFoundError: No module named 'shared.anonymize'` on machines where another installed package provides a top-level `shared` module — see Troubleshooting.
+
 ```bash
-python3 student/interceptbound.py
+PYTHONPATH=.. python3 student/interceptbound.py
 ```
 
 **What this does:** Runs 8 frames through **Baseline** (same parser and detectors, no scope, no taint, no guard — every candidate action is "executed") and **Taint-Aware** (scope → observe/de-identify → taint-labelled parse → ephemeral buffer → guard-gated actions), then prints frame_001's leaves with their labels, the observation log each agent keeps, the provenance-rule probe, and the buffer statistics.
@@ -145,7 +147,7 @@ Agent buffer after the run: 0 live entries (stored=27, zeroed=27, expired=0, evi
 ## Step 4 — Probe the Action Guard's Boundary
 
 ```bash
-python3 - << 'EOF'
+PYTHONPATH=.. python3 - << 'EOF'
 import sys; sys.path.insert(0, "student")
 from interceptbound import ActionGuard, TaintLevel, Provenance
 
@@ -186,7 +188,7 @@ Two rules compose. **Rule 1** is a taint ceiling per action (unknown actions suc
 ## Step 5 — Inspect the Ephemeral Buffer
 
 ```bash
-python3 - << 'EOF'
+PYTHONPATH=.. python3 - << 'EOF'
 import sys, time; sys.path.insert(0, "student")
 from interceptbound import EphemeralBuffer
 
@@ -225,7 +227,7 @@ stats: {'stored': 5, 'zeroed': 3, 'expired': 1, 'evicted': 1}
 ## Step 6 — Confirm Scope Is a Separate Gate
 
 ```bash
-python3 - << 'EOF'
+PYTHONPATH=.. python3 - << 'EOF'
 import sys; sys.path.insert(0, "student")
 from interceptbound import TaintAwareAgent, TrafficFrame, Provenance, TaintLevel
 
@@ -250,7 +252,7 @@ EOF
 ## Step 7 — Generate the Results File
 
 ```bash
-python3 student/generate_intercept_results.py
+PYTHONPATH=.. python3 student/generate_intercept_results.py
 cat results/intercept_results.json
 ```
 
@@ -306,6 +308,7 @@ From the **repository root**: `make demo DEMO=09`
 | Generator exits 1 with `MISMATCH against fixture expectations` | Code or fixture edited | the `expected` block is the answer key; update it deliberately or revert |
 | `source_not_allowed` on a frame you added | Source IP not in `allowed_sources` | add the host (without port) to the scope policy |
 | Tests or demo behave differently on an old system `python3` (macOS ships 3.9) | Repository requires Python 3.11+ | `python3 --version`; use `python3.11` or a venv |
+| `ModuleNotFoundError: No module named 'shared.anonymize'` | Another installed package provides a top-level `shared` module that shadows this repo's `shared/` | Use the `PYTHONPATH=..` prefix shown in Steps 3–7 (`pytest` needs no prefix) |
 
 ---
 
