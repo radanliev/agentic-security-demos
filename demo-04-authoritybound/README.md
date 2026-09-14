@@ -57,6 +57,11 @@ Same parser, same mediator code, different configuration:
 
 This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
+### Key Concepts from the Research
+
+- **Evaluation-Protocol Paper**: The reference paper evaluates how well existing systems report confused-deputy vulnerabilities, not just how to prevent them
+- **Metascience**: Measures the actual prevalence of confused-deputy vulnerabilities in deployed systems
+
 ### Defect Family & Scenario Mapping
 
 | Demo Scenario | Attack Vector | Which defense stops it | Why the other does not |
