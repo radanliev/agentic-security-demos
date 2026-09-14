@@ -47,6 +47,12 @@ A rejected check is never executed, so it has no output, no finding and no taint
 
 This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
+### Key Concepts from the Research
+
+- **Naming a Permitted Alternative**: What binds scope compliance is naming a permitted alternative action — not position in instruction hierarchy, not polarity
+- **Pre-Registered Experiments**: The reference paper includes pre-registered experiments testing what makes scope instructions effective
+- **Architectural vs. Learned Boundaries**: Architectural constraints (like ScanBound) are more reliable than learned instructions
+
 ### Vulnerability Check Confinement & Safety Mapping
 
 | Check ID | Target & Check | Payload / output characteristics | Baseline | ScanBound Guarded |

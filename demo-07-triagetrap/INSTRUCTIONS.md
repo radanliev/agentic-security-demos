@@ -10,9 +10,9 @@
 | What | Time | Command |
 |------|------|---------|
 | Run tests | 1 min | `python3 -m pytest tests/ -v` |
-| Run both triage agents | 3 min | `python3 student/triagetrap.py` |
+| Run both triage agents | 3 min | `PYTHONPATH=.. python3 student/triagetrap.py` |
 | Probe detector & base rate | 3 min | inline scripts (Steps 4–5) |
-| Generate results | 1 min | `python3 student/generate_triage_results.py` |
+| Generate results | 1 min | `PYTHONPATH=.. python3 student/generate_triage_results.py` |
 | **Total** | **~15 min** | |
 
 **Safety:** 100% offline. **No executable malware** — only inert JSON, fake hashes, canary strings. "Quarantine" is a verdict written next to a JSON record; nothing is moved, opened or executed. Verify: `grep -R "exec(\|subprocess" student/` returns nothing, and `test_demo_runs_with_execution_disabled` runs the whole demo with `exec`/`eval`/`subprocess`/`os.system` poisoned.
@@ -86,8 +86,10 @@ python3 -m pytest tests/ -v
 
 ## Step 3 — Run Both Triage Agents
 
+> **Note:** direct `python3 student/...` runs below are prefixed with `PYTHONPATH=..` so the scripts resolve this repository's `shared/` helpers. Without it you may hit `ModuleNotFoundError: No module named 'shared.anonymize'` on machines where another installed package provides a top-level `shared` module — see Troubleshooting.
+
 ```bash
-python3 student/triagetrap.py
+PYTHONPATH=.. python3 student/triagetrap.py
 ```
 
 **What this does:** Runs 6 artifacts through **Baseline** (every string is evidence: an injection pattern floors the score at 0.8, and a note that asserts a label replaces the verdict) and **Provenance-Aware** (the score is a Bayesian posterior over the sandbox verdict — accepted only from sandbox provenance — and text is logged), printing verdict, score, and reasons per artifact. A third block re-runs art-003 with an attacker's note attached, and with its provenance relabelled. A fourth block shares art-002's triage record: the baseline exposes the metadata in the clear, while the provenance-aware agent applies an allowlist redaction (deny-by-default) so only analytic fields leave triage.
@@ -156,7 +158,7 @@ python3 -m pytest tests/test_triagetrap.py::TestTriageTrap::test_never_execute_u
 ## Step 5 — Probe the Detector and Compute the Base-Rate Surprise
 
 ```bash
-python3 - << 'EOF'
+PYTHONPATH=.. python3 - << 'EOF'
 import sys; sys.path.insert(0, "student")
 from triagetrap import PromptInjectionDetector
 
@@ -195,7 +197,7 @@ EOF
 ## Step 6 — Generate the Results File
 
 ```bash
-python3 student/generate_triage_results.py
+PYTHONPATH=.. python3 student/generate_triage_results.py
 cat results/triage_results.json
 ```
 
@@ -257,7 +259,8 @@ make demo DEMO=07
 | `FileNotFoundError: fixtures/artifacts.json` | Wrong directory | `cd demo-07-triagetrap` |
 | Baseline no longer quarantines art-004 | You changed detector patterns | `git checkout -- student/triagetrap.py` |
 | `KeyError: base_rates is missing [...]` | A base rate was removed from the fixture | There are no silent defaults for error rates — restore all four |
-| `triage_results.json` missing | Forgot Step 6 | Run `python3 student/generate_triage_results.py` |
+| `triage_results.json` missing | Forgot Step 6 | Run `PYTHONPATH=.. python3 student/generate_triage_results.py` |
+| `ModuleNotFoundError: No module named 'shared.anonymize'` | Another installed package provides a top-level `shared` module that shadows this repo's `shared/` | Use the `PYTHONPATH=..` prefix shown in Steps 3–6 (`pytest` needs no prefix) |
 
 ---
 

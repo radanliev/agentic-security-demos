@@ -46,6 +46,12 @@ This demo implements a minimal pipeline with synthetic agent traces.
 
 This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
+### Key Concepts from the Research
+
+- **Multi-Provider Architecture**: The reference paper now uses 3 providers (Groq, Lagrange, OpenRouter) with 72 sessions across 6 models
+- **Container Isolation**: The reference paper reports 17 of 72 sessions using container-isolated witnesses (own namespaces, non-root, read-only, no network)
+- **Provider Independence**: The reference paper reports that the witness architecture works across different inference providers
+
 ### Threat Model & Verification Guarantees
 
 | Attack Vector | Attacker Capability | EVIAssure Defense Primitive | Verification Result |

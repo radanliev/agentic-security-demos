@@ -57,6 +57,12 @@ The verified agent publishes the SHA-256 of every commitment to `commitment_hash
 
 This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
+### Key Concepts from the Research
+
+- **Evidence Taxonomy**: Not all claims are equal — classify evidence strength (e.g., predeclared primary vs. adaptive extension vs. unregistered secondary)
+- **Non-Inference Doctrine**: Clean output is not proof of containment — absence of logged leakage does not prove isolation
+- **Forbidden/Permitted Wording Contract**: Claims must use precise language that matches the evidence type
+
 ### Defect Family & Scenario Mapping
 
 | Demo Scenario | Security Theme | Defect Variant | Failure Mode |

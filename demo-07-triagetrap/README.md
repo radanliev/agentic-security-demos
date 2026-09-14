@@ -41,6 +41,11 @@ Agentic malware triage processes artifacts (PCAPs, file metadata, sandbox report
 
 This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
+### Key Concepts from the Research
+
+- **Honest Falsification Framing**: The reference paper frames its contribution as testing whether existing triage systems are vulnerable, not just demonstrating a defense
+- **Research Positioning**: How you frame your contribution matters — testing existing systems vs. proposing new ones
+
 ### Threat Model & Triage Vectors
 
 | Artifact ID | Artifact Type | Embedded Payload / Canary | Baseline Action | TriageTrap (Guarded) |

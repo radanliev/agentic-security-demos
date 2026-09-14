@@ -10,9 +10,9 @@
 | What | Time | Command |
 |------|------|---------|
 | Run tests | 1 min | `python3 -m pytest tests/ -v` |
-| Run both inclusion agents | 3 min | `python3 student/inclusiontrap.py` |
+| Run both inclusion agents | 3 min | `PYTHONPATH=.. python3 student/inclusiontrap.py` |
 | Probe resolver & scope | 3 min | inline scripts (Steps 4–5) |
-| Generate results | 1 min | `python3 student/generate_inclusion_results.py` |
+| Generate results | 1 min | `PYTHONPATH=.. python3 student/generate_inclusion_results.py` |
 | **Total** | **~15 min** | |
 
 **Safety:** 100% offline. The host is *simulated*: the filesystem is a dict, the "remote" server is a dict of canned responses, and every privileged call the vulnerable agent makes (`exec`, `network_request`) is **recorded, never performed**. No `open()`, no sockets — `test_no_real_io` checks the module's imports and `test_demo_runs_with_sockets_disabled` runs the whole demo with the socket layer poisoned. Harmless canary content only.
@@ -81,8 +81,10 @@ python3 -m pytest tests/ -v
 
 ## Step 3 — Run Both Inclusion Agents
 
+> **Note:** direct `python3 student/...` runs below are prefixed with `PYTHONPATH=..` so the scripts resolve this repository's `shared/` helpers. Without it you may hit `ModuleNotFoundError: No module named 'shared.anonymize'` on machines where another installed package provides a top-level `shared` module — see Troubleshooting.
+
 ```bash
-python3 student/inclusiontrap.py
+PYTHONPATH=.. python3 student/inclusiontrap.py
 ```
 
 **What this does:** Runs 7 scenarios through **Vulnerable Baseline** (normalises traversal so it can find the file, reads it, detects the injection, then turns the instruction-shaped content into host calls **anyway**, and logs everything it read *raw*) and **Guarded** (canonical path, scope check *before* any read, content screened and held as data, read-only allow — and anything it is allowed to keep **de-identified before it is logged**). Every host call each agent made is printed under the scenario, and a call log is totalled per agent. A `✓` means the action matches the safe outcome for that scenario; `✗ LEAK` / `✗ VULNERABLE` mean it does not.
@@ -136,7 +138,7 @@ api_key: '[REDACTED]'
 ## Step 4 — Probe Scope and Detector in Isolation
 
 ```bash
-python3 - << 'EOF'
+PYTHONPATH=.. python3 - << 'EOF'
 import sys; sys.path.insert(0, "student")
 from inclusiontrap import ScopePolicy, InjectionDetector
 
@@ -162,7 +164,7 @@ EOF
 ## Step 5 — Trace the Guarded Resolver
 
 ```bash
-python3 - << 'EOF'
+PYTHONPATH=.. python3 - << 'EOF'
 import sys; sys.path.insert(0, "student")
 from inclusiontrap import GuardedInclusionAgent, ScopePolicy
 
@@ -201,7 +203,7 @@ python3 -m pytest tests/test_inclusiontrap.py::TestInclusionTrap::test_reading_n
 ## Step 7 — Generate the Results File
 
 ```bash
-python3 student/generate_inclusion_results.py
+PYTHONPATH=.. python3 student/generate_inclusion_results.py
 cat results/inclusion_results.json
 ```
 
@@ -257,6 +259,7 @@ From the **repository root**: `make demo DEMO=08`
 | `FileNotFoundError: fixtures/inclusion.json` | Wrong directory | `cd demo-08-inclusiontrap` |
 | `lfi_003` guarded reports `injection_detected` | Something is reading out-of-scope content before the scope check | `git checkout -- student/inclusiontrap.py` — the guard must refuse traversal *before* any read |
 | RFI seems to use real network | It doesn't — `Host.fetch_url` is a dict lookup on the fixture's `remote` map | `grep -RE "import (socket|requests|http)|urllib\.request" student/` returns nothing (`urllib.parse` is only the URL *parser*); `test_demo_runs_with_sockets_disabled` proves it at runtime |
+| `ModuleNotFoundError: No module named 'shared.anonymize'` | Another installed package provides a top-level `shared` module that shadows this repo's `shared/` | Use the `PYTHONPATH=..` prefix shown in Steps 3–5 and 7 (`pytest` needs no prefix) |
 
 ---
 

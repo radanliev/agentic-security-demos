@@ -3,6 +3,10 @@
 SHELL := /bin/bash
 PYTHON := python3
 DEMO_DIR := $(CURDIR)
+# Repo root on the import path so student scripts resolve this repo's shared/
+# package even if another installed distribution provides a top-level `shared` module.
+REPO_ROOT := $(abspath $(DEMO_DIR)/..)
+export PYTHONPATH := $(REPO_ROOT)$(if $(PYTHONPATH),:$(PYTHONPATH))
 
 .PHONY: help setup test demo clean
 

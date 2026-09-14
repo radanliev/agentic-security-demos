@@ -41,6 +41,12 @@ This demo uses a **simulated host** (`Host` in `student/inclusiontrap.py`): the 
 
 This demo distils a research problem into a runnable, course-neutral exercise. All scenarios, numbers and verdicts are synthetic; they describe no real publication or venue.
 
+### Key Concepts from the Research
+
+- **Cross-Vendor Replication**: The vulnerability is not OpenAI-specific — post-hoc testing shows Mistral (8/24 hijacks), Google Gemini (0/11), NVIDIA Nemotron (1/6)
+- **Channel Controllability**: What the adversary writes matters less than how the channel is framed — attacker byte-share does not predict hijackability (ρ = 0.20)
+- **Scope vs. Content**: The channel's framing controls compliance, not the instruction's polarity or position
+
 ### Threat Vectors & Scenario Mapping
 
 | Scenario ID | Attack Vector | Payload / Target Path | Vulnerable Baseline | InclusionTrap (Guarded) |

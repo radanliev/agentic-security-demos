@@ -117,7 +117,7 @@ P(malicious | sandbox says benign) = 0.001
 ### Step 3: Run the baseline agent
 
 ```bash
-cd demo-07-triagetrap && python3 student/triagetrap.py 2>&1 | sed -n '/^--- Baseline/,/^$/p' && cd ..
+cd demo-07-triagetrap && PYTHONPATH=.. python3 student/triagetrap.py 2>&1 | sed -n '/^--- Baseline/,/^$/p' && cd ..
 ```
 
 **What this does**: Runs the demo, showing the baseline agent's verdicts for all six artifacts.
@@ -155,7 +155,7 @@ That is Trap 2. The sandbox's structured `verdict` field says benign; the baseli
 ### Step 4: Run the provenance-aware agent
 
 ```bash
-cd demo-07-triagetrap && python3 student/triagetrap.py 2>&1 | sed -n '/^--- Provenance-Aware ---/,/^$/p' && cd ..
+cd demo-07-triagetrap && PYTHONPATH=.. python3 student/triagetrap.py 2>&1 | sed -n '/^--- Provenance-Aware ---/,/^$/p' && cd ..
 ```
 
 **What this does**: Runs the defended agent over the same six artifacts.
@@ -190,7 +190,7 @@ Trap 2 handled: the *structured* verdict (benign) drives the score — 0.001, th
 **Then the proof.** The demo's third block re-runs art-003 — the real malicious sandbox report — with an attacker's note attached, and again with its provenance relabelled:
 
 ```bash
-cd demo-07-triagetrap && python3 student/triagetrap.py 2>&1 | sed -n '/^--- Text cannot/,/^$/p' && cd ..
+cd demo-07-triagetrap && PYTHONPATH=.. python3 student/triagetrap.py 2>&1 | sed -n '/^--- Text cannot/,/^$/p' && cd ..
 ```
 
 **Expected**:
@@ -208,7 +208,7 @@ Two lines to remember. A "this is benign, false positive" note *releases malware
 **Then the sharing boundary — allowlist before a record leaves triage.** A triage record is often shared onward (another team, a threat-intel feed). art-002 is a clean invoice, but its metadata now carries synthetic PII — `"submitter": "alice@corp.example"`, `"owner": "Alice Smith"` (art-005 carries `bob@corp.example` / `Bob Jones`). The demo's fourth block shows what each agent would share:
 
 ```bash
-cd demo-07-triagetrap && python3 student/triagetrap.py 2>&1 | sed -n '/^--- Sharing the triage record/,/^$/p' && cd ..
+cd demo-07-triagetrap && PYTHONPATH=.. python3 student/triagetrap.py 2>&1 | sed -n '/^--- Sharing the triage record/,/^$/p' && cd ..
 ```
 
 **Expected**:
