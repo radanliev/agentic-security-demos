@@ -287,6 +287,38 @@ From the **repository root**: `make demo DEMO=09`
 
 ---
 
+## Solution Reference — ESORICS Research Package
+
+The `solutions/interceptbound/` directory contains the complete production-quality package published alongside the ESORICS 2026 paper. It implements the same InterceptBound design as the student scaffold but as a proper Python package with six separate modules:
+
+| Module | Purpose |
+|--------|---------|
+| `scope_filter.py` | `ScopeFilter` + `ScopePolicy` — L2 MAC, L3 CIDR, L4 port/protocol gates with optional interception window (`T_window`) |
+| `taint_lattice.py` | `ProvenanceLattice` + `TaintTag` — four-level taint lattice (`TRUSTED_OPERATOR`, `PROVENANCE_SYNTHETIC`, `TAINTED_INTERCEPTED`, `TAINTED_TOOL_RESULT`); non-interference via `validate_flow` |
+| `ephemeral_buffer.py` | `EphemeralRingBuffer` — capacity-bounded ring with per-record TTL and cryptographic shredding; saturation-flood safe |
+| `downstream_guard.py` | `DownstreamActionGuard` — six enforcement layers in order: taint→privilege non-interference, scope, port, action allowlist (opt-in), declassification (opt-in), structural argument schema (opt-in default-deny), legacy denylist fallback |
+| `tcp_reassembly.py` | `TCPStreamReassembler` — bidirectional stream reassembly to prevent fragmented-payload prompt-injection evasion |
+| `agent_harness.py` | `InterceptBoundHarness` — benchmark driver comparing `UNCONSTRAINED`, `STATIC_MIDDLEBOX`, `SCOPE_ONLY`, and `INTERCEPTBOUND` defense modes; LLM provider discovery |
+
+### Running the solution tests
+
+```bash
+# From the demo-09-interceptbound directory
+PYTHONPATH=. python3 -m pytest solutions/test_interceptbound_solution.py -v
+```
+
+These tests cover scope/MAC filtering, TCP reassembly, ephemeral buffer TTL and capacity, taint non-interference, downstream guard, the interception window, fragmented-injection reassembly, and the end-to-end harness — 11 tests total.
+
+### Synthetic-traffic fixture (250 sessions)
+
+```bash
+cat fixtures/synthetic_traffic.json | python3 -m json.tool | head -40
+```
+
+`fixtures/synthetic_traffic.json` contains 250 FTP/TELNET/SMTP/HTTP sessions generated for the paper's benchmark sweeps. Every 5th session (sessions 5, 10, 15, …) is out-of-scope (`src_ip: 192.168.10.99`, `dst_ip: 10.0.0.5`, `dst_port: 8080`), giving 200 in-scope (80 %) and 50 out-of-scope (20 %) sessions. The top-level key is `sessions` (not `traffic_frames`). This fixture was designed for machine-throughput experiments; use `fixtures/traffic.json` (8 annotated frames) for the interactive walkthrough.
+
+---
+
 ## Exercises (Optional)
 
 | Level | Exercise | Hint |
@@ -309,6 +341,8 @@ From the **repository root**: `make demo DEMO=09`
 | `source_not_allowed` on a frame you added | Source IP not in `allowed_sources` | add the host (without port) to the scope policy |
 | Tests or demo behave differently on an old system `python3` (macOS ships 3.9) | Repository requires Python 3.11+ | `python3 --version`; use `python3.11` or a venv |
 | `ModuleNotFoundError: No module named 'shared.anonymize'` | Another installed package provides a top-level `shared` module that shadows this repo's `shared/` | Use the `PYTHONPATH=..` prefix shown in Steps 3–7 (`pytest` needs no prefix) |
+| `KeyError: 'traffic_frames'` when loading `synthetic_traffic.json` | The two fixtures have different schemas | `synthetic_traffic.json` uses the key `sessions` (not `traffic_frames`); it is the paper benchmark fixture; use `traffic.json` for the student walkthrough |
+| `solutions/test_interceptbound_solution.py` fails with import errors | `PYTHONPATH` not set to the demo directory | Run as `PYTHONPATH=. python3 -m pytest solutions/test_interceptbound_solution.py -v` from inside `demo-09-interceptbound/` |
 
 ---
 

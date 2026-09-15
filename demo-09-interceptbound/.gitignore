@@ -1,0 +1,4 @@
+# Un-ignore solutions/ for demo-09 only — the ESORICS research package is
+# published publicly and tracked here as the reference implementation.
+!solutions/
+!solutions/**
