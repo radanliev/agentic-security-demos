@@ -87,3 +87,7 @@ Known, documented gap: prefix scopes are textual, so `/workspace/../etc/passwd` 
 | Architecture | Multi-agent LangChain/AutoGen swarms | Lightweight Python Mediator & MockAgent |
 | Attack Suite | 250+ real-world prompt injection payloads | 3 synthetic attack scenarios + 2 legitimate controls |
 | Tool Set | Production SQL, cloud APIs, bash execution | In-memory mock tool registry |
+
+## Research intel pack
+
+Exploratory pack (Sep-20 offline AgentDojo+Nemotron intel): see [`intel/2026-09-20/`](intel/2026-09-20/).

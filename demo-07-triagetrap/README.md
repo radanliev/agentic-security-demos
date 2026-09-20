@@ -85,3 +85,7 @@ art-002 (a clean invoice) and art-005 (update.exe) carry synthetic PII in their 
 | Dataset | Real disassembled malware samples & sandboxes | Inert JSON artifact metadata records |
 | Classifier | Ensemble gradient boosting & Bayesian update | Analytical `BaseRateCalculator` |
 | Scale | 10,000+ real samples | 6 synthetic artifact records |
+
+## Research intel pack
+
+Exploratory pack (Sep-20 exploratory EMBER CPU baseline intel (SEPARATION)): see [`intel/2026-09-20/`](intel/2026-09-20/).

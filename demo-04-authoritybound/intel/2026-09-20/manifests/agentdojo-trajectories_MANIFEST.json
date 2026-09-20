@@ -1,0 +1,6 @@
+{
+  "hub": "sungjuncho/agentdojo-trajectories",
+  "subset": "banking only; gemma-4-E4B-it + qwen3.5-9B",
+  "n_json": 2066,
+  "sha256_of_sorted_relpaths": "8dfe5a17b49eaaac32e9e87e2df983ac6dbbbaa3d3b08e8b1d3518bb4162dc67"
+}
