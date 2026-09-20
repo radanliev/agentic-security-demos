@@ -157,17 +157,17 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 
 | Demo | Venue | Year | Paper | Artifact |
 |------|-------|------|-------|----------|
-| 01 | SATML | 2026 | [Blind Verification](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 02 | CCS | 2026 | [AIBOM Drift](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 03 | NeurIPS | 2026 | [Eval Invariants](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 04 | IEEE SP | 2026 | [Tool Authority](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 05 | USENIX Security | 2026 | [Evidence Assurance](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 06 | NDSS | 2026 | [Network Recon](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 07 | RAID | 2026 | [Malware Triage](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 08 | ASIACCS | 2026 | [File Inclusion](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 09 | ESORICS | 2026 | [MITM Interception](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 10 | ACSAC | 2026 | [Vuln Assessment](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
-| 11 | RAID | 2026 | [Degenerate Reporting](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 01 | SATML | 2027 | [Blind Verification](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 02 | CCS | 2027 | [AIBOM Drift](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 03 | NeurIPS | 2027 | [Eval Invariants](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 04 | IEEE SP | 2027 | [Tool Authority](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 05 | USENIX Security | 2027 | [Evidence Assurance](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 06 | NDSS | 2028 | [Network Recon](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 07 | RAID | 2027 | [Malware Triage](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 08 | ASIACCS | 2027 | [File Inclusion](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 09 | ESORICS | 2027 | [MITM Interception](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 10 | ACSAC | 2027 | [Vuln Assessment](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
+| 11 | RAID | 2027 | [Degenerate Reporting](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
 | 12 | SACMAT | 2027 | [Provenance-Bound Authz](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) |
 
 ---
