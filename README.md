@@ -34,18 +34,19 @@
 
 | # | Demo | Venue | Focus | Status |
 |---|------|-------|-------|--------|
-| 01 | **Blind Verification** | SATML 2026 | Cryptographic verification of agent outputs without trusted execution environments | ✅ Active |
-| 02 | **Supply Chain AIBOM Drift** | CCS 2026 | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
-| 03 | **Eval Design Invariants** | NeurIPS 2026 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
-| 04 | **Prompt Injection & Tool Authority** | IEEE SP 2026 | Capability-based authority mediation for tool-using agents | ✅ Active |
-| 05 | **Evidence Release Assurance** | USENIX Security 2026 | Cryptographic evidence chains for agent accountability | ✅ Active |
-| 06 | **Network Recon** | NDSS 2026 | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
-| 07 | **Malware Triage** | RAID 2026 | Statistical reconstruction of malware triage decisions | ✅ Active |
-| 08 | **File Inclusion** | ASIACCS 2026 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
-| 09 | **MITM Interception** | ESORICS 2026 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
-| 10 | **Vulnerability Assessment** | ACSAC 2026 | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
-| 11 | **Degenerate Reporting** | RAID 2026 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
+| 01 | **Blind Verification** | SATML 2027 | Cryptographic verification of agent outputs without trusted execution environments | ✅ Active |
+| 02 | **Supply Chain AIBOM Drift** | CCS 2027 | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
+| 03 | **Eval Design Invariants** | NeurIPS 2027 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
+| 04 | **Prompt Injection & Tool Authority** | IEEE SP 2027 | Capability-based authority mediation for tool-using agents | ✅ Active |
+| 05 | **Evidence Release Assurance** | USENIX Security 2027 | Cryptographic evidence chains for agent accountability | ✅ Active |
+| 06 | **Network Recon** | NDSS 2028 | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
+| 07 | **Malware Triage** | RAID 2027 | Statistical reconstruction of malware triage decisions | ✅ Active |
+| 08 | **File Inclusion** | ASIACCS 2027 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
+| 09 | **MITM Interception** | ESORICS 2027 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
+| 10 | **Vulnerability Assessment** | ACSAC 2027 | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
+| 11 | **Degenerate Reporting** | RAID 2027 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
 | 12 | **Provenance-Bound Authorization** | SACMAT 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
+| 13 | **Format vs Cueing** | USENIX Security 2027 | Separating format constraint from coverage cueing in typed pre-reveal commitments | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
