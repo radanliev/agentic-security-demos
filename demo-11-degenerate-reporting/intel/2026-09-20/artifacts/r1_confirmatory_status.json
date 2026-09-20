@@ -1,0 +1,38 @@
+{
+  "schema": "demo-11.s21_adaptive.r1_status.v1",
+  "updated_at_utc": "2026-09-20T08:43:45Z",
+  "status": "STOPPED_AUTH",
+  "live_new": 0,
+  "void_n": 0,
+  "elapsed_s": 1.7,
+  "budget": {
+    "schema": "demo-11.s21_adaptive.budget_cap.v1",
+    "status": "RAISED_FOR_CONFIRMATORY_R1",
+    "locked_at_utc": "2026-09-19T20:47:08Z",
+    "locked_at_local": "2026-09-19T22:47:08+02:00",
+    "currency": "USD",
+    "max_usd": 50.0,
+    "max_live_chat_calls": 4858,
+    "stop_rule": "whichever_first",
+    "spent_usd": 0.033381,
+    "live_chat_calls": 476,
+    "notes": "Raised for sealed confirmatory R1 under ADAPTIVE_PREREG. Pilot calls (50) remain counted.",
+    "spent_usd_note": "estimate from public OpenAI gpt-4o-mini rates; OpenRouter may differ",
+    "last_smoke_utc": "2026-09-19T20:48:15Z",
+    "last_live_utc": "2026-09-20T06:33:47Z",
+    "raised_at_utc": "2026-09-20T05:40:34Z",
+    "raised_at_local": "2026-09-20T07:40:34+02:00",
+    "author_decision": "AD-S21-R1-BUDGET / Track A",
+    "confirmatory": {
+      "planned_calls": 4608,
+      "formula": "6 arms \u00d7 K=8 \u00d7 C=4 \u00d7 N_adapt=24",
+      "prior_pilot_calls": 50,
+      "headroom": 200
+    }
+  },
+  "last_arm": "arm_a_raw_baseline",
+  "last_iteration": 5,
+  "last_case": "v5_malicious_014",
+  "stop_reason": "AuthError:openrouter: every key (5) failed authentication",
+  "battery_sha256": "8419342c95bd9f8f6208eec3721a5527bf08982373c18341ce99cc75256964be"
+}

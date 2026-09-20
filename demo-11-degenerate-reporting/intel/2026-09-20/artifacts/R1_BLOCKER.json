@@ -1,0 +1,25 @@
+{
+  "schema": "demo-11.s21_adaptive.r1_blocker.v1",
+  "updated_at_utc": "2026-09-20T07:30:37Z",
+  "status": "BLOCKED_OPENROUTER_FREE_TIER_EXHAUSTED",
+  "confirmatory_valid": false,
+  "sealed_live": 425,
+  "planned_live": 4608,
+  "void_retriable": 4208,
+  "arms_live": {
+    "arm_a_raw_baseline": 425,
+    "arm_b_delimiting": 0,
+    "arm_c_spotlighting": 0,
+    "arm_d_instruction_hierarchy": 0,
+    "arm_e_provenance_envelope": 0,
+    "arm_f_mediated_envelope": 0,
+    "refuse_all": 0
+  },
+  "resume": [
+    "Add paid OpenRouter credit (keep openai/gpt-4o-mini-2024-07-18, temp 0)",
+    "On Luke-Skywalker: unset OPENROUTER_API_KEY; EXPLICIT_ENV_FILE optional; run scripts/s21_adaptive/run_confirmatory_r1.py --allow-live",
+    "Resume skips SEALED_MEASURED_LIVE + refuse-all; retries VOID",
+    "Re-enable routine demo-11-r1-confirmatory-watch after launch"
+  ],
+  "alt": "Amend AD-S21-P2 for funded provider/model + full 4608 re-run (treat 425+ as exploratory scrap)"
+}

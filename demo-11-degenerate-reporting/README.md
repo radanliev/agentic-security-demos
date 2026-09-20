@@ -88,3 +88,7 @@ This demo distils a research problem into a runnable, course-neutral exercise. A
 | Status | Reference research prototype (work in progress) | Demo, complete and self-contained |
 
 > **Note:** this demo does not reproduce any external measurements and makes no claims about the field — it teaches the *audit method* on synthetic data, so students learn to spot degenerate reporting before they ever review a real paper.
+
+## Research intel pack
+
+Exploratory pack (Sep-20 quality-without-R1 / R1-parked intel): see [`intel/2026-09-20/`](intel/2026-09-20/).

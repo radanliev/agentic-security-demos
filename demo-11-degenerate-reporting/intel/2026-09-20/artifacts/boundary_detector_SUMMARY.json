@@ -1,0 +1,26 @@
+{
+  "selected": {
+    "max_features": 5000,
+    "C": 0.25,
+    "ngram_range": [
+      1,
+      1
+    ]
+  },
+  "val_tpr@0.05": 1.0,
+  "test_auc": 0.9998611111111111,
+  "test": {
+    "TPR_at_FPR_0.01": {
+      "tpr": 0.95,
+      "fpr": 0.0
+    },
+    "TPR_at_FPR_0.05": {
+      "tpr": 0.95,
+      "fpr": 0.0
+    },
+    "TPR_at_FPR_0.1": {
+      "tpr": 0.95,
+      "fpr": 0.0
+    }
+  }
+}
