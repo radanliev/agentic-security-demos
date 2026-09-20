@@ -1,0 +1,311 @@
+{
+  "schema": "demo-11.s21_boundary_detector.metrics.v1",
+  "status": "COMPLETE",
+  "label": "SECONDARY_CONFIRMATORY_PER_ADAPTIVE_PREREG_8_1",
+  "completed_at_utc": "2026-09-19T20:56:40Z",
+  "completed_at_local": "2026-09-19T22:56:40+02:00",
+  "prereg_ref": "docs/round16/ADAPTIVE_PREREG.md \u00a78.1",
+  "method": {
+    "vectorizer": "TfidfVectorizer(sublinear_tf=True, min_df=2)",
+    "classifier": "LogisticRegression(solver=liblinear)",
+    "selection_criterion": "maximize val TPR at FPR<=0.05",
+    "SEED": 20260919
+  },
+  "selected_hyperparameters": {
+    "max_features": 5000,
+    "C": 0.25,
+    "ngram_range": [
+      1,
+      1
+    ]
+  },
+  "data": {
+    "hub_id": "3nesdeniz/agentic-prompt-injection-boundary-pairs",
+    "n_train": 840,
+    "n_val": 120,
+    "n_test": 240,
+    "file_sha256": {
+      "train": "98fc7ea70a45215ba50d21efcd79cfed33afcbc1ac95d0fc388066b42cea2238",
+      "validation": "1e5f483277ca776f0bb7d26c1a85ca4cd6d73f8d30f638c75265d82a6de751c3",
+      "test": "034523eefaec18c291f9daa7699037acb0e7a91b1aeb1b205878b124f6e18f10"
+    }
+  },
+  "val_selection": {
+    "tpr_at_fpr_0.05": 1.0,
+    "fpr_realized": 0.0,
+    "threshold": 0.5318330204262773,
+    "auc": 1.0,
+    "grid_size": 18
+  },
+  "test_metrics": {
+    "TPR_at_FPR_0.01": {
+      "threshold_from_val": 0.5318330204262773,
+      "val_tpr": 1.0,
+      "val_fpr_realized": 0.0,
+      "test_tpr": 0.95,
+      "test_fpr_realized": 0.0,
+      "tp": 114,
+      "fp": 0,
+      "tn": 120,
+      "fn": 6,
+      "n_test": 240,
+      "n_attack_test": 120,
+      "n_benign_test": 120
+    },
+    "TPR_at_FPR_0.05": {
+      "threshold_from_val": 0.5318330204262773,
+      "val_tpr": 1.0,
+      "val_fpr_realized": 0.0,
+      "test_tpr": 0.95,
+      "test_fpr_realized": 0.0,
+      "tp": 114,
+      "fp": 0,
+      "tn": 120,
+      "fn": 6,
+      "n_test": 240,
+      "n_attack_test": 120,
+      "n_benign_test": 120
+    },
+    "TPR_at_FPR_0.1": {
+      "threshold_from_val": 0.5318330204262773,
+      "val_tpr": 1.0,
+      "val_fpr_realized": 0.0,
+      "test_tpr": 0.95,
+      "test_fpr_realized": 0.0,
+      "tp": 114,
+      "fp": 0,
+      "tn": 120,
+      "fn": 6,
+      "n_test": 240,
+      "n_attack_test": 120,
+      "n_benign_test": 120
+    }
+  },
+  "test_auc": 0.9998611111111111,
+  "benign_cost": {
+    "definition": "false_positive_rate_on_label_0_test",
+    "at_val_tuned_thresholds": {
+      "TPR_at_FPR_0.01": 0.0,
+      "TPR_at_FPR_0.05": 0.0,
+      "TPR_at_FPR_0.1": 0.0
+    }
+  },
+  "selection_grid": [
+    {
+      "max_features": 5000,
+      "C": 0.25,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.5318330204262773,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 5000,
+      "C": 0.25,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.5737724139054078,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 5000,
+      "C": 1.0,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.6061847782439395,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 5000,
+      "C": 1.0,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.6814336461059137,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 5000,
+      "C": 4.0,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.7569440921037142,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 5000,
+      "C": 4.0,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.8076510649123005,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 20000,
+      "C": 0.25,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.5318330204262773,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 20000,
+      "C": 0.25,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.5737724139054078,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 20000,
+      "C": 1.0,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.6061847782439395,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 20000,
+      "C": 1.0,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.6814336461059137,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 20000,
+      "C": 4.0,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.7569440921037142,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": 20000,
+      "C": 4.0,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.8076510649123005,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": null,
+      "C": 0.25,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.5318330204262773,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": null,
+      "C": 0.25,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.5737724139054078,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": null,
+      "C": 1.0,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.6061847782439395,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": null,
+      "C": 1.0,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.6814336461059137,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": null,
+      "C": 4.0,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.7569440921037142,
+      "val_auc": 1.0
+    },
+    {
+      "max_features": null,
+      "C": 4.0,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "val_tpr_at_fpr_0.05": 1.0,
+      "val_fpr_realized": 0.0,
+      "val_threshold": 0.8076510649123005,
+      "val_auc": 1.0
+    }
+  ]
+}

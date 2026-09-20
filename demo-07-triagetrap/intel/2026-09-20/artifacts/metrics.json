@@ -1,0 +1,138 @@
+{
+  "run_id": "ember-baseline-slim-2026-09-20",
+  "generated_at": "2026-09-20T10:28:19.672917+02:00",
+  "timezone_note": "Europe/Skopje (UTC+2)",
+  "hub_id": "cw1521/ember2018-malware",
+  "citation_hint": "EMBER 2018 (Anderson & Roth / Elastic); HF mirror cw1521/ember2018-malware",
+  "task": "binary malware vs benign PE-feature triage",
+  "hardware": "CPU only (box)",
+  "separation": {
+    "demo11_ipi_excluded": true,
+    "nemotron_excluded": true,
+    "boundary_pairs_excluded": true,
+    "openrouter_excluded": true,
+    "note": "Malware triage baseline only; no demo-11 IPI/reporting datasets."
+  },
+  "data_limits": {
+    "full_hub_approx": "~400 train + ~100 test JSONL shards (~65\u201372 MB each; multi-tens-of-GB total)",
+    "slim_sample_files": [
+      "ember2018_train_50.jsonl",
+      "ember2018_train_100.jsonl",
+      "ember2018_test_1.jsonl"
+    ],
+    "note_train_1_skipped": "ember2018_train_1.jsonl is early-year all-benign; kept on disk for documentation but not used in fit",
+    "unlabeled_policy": "skip label/y == -1",
+    "row_caps": {
+      "max_train": 12000,
+      "max_test": 4000
+    },
+    "not_full_ember_replication": true
+  },
+  "train": {
+    "files": [
+      {
+        "path": "ember2018_train_50.jsonl",
+        "bytes": 71647674,
+        "n_kept_from_file": 1481
+      },
+      {
+        "path": "ember2018_train_100.jsonl",
+        "bytes": 72274023,
+        "n_kept_from_file": 1490
+      }
+    ],
+    "n_loaded": 2971,
+    "n_pos": 1615,
+    "n_neg": 1356,
+    "feature_dim": 2381,
+    "skipped": {
+      "unlabeled_or_bad": 1029,
+      "no_feat": 0,
+      "bad_dim": 0
+    },
+    "max_rows_cap": 12000
+  },
+  "test": {
+    "files": [
+      {
+        "path": "ember2018_test_1.jsonl",
+        "bytes": 71220783,
+        "n_kept_from_file": 2000
+      }
+    ],
+    "n_loaded": 2000,
+    "n_pos": 998,
+    "n_neg": 1002,
+    "feature_dim": 2381,
+    "skipped": {
+      "unlabeled_or_bad": 0,
+      "no_feat": 0,
+      "bad_dim": 0
+    },
+    "max_rows_cap": 4000
+  },
+  "models": {
+    "logistic_regression": {
+      "accuracy": 0.7775,
+      "f1": 0.7733061640346408,
+      "roc_auc": 0.8327393309573239,
+      "average_precision": 0.8316240575010408,
+      "fit_seconds": 3.624
+    },
+    "random_forest": {
+      "accuracy": 0.8455,
+      "f1": 0.8414571575166753,
+      "roc_auc": 0.9108851435405743,
+      "average_precision": 0.898511911449777,
+      "fit_seconds": 0.828,
+      "n_estimators": 200
+    },
+    "hist_gradient_boosting": {
+      "accuracy": 0.8465,
+      "f1": 0.8415074858027878,
+      "roc_auc": 0.934064736258945,
+      "average_precision": 0.9286598506428442,
+      "fit_seconds": 7.53
+    },
+    "xgboost": {
+      "accuracy": 0.868,
+      "f1": 0.8648925281473899,
+      "roc_auc": 0.9325747302989212,
+      "average_precision": 0.9286110182379544,
+      "fit_seconds": 7.108,
+      "n_estimators": 200,
+      "device": "cpu",
+      "tree_method": "hist"
+    }
+  },
+  "best_model_by_roc_auc": {
+    "name": "hist_gradient_boosting",
+    "accuracy": 0.8465,
+    "f1": 0.8415074858027878,
+    "roc_auc": 0.934064736258945,
+    "average_precision": 0.9286598506428442,
+    "fit_seconds": 7.53
+  },
+  "malware_families_catalog": {
+    "path": "/workspace/demo-7-agentic-malware-triage-raid/artifacts/external_data/malware-families-catalog/malware_families.parquet",
+    "bytes": 2815324,
+    "n_rows": 2903,
+    "columns_sample": [
+      "family",
+      "sample_count",
+      "category",
+      "description",
+      "cta",
+      "aliases",
+      "enrichment_level",
+      "faq",
+      "faq_count",
+      "mitre_attack",
+      "cisa_advisory",
+      "last_updated"
+    ],
+    "n_families": 2903
+  },
+  "total_seconds": 21.616,
+  "claim_level": "exploratory external CPU baseline \u2014 not confirmatory primary paper empirics"
+}

@@ -1,0 +1,6 @@
+{
+  "hub": "nvidia/Nemotron-RL-Agentic-Indirect-Prompt-Injection-v1",
+  "file": "train.jsonl",
+  "n_rows": 1272,
+  "sha256": "3329da17564a7eb287e2730fc7d6956e1f4fe51e8950ac4f110b3c37e78cf3b9"
+}
