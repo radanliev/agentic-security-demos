@@ -1,0 +1,72 @@
+{
+  "instances": [
+    {
+      "id": "cue-none-01",
+      "files": {
+        "app.py": "def index():\n    return 'ok'\n",
+        "auth.py": "def login(pw):\n    if pw == stored_password:\n        grant_access()\n",
+        "util.py": "def slug(s):\n    return s.strip().lower()\n",
+        "db.py": "def connect():\n    return open_pool()\n"
+      },
+      "vulnerable_file": "auth.py",
+      "cue": {"kind": "none", "points_to": null}
+    },
+    {
+      "id": "cue-none-02",
+      "files": {
+        "main.py": "def main():\n    print('ready')\n",
+        "crypto.py": "def run(cmd):\n    exec(cmd)\n",
+        "log.py": "def emit(msg):\n    write_log(msg)\n",
+        "net.py": "def ping(host):\n    return check(host)\n"
+      },
+      "vulnerable_file": "crypto.py",
+      "cue": {"kind": "none", "points_to": null}
+    },
+    {
+      "id": "cue-true-01",
+      "files": {
+        "alpha.py": "def render(name):\n    return template(name)\n",
+        "beta.py": "def load(data):\n    return eval(data)\n",
+        "gamma.py": "def save(row):\n    return store(row)\n",
+        "delta.py": "def total(xs):\n    return sum(xs)\n"
+      },
+      "vulnerable_file": "beta.py",
+      "cue": {"kind": "true", "points_to": "beta.py"}
+    },
+    {
+      "id": "cue-true-02",
+      "files": {
+        "one.py": "def start():\n    return init()\n",
+        "two.py": "def convert(x):\n    y = eval(x)\n    return y\n",
+        "three.py": "def stop():\n    return halt()\n",
+        "four.py": "def count(xs):\n    return len(xs)\n"
+      },
+      "vulnerable_file": "two.py",
+      "cue": {"kind": "true", "points_to": "two.py"}
+    },
+    {
+      "id": "cue-wrong-01",
+      "files": {
+        "red.py": "def paint():\n    return 'red'\n",
+        "blue.py": "def token_password():\n    return get()\n",
+        "green.py": "def grow():\n    return 'green'\n",
+        "gold.py": "def shine():\n    return 'gold'\n"
+      },
+      "vulnerable_file": "blue.py",
+      "cue": {"kind": "wrong", "points_to": "gold.py"}
+    },
+    {
+      "id": "cue-wrong-02",
+      "files": {
+        "north.py": "def up():\n    return 'north'\n",
+        "south.py": "def load(f):\n    data = read(f)\n    return data\n",
+        "east.py": "def run(mode):\n    exec(mode)\n",
+        "west.py": "def down():\n    return 'west'\n"
+      },
+      "vulnerable_file": "south.py",
+      "cue": {"kind": "wrong", "points_to": "east.py"}
+    }
+  ],
+  "seed": 13,
+  "note": "Toy teaching fixtures. The vulnerable_file field is the ORACLE: blind assessors must never read it (enforced by tests/test_typed_commitments.py::test_oracle_separation). All files, cues and verdicts are synthetic."
+}

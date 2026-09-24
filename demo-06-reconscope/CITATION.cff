@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Demo 06: ReconScope — Network Reconnaissance with Provenance (teaching demo)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All scenarios, numbers and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+repository-code: "https://github.com/radanliev/agentic-security-demos"
+keywords:
+  - teaching
+  - agentic-ai-security
+  - synthetic-fixtures
+abstract: >-
+  Teaching demo: scope-enforced network reconnaissance with provenance
+  tracking over synthetic traffic.

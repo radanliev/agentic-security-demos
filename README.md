@@ -4,7 +4,7 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 12 reproducible demonstrations for agentic AI security research, spanning top-tier venues (SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, SACMAT).</strong>
+  <strong>A curated collection of 13 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
 </p>
 
 <p align="center">
@@ -14,7 +14,6 @@
   <a href="https://github.com/radanliev/agentic-security-demos/blob/main/LICENSE"><img src="https://img.shields.io/github/license/radanliev/agentic-security-demos?style=flat-square" alt="License"></a>
   <a href="https://github.com/radanliev/agentic-security-demos/stargazers"><img src="https://img.shields.io/github/stars/radanliev/agentic-security-demos?style=flat-square" alt="Stars"></a>
   <a href="https://github.com/radanliev/agentic-security-demos/issues"><img src="https://img.shields.io/github/issues/radanliev/agentic-security-demos?style=flat-square" alt="Issues"></a>
-  <a href="https://zenodo.org/records/?q=agentic-security-demos"><img src="https://img.shields.io/badge/Zenodo-DOI-007EC6?style=flat-square" alt="Zenodo DOI"></a>
 </p>
 
 <p align="center">
@@ -45,7 +44,7 @@
 | 09 | **MITM Interception** | ESORICS 2027 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
 | 10 | **Vulnerability Assessment** | ACSAC 2027 | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
 | 11 | **Degenerate Reporting** | RAID 2027 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
-| 12 | **Provenance-Bound Authorization** | SACMAT 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
+| 12 | **Provenance-Bound Authorization** | USENIX Security 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
 | 13 | **Format vs Cueing** | USENIX Security 2027 | Separating format constraint from coverage cueing in typed pre-reveal commitments | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
@@ -59,77 +58,54 @@ Each demo is a **self-contained, reproducible research artifact** with:
 
 ## ⚙️ Installation
 
-### Unified Installation (All Demos)
-```bash
-pip install agentic-security-demos[all]
-```
-
-### Individual Demo Installation
-```bash
-# Install specific demo
-pip install agentic-security-demos[demo-01]   # Blind Verification
-pip install agentic-security-demos[demo-02]   # Supply Chain AIBOM
-pip install agentic-security-demos[demo-03]   # Eval Design Invariants
-pip install agentic-security-demos[demo-04]   # Prompt Injection
-pip install agentic-security-demos[demo-05]   # Evidence Release
-pip install agentic-security-demos[demo-06]   # Network Recon
-pip install agentic-security-demos[demo-07]   # Malware Triage
-pip install agentic-security-demos[demo-08]   # File Inclusion
-pip install agentic-security-demos[demo-09]   # MITM Interception
-pip install agentic-security-demos[demo-10]   # Vuln Assessment
-pip install agentic-security-demos[demo-11]   # Degenerate Reporting
-pip install agentic-security-demos[demo-12]   # Provenance-Bound Authz
-```
-
-### Development Installation
 ```bash
 git clone https://github.com/radanliev/agentic-security-demos.git
 cd agentic-security-demos
-pip install -e ".[dev,all]"
+pip install -e ".[dev]"
 ```
 
 ### Verify Installation
-```bash
-# Run smoke tests for all demos
-agentic-security-demos --smoke-test
 
-# List available demos
-agentic-security-demos --list-demos
+```bash
+# Run every demo's test suite
+make test
+
+# Run one demo's suite (folders demo-01 … demo-13)
+make test DEMO=01
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### Run a Complete Demo Pipeline
+All demos run offline from the repository root — no API keys, no network.
+Each demo folder also has step-by-step `INSTRUCTIONS.md` with expected outputs.
+
 ```bash
-# Demo 1: Blind Verification (SATML)
-cd demo-01-blind-verification
-python -m demo.run_full_pipeline --config configs/satml_submission.yaml
+# Run a teaching demo (folders demo-01 … demo-13)
+make demo DEMO=01   # Blind Verification
+make demo DEMO=04   # Prompt Injection Authority
+make demo DEMO=07   # Malware Triage
+make demo DEMO=13   # Typed Commitments & Coverage Cues
 
-# Demo 4: Prompt Injection Authority (IEEE SP)
-cd demo-04-prompt-injection
-python -m authoritybound.run_assessment --model gpt-4 --attacks all
+# Run a demo's test suite
+make test DEMO=01
 
-# Demo 7: Malware Triage (RAID)
-cd demo-07-malware-triage
-python -m triage_trap.run_route_s --challenge-battery v3
+# Run every demo sequentially
+make all-demos
+
+# Check offline-safety constraints (no network imports, no credentials)
+make verify-safety
 ```
 
-### Generate Evidence Packages
-```bash
-# Produce frozen evidence for any demo
-agentic-security-demos evidence generate --demo 01 --output ./evidence/
+### 30-second wiring check
 
-# Verify evidence integrity
-agentic-security-demos evidence verify --input ./evidence/
+```bash
+make help
 ```
 
-### Reproduce Paper Results
-```bash
-# Reproduce all paper claims from frozen evidence
-agentic-security-demos reproduce --paper satml2026 --evidence-dir ./evidence/
-```
+Expected output: the root command list (`make setup`, `make test DEMO=01`,
+`make demo DEMO=01`, `make verify-safety`, `make all-demos`).
 
 ---
 
@@ -140,7 +116,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | Guarantee | Mechanism |
 |-----------|-----------|
 | **Environment Freeze** | `requirements.lock` + `conda-lock.yml` + Docker images |
-| **Evidence Immutability** | SHA-256 sealed evidence packages on Zenodo |
+| **Evidence Immutability** | SHA-256 sealed reference outputs in each demo's `results/` (Zenodo deposit on acceptance) |
 | **Statistical Rigor** | Pre-registered analysis plans with p-value correction |
 | **Compute Transparency** | GPU-hours logged; CPU fallback documented |
 | **Adversarial Robustness** | Seeded RNG; deterministic attack ordering |
@@ -148,7 +124,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 ### Reproducibility Checklist
 - [ ] Clone repo at tagged release
 - [ ] Install exact dependencies: `pip install -r requirements.lock`
-- [ ] Download evidence from Zenodo (DOI in `CHANGELOG.md`)
+- [ ] Use the fixtures and reference outputs in each demo's `results/` (no external download needed)
 - [ ] Run: `agentic-security-demos reproduce --all`
 - [ ] Compare outputs to `results/reference/`
 
@@ -156,21 +132,21 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 
 ## 🏛️ Venues & Publications
 
-| Demo | Venue | Year | Paper | Artifact | Deadline (AoE, verified 2026-09-20) |
-|------|-------|------|-------|----------|-------------------------------------|
-| 01 | SATML | 2027 | [Blind Verification](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | SaTML'27 papers 29 Sep 2026 |
-| 02 | CCS | 2027 | [AIBOM Drift](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | CCS'27 two cycles, dates TBD |
-| 03 | NeurIPS | 2027 | [Eval Invariants](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | NeurIPS'27 D&B CFP unpublished, TBD |
-| 04 | IEEE SP | 2027 | [Tool Authority](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | S&P'27 Cycle 2 papers 17 Nov 2026 |
-| 05 | USENIX Security | 2027 | [Evidence Assurance](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | USENIX'27 Cycle 1 submitted 25 Aug 2026, under review |
-| 06 | NDSS | 2028 | [Network Recon](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | NDSS'27 cycles passed; NDSS'28 CFP unpublished, TBD |
-| 07 | RAID | 2027 | [Malware Triage](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | RAID'27 CFP unpublished, TBD |
-| 08 | ASIACCS | 2027 | [File Inclusion](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | AsiaCCS'27 Round 2 papers 11 Dec 2026 |
-| 09 | ESORICS | 2027 | [MITM Interception](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | ESORICS'27 CFP unpublished, TBD |
-| 10 | ACSAC | 2027 | [Vuln Assessment](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | ACSAC'27 CFP unpublished, TBD |
-| 11 | RAID | 2027 | [Degenerate Reporting](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | RAID'27 CFP unpublished, TBD |
-| 12 | SACMAT | 2027 | [Provenance-Bound Authz](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | SACMAT'27 Cycle 1 papers 30 Oct 2026 |
-| 13 | USENIX Security | 2027 | [Format vs Cueing](https://arxiv.org/abs/XXXX.XXXXX) | [Zenodo](https://zenodo.org/records/XXXXXXX) | USENIX'27 Cycle 2 papers 26 Jan 2027 |
+| Demo | Venue (paper target) | Year | Paper | Artifact | Deadline (AoE, verified 2026-09-20) |
+|------|--------------------|------|-------|----------|-------------------------------------|
+| 01 | SATML | 2027 | Under review, no preprint | On acceptance | SaTML'27 papers 29 Sep 2026 |
+| 02 | CCS | 2027 | Under review, no preprint | On acceptance | CCS'27 two cycles, dates TBD |
+| 03 | NeurIPS | 2027 | Under review, no preprint | On acceptance | NeurIPS'27 D&B CFP unpublished, TBD |
+| 04 | IEEE SP | 2027 | Under review, no preprint | On acceptance | S&P'27 Cycle 2 papers 17 Nov 2026 |
+| 05 | USENIX Security | 2027 | Under review, no preprint | On acceptance | USENIX'27 Cycle 1 submitted 25 Aug 2026, under review |
+| 06 | NDSS | 2028 | Under review, no preprint | On acceptance | NDSS'27 cycles passed; NDSS'28 CFP unpublished, TBD |
+| 07 | RAID | 2027 | Under review, no preprint | On acceptance | RAID'27 CFP unpublished, TBD |
+| 08 | ASIACCS | 2027 | Under review, no preprint | On acceptance | AsiaCCS'27 Round 2 papers 11 Dec 2026 |
+| 09 | ESORICS | 2027 | Under review, no preprint | On acceptance | ESORICS'27 CFP unpublished, TBD |
+| 10 | ACSAC | 2027 | Under review, no preprint | On acceptance | ACSAC'27 CFP unpublished, TBD |
+| 11 | RAID | 2027 | Under review, no preprint | On acceptance | RAID'27 CFP unpublished, TBD |
+| 12 | USENIX Security | 2027 | Under review, no preprint | On acceptance | USENIX'27 Cycle 2 papers 26 Jan 2027 |
+| 13 | USENIX Security | 2027 | Preregistration draft, no data, no preprint | On acceptance | USENIX'27 Cycle 2 papers 26 Jan 2027 |
 
 ---
 
@@ -180,13 +156,13 @@ If you use this collection in your research, please cite:
 
 ```bibtex
 @misc{radanliev2026agenticsecuritydemos,
-  title={Agentic AI Security Demos: A Reproducible Collection for Top-Tier Venues},
+  title={Agentic AI Security Demos: A Reproducible Teaching Collection},
   author={Radanliev, Petar},
   year={2026},
   publisher={GitHub},
   journal={GitHub Repository},
   howpublished={\url{https://github.com/radanliev/agentic-security-demos}},
-  doi={10.5281/zenodo.XXXXXXX}
+  note={Teaching demos with synthetic fixtures only; no preprints, no datasets deposited yet}
 }
 ```
 
@@ -242,7 +218,7 @@ Individual demos may have additional licenses for third-party components (see `D
 
 - **Oxford Lagrange** for compute credits
 - **GitHub Accelerator** for open-source support
-- **Anonymous reviewers** at SATML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, SACMAT
+- **Anonymous reviewers** at SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC
 - **Agentic AI Security community** for feedback and replication
 
 ---
