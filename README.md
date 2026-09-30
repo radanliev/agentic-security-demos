@@ -51,7 +51,7 @@
 | 14 | **Conformal Action Gating** | 🟪 ICML 2027 | Distribution-free risk control for tool execution and how it fails under benchmark shift | ✅ Active |
 | 15 | **Hijack Probes** | 🟪 ICLR 2028 | Hidden-state signatures of instruction hijack in open-weight agents | ✅ Active |
 | 16 | **Infection Spread** | 🟪 AAAI 2028 | Epidemic dynamics of prompt-injection propagation in multi-agent systems | ✅ Active |
-| 17 | **Report Fidelity** | 🟪 IJCAI 2027 | Claims-versus-logs fidelity of coding agents | ✅ Active |
+| 17 | **Report Fidelity** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / AAAI'28 (Plan B) | Claims-versus-logs fidelity of coding agents | ✅ Active |
 | 18 | **Cross-lingual Gap** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / ACL'27 (Plan B) | Cross-lingual transfer of injections and the detector language gap | ✅ Active |
 | 19 | **Lineage Risk** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / ICSE'28 (Plan B) | Inherited risk along fine-tune lineages on the model hub | ✅ Active |
 | 20 | **Agent Web Census** | 🟩 WWW 2027 | Agent-facing files and in-the-wild injections across the web | ✅ Active 🔴 next deadline |
@@ -72,8 +72,8 @@
 | 35 | **Scaling Meta-regression** | 🟪 TMLR | Agent misbehaviour versus scale across benchmarks | ✅ Active |
 | 36 | **Card Debt** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / Nature MI (Plan B) | Documentation debt across open model cards | ✅ Active |
 | 37 | **Detector Cost** | 🟦 Computers & Security | Injection-detector comparison with false-positive cost | ✅ Active |
-| 38 | **Assurance Claims** | 🟦 Journal of Cybersecurity | System-card assurance claims versus obligations | ✅ Active |
-| 39 | **Incident Taxonomy** | 🟦 IEEE S&P Magazine | Agentic-AI threat taxonomy for practitioners | ✅ Active |
+| 38 | **Assurance Claims** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / JoC (Plan B) | System-card assurance claims versus obligations | ✅ Active |
+| 39 | **Incident Taxonomy** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / S&P Mag (Plan B) | Agentic-AI threat taxonomy for practitioners | ✅ Active |
 | 40 | **Corpus Union** | 🟩 Scientific Data | License-audited unified agentic-security corpus | ✅ Active |
 | 41 | **Ten Invariants** | 🟩 CACM | Security invariants checklist synthesis | ✅ Active |
 | 42 | **Patch Lifecycle** | 🟩 IEEE TSE | Vulnerability lifecycle and patch adoption lag | ✅ Active |
@@ -206,6 +206,16 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > | 44 Toolflow Taint | agent dispatch measurement | CCS'27 | NDSS'28 |
 >
 > Contingencies (not counted): demo-21 if WWW-rejected 4 Jan (22 days to rework); demo-4 only on S&P early-reject 18 Jan; demo-2 only if TOSEM is held past 26 Jan. All papers need a mandatory Open Science appendix and anonymous artifact links (4open.science, ID `SEC27`).
+>
+> ⚖️ **Plan A / Plan B: the FAccT'27 slate (3 papers, no author cap).** Three demos go to **[FAccT'27, Porto](https://facctconference.org/)** — abstract 27 Oct 2026, paper 3 Nov 2026 ([CFP](https://facctconference.org/2027/cfp.html); accept/revise/reject 22 Dec 2026, revision due 28 Jan 2027). No per-author cap, but every author on every paper must sign up to review or face desk rejection. If rejected (final notification 23 Mar 2027), each drops to Plan B, then Plan C.
+>
+> | Demo | FAccT angle | Plan B | Plan C |
+> |------|------------|--------|--------|
+> | 17 Self-Report Fidelity | evaluation practice: claims vs logs | AAAI'28 | AAMAS'28 |
+> | 38 Assurance Claims | transparency documentation vs regulation | JoC | CoSe |
+> | 39 Incident Taxonomy | incident-grounded harms, practitioner controls | S&P Magazine | CACM Practice |
+>
+> Date logic: IJCAI'27 (19 Jan) falls inside FAccT review (3 Nov–23 Mar), so demo-17 skips IJCAI'27 and falls to AAAI'28. JoC and S&P Magazine are rolling, so 38/39 keep their originals as Plan B. Demo-22 is held out — FAccT would force skipping PoPETs Issue 3.
 
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
@@ -225,7 +235,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 14 | 🟪 [ICML](https://icml.cc/) | 2027 | [ICML'27 abstract ~23 Jan 2027, paper ~28 Jan 2027 (projection)](https://icml.cc/) | TMLR / NeurIPS'27 / ICLR'28 | ICLR'28 |
 | 15 | 🟪 [ICLR](https://iclr.cc/) | 2028 | [ICLR'28 abstract ~18 Sep 2027, paper ~25 Sep 2027 (projection)](https://iclr.cc/) | ICML'28 / TMLR / NeurIPS'27 | TMLR |
 | 16 | 🟪 [AAAI](https://aaai.org/Conferences/AAAI) | 2028 | [AAAI'28 abstract ~late Jul 2027, paper ~early Aug 2027 (projection)](https://aaai.org/Conferences/AAAI) | IJCAI'28 / AAMAS'28 / SaTML'28 | AAMAS'28 |
-| 17 | 🟪 [IJCAI](https://www.ijcai.org/) | 2027 | 🟡 [IJCAI'27 abstract ~12 Jan 2027, paper ~19 Jan 2027 (projection)](https://www.ijcai.org/) | AAAI'28 / AAMAS'28 / ECAI'27 | AAMAS'28 |
+| 17 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | AAAI'28 | AAMAS'28 |
 | 18 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark>; ARR Jan 2027 (Plan B) | ACL'27 (ARR Jan) | EMNLP'27 |
 | 19 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark>; ICSE'28 abs ~23 Jun 2027 (Plan B) | ICSE'28 | FSE'28 |
 | 20 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[NEXT UP — WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026](https://www2027.thewebconf.org/research-track-papers)**</mark> | Short paper 16 Nov 2026 / IMC'27 / WWW'28 | IMC'27 |
@@ -246,8 +256,8 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 35 | 🟪 [TMLR](https://jmlr.org/tmlr/) | — | [♾️ *Rolling — no deadline*](https://jmlr.org/tmlr/) | JMLR / DMLR / ICML'28 | JMLR |
 | 36 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark>; Nature MI ♾️ rolling (Plan B) | Nature MI | Patterns |
 | 37 | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) | — | [♾️ *Rolling — no deadline*](https://www.sciencedirect.com/journal/computers-and-security) | JISA / TDSC / DTRAP | TDSC |
-| 38 | 🟦 [Journal of Cybersecurity](https://academic.oup.com/cybersecurity) | — | [♾️ *Rolling — no deadline*](https://academic.oup.com/cybersecurity) | CoSe / DTRAP / Policy & Internet | DTRAP |
-| 39 | 🟦 [IEEE S&P Magazine](https://www.computer.org/csdl/magazine/sp) | — | [♾️ *Rolling — submit via special-issue CFPs*](https://www.computer.org/digital-library/magazines/sp/cfp-ieee-security-and-privacy) | CACM Practice / ;login: / IEEE Computer | ;login: |
+| 38 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | JoC | CoSe |
+| 39 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | S&P Magazine | CACM Practice |
 | 40 | 🟩 [Scientific Data](https://www.nature.com/sdata/) | — | [♾️ *Rolling — no deadline*](https://www.nature.com/sdata/) | Data in Brief / NeurIPS'27 D&B / DMLR | NeurIPS'28 D&B |
 | 41 | 🟩 [CACM](https://cacm.acm.org/) | — | [♾️ *Rolling (held until 3 accepts)*](https://cacm.acm.org/) | S&P Mag / Computer / Queue | ACM Queue |
 | 42 | 🟩 [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | ESE / TOSEM / ICSE journal-first | TOSEM |
