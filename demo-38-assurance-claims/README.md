@@ -6,7 +6,7 @@
 
 - Explain what coding a public claim against assurance obligations means
 - Code 8 synthetic system cards against 5 obligations (threats, evals, agentic, third_party, mitigations)
-- Show full coverage holds for only 3/8 cards and third-party coverage is weakest at 3/8
+- Show full coverage holds for only 2/8 cards and third-party coverage is weakest at 2/8
 - Distinguish this teaching toy from the pending Journal of Cybersecurity longitudinal study it illustrates
 
 ## Conceptual Explanation
@@ -19,10 +19,10 @@ by a stated obligation. Coding 8 hand-built cards against 5 obligations:
 | threats | 7/8 |
 | evals | 5/8 |
 | agentic | 4/8 |
-| third_party | 3/8 (weakest) |
+| third_party | 2/8 (weakest) |
 | mitigations | 7/8 |
 
-Only 3/8 cards cover every obligation. The lesson: third-party evaluation is
+Only 2/8 cards cover every obligation. The lesson: third-party evaluation is
 the thinnest public claim, so an assurance reader should ask for it first.
 
 ## Safety Notice

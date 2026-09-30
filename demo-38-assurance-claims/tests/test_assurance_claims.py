@@ -41,12 +41,12 @@ def test_eval_is_deterministic():
 
 
 def test_full_coverage_and_weakest():
-    """3/8 cards cover every obligation; weakest is third_party at 3/8."""
+    """2/8 cards cover every obligation; weakest is third_party at 2/8."""
     pack = fixture_pack()
     cov = coverage(pack["cards"], pack["obligations"])
-    assert cov["full_coverage"] == 3
+    assert cov["full_coverage"] == 2
     assert cov["weakest"] == "third_party"
-    assert cov["weakest_count"] == 3
+    assert cov["weakest_count"] == 2
 
 
 def test_per_obligation_counts():
@@ -57,7 +57,7 @@ def test_per_obligation_counts():
         "threats": 7,
         "evals": 5,
         "agentic": 4,
-        "third_party": 3,
+        "third_party": 2,
         "mitigations": 7,
     }
 

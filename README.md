@@ -54,7 +54,7 @@
 | 17 | **Report Fidelity** | IJCAI 2027 | Claims-versus-logs fidelity of coding agents | ✅ Active |
 | 18 | **Cross-lingual Gap** | ACL 2027 | Cross-lingual transfer of injections and the detector language gap | ✅ Active |
 | 19 | **Lineage Risk** | ICSE 2028 | Inherited risk along fine-tune lineages on the model hub | ✅ Active |
-| 20 | **Agent Web Census** | WWW 2027 | Agent-facing files and in-the-wild injections across the web | ✅ Active |
+| 20 | **Agent Web Census** | WWW 2027 | Agent-facing files and in-the-wild injections across the web | ✅ Active 🔴 next deadline |
 | 21 | **MCP Ecosystem Census** | EuroS&P 2027 | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | ✅ Active |
 | 22 | **Memory Leakage** | PoPETs 2027 | Contextual-integrity leakage via agent memory stores | ✅ Active |
 | 23 | **Fault Injection** | DSN 2027 | Dependability of agent pipelines under pipeline faults | ✅ Active |
@@ -175,10 +175,12 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > grow into a full paper, which may or may not be accepted. The *Artifact* column is
 > **Episode VI – Return of the Jedi**: the Holocron (Zenodo deposit) stays sealed until a paper
 > actually returns victorious. No Death Star plans have been transmitted yet.
+>
+> 🔴 <mark>**highlight**</mark> = closest upcoming deadline · ♾️ *Rolling — no deadline* venues take submissions any time · ⏰ = date has passed.
 
 | Demo | Venue (training ground) | Year | Paper | Artifact | Deadline (AoE) |
 |------|--------------------|------|-------|----------|----------------|
-| 01 | SATML | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | SaTML'27 papers 29 Sep 2026 |
+| 01 | SATML | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | SaTML'27 papers 29 Sep 2026 ⏰ |
 | 02 | CCS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | CCS'27 two cycles, dates TBD |
 | 03 | NeurIPS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | NeurIPS'27 D&B CFP unpublished, TBD |
 | 04 | IEEE SP | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | S&P'27 Cycle 2 papers 17 Nov 2026 |
@@ -197,7 +199,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 17 | IJCAI | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | IJCAI'27 abstract ~12 Jan 2027, paper ~19 Jan 2027 (projection from IJCAI 2026) |
 | 18 | ACL | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ACL'27 ARR Jan 2027 cycle (exact date TBA) |
 | 19 | ICSE | 2028 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ICSE'28 abstract ~23 Jun 2027, paper ~30 Jun 2027 (projection from ICSE 2027) |
-| 20 | WWW | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 |
+| 20 | WWW | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | 🔴 <mark>**NEXT UP — WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026**</mark> |
 | 21 | EuroS&P | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | EuroS&P'27 abstract 25 Nov 2026; paper 2 Dec 2026 |
 | 22 | PoPETs | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | PoPETs'27 Issue 3: 30 Nov 2026; Issue 4: 28 Feb 2027 |
 | 23 | DSN | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | DSN'27 abstract 25 Nov 2026; paper 2 Dec 2026 |
@@ -206,20 +208,20 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 26 | ACSAC | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ACSAC'27 ~26 May 2027 (projection from ACSAC 2026) |
 | 27 | Black Hat | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Asia Briefings 20 Oct 2026; USA Briefings ~Jan–Mar 2027 (projection) |
 | 28 | DEF CON | 35 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | DEF CON 35 CFP ~1 May 2027 (projection from DEF CON 34) |
-| 29 | IEEE TIFS | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 30 | IEEE TDSC | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 31 | ACM TOPS | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 32 | ACM CSUR | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 33 | IEEE COMST | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 34 | IEEE TPAMI | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 35 | TMLR | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 36 | Nature MI | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 37 | Computers & Security | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 38 | Journal of Cybersecurity | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 39 | IEEE S&P Magazine | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 40 | Scientific Data | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
-| 41 | CACM | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (CACM synthesis held until 3 programme papers accepted) |
-| 42 | IEEE TSE | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Rolling (no deadline) |
+| 29 | IEEE TIFS | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 30 | IEEE TDSC | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 31 | ACM TOPS | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 32 | ACM CSUR | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 33 | IEEE COMST | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 34 | IEEE TPAMI | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 35 | TMLR | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 36 | Nature MI | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 37 | Computers & Security | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 38 | Journal of Cybersecurity | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 39 | IEEE S&P Magazine | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 40 | Scientific Data | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
+| 41 | CACM | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling (CACM synthesis held until 3 programme papers accepted)* |
+| 42 | IEEE TSE | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* |
 | 43 | FAccT | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026 |
 | 44 | CCS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | CCS'27 two cycles, dates TBD |
 
