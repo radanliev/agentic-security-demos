@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Demo 33: Protocol Coverage (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All elements and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - protocol-security
+  - coverage-mapping
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating protocol coverage mapping over six
+  synthetic elements with a gap rule. Stdlib only.

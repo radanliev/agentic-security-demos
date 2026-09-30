@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Demo 24: Delegation Checks (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All chains and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - delegation
+  - authorization
+  - audience-binding
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating delegation-chain properties: audience
+  binding and no scope amplification. Six synthetic chains, one small
+  checker, stdlib only.

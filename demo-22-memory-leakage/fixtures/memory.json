@@ -1,0 +1,14 @@
+{
+  "seed": 22,
+  "entries": [
+    {"id": "m1", "sensitivity": "high", "session": "s1", "user": "u1", "persisted": true, "resurfaced_in": null, "deleted": false},
+    {"id": "m2", "sensitivity": "high", "session": "s1", "user": "u1", "persisted": true, "resurfaced_in": null, "deleted": false},
+    {"id": "m3", "sensitivity": "low", "session": "s1", "user": "u1", "persisted": true, "resurfaced_in": "s2/u2", "deleted": false},
+    {"id": "m4", "sensitivity": "low", "session": "s2", "user": "u2", "persisted": true, "resurfaced_in": "s1/u1", "deleted": false},
+    {"id": "m5", "sensitivity": "low", "session": "s1", "user": "u1", "persisted": false, "resurfaced_in": null, "deleted": true},
+    {"id": "m6", "sensitivity": "low", "session": "s2", "user": "u2", "persisted": false, "resurfaced_in": null, "deleted": true},
+    {"id": "m7", "sensitivity": "low", "session": "s1", "user": "u1", "persisted": true, "resurfaced_in": null, "deleted": true},
+    {"id": "m8", "sensitivity": "low", "session": "s2", "user": "u2", "persisted": false, "resurfaced_in": null, "deleted": false}
+  ],
+  "note": "Toy teaching fixtures. Hand-picked so exactly 2 high-sensitivity entries persist, 2 entries resurface across sessions, and 1 of 3 deleted entries is still present. All entries are synthetic."
+}

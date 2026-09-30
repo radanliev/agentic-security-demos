@@ -1,0 +1,18 @@
+{
+  "cards": [
+    {"id": "c01", "downloads": 95000, "safety": true, "provenance": true, "license": true},
+    {"id": "c02", "downloads": 80000, "safety": true, "provenance": true, "license": true},
+    {"id": "c03", "downloads": 70000, "safety": false, "provenance": true, "license": true},
+    {"id": "c04", "downloads": 60000, "safety": true, "provenance": false, "license": true},
+    {"id": "c05", "downloads": 50000, "safety": false, "provenance": true, "license": false},
+    {"id": "c06", "downloads": 40000, "safety": false, "provenance": false, "license": true},
+    {"id": "c07", "downloads": 30000, "safety": true, "provenance": true, "license": true},
+    {"id": "c08", "downloads": 20000, "safety": false, "provenance": true, "license": true},
+    {"id": "c09", "downloads": 15000, "safety": false, "provenance": false, "license": false},
+    {"id": "c10", "downloads": 10000, "safety": true, "provenance": true, "license": true},
+    {"id": "c11", "downloads": 5000, "safety": false, "provenance": true, "license": true},
+    {"id": "c12", "downloads": 1000, "safety": false, "provenance": false, "license": true}
+  ],
+  "seed": 36,
+  "note": "Synthetic teaching fixture. Twelve hand-built cards; 7/12 miss safety, top-4 miss 1/4, bottom-8 miss 6/8."
+}

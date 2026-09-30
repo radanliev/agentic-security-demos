@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Demo 42: Patch Lifecycle (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All vulnerabilities, lags and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - patch-propagation
+  - vulnerability-lifecycle
+  - version-pins
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy summarising fix-to-adoption lags over eight synthetic
+  stack vulnerabilities (median 37.5 days, 2/8 pin-blocked). Stdlib only.

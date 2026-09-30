@@ -1,0 +1,16 @@
+{
+  "rows": [
+    {"id": "r01", "benchmark": "A", "params_B": 1, "unsafe_rate": 0.62},
+    {"id": "r02", "benchmark": "A", "params_B": 7, "unsafe_rate": 0.68},
+    {"id": "r03", "benchmark": "A", "params_B": 13, "unsafe_rate": 0.64},
+    {"id": "r04", "benchmark": "A", "params_B": 70, "unsafe_rate": 0.66},
+    {"id": "r05", "benchmark": "B", "params_B": 1, "unsafe_rate": 0.32},
+    {"id": "r06", "benchmark": "B", "params_B": 7, "unsafe_rate": 0.36},
+    {"id": "r07", "benchmark": "B", "params_B": 4, "unsafe_rate": 0.34},
+    {"id": "r08", "benchmark": "B", "params_B": 13, "unsafe_rate": 0.33},
+    {"id": "r09", "benchmark": "B", "params_B": 70, "unsafe_rate": 0.37},
+    {"id": "r10", "benchmark": "B", "params_B": 30, "unsafe_rate": 0.35}
+  ],
+  "seed": 35,
+  "note": "Synthetic teaching fixture. Ten hand-built rows; benchmark gap dominates scale gap."
+}

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Demo 44: Toolflow Taint (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All flows, sinks and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - toolflow-integrity
+  - provenance
+  - taint-tracking
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy finding unlabelled toolflow edges into sensitive sinks
+  over eight synthetic flows (5/8 tainted). Stdlib only.

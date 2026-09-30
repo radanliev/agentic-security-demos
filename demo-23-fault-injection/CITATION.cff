@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Demo 23: Agent Pipeline Fault Injection (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All faults and outcomes are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - fault-injection
+  - dependability
+  - retries
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating pipeline fault outcomes with and without a
+  retry budget. Six synthetic faults, one deterministic outcome table,
+  stdlib only.

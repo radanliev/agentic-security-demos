@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Demo 37: Detector Cost (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All inputs, scores and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - prompt-injection
+  - detector-evaluation
+  - cost-sensitive
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy comparing strict and lenient prompt-injection detectors
+  under asymmetric error costs (FP=10, FN=25). Ten synthetic prompts,
+  two substring rules, stdlib only.

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Demo 41: Ten Invariants (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All invariants, checks and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - security-invariants
+  - checklist
+  - synthesis
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy evaluating a ten-item agent-security invariant checklist
+  over synthetic checks (seven hold, three violated). Stdlib only.

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Demo 25: Attestation Verifier (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All packages and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - attestation
+  - supply-chain
+  - fail-closed
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating install-time attestation verification under
+  fail-closed and fail-open policies. Ten synthetic packages, one tiny
+  verifier, stdlib only.

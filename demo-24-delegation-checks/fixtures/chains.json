@@ -1,0 +1,12 @@
+{
+  "seed": 24,
+  "chains": [
+    {"id": "c1", "hops": [{"frm": "user", "to": "agent", "scope": 3, "audience": "shop"}, {"frm": "agent", "to": "tool", "scope": 2, "audience": "shop"}]},
+    {"id": "c2", "hops": [{"frm": "user", "to": "agent", "scope": 1, "audience": "shop"}, {"frm": "agent", "to": "tool", "scope": 1, "audience": "shop"}]},
+    {"id": "c3", "hops": [{"frm": "user", "to": "agent", "scope": 4, "audience": "bank"}, {"frm": "agent", "to": "sub", "scope": 3, "audience": "bank"}, {"frm": "sub", "to": "tool", "scope": 1, "audience": "bank"}]},
+    {"id": "c4", "hops": [{"frm": "user", "to": "agent", "scope": 2, "audience": "shop"}, {"frm": "agent", "to": "tool", "scope": 2, "audience": "shop"}]},
+    {"id": "c5", "hops": [{"frm": "user", "to": "agent", "scope": 3, "audience": "shop"}, {"frm": "agent", "to": "tool", "scope": 2, "audience": "evil"}]},
+    {"id": "c6", "hops": [{"frm": "user", "to": "agent", "scope": 2, "audience": "shop"}, {"frm": "agent", "to": "tool", "scope": 5, "audience": "shop"}]}
+  ],
+  "note": "Toy teaching fixtures. Hand-picked so 4 of 6 chains are clean, c5 violates audience binding at hop 2, and c6 violates no-amplification with scope growth 2->5. All chains are synthetic."
+}

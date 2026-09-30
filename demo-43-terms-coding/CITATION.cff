@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Demo 43: Terms Coding (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All platforms, clauses and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - accountability
+  - platform-terms
+  - content-analysis
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy coding eight synthetic agent-platform terms against
+  three accountability clauses. Stdlib only.

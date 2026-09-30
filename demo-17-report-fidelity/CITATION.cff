@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Demo 17: Report Fidelity (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All trajectories, claims and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - self-report
+  - fidelity-audit
+  - claims-vs-logs
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating claims-vs-logs fidelity auditing over 8
+  synthetic trajectories, stdlib only.

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Demo 36: Model Card Debt (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All cards and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - model-cards
+  - documentation-debt
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating model-card disclosure debt over twelve
+  synthetic cards split by download popularity. Stdlib only.

@@ -3,7 +3,7 @@
 
 SHELL := /bin/bash
 PYTHON := python3
-DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments demo-14-conformal-gating demo-15-mcp-ecosystem
+DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments demo-14-conformal-gating demo-15-hijack-probes demo-16-infection-spread demo-17-report-fidelity demo-18-crosslingual-gap demo-19-lineage-risk demo-20-agent-web-census demo-21-mcp-ecosystem demo-22-memory-leakage demo-23-fault-injection demo-24-delegation-checks demo-25-attestation-verifier demo-26-sandbox-probes demo-27-ci-trigger-scan demo-28-memory-poisoning demo-29-provenance-graphs demo-30-default-configs demo-31-scope-creep demo-32-reproducibility-audit demo-33-protocol-coverage demo-34-visual-injection demo-35-scaling-metaregression demo-36-card-debt demo-37-detector-cost demo-38-assurance-claims demo-39-incident-taxonomy demo-40-corpus-union demo-41-ten-invariants demo-42-patch-lifecycle demo-43-terms-coding demo-44-toolflow-taint
 
 .PHONY: help setup test demo clean all-demos verify-safety
 
@@ -20,7 +20,7 @@ help:
 	@echo "Demonstrations:"
 	@echo "  make demo DEMO=01       # Run demo 01 (blind-verification)"
 	@echo "  make demo DEMO=02       # Run demo 02 (supply-chain-aibom)"
-	@echo "  ...                     # DEMO=03 through DEMO=15"
+	@echo "  ...                     # DEMO=03 through DEMO=44"
 	@echo ""
 	@echo "Maintenance:"
 	@echo "  make clean              # Remove generated files, caches, results"
@@ -113,3 +113,32 @@ demo-12: ; @$(MAKE) demo DEMO=12
 demo-13: ; @$(MAKE) demo DEMO=13
 demo-14: ; @$(MAKE) demo DEMO=14
 demo-15: ; @$(MAKE) demo DEMO=15
+demo-16: ; @$(MAKE) demo DEMO=16
+demo-17: ; @$(MAKE) demo DEMO=17
+demo-18: ; @$(MAKE) demo DEMO=18
+demo-19: ; @$(MAKE) demo DEMO=19
+demo-20: ; @$(MAKE) demo DEMO=20
+demo-21: ; @$(MAKE) demo DEMO=21
+demo-22: ; @$(MAKE) demo DEMO=22
+demo-23: ; @$(MAKE) demo DEMO=23
+demo-24: ; @$(MAKE) demo DEMO=24
+demo-25: ; @$(MAKE) demo DEMO=25
+demo-26: ; @$(MAKE) demo DEMO=26
+demo-27: ; @$(MAKE) demo DEMO=27
+demo-28: ; @$(MAKE) demo DEMO=28
+demo-29: ; @$(MAKE) demo DEMO=29
+demo-30: ; @$(MAKE) demo DEMO=30
+demo-31: ; @$(MAKE) demo DEMO=31
+demo-32: ; @$(MAKE) demo DEMO=32
+demo-33: ; @$(MAKE) demo DEMO=33
+demo-34: ; @$(MAKE) demo DEMO=34
+demo-35: ; @$(MAKE) demo DEMO=35
+demo-36: ; @$(MAKE) demo DEMO=36
+demo-37: ; @$(MAKE) demo DEMO=37
+demo-38: ; @$(MAKE) demo DEMO=38
+demo-39: ; @$(MAKE) demo DEMO=39
+demo-40: ; @$(MAKE) demo DEMO=40
+demo-41: ; @$(MAKE) demo DEMO=41
+demo-42: ; @$(MAKE) demo DEMO=42
+demo-43: ; @$(MAKE) demo DEMO=43
+demo-44: ; @$(MAKE) demo DEMO=44

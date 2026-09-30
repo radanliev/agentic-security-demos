@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Demo 19: Lineage Risk (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All models, flags and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - model-lineage
+  - supply-chain
+  - inherited-risk
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating inherited supply-chain risk over a synthetic
+  8-model lineage tree, stdlib only.
