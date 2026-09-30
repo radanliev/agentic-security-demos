@@ -65,7 +65,7 @@
 | 28 | **Memory Poisoning** | 🟩 [WWW'27](https://www2027.thewebconf.org/) demo track (Plan A) / DEF CON 35 (Plan B) | Persistent memory poisoning and the MemScope auditor toy | ✅ Active |
 | 29 | **Provenance Graphs** | 🟦 IEEE TIFS | Tamper-evident provenance for post-incident reconstruction | ✅ Active |
 | 30 | **Default Configs** | 🟦 IEEE TDSC | Insecure defaults in self-hosted LLM stacks | ✅ Active |
-| 31 | **Scope Creep** | 🟦 ACM TOPS | OAuth scope over-privilege in agent integrations | ✅ Active |
+| 31 | **Scope Creep** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / TOPS (Plan B) | OAuth scope over-privilege in agent integrations | ✅ Active |
 | 32 | **Reproducibility Audit** | 🟩 ACM CSUR | Artefact audit of the agent-security literature | ✅ Active |
 | 33 | **Protocol Coverage** | 🟩 IEEE COMST | Agent protocol element × threat coverage map | ✅ Active |
 | 34 | **Visual Injection** | 🟪 IEEE TPAMI | Typographic injection against vision-language agents | ✅ Active |
@@ -207,14 +207,15 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 >
 > Contingencies (not counted): demo-21 if WWW-rejected 4 Jan (22 days to rework); demo-4 only on S&P early-reject 18 Jan; demo-2 only if TOSEM is held past 26 Jan. All papers need a mandatory Open Science appendix and anonymous artifact links (4open.science, ID `SEC27`).
 >
-> ⚖️ **Plan A / Plan B: the FAccT'27 slate (2 papers, no author cap).** Two demos go to **[FAccT'27, Porto](https://facctconference.org/)** — abstract 27 Oct 2026, paper 3 Nov 2026 ([CFP](https://facctconference.org/2027/cfp.html); accept/revise/reject 22 Dec 2026, revision due 28 Jan 2027). No per-author cap, but every author on every paper must sign up to review or face desk rejection. If rejected (final notification 23 Mar 2027), each drops to Plan B, then Plan C. Demo-17 stays on IJCAI'27 — FAccT review would swallow its January deadline, and two strong papers beat three stretched ones.
+> ⚖️ **Plan A / Plan B: the FAccT'27 slate (3 papers, no author cap).** Three demos go to **[FAccT'27, Porto](https://facctconference.org/)** — abstract 27 Oct 2026, paper 3 Nov 2026 ([CFP](https://facctconference.org/2027/cfp.html); accept/revise/reject 22 Dec 2026, revision due 28 Jan 2027). No per-author cap, but every author on every paper must sign up to review or face desk rejection. If rejected (final notification 23 Mar 2027), each drops to Plan B, then Plan C. None overlap the WWW or USENIX slates; all originals are rolling venues held for after.
 >
 > | Demo | FAccT angle | Plan B | Plan C |
 > |------|------------|--------|--------|
+> | 31 Scope Creep | consent meaningfulness: requested vs used scopes + breakage of least-privilege policy | TOPS | TDSC |
 > | 38 Assurance Claims | transparency documentation vs regulation | JoC | CoSe |
 > | 39 Incident Taxonomy | incident-grounded harms, practitioner controls | S&P Magazine | CACM Practice |
 >
-> Date logic: JoC and S&P Magazine are rolling, so 38/39 keep their originals as Plan B. Demo-22 is held out — FAccT would force skipping PoPETs Issue 3.
+> Stretch fourth: demo-37 (detector evaluation) joins only if HF pulls + detector runs land in week 1–2 and the [DECIDE] sample floors are registered immediately — otherwise it stays on CoSe (Jan 2027 schedule). Demo-22 is held out — FAccT would force skipping PoPETs Issue 3.
 
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
@@ -248,7 +249,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 28 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🟠 <mark>**[WWW'27 demo paper 16 Nov 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark>; [DEF CON 35 CFP ~1 May 2027 (Plan B)](https://www.defcon.org/index.html) | DEF CON 35 / AI Village posters | BH Arsenal |
 | 29 | 🟦 [IEEE TIFS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | TDSC / TOPS / CoSe | TOPS |
 | 30 | 🟦 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | TIFS / TOPS / IEEE TRel | CoSe |
-| 31 | 🟦 [ACM TOPS](https://dl.acm.org/journal/tops) | — | [♾️ *Rolling — no deadline*](https://dl.acm.org/journal/tops) | TDSC / CoSe / DTRAP | CoSe |
+| 31 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | TOPS | TDSC |
 | 32 | 🟩 [ACM CSUR](https://dl.acm.org/journal/csur) | — | [♾️ *Rolling — no deadline*](https://dl.acm.org/journal/csur) | COMST / DTRAP / CSR | COMST |
 | 33 | 🟩 [IEEE COMST](https://www.comsoc.org/publications/journals/ieee-communications-surveys-tutorials) | — | [♾️ *Rolling — no deadline*](https://www.comsoc.org/publications/journals/ieee-comst/call-for-papers) | CSUR / Proc. IEEE / IEEE Network | Proc. IEEE |
 | 34 | 🟪 [IEEE TPAMI](https://www.computer.org/csdl/journal/tp) | — | [♾️ *Rolling — no deadline*](https://www.computer.org/csdl/journal/tp) | TNNLS / TIP / TIFS | TIFS |
