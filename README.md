@@ -40,12 +40,12 @@
 | 03 | **Eval Design Invariants** | NeurIPS 2027 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
 | 04 | **Prompt Injection & Tool Authority** | IEEE SP 2027 | Capability-based authority mediation for tool-using agents | ✅ Active |
 | 05 | **Evidence Release Assurance** | USENIX Security 2027 | Cryptographic evidence chains for agent accountability | ✅ Active |
-| 06 | **Network Recon** | NDSS 2028 | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
+| 06 | **Network Recon** | [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) (Plan A) / NDSS'28 (Plan B) | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
 | 07 | **Malware Triage** | RAID 2027 | Statistical reconstruction of malware triage decisions | ✅ Active |
 | 08 | **File Inclusion** | ASIACCS 2027 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
 | 09 | **MITM Interception** | ESORICS 2027 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
-| 10 | **Vulnerability Assessment** | ACSAC 2027 | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
-| 11 | **Degenerate Reporting** | RAID 2027 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
+| 10 | **Vulnerability Assessment** | [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) (Plan A) / ACSAC'27 (Plan B) | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
+| 11 | **Degenerate Reporting** | [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) SoK (Plan A) / RAID'27 (Plan B) | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
 | 12 | **Provenance-Bound Authorization** | USENIX Security 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
 | 13 | **Format vs Cueing** | USENIX Security 2027 | Separating format constraint from coverage cueing in typed pre-reveal commitments | ✅ Active |
 | 14 | **Conformal Action Gating** | ICML 2027 | Distribution-free risk control for tool execution and how it fails under benchmark shift | ✅ Active |
@@ -78,7 +78,7 @@
 | 41 | **Ten Invariants** | CACM | Security invariants checklist synthesis | ✅ Active |
 | 42 | **Patch Lifecycle** | IEEE TSE | Vulnerability lifecycle and patch adoption lag | ✅ Active |
 | 43 | **Terms Coding** | [WWW'27](https://www2027.thewebconf.org/) (Plan A) / AIES'27 (Plan B) | Platform terms accountability allocation | ✅ Active |
-| 44 | **Toolflow Taint** | CCS 2027 | Cross-tool dataflow integrity tracking | ✅ Active |
+| 44 | **Toolflow Taint** | [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) (Plan A) / CCS'27 (Plan B) | Cross-tool dataflow integrity tracking | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -193,6 +193,19 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > | 28 Memory Poisoning | Demo track (16 Nov 2026, outside cap) | DEF CON 35 | BH Arsenal |
 >
 > Date logic: EuroS&P'27 (25 Nov), BH Asia (20 Oct) and FAccT'27 (3 Nov) all fall inside the WWW review window (25 Oct–4 Jan), so they cannot back up a WWW rejection — Plan Bs above are all actionable after 4 Jan 2027.
+>
+> 🛡️ **Plan A / Plan B: the USENIX'27 Cycle 2 slate (6 papers).** Demo 5 already went in Cycle 1, so six more go to **[USENIX Security '27, Denver](https://www.usenix.org/conference/usenixsecurity27)** — registration 19 Jan 2027, papers 26 Jan 2027, artifacts 29 Jan 2027 ([CFP](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)). Cycle 1 rejects cannot go to Cycle 2, and S&P C2 / AsiaCCS R2 papers are locked in review — the six below are clear.
+>
+> | Demo | USENIX angle | Plan B | Plan C |
+> |------|-------------|--------|--------|
+> | 06 Network Recon | eBPF admission control, systems core | NDSS'28 | TDSC |
+> | 10 Vulnerability Assessment | cross-vendor measurement | ACSAC'27 | RAID'28 |
+> | 11 Degenerate Reporting | reframe as **SoK** (`SoK:` title prefix) | RAID'27 | ESORICS'28 |
+> | 12 Provenance Authz | already C2-bound | NDSS'28 | CCS'28 |
+> | 13 Typed Commitments | already C2-bound | CSF'27 | EuroS&P'28 |
+> | 44 Toolflow Taint | agent dispatch measurement | CCS'27 | NDSS'28 |
+>
+> Contingencies (not counted): demo-21 if WWW-rejected 4 Jan (22 days to rework); demo-4 only on S&P early-reject 18 Jan; demo-2 only if TOSEM is held past 26 Jan. All papers need a mandatory Open Science appendix and anonymous artifact links (4open.science, ID `SEC27`).
 
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
@@ -201,12 +214,12 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 03 | [NeurIPS](https://neurips.cc/) | 2027 | [NeurIPS'27 D&B CFP unpublished, TBD](https://neurips.cc/) | ICLR'28 / TMLR | TMLR |
 | 04 | [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2 papers 17 Nov 2026 — due in weeks](http://sp2027.ieee-security.org/cfpapers.html)** | USENIX Sec'28 / CCS'27 | CCS'27 |
 | 05 | [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 1 submitted 25 Aug 2026, training continues](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | NDSS'28 / S&P'28 (if C1 rejected) | S&P'28 |
-| 06 | [NDSS](https://www.ndss-symposium.org/) | 2028 | [NDSS'27 cycles passed; NDSS'28 CFP unpublished, TBD](https://www.ndss-symposium.org/) | USENIX Sec'28 / RAID'27 | TDSC |
+| 06 | [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027 (reg. 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | NDSS'28 | TDSC |
 | 07 | [RAID](https://dl.acm.org/conference/raid) | 2027 | [RAID'27 CFP unpublished, TBD](https://dl.acm.org/conference/raid) | DIMVA'27 / ACSAC'27 | ESORICS'28 |
 | 08 | [ASIACCS](https://asiaccs2027.cityu.edu.mo/) | 2027 | 🟠 **[AsiaCCS'27 Round 2 papers 11 Dec 2026](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html)** | ESORICS'27 C2 / RAID'27 | RAID'28 |
 | 09 | [ESORICS](https://conf.laas.fr/esorics) | 2027 | [ESORICS'27 CFP unpublished, TBD](https://conf.laas.fr/esorics) | RAID'27 / ACSAC'27 | ACSAC'28 |
-| 10 | [ACSAC](https://acsac.org/) | 2027 | [ACSAC'27 CFP unpublished, TBD](https://submit.acsac.org/) | SaTML'28 / RAID'27 | RAID'28 |
-| 11 | [RAID](https://dl.acm.org/conference/raid) | 2027 | [RAID'27 CFP unpublished, TBD](https://dl.acm.org/conference/raid) | ACSAC'27 / ESORICS'27 | ESORICS'28 |
+| 10 | [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027 (reg. 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | ACSAC'27 | RAID'28 |
+| 11 | [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) (SoK) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027 (reg. 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | RAID'27 | ESORICS'28 |
 | 12 | [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | NDSS'28 / CCS'27 | CCS'28 |
 | 13 | [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | CSF'27 / EuroS&P'27 | EuroS&P'28 |
 | 14 | [ICML](https://icml.cc/) | 2027 | [ICML'27 abstract ~23 Jan 2027, paper ~28 Jan 2027 (projection)](https://icml.cc/) | TMLR / NeurIPS'27 / ICLR'28 | ICLR'28 |
@@ -239,7 +252,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 41 | [CACM](https://cacm.acm.org/) | — | [♾️ *Rolling (held until 3 accepts)*](https://cacm.acm.org/) | S&P Mag / Computer / Queue | ACM Queue |
 | 42 | [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | ESE / TOSEM / ICSE journal-first | TOSEM |
 | 43 | [WWW'27](https://www2027.thewebconf.org/) | 2027 | <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark> | AIES'27 | FAccT'28 |
-| 44 | [CCS](https://www.sigsac.org/ccs/CCS2027) | 2027 | [CCS'27 two cycles, dates TBD](https://www.sigsac.org/ccs/CCS2027) | USENIX Sec'28 / NDSS'28 | NDSS'28 |
+| 44 | [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027 (reg. 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | CCS'27 | NDSS'28 |
 
 ---
 
