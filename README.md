@@ -4,8 +4,10 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 13 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
+  <strong>A curated collection of 15 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, EuroS&P). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
 </p>
+
+> 🐣 **Padawan-practice notice (read before citing).** These are my teaching demos by Petar Radanliev — training missions for the classroom, not Jedi trials. Like Padawan exercises, each demo **may or may not be converted into a full paper**, and any paper **may or may not be accepted** at its listed venue. The venue column names the *training ground* that inspired the exercise, never a publication claim. No preprints, no datasets deposited, no reviewer verdicts — just lightsabers set to stun (synthetic fixtures, offline only).
 
 <p align="center">
   <a href="https://github.com/radanliev/agentic-security-demos/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/radanliev/agentic-security-demos/ci.yml?branch=main&label=Build&style=flat-square" alt="Build Status"></a>
@@ -46,6 +48,8 @@
 | 11 | **Degenerate Reporting** | RAID 2027 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
 | 12 | **Provenance-Bound Authorization** | USENIX Security 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
 | 13 | **Format vs Cueing** | USENIX Security 2027 | Separating format constraint from coverage cueing in typed pre-reveal commitments | ✅ Active |
+| 14 | **Conformal Action Gating** | ICML 2027 | Distribution-free risk control for tool execution and how it fails under benchmark shift | ✅ Active |
+| 15 | **MCP Ecosystem Census** | EuroS&P 2027 | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -82,11 +86,13 @@ All demos run offline from the repository root — no API keys, no network.
 Each demo folder also has step-by-step `INSTRUCTIONS.md` with expected outputs.
 
 ```bash
-# Run a teaching demo (folders demo-01 … demo-13)
+# Run a teaching demo (folders demo-01 … demo-15)
 make demo DEMO=01   # Blind Verification
 make demo DEMO=04   # Prompt Injection Authority
 make demo DEMO=07   # Malware Triage
 make demo DEMO=13   # Typed Commitments & Coverage Cues
+make demo DEMO=14   # Conformal Action Gating (ICML toy)
+make demo DEMO=15   # MCP Ecosystem Census (EuroS&P toy)
 
 # Run a demo's test suite
 make test DEMO=01
@@ -116,7 +122,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | Guarantee | Mechanism |
 |-----------|-----------|
 | **Environment Freeze** | `requirements.lock` + `conda-lock.yml` + Docker images |
-| **Evidence Immutability** | SHA-256 sealed reference outputs in each demo's `results/` (Zenodo deposit on acceptance) |
+| **Evidence Immutability** | SHA-256 sealed reference outputs in each demo's `results/` (🌟 Episode VI sealed Holocron — Zenodo deposit only on acceptance) |
 | **Statistical Rigor** | Pre-registered analysis plans with p-value correction |
 | **Compute Transparency** | GPU-hours logged; CPU fallback documented |
 | **Adversarial Robustness** | Seeded RNG; deterministic attack ordering |
@@ -132,21 +138,30 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 
 ## 🏛️ Venues & Publications
 
-| Demo | Venue (paper target) | Year | Paper | Artifact | Deadline (AoE, verified 2026-09-20) |
-|------|--------------------|------|-------|----------|-------------------------------------|
-| 01 | SATML | 2027 | Under review, no preprint | On acceptance | SaTML'27 papers 29 Sep 2026 |
-| 02 | CCS | 2027 | Under review, no preprint | On acceptance | CCS'27 two cycles, dates TBD |
-| 03 | NeurIPS | 2027 | Under review, no preprint | On acceptance | NeurIPS'27 D&B CFP unpublished, TBD |
-| 04 | IEEE SP | 2027 | Under review, no preprint | On acceptance | S&P'27 Cycle 2 papers 17 Nov 2026 |
-| 05 | USENIX Security | 2027 | Under review, no preprint | On acceptance | USENIX'27 Cycle 1 submitted 25 Aug 2026, under review |
-| 06 | NDSS | 2028 | Under review, no preprint | On acceptance | NDSS'27 cycles passed; NDSS'28 CFP unpublished, TBD |
-| 07 | RAID | 2027 | Under review, no preprint | On acceptance | RAID'27 CFP unpublished, TBD |
-| 08 | ASIACCS | 2027 | Under review, no preprint | On acceptance | AsiaCCS'27 Round 2 papers 11 Dec 2026 |
-| 09 | ESORICS | 2027 | Under review, no preprint | On acceptance | ESORICS'27 CFP unpublished, TBD |
-| 10 | ACSAC | 2027 | Under review, no preprint | On acceptance | ACSAC'27 CFP unpublished, TBD |
-| 11 | RAID | 2027 | Under review, no preprint | On acceptance | RAID'27 CFP unpublished, TBD |
-| 12 | USENIX Security | 2027 | Under review, no preprint | On acceptance | USENIX'27 Cycle 2 papers 26 Jan 2027 |
-| 13 | USENIX Security | 2027 | Preregistration draft, no data, no preprint | On acceptance | USENIX'27 Cycle 2 papers 26 Jan 2027 |
+> 🌌 **A long time ago in a classroom far, far away…** Every row below is a Padawan training
+> ground, not a battle record. The *Paper* column never claims a submission or a preprint —
+> each demo sits at **Episode IV – A New Hope**: an idea / planning stage that may or may not
+> grow into a full paper, which may or may not be accepted. The *Artifact* column is
+> **Episode VI – Return of the Jedi**: the Holocron (Zenodo deposit) stays sealed until a paper
+> actually returns victorious. No Death Star plans have been transmitted yet.
+
+| Demo | Venue (training ground) | Year | Paper | Artifact | Deadline (AoE) |
+|------|--------------------|------|-------|----------|----------------|
+| 01 | SATML | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | SaTML'27 papers 29 Sep 2026 |
+| 02 | CCS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | CCS'27 two cycles, dates TBD |
+| 03 | NeurIPS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | NeurIPS'27 D&B CFP unpublished, TBD |
+| 04 | IEEE SP | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | S&P'27 Cycle 2 papers 17 Nov 2026 |
+| 05 | USENIX Security | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | USENIX'27 Cycle 1 submitted 25 Aug 2026, training continues |
+| 06 | NDSS | 2028 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | NDSS'27 cycles passed; NDSS'28 CFP unpublished, TBD |
+| 07 | RAID | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | RAID'27 CFP unpublished, TBD |
+| 08 | ASIACCS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | AsiaCCS'27 Round 2 papers 11 Dec 2026 |
+| 09 | ESORICS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ESORICS'27 CFP unpublished, TBD |
+| 10 | ACSAC | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ACSAC'27 CFP unpublished, TBD |
+| 11 | RAID | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | RAID'27 CFP unpublished, TBD |
+| 12 | USENIX Security | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | USENIX'27 Cycle 2 papers 26 Jan 2027 |
+| 13 | USENIX Security | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | USENIX'27 Cycle 2 papers 26 Jan 2027 |
+| 14 | ICML | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ICML'27 abstract ~23 Jan 2027, paper ~28 Jan 2027 (projection from ICML 2026) |
+| 15 | EuroS&P | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | EuroS&P'27 abstract 25 Nov 2026; paper 2 Dec 2026 |
 
 ---
 
@@ -190,7 +205,9 @@ Individual demo citations available in each subdirectory's `CITATION.cff`.
 
 ## 🤝 Contributing
 
-We welcome contributions that advance agentic AI security research! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
+> 🌟 **Episode V – The Empire Strikes Back.** Every pull request is a trial in the snow:
+> the Empire (CI) strikes back with offline tests, safety greps and schema checks. Only
+> Padawans who bring evidence survive Hoth. See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 - 🐛 Reporting vulnerabilities or reproducibility issues
 - 💡 Proposing new demos or venues
@@ -198,17 +215,18 @@ We welcome contributions that advance agentic AI security research! See [CONTRIB
 - 🧪 Extending test suites
 - 📝 Improving documentation
 
-**Research Contribution Guidelines:**
-1. All claims must be backed by frozen evidence packages
+**Research Contribution Guidelines (the Jedi Code):**
+1. All claims must be backed by frozen evidence packages (no Order-66 surprises)
 2. Statistical claims require pre-registered analysis plans
-3. New demos must target a top-tier venue with clear scope
-4. Breaking changes require RFC process
+3. New demos must target a top-tier venue with clear scope (choose your training ground)
+4. Breaking changes require RFC process (consult the Council first)
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
+Distributed under the **MIT License** — 🌟 *a long time ago in an open-source galaxy…*
+free to fork like Rebel plans, no warranty (Alderaan was also uninsured). See [LICENSE](LICENSE) for more information.
 
 Individual demos may have additional licenses for third-party components (see `DEPENDENCIES.md`).
 
@@ -216,15 +234,17 @@ Individual demos may have additional licenses for third-party components (see `D
 
 ## 🙏 Acknowledgments
 
-- **Oxford Lagrange** for compute credits
-- **GitHub Accelerator** for open-source support
-- **Anonymous reviewers** at SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC
-- **Agentic AI Security community** for feedback and replication
+🌟 **The Rebel Alliance thanks:**
+
+- **Oxford Lagrange** — fuel for the X-wings (compute credits)
+- **GitHub Accelerator** — the hidden Rebel base (open-source support)
+- **Anonymous reviewers** at SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, EuroS&P — the Jedi Council: wise, anonymous, occasionally striking back (Episode V)
+- **Agentic AI Security community** — the Ewoks who actually help (feedback and replication)
 
 ---
 
 <p align="center">
-  <strong>Advancing the science of agentic AI security, one reproducible demo at a time.</strong>
+  <strong>Training Padawans in agentic AI security, one reproducible demo at a time — may the Force (of offline, synthetic fixtures) be with you.</strong>
 </p>
 
 <p align="center">

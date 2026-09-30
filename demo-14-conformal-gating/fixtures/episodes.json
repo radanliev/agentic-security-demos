@@ -1,0 +1,25 @@
+{
+  "alpha": 0.3,
+  "calibration": [
+    {"id": "c1", "score": 0.1, "injected": false},
+    {"id": "c2", "score": 0.2, "injected": false},
+    {"id": "c3", "score": 0.35, "injected": true},
+    {"id": "c4", "score": 0.5, "injected": true},
+    {"id": "c5", "score": 0.65, "injected": true},
+    {"id": "c6", "score": 0.8, "injected": true}
+  ],
+  "test_same": [
+    {"id": "s1", "score": 0.15, "injected": false},
+    {"id": "s2", "score": 0.3, "injected": false},
+    {"id": "s3", "score": 0.55, "injected": true},
+    {"id": "s4", "score": 0.7, "injected": true}
+  ],
+  "test_shifted": [
+    {"id": "h1", "score": 0.12, "injected": true},
+    {"id": "h2", "score": 0.18, "injected": true},
+    {"id": "h3", "score": 0.45, "injected": false},
+    {"id": "h4", "score": 0.75, "injected": true}
+  ],
+  "seed": 14,
+  "note": "Toy teaching fixtures. Scores are hand-picked so a gate calibrated at nominal risk 0.30 holds on test_same (0/1) but fails on test_shifted (2/2). The injected field is the ORACLE: gate modules must never read it (enforced by tests). All episodes and verdicts are synthetic."
+}

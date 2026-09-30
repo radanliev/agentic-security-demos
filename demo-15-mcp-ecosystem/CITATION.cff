@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Demo 15: MCP Ecosystem Census (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All servers, descriptions and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+repository-code: "https://github.com/radanliev/agentic-security-demos"
+keywords:
+  - teaching
+  - mcp
+  - tool-poisoning
+  - rug-pulls
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating a registry census for tool poisoning, version
+  drift and capability bundling. Twelve synthetic servers, three tiny
+  detectors, stdlib only.

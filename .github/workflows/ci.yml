@@ -95,6 +95,21 @@ jobs:
           cd demo-12-provenancebound
           make test
 
+      - name: Test demo-13-typed-commitments
+        run: |
+          cd demo-13-typed-commitments
+          make test
+
+      - name: Test demo-14-conformal-gating
+        run: |
+          cd demo-14-conformal-gating
+          make test
+
+      - name: Test demo-15-mcp-ecosystem
+        run: |
+          cd demo-15-mcp-ecosystem
+          make test
+
       - name: Verify no network access in tests
         run: |
           # Smoke check; real enforcement is by test design
@@ -191,7 +206,7 @@ for f in glob.glob('demo-*/results/*.json') + glob.glob('demo-*/tests/*.json'):
       - name: Run all demos and verify deterministic output
         run: |
           make setup
-          for demo in 01 02 03 04 05 06 07 08 09 10 11 12; do
+          for demo in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15; do
             echo "=== Running demo-$demo ==="
             set -o pipefail; make demo DEMO=$demo 2>&1 | tail -20
             echo ""

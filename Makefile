@@ -3,7 +3,7 @@
 
 SHELL := /bin/bash
 PYTHON := python3
-DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments
+DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments demo-14-conformal-gating demo-15-mcp-ecosystem
 
 .PHONY: help setup test demo clean all-demos verify-safety
 
@@ -20,7 +20,7 @@ help:
 	@echo "Demonstrations:"
 	@echo "  make demo DEMO=01       # Run demo 01 (blind-verification)"
 	@echo "  make demo DEMO=02       # Run demo 02 (supply-chain-aibom)"
-	@echo "  ...                     # DEMO=03 through DEMO=13"
+	@echo "  ...                     # DEMO=03 through DEMO=15"
 	@echo ""
 	@echo "Maintenance:"
 	@echo "  make clean              # Remove generated files, caches, results"
@@ -111,3 +111,5 @@ demo-10: ; @$(MAKE) demo DEMO=10
 demo-11: ; @$(MAKE) demo DEMO=11
 demo-12: ; @$(MAKE) demo DEMO=12
 demo-13: ; @$(MAKE) demo DEMO=13
+demo-14: ; @$(MAKE) demo DEMO=14
+demo-15: ; @$(MAKE) demo DEMO=15
