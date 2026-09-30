@@ -53,16 +53,16 @@
 | 16 | **Infection Spread** | AAAI 2028 | Epidemic dynamics of prompt-injection propagation in multi-agent systems | ✅ Active |
 | 17 | **Report Fidelity** | IJCAI 2027 | Claims-versus-logs fidelity of coding agents | ✅ Active |
 | 18 | **Cross-lingual Gap** | ACL 2027 | Cross-lingual transfer of injections and the detector language gap | ✅ Active |
-| 19 | **Lineage Risk** | ICSE 2028 | Inherited risk along fine-tune lineages on the model hub | ✅ Active |
+| 19 | **Lineage Risk** | [WWW'27](https://www2027.thewebconf.org/) (Plan A) / ICSE'28 (Plan B) | Inherited risk along fine-tune lineages on the model hub | ✅ Active |
 | 20 | **Agent Web Census** | WWW 2027 | Agent-facing files and in-the-wild injections across the web | ✅ Active 🔴 next deadline |
-| 21 | **MCP Ecosystem Census** | EuroS&P 2027 | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | ✅ Active |
+| 21 | **MCP Ecosystem Census** | [WWW'27](https://www2027.thewebconf.org/) (Plan A) / EuroS&P'27 (Plan B) | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | ✅ Active |
 | 22 | **Memory Leakage** | PoPETs 2027 | Contextual-integrity leakage via agent memory stores | ✅ Active |
 | 23 | **Fault Injection** | DSN 2027 | Dependability of agent pipelines under pipeline faults | ✅ Active |
 | 24 | **Delegation Checks** | CSF 2027 | Authorization and agent-to-agent delegation properties | ✅ Active |
 | 25 | **Attestation Verifier** | ACNS 2027 | Install-time provenance verification for agent supply chains | ✅ Active |
 | 26 | **Sandbox Probes** | ACSAC 2027 | Agent sandbox isolation and exfiltration controls | ✅ Active |
-| 27 | **CI Trigger Scan** | Black Hat 2027 | Injection surface of coding agents wired to CI | ✅ Active |
-| 28 | **Memory Poisoning** | DEF CON 35 | Persistent memory poisoning and the MemScope auditor toy | ✅ Active |
+| 27 | **CI Trigger Scan** | [WWW'27](https://www2027.thewebconf.org/) (Plan A) / Black Hat'27 (Plan B) | Injection surface of coding agents wired to CI | ✅ Active |
+| 28 | **Memory Poisoning** | [WWW'27](https://www2027.thewebconf.org/) demo track (Plan A) / DEF CON 35 (Plan B) | Persistent memory poisoning and the MemScope auditor toy | ✅ Active |
 | 29 | **Provenance Graphs** | IEEE TIFS | Tamper-evident provenance for post-incident reconstruction | ✅ Active |
 | 30 | **Default Configs** | IEEE TDSC | Insecure defaults in self-hosted LLM stacks | ✅ Active |
 | 31 | **Scope Creep** | ACM TOPS | OAuth scope over-privilege in agent integrations | ✅ Active |
@@ -70,7 +70,7 @@
 | 33 | **Protocol Coverage** | IEEE COMST | Agent protocol element × threat coverage map | ✅ Active |
 | 34 | **Visual Injection** | IEEE TPAMI | Typographic injection against vision-language agents | ✅ Active |
 | 35 | **Scaling Meta-regression** | TMLR | Agent misbehaviour versus scale across benchmarks | ✅ Active |
-| 36 | **Card Debt** | Nature MI | Documentation debt across open model cards | ✅ Active |
+| 36 | **Card Debt** | [WWW'27](https://www2027.thewebconf.org/) (Plan A) / Nature MI (Plan B) | Documentation debt across open model cards | ✅ Active |
 | 37 | **Detector Cost** | Computers & Security | Injection-detector comparison with false-positive cost | ✅ Active |
 | 38 | **Assurance Claims** | Journal of Cybersecurity | System-card assurance claims versus obligations | ✅ Active |
 | 39 | **Incident Taxonomy** | IEEE S&P Magazine | Agentic-AI threat taxonomy for practitioners | ✅ Active |
@@ -176,7 +176,17 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > **Episode VI – Return of the Jedi**: the Holocron (Zenodo deposit) stays sealed until a paper
 > actually returns victorious. No Death Star plans have been transmitted yet.
 >
-> 🔴 <mark>**highlight**</mark> = closest upcoming deadline · ♾️ *Rolling — no deadline* venues take submissions any time · ⏰ = date has passed · 🌀 = WWW'27-convertible (fits a WWW track; counts toward the 7-paper author cap, max 7 submissions) · ⚠️ same work cannot be under review in two places at once — backups run sequentially, never simultaneously.
+> 🔴 <mark>**highlight**</mark> = closest upcoming deadline · ♾️ *Rolling — no deadline* venues take submissions any time · ⏰ = date has passed · 🔀 = Plan A / Plan B routing (WWW'27 first, original venue on rejection) · ⚠️ same work cannot be under review in two places at once — backups run sequentially, never simultaneously.
+>
+> 🔀 **Plan A / Plan B: the WWW'27 first wave.** Five demos go to **[WWW'27, Dublin](https://www2027.thewebconf.org/)** first — abstract 18 Oct 2026, full paper 25 Oct 2026 ([submission via OpenReview](https://www2027.thewebconf.org/research-track-papers); demo papers 16 Nov 2026). If rejected, each drops to its original venue (Plan B). Max 7 submissions per author; page 1 of every paper must state its Web relevance or it is desk-rejected.
+>
+> | Demo | Plan A (WWW'27 track) | Plan B (original venue) |
+> |------|----------------------|-------------------------|
+> | 19 Lineage Risk | Web Mining / Evaluation & Resources | ICSE'28 |
+> | 21 MCP Census | Security and Privacy | EuroS&P'27 |
+> | 27 CI Trigger Scan | Web Infrastructure and Agentic Systems (or short paper) | Black Hat'27 |
+> | 28 Memory Poisoning | Demo track (16 Nov 2026) | DEF CON 35 |
+> | 36 Card Debt | Web Mining / Evaluation & Resources | Nature MI |
 
 | Demo | Venue (training ground) | Year | Paper | Artifact | Deadline (AoE) | Backup plan (if rejected) |
 |------|--------------------|------|-------|----------|----------------|---------------------------|
@@ -198,16 +208,16 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 16 | AAAI | 2028 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | AAAI'28 abstract ~late Jul 2027, paper ~early Aug 2027 (projection from AAAI-27) | IJCAI'28 / AAMAS'28 / SaTML'28 |
 | 17 | IJCAI | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | IJCAI'27 abstract ~12 Jan 2027, paper ~19 Jan 2027 (projection from IJCAI 2026) | AAAI'28 / AAMAS'28 / ECAI'27 |
 | 18 | ACL | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ACL'27 ARR Jan 2027 cycle (exact date TBA) | EMNLP'27 (ARR May) / NAACL'28 |
-| 19 | ICSE | 2028 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ICSE'28 abstract ~23 Jun 2027, paper ~30 Jun 2027 (projection from ICSE 2027) | FSE'28 / ASE'27 / TSE journal-first · 🌀 WWW'27 convertible |
+| 19 | WWW'27 🔀 (Plan A) / ICSE'28 (Plan B) | 2027 | 📨 [Submit to WWW'27 (OpenReview)](https://www2027.thewebconf.org/research-track-papers) | 🌟 Episode VI – sealed Holocron (on acceptance) | <mark>**WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)**</mark>; ICSE'28 abs ~23 Jun 2027 (Plan B) | Plan B: ICSE'28; then FSE'28 / TSE journal-first |
 | 20 | WWW | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | 🔴 <mark>**NEXT UP — WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026**</mark> | Short paper 16 Nov 2026 / IMC'27 / WWW'28 |
-| 21 | EuroS&P | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | EuroS&P'27 abstract 25 Nov 2026; paper 2 Dec 2026 | AsiaCCS'27 R2 / IMC'27 / ESORICS'27 · 🌀 WWW'27 convertible |
+| 21 | WWW'27 🔀 (Plan A) / EuroS&P'27 (Plan B) | 2027 | 📨 [Submit to WWW'27 (OpenReview)](https://www2027.thewebconf.org/research-track-papers) | 🌟 Episode VI – sealed Holocron (on acceptance) | <mark>**WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)**</mark>; EuroS&P abs 25 Nov 2026 (Plan B) | Plan B: EuroS&P'27; then AsiaCCS'27 R2 / IMC'27 / ESORICS'27 |
 | 22 | PoPETs | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | PoPETs'27 Issue 3: 30 Nov 2026; Issue 4: 28 Feb 2027 | PoPETs Iss. 4 / USENIX'28 C1 / CCS'27 |
 | 23 | DSN | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | DSN'27 abstract 25 Nov 2026; paper 2 Dec 2026 | DSN'28 / ISSRE'27 / TDSC |
 | 24 | CSF | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | CSF'27 Winter cycle 28 Jan 2027 | CSF'28 / ESORICS'27 C2 / CCS'27 |
 | 25 | ACNS | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ACNS'27 Cycle 2: 21 Jan 2027 | ESORICS'27 C2 / EuroS&P'28 / AsiaCCS'28 |
 | 26 | ACSAC | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ACSAC'27 ~26 May 2027 (projection from ACSAC 2026) | RAID'27 / DIMVA'27 / AsiaCCS'28 |
-| 27 | Black Hat | 2027 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | Asia Briefings 20 Oct 2026; USA Briefings ~Jan–Mar 2027 (projection) | BH USA'27 main / Arsenal · 🌀 WWW'27 convertible (short/demo) |
-| 28 | DEF CON | 35 | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | DEF CON 35 CFP ~1 May 2027 (projection from DEF CON 34) | AI Village posters · 🌀 WWW'27 demo paper 16 Nov 2026 |
+| 27 | WWW'27 🔀 (Plan A) / Black Hat'27 (Plan B) | 2027 | 📨 [Submit to WWW'27 (OpenReview)](https://www2027.thewebconf.org/research-track-papers) | 🌟 Episode VI – sealed Holocron (on acceptance) | <mark>**WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)**</mark>; BH Asia 20 Oct 2026 (Plan B) | Plan B: BH USA'27 / Arsenal |
+| 28 | WWW'27 demo 🔀 (Plan A) / DEF CON 35 (Plan B) | 2027 | 📨 [Submit WWW'27 demo paper (OpenReview)](https://www2027.thewebconf.org/research-track-papers) | 🌟 Episode VI – sealed Holocron (on acceptance) | <mark>**WWW'27 demo paper 16 Nov 2026 (Plan A)**</mark>; DEF CON 35 CFP ~1 May 2027 (Plan B) | Plan B: DEF CON 35 / AI Village posters |
 | 29 | IEEE TIFS | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | TDSC / TOPS / CoSe |
 | 30 | IEEE TDSC | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | TIFS / TOPS / IEEE TRel |
 | 31 | ACM TOPS | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | TDSC / CoSe / DTRAP |
@@ -215,7 +225,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 33 | IEEE COMST | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | CSUR / Proc. IEEE / IEEE Network |
 | 34 | IEEE TPAMI | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | TNNLS / TIP / TIFS |
 | 35 | TMLR | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | JMLR / DMLR / ICML'28 |
-| 36 | Nature MI | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | Patterns / Nature Comms / SciData · 🌀 WWW'27 convertible |
+| 36 | WWW'27 🔀 (Plan A) / Nature MI (Plan B) | 2027 | 📨 [Submit to WWW'27 (OpenReview)](https://www2027.thewebconf.org/research-track-papers) | 🌟 Episode VI – sealed Holocron (on acceptance) | <mark>**WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)**</mark>; Nature MI ♾️ rolling (Plan B) | Plan B: Nature MI; then Patterns / Nature Comms / SciData |
 | 37 | Computers & Security | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | JISA / TDSC / DTRAP |
 | 38 | Journal of Cybersecurity | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | CoSe / DTRAP / Policy & Internet |
 | 39 | IEEE S&P Magazine | — | 🌟 Episode IV – A New Hope (idea / planning stage) | 🌟 Episode VI – sealed Holocron (on acceptance) | ♾️ *Rolling — no deadline* | CACM Practice / ;login: / IEEE Computer |
