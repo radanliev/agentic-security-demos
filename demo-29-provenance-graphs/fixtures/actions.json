@@ -1,0 +1,13 @@
+{
+  "root": "a1",
+  "actions": [
+    {"id": "a1", "cause": null, "authority": "operator"},
+    {"id": "a2", "cause": "a1", "authority": "agent"},
+    {"id": "a3", "cause": "a2", "authority": "tool"},
+    {"id": "a4", "cause": "a3", "authority": "agent"},
+    {"id": "a5", "cause": null, "authority": "unknown"},
+    {"id": "a6", "cause": "a4", "authority": "operator"}
+  ],
+  "seed": 29,
+  "note": "Synthetic teaching fixture. Six hand-built actions; a5 has null cause but is not the root so it is unattributable (5/6 attributable)."
+}

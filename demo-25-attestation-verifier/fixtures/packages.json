@@ -1,0 +1,16 @@
+{
+  "seed": 25,
+  "packages": [
+    {"id": "p01", "attested": true, "framework_dep": true},
+    {"id": "p02", "attested": true, "framework_dep": false},
+    {"id": "p03", "attested": true, "framework_dep": true},
+    {"id": "p04", "attested": true, "framework_dep": false},
+    {"id": "p05", "attested": false, "framework_dep": true},
+    {"id": "p06", "attested": false, "framework_dep": true},
+    {"id": "p07", "attested": false, "framework_dep": false},
+    {"id": "p08", "attested": false, "framework_dep": true},
+    {"id": "p09", "attested": false, "framework_dep": false},
+    {"id": "p10", "attested": false, "framework_dep": true}
+  ],
+  "note": "Toy teaching fixtures. Hand-picked so 4 of 10 packages are attested and 6 are not. These numbers are toys, not ecosystem measurements. All packages are synthetic."
+}

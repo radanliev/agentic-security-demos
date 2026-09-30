@@ -1,0 +1,14 @@
+{
+  "seed": 27,
+  "repos": [
+    {"id": "r1", "public_trigger": true, "permission": "write", "review_required": false},
+    {"id": "r2", "public_trigger": true, "permission": "write", "review_required": false},
+    {"id": "r3", "public_trigger": true, "permission": "write", "review_required": false},
+    {"id": "r4", "public_trigger": true, "permission": "write", "review_required": true},
+    {"id": "r5", "public_trigger": true, "permission": "read", "review_required": false},
+    {"id": "r6", "public_trigger": false, "permission": "write", "review_required": false},
+    {"id": "r7", "public_trigger": false, "permission": "read", "review_required": true},
+    {"id": "r8", "public_trigger": true, "permission": "read", "review_required": true}
+  ],
+  "note": "Toy teaching fixtures. Hand-picked so exactly 3 of 8 repos are vulnerable (public trigger plus write permission without required review). All repos are synthetic."
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Demo 35: Scaling Metaregression (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All rows and means are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - meta-analysis
+  - scaling
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy illustrating scaling meta-regression over ten synthetic
+  rows where benchmark gaps dominate scale gaps. Stdlib only.

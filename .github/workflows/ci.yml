@@ -105,9 +105,154 @@ jobs:
           cd demo-14-conformal-gating
           make test
 
-      - name: Test demo-15-mcp-ecosystem
+      - name: Test demo-21-mcp-ecosystem
         run: |
-          cd demo-15-mcp-ecosystem
+          cd demo-21-mcp-ecosystem
+          make test
+
+      - name: Test demo-15-hijack-probes
+        run: |
+          cd demo-15-hijack-probes
+          make test
+
+      - name: Test demo-16-infection-spread
+        run: |
+          cd demo-16-infection-spread
+          make test
+
+      - name: Test demo-17-report-fidelity
+        run: |
+          cd demo-17-report-fidelity
+          make test
+
+      - name: Test demo-18-crosslingual-gap
+        run: |
+          cd demo-18-crosslingual-gap
+          make test
+
+      - name: Test demo-19-lineage-risk
+        run: |
+          cd demo-19-lineage-risk
+          make test
+
+      - name: Test demo-20-agent-web-census
+        run: |
+          cd demo-20-agent-web-census
+          make test
+
+      - name: Test demo-22-memory-leakage
+        run: |
+          cd demo-22-memory-leakage
+          make test
+
+      - name: Test demo-23-fault-injection
+        run: |
+          cd demo-23-fault-injection
+          make test
+
+      - name: Test demo-24-delegation-checks
+        run: |
+          cd demo-24-delegation-checks
+          make test
+
+      - name: Test demo-25-attestation-verifier
+        run: |
+          cd demo-25-attestation-verifier
+          make test
+
+      - name: Test demo-26-sandbox-probes
+        run: |
+          cd demo-26-sandbox-probes
+          make test
+
+      - name: Test demo-27-ci-trigger-scan
+        run: |
+          cd demo-27-ci-trigger-scan
+          make test
+
+      - name: Test demo-28-memory-poisoning
+        run: |
+          cd demo-28-memory-poisoning
+          make test
+
+      - name: Test demo-29-provenance-graphs
+        run: |
+          cd demo-29-provenance-graphs
+          make test
+
+      - name: Test demo-30-default-configs
+        run: |
+          cd demo-30-default-configs
+          make test
+
+      - name: Test demo-31-scope-creep
+        run: |
+          cd demo-31-scope-creep
+          make test
+
+      - name: Test demo-32-reproducibility-audit
+        run: |
+          cd demo-32-reproducibility-audit
+          make test
+
+      - name: Test demo-33-protocol-coverage
+        run: |
+          cd demo-33-protocol-coverage
+          make test
+
+      - name: Test demo-34-visual-injection
+        run: |
+          cd demo-34-visual-injection
+          make test
+
+      - name: Test demo-35-scaling-metaregression
+        run: |
+          cd demo-35-scaling-metaregression
+          make test
+
+      - name: Test demo-36-card-debt
+        run: |
+          cd demo-36-card-debt
+          make test
+
+      - name: Test demo-37-detector-cost
+        run: |
+          cd demo-37-detector-cost
+          make test
+
+      - name: Test demo-38-assurance-claims
+        run: |
+          cd demo-38-assurance-claims
+          make test
+
+      - name: Test demo-39-incident-taxonomy
+        run: |
+          cd demo-39-incident-taxonomy
+          make test
+
+      - name: Test demo-40-corpus-union
+        run: |
+          cd demo-40-corpus-union
+          make test
+
+      - name: Test demo-41-ten-invariants
+        run: |
+          cd demo-41-ten-invariants
+          make test
+
+      - name: Test demo-42-patch-lifecycle
+        run: |
+          cd demo-42-patch-lifecycle
+          make test
+
+      - name: Test demo-43-terms-coding
+        run: |
+          cd demo-43-terms-coding
+          make test
+
+      - name: Test demo-44-toolflow-taint
+        run: |
+          cd demo-44-toolflow-taint
           make test
 
       - name: Verify no network access in tests
@@ -206,7 +351,7 @@ for f in glob.glob('demo-*/results/*.json') + glob.glob('demo-*/tests/*.json'):
       - name: Run all demos and verify deterministic output
         run: |
           make setup
-          for demo in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15; do
+          for demo in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44; do
             echo "=== Running demo-$demo ==="
             set -o pipefail; make demo DEMO=$demo 2>&1 | tail -20
             echo ""

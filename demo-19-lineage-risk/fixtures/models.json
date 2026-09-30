@@ -1,0 +1,14 @@
+{
+  "models": [
+    {"id": "A", "parent": null, "pickle": false, "remote_code": false, "license_ok": true},
+    {"id": "B", "parent": null, "pickle": true, "remote_code": false, "license_ok": true},
+    {"id": "a1", "parent": "A", "pickle": false, "remote_code": false, "license_ok": true},
+    {"id": "a2", "parent": "A", "pickle": false, "remote_code": true, "license_ok": true},
+    {"id": "b1", "parent": "B", "pickle": false, "remote_code": false, "license_ok": true},
+    {"id": "b2", "parent": "B", "pickle": false, "remote_code": false, "license_ok": true},
+    {"id": "c1", "parent": "a2", "pickle": false, "remote_code": false, "license_ok": true},
+    {"id": "c2", "parent": "a1", "pickle": false, "remote_code": false, "license_ok": false}
+  ],
+  "seed": 19,
+  "note": "Toy teaching fixtures. Eight models with hand-picked flags so 6/8 are risky: one origin (B), two introduced (a2, c2), three inherited (b1, b2, c1). All models and verdicts are synthetic."
+}

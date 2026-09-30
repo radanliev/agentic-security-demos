@@ -1,0 +1,16 @@
+{
+  "papers": [
+    {"id": "p01", "channel": "content", "code": true, "data": true, "reproduces": true},
+    {"id": "p02", "channel": "content", "code": true, "data": true, "reproduces": true},
+    {"id": "p03", "channel": "content", "code": true, "data": false, "reproduces": false},
+    {"id": "p04", "channel": "tool", "code": true, "data": true, "reproduces": true},
+    {"id": "p05", "channel": "tool", "code": false, "data": false, "reproduces": false},
+    {"id": "p06", "channel": "tool", "code": true, "data": true, "reproduces": false},
+    {"id": "p07", "channel": "memory", "code": true, "data": true, "reproduces": true},
+    {"id": "p08", "channel": "memory", "code": false, "data": true, "reproduces": false},
+    {"id": "p09", "channel": "multiagent", "code": true, "data": true, "reproduces": false},
+    {"id": "p10", "channel": "multiagent", "code": false, "data": false, "reproduces": false}
+  ],
+  "seed": 32,
+  "note": "Synthetic teaching fixture. Ten hand-built papers; 6/10 share code+data, 4/10 reproduce (reproduce implies code+data)."
+}

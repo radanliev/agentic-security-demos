@@ -1,0 +1,14 @@
+{
+  "integrations": [
+    {"id": "i1", "provider": "files", "requested": ["read", "write", "admin"], "used": ["read"]},
+    {"id": "i2", "provider": "files", "requested": ["read"], "used": ["read"]},
+    {"id": "i3", "provider": "files", "requested": ["read", "write"], "used": ["read", "write"]},
+    {"id": "i4", "provider": "calendar", "requested": ["calendar.read", "calendar.write", "mail.send"], "used": ["calendar.read"]},
+    {"id": "i5", "provider": "files", "requested": ["files.read", "files.write"], "used": ["files.read"]},
+    {"id": "i6", "provider": "repo", "requested": ["repo", "workflow"], "used": ["repo"]},
+    {"id": "i7", "provider": "chat", "requested": ["chat"], "used": ["chat"]},
+    {"id": "i8", "provider": "drive", "requested": ["drive.read", "drive.write", "drive.admin"], "used": ["drive.read", "drive.write"]}
+  ],
+  "seed": 31,
+  "note": "Synthetic teaching fixture. Eight hand-built integrations; 5/8 request strictly more than they use."
+}

@@ -59,7 +59,7 @@ a publication, a venue result, or a measured effect size.
 
 Provenance: distilled from `demo-14-conformal-action-gating-icml` (private research repo).
 It shares no topic with Demo 15 (MCP ecosystem census): this demo is black-box
-statistical gating over action scores; Demo 15 is a measurement census over registry
+statistical gating over action scores; Demo 21 is a measurement census over registry
 manifests. Different venues (ICML vs EuroS&P), data, and claims.
 
 ### Difference from the Research Study

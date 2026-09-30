@@ -1,0 +1,10 @@
+{
+  "seed": 26,
+  "probes": ["fs-reach", "net-egress", "creds", "persist", "fork-bomb", "env-read", "proc-list", "dns"],
+  "configs": {
+    "none": {"fs-reach": true, "net-egress": true, "creds": true, "persist": true, "fork-bomb": true, "env-read": true, "proc-list": true, "dns": true},
+    "subprocess": {"fs-reach": false, "net-egress": true, "creds": false, "persist": false, "fork-bomb": false, "env-read": true, "proc-list": false, "dns": true},
+    "strict": {"fs-reach": false, "net-egress": false, "creds": false, "persist": false, "fork-bomb": false, "env-read": false, "proc-list": false, "dns": false}
+  },
+  "note": "Toy teaching fixtures. Hand-picked so escape rates are none 8/8, subprocess 3/8 (net-egress, dns, env-read), strict 0/8. All probes and verdicts are synthetic."
+}

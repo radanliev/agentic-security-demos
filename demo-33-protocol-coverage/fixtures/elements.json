@@ -1,0 +1,12 @@
+{
+  "elements": [
+    {"id": "discovery", "stated_mitigation": false, "known_attack": true},
+    {"id": "identity", "stated_mitigation": true, "known_attack": true},
+    {"id": "authorisation", "stated_mitigation": true, "known_attack": false},
+    {"id": "session", "stated_mitigation": true, "known_attack": true},
+    {"id": "transport", "stated_mitigation": true, "known_attack": false},
+    {"id": "streaming", "stated_mitigation": false, "known_attack": true}
+  ],
+  "seed": 33,
+  "note": "Synthetic teaching fixture. Six hand-built protocol elements; gaps are discovery and streaming (2/6)."
+}

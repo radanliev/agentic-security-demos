@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Demo 40: Corpus Union (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All records, texts and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - corpus-infrastructure
+  - deduplication
+  - licence-gating
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy unioning twelve synthetic corpus records across three
+  sources with SHA-256 dedupe and a permissive-only licence gate.
+  Stdlib only.

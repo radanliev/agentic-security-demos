@@ -1,0 +1,16 @@
+{
+  "stacks": [
+    {"id": "s01", "bind_public": true, "auth": false, "privileged": false, "pinned_vuln": false},
+    {"id": "s02", "bind_public": true, "auth": true, "privileged": false, "pinned_vuln": false},
+    {"id": "s03", "bind_public": false, "auth": false, "privileged": true, "pinned_vuln": false},
+    {"id": "s04", "bind_public": false, "auth": true, "privileged": false, "pinned_vuln": true},
+    {"id": "s05", "bind_public": true, "auth": true, "privileged": true, "pinned_vuln": false},
+    {"id": "s06", "bind_public": false, "auth": true, "privileged": false, "pinned_vuln": false},
+    {"id": "s07", "bind_public": true, "auth": false, "privileged": false, "pinned_vuln": true},
+    {"id": "s08", "bind_public": false, "auth": false, "privileged": false, "pinned_vuln": false},
+    {"id": "s09", "bind_public": true, "auth": true, "privileged": false, "pinned_vuln": true},
+    {"id": "s10", "bind_public": true, "auth": true, "privileged": false, "pinned_vuln": false}
+  ],
+  "seed": 30,
+  "note": "Synthetic teaching fixture. Ten hand-built stacks; 6/10 insecure of which 3 carry a pinned vuln."
+}
