@@ -43,7 +43,7 @@
 | 06 | **Network Recon** | 🟦 [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) (Plan A) / NDSS'28 (Plan B) | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
 | 07 | **Malware Triage** | 🟦 RAID 2027 | Statistical reconstruction of malware triage decisions | ✅ Active |
 | 08 | **File Inclusion** | 🟦 ASIACCS 2027 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
-| 09 | **MITM Interception** | 🟦 ESORICS 2027 | Ephemeral buffer interception for credential extraction detection | ✅ Active |
+| 09 | **MITM Interception** | 🟦 [S&P'27](http://sp2027.ieee-security.org/) (Plan A) / ESORICS'27 (Plan B) | Ephemeral buffer interception for credential extraction detection | ✅ Active |
 | 10 | **Vulnerability Assessment** | 🟦 [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) (Plan A) / ACSAC'27 (Plan B) | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
 | 11 | **Degenerate Reporting** | 🟦 [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) SoK (Plan A) / RAID'27 (Plan B) | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
 | 12 | **Provenance-Bound Authorization** | 🟦 USENIX Security 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
@@ -60,14 +60,14 @@
 | 23 | **Fault Injection** | 🟦 DSN 2027 | Dependability of agent pipelines under pipeline faults | ✅ Active |
 | 24 | **Delegation Checks** | 🟦 CSF 2027 | Authorization and agent-to-agent delegation properties | ✅ Active |
 | 25 | **Attestation Verifier** | 🟦 ACNS 2027 | Install-time provenance verification for agent supply chains | ✅ Active |
-| 26 | **Sandbox Probes** | 🟦 ACSAC 2027 | Agent sandbox isolation and exfiltration controls | ✅ Active |
+| 26 | **Sandbox Probes** | 🟦 [S&P'27](http://sp2027.ieee-security.org/) (Plan A) / ACSAC'27 (Plan B) | Agent sandbox isolation and exfiltration controls | ✅ Active |
 | 27 | **CI Trigger Scan** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / Black Hat'27 (Plan B) | Injection surface of coding agents wired to CI | ✅ Active |
 | 28 | **Memory Poisoning** | 🟩 [WWW'27](https://www2027.thewebconf.org/) demo track (Plan A) / DEF CON 35 (Plan B) | Persistent memory poisoning and the MemScope auditor toy | ✅ Active |
-| 29 | **Provenance Graphs** | 🟦 IEEE TIFS | Tamper-evident provenance for post-incident reconstruction | ✅ Active |
-| 30 | **Default Configs** | 🟦 IEEE TDSC | Insecure defaults in self-hosted LLM stacks | ✅ Active |
+| 29 | **Provenance Graphs** | 🟦 [S&P'27](http://sp2027.ieee-security.org/) (Plan A) / TIFS (Plan B) | Tamper-evident provenance for post-incident reconstruction | ✅ Active |
+| 30 | **Default Configs** | 🟦 [S&P'27](http://sp2027.ieee-security.org/) (Plan A) / TDSC (Plan B) | Insecure defaults in self-hosted LLM stacks | ✅ Active |
 | 31 | **Scope Creep** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / TOPS (Plan B) | OAuth scope over-privilege in agent integrations | ✅ Active |
 | 32 | **Reproducibility Audit** | 🟩 ACM CSUR | Artefact audit of the agent-security literature | ✅ Active |
-| 33 | **Protocol Coverage** | 🟩 IEEE COMST | Agent protocol element × threat coverage map | ✅ Active |
+| 33 | **Protocol Coverage** | 🟦 [S&P'27](http://sp2027.ieee-security.org/) SoK (Plan A) / COMST (Plan B) | Agent protocol element × threat coverage map | ✅ Active |
 | 34 | **Visual Injection** | 🟪 IEEE TPAMI | Typographic injection against vision-language agents | ✅ Active |
 | 35 | **Scaling Meta-regression** | 🟪 TMLR | Agent misbehaviour versus scale across benchmarks | ✅ Active |
 | 36 | **Card Debt** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / Nature MI (Plan B) | Documentation debt across open model cards | ✅ Active |
@@ -216,18 +216,31 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > | 39 Incident Taxonomy | incident-grounded harms, practitioner controls | S&P Magazine | CACM Practice |
 >
 > Stretch fourth: demo-37 (detector evaluation) joins only if HF pulls + detector runs land in week 1–2 and the [DECIDE] sample floors are registered immediately — otherwise it stays on CoSe (Jan 2027 schedule). Demo-22 is held out — FAccT would force skipping PoPETs Issue 3.
+>
+> 🔐 **Plan A / Plan B: the IEEE S&P'27 Cycle 2 slate (6 papers — the per-author cap).** Demo 4 plus five more go to **[IEEE S&P'27, Montreal](http://sp2027.ieee-security.org/)** — abstract registration 10 Nov 2026 (the 6-paper cap is enforced at registration), full paper 17 Nov 2026 ([CFP](http://sp2027.ieee-security.org/cfpapers.html); early reject 18 Jan 2027, final notification ~5 Mar 2027). Every demo below has its original venue due after the S&P decision, so a rejection drops it to Plan B, then Plan C — always sequential, never simultaneous. A rejected paper cannot return to S&P for a year. None overlap the WWW, USENIX or FAccT slates.
+>
+> | Demo | S&P angle | Plan B | Plan C |
+> |------|-----------|--------|--------|
+> | 04 AuthorityBound | already C2-bound | USENIX Sec'28 / CCS'27 | CCS'27 |
+> | 09 InterceptBound | provenance-bounded interception agent, live range | ESORICS'27 (spring cycle) | RAID'27 / ACSAC'27 |
+> | 30 Default Configs | insecure-defaults census with vendor-vs-operator attribution | TDSC | TIFS |
+> | 26 Sandbox Probes | isolation and exfiltration across agent sandboxes | ACSAC'27 | DIMVA'28 |
+> | 29 Provenance Graphs | logging sufficiency for attributing agent actions after an incident | TIFS | TDSC |
+> | 33 Protocol Coverage | SoK: security of agent communication protocols | COMST | Proc. IEEE |
+>
+> Date logic: PoPETs'27 Issue 3 (30 Nov), DSN'27 (2 Dec), AsiaCCS'27 R2 (11 Dec), ACNS'27 C2 (21 Jan), CSF'27 Winter (28 Jan) and ICML'27 (~28 Jan) all fall inside the S&P review window (17 Nov–~5 Mar), so demos 22, 23, 08, 25, 24 and 14 stay on their own venues. Alternates (swap in only before the 10 Nov registration, never as a seventh): demo-32 as an SoK (instead of 33), demo-42.
 
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
 | 01 | 🟦 [SATML](https://satml.org/) | 2027 | [SaTML'27 papers 29 Sep 2026 ⏰](https://satml.org/call-for-papers) | USENIX Sec'28 / S&P'28 next cycles | S&P'28 |
 | 02 | 🟩 [TOSEM](https://dl.acm.org/journal/tosem) / [CCS](https://www.sigsac.org/ccs/CCS2027) | — / 2027 | [♾️ TOSEM rolling](https://mc.manuscriptcentral.com/tosem) (primary); CCS'27 two cycles TBD (backup) | CCS'27 | EMSE |
 | 03 | 🟪 [NeurIPS](https://neurips.cc/) | 2027 | [NeurIPS'27 D&B CFP unpublished, TBD](https://neurips.cc/) | ICLR'28 / TMLR | TMLR |
-| 04 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2 papers 17 Nov 2026 — due in weeks](http://sp2027.ieee-security.org/cfpapers.html)** | USENIX Sec'28 / CCS'27 | CCS'27 |
+| 04 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2 papers 17 Nov 2026 (abstract 10 Nov) — due in weeks](http://sp2027.ieee-security.org/cfpapers.html)** | USENIX Sec'28 / CCS'27 | CCS'27 |
 | 05 | 🟦 [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 1 submitted 25 Aug 2026, training continues](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | NDSS'28 / S&P'28 (if C1 rejected) | S&P'28 |
 | 06 | 🟦 [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027 (reg. 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | NDSS'28 | TDSC |
 | 07 | 🟦 [RAID](https://dl.acm.org/conference/raid) | 2027 | [RAID'27 CFP unpublished, TBD](https://dl.acm.org/conference/raid) | DIMVA'27 / ACSAC'27 | ESORICS'28 |
 | 08 | 🟦 [ASIACCS](https://asiaccs2027.cityu.edu.mo/) | 2027 | 🟠 **[AsiaCCS'27 Round 2 papers 11 Dec 2026](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html)** | ESORICS'27 C2 / RAID'27 | RAID'28 |
-| 09 | 🟦 [ESORICS](https://conf.laas.fr/esorics) | 2027 | [ESORICS'27 CFP unpublished, TBD](https://conf.laas.fr/esorics) | RAID'27 / ACSAC'27 | ACSAC'28 |
+| 09 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2: abstract 10 Nov, paper 17 Nov 2026 (Plan A)](http://sp2027.ieee-security.org/cfpapers.html)**; [ESORICS'27 CFP unpublished, TBD](https://conf.laas.fr/esorics) (Plan B) | ESORICS'27 (spring cycle) | RAID'27 / ACSAC'27 |
 | 10 | 🟦 [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027 (reg. 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | ACSAC'27 | RAID'28 |
 | 11 | 🟦 [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) (SoK) | 2027 | [USENIX'27 Cycle 2 papers 26 Jan 2027 (reg. 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | RAID'27 | ESORICS'28 |
 | 12 | 🟦 [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | 🟡 [USENIX'27 Cycle 2 papers 26 Jan 2027](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | NDSS'28 / CCS'27 | CCS'28 |
@@ -244,14 +257,14 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 23 | 🟦 [DSN](https://dsn2027-berlin.github.io/) | 2027 | 🟠 **[DSN'27 abstract 25 Nov 2026; paper 2 Dec 2026](https://dsn2027-berlin.github.io/call-for-contributions)** | DSN'28 / ISSRE'27 / TDSC | TDSC |
 | 24 | 🟦 [CSF](https://csf2027.ieee-security.org/) | 2027 | 🟡 [CSF'27 Winter cycle 28 Jan 2027](https://csf2027.ieee-security.org/cfp.html) | CSF'28 / ESORICS'27 C2 / CCS'27 | ESORICS'28 |
 | 25 | 🟦 [ACNS](https://acns2027.isg.rhul.ac.uk/) | 2027 | 🟡 [ACNS'27 Cycle 2: 21 Jan 2027](https://acns2027.isg.rhul.ac.uk/calls/papers) | ESORICS'27 C2 / EuroS&P'28 / AsiaCCS'28 | EuroS&P'28 |
-| 26 | 🟦 [ACSAC](https://acsac.org/) | 2027 | [ACSAC'27 ~26 May 2027 (projection)](https://submit.acsac.org/) | RAID'27 / DIMVA'27 / AsiaCCS'28 | DIMVA'28 |
+| 26 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2: abstract 10 Nov, paper 17 Nov 2026 (Plan A)](http://sp2027.ieee-security.org/cfpapers.html)**; [ACSAC'27 ~26 May 2027 (projection)](https://submit.acsac.org/) (Plan B) | ACSAC'27 | DIMVA'28 / AsiaCCS'28 |
 | 27 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark> | BH USA'27 / Arsenal | DEF CON Demo Labs |
 | 28 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🟠 <mark>**[WWW'27 demo paper 16 Nov 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark>; [DEF CON 35 CFP ~1 May 2027 (Plan B)](https://www.defcon.org/index.html) | DEF CON 35 / AI Village posters | BH Arsenal |
-| 29 | 🟦 [IEEE TIFS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | TDSC / TOPS / CoSe | TOPS |
-| 30 | 🟦 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | TIFS / TOPS / IEEE TRel | CoSe |
+| 29 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2: abstract 10 Nov, paper 17 Nov 2026 (Plan A)](http://sp2027.ieee-security.org/cfpapers.html)**; [TIFS ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) (Plan B) | TIFS | TDSC |
+| 30 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2: abstract 10 Nov, paper 17 Nov 2026 (Plan A)](http://sp2027.ieee-security.org/cfpapers.html)**; [TDSC ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) (Plan B) | TDSC | TIFS |
 | 31 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | TOPS | TDSC |
 | 32 | 🟩 [ACM CSUR](https://dl.acm.org/journal/csur) | — | [♾️ *Rolling — no deadline*](https://dl.acm.org/journal/csur) | COMST / DTRAP / CSR | COMST |
-| 33 | 🟩 [IEEE COMST](https://www.comsoc.org/publications/journals/ieee-communications-surveys-tutorials) | — | [♾️ *Rolling — no deadline*](https://www.comsoc.org/publications/journals/ieee-comst/call-for-papers) | CSUR / Proc. IEEE / IEEE Network | Proc. IEEE |
+| 33 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) (SoK) | 2027 | 🟠 **[S&P'27 Cycle 2: abstract 10 Nov, paper 17 Nov 2026 (Plan A)](http://sp2027.ieee-security.org/cfpapers.html)**; [COMST ♾️ rolling](https://www.comsoc.org/publications/journals/ieee-comst/call-for-papers) (Plan B) | COMST | Proc. IEEE |
 | 34 | 🟪 [IEEE TPAMI](https://www.computer.org/csdl/journal/tp) | — | [♾️ *Rolling — no deadline*](https://www.computer.org/csdl/journal/tp) | TNNLS / TIP / TIFS | TIFS |
 | 35 | 🟪 [TMLR](https://jmlr.org/tmlr/) | — | [♾️ *Rolling — no deadline*](https://jmlr.org/tmlr/) | JMLR / DMLR / ICML'28 | JMLR |
 | 36 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark>; Nature MI ♾️ rolling (Plan B) | Nature MI | Patterns |
