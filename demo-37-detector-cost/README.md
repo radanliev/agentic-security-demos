@@ -1,6 +1,12 @@
 # Demo 37: Detector Cost
 
-> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output.
+<p align="center">
+  <img src="https://img.shields.io/badge/Teaching%20demo-Synthetic%20only-blue?style=flat-square" alt="Teaching demo">
+  <img src="https://img.shields.io/badge/Python-3.11%2B-blue?style=flat-square" alt="Python 3.11+">
+  <img src="https://img.shields.io/badge/Network-Offline%20only-success?style=flat-square" alt="Offline only">
+</p>
+
+> **▶️ New here? Follow the step-by-step [Execution Instructions](INSTRUCTIONS.md)** — every command with expected output, plus a reproducibility protocol for study participants.
 
 ## Learning Objectives
 
@@ -43,6 +49,17 @@ Tune the threshold with costs, not accuracy.
 | Python | 3.11+ (stdlib only) |
 | OS | Linux/macOS/Windows |
 | Command | `make demo DEMO=37` |
+
+## Reproducibility Table (fill in your run)
+
+| Field | Your run |
+|-------|----------|
+| Python version | |
+| `pytest` result | 21 passed / ___ failed |
+| Strict cost / Lenient cost | ___ / ___ |
+| Winner | ___ |
+| Winner after Step 4 experiment (`fn_cost=5`) | ___ |
+| Commit | Git SHA or `local` |
 
 ## Research Connection
 

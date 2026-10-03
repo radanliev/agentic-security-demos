@@ -29,7 +29,8 @@ demo: setup
 	@echo ""
 	@cd $(DEMO_DIR) && $(PYTHON) student/run_tax.py
 	@echo ""
-	@echo "Wrote results/taxonomy.json"
+	@echo "Results:"
+	@cat $(DEMO_DIR)/results/taxonomy.json | $(PYTHON) -m json.tool
 
 clean:
 	@rm -rf $(DEMO_DIR)/results/
