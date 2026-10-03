@@ -46,7 +46,7 @@ Gaps: 2/6 (discovery, streaming).
 ## Research Connection
 
 This demo illustrates the mapping question of a pending tutorial and survey
-of agent protocol security targeting IEEE COMST. That survey has **collected
+of agent protocol security targeting IEEE S&P 2027 Cycle 2 as an SoK (Plan A; IEEE COMST as Plan B). That survey has **collected
 no confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing
 here describes a publication, a venue result, or a measured effect size.
 Boundary: this demo is a survey mapping exercise, not formal analysis
