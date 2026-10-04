@@ -297,18 +297,18 @@ jobs:
 
       - name: Verify result schema consistency
         run: |
-          python3 -c "
-import json, glob, sys
-schema_keys = {'demo','experiment','seed','commit','environment','command','result','notes'}
-for f in glob.glob('demo-*/results/*.json') + glob.glob('demo-*/tests/*.json'):
-    try:
-        with open(f) as fp:
-            data = json.load(fp)
-        if not schema_keys.issubset(data.keys()):
-            print(f'WARNING: {f} missing keys: {schema_keys - set(data.keys())}')
-    except Exception as e:
-        print(f'ERROR reading {f}: {e}')
-          "
+          python3 - <<'PY'
+          import json, glob
+          schema_keys = {'demo','experiment','seed','commit','environment','command','result','notes'}
+          for f in glob.glob('demo-*/results/*.json') + glob.glob('demo-*/tests/*.json'):
+              try:
+                  with open(f) as fp:
+                      data = json.load(fp)
+                  if not schema_keys.issubset(data.keys()):
+                      print(f'WARNING: {f} missing keys: {schema_keys - set(data.keys())}')
+              except Exception as e:
+                  print(f'ERROR reading {f}: {e}')
+          PY
 
   code-quality:
     name: Code Quality

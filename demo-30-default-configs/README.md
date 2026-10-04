@@ -44,7 +44,7 @@ no privileged flag, no pinned vuln.
 ## Research Connection
 
 This demo illustrates the measurement question of a pending IaC study
-targeting IEEE TDSC. That study has **collected no confirmatory data**; every
+targeting IEEE S&P 2027 Cycle 2 (Plan A; IEEE TDSC as Plan B). That study has **collected no confirmatory data**; every
 quantity there is `[RESULT PENDING]`. Nothing here describes a publication, a
 venue result, or a measured effect size. No live scanning is performed here;
 all inputs are synthetic. Boundary: this demo covers deployment configs, not
