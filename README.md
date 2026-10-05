@@ -36,7 +36,7 @@
 | # | Demo | Venue | Focus | Status |
 |---|------|-------|-------|--------|
 | 01 | **Blind Verification** | 🟦 SATML 2027 | Cryptographic verification of agent outputs without trusted execution environments | ✅ Active |
-| 02 | **Supply Chain AIBOM Drift** | 🟩 TOSEM / CCS 2027 | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
+| 02 | **Supply Chain AIBOM Drift** | 🟩 TOSEM | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
 | 03 | **Eval Design Invariants** | 🟪 NeurIPS 2027 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
 | 04 | **Prompt Injection & Tool Authority** | 🟦 IEEE SP 2027 | Capability-based authority mediation for tool-using agents | ✅ Active |
 | 05 | **Evidence Release Assurance** | 🟦 USENIX Security 2027 | Cryptographic evidence chains for agent accountability | ✅ Active |
@@ -205,7 +205,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > | 13 Typed Commitments | already C2-bound | CSF'27 | EuroS&P'28 |
 > | 44 Toolflow Taint | agent dispatch measurement | CCS'27 | NDSS'28 |
 >
-> Contingencies (not counted): demo-21 if WWW-rejected 4 Jan (22 days to rework); demo-4 only on S&P early-reject 18 Jan; demo-2 only if TOSEM is held past 26 Jan. All papers need a mandatory Open Science appendix and anonymous artifact links (4open.science, ID `SEC27`).
+> Contingencies (not counted): demo-21 if WWW-rejected 4 Jan (22 days to rework); demo-4 only on S&P early-reject 18 Jan. All papers need a mandatory Open Science appendix and anonymous artifact links (4open.science, ID `SEC27`).
 >
 > ⚖️ **Plan A / Plan B: the FAccT'27 slate (3 papers, no author cap).** Three demos go to **[FAccT'27, Porto](https://facctconference.org/)** — abstract 27 Oct 2026, paper 3 Nov 2026 ([CFP](https://facctconference.org/2027/cfp.html); accept/revise/reject 22 Dec 2026, revision due 28 Jan 2027). No per-author cap, but every author on every paper must sign up to review or face desk rejection. If rejected (final notification 23 Mar 2027), each drops to Plan B, then Plan C. None overlap the WWW or USENIX slates; all originals are rolling venues held for after.
 >
@@ -233,7 +233,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
 | 01 | 🟦 [SATML](https://satml.org/) | 2027 | [SaTML'27 papers 29 Sep 2026 ⏰](https://satml.org/call-for-papers) | USENIX Sec'28 / S&P'28 next cycles | S&P'28 |
-| 02 | 🟩 [TOSEM](https://dl.acm.org/journal/tosem) / [CCS](https://www.sigsac.org/ccs/CCS2027) | — / 2027 | [♾️ TOSEM rolling](https://mc.manuscriptcentral.com/tosem) (primary); CCS'27 two cycles TBD (backup) | CCS'27 | EMSE |
+| 02 | 🟩 [TOSEM](https://dl.acm.org/journal/tosem) | — | [♾️ TOSEM rolling](https://mc.manuscriptcentral.com/tosem) | CCS'27 (only after a TOSEM decision) | EMSE (only after a CCS decision) |
 | 03 | 🟪 [NeurIPS](https://neurips.cc/) | 2027 | [NeurIPS'27 D&B CFP unpublished, TBD](https://neurips.cc/) | ICLR'28 / TMLR | TMLR |
 | 04 | 🟦 [IEEE SP](http://sp2027.ieee-security.org/) | 2027 | 🟠 **[S&P'27 Cycle 2 papers 17 Nov 2026 (abstract 10 Nov) — due in weeks](http://sp2027.ieee-security.org/cfpapers.html)** | USENIX Sec'28 / CCS'27 | CCS'27 |
 | 05 | 🟦 [USENIX Security](https://www.usenix.org/conference/usenixsecurity27) | 2027 | [USENIX'27 Cycle 1 submitted 25 Aug 2026, training continues](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | NDSS'28 / S&P'28 (if C1 rejected) | S&P'28 |
