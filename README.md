@@ -36,7 +36,7 @@
 | # | Demo | Venue | Focus | Status |
 |---|------|-------|-------|--------|
 | 01 | **Blind Verification** | 🟦 SATML 2027 | Cryptographic verification of agent outputs without trusted execution environments | ✅ Active |
-| 02 | **Supply Chain AIBOM Drift** | 🟩 TOSEM | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
+| 02 | **Supply Chain AIBOM Drift** | 🟩 EMSE | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
 | 03 | **Eval Design Invariants** | 🟪 NeurIPS 2027 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
 | 04 | **Prompt Injection & Tool Authority** | 🟦 under submission | Capability-based authority mediation for tool-using agents | ✅ Active |
 | 05 | **Evidence Release Assurance** | 🟩 [FAccT'27](https://facctconference.org/) | Cryptographic evidence chains for agent accountability | ✅ Active |
@@ -235,7 +235,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
 | 01 | 🟦 [SATML](https://satml.org/) | 2027 | [SaTML'27 papers 29 Sep 2026 ⏰](https://satml.org/call-for-papers) | USENIX Sec'28 / S&P'28 next cycles | S&P'28 |
-| 02 | 🟩 [TOSEM](https://dl.acm.org/journal/tosem) | — | [♾️ TOSEM rolling](https://mc.manuscriptcentral.com/tosem) | CCS'27 (only after a TOSEM decision) | EMSE (only after a CCS decision) |
+| 02 | 🟩 [EMSE](https://link.springer.com/journal/10664) | — | [♾️ EMSE rolling](https://www.editorialmanager.com/emse) | IEEE TSE (only after an EMSE decision) | MSR'27 (only after a TSE decision) |
 | 03 | 🟪 [NeurIPS](https://neurips.cc/) | 2027 | [NeurIPS'27 D&B CFP unpublished, TBD](https://neurips.cc/) | ICLR'28 / TMLR | TMLR |
 | 04 | 🟦 under submission | 2027 | in preparation | USENIX Sec'28 / CCS'27 | CCS'27 |
 | 05 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | EuroS&P'27 / AsiaCCS'27 | NDSS'28 |
