@@ -194,7 +194,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 >
 > Date logic: EuroS&P'27 (25 Nov), BH Asia (20 Oct) and FAccT'27 (3 Nov) all fall inside the WWW review window (25 Oct–4 Jan), so they cannot back up a WWW rejection — Plan Bs above are all actionable after 4 Jan 2027.
 >
-> 🛡️ **Plan A / Plan B: the USENIX'27 Cycle 2 slate (6 papers).** Demo 5 was rejected from Cycle 1 (moved to IEEE S&P'27 Cycle 2 Plan A), so six other demos go to **[USENIX Security '27, Denver](https://www.usenix.org/conference/usenixsecurity27)** — registration 19 Jan 2027, papers 26 Jan 2027, artifacts 29 Jan 2027 ([CFP](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)). Cycle 1 rejects cannot go to Cycle 2, and S&P C2 / AsiaCCS R2 papers are locked in review — the six below are clear.
+> 🛡️ **Plan A / Plan B: the USENIX'27 Cycle 2 slate (6 papers).** Demo 5 goes to IEEE S&P'27 Cycle 2 Plan A, so six other demos go to **[USENIX Security '27, Denver](https://www.usenix.org/conference/usenixsecurity27)** — registration 19 Jan 2027, papers 26 Jan 2027, artifacts 29 Jan 2027 ([CFP](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)). S&P C2 / AsiaCCS R2 papers are locked in review — the six below are clear.
 >
 > | Demo | USENIX angle | Plan B | Plan C |
 > |------|-------------|--------|--------|
