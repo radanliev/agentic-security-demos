@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (venue notes, 8 October 2026)
+- Root `README`, demo 02 (Supply Chain AIBOM Drift): Plan A re-targeted to Empirical Software Engineering (EMSE, Springer; rolling), Plan B IEEE TSE (only after an EMSE decision), Plan C MSR'27 (only after a TSE decision). Previously TOSEM / CCS'27 / EMSE. Backups remain sequential, never simultaneous.
+
 ### Changed (venue notes, 3 October 2026)
 - Root `README`: venue notes for several teaching demos were revised.
 - `demo-26`, `demo-29`, `demo-30` and `demo-33` READMEs: Research Connection wording updated.
