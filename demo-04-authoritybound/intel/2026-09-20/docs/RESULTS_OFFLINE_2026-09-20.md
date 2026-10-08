@@ -1,8 +1,8 @@
 # RESULTS_OFFLINE — demo-4 AgentDojo + Nemotron IPI
 
 **Date:** 2026-09-20 10:29 CEST (Europe/Skopje)  
-**Repo (intended Mac path):** `/Users/skywalker/Projects/demo-4-prompt-injection-tool-authority-ieee-sp`  
-**Executor working tree:** `/workspace/demo-4-prompt-injection-tool-authority-ieee-sp`
+**Repo:** an associated research project  
+**Executor working tree:** an associated research project
 **Mac sync:** 2026-09-20 ~10:38 CEST — docs, script, manifests, and external_data trees landed on Luke-Skywalker; branch `intel/offline-agentdojo-nemotron`.  
 **Branch target:** `intel/offline-agentdojo-nemotron`  
 **DATA_PACK:** `docs/data_opportunities/DATA_PACK.md`  

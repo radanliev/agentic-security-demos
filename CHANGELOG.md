@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed (IEEE S&P'27 Cycle 2 slate, 3 October 2026)
-- Root `README`: new S&P'27 Cycle 2 slate block (demo-04 plus 09, 26, 29, 30, 33; abstract 10 Nov, paper 17 Nov 2026; six-paper per-author cap), with each demo's original venue kept as Plan B and the next venue as Plan C. Rows 09, 26, 29, 30 and 33 in the demo table and the venue table now show S&P'27 as Plan A. Only demos whose own venue falls after the S&P review window (17 Nov–~5 Mar) are on the slate.
-- `demo-26`, `demo-29`, `demo-30`, `demo-33` READMEs: the Research Connection names S&P'27 as the Plan A training ground and the former target as Plan B.
+### Changed (venue notes, 3 October 2026)
+- Root `README`: venue notes for several teaching demos were revised.
+- `demo-26`, `demo-29`, `demo-30` and `demo-33` READMEs: Research Connection wording updated.
 
 ### Added (12-demo expansion, September 2026)
 - **demo-12-provenancebound**: teaching companion to Conference Paper 12 (`demo-12-provenance-authz-calendar-sacmat`, SACMAT 2027). Provenance-aware authorization for untrusted calendar content: derived provenance (structure-only, fail-closed), lexical detector with Unicode canonicalization, naive verb+endpoint agent (inert, oracle-refusing), provenance-aware deny policy (high-risk untrusted always blocked, even on detector miss `cal_008`). 8 synthetic invites, 44 tests, standard structure (`README`/`INSTRUCTIONS`/`Makefile`/`fixtures`/`results`/`solutions`/`student`/`tests`).

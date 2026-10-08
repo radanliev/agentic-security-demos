@@ -43,13 +43,13 @@ chain verifies; a copy with one edited authority field fails verification.
 
 ## Research Connection
 
-This demo illustrates the reconstruction question of a pending AgentForensics
-study targeting IEEE S&P 2027 Cycle 2 (Plan A; IEEE TIFS as Plan B). That study has **collected no confirmatory data**;
+This demo illustrates the reconstruction question of a pending study
+of post-incident provenance (an associated research project, in preparation; IEEE TIFS as a later venue). That study has **collected no confirmatory data**;
 every quantity there is `[RESULT PENDING]`. Nothing here describes a
 publication, a venue result, or a measured effect size. Boundary: this demo is
 post-incident reconstruction, not release assurance (Demo 05).
 
-Provenance: distilled from `demo-29-agent-forensics-provenance-tifs` (private research repo).
+Provenance: distilled from an associated research project.
 
 ### Difference from the Research Study
 

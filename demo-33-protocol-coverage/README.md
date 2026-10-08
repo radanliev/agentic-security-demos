@@ -45,14 +45,14 @@ Gaps: 2/6 (discovery, streaming).
 
 ## Research Connection
 
-This demo illustrates the mapping question of a pending tutorial and survey
-of agent protocol security targeting IEEE S&P 2027 Cycle 2 as an SoK (Plan A; IEEE COMST as Plan B). That survey has **collected
+This demo illustrates the mapping question of a pending survey
+of agent protocol security (an associated research project, in preparation; IEEE COMST as a later venue). That survey has **collected
 no confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing
 here describes a publication, a venue result, or a measured effect size.
 Boundary: this demo is a survey mapping exercise, not formal analysis
 (Demo 24).
 
-Provenance: distilled from `demo-33-agent-protocol-security-survey-comst` (private research repo).
+Provenance: distilled from an associated research project.
 
 ### Difference from the Research Study
 

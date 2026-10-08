@@ -43,14 +43,14 @@ no privileged flag, no pinned vuln.
 
 ## Research Connection
 
-This demo illustrates the measurement question of a pending IaC study
-targeting IEEE S&P 2027 Cycle 2 (Plan A; IEEE TDSC as Plan B). That study has **collected no confirmatory data**; every
+This demo illustrates the measurement question of a pending study of
+insecure defaults in self-hosted stacks (an associated research project, in preparation; IEEE TDSC as a later venue). That study has **collected no confirmatory data**; every
 quantity there is `[RESULT PENDING]`. Nothing here describes a publication, a
 venue result, or a measured effect size. No live scanning is performed here;
 all inputs are synthetic. Boundary: this demo covers deployment configs, not
 the vulnerability lifecycle (Demo 42).
 
-Provenance: distilled from `demo-30-llm-stack-insecure-defaults-tdsc` (private research repo).
+Provenance: distilled from an associated research project.
 
 ### Difference from the Research Study
 

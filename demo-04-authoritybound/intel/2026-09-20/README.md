@@ -1,6 +1,6 @@
 # Intel pack — demo-04 (2026-09-20)
 
-**Source repo:** `demo-4-prompt-injection-tool-authority-ieee-sp` @ `intel/offline-agentdojo-nemotron` (`1e2f6ff`)  
+**Source repo:** an associated research project (`1e2f6ff`)  
 **Claim level:** exploratory offline — **no OpenRouter**.
 
 ## Contents
