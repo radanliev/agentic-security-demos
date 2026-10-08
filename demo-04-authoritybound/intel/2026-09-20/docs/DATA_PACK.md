@@ -1,6 +1,6 @@
-# DATA_PACK — `demo-4-prompt-injection-tool-authority-ieee-sp`
+# DATA_PACK — associated research project
 
-**Venue:** IEEE S&P 2027  
+**Venue:** under submission  
 **Core claim:** Evaluation protocol for tool reference monitors: six diagnostics that explain when a reported ASR=0 is harness-decidable rather than defence-earned (AgentDojo + own harness).  
 **Gap:** Already uses AgentDojo; can add Nemotron IPI + agentic PI boundary pairs for detector/monitor ablations without OpenRouter spend.  
 **Generated:** 2026-09-20 10:30 CEST (Europe/Skopje)  
