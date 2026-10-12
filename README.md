@@ -39,7 +39,7 @@
 | 02 | **Supply Chain AIBOM Drift** | 🟩 EMSE | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
 | 03 | **Eval Design Invariants** | 🟪 NeurIPS 2027 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
 | 04 | **Prompt Injection & Tool Authority** | 🟦 under submission | Capability-based authority mediation for tool-using agents | ✅ Active |
-| 05 | **Evidence Release Assurance** | 🟩 [FAccT'27](https://facctconference.org/) | Cryptographic evidence chains for agent accountability | ✅ Active |
+| 05 | **Evidence Release Assurance** | 🟦 IEEE TDSC (submitted Oct 2026; formerly USENIX Security '27 C1, desk-rejected for introduction formatting) | Cryptographic evidence chains for agent accountability | ✅ Active |
 | 06 | **Network Recon** | 🟦 [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) (Plan A) / NDSS'28 (Plan B) | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
 | 07 | **Malware Triage** | 🟦 RAID 2027 | Statistical reconstruction of malware triage decisions | ✅ Active |
 | 08 | **File Inclusion** | 🟦 ASIACCS 2027 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
