@@ -193,7 +193,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > | Demo 27 | Web Infrastr. and Agentic Systems | Black Hat USA'27 | DEF CON Demo Labs |
 > | Demo 36 | Responsible Web | Nature MI (post-rejection fallback only) | Patterns |
 > | Demo 43 | Responsible Web | AIES'27 (post-rejection only) | FAccT'28 |
-> | Demo 28 | S&P'27 C2 research paper (moved from WWW demo track) | DEF CON 35 | BH Arsenal |
+> | Demo 28 | WWW'27 Demo track (4 pages, single-blind, not anonymous; due 16 Nov 2026, notification 4 Jan 2027, final 31 Jan 2027; Companion Proceedings) | DEF CON 35 | BH Arsenal |
 >
 > Date logic: EuroS&P'27 (25 Nov), BH Asia (20 Oct) and FAccT'27 (3 Nov) all fall inside the WWW review window (25 Oct–4 Jan), so they cannot back up a WWW rejection — Plan Bs above are all actionable after 4 Jan 2027.
 >
@@ -218,16 +218,15 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 >
 > Confirmed fourth: demo-37 is now Plan A FAccT'27 — CoSe held as Plan B, TDSC as Plan C. Demo-22 is held out — FAccT would force skipping PoPETs Issue 3. Demo 45 also lists FAccT'27 as its Plan A, so the FAccT'27 load is five papers, and the 2027 author guide asks every author of every paper to sign up as a reviewer.
 >
-> 🔐 **Plan A / Plan B: seven papers on the IEEE S&P'27 Cycle 2 slate.** Seven demos go to **IEEE S&P'27 Cycle 2** — abstract 10 Nov, papers 17 Nov 2026. A rejection drops each one to Plan B, then Plan C — always sequential, never simultaneous. None overlap the WWW, USENIX or FAccT slates.
+> 🔐 **Plan A / Plan B: six papers on the IEEE S&P'27 Cycle 2 slate.** Six demos go to **IEEE S&P'27 Cycle 2** — abstract 10 Nov, papers 17 Nov 2026. A rejection drops each one to Plan B, then Plan C — always sequential, never simultaneous. None overlap the WWW, USENIX or FAccT slates.
 >
-> ⚠️ **Cap check (verified 13 Oct 2026 on the [S&P'27 call](https://sp2027.ieee-security.org/cfpapers.html)):** S&P'27 allows at most **6 papers per author per cycle**, enforced at abstract registration (10 Nov 2026). Above the cap, **all** of that author's registrations in the cycle are desk-rejected. This slate lists 7, so one must move before 10 Nov. Papers rejected at S&P must also wait one year before resubmitting there.
+> ⚠️ **Cap check (verified 13 Oct 2026 on the [S&P'27 call](https://sp2027.ieee-security.org/cfpapers.html)):** S&P'27 allows at most **6 papers per author per cycle**, enforced at abstract registration (10 Nov 2026). Above the cap, **all** of that author's registrations in the cycle are desk-rejected. This slate lists 6 (demo 28 moved back to the WWW'27 Demo track), so it is within the cap. Papers rejected at S&P must also wait one year before resubmitting there.
 >
 > | Demo | Plan B | Plan C |
 > |------|--------|--------|
 > | Demo 04 | USENIX Sec'28 / CCS'27 | CCS'27 |
 > | Demo 09 | ESORICS'27 (spring cycle) | RAID'27 / ACSAC'27 |
 > | Demo 26 | ACSAC'27 | DIMVA'28 |
-> | Demo 28 | DEF CON 35 | BH Arsenal |
 > | Demo 29 | TIFS | TDSC |
 > | Demo 30 | TDSC | TIFS |
 > | Demo 33 | COMST | Proc. IEEE |
@@ -275,7 +274,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 25 | 🟦 [ACNS](https://acns2027.isg.rhul.ac.uk/) | 2027 | 🟡 [ACNS'27 Cycle 2: 21 Jan 2027](https://acns2027.isg.rhul.ac.uk/calls/papers) | ESORICS'27 C2 / EuroS&P'28 / AsiaCCS'28 | EuroS&P'28 |
 | 26 | 🟦 IEEE S&P'27 C2 | 2027 | S&P'27 Cycle 2 papers 17 Nov 2026 (Plan A); [ACSAC'27 ~26 May 2027 (projection)](https://submit.acsac.org/) (Plan B) | ACSAC'27 | DIMVA'28 / AsiaCCS'28 |
 | 27 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark> | BH USA'27 / Arsenal (post-rejection only) | DEF CON Demo Labs |
-| 28 | 🟦 IEEE S&P'27 C2 | 2027 | S&P'27 Cycle 2 research paper 17 Nov 2026 (Plan A); [DEF CON 35 CFP ~1 May 2027 (Plan B)](https://www.defcon.org/index.html) | DEF CON 35 / AI Village posters | BH Arsenal |
+| 28 | 🟩 [WWW'27 Demo track](https://www2027.thewebconf.org/demos/) | 2027 | 🟠 WWW'27 demo paper 16 Nov 2026 (Plan A; 4 pages, single-blind, Companion Proceedings); [DEF CON 35 CFP ~1 May 2027 (Plan B)](https://www.defcon.org/index.html) | DEF CON 35 / AI Village posters | BH Arsenal |
 | 29 | 🟦 IEEE S&P'27 C2 | 2027 | S&P'27 Cycle 2 papers 17 Nov 2026 (Plan A); [TIFS ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) (Plan B) | TIFS | TDSC |
 | 30 | 🟦 IEEE S&P'27 C2 | 2027 | S&P'27 Cycle 2 papers 17 Nov 2026 (Plan A); [TDSC ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) (Plan B) | TDSC | TIFS |
 | 31 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | TOPS | TDSC |
