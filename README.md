@@ -79,7 +79,7 @@
 | 42 | **Patch Lifecycle** | 🟩 IEEE TSE | Vulnerability lifecycle and patch adoption lag | ✅ Active |
 | 43 | **Terms Coding** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / AIES'27 (Plan B) | Platform terms accountability allocation | ✅ Active |
 | 44 | **Toolflow Taint** | 🟦 CCS'27 | Cross-tool dataflow integrity tracking | ✅ Active |
-| 45 | **Exact Nulls for Localisation Claims** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / USENIX'27 C2 (Plan B) | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
+| 45 | **Exact Nulls for Localisation Claims** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / USENIX'27 C2 (Plan B) / TDSC (Plan C) | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
