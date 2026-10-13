@@ -80,6 +80,7 @@
 | 43 | **Terms Coding** | Platform terms accountability allocation | ✅ Active |
 | 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | ✅ Active |
 | 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
+| 46 | **Simulated Embedding Drift (AIBOM)** | Seeded study of simulated embedding-model swap effects on supply-chain artefact triage; one-page skeleton, simulated models only | 🚧 Skeleton |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -291,6 +292,8 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 42 | 🟩 [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | ESE / TOSEM / ICSE journal-first | TOSEM |
 | 43 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark> | AIES'27 | FAccT'28 |
 | 44 | 🟦 [CCS](https://www.sigsac.org/ccs/CCS2027/) | 2027 | CCS'27 | NDSS'28 | — |
+| 45 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | USENIX Sec'27 C2 ([papers 26 Jan 2027, reg. 19 Jan](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)) | [TDSC ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
+| 46 | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) | — | ♾️ *Rolling — submit only after real-model rebuild (currently one-page skeleton, simulated models)* | USENIX SAIS'27 (4 Feb 2027) | [JISA ♾️ rolling](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) |
 
 ---
 
