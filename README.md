@@ -4,7 +4,7 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 44 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Computers & Security, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
+  <strong>A curated collection of 45 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Computers & Security, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
 </p>
 
 > 🐣 **Padawan-practice notice (read before citing).** These are my teaching demos by Petar Radanliev — training missions for the classroom, not Jedi trials. Like Padawan exercises, each demo **may or may not be converted into a full paper**, and any paper **may or may not be accepted** at its listed venue. The venue column names the *training ground* that inspired the exercise, never a publication claim. No preprints, no datasets deposited, no reviewer verdicts — just lightsabers set to stun (synthetic fixtures, offline only).
@@ -79,6 +79,7 @@
 | 42 | **Patch Lifecycle** | 🟩 IEEE TSE | Vulnerability lifecycle and patch adoption lag | ✅ Active |
 | 43 | **Terms Coding** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / AIES'27 (Plan B) | Platform terms accountability allocation | ✅ Active |
 | 44 | **Toolflow Taint** | 🟦 CCS'27 | Cross-tool dataflow integrity tracking | ✅ Active |
+| 45 | **Exact Nulls for Localisation Claims** | 🟦 SaTML 2027 | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -103,7 +104,7 @@ pip install -e ".[dev]"
 # Run every demo's test suite
 make test
 
-# Run one demo's suite (folders demo-01 … demo-13)
+# Run one demo's suite (folders demo-01 … demo-45)
 make test DEMO=01
 ```
 
@@ -115,7 +116,7 @@ All demos run offline from the repository root — no API keys, no network.
 Each demo folder also has step-by-step `INSTRUCTIONS.md` with expected outputs.
 
 ```bash
-# Run a teaching demo (folders demo-01 … demo-44)
+# Run a teaching demo (folders demo-01 … demo-45)
 make demo DEMO=01   # Blind Verification
 make demo DEMO=04   # Prompt Injection Authority
 make demo DEMO=07   # Malware Triage
@@ -124,6 +125,7 @@ make demo DEMO=14   # Conformal Action Gating (ICML toy)
 make demo DEMO=21   # MCP Ecosystem Census (EuroS&P toy)
 make demo DEMO=28   # Memory Poisoning (DEF CON toy)
 make demo DEMO=44   # Toolflow Taint (CCS toy)
+make demo DEMO=45   # Exact Nulls for Localisation Claims (SaTML toy)
 
 # Run a demo's test suite
 make test DEMO=01

@@ -1,0 +1,13 @@
+{
+  "pool_note": "Synthetic toy. P=pool files, D=defective files, k=budget named, TP=observed hits.",
+  "cases": [
+    {"id": "case1", "pool": 45, "defective": 10, "budget": 8, "tp": 5, "note": "worked example from research repo"},
+    {"id": "case2", "pool": 45, "defective": 10, "budget": 8, "tp": 2, "note": "chance-level control"},
+    {"id": "case3", "pool": 20, "defective": 4, "budget": 4, "tp": 3, "note": "small pool hit"},
+    {"id": "case4", "pool": 20, "defective": 4, "budget": 2, "tp": 2, "note": "design-limit: max TP at this budget"},
+    {"id": "case5-transfer-A", "pool": 60, "defective": 12, "budget": 6, "tp": 6, "note": "recall 0.50, wide pool"},
+    {"id": "case6-transfer-B", "pool": 30, "defective": 12, "budget": 6, "tp": 6, "note": "recall 0.50, narrow pool"},
+    {"id": "case7", "pool": 50, "defective": 5, "budget": 5, "tp": 4, "note": "strong hit, rare defects"},
+    {"id": "case8", "pool": 50, "defective": 5, "budget": 5, "tp": 1, "note": "weak hit, rare defects"}
+  ]
+}

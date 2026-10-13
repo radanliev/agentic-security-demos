@@ -3,7 +3,7 @@
 
 SHELL := /bin/bash
 PYTHON := python3
-DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments demo-14-conformal-gating demo-15-hijack-probes demo-16-infection-spread demo-17-report-fidelity demo-18-crosslingual-gap demo-19-lineage-risk demo-20-agent-web-census demo-21-mcp-ecosystem demo-22-memory-leakage demo-23-fault-injection demo-24-delegation-checks demo-25-attestation-verifier demo-26-sandbox-probes demo-27-ci-trigger-scan demo-28-memory-poisoning demo-29-provenance-graphs demo-30-default-configs demo-31-scope-creep demo-32-reproducibility-audit demo-33-protocol-coverage demo-34-visual-injection demo-35-scaling-metaregression demo-36-card-debt demo-37-detector-cost demo-38-assurance-claims demo-39-incident-taxonomy demo-40-corpus-union demo-41-ten-invariants demo-42-patch-lifecycle demo-43-terms-coding demo-44-toolflow-taint
+DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments demo-14-conformal-gating demo-15-hijack-probes demo-16-infection-spread demo-17-report-fidelity demo-18-crosslingual-gap demo-19-lineage-risk demo-20-agent-web-census demo-21-mcp-ecosystem demo-22-memory-leakage demo-23-fault-injection demo-24-delegation-checks demo-25-attestation-verifier demo-26-sandbox-probes demo-27-ci-trigger-scan demo-28-memory-poisoning demo-29-provenance-graphs demo-30-default-configs demo-31-scope-creep demo-32-reproducibility-audit demo-33-protocol-coverage demo-34-visual-injection demo-35-scaling-metaregression demo-36-card-debt demo-37-detector-cost demo-38-assurance-claims demo-39-incident-taxonomy demo-40-corpus-union demo-41-ten-invariants demo-42-patch-lifecycle demo-43-terms-coding demo-44-toolflow-taint demo-45-localisation-nulls
 
 .PHONY: help setup test demo clean all-demos verify-safety
 
@@ -20,7 +20,7 @@ help:
 	@echo "Demonstrations:"
 	@echo "  make demo DEMO=01       # Run demo 01 (blind-verification)"
 	@echo "  make demo DEMO=02       # Run demo 02 (supply-chain-aibom)"
-	@echo "  ...                     # DEMO=03 through DEMO=44"
+	@echo "  ...                     # DEMO=03 through DEMO=45"
 	@echo ""
 	@echo "Maintenance:"
 	@echo "  make clean              # Remove generated files, caches, results"
@@ -142,3 +142,4 @@ demo-41: ; @$(MAKE) demo DEMO=41
 demo-42: ; @$(MAKE) demo DEMO=42
 demo-43: ; @$(MAKE) demo DEMO=43
 demo-44: ; @$(MAKE) demo DEMO=44
+demo-45: ; @$(MAKE) demo DEMO=45

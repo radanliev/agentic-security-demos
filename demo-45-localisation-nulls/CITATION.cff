@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Demo 45: Exact Nulls for Localisation Claims (teaching toy)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All cases and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - localisation-null
+  - hypergeometric-test
+  - design-limits
+  - synthetic-fixtures
+abstract: >-
+  Teaching toy computing exact hypergeometric p-values for eight
+  synthetic localisation attempts (stdlib only).
