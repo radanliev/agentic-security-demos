@@ -80,7 +80,7 @@
 | 43 | **Terms Coding** | Platform terms accountability allocation | ✅ Active |
 | 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | ✅ Active |
 | 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
-| 46 | **Simulated Embedding Drift (AIBOM)** | Seeded study of simulated embedding-model swap effects on supply-chain artefact triage; one-page skeleton, simulated models only | 🚧 Skeleton |
+| 46 | | | 🚧 Skeleton |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
