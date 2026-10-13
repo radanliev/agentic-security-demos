@@ -43,7 +43,7 @@ image the baseline handled.
 ## Research Connection
 
 This demo illustrates the benchmark question of a pending study unifying
-visual prompt-injection tests targeting IEEE TPAMI. That study has
+visual prompt-injection tests. That study has
 **collected no confirmatory data**; every quantity there is `[RESULT
 PENDING]`. Nothing here describes a publication, a venue result, or a
 measured effect size. Boundary: this demo covers the visual channel only, not

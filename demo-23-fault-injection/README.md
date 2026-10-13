@@ -7,7 +7,7 @@
 - Explain four pipeline failure modes: graceful handling, cascade, silent-wrong output, and cost blowup
 - Show how a retry budget of 2 absorbs transient faults but not permanent ones
 - Read a dependability scorecard: graceful 2/6 without retries, 5/6 with retries
-- Distinguish this teaching toy from the pending DSN study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the pending study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -45,14 +45,14 @@ the fault that will never succeed on re-execution.
 ## Research Connection
 
 This demo illustrates the design question of a pending study on agent
-pipeline fault injection (targeting DSN 2027). That study has **collected no
+pipeline fault injection. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 
 Provenance: distilled from `demo-23-agent-pipeline-fault-injection-dsn` (private research repo).
 It shares no topic with Demo 22 (memory leakage): this demo is a
 dependability scorecard over pipeline faults; Demo 22 is a privacy
-screen over memory entries. Different venues (DSN vs PoPETs), data, and claims.
+screen over memory entries. Different data and claims.
 
 ### Difference from the Research Study
 

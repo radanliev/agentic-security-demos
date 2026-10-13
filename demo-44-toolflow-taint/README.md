@@ -44,7 +44,7 @@ lives elsewhere (Demo 04 AuthorityBound).
 ## Research Connection
 
 This demo illustrates the design question of a toolflow-integrity
-measurement study (targeting ACM CCS 2027). That measurement is
+measurement study. That measurement is
 **pending**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size.
 

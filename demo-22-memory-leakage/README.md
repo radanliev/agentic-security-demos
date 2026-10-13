@@ -7,7 +7,7 @@
 - Explain the three memory-privacy failure modes: persisting high-sensitivity content, resurfacing entries across sessions/users, and failing to honour deletion
 - Run a tiny leakage screen over 8 synthetic memory entries and read its counts
 - Distinguish memory PRIVACY (leakage: what is kept, reshown, or not erased) from memory INTEGRITY (poisoning: what is planted), the topic of the sibling Demo 28
-- Distinguish this teaching toy from the pending PoPETs study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the pending study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -45,7 +45,7 @@ Entries `m5`/`m6` are the contrast: deleted and actually gone.
 ## Research Connection
 
 This demo illustrates the design question of a pending study on agent
-memory leakage (targeting PoPETs 2027). That study has **collected no
+memory leakage. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 

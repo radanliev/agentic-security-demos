@@ -44,8 +44,8 @@ synthetic fixture, so none qualifies.
 
 ## Research Connection
 
-This demo illustrates a synthesis argument about agent-security invariants
-(targeting CACM). It contributes **checklist synthesis, not new evidence**:
+This demo illustrates a synthesis argument about agent-security invariants.
+It contributes **checklist synthesis, not new evidence**:
 every invariant stated here rests on synthetic checks only.
 
 Provenance: distilled from `demo-41-agent-security-invariants-cacm` (private research repo).

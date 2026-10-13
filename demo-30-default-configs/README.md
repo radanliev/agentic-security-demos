@@ -44,7 +44,7 @@ no privileged flag, no pinned vuln.
 ## Research Connection
 
 This demo illustrates the measurement question of a pending study of
-insecure defaults in self-hosted stacks (an associated research project, in preparation; IEEE TDSC as a later venue). That study has **collected no confirmatory data**; every
+insecure defaults in self-hosted stacks (an associated research project, in preparation). That study has **collected no confirmatory data**; every
 quantity there is `[RESULT PENDING]`. Nothing here describes a publication, a
 venue result, or a measured effect size. No live scanning is performed here;
 all inputs are synthetic. Boundary: this demo covers deployment configs, not

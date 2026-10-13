@@ -13,7 +13,7 @@
 - Explain what a conformal risk gate is (execute an action only when its risk score is below a calibrated threshold)
 - Calibrate a threshold on one episode set to meet a nominal risk budget (alpha 0.30)
 - Show the guarantee holds on same-distribution episodes but breaks under benchmark shift
-- Distinguish this teaching toy from the preregistered ICML study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -53,14 +53,14 @@ calibration distribution more than deployment safety.
 ## Research Connection
 
 This demo illustrates the design question of a preregistered study on conformal action
-gating for tool-using agents (targeting ICML 2027). That study has **collected no
+gating for tool-using agents. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 
 Provenance: distilled from `demo-14-conformal-action-gating-icml` (private research repo).
 It shares no topic with Demo 15 (MCP ecosystem census): this demo is black-box
 statistical gating over action scores; Demo 21 is a measurement census over registry
-manifests. Different venues (ICML vs EuroS&P), data, and claims.
+manifests. Different data and claims.
 
 ### Difference from the Research Study
 

@@ -7,7 +7,7 @@
 - Explain inherited supply-chain risk (a clean child of a flagged parent is still risky)
 - Classify 8 synthetic models by own flags vs inherited risk
 - Show 6/8 risky: 1 origin, 2 introduced, 3 inherited
-- Distinguish this teaching toy from the preregistered ICSE study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -51,7 +51,7 @@ WARNING: **This is a teaching demonstration using synthetic fixtures only.**
 ## Research Connection
 
 This demo illustrates the design question of a preregistered study on model
-lineage inherited risk (targeting ICSE 2028, Hub lineage corpus). That study has
+lineage inherited risk (Hub lineage corpus). That study has
 **collected no confirmatory data**; every quantity there is `[RESULT PENDING]`.
 Nothing here describes a publication, a venue result, or a measured effect size.
 

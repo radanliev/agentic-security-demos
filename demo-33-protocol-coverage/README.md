@@ -46,7 +46,7 @@ Gaps: 2/6 (discovery, streaming).
 ## Research Connection
 
 This demo illustrates the mapping question of a pending survey
-of agent protocol security (an associated research project, in preparation; IEEE COMST as a later venue). That survey has **collected
+of agent protocol security (an associated research project, in preparation). That survey has **collected
 no confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing
 here describes a publication, a venue result, or a measured effect size.
 Boundary: this demo is a survey mapping exercise, not formal analysis

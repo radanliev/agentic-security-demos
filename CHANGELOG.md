@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (venue notes and anonymity, 13 October 2026)
+- Root `README`, demo catalogue: the Venue column is removed, so no row pairs a demo title with a venue. Demo 13's row is renamed to its own title, "Typed Commitments & Coverage Cues".
+- Root `README`, venue slates: rows now name demos by number only ("Demo 18"); the topic columns (WWW titles, USENIX angle, FAccT angle, S&P focus) are removed.
+- Root `README`, demo 01: re-planned to Plan A Computers & Security (Elsevier, SJR 2025 Q1; rolling), Plan B USENIX SAIS'27 (4 Feb 2027), Plan C Journal of Information Security and Applications (Elsevier, SJR 2025 Q1). Previously SaTML'27, then S&P'28 / USENIX Sec'28. TMLR was considered and not used: no fees, but SCImago 2025 Q2.
+- Root `README`, venue notes: the S&P'27 cap (six papers per author per cycle, all registrations desk-rejected above it, enforced 10 Nov 2026) and the WWW'27 cap (seven per author per type) are recorded with links to the official calls; the FAccT'27 load is noted as five papers including demo 45.
+- 33 demo READMEs (demos 13-45): target-venue names removed from Learning Objectives and Research Connection text. The studies, data status and boundaries are unchanged.
+
 ### Changed (venue notes, 8 October 2026)
 - Root `README`, demo 02 (Supply Chain AIBOM Drift): Plan A re-targeted to Empirical Software Engineering (EMSE, Springer; rolling), Plan B IEEE TSE (only after an EMSE decision), Plan C MSR'27 (only after a TSE decision). Previously TOSEM / CCS'27 / EMSE. Backups remain sequential, never simultaneous.
 

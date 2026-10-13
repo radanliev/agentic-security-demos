@@ -52,7 +52,7 @@ Instance `cue-wrong-02` is the lesson: both assessors nominate the same wrong fi
 
 ## Research Connection
 
-This demo illustrates the design question of a preregistered study on typed pre-reveal commitments and coverage-cue provenance (targeting USENIX Security 2027 Cycle 2). That study has **collected no confirmatory data**; its preregistration is a draft. Nothing here describes a publication, a venue result, or a measured effect size.
+This demo illustrates the design question of a preregistered study on typed pre-reveal commitments and coverage-cue provenance. That study has **collected no confirmatory data**; its preregistration is a draft. Nothing here describes a publication, a venue result, or a measured effect size.
 
 ### Difference from the Research Study
 

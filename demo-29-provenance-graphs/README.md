@@ -44,7 +44,7 @@ chain verifies; a copy with one edited authority field fails verification.
 ## Research Connection
 
 This demo illustrates the reconstruction question of a pending study
-of post-incident provenance (an associated research project, in preparation; IEEE TIFS as a later venue). That study has **collected no confirmatory data**;
+of post-incident provenance (an associated research project, in preparation). That study has **collected no confirmatory data**;
 every quantity there is `[RESULT PENDING]`. Nothing here describes a
 publication, a venue result, or a measured effect size. Boundary: this demo is
 post-incident reconstruction, not release assurance (Demo 05).

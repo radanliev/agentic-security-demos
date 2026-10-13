@@ -7,7 +7,7 @@
 - Explain epidemic spread over agent graphs (R0 as p times mean degree)
 - Simulate deterministic breadth-first spread from node 0 on four six-node topologies
 - Show uncontained spread reaches 6/6 everywhere while chain containment holds at 2/6
-- Distinguish this teaching toy from the preregistered AAAI study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -48,7 +48,7 @@ WARNING: **This is a teaching demonstration using synthetic fixtures only.**
 ## Research Connection
 
 This demo illustrates the design question of a preregistered study on infectious
-injections in multi-agent systems (targeting AAAI-28). That study has **collected no
+injections in multi-agent systems. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 

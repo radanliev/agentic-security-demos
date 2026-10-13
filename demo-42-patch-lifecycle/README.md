@@ -7,7 +7,7 @@
 - Explain the fix-to-adoption gap (a fix exists; deployments lag behind)
 - Compute the median adoption lag over 8 synthetic vulns: exactly 37.5 days
 - Show 2/8 fixes blocked by version pins
-- Distinguish this teaching toy from the pending IEEE TSE study it illustrates
+- Distinguish this teaching toy from the pending study it illustrates
 
 ## Conceptual Explanation
 
@@ -44,7 +44,7 @@ facts.
 ## Research Connection
 
 This demo illustrates the design question of a vulnerability-lifecycle study
-of the LLM stack (targeting IEEE TSE). That study is **pending**; every
+of the LLM stack. That study is **pending**; every
 quantity there is `[RESULT PENDING]`. Nothing here describes a publication, a
 venue result, or a measured effect size.
 

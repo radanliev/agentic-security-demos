@@ -7,7 +7,7 @@
 - Explain the crosslingual injection gap (English-tuned detectors miss non-English payloads)
 - Apply one English-centric rule plus a single marker to 10 synthetic payloads
 - Show recall EN 4/4 vs non-EN 2/6 (total 6/10)
-- Distinguish this teaching toy from the preregistered ACL study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -46,7 +46,7 @@ WARNING: **This is a teaching demonstration using synthetic fixtures only.**
 ## Research Connection
 
 This demo illustrates the design question of a preregistered study on
-crosslingual prompt injection (targeting ACL 2027 ARR). That study has **collected no
+crosslingual prompt injection. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 

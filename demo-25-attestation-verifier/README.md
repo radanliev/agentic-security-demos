@@ -7,7 +7,7 @@
 - Explain install-time attestation verification: install a package only when its provenance is attested
 - Contrast fail-closed (block 6/10 unattested) with fail-open (warn instead of blocking)
 - State clearly that the 4-attested / 6-unattested split is a hand-picked toy, not an ecosystem measurement
-- Distinguish this teaching toy from the pending ACNS study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the pending study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -45,7 +45,7 @@ toys — they illustrate verifier behaviour, not the ecosystem.
 ## Research Connection
 
 This demo illustrates the design question of a pending study on
-install-time attestation verification (targeting ACNS 2027). That study has
+install-time attestation verification. That study has
 **collected no confirmatory data**; every quantity there is `[RESULT PENDING]`.
 Nothing here describes a publication, a venue result, or a measured effect size.
 

@@ -45,7 +45,7 @@ Benchmark gap 0.305 dwarfs scale gap 0.006: the suite explains more than size.
 ## Research Connection
 
 This demo illustrates the synthesis question of a pending meta-analysis of
-agent misbehaviour scaling targeting TMLR. That analysis has **collected no
+agent misbehaviour scaling. That analysis has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size. Boundary:
 this demo synthesises published-style numbers; it takes no new measurements.

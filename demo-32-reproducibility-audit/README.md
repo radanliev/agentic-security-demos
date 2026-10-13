@@ -43,7 +43,7 @@ Per-channel reproduction: content 2/3, tool 1/3, memory 1/2, multiagent 0/2.
 ## Research Connection
 
 This demo illustrates the audit question of a pending survey of agent
-security targeting ACM CSUR. That survey has **collected no confirmatory
+security. That survey has **collected no confirmatory
 data**; every quantity there is `[RESULT PENDING]`. Nothing here describes a
 publication, a venue result, or a measured effect size. Boundary: this demo
 is an audit of the field, with no new attack claims.

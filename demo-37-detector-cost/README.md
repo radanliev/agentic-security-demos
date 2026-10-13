@@ -13,7 +13,7 @@
 - Explain why detector choice is an operating-point decision, not an accuracy contest
 - Score a strict substring detector and a lenient exact-phrase detector on the same 10 synthetic prompts
 - Price false positives at 10 and false negatives at 25, and show the strict detector wins on cost (20 vs 50)
-- Distinguish this teaching toy from the pending Computers & Security practitioner evaluation it illustrates
+- Distinguish this teaching toy from the pending practitioner evaluation it illustrates
 
 ## Conceptual Explanation
 
@@ -64,7 +64,7 @@ Tune the threshold with costs, not accuracy.
 ## Research Connection
 
 This demo illustrates the design question of a practitioner evaluation of
-prompt-injection detectors (targeting Computers & Security). That evaluation
+prompt-injection detectors. That evaluation
 is **pending**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size.
 

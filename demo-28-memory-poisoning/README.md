@@ -7,7 +7,7 @@
 - Explain memory-integrity poisoning: planted instructions inside stored entries that steer later behaviour
 - Run the MemScope auditor over 8 synthetic entries and confirm it flags exactly the 3 poisoned ones with 0 false positives
 - State the auditor's limits: literal case-insensitive patterns only, no semantic detection
-- Distinguish this teaching toy from the pending DEF CON talk it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the pending talk it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -45,7 +45,7 @@ patterns — a stand-in for a real audit tool, not one.
 ## Research Connection
 
 This demo illustrates the MemScope audit tooling prepared for a pending
-DEF CON 35 talk on agent memory poisoning. That work has **collected no
+talk on agent memory poisoning. That work has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 

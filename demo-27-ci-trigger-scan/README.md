@@ -7,7 +7,7 @@
 - Explain the CI trigger-injection wiring: public trigger plus write permission without required review is vulnerable
 - Scan 8 synthetic repos and confirm exactly 3 are vulnerable (`r1`–`r3`)
 - Show how each guard (private trigger, read-only permission, required review) blocks one vector
-- Distinguish this teaching toy from the pending Black Hat census it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the pending census it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -46,7 +46,7 @@ Repos `r7`/`r8` are doubly safe contrasts.
 ## Research Connection
 
 This demo illustrates the design question of a pending census plus live
-demo of coding-agent CI injection (targeting Black Hat 2027). That work has
+demo of coding-agent CI injection. That work has
 **collected no confirmatory data**; every quantity there is `[RESULT PENDING]`.
 Nothing here describes a publication, a venue result, or a measured effect size.
 

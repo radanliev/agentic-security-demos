@@ -78,7 +78,7 @@ See [RESPONSIBLE_USE.md](../RESPONSIBLE_USE.md).
 
 This demo distils a research problem into a runnable exercise. All scenarios, numbers and verdicts are synthetic; they describe no real incidents or venues.
 
-Provenance: distilled from `demo-39-ai-incidents-practitioner-taxonomy-spmag` (private research repo), which targets ACM FAccT 2027 with an incident-grounded practitioner taxonomy: agentic-AI failure patterns coded from AI incident and vulnerability reports, mapped to MITRE ATLAS techniques and to OWASP control inventories, under the focus areas *evaluations and evaluation practices* and *experiences and interactions*.
+Provenance: distilled from `demo-39-ai-incidents-practitioner-taxonomy-spmag` (private research repo), which develops an incident-grounded practitioner taxonomy: agentic-AI failure patterns coded from AI incident and vulnerability reports, mapped to MITRE ATLAS techniques and to OWASP control inventories, under the focus areas *evaluations and evaluation practices* and *experiences and interactions*.
 It shares no topic with Demo 38 (assurance coding): this demo is practitioner
 guidance from incident counts; Demo 38 codes public assurance claims.
 Different sources, methods, and claims.

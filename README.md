@@ -33,53 +33,53 @@
 
 ## 🎯 Demos
 
-| # | Demo | Venue | Focus | Status |
-|---|------|-------|-------|--------|
-| 01 | **Blind Verification** | 🟦 SATML 2027 | Cryptographic verification of agent outputs without trusted execution environments | ✅ Active |
-| 02 | **Supply Chain AIBOM Drift** | 🟩 EMSE | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
-| 03 | **Eval Design Invariants** | 🟪 NeurIPS 2027 | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
-| 04 | **Prompt Injection & Tool Authority** | 🟦 IEEE S&P'27 C2 (Plan A) / USENIX Sec'28 / CCS'27 (Plan B/C) | Capability-based authority mediation for tool-using agents | ✅ Active |
-| 05 | **Evidence Release Assurance** | 🟦 IEEE TDSC (submitted Oct 2026; formerly USENIX Security '27 C1, desk-rejected for introduction formatting) | Cryptographic evidence chains for agent accountability | ✅ Active |
-| 06 | **Network Recon** | 🟦 NDSS'28 | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
-| 07 | **Malware Triage** | 🟦 RAID 2027 | Statistical reconstruction of malware triage decisions | ✅ Active |
-| 08 | **File Inclusion** | 🟦 ASIACCS 2027 | Provenance-tracked file inclusion for agent workflows | ✅ Active |
-| 09 | **MITM Interception** | 🟦 IEEE S&P'27 C2 (Plan A) / ESORICS'27 (Plan B) | Ephemeral buffer interception for credential extraction detection | ✅ Active |
-| 10 | **Vulnerability Assessment** | 🟦 [USENIX'27](https://www.usenix.org/conference/usenixsecurity27) (Plan A) / ACSAC'27 (Plan B) | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
-| 11 | **Degenerate Reporting** | 🟦 RAID'27 | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
-| 12 | **Provenance-Bound Authorization** | 🟦 USENIX Security 2027 | Provenance-aware authorization for untrusted calendar content | ✅ Active |
-| 13 | **Format vs Cueing** | 🟦 USENIX Security 2027 | Separating format constraint from coverage cueing in typed pre-reveal commitments | ✅ Active |
-| 14 | **Conformal Action Gating** | 🟪 ICML 2027 | Distribution-free risk control for tool execution and how it fails under benchmark shift | ✅ Active |
-| 15 | **Hijack Probes** | 🟪 ICLR 2028 | Hidden-state signatures of instruction hijack in open-weight agents | ✅ Active |
-| 16 | **Infection Spread** | 🟪 AAAI 2028 | Epidemic dynamics of prompt-injection propagation in multi-agent systems | ✅ Active |
-| 17 | **Report Fidelity** | 🟪 IJCAI 2027 | Claims-versus-logs fidelity of coding agents | ✅ Active |
-| 18 | **Cross-lingual Gap** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / ACL'27 (Plan B) | Cross-lingual transfer of injections and the detector language gap | ✅ Active |
-| 19 | **Lineage Risk** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / ICSE'28 (Plan B) | Inherited risk along fine-tune lineages on the model hub | ✅ Active |
-| 20 | **Agent Web Census** | 🟩 WWW 2027 | Agent-facing files and in-the-wild injections across the web | ✅ Active 🔴 next deadline |
-| 21 | **MCP Ecosystem Census** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / IMC'27 (Plan B; EuroS&P excluded — simultaneous submission) | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | ✅ Active |
-| 22 | **Memory Leakage** | 🟦 PoPETs 2027 | Contextual-integrity leakage via agent memory stores | ✅ Active |
-| 23 | **Fault Injection** | 🟦 DSN 2027 | Dependability of agent pipelines under pipeline faults | ✅ Active |
-| 24 | **Delegation Checks** | 🟦 CSF 2027 | Authorization and agent-to-agent delegation properties | ✅ Active |
-| 25 | **Attestation Verifier** | 🟦 ACNS 2027 | Install-time provenance verification for agent supply chains | ✅ Active |
-| 26 | **Sandbox Probes** | 🟦 IEEE S&P'27 C2 (Plan A) / ACSAC'27 (Plan B) | Agent sandbox isolation and exfiltration controls | ✅ Active |
-| 27 | **CI Trigger Scan** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / Black Hat'27 (Plan B) | Injection surface of coding agents wired to CI | ✅ Active |
-| 28 | **Memory Poisoning** | 🟦 IEEE S&P'27 C2 (Plan A) / DEF CON 35 (Plan B) | Persistent memory poisoning and the MemScope auditor toy | ✅ Active |
-| 29 | **Provenance Graphs** | 🟦 IEEE S&P'27 C2 (Plan A) / TIFS (Plan B) | Tamper-evident provenance for post-incident reconstruction | ✅ Active |
-| 30 | **Default Configs** | 🟦 IEEE S&P'27 C2 (Plan A) / TDSC (Plan B) | Insecure defaults in self-hosted LLM stacks | ✅ Active |
-| 31 | **Scope Creep** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / TOPS (Plan B) | OAuth scope over-privilege in agent integrations | ✅ Active |
-| 32 | **Reproducibility Audit** | 🟩 ACM CSUR | Artefact audit of the agent-security literature | ✅ Active |
-| 33 | **Protocol Coverage** | 🟦 IEEE S&P'27 C2 SoK (Plan A) / COMST (Plan B) | Agent protocol element × threat coverage map | ✅ Active |
-| 34 | **Visual Injection** | 🟪 IEEE TPAMI | Typographic injection against vision-language agents | ✅ Active |
-| 35 | **Scaling Meta-regression** | 🟪 TMLR | Agent misbehaviour versus scale across benchmarks | ✅ Active |
-| 36 | **Card Debt** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / Nature MI (Plan B) | Documentation debt across open model cards | ✅ Active |
-| 37 | **Detector Cost** | 🟦 Computers & Security | Injection-detector comparison with false-positive cost | ✅ Active |
-| 38 | **Assurance Claims** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / JoC (Plan B) | System-card assurance claims versus obligations | ✅ Active |
-| 39 | **Incident Taxonomy** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / S&P Mag (Plan B) | Agentic-AI threat taxonomy for practitioners | ✅ Active |
-| 40 | **Corpus Union** | 🟩 Scientific Data | License-audited unified agentic-security corpus | ✅ Active |
-| 41 | **Ten Invariants** | 🟩 CACM | Security invariants checklist synthesis | ✅ Active |
-| 42 | **Patch Lifecycle** | 🟩 IEEE TSE | Vulnerability lifecycle and patch adoption lag | ✅ Active |
-| 43 | **Terms Coding** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / AIES'27 (Plan B) | Platform terms accountability allocation | ✅ Active |
-| 44 | **Toolflow Taint** | 🟦 CCS'27 | Cross-tool dataflow integrity tracking | ✅ Active |
-| 45 | **Exact Nulls for Localisation Claims** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / USENIX'27 C2 (Plan B) / TDSC (Plan C) | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
+| # | Demo | Focus | Status |
+|---|------|-------|--------|
+| 01 | **Blind Verification** | Cryptographic verification of agent outputs without trusted execution environments | ✅ Active |
+| 02 | **Supply Chain AIBOM Drift** | AI Bill of Materials tracking & drift detection across model updates | ✅ Active |
+| 03 | **Eval Design Invariants** | Statistically rigorous evaluation frameworks with invariant guarantees | ✅ Active |
+| 04 | **Prompt Injection & Tool Authority** | Capability-based authority mediation for tool-using agents | ✅ Active |
+| 05 | **Evidence Release Assurance** | Cryptographic evidence chains for agent accountability | ✅ Active |
+| 06 | **Network Recon** | eBPF-backed network reconnaissance with formal admission control | ✅ Active |
+| 07 | **Malware Triage** | Statistical reconstruction of malware triage decisions | ✅ Active |
+| 08 | **File Inclusion** | Provenance-tracked file inclusion for agent workflows | ✅ Active |
+| 09 | **MITM Interception** | Ephemeral buffer interception for credential extraction detection | ✅ Active |
+| 10 | **Vulnerability Assessment** | Cross-vendor vulnerability scanning with authoritative taxonomy | ✅ Active |
+| 11 | **Degenerate Reporting** | Meta-science audit: evaluations that cannot rule out do-nothing policies | ✅ Active |
+| 12 | **Provenance-Bound Authorization** | Provenance-aware authorization for untrusted calendar content | ✅ Active |
+| 13 | **Typed Commitments & Coverage Cues** | Wrong coverage cues and agreement-gate failures in LLM assessors | ✅ Active |
+| 14 | **Conformal Action Gating** | Distribution-free risk control for tool execution and how it fails under benchmark shift | ✅ Active |
+| 15 | **Hijack Probes** | Hidden-state signatures of instruction hijack in open-weight agents | ✅ Active |
+| 16 | **Infection Spread** | Epidemic dynamics of prompt-injection propagation in multi-agent systems | ✅ Active |
+| 17 | **Report Fidelity** | Claims-versus-logs fidelity of coding agents | ✅ Active |
+| 18 | **Cross-lingual Gap** | Cross-lingual transfer of injections and the detector language gap | ✅ Active |
+| 19 | **Lineage Risk** | Inherited risk along fine-tune lineages on the model hub | ✅ Active |
+| 20 | **Agent Web Census** | Agent-facing files and in-the-wild injections across the web | ✅ Active 🔴 next deadline |
+| 21 | **MCP Ecosystem Census** | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | ✅ Active |
+| 22 | **Memory Leakage** | Contextual-integrity leakage via agent memory stores | ✅ Active |
+| 23 | **Fault Injection** | Dependability of agent pipelines under pipeline faults | ✅ Active |
+| 24 | **Delegation Checks** | Authorization and agent-to-agent delegation properties | ✅ Active |
+| 25 | **Attestation Verifier** | Install-time provenance verification for agent supply chains | ✅ Active |
+| 26 | **Sandbox Probes** | Agent sandbox isolation and exfiltration controls | ✅ Active |
+| 27 | **CI Trigger Scan** | Injection surface of coding agents wired to CI | ✅ Active |
+| 28 | **Memory Poisoning** | Persistent memory poisoning and the MemScope auditor toy | ✅ Active |
+| 29 | **Provenance Graphs** | Tamper-evident provenance for post-incident reconstruction | ✅ Active |
+| 30 | **Default Configs** | Insecure defaults in self-hosted LLM stacks | ✅ Active |
+| 31 | **Scope Creep** | OAuth scope over-privilege in agent integrations | ✅ Active |
+| 32 | **Reproducibility Audit** | Artefact audit of the agent-security literature | ✅ Active |
+| 33 | **Protocol Coverage** | Agent protocol element × threat coverage map | ✅ Active |
+| 34 | **Visual Injection** | Typographic injection against vision-language agents | ✅ Active |
+| 35 | **Scaling Meta-regression** | Agent misbehaviour versus scale across benchmarks | ✅ Active |
+| 36 | **Card Debt** | Documentation debt across open model cards | ✅ Active |
+| 37 | **Detector Cost** | Injection-detector comparison with false-positive cost | ✅ Active |
+| 38 | **Assurance Claims** | System-card assurance claims versus obligations | ✅ Active |
+| 39 | **Incident Taxonomy** | Agentic-AI threat taxonomy for practitioners | ✅ Active |
+| 40 | **Corpus Union** | License-audited unified agentic-security corpus | ✅ Active |
+| 41 | **Ten Invariants** | Security invariants checklist synthesis | ✅ Active |
+| 42 | **Patch Lifecycle** | Vulnerability lifecycle and patch adoption lag | ✅ Active |
+| 43 | **Terms Coding** | Platform terms accountability allocation | ✅ Active |
+| 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | ✅ Active |
+| 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -181,59 +181,73 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 >
 > 🔴 = due October 2026 (urgent) · 🟠 = due November–December 2026 (soon) · 🟡 = due January 2027 (upcoming) · ♾️ *Rolling — no deadline* venues take submissions any time · ⏰ = date has passed · 🟦 = security community · 🟪 = AI/ML community · 🟩 = software, web & society community · ⚠️ same work cannot be under review in two places at once — backups run sequentially, never simultaneously.
 >
-> 🔀 **Plan A / Plan B: the WWW'27 first wave (7 research-track papers — the author cap).** Seven demos go to **[WWW'27, Dublin](https://www2027.thewebconf.org/)** first — abstract 18 Oct 2026, full paper 25 Oct 2026 ([submission via OpenReview](https://www2027.thewebconf.org/research-track-papers)). If rejected (notification 4 Jan 2027), each drops to its Plan B, then Plan C — always sequential, never simultaneous. Demo 28 goes as a WWW'27 **demo paper** (16 Nov 2026), which sits outside the 7-paper research-track cap.
+> 🔀 **Plan A / Plan B: the WWW'27 first wave (7 research-track papers — the author cap).** Seven demos go to **[WWW'27, Dublin](https://www2027.thewebconf.org/)** first — abstract 18 Oct 2026, full paper 25 Oct 2026 ([submission via OpenReview](https://www2027.thewebconf.org/research-track-papers)). If rejected (notification 4 Jan 2027), each drops to its Plan B, then Plan C — always sequential, never simultaneous. Demo 28 goes as a WWW'27 **demo paper** (16 Nov 2026), which sits outside the 7-paper research-track cap. The cap is verified on the [call](https://www2027.thewebconf.org/research-track-papers/): papers beyond an author's first seven of one type, by submission ID, are desk-rejected.
 >
 > | Demo | Plan A (WWW'27 track) | Plan B | Plan C |
 > |------|----------------------|--------|--------|
-> | 18 Cross-lingual Gap | Security and Privacy | ACL'27 (ARR Jan) | EMNLP'27 |
-> | 19 Lineage Risk | Security and Privacy | ICSE'28 | FSE'28 |
-> | 20 Agent Web Census | Web Infrastr. and Agentic Systems | WWW short 16 Nov'26 | IMC'27 |
-> | 21 MCP Census | Security and Privacy | IMC'27 | AsiaCCS'28 |
-> | 27 CI Trigger Scan | Web Infrastr. and Agentic Systems | Black Hat USA'27 | DEF CON Demo Labs |
-> | 36 Card Debt | Responsible Web | Nature MI (post-rejection fallback only) | Patterns |
-> | 43 Platform Terms | Responsible Web | AIES'27 (post-rejection only) | FAccT'28 |
-> | 28 Memory Poisoning | S&P'27 C2 research paper (moved from WWW demo track) | DEF CON 35 | BH Arsenal |
+> | Demo 18 | Security and Privacy | ACL'27 (ARR Jan) | EMNLP'27 |
+> | Demo 19 | Security and Privacy | ICSE'28 | FSE'28 |
+> | Demo 20 | Web Infrastr. and Agentic Systems | WWW short 16 Nov'26 | IMC'27 |
+> | Demo 21 | Security and Privacy | IMC'27 | AsiaCCS'28 |
+> | Demo 27 | Web Infrastr. and Agentic Systems | Black Hat USA'27 | DEF CON Demo Labs |
+> | Demo 36 | Responsible Web | Nature MI (post-rejection fallback only) | Patterns |
+> | Demo 43 | Responsible Web | AIES'27 (post-rejection only) | FAccT'28 |
+> | Demo 28 | S&P'27 C2 research paper (moved from WWW demo track) | DEF CON 35 | BH Arsenal |
 >
 > Date logic: EuroS&P'27 (25 Nov), BH Asia (20 Oct) and FAccT'27 (3 Nov) all fall inside the WWW review window (25 Oct–4 Jan), so they cannot back up a WWW rejection — Plan Bs above are all actionable after 4 Jan 2027.
 >
 > 🛡️ **Plan A / Plan B: the USENIX'27 Cycle 2 slate (3 papers).** Three demos go to **[USENIX Security '27, Denver](https://www.usenix.org/conference/usenixsecurity27)** — registration 19 Jan 2027, papers 26 Jan 2027, artifacts 29 Jan 2027 ([CFP](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)). AsiaCCS R2 papers are locked in review — the three below are clear.
 >
-> | Demo | USENIX angle | Plan B | Plan C |
-> |------|-------------|--------|--------|
-> | 10 Vulnerability Assessment | cross-vendor measurement | ACSAC'27 | RAID'28 |
-> | 12 Provenance Authz | already C2-bound | NDSS'28 | CCS'28 |
-> | 13 Typed Commitments | already C2-bound | CSF'27 | EuroS&P'28 |
+> | Demo | Plan B | Plan C |
+> |------|--------|--------|
+> | Demo 10 | ACSAC'27 | RAID'28 |
+> | Demo 12 | NDSS'28 | CCS'28 |
+> | Demo 13 | CSF'27 | EuroS&P'28 |
 >
 > Contingencies (not counted): demo-21 if WWW-rejected 4 Jan (22 days to rework). All papers need a mandatory Open Science appendix and anonymous artifact links (4open.science, ID `SEC27`).
 >
 > ⚖️ **Plan A / Plan B: the FAccT'27 slate (4 papers, no author cap).** Four demos go to **[FAccT'27, Porto](https://facctconference.org/)** — abstract 27 Oct 2026, paper 3 Nov 2026 ([CFP](https://facctconference.org/2027/cfp.html); accept/revise/reject 22 Dec 2026, revision due 28 Jan 2027). No per-author cap, but every author on every paper must sign up to review or face desk rejection. If rejected (final notification 23 Mar 2027), each drops to Plan B, then Plan C. None overlap the WWW or USENIX slates.
 >
-> | Demo | FAccT angle | Plan B | Plan C |
-> |------|------------|--------|--------|
-> | 31 Scope Creep | consent meaningfulness: requested vs used scopes + breakage of least-privilege policy | TOPS | TDSC |
-> | 37 Detector Cost | detector comparison with false-positive cost | CoSe | TDSC |
-> | 38 Assurance Claims | transparency documentation vs regulation | JoC | CoSe |
-> | 39 Incident Taxonomy | incident-grounded harms, practitioner controls | S&P Magazine | CACM Practice |
+> | Demo | Plan B | Plan C |
+> |------|--------|--------|
+> | Demo 31 | TOPS | TDSC |
+> | Demo 37 | CoSe | TDSC |
+> | Demo 38 | JoC | CoSe |
+> | Demo 39 | S&P Magazine | CACM Practice |
 >
-> Confirmed fourth: demo-37 (detector evaluation) is now Plan A FAccT'27 — CoSe held as Plan B, TDSC as Plan C. Demo-22 is held out — FAccT would force skipping PoPETs Issue 3.
+> Confirmed fourth: demo-37 is now Plan A FAccT'27 — CoSe held as Plan B, TDSC as Plan C. Demo-22 is held out — FAccT would force skipping PoPETs Issue 3. Demo 45 also lists FAccT'27 as its Plan A, so the FAccT'27 load is five papers, and the 2027 author guide asks every author of every paper to sign up as a reviewer.
 >
 > 🔐 **Plan A / Plan B: seven papers on the IEEE S&P'27 Cycle 2 slate.** Seven demos go to **IEEE S&P'27 Cycle 2** — abstract 10 Nov, papers 17 Nov 2026. A rejection drops each one to Plan B, then Plan C — always sequential, never simultaneous. None overlap the WWW, USENIX or FAccT slates.
 >
-> | Demo | Focus | Plan B | Plan C |
-> |------|-------|--------|--------|
-> | 04 tool-authority confinement under prompt injection | capability-based authority mediation for tool-using agents | USENIX Sec'28 / CCS'27 | CCS'27 |
-> | 09 ephemeral-buffer interception | provenance-bounded interception agent, live range | ESORICS'27 (spring cycle) | RAID'27 / ACSAC'27 |
-> | 26 sandbox isolation and exfiltration | isolation and exfiltration across agent sandboxes | ACSAC'27 | DIMVA'28 |
-> | 28 tamper-evident memory poisoning | S&P research paper (moved from WWW demo track) | DEF CON 35 | BH Arsenal |
-> | 29 tamper-evident provenance graphs | logging sufficiency for attributing agent actions after an incident | TIFS | TDSC |
-> | 30 insecure defaults in self-hosted stacks | insecure-defaults census with vendor-vs-operator attribution | TDSC | TIFS |
-> | 33 agent-protocol threat coverage | security of agent communication protocols (SoK) | COMST | Proc. IEEE |
+> ⚠️ **Cap check (verified 13 Oct 2026 on the [S&P'27 call](https://sp2027.ieee-security.org/cfpapers.html)):** S&P'27 allows at most **6 papers per author per cycle**, enforced at abstract registration (10 Nov 2026). Above the cap, **all** of that author's registrations in the cycle are desk-rejected. This slate lists 7, so one must move before 10 Nov. Papers rejected at S&P must also wait one year before resubmitting there.
+>
+> | Demo | Plan B | Plan C |
+> |------|--------|--------|
+> | Demo 04 | USENIX Sec'28 / CCS'27 | CCS'27 |
+> | Demo 09 | ESORICS'27 (spring cycle) | RAID'27 / ACSAC'27 |
+> | Demo 26 | ACSAC'27 | DIMVA'28 |
+> | Demo 28 | DEF CON 35 | BH Arsenal |
+> | Demo 29 | TIFS | TDSC |
+> | Demo 30 | TDSC | TIFS |
+> | Demo 33 | COMST | Proc. IEEE |
 >
 > Demos 22, 23, 08, 25, 24 and 14 stay on their own venues (PoPETs, DSN, AsiaCCS, ACNS, CSF and ICML).
+>
+> 🔁 **Plan A / Plan B / Plan C: Demo 01, re-planned 13 Oct 2026.** One venue at a time, never simultaneously. Rule applied: Q1 journals only, and no author fees.
+>
+> | Plan | Venue | Deadline | First decision | Est. chance |
+> |------|-------|----------|----------------|-------------|
+> | A | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) (Elsevier; SJR 2025 Q1) | ♾️ rolling — submitting Oct 2026 | desk ~3 days; after review ~53 days | ~20% |
+> | B | 🟦 [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) (first edition; double-blind) | 🟠 4 Feb 2027 | 16 Mar 2027 | ~20% |
+> | C | 🟦 [Journal of Information Security and Applications](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) (Elsevier; SJR 2025 Q1) | ♾️ rolling | ~2–4 months | ~25% |
+>
+> Fees: Plans A and C are hybrid Elsevier journals. Open access is paid by the Oxford–Elsevier publisher deal for an Oxford corresponding author who submits from an @ox.ac.uk address and picks CC BY; the subscription route is free in any case. The Open University deals exclude single-authored papers. Computers & Security uses single-anonymized review, a 10,000-word main-text limit and a 250-word abstract.
+>
+> Considered and not used: TMLR (diamond open access, no fees, but SCImago 2025 Q2 in AI); WWW'27 (research-track cap of 7 already used); S&P'27 C2 (cap of 6 already exceeded); FAccT'27 and PoPETs'27 (scope). Chances are estimates, not measured rates.
 
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
-| 01 | 🟦 [SATML](https://satml.org/) | 2027 | [SaTML'27 papers 29 Sep 2026 ⏰](https://satml.org/call-for-papers) | USENIX Sec'28 / S&P'28 next cycles | S&P'28 |
+| 01 | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) | — | [♾️ Rolling — submitting Oct 2026 (Plan A)](https://www.sciencedirect.com/journal/computers-and-security/publish/guide-for-authors) | USENIX SAIS'27 (4 Feb 2027) | JISA |
 | 02 | 🟩 [EMSE](https://link.springer.com/journal/10664) | — | [♾️ EMSE rolling](https://www.editorialmanager.com/emse) | IEEE TSE (only after an EMSE decision) | MSR'27 (only after a TSE decision) |
 | 03 | 🟪 [NeurIPS](https://neurips.cc/) | 2027 | [NeurIPS'27 D&B CFP unpublished, TBD](https://neurips.cc/) | ICLR'28 / TMLR | TMLR |
 | 04 | 🟦 IEEE S&P'27 C2 | 2027 | S&P'27 Cycle 2 papers 17 Nov 2026 (Plan A) | USENIX Sec'28 / CCS'27 | CCS'27 |

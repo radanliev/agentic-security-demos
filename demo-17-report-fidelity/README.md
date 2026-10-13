@@ -7,7 +7,7 @@
 - Explain claims-vs-logs auditing (check an agent's self-report against its action log)
 - Apply three rules: tests_run needs pytest in actions, untouched must avoid edited files, destructive must match rm -rf
 - Show 5 faithful runs and 3 violations (one of each type) over 8 synthetic trajectories
-- Distinguish this teaching toy from the preregistered IJCAI study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -47,7 +47,7 @@ WARNING: **This is a teaching demonstration using synthetic fixtures only.**
 ## Research Connection
 
 This demo illustrates the design question of a preregistered study on agent
-self-report fidelity (targeting IJCAI 2027, 200k-trajectory corpus). That study has
+self-report fidelity (200k-trajectory corpus). That study has
 **collected no confirmatory data**; every quantity there is `[RESULT PENDING]`.
 Nothing here describes a publication, a venue result, or a measured effect size.
 

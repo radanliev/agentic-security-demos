@@ -7,7 +7,7 @@
 - Explain sandbox isolation as an escape-rate ladder over 8 probes and 3 configs
 - Show that no sandbox means 8/8 escapes, a subprocess boundary still leaks 3/8, and strict isolation holds at 0/8
 - Name the 3 subprocess leakers (net-egress, dns, env-read) and why process boundaries miss them
-- Distinguish this teaching toy from the associated research project it illustrates (ACSAC 2027 as a later venue) (no data collected there yet)
+- Distinguish this teaching toy from the associated research project it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -46,7 +46,7 @@ escapes (filesystem, persistence) but not network and environment reads.
 ## Research Connection
 
 This demo illustrates the design question of a pending study on agent
-sandbox isolation (an associated research project, in preparation; ACSAC 2027 as a later venue). That study has **collected no
+sandbox isolation (an associated research project, in preparation). That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 

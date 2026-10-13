@@ -14,7 +14,7 @@
 - Code 8 synthetic system cards against 5 obligations (threats, evals, agentic, third_party, mitigations)
 - Show full coverage holds for only 2/8 cards and third-party coverage is weakest at 2/8
 - Run a hand-built experiment (one flag-flip) and explain why both tallies move
-- Distinguish this teaching toy from the pending FAccT 2027 longitudinal study it illustrates
+- Distinguish this teaching toy from the pending longitudinal study it illustrates
 
 ## Conceptual Explanation
 
@@ -62,7 +62,7 @@ floor. The toy shows the arithmetic; the study must earn the interpretation.
 ## Research Connection
 
 This demo illustrates the design question of a longitudinal study of system
-card assurance claims (targeting ACM FAccT 2027, Plan A). That study is
+card assurance claims. That study is
 **pending**; every quantity there is `[RESULT PENDING]` and its registration
 thresholds are undecided (`AD-90` in the paper repository). Nothing here
 describes a publication, a venue result, or a measured effect size.

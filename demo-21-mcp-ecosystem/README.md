@@ -13,7 +13,7 @@
 - Explain what tool poisoning is (a tool description carrying instructions to the model, not the user)
 - Define a rug pull (a version update that silently adds capabilities or rewrites the description)
 - Run a miniature census: poisoning prevalence, version drift, capability bundling, maintainer concentration
-- Distinguish this teaching toy from the preregistered EuroS&P study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -52,15 +52,14 @@ re-approve.
 ## Research Connection
 
 This demo illustrates the design question of a preregistered measurement study of the
-MCP ecosystem (targeting EuroS&P 2027). That study has **collected no confirmatory
+MCP ecosystem. That study has **collected no confirmatory
 data**; every quantity there is `[RESULT PENDING]`. Nothing here describes a
 publication, a venue result, or a measured prevalence.
 
 Provenance: distilled from `demo-21-mcp-ecosystem-measurement-eurosp` (private research
 repo), numbered Demo 21 to match its research counterpart. It shares no
 topic with Demo 14 (conformal action gating): this demo is a registry census over
-manifests; Demo 14 is statistical gating over action scores. Different venues
-(EuroS&P vs ICML), data, and claims.
+manifests; Demo 14 is statistical gating over action scores. Different data and claims.
 
 ### Difference from the Research Study
 

@@ -42,7 +42,7 @@ Popular cards disclose more often; the tail carries the debt.
 ## Research Connection
 
 This demo illustrates the disclosure question of a pending Analysis of model
-card debt targeting Nature MI. That study has **collected no confirmatory
+card debt. That study has **collected no confirmatory
 data**; every quantity there is `[RESULT PENDING]`. Nothing here describes a
 publication, a venue result, or a measured effect size. Boundary: this demo
 covers card disclosure only, not lineage risk (Demo 19).

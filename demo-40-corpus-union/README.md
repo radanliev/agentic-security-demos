@@ -45,7 +45,7 @@ fixture.
 ## Research Connection
 
 This demo illustrates the infrastructure design for a data-descriptor
-deposit (targeting Scientific Data). That deposit is **pending — nothing has
+deposit. That deposit is **pending — nothing has
 been deposited**. Nothing here describes a publication, a venue result, or a
 measured effect size.
 

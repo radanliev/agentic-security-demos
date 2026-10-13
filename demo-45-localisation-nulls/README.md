@@ -47,8 +47,7 @@ measurement; the null decides what the count means.
 ## Research Connection
 
 This demo illustrates the measurement question of an exact-null
-localisation study (targeting ACM FAccT 2027, Plan A; fallback USENIX
-Security '27 C2 Plan B, IEEE TDSC journal Plan C). That measurement is
+localisation study. That measurement is
 **pending**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size.
 

@@ -7,7 +7,7 @@
 - Explain the two delegation properties: audience binding (one audience per chain) and no scope amplification (scope never grows)
 - Check 6 synthetic delegation chains and read which two violate which property
 - Distinguish delegation-property checking from OAuth scope measurement (the topic of Demo 31)
-- Distinguish this teaching toy from the pending CSF study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the pending study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -45,7 +45,7 @@ Chain `c3` is the contrast: a three-hop chain that stays clean.
 ## Research Connection
 
 This demo illustrates the design question of a pending formal study of
-delegation authorisation (targeting CSF 2027, Tamarin models). That study has
+delegation authorisation (Tamarin models). That study has
 **collected no confirmatory data**; every quantity there is `[RESULT PENDING]`.
 Nothing here describes a publication, a venue result, or a measured effect size.
 

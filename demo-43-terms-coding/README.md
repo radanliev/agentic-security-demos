@@ -7,7 +7,7 @@
 - Explain what platform-terms coding is (reading accountability out of terms of service)
 - Code 8 synthetic platform terms against 3 clauses: disclaim 5/8, monitoring 4/8, consent 3/8
 - Show the accountability gradient (disclaimers common, delegation consent rare)
-- Distinguish this teaching toy from the pending ACM FAccT content analysis it illustrates
+- Distinguish this teaching toy from the pending content analysis it illustrates
 
 ## Conceptual Explanation
 
@@ -44,7 +44,7 @@ burden slides downhill to the deployer.
 ## Research Connection
 
 This demo illustrates the design question of a content analysis of
-agent-platform terms (targeting ACM FAccT 2027). That analysis is
+agent-platform terms. That analysis is
 **pending**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size.
 

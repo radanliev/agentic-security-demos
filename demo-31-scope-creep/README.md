@@ -60,7 +60,7 @@ is the least-privilege lesson.
 ## Research Connection
 
 This demo illustrates the measurement question of a pending study of agent
-integration privileges targeting ACM FAccT 2027. That study has **collected no
+integration privileges. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size. Boundary:
 this demo covers OAuth scopes only, not capability classes (Demo 21) nor

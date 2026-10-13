@@ -7,7 +7,7 @@
 - Explain agent-facing web measurement (which sites publish agent directives, which carry injections)
 - Tally adoption (either directive flag) and exposure (injection text) over 10 synthetic sites
 - Show adoption 4/10 and injections 2/10, both injections on low-popularity sites
-- Distinguish this teaching toy from the preregistered WWW study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -48,7 +48,7 @@ WARNING: **This is a teaching demonstration using synthetic fixtures only.**
 ## Research Connection
 
 This demo illustrates the design question of a preregistered study on the
-agent-facing web (targeting WWW 2027, Common Crawl corpus). That study has
+agent-facing web (Common Crawl corpus). That study has
 **collected no confirmatory data**; every quantity there is `[RESULT PENDING]`.
 Nothing here describes a publication, a venue result, or a measured effect size.
 

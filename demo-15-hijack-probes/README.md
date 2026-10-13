@@ -7,7 +7,7 @@
 - Explain what a white-box hijack probe is (flag an episode when its probe score meets a fixed threshold)
 - Apply a fixed threshold (0.55) to 8 synthetic episodes and read the outcome table
 - Show the probe catches 3/4 hijacked episodes with 0/4 false positives, missing borderline h4
-- Distinguish this teaching toy from the preregistered ICLR study it illustrates (no data collected there yet)
+- Distinguish this teaching toy from the preregistered study it illustrates (no data collected there yet)
 
 ## Conceptual Explanation
 
@@ -50,7 +50,7 @@ WARNING: **This is a teaching demonstration using synthetic fixtures only.**
 ## Research Connection
 
 This demo illustrates the design question of a preregistered study on hijack
-representation probing (targeting ICLR 2028). That study has **collected no
+representation probing. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here describes
 a publication, a venue result, or a measured effect size.
 
