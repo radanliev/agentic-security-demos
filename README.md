@@ -80,6 +80,7 @@
 | 43 | **Terms Coding** | 🟩 [WWW'27](https://www2027.thewebconf.org/) (Plan A) / AIES'27 (Plan B) | Platform terms accountability allocation | ✅ Active |
 | 44 | **Toolflow Taint** | 🟦 CCS'27 | Cross-tool dataflow integrity tracking | ✅ Active |
 | 45 | **Exact Nulls for Localisation Claims** | 🟩 [FAccT'27](https://facctconference.org/) (Plan A) / USENIX'27 C2 (Plan B) / TDSC (Plan C) | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
+| 46 | **Simulated Embedding Drift (AIBOM)** | 🟦 Computers & Security (Plan A, after real-model rebuild) / USENIX SAIS'27 (Plan B) / JISA (Plan C) | Seeded study of simulated embedding-model swap effects on supply-chain artefact triage — one-page skeleton, simulated models only | 🚧 Skeleton |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -217,7 +218,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 >
 > Confirmed fourth: demo-37 (detector evaluation) is now Plan A FAccT'27 — CoSe held as Plan B, TDSC as Plan C. Demo-22 is held out — FAccT would force skipping PoPETs Issue 3.
 >
-> 🔐 **Plan A / Plan B: seven papers on the IEEE S&P'27 Cycle 2 slate.** Seven demos go to **IEEE S&P'27 Cycle 2** — abstract 10 Nov, papers 17 Nov 2026. A rejection drops each one to Plan B, then Plan C — always sequential, never simultaneous. None overlap the WWW, USENIX or FAccT slates.
+> 🔐 **Plan A / Plan B: seven papers on the IEEE S&P'27 Cycle 2 slate.** Seven demos (one over the cap of 6 — see cap check below) go to **IEEE S&P'27 Cycle 2** — abstract 10 Nov, papers 17 Nov 2026. A rejection drops each one to Plan B, then Plan C — always sequential, never simultaneous. None overlap the WWW, USENIX or FAccT slates.
 >
 > | Demo | Focus | Plan B | Plan C |
 > |------|-------|--------|--------|
@@ -228,6 +229,8 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > | 29 tamper-evident provenance graphs | logging sufficiency for attributing agent actions after an incident | TIFS | TDSC |
 > | 30 insecure defaults in self-hosted stacks | insecure-defaults census with vendor-vs-operator attribution | TDSC | TIFS |
 > | 33 agent-protocol threat coverage | security of agent communication protocols (SoK) | COMST | Proc. IEEE |
+>
+> ⚠️ **Cap check (author decision needed):** with demo 28 moved off the WWW demo track (see WWW table) onto this slate, S&P'27 C2 now holds **7 papers against a per-author cap of 6**. One demo must move to its Plan B before the abstract deadline, **10 Nov 2026**.
 >
 > Demos 22, 23, 08, 25, 24 and 14 stay on their own venues (PoPETs, DSN, AsiaCCS, ACNS, CSF and ICML).
 
@@ -277,6 +280,8 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 42 | 🟩 [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | — | [♾️ *Rolling — no deadline*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | ESE / TOSEM / ICSE journal-first | TOSEM |
 | 43 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark> | AIES'27 | FAccT'28 |
 | 44 | 🟦 [CCS](https://www.sigsac.org/ccs/CCS2027/) | 2027 | CCS'27 | NDSS'28 | — |
+| 45 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | USENIX Sec'27 C2 ([papers 26 Jan 2027, reg. 19 Jan](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)) | [TDSC ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
+| 46 | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) | — | ♾️ *Rolling — submit only after real-model rebuild (currently one-page skeleton, simulated models)* | USENIX SAIS'27 (4 Feb 2027) | [JISA ♾️ rolling](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) |
 
 ---
 
