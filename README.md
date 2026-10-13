@@ -241,7 +241,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > | B | 🟦 [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) (first edition; double-blind) | 🟠 4 Feb 2027 | 16 Mar 2027 | ~20% |
 > | C | 🟦 [Journal of Information Security and Applications](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) (Elsevier; SJR 2025 Q1) | ♾️ rolling | ~2–4 months | ~25% |
 >
-> Fees: Plans A and C are hybrid Elsevier journals. Open access is paid by the Oxford–Elsevier publisher deal for an Oxford corresponding author who submits from an @ox.ac.uk address and picks CC BY; the subscription route is free in any case. The Open University deals exclude single-authored papers. Computers & Security uses single-anonymized review, a 10,000-word main-text limit and a 250-word abstract.
+> Fees: Plans A and C are hybrid Elsevier journals, so the subscription route costs the author nothing. [Oxford's publisher-deals page](https://www.bodleian.ox.ac.uk/open-research/open-access-publishing/journal-article/publisher-deals) lists Elsevier open access for an Oxford corresponding author who submits from an @ox.ac.uk address and picks CC BY; some UK institutions declined the 2026 Jisc–Elsevier agreement, so confirm Oxford's coverage at submission before choosing open access. The Open University deals exclude single-authored papers. Computers & Security uses single-anonymized review, a 10,000-word main-text limit and a 250-word abstract.
 >
 > Considered and not used: TMLR (diamond open access, no fees, but SCImago 2025 Q2 in AI); WWW'27 (research-track cap of 7 already used); S&P'27 C2 (cap of 6 already exceeded); FAccT'27 and PoPETs'27 (scope). Chances are estimates, not measured rates.
 
