@@ -293,7 +293,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 43 | 🟩 [WWW'27](https://www2027.thewebconf.org/) | 2027 | 🔴 <mark>**[WWW'27 abstract 18 Oct 2026, paper 25 Oct 2026 (Plan A)](https://www2027.thewebconf.org/research-track-papers)**</mark> | AIES'27 | FAccT'28 |
 | 44 | 🟦 [CCS](https://www.sigsac.org/ccs/CCS2027/) | 2027 | CCS'27 | NDSS'28 | — |
 | 45 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | USENIX Sec'27 C2 ([papers 26 Jan 2027, reg. 19 Jan](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)) | [TDSC ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
-| 46 | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) | — | ♾️ *Rolling — submit only after real-model rebuild (currently one-page skeleton, simulated models)* | USENIX SAIS'27 (4 Feb 2027) | [JISA ♾️ rolling](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) |
+| 46 | 🟦 [JISA](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) | — | ♾️ *Rolling — submit only after real-model rebuild (currently one-page skeleton, simulated models)* | [Computers & Security ♾️ rolling](https://www.sciencedirect.com/journal/computers-and-security) | USENIX SAIS'27 (4 Feb 2027; check per-author cap first — several USENIX submissions) |
 
 ---
 
