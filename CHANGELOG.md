@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added (demo 46 teaching toy, 15 October 2026)
+- **demo-46-embedding-drift**: stdlib cosine-shift toy linked to the private research repo. Overview row moved from skeleton to active. Research repo remains a simulated study.
+
 ### Added (demo 47, 15 October 2026)
 - **demo-47-blind-seal**: teaching companion for pre-reveal seals. Three synthetic cases (hit, miss, post-seal edit). Standard library only.
 - Root `README`: catalogue count 47, overview row, quick-start command, venue row (Plan A USENIX SAIS'27, 4 Feb 2027; Plan B Computers & Security; Plan C JISA, each only after the previous decision).

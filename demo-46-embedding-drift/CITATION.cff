@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "Demo 46: Embedding-swap cosine shift (teaching toy)"
+message: Teaching demo with synthetic vectors only.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+keywords:
+  - teaching
+  - embedding-drift
+  - synthetic-fixtures
+abstract: Teaching toy for cosine shift between two synthetic embedding vectors.

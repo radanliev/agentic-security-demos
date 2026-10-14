@@ -80,7 +80,7 @@
 | 43 | **Terms Coding** | Platform terms accountability allocation | ✅ Active |
 | 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | ✅ Active |
 | 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
-| 46 | | | 🚧 Skeleton |
+| 46 | **Embedding-swap cosine shift** | `1 - cosine` on two synthetic vectors, compared with the frozen simulated-study mean 0.1222 (`radanliev/demo-46-simulated-embedding-drift-aibom`, private) | ✅ Active |
 | 47 | **Pre-reveal Seal** | Hash a localisation commitment before the answer key opens; a post-seal edit is a mismatch (`demo-47-blind-verification-eval-sais`, private; available on request) | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
@@ -128,6 +128,7 @@ make demo DEMO=21   # MCP Ecosystem Census (EuroS&P toy)
 make demo DEMO=28   # Memory Poisoning (DEF CON toy)
 make demo DEMO=44   # Toolflow Taint (CCS toy)
 make demo DEMO=45   # Exact Nulls for Localisation Claims (SaTML toy)
+make demo DEMO=46   # Embedding-swap cosine shift
 make demo DEMO=47   # Pre-reveal Seal (USENIX SAIS'27 toy)
 
 # Run a demo's test suite
