@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added (demo 47, 15 October 2026)
+- **demo-47-blind-seal**: teaching companion for pre-reveal seals. Three synthetic cases (hit, miss, post-seal edit). Standard library only.
+- Root `README`: catalogue count 47, overview row, quick-start command, venue row (Plan A USENIX SAIS'27, 4 Feb 2027; Plan B Computers & Security; Plan C JISA, each only after the previous decision).
+- Root `Makefile`: `demo-47-blind-seal` in `DEMO_DIRS` and a `demo-47` target.
+
 ### Changed (venue notes and anonymity, 13 October 2026)
 - Root `README`, demo catalogue: the Venue column is removed, so no row pairs a demo title with a venue. Demo 13's row is renamed to its own title, "Typed Commitments & Coverage Cues".
 - Root `README`, venue slates: rows now name demos by number only ("Demo 18"); the topic columns (WWW titles, USENIX angle, FAccT angle, S&P focus) are removed.

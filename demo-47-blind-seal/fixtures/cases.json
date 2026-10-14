@@ -1,0 +1,5 @@
+[
+  {"id": "hit", "commitment": "auth.token_check", "truth": "auth.token_check"},
+  {"id": "miss", "commitment": "logging.redact", "truth": "auth.token_check"},
+  {"id": "edited", "commitment": "auth.token_check", "truth": "auth.token_check", "after_seal": "logging.redact"}
+]

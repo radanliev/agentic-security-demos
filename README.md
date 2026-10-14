@@ -4,7 +4,7 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 45 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Computers & Security, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
+  <strong>A curated collection of 47 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Computers & Security, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
 </p>
 
 > 🐣 **Padawan-practice notice (read before citing).** These are my teaching demos by Petar Radanliev — training missions for the classroom, not Jedi trials. Like Padawan exercises, each demo **may or may not be converted into a full paper**, and any paper **may or may not be accepted** at its listed venue. The venue column names the *training ground* that inspired the exercise, never a publication claim. No preprints, no datasets deposited, no reviewer verdicts — just lightsabers set to stun (synthetic fixtures, offline only).
@@ -81,6 +81,7 @@
 | 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | ✅ Active |
 | 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | ✅ Active |
 | 46 | | | 🚧 Skeleton |
+| 47 | **Pre-reveal Seal** | Hash a localisation commitment before the answer key opens; a post-seal edit is a mismatch (`demo-47-blind-verification-eval-sais`, private; available on request) | ✅ Active |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -105,7 +106,7 @@ pip install -e ".[dev]"
 # Run every demo's test suite
 make test
 
-# Run one demo's suite (folders demo-01 … demo-45)
+# Run one demo's suite (folders demo-01 … demo-47)
 make test DEMO=01
 ```
 
@@ -117,7 +118,7 @@ All demos run offline from the repository root — no API keys, no network.
 Each demo folder also has step-by-step `INSTRUCTIONS.md` with expected outputs.
 
 ```bash
-# Run a teaching demo (folders demo-01 … demo-45)
+# Run a teaching demo (folders demo-01 … demo-47)
 make demo DEMO=01   # Blind Verification
 make demo DEMO=04   # Prompt Injection Authority
 make demo DEMO=07   # Malware Triage
@@ -127,6 +128,7 @@ make demo DEMO=21   # MCP Ecosystem Census (EuroS&P toy)
 make demo DEMO=28   # Memory Poisoning (DEF CON toy)
 make demo DEMO=44   # Toolflow Taint (CCS toy)
 make demo DEMO=45   # Exact Nulls for Localisation Claims (SaTML toy)
+make demo DEMO=47   # Pre-reveal Seal (USENIX SAIS'27 toy)
 
 # Run a demo's test suite
 make test DEMO=01
@@ -293,6 +295,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 44 | 🟦 [CCS](https://www.sigsac.org/ccs/CCS2027/) | 2027 | CCS'27 | NDSS'28 | — |
 | 45 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | USENIX Sec'27 C2 ([papers 26 Jan 2027, reg. 19 Jan](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)) | [TDSC ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 46 | 🟦 [JISA](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) | — | ♾️ *Rolling — submit only after real-model rebuild (currently one-page skeleton, simulated models)* | [Computers & Security ♾️ rolling](https://www.sciencedirect.com/journal/computers-and-security) | [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) (4 Feb 2027; check per-author cap first — several USENIX submissions) |
+| 47 | 🟦 [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) | 2027 | 🟠 **[4 Feb 2027](https://www.usenix.org/conference/sais27/call-for-papers)** (same CFP as demo 01 Plan B and demo 46 Plan C; check the per-author cap before registering more than one) | [Computers & Security ♾️ rolling](https://www.sciencedirect.com/journal/computers-and-security) (only after an SAIS decision) | [JISA ♾️ rolling](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) (only after a Computers & Security decision) |
 
 ---
 
