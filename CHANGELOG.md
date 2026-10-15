@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (demo 01 venue plan, 15 October 2026)
+- Root `README`, demo 01: Plan A Expert Systems with Applications (Elsevier, JCR Q1), Plan B ACM TOSEM (JCR Q1), Plan C Information Processing & Management (Elsevier, JCR Q1); one venue at a time. Demo 47's row no longer refers to demo 01.
+
 ### Added (demo 46 teaching toy, 15 October 2026)
 - **demo-46-embedding-drift**: stdlib cosine-shift toy linked to the private research repo. Overview row moved from skeleton to active. Research repo remains a simulated study.
 
@@ -18,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed (venue notes and anonymity, 13 October 2026)
 - Root `README`, demo catalogue: the Venue column is removed, so no row pairs a demo title with a venue. Demo 13's row is renamed to its own title, "Typed Commitments & Coverage Cues".
 - Root `README`, venue slates: rows now name demos by number only ("Demo 18"); the topic columns (WWW titles, USENIX angle, FAccT angle, S&P focus) are removed.
-- Root `README`, demo 01: re-planned to Plan A Computers & Security (Elsevier, SJR 2025 Q1; rolling), Plan B USENIX SAIS'27 (4 Feb 2027), Plan C Journal of Information Security and Applications (Elsevier, SJR 2025 Q1). Previously SaTML'27, then S&P'28 / USENIX Sec'28. TMLR was considered and not used: no fees, but SCImago 2025 Q2.
+- Root `README`, demo 01: venue plan revised (superseded by the 15 October 2026 entry).
 - Root `README`, venue notes: the S&P'27 cap (six papers per author per cycle, all registrations desk-rejected above it, enforced 10 Nov 2026) and the WWW'27 cap (seven per author per type) are recorded with links to the official calls; the FAccT'27 load is noted as five papers including demo 45.
 - 33 demo READMEs (demos 13-45): target-venue names removed from Learning Objectives and Research Connection text. The studies, data status and boundaries are unchanged.
 

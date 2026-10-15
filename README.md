@@ -236,21 +236,21 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 >
 > Demos 22, 23, 08, 25, 24 and 14 stay on their own venues (PoPETs, DSN, AsiaCCS, ACNS, CSF and ICML).
 >
-> 🔁 **Plan A / Plan B / Plan C: Demo 01, re-planned 13 Oct 2026.** One venue at a time, never simultaneously. Rule applied: Q1 journals only, and no author fees.
+> 🔁 **Plan A / Plan B / Plan C: Demo 01, re-planned 15 Oct 2026.** One venue at a time, never simultaneously. Rule applied: JCR Q1 journals only, and no author fees.
 >
 > | Plan | Venue | Deadline | First decision | Est. chance |
 > |------|-------|----------|----------------|-------------|
-> | A | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) (Elsevier; SJR 2025 Q1) | ♾️ rolling — submitting Oct 2026 | desk ~3 days; after review ~53 days | ~20% |
-> | B | 🟦 [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) (first edition; double-blind) | 🟠 4 Feb 2027 | 16 Mar 2027 | ~20% |
-> | C | 🟦 [Journal of Information Security and Applications](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) (Elsevier; SJR 2025 Q1) | ♾️ rolling | ~2–4 months | ~25% |
+> | A | 🟦 [Expert Systems with Applications](https://www.sciencedirect.com/journal/expert-systems-with-applications) (Elsevier; JCR Q1, CS–AI; double-anonymized) | ♾️ rolling — submitting Oct 2026 | desk ~5 days; to acceptance ~5 months | ~15–20% |
+> | B | 🟦 [ACM TOSEM](https://dl.acm.org/journal/tosem) (Fast-Impact track; JCR Q1) | ♾️ rolling | first review within 90 days | ~20% |
+> | C | 🟦 [Information Processing & Management](https://www.sciencedirect.com/journal/information-processing-and-management) (Elsevier; JCR Q1) | ♾️ rolling | desk ~5 days | ~10–15% |
 >
-> Fees: Plans A and C are hybrid Elsevier journals, so the subscription route costs the author nothing. [Oxford's publisher-deals page](https://www.bodleian.ox.ac.uk/open-research/open-access-publishing/journal-article/publisher-deals) lists Elsevier open access for an Oxford corresponding author who submits from an @ox.ac.uk address and picks CC BY; some UK institutions declined the 2026 Jisc–Elsevier agreement, so confirm Oxford's coverage at submission before choosing open access. The Open University deals exclude single-authored papers. Computers & Security uses single-anonymized review, a 10,000-word main-text limit and a 250-word abstract.
+> Fees: Plans A and C are hybrid Elsevier journals and Plan B is an ACM journal, so the subscription route costs the author nothing. [Oxford's publisher-deals page](https://www.bodleian.ox.ac.uk/open-research/open-access-publishing/journal-article/publisher-deals) lists open-access agreements for an Oxford corresponding author who submits from an @ox.ac.uk address; confirm coverage at submission before choosing open access. The Open University deals exclude single-authored papers.
 >
-> Considered and not used: TMLR (diamond open access, no fees, but SCImago 2025 Q2 in AI); WWW'27 (research-track cap of 7 already used); S&P'27 C2 (cap of 6 already exceeded); FAccT'27 and PoPETs'27 (scope). Chances are estimates, not measured rates.
+> Considered and not used: Engineering Applications of AI (requires a new AI method), Knowledge-Based Systems (20-page guideline), Information Sciences, IEEE TDSC (12-page limit), WWW'27 (8 pages; per-author cap already used), TMLR and EMSE (not JCR Q1). Chances are estimates, not measured rates.
 
 | Demo | Plan A Venue | Year | Deadline (AoE) | Plan B Venue | Plan C Venue |
 |------|--------------|------|----------|---------------------------|--------------|
-| 01 | 🟦 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) | — | [♾️ Rolling — submitting Oct 2026 (Plan A)](https://www.sciencedirect.com/journal/computers-and-security/publish/guide-for-authors) | USENIX SAIS'27 (4 Feb 2027) | JISA |
+| 01 | 🟦 [Expert Systems with Applications](https://www.sciencedirect.com/journal/expert-systems-with-applications) | — | [♾️ Rolling — submitting Oct 2026 (Plan A)](https://www.sciencedirect.com/journal/expert-systems-with-applications/publish/guide-for-authors) | ACM TOSEM (only after an ESWA decision) | Information Processing & Management (only after a TOSEM decision) |
 | 02 | 🟩 [EMSE](https://link.springer.com/journal/10664) | — | [♾️ EMSE rolling](https://www.editorialmanager.com/emse) | IEEE TSE (only after an EMSE decision) | MSR'27 (only after a TSE decision) |
 | 03 | 🟪 [NeurIPS](https://neurips.cc/) | 2027 | [NeurIPS'27 D&B CFP unpublished, TBD](https://neurips.cc/) | ICLR'28 / TMLR | TMLR |
 | 04 | 🟦 IEEE S&P'27 C2 | 2027 | S&P'27 Cycle 2 papers 17 Nov 2026 (Plan A) | USENIX Sec'28 / CCS'27 | CCS'27 |
@@ -296,7 +296,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 44 | 🟦 [CCS](https://www.sigsac.org/ccs/CCS2027/) | 2027 | CCS'27 | NDSS'28 | — |
 | 45 | 🟩 [FAccT](https://facctconference.org/) | 2027 | 🔴 <mark>**[FAccT'27 abstract 27 Oct 2026, paper 3 Nov 2026](https://facctconference.org/2027/cfp.html)**</mark> | USENIX Sec'27 C2 ([papers 26 Jan 2027, reg. 19 Jan](https://www.usenix.org/conference/usenixsecurity27/call-for-papers)) | [TDSC ♾️ rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 46 | 🟦 [JISA](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) | — | ♾️ *Rolling — submit only after real-model rebuild (currently one-page skeleton, simulated models)* | [Computers & Security ♾️ rolling](https://www.sciencedirect.com/journal/computers-and-security) | [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) (4 Feb 2027; check per-author cap first — several USENIX submissions) |
-| 47 | 🟦 [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) | 2027 | 🟠 **[4 Feb 2027](https://www.usenix.org/conference/sais27/call-for-papers)** (same CFP as demo 01 Plan B and demo 46 Plan C; check the per-author cap before registering more than one) | [Computers & Security ♾️ rolling](https://www.sciencedirect.com/journal/computers-and-security) (only after an SAIS decision) | [JISA ♾️ rolling](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) (only after a Computers & Security decision) |
+| 47 | 🟦 [USENIX SAIS'27](https://www.usenix.org/conference/sais27/call-for-papers) | 2027 | 🟠 **[4 Feb 2027](https://www.usenix.org/conference/sais27/call-for-papers)** (same CFP as demo 46 Plan C; check the per-author cap before registering more than one) | [Computers & Security ♾️ rolling](https://www.sciencedirect.com/journal/computers-and-security) (only after an SAIS decision) | [JISA ♾️ rolling](https://www.sciencedirect.com/journal/journal-of-information-security-and-applications) (only after a Computers & Security decision) |
 
 ---
 
