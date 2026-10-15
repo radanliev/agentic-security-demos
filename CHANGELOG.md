@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed (demo 01 venue plan, 15 October 2026)
 - Root `README`, demo 01: Plan A Expert Systems with Applications (Elsevier, JCR Q1), Plan B ACM TOSEM (JCR Q1), Plan C Information Processing & Management (Elsevier, JCR Q1); one venue at a time. Demo 47's row no longer refers to demo 01.
+- Root `README`, demo 47: Plan B Engineering Applications of AI (Elsevier, JCR Q1) and Plan C Information Sciences (Elsevier, JCR Q1), replacing a journal that no longer considers AI/ML submissions and a JCR Q2 journal.
 
 ### Added (demo 46 teaching toy, 15 October 2026)
 - **demo-46-embedding-drift**: stdlib cosine-shift toy linked to the private research repo. Overview row moved from skeleton to active. Research repo remains a simulated study.
