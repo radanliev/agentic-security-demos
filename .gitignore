@@ -8,6 +8,7 @@ __pycache__/
 venv/
 env/
 ENV/
+uv.lock
 
 # Distribution / packaging
 dist/
@@ -17,6 +18,8 @@ build/
 # IDE / editor
 .vscode/
 .idea/
+.zcodeignore
+*.zcodeignore
 *.swp
 *.swo
 *~

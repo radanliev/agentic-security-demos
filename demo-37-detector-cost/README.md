@@ -68,7 +68,7 @@ prompt-injection detectors. That evaluation
 is **pending**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size.
 
-Provenance: distilled from `demo-37-prompt-injection-detectors-evaluation-cose` (private research repo).
+Provenance: distilled from `demo-37-prompt-injection-detectors-evaluation-cose` (private research repo; the `-cose` suffix is the old working title — Computers & Security is out of scope for AI/ML since early 2024, so the venue plan in the root README now targets FAccT'27 → TIFS → TDSC).
 It shares no topic with Demo 18 (language transfer): this demo is detector
 OPERATION priced with false-positive cost; Demo 18 studies cross-language
 transfer. Different questions, data, and claims.

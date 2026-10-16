@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (venue refresh: Computers & Security removal + CoSe de-duplication, 16 October 2026)
+- Root `README`: removed Computers & Security / CoSe from all venue tables (header list, FAccT slate, demos 37/38/46 rows, acknowledgments). The journal's guide for authors confirms an AI/ML moratorium since early 2024, so all agentic-AI demos are out of scope there (0% chance).
+- Demo 37 (Detector Cost): Plan B CoSe → IEEE TIFS (♾️ rolling; scope covers intrusion detection, adversarial ML and AI-driven decision-system security), Plan C stays TDSC. Sequential only: FAccT'27 → TIFS → TDSC.
+- Demo 38 (Assurance Claims): Plan B stays Journal of Cybersecurity (matches `demo-38-system-card-assurance-claims-joc` provenance; Oxford journal explicitly publishes AI-cybersecurity work), Plan C CoSe → ACM Journal on Responsible Computing (♾️ rolling; scope lists fairness/accountability/transparency plus adversarial ML). Sequential only.
+- Demo 46: Plan A AsiaCCS'27 Round 2 (11 Dec 2026, AI Security track), Plan B USENIX SAIS'27 (4 Feb 2027), Plan C IEEE TDSC (♾️ rolling). Replaces Computers & Security due to the journal's AI/ML moratorium and satisfies the soon-deadline requirement without hitting author submission caps.
+- FAccT slate header corrected from 4 to 5 papers (demos 31, 37, 38, 39 plus 45); no author cap, slate counts unchanged, so no cap risk.
+- Demo 04: removed Plan B / Plan C overlap (both listed CCS'27) — Plan B USENIX Sec'28, Plan C CCS'27 Cycle B.
+- Refreshed dates verified 16 Oct 2026: WWW'27 abstract 18 Oct / paper 25 Oct 2026; FAccT'27 abstract 27 Oct / paper 3 Nov 2026; S&P'27 C2 abstract 10 Nov / paper 17 Nov 2026; AsiaCCS'27 R2 11 Dec 2026 (AI Security track; R1 rejects cannot resubmit R2); DSN'27 abstract 25 Nov / paper 2 Dec 2026; PoPETs'27 Iss. 3 30 Nov 2026; USENIX'27 C2 reg. 19 Jan / papers 26 Jan 2027; CSF'27 Winter 28 Jan 2027 (Fall cycle 15 Oct 2026 has passed); ACNS'27 C2 21 Jan 2027; SAIS'27 4 Feb 2027; CCS'27 CFP TBD (expected Cycle A ~mid-Jan, Cycle B ~late Apr 2027). Prioritisation rule applied: Plan A = soonest fitting conference with capacity, backups ordered by soonest-actionable date then estimated success rate (FAccT ~33% '26, S&P ~13–15%, USENIX/CCS ~15–18%, rolling journals).
+
 ### Changed (demo 01 venue plan, 15 October 2026)
 - Root `README`, demo 01: Plan A Expert Systems with Applications (Elsevier, JCR Q1), Plan B ACM TOSEM (JCR Q1), Plan C Information Processing & Management (Elsevier, JCR Q1); one venue at a time. Demo 47's row no longer refers to demo 01.
 - Root `README`, demo 47: Plan B Engineering Applications of AI (Elsevier, JCR Q1) and Plan C Information Sciences (Elsevier, JCR Q1), replacing a journal that no longer considers AI/ML submissions and a JCR Q2 journal.
