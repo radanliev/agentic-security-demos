@@ -1,0 +1,91 @@
+%%
+%% This is a placeholder manuscript shell for ACM IMC'27 (Internet Measurement Conference).
+%% ACM SIGCOMM / SIGCONF format, anonymous double-blind submission.
+%% Refresh this manuscript before final submission by syncing with the research repository.
+%%
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\acmConference[IMC '27]{ACM Internet Measurement Conference 2027}{October 2027}{TBD}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+
+\title{Status 200 Is Not a File: An Empirical Measurement Study of the Agent-Facing Web in Common Crawl}
+
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{Anonymous Country}
+}
+\email{anonymous@example.org}
+
+\begin{abstract}
+Large-scale empirical measurement of agent-facing web infrastructure—such as \texttt{/llms.txt} manifests intended for autonomous LLM agents—faces severe methodological pitfalls when relying on passive crawl indices. In this paper, we conduct a comprehensive measurement study of agent-facing web endpoints across Common Crawl (CC-MAIN-2026-39 and CC-MAIN-2026-30) and the Tranco Top 1M list. We find that naive index-based measurements fundamentally misestimate agent-facing web adoption due to dual distortion: widespread HTML soft-404s masquerading as HTTP 200 responses in crawl indices (accounting for over half of archived responses in high-traffic strata), compounded by crawler frontier bias that severely under-represents tail adopters. To resolve these measurement errors, we develop and validate a multi-signal classification gate combining DOM structure, content-length heuristics, homepage similarity metrics, and MIME verification, achieving high inter-annotator agreement (Cohen's kappa > 0.80) against human validation ground truth. We further analyse the structural payload characteristics of genuine agent files, revealing heavy reliance on automated platform generators and widespread broken links. Our findings provide a rigorous measurement methodology, open-source pipeline, and reference dataset for studying agent-facing web protocol evolution.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10003033.10003079.10011704</concept_id>
+<concept_desc>Networks~Network measurement</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10002951.10003260.10003277</concept_id>
+<concept_desc>Information systems~Web mining</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10002951.10003260.10003261</concept_id>
+<concept_desc>Information systems~Web searching and information discovery</concept_desc>
+<concept_significance>400</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Networks~Network measurement}
+\ccsdesc[500]{Information systems~Web mining}
+\ccsdesc[400]{Information systems~Web searching and information discovery}
+
+\keywords{web measurement, agent-facing web, llms.txt, Common Crawl, soft-404, internet measurement, crawler frontier bias}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Measurement of emerging Internet protocols and conventions requires careful disentanglement of network-level status codes from application-level semantic payloads. The recent emergence of agent-facing web conventions, notably \texttt{/llms.txt}, represents an attempt to structure web content for consumption by automated language model agents. However, initial measurement attempts that count HTTP 200 OK responses in web archives introduce massive measurement errors. This paper provides the first rigorous measurement study of agent-facing web deployment.
+
+\section{Dataset and Sampling Methodology}
+We analyse two large-scale Common Crawl archives:
+\begin{itemize}
+    \item CC-MAIN-2026-39: complete walk across 300 columnar index partitions identifying 16,029 unique host requests at \texttt{/llms.txt}.
+    \item CC-MAIN-2026-30 (July 2026 release): 598,298 candidate records analysed for payload conformance.
+    \item Stratified domain ranking using Tranco Top 1M to capture structural adoption differences across popularity bands.
+\end{itemize}
+
+\section{Measurement Pitfall 1: HTML Soft-404 Misclassification}
+We systematically characterize the prevalence of soft-404 responses in archived web crawl data. In top-ranking domains, modern web application firewalls and front-end routers respond with HTTP 200 containing HTML error pages or splash screens rather than valid Markdown agent files. We develop and validate a multi-feature deterministic classifier, achieving high agreement with independent manual ground truth ($\kappa = 0.819$).
+
+\section{Measurement Pitfall 2: Crawl Frontier Bias}
+We contrast Common Crawl's archived coverage against independent active live probes. The crawler frontier heavily concentrates on high-ranking root domains while under-sampling the long tail where early adopter communities predominantly deploy agent files.
+
+\section{Payload Analysis: Structure, Quality, and Risks}
+Among verified agent files:
+\begin{enumerate}
+    \item File sizes are generally compact (median payload length is small).
+    \item High proportion of files are mechanically generated by automated publishing platforms.
+    \item Substantial hyperlink rot: a significant percentage of referenced URLs fail resolution.
+    \item Indirect prompt injection vectors are detected where agent files ingest untrusted third-party comments or listings.
+\end{enumerate}
+
+\section{Ethical Considerations}
+All measurements rely on passive archived crawl data and bounded, responsible verification probes compliant with the Menlo Report and institutional ethics guidelines.
+
+\section{Conclusion}
+We release our measurement framework, validation gates, and datasets to establish sound methodology for longitudinal tracking of the agent-facing web.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

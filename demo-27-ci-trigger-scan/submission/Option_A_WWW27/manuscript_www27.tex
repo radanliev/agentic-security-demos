@@ -1,0 +1,112 @@
+%%
+%% This is a placeholder manuscript shell for WWW'27 (Research Track — Web Infrastructure and Agentic Systems).
+%% Refresh this manuscript before final submission by syncing with docs/paper/manuscript.tex
+%% from the research repository (demo-27-coding-agent-ci-injection-blackhat).
+%%
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\acmConference[WWW '27]{The Web Conference 2027}{May 10--14, 2027}{Dublin, Ireland}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+
+\begin{CCSXML}
+<ccs2012>
+  <concept>
+      <concept_id>10002978.10003022.10003023</concept_id>
+      <concept_desc>Security and privacy~Software security engineering</concept_desc>
+      <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+      <concept_id>10002951.10003260</concept_id>
+      <concept_desc>Information systems~World Wide Web</concept_desc>
+      <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+      <concept_id>10011007.10011006.10011071</concept_id>
+      <concept_desc>Software and its engineering~Software configuration management and version control systems</concept_desc>
+      <concept_significance>300</concept_significance>
+  </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Security and privacy~Software security engineering}
+\ccsdesc[500]{Information systems~World Wide Web}
+\ccsdesc[300]{Software and its engineering~Software configuration management and version control systems}
+
+\keywords{Web security, delegated authority, AI coding agents, continuous integration, indirect prompt injection, software supply chain}
+
+\title{Trust Me, I'm an Issue: Measuring the Prompt-Injection Exposure of AI Coding Agents Wired to Public Issue Trackers}
+
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{Anonymous Country}
+}
+\email{anonymous@example.invalid}
+
+\begin{abstract}
+Public code forges are foundational Web collaboration platforms where open issue trackers and pull-request dialogues accept untrusted input from arbitrary Web accounts. When repository maintainers automate autonomous AI coding agents by wiring them to forge webhook events, does the platform delegate privileged write authority to an unauthenticated Web adversary? This paper presents an empirical measurement of delegated authority and prompt-injection reachability across AI coding agents deployed in continuous integration (CI) workflows. A stored-file census across 367 agent repositories and 448 workflows reveals that 67.0\% execute on untrusted Web triggers (issues, pull\_request, pull\_request\_target), with 88.3\% granting write-capable permissions (contents:write or pull-requests:write). Syntactic reachability analysis indicates that 95.8\% of untrusted-trigger repositories omit maintainer identity or collaborator gates, leaving 64.2\% of all repositories delegating write tokens upon arbitrary Web issue creation. Upstream vendor documentation heavily influences exposure: where starter templates omit perimeter gating (e.g., Anthropic Claude Code), 86.8\% of downstream adoptions remain ungated, whereas default-gated templates (e.g., Google Gemini CLI) achieve 100\% gated adoptions. A capability-coverage model indicates that defense-in-depth combining split-token read-only sandboxes with identity gating eliminates 96.0\% of attack toolpaths while preserving 100\% benign developer utility.
+\end{abstract}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+Public Web code forges---predominantly GitHub and GitLab---serve as the collaborative backbone of open-source software on the World Wide Web. By design, these platforms expose open Web endpoints: public issue trackers, pull request review discussions, and discussion forums that accept unauthenticated or pseudonymous text input from arbitrary Web users. In response to increasing development demands, repository maintainers are rapidly integrating autonomous AI coding agents (such as Anthropic Claude Code, Google Gemini CLI, SWE-agent, and OpenHands) into continuous integration (CI) pipelines.
+
+When an unauthenticated Web user creates an issue or posts a comment, the forge dispatches a webhook event that spawns an automated runner, forwards untrusted natural language text into the agent context, and provides a privileged forge credential (\texttt{GITHUB\_TOKEN}). This architecture creates a classic Confused Deputy vulnerability: an unauthenticated Web actor directs the actions of a privileged internal runner that holds write authority over repository source code, release tags, and issue state.
+
+\section{Threat Model and Continuous Integration Wiring}
+\label{sec:threat_model}
+We define the threat model for AI coding agents automated via Web forge webhooks:
+\begin{itemize}
+    \item \textbf{Adversary Capability:} An outside Web user without repository permissions creates an issue, pull request, or comment containing an indirect prompt-injection payload.
+    \item \textbf{Deputy Action:} The forge automation executes a workflow triggered by untrusted events (\texttt{issues}, \texttt{pull\_request}, \texttt{pull\_request\_target}).
+    \item \textbf{Exploitation Path:} The agent processes the adversarial payload as instructions, invoking toolpaths to exfiltrate repository secrets, commit backdoors, or compromise CI runners.
+    \item \textbf{Perimeter Gates:} Safety depends on whether workflow wiring enforces maintainer identity checks, author association filters, or read-only credential scoping.
+\end{itemize}
+
+\section{Measurement Census and Empirical Methodology}
+\label{sec:census}
+We conduct a structured census across stored repositories automating AI coding agents on GitHub Actions. Our corpus comprises 367 distinct repositories containing 448 agent workflow configurations and 471 automated jobs. We analyse each workflow across three primary dimensions:
+\begin{enumerate}
+    \item \textbf{Trigger Surface:} Classification of trigger events into untrusted Web inputs versus maintainer-restricted dispatches.
+    \item \textbf{Token Permissions:} Evaluation of granted permissions (\texttt{contents:write}, \texttt{pull-requests:write}, or default elevated tokens).
+    \item \textbf{Perimeter Gating:} Presence of syntactic conditions checking \texttt{github.actor}, \texttt{author\_association}, or required review approvals.
+\end{enumerate}
+
+\section{Empirical Findings}
+\label{sec:findings}
+The empirical census reveals pervasive exposure across public workflows:
+\begin{itemize}
+    \item \textbf{Untrusted Trigger Exposure:} 67.0\% (300/448) of agent workflows execute on untrusted Web events, with pull request families accounting for 68.1\%.
+    \item \textbf{Elevated Write Authority:} 88.3\% (416/471) of agent jobs operate with explicit write permissions, most commonly \texttt{contents:write} (32.5\%).
+    \item \textbf{Gating Omission:} 95.8\% of untrusted-trigger repositories omit maintainer identity or association gates, resulting in 64.2\% of all surveyed repositories delegating write tokens to arbitrary Web issues.
+    \item \textbf{Vendor Template Influence:} Starter templates published in vendor documentation strongly predict downstream exposure. Where vendor documentation provided ungated starter snippets (Anthropic Claude Code), 86.8\% of in-the-wild workflow adoptions remained ungated. Conversely, where vendors mandated perimeter gates in starter templates (Google Gemini CLI), 100\% of matched downstream workflows retained identity gates.
+\end{itemize}
+
+\section{Capability-Coverage Defense Model}
+\label{sec:defense}
+To address this exposure without eliminating agent utility, we model a layered defense-in-depth architecture combining:
+\begin{enumerate}
+    \item \textbf{Forge Perimeter Gating:} Filtering webhook dispatches based on verified contributor status (\texttt{COLLABORATOR}, \texttt{MEMBER}, \texttt{OWNER}).
+    \item \textbf{Split-Token Sandboxing:} Executing the initial reasoning and code generation steps under read-only credentials, requiring explicit human approval before invoking write-capable tokens.
+    \item \textbf{Tool-Level Execution Bounds:} Constraining agent tool invocation to sandboxed environments without access to runner environment variables or ambient secrets.
+\end{enumerate}
+In our capability-coverage analysis across standardised InjecAgent scenarios, this layered defense blocks 96.0\% of attack toolpaths while preserving 100\% of standard developer maintenance workflows.
+
+\section{Related Work}
+\label{sec:related_work}
+Our work builds on research in continuous integration security, prompt injection vulnerabilities in LLM agents, and software supply chain assurance. Prior studies have examined general GitHub Actions misconfigurations; we provide the first systematic measurement focused specifically on autonomous AI coding agents and the role of upstream vendor templates in propagating Confused Deputy vulnerabilities.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Autonomous coding agents wired to public forge webhooks represent a critical attack surface for modern Web infrastructure. By measuring real-world workflow configurations, we demonstrate that unauthenticated Web issue submission frequently leads to privileged write execution. Eliminating this risk requires upstream vendors and forge providers to enforce secure-by-default templates and perimeter gating.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

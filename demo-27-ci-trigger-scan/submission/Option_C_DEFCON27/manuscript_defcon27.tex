@@ -1,0 +1,62 @@
+%%
+%% DEF CON 35 Demo Labs Proposal & Lab Workbook Shell
+%%
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{\textbf{CI-Trigger-Scan: Hunting Confused Deputies in Agentic CI Pipelines}}
+
+\author{
+  \textbf{Demo Labs Presenter Team}\\
+  \texttt{demolabs@example.invalid}
+}
+\date{DEF CON 35 (2027) --- Demo Labs Track}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Wiring autonomous AI coding agents directly to public GitHub issue trackers creates an open Confused Deputy vulnerability: unauthenticated Web users can issue prompts that trigger privileged CI runners to execute arbitrary tools and steal write tokens. At DEF CON 35 Demo Labs, we present CI-Trigger-Scan, an open-source security tool that parses workflow definitions to identify vulnerable public-trigger and write-permission wiring. Based on our real-world census of 367 agent repositories, 64.2\% of surveyed repositories delegate write tokens to unauthenticated issue creators without maintainer review. At our interactive Demo Labs station, attendees can run live audits against their own repositories, test simulated indirect prompt injections in a safe offline sandbox, and learn how to deploy fail-closed perimeter gating and split-token sandboxes that neutralise 96.0\% of attack paths while keeping agents useful.
+\end{abstract}
+
+\section{Demo Labs Station Overview}
+The DEF CON Demo Labs station provides a hands-on, interactive environment where hackers, DevOps engineers, and researchers can:
+\begin{enumerate}
+    \item \textbf{Bring Your Own Repo (BYOR):} Point the scanner at their public or local git repositories to evaluate whether automated CI agents are vulnerable to prompt injection via issue creation.
+    \item \textbf{Exploit Playground:} Interact with an offline, synthetic runner demonstrating how an issue comment triggers an agent to exfiltrate \texttt{GITHUB\_TOKEN} or modify protected branch state.
+    \item \textbf{Fix-It Workshop:} Generate plug-and-play workflow hardening snippets enforcing perimeter identity gating and split-token sandboxing.
+\end{enumerate}
+
+\section{The Core Vulnerability: Confused Deputy CI Wiring}
+Continuous integration runners trust webhook triggers. When coding agents (Claude Code, Gemini CLI, OpenHands) run in response to public triggers without identity verification:
+\begin{equation}
+\text{VULNERABLE} = \text{Public Trigger} \land \text{Write Permission} \land \neg(\text{Required Review})
+\end{equation}
+Any GitHub account can file an issue that acts as a remote command execution vector via indirect prompt injection.
+
+\section{Census Numbers from the Wild}
+Our measurement over 367 open-source repositories deploying coding agents revealed:
+\begin{itemize}
+    \item 67.0\% execute on untrusted events (\texttt{issues}, \texttt{pull\_request}, \texttt{pull\_request\_target}).
+    \item 88.3\% grant write-capable permissions to agent runners.
+    \item 95.8\% of untrusted-trigger workflows omit maintainer identity checks.
+    \item 86.8\% of workflows based on ungated vendor starter templates remain vulnerable in the wild.
+\end{itemize}
+
+\section{Station Hardware \& Software Requirements}
+\begin{itemize}
+    \item Standard display monitor and laptop setup with offline synthetic fixtures.
+    \item Fast local Python scanner requiring zero external dependencies.
+    \item Open-source code available under the MIT license for immediate download.
+\end{itemize}
+
+\section{Takeaways for the Community}
+Attendees leave with an immediate understanding of the risks of agentic CI pipelines, an open-source tool to secure their projects, and concrete mitigation patterns that keep autonomous agents productive without exposing forge tokens.
+
+\end{document}
