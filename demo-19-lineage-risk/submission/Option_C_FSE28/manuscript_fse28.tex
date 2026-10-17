@@ -1,0 +1,82 @@
+%%
+%% This is a placeholder manuscript shell for FSE 2028 (Research Track).
+%% Refresh this manuscript before submission by adapting docs/paper/manuscript.tex
+%% from the research repository
+%% to the ACM FSE conference formatting guidelines.
+%%
+\documentclass[sigconf,review,anonymous]{acmart}
+
+\acmConference[FSE '28]{ACM International Conference on the Foundations of Software Engineering}{2028}{TBD}
+\acmYear{2028}
+\acmDOI{}
+\acmISBN{}
+
+\title{What a Client Fetches: Default-Path Exposure of Models in Software Supply Chains}
+
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{Anonymous Country}
+}
+\email{anonymous@example.org}
+
+\begin{abstract}
+Modern software systems increasingly integrate foundation models distributed through Web registries. Understanding the foundations of model supply chains requires rigorous analysis of how software risks propagate across derivation graphs. This empirical study investigates model lineage across 48,247 parent-child derivation edges rooted in 16 base models on Hugging Face. We formalise the distinction between static file presence and default-path execution exposure in automated model loading. Our census reveals that 0 of 16 base models exhibit default-path serialisation exposure; inheritance of default-path deserialisation risk is not identified. Across downstream models, 3.17\% exhibit default-path serialisation exposure, whereas 54.90\% maintain presence without exposure. Downstream mutations introduce hazardous serialisation into previously safe lineages at an introduction-to-repair ratio of 8.5:1. Additionally, 11.22\% of declared children launder upstream licences, and 44.21\% omit licensing entirely. These results show that empirical software engineering risks in model hubs originate predominantly through downstream mutation rather than architectural inheritance. We propose rigorous foundations for model dependency management, verification gates, and supply-chain assurance.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10002978.10003022.10003023</concept_id>
+       <concept_desc>Security and privacy~Software security engineering</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10011007.10011074.10011099</concept_id>
+       <concept_desc>Software and its engineering~Software verification and validation</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Security and privacy~Software security engineering}
+\ccsdesc[500]{Software and its engineering~Software verification and validation}
+
+\keywords{Software supply chain, empirical software engineering, model registries, default-path exposure, serialisation security, licence compliance}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+As deep learning models become core components of software engineering architectures, software systems routinely fetch remote weight checkpoints from public registries. This paper explores the foundations of software dependency analysis for model ecosystems. 
+
+Unlike traditional package managers that enforce strict package immutability, model registries permit arbitrary fine-tuning clones with self-declared lineage. We formalise the semantics of default-path exposure versus static file presence, evaluating risk propagation across $48{,}247$ lineage edges.
+
+\section{Formal Semantics of Model Loading}
+We formalise how client-side automated loaders (such as \texttt{AutoModel.from\_pretrained}) resolve repository contents. A repository exhibits file presence if a hazardous file (such as a legacy Python pickle file or custom script) exists in the repository. It exhibits default-path exposure if and only if the default resolution algorithm selects that file for instantiation without explicit opt-in.
+
+\section{Empirical Lineage Study}
+We evaluate depth-one derivation trees for 16 foundation model families on the Hugging Face Hub ($N = 48{,}247$ edges):
+\begin{itemize}
+    \item \textbf{Base Model Foundations:} Zero of the 16 base models exhibit default-path serialisation exposure.
+    \item \textbf{Exposure vs Presence:} 3.17\% of derived models exhibit default-path serialisation exposure, compared to 54.90\% showing pickle file presence.
+    \item \textbf{Introduction vs Remediation:} Downstream modifications introduce pickle files into safe lineages at an 8.5:1 ratio over repairs.
+    \item \textbf{Licence Laundering:} 11.22\% of declared children violate upstream licence terms; 44.21\% drop licence metadata.
+\end{itemize}
+
+\section{Foundations for Model Supply Chain Assurance}
+Based on our findings, we formulate software engineering foundations for model dependency management:
+\begin{enumerate}
+    \item Fail-closed loader semantics that refuse dangerous deserialisation paths.
+    \item Immutable provenance chains binding derived weights to base checkpoints.
+    \item Automated AIBOM attestation at repository integration time.
+\end{enumerate}
+
+\section{Conclusion}
+Our study provides empirical foundations demonstrating that model supply chain risks originate primarily from downstream repository mutation rather than upstream inheritance.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

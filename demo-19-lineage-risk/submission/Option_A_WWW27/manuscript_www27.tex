@@ -1,0 +1,84 @@
+%%
+%% This is a placeholder manuscript shell for WWW'27 (Research Track — Security and Privacy).
+%% Refresh this manuscript before final submission by syncing with docs/paper/manuscript.tex
+%% from the research repository.
+%%
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\acmConference[WWW '27]{The ACM Web Conference 2027}{May 10--14, 2027}{Dublin, Ireland}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+
+\title[What a Client Fetches]{What a Client Fetches: Default-Path Exposure of Models Published on the Web}
+
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{Anonymous Country}
+}
+\email{anonymous@example.org}
+
+\begin{abstract}
+Machine learning models are increasingly published on the Web through public hubs and fetched by client applications on default execution paths. This paper investigates a fundamental provenance question for the Security and Privacy track of The Web Conference: when a derived model declares an upstream parent on a public hub, does the client fetch an artefact published by that parent, or does the derivation introduce unvetted execution hazards? We formally distinguish file presence from default-path exposure, where default client loaders fetch hazardous weight formats or dynamic configurations without explicit overrides. Evaluating a complete depth-one lineage census ($N = 48{,}247$ declared edges across 16 foundational base models) on the Hugging Face Hub, 0 of the 16 parents exhibit default-path serialisation exposure, establishing that inheritance of default-path exposure is not identified. Across child repositories, only 3.17\% (95\% CI: [3.01\%, 3.33\%]) exhibit default-path serialisation exposure, whereas 54.90\% maintain legacy pickle files bypassed by default loaders. Downstream mutations outnumber repairs by 8.5x, and 11.22\% of declared children launder upstream licences. Model supply chain risks on the Web arise primarily from downstream modification rather than parent inheritance.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10002978.10003022.10003023</concept_id>
+       <concept_desc>Security and privacy~Software security engineering</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10002951.10003260.10003282</concept_id>
+       <concept_desc>Information systems~Web applications</concept_desc>
+       <concept_significance>300</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Security and privacy~Software security engineering}
+\ccsdesc[300]{Information systems~Web applications}
+
+\keywords{Web security, provenance, model hub, default-path exposure, serialisation, supply chain}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Public model repositories such as the Hugging Face Hub have become the primary Web infrastructure for distributing pre-trained machine learning checkpoints. Applications routinely download and execute remote model weights over HTTPS using automated library interfaces such as \texttt{AutoModel.from\_pretrained()}. When a client fetches a model that reports an upstream parent, does the client fetch an artefact derived safely from that parent, or does the derivation introduce severe execution hazards along the Web supply chain?
+
+We address this question by evaluating the byte streams served across the Web fetch boundary. We distinguish between static file presence and default-path exposure: modern loaders prioritise safe formats (e.g., safetensors), rendering legacy pickle files inactive unless explicit overrides are specified.
+
+\section{Web Architecture and Default-Path Exposure}
+We define the threat model and trust boundaries governing model distribution on the Web:
+\begin{enumerate}
+    \item \textbf{Arbitrary Deserialisation Execution:} Python pickle bytecode embedded in legacy checkpoints can trigger arbitrary code execution upon deserialisation.
+    \item \textbf{Remote Code Execution via Configuration:} Custom code bindings declared in \texttt{auto\_map} configurations execute when clients load models with remote code execution enabled.
+    \item \textbf{Licence Laundering:} Downstream fine-tunes stripping upstream intellectual property constraints or commercial restrictions.
+\end{enumerate}
+
+\section{Census Methodology}
+We conduct an exhaustive census of $N = 48{,}247$ parent--child lineage edges across 16 major foundational base model families on the Hugging Face Hub. Our automated pipeline evaluates file listings, serialisation formats, configuration fields, and licence compatibility.
+
+\section{Empirical Findings}
+Key results from our census include:
+\begin{itemize}
+    \item \textbf{Parent Exposure:} 0 of the 16 base models exhibit default-path serialisation exposure; inheritance of default-path serialisation exposure is not identified.
+    \item \textbf{Child Exposure vs Presence:} Only 3.17\% of child models ($1{,}528$ of $48{,}247$) exhibit default-path serialisation exposure, whereas 54.90\% ($26{,}486$) exhibit pickle file presence.
+    \item \textbf{Mutation Dynamics:} Downstream developers introduce pickle files into safe lineages on $21{,}486$ edges (52.77\%), outnumbering repairs ($2{,}529$ edges) by an introduction-to-repair ratio of 8.5:1.
+    \item \textbf{Licence Laundering:} 11.22\% of declared children ($3{,}019$ edges) declare incompatible licences, while 44.21\% ($21{,}328$ edges) drop licence metadata entirely.
+\end{itemize}
+
+\section{Implications for Web Security}
+These findings demonstrate that risks in the Web model ecosystem stem primarily from downstream repository mutations rather than upstream parent inheritance. Client-side verification gates and package provenance must be enforced at the Web fetch boundary.
+
+\section{Conclusion}
+This study formalises default-path exposure for Web-distributed models, demonstrating that safe defaults mitigate legacy file presence while highlighting downstream mutation as the primary attack surface.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}
