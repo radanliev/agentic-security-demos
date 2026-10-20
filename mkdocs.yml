@@ -60,6 +60,14 @@ nav:
     - ScanBound: demos/10-scanbound.md
     - Degenerate Reporting: demos/11-degenerate-reporting.md
     - ProvenanceBound: demos/12-provenancebound.md
+    - Crosslingual Gap: demos/18-crosslingual-gap.md
+    - Lineage Risk: demos/19-lineage-risk.md
+    - Agent Web Census: demos/20-agent-web-census.md
+    - MCP Ecosystem: demos/21-mcp-ecosystem.md
+    - CI Trigger Scan: demos/27-ci-trigger-scan.md
+    - Memory Poisoning: demos/28-memory-poisoning.md
+    - Model Card Debt: demos/36-card-debt.md
+    - Terms Coding: demos/43-terms-coding.md
   - Tutorials:
     - Beginner Exercises: tutorials/beginner.md
     - Standard Exercises: tutorials/standard.md

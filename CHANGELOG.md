@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added (WWW-set docs coverage, 16 October 2026)
+- `docs/demos/` pages for the eight WWW'27 demos (18, 19, 20, 21, 27, 28, 36, 43) plus `mkdocs.yml` nav entries; each page verified against its demo (5 tests, runner command, results file). `docs/index.md` quick-start range corrected from 01–12 to 01–47.
+- Verified for the WWW set: 40/40 tests pass, all 8 runners execute cleanly with byte-identical committed results, INSTRUCTIONS expected outputs match, CITATION.cff files valid, no venue names in demo code/fixtures/tests (only historical private-repo names in README provenance lines).
+
 ### Changed (venue refresh: Computers & Security removal + CoSe de-duplication, 16 October 2026)
 - Root `README`: removed Computers & Security / CoSe from all venue tables (header list, FAccT slate, demos 37/38/46 rows, acknowledgments). The journal's guide for authors confirms an AI/ML moratorium since early 2024, so all agentic-AI demos are out of scope there (0% chance).
 - Demo 37 (Detector Cost): Plan B CoSe → IEEE TIFS (♾️ rolling; scope covers intrusion detection, adversarial ML and AI-driven decision-system security), Plan C stays TDSC. Sequential only: FAccT'27 → TIFS → TDSC.

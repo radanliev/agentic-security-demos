@@ -24,7 +24,7 @@ make setup
 # Run all tests (383 tests, safe, offline, deterministic)
 make test
 
-# Run a specific demo (01-12)
+# Run a specific demo (01-47)
 make demo DEMO=01
 ```
 
