@@ -35,6 +35,6 @@
 
 ## 4. Declarations & Integrity
 
-- [ ] **Author Details**: Dr Petar Radanliev (The Open University, The Alan Turing Institute, University of Oxford).
+- [ ] **Author Details**: Dr Petar Radanliev (The Open University, University of Oxford).
 - [ ] **Declaration of Interests**: Transparent disclosure of any potential competing financial or non-financial interests.
 - [ ] **AI Authoring Disclosure**: Compliant with Cell Press generative AI policies (tools utilized solely for syntax/editorial editing; author retains full accountability).

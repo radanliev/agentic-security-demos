@@ -43,6 +43,6 @@
 
 - [ ] **Author Cap Rule**: No listed author exceeds the limit of seven (7) research-track submissions across WWW'27.
 - [ ] **Dual Submission**: The manuscript is original, unpublished work not submitted elsewhere. Fallbacks (Plan B: Nature Machine Intelligence; Plan C: Patterns) remain strictly dormant until formal rejection.
-- [ ] **Conflict of Interest (COI)**: Institutional domains (`open.ac.uk`, `turing.ac.uk`, `ox.ac.uk`) and individual co-authorship / supervisor conflicts fully declared in OpenReview.
+- [ ] **Conflict of Interest (COI)**: Institutional domains (`open.ac.uk`, `turing.ac.uk`, `ox.ac.uk`, `ncl.ac.uk`) and individual co-authorship / supervisor conflicts fully declared in OpenReview.
 - [ ] **Generative AI Disclosure**: Compliant with ACM Policy on Authorship and Generative AI (tools used solely for editorial refinement; authors retain full intellectual accountability).
 - [ ] **Reproducibility**: Artifact and reproducibility protocol clearly documented in the appendix with frozen seeds, snapshot digests, and deterministic macro traces.

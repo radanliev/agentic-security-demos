@@ -10,7 +10,7 @@
 ## Submission Overview
 
 - **Title**: The download-weighted safety gap on public machine learning model registries is falsified on registered estimators
-- **Author**: Dr Petar Radanliev (The Open University, The Alan Turing Institute, University of Oxford)
+- **Author**: Dr Petar Radanliev (The Open University, University of Oxford)
 - **Corresponding Author**: `petar.radanliev@open.ac.uk`
 - **Keywords**: machine learning governance, open-weight models, model cards, safety disclosure, extreme value theory, algorithmic accountability
 

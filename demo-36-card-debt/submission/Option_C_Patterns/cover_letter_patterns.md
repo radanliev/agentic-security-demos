@@ -10,7 +10,7 @@
 ## Submission Details
 
 - **Title**: Fragility of Download-Weighted Safety Metrics on Public Model Registries: An Empirical Census and Heavy-Tail Analysis
-- **Author**: Dr Petar Radanliev (The Open University, The Alan Turing Institute, University of Oxford)
+- **Author**: Dr Petar Radanliev (The Open University, University of Oxford)
 - **Corresponding Author**: `petar.radanliev@open.ac.uk`
 - **Keywords**: data stewardship, model cards, open science, extreme value theory, machine learning governance, data infrastructure
 

@@ -34,6 +34,6 @@
 
 ## 4. Integrity & Declarations
 
-- [ ] **Authorship & Affiliations**: Sole author Dr Petar Radanliev (The Open University, The Alan Turing Institute, University of Oxford).
+- [ ] **Authorship & Affiliations**: Sole author Dr Petar Radanliev (The Open University, University of Oxford).
 - [ ] **Competing Interests**: Formal declaration of non-financial and financial competing interests.
 - [ ] **Ethics & Responsible AI**: Disclosure of generative AI tool usage (editorial refinement only; intellectual responsibility retained by author).
