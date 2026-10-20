@@ -60,3 +60,5 @@ test_lagrange.py
 solutions/
 instructor/
 *.instructor.md
+# Conference submission packages stay in the private demo repositories (double-blind review)
+/*/submission/
