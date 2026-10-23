@@ -3,13 +3,13 @@
 # Deploy with: gh-pages branch or GitHub Actions
 
 site_name: Agentic Security Demos
-site_url: https://agentic-security-demos.github.io/agentic-security-demos/
+site_url: https://radanliev.github.io/agentic-security-demos/
 site_description: Educational modules for teaching agentic AI security concepts
 site_author: Agentic Security Demos Contributors
 copyright: Copyright &copy; 2024 Agentic Security Demos Contributors
 
-repo_url: https://github.com/agentic-security-demos/agentic-security-demos
-repo_name: agentic-security-demos/agentic-security-demos
+repo_url: https://github.com/radanliev/agentic-security-demos
+repo_name: radanliev/agentic-security-demos
 edit_uri: edit/main/docs/
 
 theme:
@@ -60,14 +60,41 @@ nav:
     - ScanBound: demos/10-scanbound.md
     - Degenerate Reporting: demos/11-degenerate-reporting.md
     - ProvenanceBound: demos/12-provenancebound.md
+    - Typed Commitments: demos/13-typed-commitments.md
+    - Conformal Gating: demos/14-conformal-gating.md
+    - Hijack Probes: demos/15-hijack-probes.md
+    - Infection Spread: demos/16-infection-spread.md
+    - Report Fidelity: demos/17-report-fidelity.md
     - Crosslingual Gap: demos/18-crosslingual-gap.md
     - Lineage Risk: demos/19-lineage-risk.md
     - Agent Web Census: demos/20-agent-web-census.md
     - MCP Ecosystem: demos/21-mcp-ecosystem.md
+    - Memory Leakage: demos/22-memory-leakage.md
+    - Fault Injection: demos/23-fault-injection.md
+    - Delegation Checks: demos/24-delegation-checks.md
+    - Attestation Verifier: demos/25-attestation-verifier.md
+    - Sandbox Probes: demos/26-sandbox-probes.md
     - CI Trigger Scan: demos/27-ci-trigger-scan.md
     - Memory Poisoning: demos/28-memory-poisoning.md
+    - Provenance Graphs: demos/29-provenance-graphs.md
+    - Insecure Defaults: demos/30-default-configs.md
+    - Scope Creep: demos/31-scope-creep.md
+    - Reproducibility Audit: demos/32-reproducibility-audit.md
+    - Protocol Coverage: demos/33-protocol-coverage.md
+    - Visual Injection: demos/34-visual-injection.md
+    - Scaling Metaregression: demos/35-scaling-metaregression.md
     - Model Card Debt: demos/36-card-debt.md
+    - Detector Cost: demos/37-detector-cost.md
+    - Assurance Claims: demos/38-assurance-claims.md
+    - Incident Taxonomy: demos/39-incident-taxonomy.md
+    - Corpus Union: demos/40-corpus-union.md
+    - Ten Invariants: demos/41-ten-invariants.md
+    - Patch Lifecycle: demos/42-patch-lifecycle.md
     - Terms Coding: demos/43-terms-coding.md
+    - Toolflow Taint: demos/44-toolflow-taint.md
+    - Exact Nulls: demos/45-localisation-nulls.md
+    - Embedding Drift: demos/46-embedding-drift.md
+    - Pre-Reveal Seal: demos/47-blind-seal.md
   - Tutorials:
     - Beginner Exercises: tutorials/beginner.md
     - Standard Exercises: tutorials/standard.md
