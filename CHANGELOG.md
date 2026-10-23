@@ -9,10 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed (compact status marks, 23 October 2026)
 - Root `README` demos table: Status column is now plain text — a colour dot plus the venue abbreviation (replaces the small badge images; normal-size, readable, no dates shown there).
-- Root `README` venues table: option cells show the venue abbreviation (→ conference page) and a dates-only line underneath (→ submission portal); status wording, check marks and notes removed. Colour-dot meanings are intentionally undocumented.
+- Root `README` venues table: option cells show the venue abbreviation (→ conference page) and a dates-only line underneath (→ submission portal); status wording, check marks, notes and undated markers removed. Colour-dot meanings are intentionally undocumented.
 
 ### Changed (venues table restructure, 23 October 2026)
-- Root `README` venues section: one 4-column table (Demo | Option A | Option B | Option C) replacing the 7-column table. Deadline columns merged into each option cell: venue abbreviation links to the conference page, deadline line underneath links to the submission portal (abstract + full-paper dates kept; `Rolling` / `TBD` as before).
+- Root `README` venues section: one 4-column table (Demo | Option A | Option B | Option C) replacing the 7-column table. Deadline columns merged into each option cell: venue abbreviation links to the conference page, deadline line underneath links to the submission portal (abstract + full-paper dates kept; `TBD` marks unpublished CFPs).
 - Years removed from venue names (WWW'27 → WWW etc.). Next-edition backups that became exact duplicates after year removal collapsed to "—" (option B/C of demos 03, 06, 08, 11, 12, 13, 14, 16, 17, 20, 23, 24, 25, 32, 34, 35, 40, 41, 42).
 - Colour indicators switched from shields pills to emoji state dots (GitHub strips `<font>`; pills were image-heavy). The four slate bullets and the old legend were dropped.
 - Venue links verified (HTTP 200; issre.org and queue.acm.org block curl but resolve in browsers). EuroS&P backups link eurosp2027.ieee-security.org (SIGSAC TC page 404s). New verified links added for dormant backups: AAMAS (ifaamas.org), SaTML (satml.org), DMLR (data.mlr.press), TNNLS, TIP, EMNLP (ACL Anthology), ICSE, FSE (esec-fse.org).
