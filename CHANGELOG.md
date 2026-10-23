@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (venues table restructure, 23 October 2026)
+- Root `README` venues section: one 4-column table (Demo | Option A | Option B | Option C) replacing the 7-column table. Deadline columns merged into each option cell: venue abbreviation links to the conference page, deadline line underneath links to the submission portal (abstract + full-paper dates kept; `Rolling` / `TBD` as before).
+- Years removed from venue names (WWW'27 → WWW etc.). Next-edition backups that became exact duplicates after year removal collapsed to "—" (option B/C of demos 03, 06, 08, 11, 12, 13, 14, 16, 17, 20, 23, 24, 25, 32, 34, 35, 40, 41, 42).
+- Colour coding switched from shields pills to emoji state dots (GitHub strips `<font>`; pills were image-heavy): 🟢 submitted (01, 02, 05) · 🔴 due ≤ 7 Nov (WWW 25 Oct; FAccT 27 Oct/3 Nov) · 🟠 due Nov–Dec 2026 (S&P C2, WWW demo 16 Nov, PoPETs 30 Nov, DSN 25 Nov/2 Dec, AsiaCCS 11 Dec) · 🟡 due Jan–Feb 2027 (USENIX C2, IJCAI, CCS, ACNS, ICML, CSF, SAIS) · 🔵 rolling / TBD / later. Compact legend above the table replaces the four slate bullets and the shields legend.
+- Venue links verified (HTTP 200; issre.org and queue.acm.org block curl but resolve in browsers). EuroS&P backups link eurosp2027.ieee-security.org (SIGSAC TC page 404s). New verified links added for dormant backups: AAMAS (ifaamas.org), SaTML (satml.org), DMLR (data.mlr.press), TNNLS, TIP, EMNLP (ACL Anthology), ICSE, FSE (esec-fse.org).
+
 ### Added (WWW-set docs coverage, 16 October 2026)
 - `docs/demos/` pages for the eight WWW'27 demos (18, 19, 20, 21, 27, 28, 36, 43) plus `mkdocs.yml` nav entries; each page verified against its demo (5 tests, runner command, results file). `docs/index.md` quick-start range corrected from 01–12 to 01–47.
 - Verified for the WWW set: 40/40 tests pass, all 8 runners execute cleanly with byte-identical committed results, INSTRUCTIONS expected outputs match, CITATION.cff files valid, no venue names in demo code/fixtures/tests (only historical private-repo names in README provenance lines).
