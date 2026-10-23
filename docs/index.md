@@ -1,7 +1,7 @@
 # Agentic Security Demos
 
-[![CI](https://github.com/agentic-security-demos/agentic-security-demos/workflows/CI/badge.svg)](https://github.com/agentic-security-demos/agentic-security-demos/actions/workflows/ci.yml)
-[![Docs](https://github.com/agentic-security-demos/agentic-security-demos/workflows/Deploy%20Documentation/badge.svg)](https://agentic-security-demos.github.io/agentic-security-demos/)
+[![CI](https://github.com/radanliev/agentic-security-demos/workflows/CI/badge.svg)](https://github.com/radanliev/agentic-security-demos/actions/workflows/ci.yml)
+[![Docs](https://github.com/radanliev/agentic-security-demos/workflows/Deploy%20Documentation/badge.svg)](https://radanliev.github.io/agentic-security-demos/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
@@ -15,7 +15,7 @@ All demonstrations use **local synthetic fixtures only** — no live network acc
 
 ```bash
 # Clone and enter
-git clone https://github.com/agentic-security-demos/agentic-security-demos.git
+git clone https://github.com/radanliev/agentic-security-demos.git
 cd agentic-security-demos
 
 # One-time setup
@@ -73,8 +73,8 @@ make demo DEMO=01
 
 ## 🤝 Community
 
-- 💬 [Discussions](https://github.com/agentic-security-demos/agentic-security-demos/discussions) - Questions, ideas, show-and-tell
-- 🐛 [Issues](https://github.com/agentic-security-demos/agentic-security-demos/issues) - Bugs, features, docs
+- 💬 [Discussions](https://github.com/radanliev/agentic-security-demos/discussions) - Questions, ideas, show-and-tell
+- 🐛 [Issues](https://github.com/radanliev/agentic-security-demos/issues) - Bugs, features, docs
 - 🤝 [Contributing](contributing/guidelines.md) - How to contribute
 - 🛡️ [Safety](RESPONSIBLE_USE.md) - Mandatory safety rules
 
