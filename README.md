@@ -35,7 +35,7 @@
 
 | # | Demo | Focus | Status |
 |---|------|-------|--------|
-| 01 | **Blind Verification** | Cryptographic verification of agent outputs without trusted execution environments | 🔵 ACM TOSEM |
+| 01 | **Blind Verification** | Cryptographic verification of agent outputs without trusted execution environments | 🟢 ACM TOSEM |
 | 02 | **Supply Chain AIBOM Drift** | AI Bill of Materials tracking & drift detection across model updates | 🟢 EMSE |
 | 03 | **Eval Design Invariants** | Statistically rigorous evaluation frameworks with invariant guarantees | 🔵 NeurIPS |
 | 04 | **Prompt Injection & Tool Authority** | Capability-based authority mediation for tool-using agents | 🟠 S&P |
@@ -182,7 +182,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 
 | Demo | Option A | Option B | Option C |
 |:---:|---|---|---|
-| 01 | 🔵 [ACM TOSEM](https://dl.acm.org/journal/tosem) | 🔵 [EMSE](https://link.springer.com/journal/10664) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
+| 01 | 🟢 [ACM TOSEM](https://dl.acm.org/journal/tosem) | 🔵 [EMSE](https://link.springer.com/journal/10664) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 02 | 🟢 [EMSE](https://link.springer.com/journal/10664) | 🔵 [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | 🔵 [MSR](https://www.msrconf.org/) |
 | 03 | 🔵 [NeurIPS D&B](https://neurips.cc/) | 🔵 [ICLR](https://iclr.cc/) / [TMLR](https://jmlr.org/tmlr/) | — |
 | 04 | 🟠 [IEEE S&P C2](https://sp2027.ieee-security.org/)<br>🟠 [abs 10 Nov · papers 17 Nov](https://sp2027.ieee-security.org/cfpapers.html) | 🔵 [USENIX Sec](https://www.usenix.org/conference/usenixsecurity27) | 🔵 [CCS Cycle B](https://www.sigsac.org/ccs/CCS2027/) |
