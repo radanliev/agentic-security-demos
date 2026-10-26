@@ -1,0 +1,3506 @@
+{
+ "retrieved": "2026-10-26",
+ "rows": [
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "AnalogJ__lexicon-336",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-8b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "PyCQA__pyflakes-761",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "RDFLib__rdflib-1130",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "RDFLib__rdflib-1130",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "RDFLib__rdflib-1130",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "RDFLib__rdflib-1130",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "RDFLib__rdflib-1130",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "ReproNim__reproman-518",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ReproNim__reproman-518",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ReproNim__reproman-518",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "ReproNim__reproman-518",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "ReproNim__reproman-518",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "ReproNim__reproman-518",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ReproNim__reproman-518",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ShawHahnLab__igseq-2",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "TACC__agavepy-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "TheFriendlyCoder__pyjen-113",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "TheFriendlyCoder__pyjen-113",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "TheFriendlyCoder__pyjen-113",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "ahawker__ulid-59",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "airspeed-velocity__asv-702",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "early_exit",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "early_exit",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "early_exit",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "early_exit",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-142",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "early_exit",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-147",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-347",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted_no_patch",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-545",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "asottile__pyupgrade-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "asottile__pyupgrade-890",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "auth0__auth0-python-477",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "auth0__auth0-python-477",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "auth0__auth0-python-477",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "auth0__auth0-python-477",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "auth0__auth0-python-477",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "auth0__auth0-python-477",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "bihealth__biomedsheets-23",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "casbin__pycasbin-53",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "cytomining__pycytominer-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "cytomining__pycytominer-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "cytomining__pycytominer-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "cytomining__pycytominer-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "cytomining__pycytominer-62",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "dask__dask-jobqueue-563",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "delph-in__pydelphin-362",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": true,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "fairlearn__fairlearn-896",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-8b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "geopandas__geopandas-3240",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__latexify_py-67",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "exit_context",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "google__mobly-472",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": true
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted (exit_context)",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": true,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  },
+  {
+   "exit_status": "submitted",
+   "final_claims_success": false,
+   "instance_id": "hugovk__pypistats-41",
+   "model": "swe-agent-llama-70b",
+   "resolved": false
+  }
+ ],
+ "sample": "first 500 rows of train split"
+}

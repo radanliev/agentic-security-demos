@@ -1,0 +1,1953 @@
+{
+ "retrieved": "2026-10-26",
+ "rows": [
+  {
+   "aliases": [
+    "CVE-2023-36258",
+    "PYSEC-2023-98"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-2qmj-7962-cjq8",
+   "package": "langchain",
+   "published": "2023-07-03T21:30:57Z",
+   "severity": "CRITICAL",
+   "summary": "langchain arbitrary code execution vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-45134",
+    "PYSEC-2026-2555",
+    "PYSEC-2026-2560",
+    "PYSEC-2026-2582"
+   ],
+   "cwe": [
+    "CWE-502"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-3644-q5cj-c5c7",
+   "package": "langchain",
+   "published": "2026-05-13T15:29:30Z",
+   "severity": "HIGH",
+   "summary": "LangSmith SDK: Public prompt pull deserializes untrusted manifests without trust boundary warning"
+  },
+  {
+   "aliases": [
+    "CVE-2024-2965",
+    "PYSEC-2024-118",
+    "PYSEC-2026-2561"
+   ],
+   "cwe": [
+    "CWE-400",
+    "CWE-674"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-3hjh-jh2h-vrg6",
+   "package": "langchain",
+   "published": "2024-06-06T21:30:36Z",
+   "severity": "MODERATE",
+   "summary": "Denial of service in langchain-community"
+  },
+  {
+   "aliases": [
+    "CVE-2024-8309",
+    "PYSEC-2024-115",
+    "PYSEC-2026-1507"
+   ],
+   "cwe": [
+    "CWE-74",
+    "CWE-89"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-45pg-36p6-83v9",
+   "package": "langchain",
+   "published": "2024-10-29T15:32:05Z",
+   "severity": "LOW",
+   "summary": "Langchain SQL Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-36188",
+    "PYSEC-2023-109"
+   ],
+   "cwe": [
+    "CWE-74"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-57fc-8q82-gfp3",
+   "package": "langchain",
+   "published": "2023-07-06T15:30:33Z",
+   "severity": "CRITICAL",
+   "summary": "langchain vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-46229",
+    "PYSEC-2023-205"
+   ],
+   "cwe": [
+    "CWE-918"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-655w-fm8m-m478",
+   "package": "langchain",
+   "published": "2023-10-19T06:30:23Z",
+   "severity": "HIGH",
+   "summary": "LangChain Server Side Request Forgery vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-34541",
+    "PYSEC-2023-92"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "GHSA-6643-h7h5-x9wh",
+   "package": "langchain",
+   "published": "2023-06-20T15:31:09Z",
+   "severity": "CRITICAL",
+   "summary": "Langchain vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-32786",
+    "PYSEC-2026-1508"
+   ],
+   "cwe": [
+    "CWE-74",
+    "CWE-918"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-6h8p-4hx9-w66c",
+   "package": "langchain",
+   "published": "2023-10-21T00:30:47Z",
+   "severity": "HIGH",
+   "summary": "Langchain Server-Side Request Forgery vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-36281",
+    "PYSEC-2023-151"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-7gfq-f96f-g85j",
+   "package": "langchain",
+   "published": "2023-08-22T21:30:27Z",
+   "severity": "CRITICAL",
+   "summary": "langchain vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-36189",
+    "PYSEC-2023-110"
+   ],
+   "cwe": [
+    "CWE-89"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-7q94-qpjr-xpgm",
+   "package": "langchain",
+   "published": "2023-07-06T15:30:33Z",
+   "severity": "HIGH",
+   "summary": "langchain SQL Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-32785",
+    "PYSEC-2026-372"
+   ],
+   "cwe": [
+    "CWE-74",
+    "CWE-89"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-8h5w-f6q9-wg35",
+   "package": "langchain",
+   "published": "2023-10-21T00:30:47Z",
+   "severity": "CRITICAL",
+   "summary": "Langchain SQL Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-38896",
+    "PYSEC-2023-146"
+   ],
+   "cwe": [
+    "CWE-74",
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-92j5-3459-qgp4",
+   "package": "langchain",
+   "published": "2023-08-15T18:31:32Z",
+   "severity": "CRITICAL",
+   "summary": "LangChain vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39631",
+    "PYSEC-2023-162",
+    "PYSEC-2023-163"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-f73w-4m7g-ch9x",
+   "package": "langchain",
+   "published": "2023-09-01T18:30:41Z",
+   "severity": "CRITICAL",
+   "summary": "Langchain vulnerable to arbitrary code execution via the evaluate function in the numexpr library"
+  },
+  {
+   "aliases": [
+    "CVE-2023-38860",
+    "PYSEC-2023-145"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-fj32-q626-pjjc",
+   "package": "langchain",
+   "published": "2023-08-15T18:31:32Z",
+   "severity": "CRITICAL",
+   "summary": "LangChain vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-29374",
+    "PYSEC-2023-18"
+   ],
+   "cwe": [
+    "CWE-74",
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-fprp-p869-w6q2",
+   "package": "langchain",
+   "published": "2023-04-05T03:30:17Z",
+   "severity": "CRITICAL",
+   "summary": "LangChain vulnerable to code injection"
+  },
+  {
+   "aliases": [
+    "CVE-2026-55443",
+    "PYSEC-2026-2192",
+    "PYSEC-2026-2556"
+   ],
+   "cwe": [
+    "CWE-22",
+    "CWE-59"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-gr75-jv2w-4656",
+   "package": "langchain",
+   "published": "2026-06-16T15:03:14Z",
+   "severity": "MODERATE",
+   "summary": "LangChain: Path traversal and sandbox escape in LangChain file-search middleware and loaders"
+  },
+  {
+   "aliases": [
+    "CVE-2023-36095",
+    "PYSEC-2023-138"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-gwqq-6vq7-5j86",
+   "package": "langchain",
+   "published": "2023-08-05T03:30:19Z",
+   "severity": "CRITICAL",
+   "summary": "langchain Code Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-28088",
+    "PYSEC-2024-43",
+    "PYSEC-2024-45"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "GHSA-h59x-p739-982c",
+   "package": "langchain",
+   "published": "2024-03-04T00:30:53Z",
+   "severity": "LOW",
+   "summary": "LangChain directory traversal vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-0243",
+    "PYSEC-2024-235",
+    "PYSEC-2026-1509"
+   ],
+   "cwe": [
+    "CWE-918"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-h9j7-5xvc-qhg5",
+   "package": "langchain",
+   "published": "2024-02-26T18:30:29Z",
+   "severity": "LOW",
+   "summary": "langchain Server-Side Request Forgery vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39659",
+    "PYSEC-2023-147"
+   ],
+   "cwe": [
+    "CWE-74"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-prgp-w7vf-ch62",
+   "package": "langchain",
+   "published": "2023-08-15T18:31:32Z",
+   "severity": "CRITICAL",
+   "summary": "LangChain vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3571",
+    "PYSEC-2026-1510"
+   ],
+   "cwe": [
+    "CWE-22"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-rgp8-pm28-3759",
+   "package": "langchain",
+   "published": "2024-04-16T00:30:34Z",
+   "severity": "MODERATE",
+   "summary": "langchain vulnerable to path traversal"
+  },
+  {
+   "aliases": [
+    "CVE-2023-34540",
+    "PYSEC-2023-91"
+   ],
+   "cwe": [
+    "CWE-78"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-x32c-59v5-h7fg",
+   "package": "langchain",
+   "published": "2023-06-14T15:30:39Z",
+   "severity": "CRITICAL",
+   "summary": "Langchain OS Command Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-36188",
+    "GHSA-57fc-8q82-gfp3"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-109",
+   "package": "langchain",
+   "published": "2023-07-06T14:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-36189",
+    "GHSA-7q94-qpjr-xpgm"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-110",
+   "package": "langchain",
+   "published": "2023-07-06T14:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-36095",
+    "GHSA-gwqq-6vq7-5j86"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-138",
+   "package": "langchain",
+   "published": "2023-08-05T03:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-38860",
+    "GHSA-fj32-q626-pjjc"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-145",
+   "package": "langchain",
+   "published": "2023-08-15T17:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-38896",
+    "GHSA-92j5-3459-qgp4"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-146",
+   "package": "langchain",
+   "published": "2023-08-15T17:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-39659",
+    "GHSA-prgp-w7vf-ch62"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-147",
+   "package": "langchain",
+   "published": "2023-08-15T17:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-36281",
+    "GHSA-7gfq-f96f-g85j"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-151",
+   "package": "langchain",
+   "published": "2023-08-22T19:16:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-39631",
+    "GHSA-f73w-4m7g-ch9x",
+    "PYSEC-2023-163"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-162",
+   "package": "langchain",
+   "published": "2023-09-01T16:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-29374",
+    "GHSA-fprp-p869-w6q2"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-18",
+   "package": "langchain",
+   "published": "2023-04-05T02:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-46229",
+    "GHSA-655w-fm8m-m478"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-205",
+   "package": "langchain",
+   "published": "2023-10-19T05:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-34540",
+    "GHSA-x32c-59v5-h7fg"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-91",
+   "package": "langchain",
+   "published": "2023-06-14T15:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-34541",
+    "GHSA-6643-h7h5-x9wh"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-92",
+   "package": "langchain",
+   "published": "2023-06-20T15:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-36258",
+    "GHSA-2qmj-7962-cjq8"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-98",
+   "package": "langchain",
+   "published": "2023-07-03T21:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-2965",
+    "GHSA-3hjh-jh2h-vrg6",
+    "PYSEC-2026-2561"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-118",
+   "package": "langchain",
+   "published": "2024-06-06T19:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-5998",
+    "GHSA-f2jm-rw3h-6phg",
+    "PYSEC-2026-1514"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-323",
+   "package": "langchain",
+   "published": "2024-09-17T12:15:02.977Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-28088",
+    "GHSA-h59x-p739-982c",
+    "PYSEC-2024-45"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-43",
+   "package": "langchain",
+   "published": "2024-03-04T00:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-8309",
+    "GHSA-45pg-36p6-83v9",
+    "PYSEC-2024-115"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1507",
+   "package": "langchain",
+   "published": "2026-07-07T14:34:43.617965Z",
+   "severity": null,
+   "summary": "Langchain SQL Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2023-32786",
+    "GHSA-6h8p-4hx9-w66c"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1508",
+   "package": "langchain",
+   "published": "2026-07-07T11:45:26.029662Z",
+   "severity": null,
+   "summary": "Langchain Server-Side Request Forgery vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-0243",
+    "GHSA-h9j7-5xvc-qhg5",
+    "PYSEC-2024-235"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1509",
+   "package": "langchain",
+   "published": "2026-07-07T11:45:32.931836Z",
+   "severity": null,
+   "summary": "langchain Server-Side Request Forgery vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3571",
+    "GHSA-rgp8-pm28-3759"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1510",
+   "package": "langchain",
+   "published": "2026-07-07T11:45:39.448710Z",
+   "severity": null,
+   "summary": "langchain vulnerable to path traversal"
+  },
+  {
+   "aliases": [
+    "CVE-2026-55443",
+    "GHSA-gr75-jv2w-4656",
+    "PYSEC-2026-2556"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2192",
+   "package": "langchain",
+   "published": "2026-06-22T19:17:21.537Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-45134",
+    "GHSA-3644-q5cj-c5c7",
+    "PYSEC-2026-2560",
+    "PYSEC-2026-2582"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2555",
+   "package": "langchain",
+   "published": "2026-07-13T15:15:46.836675Z",
+   "severity": null,
+   "summary": "LangSmith SDK: Public prompt pull deserializes untrusted manifests without trust boundary warning"
+  },
+  {
+   "aliases": [
+    "CVE-2023-32785",
+    "GHSA-8h5w-f6q9-wg35"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-372",
+   "package": "langchain",
+   "published": "2026-06-29T11:50:43.657008Z",
+   "severity": null,
+   "summary": "Langchain SQL Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-26013",
+    "PYSEC-2026-2562"
+   ],
+   "cwe": [
+    "CWE-918"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-2g6r-c272-w58r",
+   "package": "langchain-core",
+   "published": "2026-02-11T14:23:13Z",
+   "severity": "LOW",
+   "summary": "LangChain affected by SSRF via image_url token counting in ChatOpenAI.get_num_tokens_from_messages"
+  },
+  {
+   "aliases": [
+    "CVE-2024-10940",
+    "PYSEC-2026-1517"
+   ],
+   "cwe": [
+    "CWE-497"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-5chr-fjjv-38qv",
+   "package": "langchain-core",
+   "published": "2025-03-20T12:32:41Z",
+   "severity": "MODERATE",
+   "summary": "langchain-core allows unauthorized users to read arbitrary files from the host file system"
+  },
+  {
+   "aliases": [
+    "CVE-2025-65106",
+    "PYSEC-2026-1518"
+   ],
+   "cwe": [
+    "CWE-1336"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-6qv9-48xg-fc7f",
+   "package": "langchain-core",
+   "published": "2025-11-20T17:42:12Z",
+   "severity": "HIGH",
+   "summary": "LangChain Vulnerable to Template Injection via Attribute Access in Prompt Templates"
+  },
+  {
+   "aliases": [
+    "CVE-2026-40087",
+    "PYSEC-2026-2563"
+   ],
+   "cwe": [
+    "CWE-1336",
+    "CWE-20"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-926x-3r5x-gfhw",
+   "package": "langchain-core",
+   "published": "2026-04-08T21:51:32Z",
+   "severity": "MODERATE",
+   "summary": "LangChain has incomplete f-string validation in prompt templates"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68664",
+    "PYSEC-2026-373"
+   ],
+   "cwe": [
+    "CWE-502"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-c67j-w6g6-q2cm",
+   "package": "langchain-core",
+   "published": "2025-12-23T18:46:13Z",
+   "severity": "CRITICAL",
+   "summary": "LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs"
+  },
+  {
+   "aliases": [
+    "CVE-2024-28088",
+    "PYSEC-2024-43",
+    "PYSEC-2024-45"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "GHSA-h59x-p739-982c",
+   "package": "langchain-core",
+   "published": "2024-03-04T00:30:53Z",
+   "severity": "LOW",
+   "summary": "LangChain directory traversal vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44843",
+    "PYSEC-2026-2564"
+   ],
+   "cwe": [
+    "CWE-502"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-pjwx-r37v-7724",
+   "package": "langchain-core",
+   "published": "2026-05-08T23:07:32Z",
+   "severity": "HIGH",
+   "summary": "LangChain vulnerable to unsafe deserialization of attacker-controlled objects through overly broad `load()` allowlists"
+  },
+  {
+   "aliases": [
+    "CVE-2024-1455",
+    "PYSEC-2026-1519"
+   ],
+   "cwe": [
+    "CWE-776"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-q84m-rmw3-4382",
+   "package": "langchain-core",
+   "published": "2024-03-26T15:30:50Z",
+   "severity": "MODERATE",
+   "summary": "LangChain's XMLOutputParser vulnerable to XML Entity Expansion"
+  },
+  {
+   "aliases": [
+    "CVE-2026-34070",
+    "PYSEC-2026-2193"
+   ],
+   "cwe": [
+    "CWE-22"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-qh6h-p6c9-ff54",
+   "package": "langchain-core",
+   "published": "2026-03-27T19:45:00Z",
+   "severity": "HIGH",
+   "summary": "LangChain Core has Path Traversal vulnerabilites in legacy `load_prompt` functions"
+  },
+  {
+   "aliases": [
+    "CVE-2024-28088",
+    "GHSA-h59x-p739-982c",
+    "PYSEC-2024-43"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-45",
+   "package": "langchain-core",
+   "published": "2024-03-04T00:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-10940",
+    "GHSA-5chr-fjjv-38qv"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1517",
+   "package": "langchain-core",
+   "published": "2026-07-07T14:34:52.475462Z",
+   "severity": null,
+   "summary": "langchain-core allows unauthorized users to read arbitrary files from the host file system"
+  },
+  {
+   "aliases": [
+    "CVE-2025-65106",
+    "GHSA-6qv9-48xg-fc7f"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1518",
+   "package": "langchain-core",
+   "published": "2026-07-07T16:03:10.501462Z",
+   "severity": null,
+   "summary": "LangChain Vulnerable to Template Injection via Attribute Access in Prompt Templates"
+  },
+  {
+   "aliases": [
+    "CVE-2024-1455",
+    "GHSA-q84m-rmw3-4382"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1519",
+   "package": "langchain-core",
+   "published": "2026-07-07T11:45:36.601622Z",
+   "severity": null,
+   "summary": "LangChain's XMLOutputParser vulnerable to XML Entity Expansion"
+  },
+  {
+   "aliases": [
+    "CVE-2026-34070",
+    "GHSA-qh6h-p6c9-ff54"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2193",
+   "package": "langchain-core",
+   "published": "2026-03-31T03:15:58.947Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-26013",
+    "GHSA-2g6r-c272-w58r"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2562",
+   "package": "langchain-core",
+   "published": "2026-07-13T14:36:35.874621Z",
+   "severity": null,
+   "summary": "LangChain affected by SSRF via image_url token counting in ChatOpenAI.get_num_tokens_from_messages"
+  },
+  {
+   "aliases": [
+    "CVE-2026-40087",
+    "GHSA-926x-3r5x-gfhw"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2563",
+   "package": "langchain-core",
+   "published": "2026-07-13T14:36:50.359731Z",
+   "severity": null,
+   "summary": "LangChain has incomplete f-string validation in prompt templates"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44843",
+    "GHSA-pjwx-r37v-7724"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2564",
+   "package": "langchain-core",
+   "published": "2026-07-13T15:15:43.058361Z",
+   "severity": null,
+   "summary": "LangChain vulnerable to unsafe deserialization of attacker-controlled objects through overly broad `load()` allowlists"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68664",
+    "GHSA-c67j-w6g6-q2cm"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-373",
+   "package": "langchain-core",
+   "published": "2026-06-29T11:50:38.732432Z",
+   "severity": null,
+   "summary": "LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs"
+  },
+  {
+   "aliases": [
+    "CVE-2024-23751",
+    "PYSEC-2024-12"
+   ],
+   "cwe": [
+    "CWE-89"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-2jxw-4hm4-6w87",
+   "package": "llama-index",
+   "published": "2024-01-22T03:30:26Z",
+   "severity": "CRITICAL",
+   "summary": "SQL injection in llama-index"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39662",
+    "PYSEC-2023-148"
+   ],
+   "cwe": [
+    "CWE-74",
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-2xxc-73fv-36f7",
+   "package": "llama-index",
+   "published": "2023-08-15T18:31:32Z",
+   "severity": "CRITICAL",
+   "summary": "llama-index vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6211",
+    "PYSEC-2026-1566",
+    "PYSEC-2026-2606"
+   ],
+   "cwe": [
+    "CWE-440"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-5hq9-5r78-2gjh",
+   "package": "llama-index",
+   "published": "2025-07-10T15:31:27Z",
+   "severity": "MODERATE",
+   "summary": "LlamaIndex vulnerable to data loss through hash collisions in its DocugamiReader class "
+  },
+  {
+   "aliases": [
+    "CVE-2025-1752",
+    "PYSEC-2026-1554"
+   ],
+   "cwe": [
+    "CWE-400",
+    "CWE-674"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-7c85-87cp-mr6g",
+   "package": "llama-index",
+   "published": "2025-05-10T15:30:28Z",
+   "severity": "HIGH",
+   "summary": "LlamaIndex Vulnerable to Denial of Service (DoS)"
+  },
+  {
+   "aliases": [
+    "CVE-2024-12911",
+    "PYSEC-2026-1555"
+   ],
+   "cwe": [
+    "CWE-379",
+    "CWE-89"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-jmgm-gx32-vp4w",
+   "package": "llama-index",
+   "published": "2025-03-20T12:32:44Z",
+   "severity": "HIGH",
+   "summary": "LlamaIndex vulnerable to Creation of Temporary File in Directory with Insecure Permissions"
+  },
+  {
+   "aliases": [
+    "CVE-2024-12910",
+    "PYSEC-2025-11"
+   ],
+   "cwe": [
+    "CWE-400",
+    "CWE-674"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-jvpf-xf32-2w4q",
+   "package": "llama-index",
+   "published": "2025-03-20T12:32:44Z",
+   "severity": "MODERATE",
+   "summary": "LlamaIndex Uncontrolled Resource Consumption vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-4181",
+    "PYSEC-2024-324",
+    "PYSEC-2026-1565"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-pw38-xv9x-h8ch",
+   "package": "llama-index",
+   "published": "2024-05-16T09:33:08Z",
+   "severity": "HIGH",
+   "summary": "RunGptLLM class in LlamaIndex has a command injection"
+  },
+  {
+   "aliases": [
+    "CVE-2025-7707",
+    "PYSEC-2026-1556"
+   ],
+   "cwe": [
+    "CWE-377"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-rg9h-vx28-xxp5",
+   "package": "llama-index",
+   "published": "2025-10-13T18:31:13Z",
+   "severity": "HIGH",
+   "summary": "llama-index has Insecure Temporary File"
+  },
+  {
+   "aliases": [
+    "CVE-2025-1793",
+    "PYSEC-2026-394"
+   ],
+   "cwe": [
+    "CWE-89"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-v3c8-3pr6-gr7p",
+   "package": "llama-index",
+   "published": "2025-06-05T06:30:26Z",
+   "severity": "CRITICAL",
+   "summary": "llama_index vulnerable to SQL Injection"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39662",
+    "GHSA-2xxc-73fv-36f7"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-148",
+   "package": "llama-index",
+   "published": "2023-08-15T17:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-23751",
+    "GHSA-2jxw-4hm4-6w87"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-12",
+   "package": "llama-index",
+   "published": "2024-01-22T01:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-45201",
+    "GHSA-fxc2-8m62-m85x",
+    "PYSEC-2026-395"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-192",
+   "package": "llama-index",
+   "published": "2024-08-22T20:15:10Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-4181",
+    "GHSA-pw38-xv9x-h8ch",
+    "PYSEC-2026-1565"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-324",
+   "package": "llama-index",
+   "published": "2024-05-16T09:15:15.553Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-12910",
+    "GHSA-jvpf-xf32-2w4q"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-11",
+   "package": "llama-index",
+   "published": "2025-03-20T10:15:31Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-12704",
+    "GHSA-j3wr-m6xh-64hg",
+    "PYSEC-2026-1563"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-244",
+   "package": "llama-index",
+   "published": "2025-03-20T10:15:29.383Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-1750",
+    "GHSA-6mcc-q3mg-3qg6",
+    "PYSEC-2026-4242"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-245",
+   "package": "llama-index",
+   "published": "2025-06-02T10:15:20.557Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-1753",
+    "GHSA-g99h-56mw-8263",
+    "PYSEC-2026-1557"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-246",
+   "package": "llama-index",
+   "published": "2025-05-28T10:15:21.333Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-3044",
+    "GHSA-p7j4-jwjf-5x9w",
+    "PYSEC-2026-1569"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-247",
+   "package": "llama-index",
+   "published": "2025-07-07T10:15:26.717Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-3046",
+    "GHSA-fmrf-6jv9-qjc7",
+    "PYSEC-2026-1568"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-248",
+   "package": "llama-index",
+   "published": "2025-07-07T10:15:26.900Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-3108",
+    "GHSA-m84c-4c34-28gf",
+    "PYSEC-2026-1564"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-249",
+   "package": "llama-index",
+   "published": "2025-07-06T23:15:21.777Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-3225",
+    "GHSA-w42r-mrx7-c633",
+    "PYSEC-2026-1570"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-250",
+   "package": "llama-index",
+   "published": "2025-07-07T10:15:27.047Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-5472",
+    "GHSA-3wxx-q3gv-pvvv",
+    "PYSEC-2026-1559"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-251",
+   "package": "llama-index",
+   "published": "2025-07-07T10:15:28.873Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-6210",
+    "GHSA-3j8r-jf9w-5cmh",
+    "PYSEC-2026-1567"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-252",
+   "package": "llama-index",
+   "published": "2025-07-07T10:15:29.040Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-6209",
+    "GHSA-2rhq-96q8-4vjq",
+    "PYSEC-2026-1558"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2025-65",
+   "package": "llama-index",
+   "published": "2025-07-07T13:15:28Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-1752",
+    "GHSA-7c85-87cp-mr6g"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1554",
+   "package": "llama-index",
+   "published": "2026-07-07T16:02:52.183037Z",
+   "severity": null,
+   "summary": "LlamaIndex Vulnerable to Denial of Service (DoS)"
+  },
+  {
+   "aliases": [
+    "CVE-2024-12911",
+    "GHSA-jmgm-gx32-vp4w"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1555",
+   "package": "llama-index",
+   "published": "2026-07-07T14:34:53.683133Z",
+   "severity": null,
+   "summary": "LlamaIndex vulnerable to Creation of Temporary File in Directory with Insecure Permissions"
+  },
+  {
+   "aliases": [
+    "CVE-2025-7707",
+    "GHSA-rg9h-vx28-xxp5"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1556",
+   "package": "llama-index",
+   "published": "2026-07-07T16:03:07.593505Z",
+   "severity": null,
+   "summary": "llama-index has Insecure Temporary File"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6211",
+    "GHSA-5hq9-5r78-2gjh",
+    "PYSEC-2026-1566"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2606",
+   "package": "llama-index",
+   "published": "2026-07-13T14:36:34.041017Z",
+   "severity": null,
+   "summary": "LlamaIndex vulnerable to data loss through hash collisions in its DocugamiReader class "
+  },
+  {
+   "aliases": [
+    "CVE-2025-1793",
+    "GHSA-v3c8-3pr6-gr7p"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-394",
+   "package": "llama-index",
+   "published": "2026-06-29T11:50:38.482622Z",
+   "severity": null,
+   "summary": "llama_index vulnerable to SQL Injection"
+  },
+  {
+   "aliases": [
+    "CVE-2024-14021"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-85",
+   "package": "llama-index",
+   "published": "2026-01-12T23:15:51.413Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-58339"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-86",
+   "package": "llama-index",
+   "published": "2026-01-12T23:15:51.630Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-6209",
+    "PYSEC-2025-65",
+    "PYSEC-2026-1558"
+   ],
+   "cwe": [
+    "CWE-29"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-2rhq-96q8-4vjq",
+   "package": "llama-index-core",
+   "published": "2025-07-07T15:30:37Z",
+   "severity": "HIGH",
+   "summary": "LlamaIndex vulnerable to Path Traversal attack through its encode_image function"
+  },
+  {
+   "aliases": [
+    "CVE-2025-5472",
+    "PYSEC-2025-251",
+    "PYSEC-2026-1559"
+   ],
+   "cwe": [
+    "CWE-674"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-3wxx-q3gv-pvvv",
+   "package": "llama-index-core",
+   "published": "2025-07-07T12:30:23Z",
+   "severity": "MODERATE",
+   "summary": "LlamaIndex vulnerable to DoS attack through uncontrolled recursive JSON parsing"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6208",
+    "PYSEC-2026-1560"
+   ],
+   "cwe": [
+    "CWE-400"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-488g-hw5f-x29p",
+   "package": "llama-index-core",
+   "published": "2026-02-02T12:31:14Z",
+   "severity": "MODERATE",
+   "summary": "llama-index-core vulnerable to Uncontrolled Resource Consumption"
+  },
+  {
+   "aliases": [
+    "CVE-2025-5302",
+    "PYSEC-2026-1561"
+   ],
+   "cwe": [
+    "CWE-674"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-7753-xrfw-ch36",
+   "package": "llama-index-core",
+   "published": "2025-08-26T00:31:13Z",
+   "severity": "HIGH",
+   "summary": "LlamaIndex affected by a Denial of Service (DOS) in JSONReader"
+  },
+  {
+   "aliases": [
+    "CVE-2025-7647",
+    "PYSEC-2026-1562"
+   ],
+   "cwe": [
+    "CWE-378"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-cr7q-2w66-hjcm",
+   "package": "llama-index-core",
+   "published": "2025-09-27T18:30:49Z",
+   "severity": "HIGH",
+   "summary": "llama-index-core insecurely handles temporary files"
+  },
+  {
+   "aliases": [
+    "CVE-2024-45201",
+    "PYSEC-2024-192",
+    "PYSEC-2026-395"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-fxc2-8m62-m85x",
+   "package": "llama-index-core",
+   "published": "2024-08-22T21:31:29Z",
+   "severity": "CRITICAL",
+   "summary": "LlamaIndex includes an exec call for `import {cls_name}`"
+  },
+  {
+   "aliases": [
+    "CVE-2024-12704",
+    "PYSEC-2025-244",
+    "PYSEC-2026-1563"
+   ],
+   "cwe": [
+    "CWE-755",
+    "CWE-835"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-j3wr-m6xh-64hg",
+   "package": "llama-index-core",
+   "published": "2025-03-20T12:32:43Z",
+   "severity": "HIGH",
+   "summary": "LlamaIndex Improper Handling of Exceptional Conditions vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2025-3108",
+    "PYSEC-2025-249",
+    "PYSEC-2026-1564"
+   ],
+   "cwe": [
+    "CWE-1112"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-m84c-4c34-28gf",
+   "package": "llama-index-core",
+   "published": "2025-07-07T00:30:18Z",
+   "severity": "MODERATE",
+   "summary": "LlamaIndex has Incomplete Documentation of Program Execution related to JsonPickleSerializer component"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3271",
+    "PYSEC-2026-396"
+   ],
+   "cwe": [
+    "CWE-77"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-r6gp-rff2-p3hf",
+   "package": "llama-index-core",
+   "published": "2024-04-16T00:30:34Z",
+   "severity": "CRITICAL",
+   "summary": "llama-index-core Command Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3098",
+    "PYSEC-2026-397"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-wvpx-g427-q9wc",
+   "package": "llama-index-core",
+   "published": "2024-04-10T18:30:48Z",
+   "severity": "CRITICAL",
+   "summary": "llama-index-core Prompt Injection vulnerability leading to Arbitrary Code Execution"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6209",
+    "GHSA-2rhq-96q8-4vjq",
+    "PYSEC-2025-65"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1558",
+   "package": "llama-index-core",
+   "published": "2026-07-07T16:02:57.103779Z",
+   "severity": null,
+   "summary": "LlamaIndex vulnerable to Path Traversal attack through its encode_image function"
+  },
+  {
+   "aliases": [
+    "CVE-2025-5472",
+    "GHSA-3wxx-q3gv-pvvv",
+    "PYSEC-2025-251"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1559",
+   "package": "llama-index-core",
+   "published": "2026-07-07T16:02:57.029091Z",
+   "severity": null,
+   "summary": "LlamaIndex vulnerable to DoS attack through uncontrolled recursive JSON parsing"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6208",
+    "GHSA-488g-hw5f-x29p"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1560",
+   "package": "llama-index-core",
+   "published": "2026-07-07T16:03:21.353538Z",
+   "severity": null,
+   "summary": "llama-index-core vulnerable to Uncontrolled Resource Consumption"
+  },
+  {
+   "aliases": [
+    "CVE-2025-5302",
+    "GHSA-7753-xrfw-ch36"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1561",
+   "package": "llama-index-core",
+   "published": "2026-07-07T16:03:02.032115Z",
+   "severity": null,
+   "summary": "LlamaIndex affected by a Denial of Service (DOS) in JSONReader"
+  },
+  {
+   "aliases": [
+    "CVE-2025-7647",
+    "GHSA-cr7q-2w66-hjcm"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1562",
+   "package": "llama-index-core",
+   "published": "2026-07-07T16:03:05.944391Z",
+   "severity": null,
+   "summary": "llama-index-core insecurely handles temporary files"
+  },
+  {
+   "aliases": [
+    "CVE-2024-12704",
+    "GHSA-j3wr-m6xh-64hg",
+    "PYSEC-2025-244"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1563",
+   "package": "llama-index-core",
+   "published": "2026-07-07T14:34:53.244852Z",
+   "severity": null,
+   "summary": "LlamaIndex Improper Handling of Exceptional Conditions vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2025-3108",
+    "GHSA-m84c-4c34-28gf",
+    "PYSEC-2025-249"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1564",
+   "package": "llama-index-core",
+   "published": "2026-07-07T16:02:56.268334Z",
+   "severity": null,
+   "summary": "LlamaIndex has Incomplete Documentation of Program Execution related to JsonPickleSerializer component"
+  },
+  {
+   "aliases": [
+    "CVE-2024-45201",
+    "GHSA-fxc2-8m62-m85x",
+    "PYSEC-2024-192"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-395",
+   "package": "llama-index-core",
+   "published": "2026-06-29T11:50:41.215936Z",
+   "severity": null,
+   "summary": "LlamaIndex includes an exec call for `import {cls_name}`"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3271",
+    "GHSA-r6gp-rff2-p3hf"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-396",
+   "package": "llama-index-core",
+   "published": "2026-06-29T11:50:39.698454Z",
+   "severity": null,
+   "summary": "llama-index-core Command Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3098",
+    "GHSA-wvpx-g427-q9wc"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-397",
+   "package": "llama-index-core",
+   "published": "2026-06-29T11:50:39.328327Z",
+   "severity": null,
+   "summary": "llama-index-core Prompt Injection vulnerability leading to Arbitrary Code Execution"
+  },
+  {
+   "aliases": [
+    "CVE-2024-41950",
+    "PYSEC-2026-1447"
+   ],
+   "cwe": [
+    "CWE-1336"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-hx9v-6r9f-w677",
+   "package": "haystack-ai",
+   "published": "2024-07-31T18:50:41Z",
+   "severity": "HIGH",
+   "summary": "Insecure Jinja2 templates rendered in Haystack Components can lead to RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2024-41950",
+    "GHSA-hx9v-6r9f-w677"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1447",
+   "package": "haystack-ai",
+   "published": "2026-07-07T14:34:38.082423Z",
+   "severity": null,
+   "summary": "Insecure Jinja2 templates rendered in Haystack Components can lead to RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2026-25592",
+    "PYSEC-2026-531"
+   ],
+   "cwe": [
+    "CWE-22"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-2ww3-72rp-wpp4",
+   "package": "semantic-kernel",
+   "published": "2026-02-06T18:37:24Z",
+   "severity": "CRITICAL",
+   "summary": "Semantic Kernel has Arbitrary File Write via AI Agent Function Calling in .NET SDK"
+  },
+  {
+   "aliases": [
+    "CVE-2026-26030",
+    "PYSEC-2026-163"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-xjw9-4gw8-4rqx",
+   "package": "semantic-kernel",
+   "published": "2026-02-19T19:34:14Z",
+   "severity": "CRITICAL",
+   "summary": "Microsoft Semantic Kernel InMemoryVectorStore filter functionality vulnerable to remote code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2026-26030",
+    "GHSA-xjw9-4gw8-4rqx"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-163",
+   "package": "semantic-kernel",
+   "published": "2026-02-19T17:24:50.487Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-25592",
+    "GHSA-2ww3-72rp-wpp4"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-531",
+   "package": "semantic-kernel",
+   "published": "2026-06-29T11:50:51.513729Z",
+   "severity": null,
+   "summary": "Semantic Kernel has Arbitrary File Write via AI Agent Function Calling in .NET SDK"
+  },
+  {
+   "aliases": [
+    "CVE-2025-12695",
+    "PYSEC-2026-1318"
+   ],
+   "cwe": [
+    "CWE-653"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-vvw2-h478-xwr3",
+   "package": "dspy",
+   "published": "2025-11-04T15:31:35Z",
+   "severity": "MODERATE",
+   "summary": "DSPy does not properly restrict file reads"
+  },
+  {
+   "aliases": [
+    "CVE-2025-12695",
+    "GHSA-vvw2-h478-xwr3"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1318",
+   "package": "dspy",
+   "published": "2026-07-07T16:03:09.472439Z",
+   "severity": null,
+   "summary": "DSPy does not properly restrict file reads"
+  },
+  {
+   "aliases": [
+    "CVE-2026-28277",
+    "PYSEC-2026-83"
+   ],
+   "cwe": [
+    "CWE-502"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-g48c-2wqr-h844",
+   "package": "langgraph",
+   "published": "2026-03-05T20:19:49Z",
+   "severity": "MODERATE",
+   "summary": "LangGraph checkpoint loading has unsafe msgpack deserialization"
+  },
+  {
+   "aliases": [
+    "CVE-2026-48776",
+    "GHSA-w39p-vh2g-g8g5",
+    "PYSEC-2026-2575"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2194",
+   "package": "langgraph",
+   "published": "2026-06-17T10:55:15.113Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-28277",
+    "GHSA-g48c-2wqr-h844"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-83",
+   "package": "langgraph",
+   "published": "2026-03-05T20:16:15.677Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-7774"
+   ],
+   "cwe": [
+    "CWE-22",
+    "CWE-29"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-hc5w-c9f8-9cc4",
+   "package": "langchain",
+   "published": "2024-10-29T15:32:05Z",
+   "severity": "MODERATE",
+   "summary": "Langchain Path Traversal vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68665"
+   ],
+   "cwe": [
+    "CWE-502"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-r399-636x-v7f6",
+   "package": "langchain",
+   "published": "2025-12-23T20:08:48Z",
+   "severity": "HIGH",
+   "summary": "LangChain serialization injection vulnerability enables secret extraction"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68665"
+   ],
+   "cwe": [
+    "CWE-502"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-r399-636x-v7f6",
+   "package": "@langchain/core",
+   "published": "2025-12-23T20:08:48Z",
+   "severity": "HIGH",
+   "summary": "LangChain serialization injection vulnerability enables secret extraction"
+  },
+  {
+   "aliases": [
+    "CVE-2026-34450",
+    "PYSEC-2026-2114"
+   ],
+   "cwe": [
+    "CWE-276",
+    "CWE-732"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-q5f5-3gjm-7mfm",
+   "package": "anthropic",
+   "published": "2026-04-01T21:15:30Z",
+   "severity": "MODERATE",
+   "summary": "Claude SDK for Python has Insecure Default File Permissions in Local Filesystem Memory Tool"
+  },
+  {
+   "aliases": [
+    "CVE-2026-34452",
+    "PYSEC-2026-2115"
+   ],
+   "cwe": [
+    "CWE-367",
+    "CWE-59"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-w828-4qhx-vxx3",
+   "package": "anthropic",
+   "published": "2026-04-01T21:17:34Z",
+   "severity": "MODERATE",
+   "summary": "Claude SDK for Python: Memory Tool Path Validation Race Condition Allows Sandbox Escape"
+  },
+  {
+   "aliases": [
+    "CVE-2026-34450",
+    "GHSA-q5f5-3gjm-7mfm"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2114",
+   "package": "anthropic",
+   "published": "2026-03-31T22:16:19.987Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-34452",
+    "GHSA-w828-4qhx-vxx3"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2115",
+   "package": "anthropic",
+   "published": "2026-03-31T22:16:20.320Z",
+   "severity": null,
+   "summary": ""
+  }
+ ],
+ "targets": [
+  [
+   "PyPI",
+   "langchain"
+  ],
+  [
+   "PyPI",
+   "langchain-core"
+  ],
+  [
+   "PyPI",
+   "llama-index"
+  ],
+  [
+   "PyPI",
+   "llama-index-core"
+  ],
+  [
+   "PyPI",
+   "autogen"
+  ],
+  [
+   "PyPI",
+   "pyautogen"
+  ],
+  [
+   "PyPI",
+   "crewai"
+  ],
+  [
+   "PyPI",
+   "haystack-ai"
+  ],
+  [
+   "PyPI",
+   "semantic-kernel"
+  ],
+  [
+   "PyPI",
+   "dspy"
+  ],
+  [
+   "PyPI",
+   "langgraph"
+  ],
+  [
+   "npm",
+   "langchain"
+  ],
+  [
+   "npm",
+   "@langchain/core"
+  ],
+  [
+   "PyPI",
+   "openai"
+  ],
+  [
+   "PyPI",
+   "anthropic"
+  ]
+ ]
+}

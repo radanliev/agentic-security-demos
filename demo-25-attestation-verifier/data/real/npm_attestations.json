@@ -1,0 +1,348 @@
+{
+ "retrieved": "2026-10-26",
+ "rows": [
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "4.18.1",
+   "package": "lodash",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "19.3.1",
+   "package": "react",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "6.0.1",
+   "package": "chalk",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "2.8.1",
+   "package": "tslib",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "1.20.0",
+   "package": "axios",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "15.0.0",
+   "package": "commander",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "4.4.3",
+   "package": "debug",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "5.3.0",
+   "package": "express",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "7.0.2",
+   "package": "typescript",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "7.8.5",
+   "package": "semver",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "14.0.3",
+   "package": "uuid",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "13.0.6",
+   "package": "glob",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "18.2.0",
+   "package": "yargs",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "11.4.1",
+   "package": "fs-extra",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "18.0.9",
+   "package": "dotenv",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "4.6.7",
+   "package": "zod",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "7.8.2",
+   "package": "rxjs",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "3.9.10",
+   "package": "prettier",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "10.13.0",
+   "package": "eslint",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "5.112.2",
+   "package": "webpack",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "8.3.5",
+   "package": "vite",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "16.4.3",
+   "package": "next",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "3.5.44",
+   "package": "vue",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "26.6.5",
+   "package": "@types/node",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "30.5.2",
+   "package": "jest",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "0.28.2",
+   "package": "esbuild",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "4.65.1",
+   "package": "rollup",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "8.22.0",
+   "package": "ws",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "1.2.8",
+   "package": "minimist",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "3.0.1",
+   "package": "mkdirp",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "1.32.2",
+   "package": "@modelcontextprotocol/sdk",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "7.43.0",
+   "package": "openai",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "1.3.0",
+   "package": "@anthropic-ai/sdk",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "1.5.19",
+   "package": "langchain",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "1.3.0",
+   "package": "@langchain/core",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "7.0.153",
+   "package": "ai",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "5.0.0",
+   "package": "sigstore",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "12.2.1",
+   "package": "npm",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": false,
+   "has_signatures": true,
+   "latest": "3.3.2",
+   "package": "node-fetch",
+   "predicate_types": null
+  },
+  {
+   "has_attestations": true,
+   "has_signatures": true,
+   "latest": "2.4.0",
+   "package": "body-parser",
+   "predicate_types": [
+    "https://github.com/npm/attestation/tree/main/specs/publish/v0.1",
+    "https://slsa.dev/provenance/v1"
+   ]
+  }
+ ]
+}

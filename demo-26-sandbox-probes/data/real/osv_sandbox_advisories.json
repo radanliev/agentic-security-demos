@@ -1,0 +1,2794 @@
+{
+ "retrieved": "2026-10-26",
+ "rows": [
+  {
+   "aliases": [
+    "CVE-2026-45411"
+   ],
+   "cwe": [
+    "CWE-668"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-248r-7h7q-cr24",
+   "package": "vm2",
+   "published": "2026-05-14T21:14:32Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Has a Sandbox Breakout Using Async Generator"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92944"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-27g9-p43v-cw3v",
+   "package": "vm2",
+   "published": "2026-10-01T15:28:07Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 sandbox escape on Node.js 26 through a stale PromiseThenLookupChain protector"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92963"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-2cm2-m3w5-gp2f",
+   "package": "vm2",
+   "published": "2026-05-08T16:22:52Z",
+   "severity": "MODERATE",
+   "summary": "vm2 has access to `VM2_INTERNAL_STATE_DO_NOT_USE_OR_PROGRAM_WILL_FAIL`"
+  },
+  {
+   "aliases": [
+    "CVE-2026-100722"
+   ],
+   "cwe": [
+    "CWE-248",
+    "CWE-703"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-2v2p-6j97-cjg9",
+   "package": "vm2",
+   "published": "2026-10-05T23:19:55Z",
+   "severity": "HIGH",
+   "summary": "vm2: Host Promise rejection from an exposed constructor can terminate the vm2 host process"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92953"
+   ],
+   "cwe": [
+    "CWE-1321",
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-3vgf-8m4q-q4qr",
+   "package": "vm2",
+   "published": "2026-10-05T22:45:22Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: Default VM can mutate host TypedArray and ArrayBuffer intrinsics after the host-prototype pollution fix"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92939"
+   ],
+   "cwe": [
+    "CWE-114"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-46pr-c5wc-xffx",
+   "package": "vm2",
+   "published": "2026-10-01T15:28:36Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 crypto builtin loads attacker native code through setEngine"
+  },
+  {
+   "aliases": [
+    "CVE-2026-43997"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-47x8-96vw-5wg6",
+   "package": "vm2",
+   "published": "2026-05-07T04:00:19Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Access to Host Object Enables Sandbox Escape"
+  },
+  {
+   "aliases": [
+    "CVE-2026-100723"
+   ],
+   "cwe": [
+    "CWE-200",
+    "CWE-787"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-489w-w794-jq94",
+   "package": "vm2",
+   "published": "2026-10-05T23:00:46Z",
+   "severity": "MODERATE",
+   "summary": "vm2: NodeVM zlib Buffers expose pooled host memory across the VM boundary"
+  },
+  {
+   "aliases": [
+    "CVE-2022-25893"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-4w2j-2rg4-5mjw",
+   "package": "vm2",
+   "published": "2022-12-21T06:30:29Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 vulnerable to Arbitrary Code Execution"
+  },
+  {
+   "aliases": [
+    "CVE-2026-26332"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-55hx-c926-fr95",
+   "package": "vm2",
+   "published": "2026-05-05T16:33:45Z",
+   "severity": "CRITICAL",
+   "summary": "VM2 Has a Sandbox Escape Issue via SuppressedError"
+  },
+  {
+   "aliases": [
+    "CVE-2026-100721"
+   ],
+   "cwe": [
+    "CWE-863"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-5h3f-q97h-ccvc",
+   "package": "vm2",
+   "published": "2026-10-05T23:24:29Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: NodeVM custom resolution bypasses external path boundaries"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92949"
+   ],
+   "cwe": [
+    "CWE-471",
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-633r-hq9m-c4ff",
+   "package": "vm2",
+   "published": "2026-10-01T15:35:25Z",
+   "severity": "MODERATE",
+   "summary": "vm2: vm.freeze()/vm.readonly() bypass via accessor descriptor"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92937"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-647f-g98j-qq25",
+   "package": "vm2",
+   "published": "2026-10-01T15:32:10Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: GHSA-m283-3h24-438v fix bypass leads to host RCE via call/apply indirection"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44004"
+   ],
+   "cwe": [
+    "CWE-770"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6785-pvv7-mvg7",
+   "package": "vm2",
+   "published": "2026-05-07T04:26:39Z",
+   "severity": "HIGH",
+   "summary": "vm2 Sandbox Access to Host Buffer.alloc Allows timeout Bypass Resulting in Memory Exhaustion"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47210"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6j2x-vhqr-qr7q",
+   "package": "vm2",
+   "published": "2026-05-29T17:51:05Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 sandbox escape via JSPI-backed Promise `.finally()` species bypass"
+  },
+  {
+   "aliases": [
+    "CVE-2021-23555",
+    "SNYK-JS-VM2-2309905"
+   ],
+   "cwe": [
+    "CWE-1321"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6pw2-5hjv-9pf7",
+   "package": "vm2",
+   "published": "2022-02-12T00:00:38Z",
+   "severity": "CRITICAL",
+   "summary": "Sandbox bypass in vm2"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92958"
+   ],
+   "cwe": [
+    "CWE-269",
+    "CWE-284"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6rh5-qq4q-97xh",
+   "package": "vm2",
+   "published": "2026-10-01T15:36:48Z",
+   "severity": "HIGH",
+   "summary": "vm2: NodeVM builtin denylist bypass via fs/promises despite -fs, allowing host filesystem writes"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92938"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6w8r-xxw2-g3hx",
+   "package": "vm2",
+   "published": "2026-10-01T15:29:04Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 allows a sandboxed plugin to execute native code through `node:sqlite`"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47208"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-76w7-j9cq-rx2j",
+   "package": "vm2",
+   "published": "2026-05-29T17:40:15Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 is Vulnerable to Sandbox Breakout Through Promise Species"
+  },
+  {
+   "aliases": [
+    "CVE-2023-29017"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-7jxr-cg7f-gpgv",
+   "package": "vm2",
+   "published": "2023-04-07T20:35:03Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 vulnerable to sandbox escape"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92945"
+   ],
+   "cwe": [
+    "CWE-22",
+    "CWE-863"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-7q3f-wx44-378m",
+   "package": "vm2",
+   "published": "2026-10-01T15:26:45Z",
+   "severity": "MODERATE",
+   "summary": "vm2: External module allowlist uses a raw prefix test, so a prefix-sharing sibling package is treated as allowlisted"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92957"
+   ],
+   "cwe": [
+    "CWE-269",
+    "CWE-284"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-8686-vhfx-7r3j",
+   "package": "vm2",
+   "published": "2026-10-01T15:36:01Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: NodeVM node:-prefixed negative builtin deny bypass exposes child_process"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92955"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-88hf-g992-jg85",
+   "package": "vm2",
+   "published": "2026-10-05T22:47:09Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: Sandbox Escape (NodeVM)"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44007"
+   ],
+   "cwe": [
+    "CWE-284",
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-8hg8-63c5-gwmx",
+   "package": "vm2",
+   "published": "2026-05-07T05:13:21Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 NodeVM `nesting: true` bypasses `require: false` allowing sandbox escape and arbitrary OS command execution"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92935"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-8hr7-r645-pc6w",
+   "package": "vm2",
+   "published": "2026-10-01T15:34:58Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: NodeVM nesting guard accepts array-shaped require and permits host RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2026-43999"
+   ],
+   "cwe": [
+    "CWE-863"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-947f-4v7f-x2v8",
+   "package": "vm2",
+   "published": "2026-05-07T04:08:55Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 has a NodeVM builtin allowlist bypass via `module` builtin's `Module._load` that allows sandbox escape"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92941"
+   ],
+   "cwe": [
+    "CWE-732"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-98xx-8mx4-x7cm",
+   "package": "vm2",
+   "published": "2026-10-01T15:27:28Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 NodeVM can replace the host process TLS trust store"
+  },
+  {
+   "aliases": [
+    "CVE-2026-22709"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-913",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-99p7-6v5w-7xg8",
+   "package": "vm2",
+   "published": "2026-01-26T18:57:14Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 has a Sandbox Escape"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47141"
+   ],
+   "cwe": [
+    "CWE-668"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-9g8x-92q2-p28f",
+   "package": "vm2",
+   "published": "2026-05-29T18:20:45Z",
+   "severity": "MODERATE",
+   "summary": "NodeVM observability builtins leak host process and HTTP request data"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44008"
+   ],
+   "cwe": [
+    "CWE-668"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-9qj6-qjgg-37qq",
+   "package": "vm2",
+   "published": "2026-05-08T15:58:48Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 has sandbox breakout via `neutralizeArraySpeciesBatch`"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44009"
+   ],
+   "cwe": [
+    "CWE-668"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-9vg3-4rfj-wgcm",
+   "package": "vm2",
+   "published": "2026-05-08T16:20:58Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 has Sandbox Breakout Through Null Proto Exception"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92951"
+   ],
+   "cwe": [
+    "CWE-706",
+    "CWE-829",
+    "CWE-863"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-c48m-32m9-vx93",
+   "package": "vm2",
+   "published": "2026-10-01T15:37:19Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Custom Module Resolver Can Bypass the External Package Allowlist by Loading a Colliding Host Package"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47209"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-c4cf-2hgv-2qv6",
+   "package": "vm2",
+   "published": "2026-05-29T17:49:18Z",
+   "severity": "HIGH",
+   "summary": "vm2's Bridge Proxy set trap ignores receiver parameter, enabling host object property injection via prototype chain"
+  },
+  {
+   "aliases": [
+    "CVE-2023-37466"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-cchq-frgv-rjh5",
+   "package": "vm2",
+   "published": "2023-07-13T17:02:02Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Sandbox Escape vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47698"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-cfcw-xp6x-25gj",
+   "package": "vm2",
+   "published": "2026-08-17T17:32:41Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: Sandbox Breakout Using Dangerous Host Proto Mutators"
+  },
+  {
+   "aliases": [
+    "CVE-2023-30547"
+   ],
+   "cwe": [
+    "CWE-74"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-ch3r-j5x3-6q2m",
+   "package": "vm2",
+   "published": "2023-04-20T14:37:53Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Sandbox Escape vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-43998"
+   ],
+   "cwe": [
+    "CWE-59"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-cp6g-6699-wx9c",
+   "package": "vm2",
+   "published": "2026-05-07T04:33:37Z",
+   "severity": "HIGH",
+   "summary": "vm2 has a NodeVM require.root bypass via symlink traversal that allows sandbox escape"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92959"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-f8gf-w286-fmq2",
+   "package": "vm2",
+   "published": "2026-10-05T22:47:34Z",
+   "severity": "HIGH",
+   "summary": "vm2: `allowAsync: false` can be bypassed through Promise thenable assimilation in VM and NodeVM"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92947"
+   ],
+   "cwe": [
+    "CWE-200",
+    "CWE-653",
+    "CWE-668"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-fcqc-726x-5wfc",
+   "package": "vm2",
+   "published": "2026-10-05T22:34:35Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: Sandboxed code can read and write host-realm memory via Node's shared Buffer pool"
+  },
+  {
+   "aliases": [
+    "CVE-2026-26956"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-ffh4-j6h5-pg66",
+   "package": "vm2",
+   "published": "2026-05-05T16:44:16Z",
+   "severity": "CRITICAL",
+   "summary": "VM2 Has a WASM Sandbox Escape"
+  },
+  {
+   "aliases": [
+    "CVE-2023-37903"
+   ],
+   "cwe": [
+    "CWE-78"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-g644-9gfx-q4q4",
+   "package": "vm2",
+   "published": "2023-07-13T17:01:58Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Sandbox Escape vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92954"
+   ],
+   "cwe": [
+    "CWE-248",
+    "CWE-703"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-gjq8-xm47-88rc",
+   "package": "vm2",
+   "published": "2026-10-05T22:45:48Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: Host-returned Promise rejection can bypass vm2's unhandled-rejection hardening and terminate the host process"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47683"
+   ],
+   "cwe": [
+    "CWE-770"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-gmc2-2x9w-cgh9",
+   "package": "vm2",
+   "published": "2026-08-17T17:32:10Z",
+   "severity": "HIGH",
+   "summary": "vm2's bufferAllocLimit cap bypassed by Buffer.concat and Buffer.from arrayLike"
+  },
+  {
+   "aliases": [
+    "CVE-2026-24118"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-grj5-jjm8-h35p",
+   "package": "vm2",
+   "published": "2026-05-04T16:29:15Z",
+   "severity": "CRITICAL",
+   "summary": "VM2 Sandbox Breakout Through __lookupGetter__"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92940"
+   ],
+   "cwe": [
+    "CWE-668"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-h85j-hv3c-qfgq",
+   "package": "vm2",
+   "published": "2026-10-01T15:38:26Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 exposes host HTTPS credentials and TLS traffic through globalAgent"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44001"
+   ],
+   "cwe": [
+    "CWE-248"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-hw58-p9xv-2mjh",
+   "package": "vm2",
+   "published": "2026-05-07T04:10:29Z",
+   "severity": "HIGH",
+   "summary": "vm2 has a Sandbox Escape via Promise Constructor Unhandled Rejection (Process Crash DoS)"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92946"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-j3hm-6rg5-mchv",
+   "package": "vm2",
+   "published": "2026-10-05T22:34:50Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: NodeVM `require.external` without an explicit `require.root` grants unrestricted host filesystem access and full RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92952"
+   ],
+   "cwe": [
+    "CWE-669"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-jf8q-945g-9q4c",
+   "package": "vm2",
+   "published": "2026-10-01T15:42:15Z",
+   "severity": "MODERATE",
+   "summary": "vm2: Incomplete nodejs.* symbol filtering lets sandbox override host WebStream state checks"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92950"
+   ],
+   "cwe": [
+    "CWE-1188",
+    "CWE-453",
+    "CWE-829"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-jxxv-8r27-vm4p",
+   "package": "vm2",
+   "published": "2026-10-01T15:40:45Z",
+   "severity": "HIGH",
+   "summary": "vm2 CLI provides no sandbox isolation - host-realm require() is reachable from sandboxed scripts"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47686"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-m283-3h24-438v",
+   "package": "vm2",
+   "published": "2026-08-17T17:32:34Z",
+   "severity": "CRITICAL",
+   "summary": "VM2 has Missing Error.cause Sanitization that Enables Sandbox Escape to RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47137"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-m4wx-m65x-ghrr",
+   "package": "vm2",
+   "published": "2026-05-29T17:50:22Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 has a CVE-2023-37903 patch bypass: nesting:true without explicit require still allows full RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47135"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-m5q2-4fm3-vfqp",
+   "package": "vm2",
+   "published": "2026-05-29T17:44:32Z",
+   "severity": "HIGH",
+   "summary": "vm2 has a sandbox escape via unblocked cross-realm Symbol.for keys + missing bridge write-trap symbol checks"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92960"
+   ],
+   "cwe": [
+    "CWE-200",
+    "CWE-285",
+    "CWE-732"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-m5w8-4gq2-6f8x",
+   "package": "vm2",
+   "published": "2026-08-17T17:32:47Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: NodeVM `builtin: ['*']` exposes `os` and `dns` \u2014 process-wide observability reads AND writes that hijack the host (sibling class of GHSA-9g8x-92q2-p28f)"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44000"
+   ],
+   "cwe": [
+    "CWE-668",
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-mpf8-4hx2-7cjg",
+   "package": "vm2",
+   "published": "2026-05-07T04:29:22Z",
+   "severity": "MODERATE",
+   "summary": "vm2 Host Promise Resolution Preserves Object Identity Across Sandbox Boundary"
+  },
+  {
+   "aliases": [
+    "CVE-2022-36067"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-mrgp-mrhc-5jrq",
+   "package": "vm2",
+   "published": "2022-09-28T13:09:01Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 vulnerable to Sandbox Escape resulting in Remote Code Execution on host"
+  },
+  {
+   "aliases": [
+    "CVE-2023-32313"
+   ],
+   "cwe": [
+    "CWE-74"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-p5gc-c584-jj6v",
+   "package": "vm2",
+   "published": "2023-05-17T03:49:37Z",
+   "severity": "MODERATE",
+   "summary": "vm2 vulnerable to Inspect Manipulation"
+  },
+  {
+   "aliases": [
+    "CVE-2026-93605"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-pq68-rvw4-xp4r",
+   "package": "vm2",
+   "published": "2026-10-07T18:05:00Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 contains a sandbox escape vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92962"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-q3fm-4wcw-g57x",
+   "package": "vm2",
+   "published": "2026-05-29T17:38:33Z",
+   "severity": "LOW",
+   "summary": "vm2 setup-sandbox.js violates Defense Invariant #11 in stack-trace formatter"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44006"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-qcp4-v2jj-fjx8",
+   "package": "vm2",
+   "published": "2026-05-07T03:54:34Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 has a Sandbox Escape Vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92948"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-qhwx-74w5-xhxq",
+   "package": "vm2",
+   "published": "2026-10-01T15:41:31Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: NodeVM builtin allowlist bypass via node:test.run() execArgv allows sandbox escape"
+  },
+  {
+   "aliases": [
+    "CVE-2026-24120"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-qvjj-29qf-hp7p",
+   "package": "vm2",
+   "published": "2026-05-05T16:23:35Z",
+   "severity": "CRITICAL",
+   "summary": "VM2 Has Sandbox Breakout Through Promise Species"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92933"
+   ],
+   "cwe": [
+    "CWE-200",
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-r273-hxvj-fxhp",
+   "package": "vm2",
+   "published": "2026-10-05T22:37:40Z",
+   "severity": "MODERATE",
+   "summary": "vm2: util.getCallSites() bypasses GHSA-v27g-jcqj-v8rw host-frame redaction, leaks host call stack"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92942"
+   ],
+   "cwe": [
+    "CWE-400",
+    "CWE-841"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-r4fx-v8hh-22mv",
+   "package": "vm2",
+   "published": "2026-10-05T22:35:04Z",
+   "severity": "HIGH",
+   "summary": "vm2: timeout Option Bypass via FinalizationRegistry Cleanup Callback (Unbounded Host Event-Loop Block)"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47139"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-r9pm-gxmw-wv6p",
+   "package": "vm2",
+   "published": "2026-05-29T18:08:06Z",
+   "severity": "HIGH",
+   "summary": "NodeVM network builtin exclusions bypass via internal _http_client and _http_server"
+  },
+  {
+   "aliases": [
+    "CVE-2021-23449",
+    "SNYK-JS-VM2-1585918"
+   ],
+   "cwe": [
+    "CWE-1321",
+    "CWE-915"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-rjf2-j2r6-q8gr",
+   "package": "vm2",
+   "published": "2021-10-19T15:28:45Z",
+   "severity": "CRITICAL",
+   "summary": "Prototype Pollution in vm2"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47140"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-rp36-8xq3-r6c4",
+   "package": "vm2",
+   "published": "2026-05-29T17:59:23Z",
+   "severity": "CRITICAL",
+   "summary": "NodeVM builtin denylist bypass via process and inspector/promises allows host code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44002"
+   ],
+   "cwe": [
+    "CWE-209"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-v27g-jcqj-v8rw",
+   "package": "vm2",
+   "published": "2026-05-07T04:30:10Z",
+   "severity": "MODERATE",
+   "summary": "vm2 is Vulnerable to Host File Path Disclosure via Stack Trace Information Leak"
+  },
+  {
+   "aliases": [
+    "CVE-2026-24781"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-v37h-5mfm-c47c",
+   "package": "vm2",
+   "published": "2026-05-05T16:33:14Z",
+   "severity": "CRITICAL",
+   "summary": "VM2 Has Sandbox Breakout Through Inspect Function"
+  },
+  {
+   "aliases": [
+    "CVE-2026-47131"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-v6mx-mf47-r5wg",
+   "package": "vm2",
+   "published": "2026-05-29T17:33:58Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 has a Sandbox Escape issue"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92961"
+   ],
+   "cwe": [
+    "CWE-770"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-v836-6xw4-9cx3",
+   "package": "vm2",
+   "published": "2026-08-17T17:32:57Z",
+   "severity": "HIGH",
+   "summary": "vm2 has Memory Exhaustion DoS via bufferAllocLimit Bypass"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44005"
+   ],
+   "cwe": [
+    "CWE-1321",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-vwrp-x96c-mhwq",
+   "package": "vm2",
+   "published": "2026-05-07T04:07:05Z",
+   "severity": "CRITICAL",
+   "summary": "vm2: Mutable Proxies for Host Intrinsic Prototypes Allows Sandbox Escape"
+  },
+  {
+   "aliases": [
+    "CVE-2019-10761",
+    "SNYK-JS-VM2-473188"
+   ],
+   "cwe": [
+    "CWE-674"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-wf5x-cr3r-xr77",
+   "package": "vm2",
+   "published": "2022-07-14T00:00:23Z",
+   "severity": "HIGH",
+   "summary": "vm2 before 3.6.11 vulnerable to sandbox escape"
+  },
+  {
+   "aliases": [
+    "CVE-2023-32314"
+   ],
+   "cwe": [
+    "CWE-74"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-whpj-8f3w-67p5",
+   "package": "vm2",
+   "published": "2023-05-15T20:50:51Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Sandbox Escape vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92956"
+   ],
+   "cwe": [
+    "CWE-693",
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-wjwh-qqvp-g4p4",
+   "package": "vm2",
+   "published": "2026-10-05T22:34:22Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 sandbox escape via WebAssembly.compileStreaming Promise species bypass"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44003"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-wp5r-2gw5-m7q7",
+   "package": "vm2",
+   "published": "2026-05-07T04:32:56Z",
+   "severity": "MODERATE",
+   "summary": "vm2's Transformer Fast-Path Bypass Exposes Internal State Variable"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92936"
+   ],
+   "cwe": [
+    "CWE-209",
+    "CWE-497"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-x6m4-chr9-cg97",
+   "package": "vm2",
+   "published": "2026-10-05T22:35:31Z",
+   "severity": "MODERATE",
+   "summary": "vm2 leaks absolute host filesystem paths to sandbox code via error stack formatting"
+  },
+  {
+   "aliases": [
+    "CVE-2026-92934"
+   ],
+   "cwe": [
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-x965-fc75-jpqh",
+   "package": "vm2",
+   "published": "2026-10-05T22:38:04Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 sandbox escape to host RCE via revisited host-wrapped AggregateError bypassing Error sanitization cycle short-circuit"
+  },
+  {
+   "aliases": [
+    "CVE-2023-29199"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-xj72-wvfv-8985",
+   "package": "vm2",
+   "published": "2023-04-12T20:42:44Z",
+   "severity": "CRITICAL",
+   "summary": "vm2 Sandbox Escape vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2022-39266"
+   ],
+   "cwe": [
+    "CWE-20",
+    "CWE-287",
+    "CWE-693"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-2jjq-x548-rhpv",
+   "package": "isolated-vm",
+   "published": "2022-09-30T22:59:03Z",
+   "severity": "CRITICAL",
+   "summary": "isolated-vm has vulnerable CachedDataOptions in API"
+  },
+  {
+   "aliases": [
+    "CVE-2021-21413"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-mmhj-4w6j-76h7",
+   "package": "isolated-vm",
+   "published": "2021-04-06T17:22:55Z",
+   "severity": "HIGH",
+   "summary": "Misuse of `Reference` and other transferable APIs may lead to access to nodejs isolate"
+  },
+  {
+   "aliases": [
+    "CVE-2022-25904"
+   ],
+   "cwe": [
+    "CWE-1321"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-33vh-7x8q-mg35",
+   "package": "safe-eval",
+   "published": "2022-12-20T06:30:36Z",
+   "severity": "CRITICAL",
+   "summary": "safe-eval vulnerable to Prototype Pollution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-26122"
+   ],
+   "cwe": [
+    "CWE-1321"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-79xf-67r4-q2jj",
+   "package": "safe-eval",
+   "published": "2023-04-11T06:30:29Z",
+   "severity": "CRITICAL",
+   "summary": "safe-eval vulnerable to Sandbox Bypass due to improper input sanitization"
+  },
+  {
+   "aliases": [],
+   "cwe": [],
+   "ecosystem": "npm",
+   "id": "GHSA-9pcf-h8q9-63f6",
+   "package": "safe-eval",
+   "published": "2020-09-03T17:12:41Z",
+   "severity": "HIGH",
+   "summary": "Sandbox Breakout / Arbitrary Code Execution in safe-eval"
+  },
+  {
+   "aliases": [
+    "CVE-2023-26121"
+   ],
+   "cwe": [
+    "CWE-1321"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-hcg3-56jf-x4vh",
+   "package": "safe-eval",
+   "published": "2023-04-11T06:30:29Z",
+   "severity": "CRITICAL",
+   "summary": "safe-eval vulnerable to Prototype Pollution via the safeEval function"
+  },
+  {
+   "aliases": [
+    "CVE-2020-7710"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-hrpq-r399-whgw",
+   "package": "safe-eval",
+   "published": "2020-08-25T23:40:53Z",
+   "severity": "CRITICAL",
+   "summary": "Sandbox Breakout / Arbitrary Code Execution in safe-eval"
+  },
+  {
+   "aliases": [
+    "CVE-2017-16088"
+   ],
+   "cwe": [
+    "CWE-610"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-ww6v-677g-p656",
+   "package": "safe-eval",
+   "published": "2018-07-18T18:28:10Z",
+   "severity": "CRITICAL",
+   "summary": "Sandbox Breakout in safe-eval"
+  },
+  {
+   "aliases": [
+    "CVE-2017-16226"
+   ],
+   "cwe": [
+    "CWE-20"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-5mjw-6jrh-hvfq",
+   "package": "static-eval",
+   "published": "2018-08-06T21:37:06Z",
+   "severity": "MODERATE",
+   "summary": "Sandbox Breakout / Arbitrary Code Execution in static-eval"
+  },
+  {
+   "aliases": [],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-x9hc-rw35-f44h",
+   "package": "static-eval",
+   "published": "2020-09-02T15:46:03Z",
+   "severity": "HIGH",
+   "summary": "Sandbox Breakout / Arbitrary Code Execution in static-eval"
+  },
+  {
+   "aliases": [
+    "CVE-2024-21513",
+    "PYSEC-2024-62"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-cgcg-p68q-3w7v",
+   "package": "langchain-experimental",
+   "published": "2024-07-15T06:30:53Z",
+   "severity": "CRITICAL",
+   "summary": "langchain-experimental vulnerable to Arbitrary Code Execution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-44467",
+    "PYSEC-2023-194"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "GHSA-gjjr-63x4-v8cq",
+   "package": "langchain-experimental",
+   "published": "2023-10-09T21:30:27Z",
+   "severity": "CRITICAL",
+   "summary": "langchain_experimental vulnerable to arbitrary code execution via PALChain in the python exec method"
+  },
+  {
+   "aliases": [
+    "CVE-2024-46946",
+    "PYSEC-2026-374"
+   ],
+   "cwe": [
+    "CWE-95"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-p2qj-r53j-h3xj",
+   "package": "langchain-experimental",
+   "published": "2024-09-19T06:31:36Z",
+   "severity": "CRITICAL",
+   "summary": "LangChain Experimental Eval Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-27444",
+    "PYSEC-2026-375"
+   ],
+   "cwe": [
+    "CWE-749"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-v8vj-cv27-hjv8",
+   "package": "langchain-experimental",
+   "published": "2024-02-26T18:30:31Z",
+   "severity": "CRITICAL",
+   "summary": "LangChain Experimental vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2024-38459",
+    "PYSEC-2024-53"
+   ],
+   "cwe": [
+    "CWE-276"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-wmvm-9vqv-5qpp",
+   "package": "langchain-experimental",
+   "published": "2024-06-16T15:30:44Z",
+   "severity": "HIGH",
+   "summary": "langchain_experimental Code Execution via Python REPL access"
+  },
+  {
+   "aliases": [
+    "CVE-2023-44467",
+    "GHSA-gjjr-63x4-v8cq"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-194",
+   "package": "langchain-experimental",
+   "published": "2023-10-09T20:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-38459",
+    "GHSA-wmvm-9vqv-5qpp"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-53",
+   "package": "langchain-experimental",
+   "published": "2024-06-16T15:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-21513",
+    "GHSA-cgcg-p68q-3w7v"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-62",
+   "package": "langchain-experimental",
+   "published": "2024-07-15T05:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-46946",
+    "GHSA-p2qj-r53j-h3xj"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-374",
+   "package": "langchain-experimental",
+   "published": "2026-06-29T11:50:41.097287Z",
+   "severity": null,
+   "summary": "LangChain Experimental Eval Injection vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-27444",
+    "GHSA-v8vj-cv27-hjv8"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-375",
+   "package": "langchain-experimental",
+   "published": "2026-06-29T11:50:40.435355Z",
+   "severity": null,
+   "summary": "LangChain Experimental vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2024-47532",
+    "PYSEC-2024-186"
+   ],
+   "cwe": [
+    "CWE-200"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-5rfv-66g4-jr8h",
+   "package": "RestrictedPython",
+   "published": "2024-09-30T17:14:00Z",
+   "severity": "HIGH",
+   "summary": "RestrictedPython information leakage via `AttributeError.obj` and the `string` module"
+  },
+  {
+   "aliases": [
+    "CVE-2026-55830",
+    "PYSEC-2026-3917"
+   ],
+   "cwe": [
+    "CWE-184"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-ffg3-p8fm-mjx2",
+   "package": "RestrictedPython",
+   "published": "2026-08-28T22:51:35Z",
+   "severity": "HIGH",
+   "summary": "RestrictedPython guard hooks can be shadowed via positional-only arguments"
+  },
+  {
+   "aliases": [
+    "CVE-2025-22153",
+    "PYSEC-2026-1874"
+   ],
+   "cwe": [
+    "CWE-843"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-gmj9-h825-chq2",
+   "package": "RestrictedPython",
+   "published": "2025-01-23T17:19:34Z",
+   "severity": "HIGH",
+   "summary": "try/except* clauses could allow bypass RestrictedPython via type confusion bug in the CPython interpreter"
+  },
+  {
+   "aliases": [
+    "CVE-2026-76825",
+    "PYSEC-2026-4161"
+   ],
+   "cwe": [
+    "CWE-200",
+    "CWE-470",
+    "CWE-680",
+    "CWE-693"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-hp3v-5vw7-fx9w",
+   "package": "RestrictedPython",
+   "published": "2026-09-17T16:30:22Z",
+   "severity": "HIGH",
+   "summary": "RestrictedPython vulnerable to sandbox escape via string.Formatter field resolution"
+  },
+  {
+   "aliases": [
+    "CVE-2023-37271",
+    "PYSEC-2023-118"
+   ],
+   "cwe": [
+    "CWE-913"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-wqc8-x2pr-7jqh",
+   "package": "RestrictedPython",
+   "published": "2023-07-10T21:53:22Z",
+   "severity": "HIGH",
+   "summary": "RestrictedPython vulnerable to arbitrary code execution via stack frame sandbox escape"
+  },
+  {
+   "aliases": [
+    "CVE-2023-41039",
+    "PYSEC-2023-159"
+   ],
+   "cwe": [
+    "CWE-74"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-xjw2-6jm9-rf67",
+   "package": "RestrictedPython",
+   "published": "2023-08-30T20:47:58Z",
+   "severity": "HIGH",
+   "summary": "Sandbox escape via various forms of \"format\"."
+  },
+  {
+   "aliases": [
+    "CVE-2023-37271",
+    "GHSA-wqc8-x2pr-7jqh"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-118",
+   "package": "RestrictedPython",
+   "published": "2023-07-11T18:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2023-41039",
+    "GHSA-xjw2-6jm9-rf67"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2023-159",
+   "package": "RestrictedPython",
+   "published": "2023-08-30T18:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2024-47532",
+    "GHSA-5rfv-66g4-jr8h"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-186",
+   "package": "RestrictedPython",
+   "published": "2024-09-30T16:15:09Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-22153",
+    "GHSA-gmj9-h825-chq2"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1874",
+   "package": "RestrictedPython",
+   "published": "2026-07-07T14:34:49.069993Z",
+   "severity": null,
+   "summary": "try/except* clauses could allow bypass RestrictedPython via type confusion bug in the CPython interpreter"
+  },
+  {
+   "aliases": [
+    "CVE-2026-55830",
+    "GHSA-ffg3-p8fm-mjx2"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-3917",
+   "package": "RestrictedPython",
+   "published": "2026-09-10T09:44:58.880974Z",
+   "severity": null,
+   "summary": "RestrictedPython guard hooks can be shadowed via positional-only arguments"
+  },
+  {
+   "aliases": [
+    "CVE-2026-76825",
+    "GHSA-hp3v-5vw7-fx9w"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-4161",
+   "package": "RestrictedPython",
+   "published": "2026-10-01T16:38:32.711117Z",
+   "severity": null,
+   "summary": "RestrictedPython vulnerable to sandbox escape via string.Formatter field resolution"
+  },
+  {
+   "aliases": [
+    "CVE-2026-4963",
+    "PYSEC-2026-3066"
+   ],
+   "cwe": [
+    "CWE-74"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-54fq-v6x8-244g",
+   "package": "smolagents",
+   "published": "2026-03-27T18:31:28Z",
+   "severity": "LOW",
+   "summary": "Hugging Face Smolagents has an Injection issue"
+  },
+  {
+   "aliases": [
+    "CVE-2025-5120",
+    "PYSEC-2026-542"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-6v92-r5mx-h5fx",
+   "package": "smolagents",
+   "published": "2025-07-27T09:30:26Z",
+   "severity": "CRITICAL",
+   "summary": "smolagents has Sandbox Escape Vulnerability in the local_python_executor.py Module"
+  },
+  {
+   "aliases": [
+    "CVE-2025-11844",
+    "PYSEC-2026-1930"
+   ],
+   "cwe": [
+    "CWE-643"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-8mf9-rmgw-33qc",
+   "package": "smolagents",
+   "published": "2025-10-22T15:31:11Z",
+   "severity": "MODERATE",
+   "summary": "Hugging Face Smolagents XPath injection vulnerability in the search_item_ctrl_f function"
+  },
+  {
+   "aliases": [
+    "CVE-2026-2654",
+    "PYSEC-2026-3067"
+   ],
+   "cwe": [
+    "CWE-918"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-jxgv-6j54-wwc7",
+   "package": "smolagents",
+   "published": "2026-02-18T15:31:26Z",
+   "severity": "LOW",
+   "summary": "Hugging Face Smolagents has a Server-Side Request Forgery issue"
+  },
+  {
+   "aliases": [
+    "CVE-2025-14931",
+    "PYSEC-2026-543"
+   ],
+   "cwe": [
+    "CWE-502"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-q9r5-6hrr-9ph7",
+   "package": "smolagents",
+   "published": "2025-12-23T21:30:29Z",
+   "severity": "CRITICAL",
+   "summary": "Hugging Face smolagents: Unsafe deserialization in Remote Python Executor leads to RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2025-11844",
+    "GHSA-8mf9-rmgw-33qc"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1930",
+   "package": "smolagents",
+   "published": "2026-07-07T16:03:07.970456Z",
+   "severity": null,
+   "summary": "Hugging Face Smolagents XPath injection vulnerability in the search_item_ctrl_f function"
+  },
+  {
+   "aliases": [
+    "CVE-2026-4963",
+    "GHSA-54fq-v6x8-244g"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-3066",
+   "package": "smolagents",
+   "published": "2026-07-13T14:36:45.248150Z",
+   "severity": null,
+   "summary": "Hugging Face Smolagents has an Injection issue"
+  },
+  {
+   "aliases": [
+    "CVE-2026-2654",
+    "GHSA-jxgv-6j54-wwc7"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-3067",
+   "package": "smolagents",
+   "published": "2026-07-13T14:36:36.453548Z",
+   "severity": null,
+   "summary": "Hugging Face Smolagents has a Server-Side Request Forgery issue"
+  },
+  {
+   "aliases": [
+    "CVE-2025-5120",
+    "GHSA-6v92-r5mx-h5fx"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-542",
+   "package": "smolagents",
+   "published": "2026-06-29T11:50:37.329072Z",
+   "severity": null,
+   "summary": "smolagents has Sandbox Escape Vulnerability in the local_python_executor.py Module"
+  },
+  {
+   "aliases": [
+    "CVE-2025-14931",
+    "GHSA-q9r5-6hrr-9ph7"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-543",
+   "package": "smolagents",
+   "published": "2026-06-29T11:50:38.792590Z",
+   "severity": null,
+   "summary": "Hugging Face smolagents: Unsafe deserialization in Remote Python Executor leads to RCE"
+  },
+  {
+   "aliases": [
+    "CVE-2024-23752",
+    "PYSEC-2026-446"
+   ],
+   "cwe": [
+    "CWE-862",
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-5g73-69p4-7gvx",
+   "package": "pandasai",
+   "published": "2024-01-22T03:30:26Z",
+   "severity": "CRITICAL",
+   "summary": "Code execution in pandasai"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39661",
+    "PYSEC-2026-447"
+   ],
+   "cwe": [
+    "CWE-74",
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-8fp9-43pw-56vw",
+   "package": "pandasai",
+   "published": "2023-08-15T18:31:32Z",
+   "severity": "CRITICAL",
+   "summary": "PandasAI vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2024-12366",
+    "PYSEC-2026-448"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-vv2h-2w3q-3fx7",
+   "package": "pandasai",
+   "published": "2025-02-11T15:32:24Z",
+   "severity": "CRITICAL",
+   "summary": "PandasAI interactive prompt function Remote Code Execution (RCE)"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39660",
+    "PYSEC-2026-1757"
+   ],
+   "cwe": [
+    "CWE-94"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-w832-v3c6-m6rg",
+   "package": "pandasai",
+   "published": "2023-08-21T18:31:23Z",
+   "severity": "HIGH",
+   "summary": "pandasai vulnerable to prompt injection"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39660",
+    "GHSA-w832-v3c6-m6rg"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1757",
+   "package": "pandasai",
+   "published": "2026-07-07T11:45:22.840481Z",
+   "severity": null,
+   "summary": "pandasai vulnerable to prompt injection"
+  },
+  {
+   "aliases": [
+    "CVE-2024-23752",
+    "GHSA-5g73-69p4-7gvx"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-446",
+   "package": "pandasai",
+   "published": "2026-06-29T11:50:41.468092Z",
+   "severity": null,
+   "summary": "Code execution in pandasai"
+  },
+  {
+   "aliases": [
+    "CVE-2023-39661",
+    "GHSA-8fp9-43pw-56vw"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-447",
+   "package": "pandasai",
+   "published": "2026-06-29T11:50:44.070778Z",
+   "severity": null,
+   "summary": "PandasAI vulnerable to arbitrary code execution"
+  },
+  {
+   "aliases": [
+    "CVE-2024-12366",
+    "GHSA-vv2h-2w3q-3fx7"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-448",
+   "package": "pandasai",
+   "published": "2026-06-29T11:50:36.219585Z",
+   "severity": null,
+   "summary": "PandasAI interactive prompt function Remote Code Execution (RCE)"
+  },
+  {
+   "aliases": [
+    "CVE-2022-4122",
+    "GO-2022-1151"
+   ],
+   "cwe": [
+    "CWE-59"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-4crw-w8pw-2hmf",
+   "package": "github.com/containers/podman/v4",
+   "published": "2022-12-08T18:30:50Z",
+   "severity": "MODERATE",
+   "summary": "Buildah (as part of Podman) vulnerable to Link Following"
+  },
+  {
+   "aliases": [
+    "CVE-2026-57231",
+    "GO-2026-6594"
+   ],
+   "cwe": [
+    "CWE-200"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-4hq8-gpf5-8p68",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-09-24T19:40:20Z",
+   "severity": "HIGH",
+   "summary": "Podman: Malformed Image can trick podman run into leaking host environment variables into the container"
+  },
+  {
+   "aliases": [
+    "CVE-2022-2989"
+   ],
+   "cwe": [
+    "CWE-842",
+    "CWE-863"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-4wjj-jwc9-2x96",
+   "package": "github.com/containers/podman/v4",
+   "published": "2022-09-14T00:00:48Z",
+   "severity": "HIGH",
+   "summary": "Podman's incorrect handling of the supplementary groups may lead to data disclosure, modification"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6032",
+    "GO-2025-3777"
+   ],
+   "cwe": [
+    "CWE-295"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-65gg-3w2w-hr4h",
+   "package": "github.com/containers/podman/v4",
+   "published": "2025-06-25T21:57:00Z",
+   "severity": "HIGH",
+   "summary": "Podman Improper Certificate Validation; machine missing TLS verification"
+  },
+  {
+   "aliases": [
+    "CVE-2024-1753",
+    "GHSA-pmf3-c36m-g5cf",
+    "GO-2024-2658"
+   ],
+   "cwe": [
+    "CWE-269",
+    "CWE-59"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-874v-pj72-92f3",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-03-28T17:53:52Z",
+   "severity": "MODERATE",
+   "summary": "Podman affected by CVE-2024-1753 container escape at build time "
+  },
+  {
+   "aliases": [
+    "CVE-2024-9407",
+    "GO-2024-3169"
+   ],
+   "cwe": [
+    "CWE-20"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-fhqq-8f65-5xfc",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-10-01T21:31:35Z",
+   "severity": "MODERATE",
+   "summary": "Improper Input Validation in Buildah and Podman"
+  },
+  {
+   "aliases": [
+    "CVE-2026-33414",
+    "GO-2026-5421"
+   ],
+   "cwe": [
+    "CWE-78"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-hc8w-h2mf-hp59",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-04-14T22:30:24Z",
+   "severity": "MODERATE",
+   "summary": "PowerShell Command Injection in Podman HyperV Machine"
+  },
+  {
+   "aliases": [
+    "CVE-2026-55686",
+    "GO-2026-5568"
+   ],
+   "cwe": [
+    "CWE-59"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-q6r4-3wmg-fwcq",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-06-18T14:28:26Z",
+   "severity": "MODERATE",
+   "summary": "Podman: WORKDIR symlink traversal vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2022-27649",
+    "GO-2022-0416"
+   ],
+   "cwe": [
+    "CWE-276"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-qvf8-p83w-v58j",
+   "package": "github.com/containers/podman/v4",
+   "published": "2022-04-01T20:52:29Z",
+   "severity": "HIGH",
+   "summary": "Podman's default inheritable capabilities for linux container not empty"
+  },
+  {
+   "aliases": [
+    "CVE-2023-0778",
+    "GO-2023-1681"
+   ],
+   "cwe": [
+    "CWE-367"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-qwqv-rqgf-8qh8",
+   "package": "github.com/containers/podman/v4",
+   "published": "2023-03-27T21:30:26Z",
+   "severity": "MODERATE",
+   "summary": "Podman Time-of-check Time-of-use (TOCTOU) Race Condition"
+  },
+  {
+   "aliases": [
+    "CVE-2019-18466",
+    "GO-2023-1942"
+   ],
+   "cwe": [
+    "CWE-59"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-r34v-gqmw-qvgj",
+   "package": "github.com/containers/podman/v4",
+   "published": "2022-05-24T16:59:58Z",
+   "severity": "MODERATE",
+   "summary": "Podman Symlink Vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3056",
+    "GO-2024-3042"
+   ],
+   "cwe": [
+    "CWE-400"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-rpcc-p8xm-rc6p",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-08-02T21:31:34Z",
+   "severity": "HIGH",
+   "summary": "Podman vulnerable to memory-based denial of service"
+  },
+  {
+   "aliases": [
+    "CVE-2022-4123",
+    "GO-2022-1159"
+   ],
+   "cwe": [
+    "CWE-23"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-rprg-4v7q-87v7",
+   "package": "github.com/containers/podman/v4",
+   "published": "2022-12-08T18:30:50Z",
+   "severity": "LOW",
+   "summary": "Buildah (as part of Podman) vulnerable to Path Traversal"
+  },
+  {
+   "aliases": [
+    "CVE-2025-9566",
+    "GO-2025-3935"
+   ],
+   "cwe": [
+    "CWE-22",
+    "CWE-61"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-wp3j-xq48-xpjw",
+   "package": "github.com/containers/podman/v4",
+   "published": "2025-09-04T20:01:54Z",
+   "severity": "HIGH",
+   "summary": "podman kube play symlink traversal vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2022-27649",
+    "GHSA-qvf8-p83w-v58j"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-0416",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-08-21T15:11:31Z",
+   "severity": null,
+   "summary": "Podman's default inheritable capabilities for linux container not empty in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2022-4122",
+    "GHSA-4crw-w8pw-2hmf"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-1151",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-08-21T16:03:26Z",
+   "severity": null,
+   "summary": "Buildah (as part of Podman) vulnerable to Link Following in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2022-4123",
+    "GHSA-rprg-4v7q-87v7"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-1159",
+   "package": "github.com/containers/podman/v4",
+   "published": "2022-12-22T20:52:37Z",
+   "severity": null,
+   "summary": "Path traversal in github.com/containers/podman/v4"
+  },
+  {
+   "aliases": [
+    "CVE-2023-0778",
+    "GHSA-qwqv-rqgf-8qh8"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2023-1681",
+   "package": "github.com/containers/podman/v4",
+   "published": "2023-04-03T18:53:25Z",
+   "severity": null,
+   "summary": "Time-of-check time-of-use race condition in github.com/containers/podman/v4"
+  },
+  {
+   "aliases": [
+    "CVE-2019-18466",
+    "GHSA-r34v-gqmw-qvgj"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2023-1942",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-08-20T20:31:38Z",
+   "severity": null,
+   "summary": "Podman Symlink Vulnerability in github.com/containers/libpod"
+  },
+  {
+   "aliases": [
+    "CVE-2018-10856",
+    "GHSA-wp7w-vx86-vj9h"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2023-1962",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-08-20T20:32:20Z",
+   "severity": null,
+   "summary": "Podman Elevated Container Privileges in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2024-3056",
+    "GHSA-rpcc-p8xm-rc6p"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2024-3042",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-08-06T22:03:16Z",
+   "severity": null,
+   "summary": "Podman vulnerable to memory-based denial of service in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2024-9407",
+    "GHSA-fhqq-8f65-5xfc"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2024-3169",
+   "package": "github.com/containers/podman/v4",
+   "published": "2024-10-09T20:29:23Z",
+   "severity": null,
+   "summary": "Improper Input Validation in Buildah and Podman in github.com/containers/buildah"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6032",
+    "GHSA-65gg-3w2w-hr4h"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2025-3777",
+   "package": "github.com/containers/podman/v4",
+   "published": "2025-07-28T19:57:13Z",
+   "severity": null,
+   "summary": "Podman Improper Certificate Validation; machine missing TLS verification in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2025-9566",
+    "GHSA-wp3j-xq48-xpjw"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2025-3935",
+   "package": "github.com/containers/podman/v4",
+   "published": "2025-09-08T14:13:10Z",
+   "severity": null,
+   "summary": "podman kube play symlink traversal vulnerability in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2025-4953",
+    "GHSA-m68q-4hqr-mc6f"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2025-3961",
+   "package": "github.com/containers/podman/v4",
+   "published": "2025-09-17T17:03:49Z",
+   "severity": null,
+   "summary": "Podman Creates Temporary File with Insecure Permissions in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2026-33414",
+    "GHSA-hc8w-h2mf-hp59"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2026-5421",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-06-25T22:34:31Z",
+   "severity": null,
+   "summary": "PowerShell Command Injection in Podman HyperV Machine in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2026-55686",
+    "GHSA-q6r4-3wmg-fwcq"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2026-5568",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-06-25T22:34:34Z",
+   "severity": null,
+   "summary": "Podman: WORKDIR symlink traversal vulnerability in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2026-19730",
+    "GHSA-fx76-2j3w-2mx6"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2026-6588",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-10-01T20:23:38Z",
+   "severity": null,
+   "summary": "podman quadlet install --replace does not fully replace the old file in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2026-57231",
+    "GHSA-4hq8-gpf5-8p68"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2026-6594",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-10-01T20:23:38Z",
+   "severity": null,
+   "summary": "Podman: Malformed Image can trick podman run into leaking host environment variables into the container in github.com/containers/libpod"
+  },
+  {
+   "aliases": [
+    "CVE-2026-94603",
+    "GHSA-2cvf-wqm6-wr9g"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2026-6770",
+   "package": "github.com/containers/podman/v4",
+   "published": "2026-10-19T21:08:35Z",
+   "severity": null,
+   "summary": "Podman: The `podman run` command can be instructed to disable almost all sandboxing by image annotation in github.com/containers/podman"
+  },
+  {
+   "aliases": [
+    "CVE-2025-31133",
+    "GO-2025-4096"
+   ],
+   "cwe": [
+    "CWE-363",
+    "CWE-61"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-9493-h29p-rfm2",
+   "package": "github.com/opencontainers/runc",
+   "published": "2025-11-05T16:37:15Z",
+   "severity": "HIGH",
+   "summary": "runc container escape via \"masked path\" abuse due to mount race conditions"
+  },
+  {
+   "aliases": [
+    "CVE-2021-30465",
+    "GO-2022-0914"
+   ],
+   "cwe": [
+    "CWE-22",
+    "CWE-362",
+    "CWE-367"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-c3xm-pvg7-gh7r",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-05-25T18:44:42Z",
+   "severity": "HIGH",
+   "summary": "mount destinations can be swapped via symlink-exchange to cause mounts outside the rootfs"
+  },
+  {
+   "aliases": [
+    "CVE-2025-52881",
+    "GO-2025-4098"
+   ],
+   "cwe": [
+    "CWE-363",
+    "CWE-61"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-cgrx-mc8f-2prm",
+   "package": "github.com/opencontainers/runc",
+   "published": "2025-11-05T18:40:40Z",
+   "severity": "HIGH",
+   "summary": "runc container escape and denial of service due to arbitrary write gadgets and procfs write redirects"
+  },
+  {
+   "aliases": [
+    "CVE-2022-29162",
+    "GO-2022-0452"
+   ],
+   "cwe": [
+    "CWE-276"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-f3fp-gc8g-vw66",
+   "package": "github.com/opencontainers/runc",
+   "published": "2022-05-24T17:36:56Z",
+   "severity": "MODERATE",
+   "summary": "Default inheritable capabilities for linux container should be empty"
+  },
+  {
+   "aliases": [
+    "CVE-2019-16884",
+    "GO-2021-0085"
+   ],
+   "cwe": [
+    "CWE-863"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-fgv8-vj5c-2ppq",
+   "package": "github.com/opencontainers/runc",
+   "published": "2022-02-22T15:38:08Z",
+   "severity": "HIGH",
+   "summary": "Incorrect Authorization in runc"
+  },
+  {
+   "aliases": [
+    "CVE-2019-19921",
+    "GO-2021-0087"
+   ],
+   "cwe": [
+    "CWE-362",
+    "CWE-706"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-fh74-hm69-rqjw",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-05-27T18:41:17Z",
+   "severity": "MODERATE",
+   "summary": "opencontainers runc contains procfs race condition with a shared volume mount"
+  },
+  {
+   "aliases": [
+    "CVE-2023-28642",
+    "GO-2023-1683"
+   ],
+   "cwe": [
+    "CWE-281",
+    "CWE-59"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-g2j6-57v7-gm8c",
+   "package": "github.com/opencontainers/runc",
+   "published": "2023-03-30T20:20:23Z",
+   "severity": "MODERATE",
+   "summary": "runc AppArmor bypass with symlinked /proc"
+  },
+  {
+   "aliases": [
+    "GO-2022-0396"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GHSA-g54h-m393-cpwq",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-12-20T18:21:54Z",
+   "severity": "LOW",
+   "summary": "devices resource list treated as a blacklist by default"
+  },
+  {
+   "aliases": [
+    "CVE-2016-9962",
+    "GO-2022-0835"
+   ],
+   "cwe": [
+    "CWE-200"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-gp4j-w3vj-7299",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-12-20T18:21:43Z",
+   "severity": "MODERATE",
+   "summary": "Information Exposure in RunC"
+  },
+  {
+   "aliases": [
+    "CVE-2024-45310",
+    "GO-2024-3110"
+   ],
+   "cwe": [
+    "CWE-363",
+    "CWE-61"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-jfvp-7x6p-h2pv",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-09-03T19:49:32Z",
+   "severity": "MODERATE",
+   "summary": "runc can be confused to create empty files/directories on the host"
+  },
+  {
+   "aliases": [
+    "CVE-2023-25809",
+    "GO-2023-1682"
+   ],
+   "cwe": [
+    "CWE-281"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-m8cg-xc2p-r3fc",
+   "package": "github.com/opencontainers/runc",
+   "published": "2023-03-30T20:17:24Z",
+   "severity": "LOW",
+   "summary": "rootless: `/sys/fs/cgroup` is writable when cgroupns isn't unshared in runc"
+  },
+  {
+   "aliases": [
+    "CVE-2016-3697",
+    "GO-2021-0070"
+   ],
+   "cwe": [
+    "CWE-269"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-q3j5-32m5-58c2",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-12-20T18:21:34Z",
+   "severity": "HIGH",
+   "summary": "Privilege Elevation in runc"
+  },
+  {
+   "aliases": [
+    "CVE-2025-52565",
+    "GO-2025-4097"
+   ],
+   "cwe": [
+    "CWE-363",
+    "CWE-61"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-qw9x-cqr3-wc7r",
+   "package": "github.com/opencontainers/runc",
+   "published": "2025-11-05T17:34:49Z",
+   "severity": "HIGH",
+   "summary": "runc container escape with malicious config due to /dev/console mount and related races"
+  },
+  {
+   "aliases": [
+    "CVE-2021-43784",
+    "GO-2022-0274"
+   ],
+   "cwe": [
+    "CWE-190"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-v95c-p5hm-xq8f",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-12-07T21:22:39Z",
+   "severity": "MODERATE",
+   "summary": "Overflow in netlink bytemsg length field allows attacker to override netlink-based container configuration in RunC"
+  },
+  {
+   "aliases": [
+    "CVE-2023-27561",
+    "GO-2023-1627"
+   ],
+   "cwe": [
+    "CWE-706"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-vpvm-3wq2-2wvm",
+   "package": "github.com/opencontainers/runc",
+   "published": "2023-03-03T21:30:19Z",
+   "severity": "HIGH",
+   "summary": "Opencontainers runc Incorrect Authorization vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-41579",
+    "GO-2026-5761"
+   ],
+   "cwe": [
+    "CWE-61"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-xjvp-4fhw-gc47",
+   "package": "github.com/opencontainers/runc",
+   "published": "2026-06-22T20:01:35Z",
+   "severity": "MODERATE",
+   "summary": "runc: Malicious image with /dev symlink can trigger limited host filesystem integrity violations "
+  },
+  {
+   "aliases": [
+    "CVE-2024-21626",
+    "GO-2024-2491"
+   ],
+   "cwe": [
+    "CWE-200",
+    "CWE-403",
+    "CWE-668"
+   ],
+   "ecosystem": "Go",
+   "id": "GHSA-xr7r-f8xq-vfvv",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-01-31T22:44:08Z",
+   "severity": "HIGH",
+   "summary": "runc vulnerable to container breakout through process.cwd trickery and leaked fds"
+  },
+  {
+   "aliases": [
+    "CVE-2016-3697",
+    "GHSA-q3j5-32m5-58c2"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2021-0070",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-04-14T20:04:52Z",
+   "severity": null,
+   "summary": "Privilege escalation in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2019-16884",
+    "GHSA-fgv8-vj5c-2ppq"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2021-0085",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-04-14T20:04:52Z",
+   "severity": null,
+   "summary": "Authorization bypass in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2019-19921",
+    "GHSA-fh74-hm69-rqjw"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2021-0087",
+   "package": "github.com/opencontainers/runc",
+   "published": "2021-04-14T20:04:52Z",
+   "severity": null,
+   "summary": "Race condition in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2021-43784",
+    "GHSA-v95c-p5hm-xq8f"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-0274",
+   "package": "github.com/opencontainers/runc",
+   "published": "2022-07-15T23:08:20Z",
+   "severity": null,
+   "summary": "Namespace restriction bypass in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "GHSA-g54h-m393-cpwq"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-0396",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-08-21T14:30:31Z",
+   "severity": null,
+   "summary": "Devices resource list treated as a blacklist by default in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2022-29162",
+    "GHSA-f3fp-gc8g-vw66"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-0452",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-08-21T15:11:31Z",
+   "severity": null,
+   "summary": "Default inheritable capabilities for linux container should be empty in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2016-9962",
+    "GHSA-gp4j-w3vj-7299"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-0835",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-08-21T15:29:04Z",
+   "severity": null,
+   "summary": "Information Exposure in RunC in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2021-30465",
+    "GHSA-c3xm-pvg7-gh7r"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2022-0914",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-08-21T15:29:08Z",
+   "severity": null,
+   "summary": "Mount destinations can be swapped via symlink-exchange to cause mounts outside the rootfs in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2023-27561",
+    "GHSA-vpvm-3wq2-2wvm"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2023-1627",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-08-20T20:29:14Z",
+   "severity": null,
+   "summary": "Opencontainers runc Incorrect Authorization vulnerability in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2023-25809",
+    "GHSA-m8cg-xc2p-r3fc"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2023-1682",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-08-20T20:29:17Z",
+   "severity": null,
+   "summary": "Rootless: /sys/fs/cgroup is writable when cgroupns isn't unshared in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2023-28642",
+    "GHSA-g2j6-57v7-gm8c"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2023-1683",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-08-20T20:29:17Z",
+   "severity": null,
+   "summary": "AppArmor bypass with symlinked /proc in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2024-21626",
+    "GHSA-xr7r-f8xq-vfvv"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2024-2491",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-06-28T15:28:53Z",
+   "severity": null,
+   "summary": "Container breakout through process.cwd trickery and leaked fds in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2024-45310",
+    "GHSA-jfvp-7x6p-h2pv"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2024-3110",
+   "package": "github.com/opencontainers/runc",
+   "published": "2024-09-06T20:43:50Z",
+   "severity": null,
+   "summary": "Can be confused to create empty files/directories on the host in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2025-31133",
+    "GHSA-9493-h29p-rfm2"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2025-4096",
+   "package": "github.com/opencontainers/runc",
+   "published": "2025-11-18T15:44:15Z",
+   "severity": null,
+   "summary": "Container escape via \"masked path\" abuse due to mount race conditions in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2025-52565",
+    "GHSA-qw9x-cqr3-wc7r"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2025-4097",
+   "package": "github.com/opencontainers/runc",
+   "published": "2025-11-18T15:44:15Z",
+   "severity": null,
+   "summary": "Container escape with malicious config due to /dev/console mount and related races in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2025-52881",
+    "GHSA-cgrx-mc8f-2prm"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2025-4098",
+   "package": "github.com/opencontainers/runc",
+   "published": "2025-11-18T15:44:15Z",
+   "severity": null,
+   "summary": "Container escape and DDoS due to arbitrary write gadgets and procfs write redirects in github.com/opencontainers/runc"
+  },
+  {
+   "aliases": [
+    "CVE-2026-41579",
+    "GHSA-xjvp-4fhw-gc47"
+   ],
+   "cwe": [],
+   "ecosystem": "Go",
+   "id": "GO-2026-5761",
+   "package": "github.com/opencontainers/runc",
+   "published": "2026-07-07T16:52:19Z",
+   "severity": null,
+   "summary": "Malicious image with /dev symlink can trigger limited host filesystem integrity violations in github.com/opencontainers/runc"
+  }
+ ],
+ "targets": [
+  [
+   "npm",
+   "vm2"
+  ],
+  [
+   "npm",
+   "isolated-vm"
+  ],
+  [
+   "npm",
+   "safe-eval"
+  ],
+  [
+   "npm",
+   "static-eval"
+  ],
+  [
+   "PyPI",
+   "langchain-experimental"
+  ],
+  [
+   "PyPI",
+   "RestrictedPython"
+  ],
+  [
+   "PyPI",
+   "e2b"
+  ],
+  [
+   "PyPI",
+   "smolagents"
+  ],
+  [
+   "PyPI",
+   "open-interpreter"
+  ],
+  [
+   "PyPI",
+   "llama-index-experimental"
+  ],
+  [
+   "PyPI",
+   "pandasai"
+  ],
+  [
+   "Go",
+   "github.com/containers/podman/v4"
+  ],
+  [
+   "Go",
+   "github.com/opencontainers/runc"
+  ],
+  [
+   "Go",
+   "gvisor.dev/gvisor"
+  ]
+ ]
+}

@@ -1,0 +1,6983 @@
+{
+ "retrieved": "2026-10-26",
+ "rows": [
+  {
+   "actions": {
+    "create": 1,
+    "edit": 24,
+    "find_file": 2,
+    "lexicon": 1,
+    "ls": 3,
+    "open": 7,
+    "python": 7,
+    "scroll_up": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 46,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 6,
+    "lexicon": 2,
+    "open": 15,
+    "scroll_down": 1,
+    "scroll_up": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 25,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 11,
+    "lexicon": 10,
+    "open": 1,
+    "scroll_down": 1,
+    "scroll_up": 6
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 29,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 7,
+    "submit": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "lexicon": 1,
+    "ls": 6,
+    "open": 4,
+    "python": 3,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "lexicon": 1,
+    "open": 2,
+    "python": 1,
+    "scroll_down": 2,
+    "scroll_up": 1,
+    "submit": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 2,
+    "edit": 5,
+    "lexicon": 3,
+    "ls": 120,
+    "open": 1,
+    "pwd": 23,
+    "scroll_down": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 155,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "find_file": 1,
+    "goto": 2,
+    "open": 1,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 2,
+    "open": 2,
+    "python": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "find_file": 1,
+    "ls": 1,
+    "open": 3,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "ls": 16,
+    "open": 14,
+    "pytest": 3,
+    "scroll_down": 1
+   },
+   "instance_id": "AnalogJ__lexicon-336",
+   "n_actions": 41,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "grep": 2,
+    "open": 2,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 2,
+    "open": 3,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 5,
+    "open": 3,
+    "search_dir": 1,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 1,
+    "open": 4,
+    "scroll_down": 5,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find": 3,
+    "goto": 3,
+    "grep": 1,
+    "ls": 1,
+    "open": 9,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 8,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 32,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 1,
+    "scroll_down": 2,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 1,
+    "open": 2,
+    "scroll_down": 2,
+    "scroll_up": 2,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "find_file": 3,
+    "goto": 2,
+    "grep": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 2,
+    "scroll_down": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "ls": 1,
+    "open": 2,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "ls": 3,
+    "open": 5,
+    "python": 1,
+    "scroll_down": 1,
+    "scroll_up": 3,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Azure__azure-functions-python-worker-890",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 1,
+    "goto": 3,
+    "open": 5,
+    "pytest": 2,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 21,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 2,
+    "open": 4,
+    "pytest": 2,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "ls": 3,
+    "open": 5,
+    "python": 1,
+    "scroll_down": 2,
+    "search_dir": 3,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "pytest": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 2,
+    "goto": 1,
+    "open": 3,
+    "pytest": 4,
+    "search_dir": 2,
+    "search_file": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "ls": 1,
+    "open": 4,
+    "python": 2,
+    "scroll_down": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 15,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 23,
+    "ls": 1,
+    "open": 1,
+    "python": 9,
+    "scroll_down": 1,
+    "search_dir": 2,
+    "search_file": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 40,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "goto": 1,
+    "if": 1,
+    "open": 1,
+    "pytest": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "open": 3,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 3,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 17,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "open": 5,
+    "pytest": 3,
+    "scroll_down": 1,
+    "search_dir": 5,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 18,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "goto": 1,
+    "open": 5,
+    "pytest": 3,
+    "scroll_down": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 19,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 8,
+    "goto": 1,
+    "open": 6,
+    "python": 4,
+    "search_dir": 3,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 28,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 2,
+    "ls": 1,
+    "open": 2,
+    "pytest": 1,
+    "search_dir": 5,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 2,
+    "goto": 2,
+    "ls": 3,
+    "open": 5,
+    "pytest": 1,
+    "scroll_down": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 4,
+    "pytest": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 12,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 7,
+    "ls": 1,
+    "open": 3,
+    "python": 5,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "def": 1,
+    "edit": 2,
+    "open": 4,
+    "pytest": 2,
+    "python": 2,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 18,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pytest": 1,
+    "python": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 12,
+    "ls": 2,
+    "open": 29,
+    "python": 4,
+    "search_dir": 6,
+    "search_file": 4
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 58,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "goto": 1,
+    "open": 4,
+    "pytest": 2,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 1,
+    "goto": 3,
+    "open": 5,
+    "pytest": 2,
+    "rm": 1,
+    "search_dir": 4,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "ls": 1,
+    "open": 3,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 15,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "chmod": 1,
+    "edit": 4,
+    "goto": 1,
+    "ls": 1,
+    "open": 4,
+    "python": 6,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1,
+    "tests": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 24,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "goto": 1,
+    "open": 4,
+    "pytest": 4,
+    "search_dir": 4,
+    "search_file": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 18,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "find_file": 2,
+    "goto": 4,
+    "open": 6,
+    "python": 5,
+    "scroll_up": 1,
+    "search_dir": 3
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 31,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 1,
+    "open": 5,
+    "pytest": 2,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 30,
+    "search_file": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 44,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "ls": 1,
+    "open": 5,
+    "python": 1,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 15,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 1,
+    "pytest": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "ls": 4,
+    "open": 2,
+    "pytest": 2,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 3,
+    "open": 3,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 42,
+    "ls": 3,
+    "open": 2,
+    "python": 20
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 68,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 4,
+    "pytest": 1,
+    "search_dir": 3,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "ls": 2,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 2,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 18,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "grep": 6,
+    "ls": 2,
+    "open": 2,
+    "python": 4,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 22,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 7,
+    "grep": 4,
+    "ls": 1,
+    "open": 1,
+    "python": 4,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 1,
+    "open": 5,
+    "pytest": 1,
+    "search_dir": 3,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 2,
+    "open": 6,
+    "python": 4,
+    "scroll_down": 2,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 23,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 32,
+    "python": 2
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 35,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 3,
+    "edit": 7,
+    "grep": 7,
+    "ls": 3,
+    "open": 7,
+    "python": 5,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 34,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 4,
+    "python": 1,
+    "scroll_down": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 4,
+    "python": 1,
+    "scroll_down": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "open": 4,
+    "pytest": 1,
+    "scroll_down": 2,
+    "search_dir": 5,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 13,
+    "ls": 1,
+    "open": 3,
+    "python": 8,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "goto": 2,
+    "open": 5,
+    "pytest": 2,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 19,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 4,
+    "pytest": 1,
+    "rm": 1,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "Melevir__cognitive_complexity-15",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 12,
+    "flake": 9,
+    "goto": 4,
+    "ls": 2,
+    "open": 1,
+    "python": 3,
+    "scroll_down": 5,
+    "search_file": 6
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 44,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 3,
+    "edit": 7,
+    "flake": 6,
+    "ls": 3,
+    "open": 7,
+    "scroll_down": 13
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 39,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 1,
+    "create": 2,
+    "edit": 2,
+    "flake": 2,
+    "goto": 24,
+    "ls": 2,
+    "open": 1,
+    "search_file": 4
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 38,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 4,
+    "edit": 16,
+    "flake": 6,
+    "goto": 4,
+    "ls": 2,
+    "open": 3,
+    "python": 1,
+    "scroll_down": 2,
+    "search_dir": 1,
+    "search_file": 8
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 47,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "flake": 2,
+    "ls": 14,
+    "open": 17,
+    "search_dir": 46
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 83,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 3,
+    "edit": 5,
+    "flake": 2,
+    "goto": 2,
+    "ls": 3,
+    "open": 1,
+    "python": 2,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "bash": 31,
+    "create": 4,
+    "open": 1,
+    "python": 2
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 38,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "flake": 2,
+    "goto": 14,
+    "open": 1,
+    "scroll_down": 4,
+    "search_dir": 1,
+    "search_file": 24
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 50,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 9,
+    "flake": 3,
+    "goto": 1,
+    "ls": 3,
+    "open": 1,
+    "rm": 2,
+    "scroll_down": 1,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 26,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 20,
+    "find": 4,
+    "flake": 14,
+    "goto": 1,
+    "ls": 3,
+    "open": 1,
+    "python": 10,
+    "search_file": 2
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 57,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 4,
+    "flake": 3,
+    "goto": 4,
+    "open": 2,
+    "rm": 1,
+    "search_dir": 3,
+    "search_file": 8,
+    "submit": 1
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "find_file": 2,
+    "flake": 2,
+    "goto": 5,
+    "ls": 3,
+    "open": 5,
+    "scroll_down": 6,
+    "scroll_up": 7,
+    "search_file": 6
+   },
+   "instance_id": "PyCQA__pyflakes-761",
+   "n_actions": 40,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "RDFLib__rdflib-1130",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "RDFLib__rdflib-1130",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "RDFLib__rdflib-1130",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "RDFLib__rdflib-1130",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "RDFLib__rdflib-1130",
+   "n_actions": 3,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 2,
+    "scroll_down": 2,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "ReproNim__reproman-518",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 25,
+    "open": 21,
+    "python": 22
+   },
+   "instance_id": "ReproNim__reproman-518",
+   "n_actions": 69,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 3,
+    "chmod": 1,
+    "create": 2,
+    "edit": 7,
+    "find_file": 1,
+    "goto": 1,
+    "mv": 1,
+    "open": 4,
+    "python": 5,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "ReproNim__reproman-518",
+   "n_actions": 29,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "grep": 1,
+    "search_dir": 4
+   },
+   "instance_id": "ReproNim__reproman-518",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 3,
+    "edit": 1,
+    "goto": 1,
+    "open": 5,
+    "pytest": 1,
+    "rm": 2,
+    "search_dir": 8,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "ReproNim__reproman-518",
+   "n_actions": 25,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 14,
+    "ls": 1,
+    "open": 5,
+    "search_dir": 4,
+    "search_file": 15
+   },
+   "instance_id": "ReproNim__reproman-518",
+   "n_actions": 39,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 1,
+    "goto": 2,
+    "open": 1,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "ReproNim__reproman-518",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "bash": 15,
+    "find_file": 1,
+    "open": 1,
+    "python": 15
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 32,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 18,
+    "open": 7,
+    "python": 5,
+    "search_dir": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 32,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 3,
+    "create": 1,
+    "edit": 10,
+    "find_file": 2,
+    "goto": 3,
+    "ls": 8,
+    "open": 19,
+    "python": 10
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 56,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "ls": 1,
+    "open": 1,
+    "python": 4,
+    "rm": 1,
+    "search_dir": 2,
+    "submit": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 1,
+    "create": 1,
+    "edit": 7,
+    "find_file": 3,
+    "ls": 1,
+    "open": 3,
+    "python": 4,
+    "rm": 3,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 25,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 1,
+    "create": 1,
+    "edit": 4,
+    "ls": 1,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "chmod": 1,
+    "create": 1,
+    "edit": 15,
+    "find_file": 2,
+    "ls": 1,
+    "open": 2,
+    "scroll_down": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 2,
+    "submit": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 7,
+    "open": 1,
+    "python": 5,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "ls": 7,
+    "open": 1,
+    "python": 4,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 15,
+    "open": 3,
+    "python": 5,
+    "search_dir": 2
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 26,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "goto": 1,
+    "open": 9,
+    "python": 7,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "ShawHahnLab__igseq-2",
+   "n_actions": 29,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "find": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 13,
+    "goto": 2,
+    "json": 1,
+    "open": 3,
+    "search_dir": 2,
+    "search_file": 2
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 2,
+    "open": 1,
+    "python": 4,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 6,
+    "edit": 2,
+    "find": 14,
+    "grep": 2,
+    "ls": 10,
+    "open": 9,
+    "python": 11,
+    "scroll_down": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 55,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "find_file": 1,
+    "open": 1,
+    "python": 1,
+    "search_dir": 2,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "find_file": 1,
+    "open": 7,
+    "python": 1,
+    "rm": 1,
+    "search_dir": 7,
+    "submit": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find": 1,
+    "find_file": 1,
+    "open": 1,
+    "search_dir": 54
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 58,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "ls": 7,
+    "open": 3,
+    "submit": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 8,
+    "find": 1,
+    "find_file": 1,
+    "goto": 5,
+    "grep": 1,
+    "ls": 3,
+    "open": 4,
+    "pytest": 4
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 12,
+    "ls": 1,
+    "open": 12,
+    "python": 9,
+    "search_dir": 2
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 37,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 4,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 8,
+    "open": 2,
+    "pip": 1,
+    "print": 1,
+    "python": 4,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "find": 159,
+    "grep": 1,
+    "ls": 70,
+    "python": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 233,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find": 3,
+    "find_file": 2,
+    "grep": 6,
+    "ls": 1,
+    "open": 2,
+    "scroll_down": 3,
+    "submit": 1
+   },
+   "instance_id": "TACC__agavepy-62",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 17,
+    "ls": 2,
+    "open": 2,
+    "submit": 1
+   },
+   "instance_id": "TheFriendlyCoder__pyjen-113",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 5,
+    "find_file": 2,
+    "open": 5,
+    "search_dir": 5,
+    "submit": 1
+   },
+   "instance_id": "TheFriendlyCoder__pyjen-113",
+   "n_actions": 18,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "bash": 1,
+    "edit": 6,
+    "find_file": 1,
+    "open": 1
+   },
+   "instance_id": "TheFriendlyCoder__pyjen-113",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 15,
+    "open": 6,
+    "python": 9,
+    "rm": 1,
+    "search_dir": 7,
+    "submit": 1
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 40,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 41,
+    "python": 39
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 81,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 8,
+    "ls": 3,
+    "open": 5,
+    "python": 4,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "goto": 1,
+    "ls": 1,
+    "open": 29,
+    "python": 1,
+    "search_dir": 61,
+    "search_file": 1
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 96,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 10,
+    "find_file": 1,
+    "ls": 1,
+    "open": 7,
+    "python": 8,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 32,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 38,
+    "python": 33
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 72,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 22,
+    "python": 17,
+    "submit": 1
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 41,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "find_file": 3,
+    "grep": 7,
+    "ls": 6,
+    "open": 28,
+    "python": 2
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 51,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "find_file": 23,
+    "open": 13,
+    "python": 2,
+    "search_dir": 22,
+    "search_file": 9
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 73,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 11,
+    "edit": 15,
+    "ls": 13,
+    "open": 21,
+    "python": 11
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 71,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 28,
+    "python": 24
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 53,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "python": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "absent1706__sqlalchemy-mixins-108",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "find_file": 1,
+    "open": 2,
+    "python": 6,
+    "scroll_down": 2,
+    "search_file": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "goto": 1,
+    "ls": 2,
+    "open": 3,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 3,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 7,
+    "goto": 3,
+    "open": 6,
+    "python": 7,
+    "search_dir": 2,
+    "search_file": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 10,
+    "goto": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 3,
+    "search_dir": 2,
+    "search_file": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 2,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "ls": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 3,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "goto": 2,
+    "open": 2,
+    "python": 4,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "ls": 2,
+    "open": 2,
+    "python": 8,
+    "scroll_down": 2,
+    "search_dir": 2
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 26,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 11,
+    "find_file": 2,
+    "goto": 1,
+    "grep": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 9
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "goto": 2,
+    "ls": 1,
+    "open": 4,
+    "pytest": 2,
+    "python": 1,
+    "scroll_down": 2,
+    "search_dir": 6,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 5,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "goto": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "find_file": 3,
+    "grep": 1,
+    "ls": 2,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 18,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "scroll_up": 2,
+    "search_dir": 2,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 18,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 3,
+    "edit": 7,
+    "find_file": 2,
+    "goto": 3,
+    "ls": 1,
+    "open": 5,
+    "python": 4,
+    "rm": 2,
+    "scroll_down": 4,
+    "scroll_up": 1,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 33,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "ls": 2,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "ahawker__ulid-59",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 9,
+    "edit": 8,
+    "find_file": 2,
+    "goto": 9,
+    "ls": 2,
+    "open": 3,
+    "scroll_down": 1,
+    "search_dir": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 35,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 4,
+    "edit": 2,
+    "find_file": 1,
+    "grep": 5,
+    "open": 1,
+    "scroll_down": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 2,
+    "open": 3,
+    "scroll_down": 1,
+    "search_dir": 2,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 1,
+    "ls": 4,
+    "open": 3,
+    "scroll_down": 2,
+    "submit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 1,
+    "bash": 12,
+    "find_file": 2
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "ls": 3,
+    "open": 16,
+    "python": 3,
+    "scroll_down": 10,
+    "search_dir": 4,
+    "search_file": 4
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 44,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 87
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 87,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 64,
+    "create": 1,
+    "edit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 66,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 2,
+    "open": 3,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 3,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 5,
+    "cat": 1,
+    "docker": 1,
+    "edit": 2,
+    "find": 3,
+    "ls": 4,
+    "open": 2,
+    "python": 2,
+    "submit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 3,
+    "chmod": 1,
+    "create": 1,
+    "echo": 1,
+    "edit": 1,
+    "env": 1,
+    "export": 1,
+    "file": 1,
+    "find": 1,
+    "find_file": 1,
+    "grep": 2,
+    "ls": 4,
+    "python": 1,
+    "submit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 10,
+    "create": 1,
+    "edit": 2,
+    "ls": 4,
+    "open": 2,
+    "python": 1,
+    "rm": 1,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 11,
+    "create": 1,
+    "echo": 2,
+    "edit": 3,
+    "find": 1,
+    "find_file": 1,
+    "grep": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 2,
+    "submit": 1
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 262
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 262,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 10,
+    "create": 2,
+    "edit": 7,
+    "find_file": 5,
+    "goto": 3,
+    "ls": 4,
+    "mkdir": 1,
+    "mv": 1,
+    "open": 10,
+    "scroll_down": 4,
+    "scroll_up": 1,
+    "search_dir": 2,
+    "search_file": 2
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 52,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "asv": 1,
+    "goto": 17,
+    "ls": 3,
+    "open": 1,
+    "search_file": 17
+   },
+   "instance_id": "airspeed-velocity__asv-702",
+   "n_actions": 39,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 2,
+    "grep": 1,
+    "open": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "grep": 1,
+    "open": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 21,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 24,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "ls": 2,
+    "open": 3,
+    "scroll_down": 19,
+    "search_dir": 2,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 3,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 6,
+    "grep": 1,
+    "open": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 47
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 49,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "grep": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 16,
+    "grep": 2,
+    "open": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 6,
+    "python": 1,
+    "search_dir": 1,
+    "search_file": 12,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 24,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 3,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 9,
+    "grep": 1,
+    "ls": 1,
+    "open": 3,
+    "scroll_up": 1,
+    "search_dir": 2,
+    "search_file": 12
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 32,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "grep": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 6,
+    "goto": 11,
+    "open": 1,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 122
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 127,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cat": 1,
+    "cd": 1,
+    "ls": 1,
+    "open": 3,
+    "search_dir": 3,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 20,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 2,
+    "grep": 1,
+    "open": 1,
+    "search_file": 6,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "grep": 1,
+    "open": 1,
+    "scroll_down": 7,
+    "scroll_up": 4,
+    "search_file": 9
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 10,
+    "open": 1,
+    "python": 1,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 2,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "grep": 1,
+    "open": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 2,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "grep": 9,
+    "open": 1,
+    "search_dir": 3,
+    "search_file": 2
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 17,
+    "grep": 1,
+    "open": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "open": 1,
+    "python": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "open": 2,
+    "pytest": 2,
+    "search_dir": 1,
+    "search_file": 7
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "grep": 1,
+    "open": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 3,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "open": 2,
+    "scroll_down": 21,
+    "search_dir": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 24,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 10,
+    "end": 1,
+    "ls": 2,
+    "python": 5,
+    "rm": 1,
+    "submit": 1,
+    "wait": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "grep": 2,
+    "open": 1,
+    "python": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 16,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "goto": 1,
+    "grep": 1,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 7,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 22,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 25,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "grep": 1,
+    "open": 8,
+    "search_file": 7
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 2,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 12,
+    "goto": 4,
+    "grep": 1,
+    "open": 5,
+    "python": 4,
+    "scroll_down": 5
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 32,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 9,
+    "goto": 9,
+    "grep": 1,
+    "open": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "grep": 2,
+    "ls": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "ls": 1,
+    "open": 1,
+    "rm": 1,
+    "scroll_down": 4,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 42,
+    "grep": 1,
+    "open": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 45,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "grep": 1,
+    "open": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 11,
+    "goto": 1,
+    "grep": 1,
+    "open": 2,
+    "python": 2,
+    "scroll_down": 4,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "grep": 27,
+    "search_file": 6
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 33,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 4,
+    "goto": 10,
+    "open": 9,
+    "python": 3,
+    "scroll_down": 1,
+    "scroll_up": 6,
+    "search_dir": 1,
+    "search_file": 2
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 38,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "grep": 5,
+    "open": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 1,
+    "grep": 1,
+    "open": 4,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "goto": 17,
+    "grep": 1,
+    "open": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "grep": 1,
+    "open": 1,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "search_dir": 5,
+    "search_file": 2
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 9,
+    "goto": 1,
+    "open": 3,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-142",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "find": 3,
+    "goto": 2,
+    "ls": 3,
+    "open": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 36,
+    "python": 34
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 71,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 4,
+    "create": 1,
+    "edit": 4,
+    "find_file": 1,
+    "goto": 1,
+    "ls": 4,
+    "open": 5,
+    "python": 1,
+    "pyupgrade": 1,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 25,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "find": 185,
+    "find_file": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 2,
+    "search_file": 2
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 198,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "ls": 3,
+    "open": 2,
+    "pyupgrade": 1,
+    "scroll_down": 15,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 3,
+    "edit": 5,
+    "goto": 18,
+    "open": 1,
+    "python": 4,
+    "search_file": 2
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 33,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "find": 1,
+    "goto": 2,
+    "ls": 1,
+    "open": 1,
+    "pyupgrade": 3,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find": 1,
+    "goto": 2,
+    "ls": 3,
+    "open": 1,
+    "pyupgrade": 3,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "bash": 1,
+    "echo": 1,
+    "edit": 1,
+    "open": 1,
+    "scroll_up": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 5,
+    "find_file": 4,
+    "ls": 4,
+    "open": 8,
+    "scroll_up": 4
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 25,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "find": 7,
+    "grep": 1,
+    "ls": 1,
+    "open": 1,
+    "pyupgrade": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "ls": 3,
+    "open": 1,
+    "pyupgrade": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "find_file": 2,
+    "goto": 1,
+    "grep": 5,
+    "open": 1,
+    "pyupgrade": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "find": 1,
+    "open": 1,
+    "python": 3,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "ls": 3,
+    "open": 1,
+    "pyupgrade": 3,
+    "scroll_up": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "python": 4,
+    "search_dir": 4
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "ls": 3,
+    "open": 1,
+    "pytest": 2,
+    "python": 1,
+    "pyupgrade": 1,
+    "rm": 1,
+    "search_dir": 3,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find": 1,
+    "grep": 5,
+    "ls": 6,
+    "open": 2,
+    "pyupgrade": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-147",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "goto": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 3,
+    "close": 1,
+    "create": 1,
+    "edit": 4,
+    "open": 1,
+    "python": 3,
+    "rm": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "goto": 1,
+    "open": 3,
+    "python": 3,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find": 3,
+    "goto": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 8,
+    "find": 1,
+    "grep": 1,
+    "open": 2,
+    "python": 6,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 3,
+    "goto": 1,
+    "ls": 2,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 13,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 26,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 3,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 3,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "scroll_up": 1,
+    "search_dir": 2,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 57,
+    "python": 2,
+    "search_dir": 85
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 147,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 25,
+    "goto": 2,
+    "ls": 2,
+    "open": 2,
+    "python": 13,
+    "pyupgrade": 9,
+    "search_file": 2
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 56,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 7,
+    "edit": 22,
+    "find_file": 3,
+    "goto": 1,
+    "open": 6,
+    "pytest": 1,
+    "python": 21,
+    "search_dir": 2,
+    "search_file": 15
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 78,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 3,
+    "ls": 1,
+    "open": 1,
+    "python": 3,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 8,
+    "find_file": 2,
+    "goto": 2,
+    "ls": 1,
+    "open": 2,
+    "python": 6,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 29,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "find": 3,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "python": 3,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-347",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "goto": 2,
+    "open": 2,
+    "python": 4,
+    "scroll_down": 5,
+    "scroll_up": 7,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 2,
+    "open": 2,
+    "python": 1,
+    "search_dir": 5,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 90,
+    "python": 37
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 128,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 2,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "ls": 1,
+    "open": 3,
+    "python": 2,
+    "scroll_down": 1,
+    "search_dir": 3,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "find_file": 1,
+    "goto": 1,
+    "grep": 2,
+    "ls": 8,
+    "open": 9,
+    "python": 1,
+    "scroll_down": 13,
+    "search_file": 6
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 43,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 83,
+    "python": 83
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 167,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 67,
+    "goto": 2,
+    "open": 2,
+    "python": 35,
+    "pyupgrade": 1,
+    "scroll_down": 1,
+    "search_dir": 2,
+    "search_file": 2
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 114,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "python": 8,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 8,
+    "goto": 8,
+    "open": 3,
+    "python": 2,
+    "search_dir": 3,
+    "search_file": 8
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 33,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-545",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 2,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-890",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 1,
+    "ls": 2,
+    "open": 3,
+    "python": 2,
+    "pyupgrade": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-890",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "python": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-890",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "python": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-890",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "python": 6,
+    "pyupgrade": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-890",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 2,
+    "create": 1,
+    "edit": 2,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "asottile__pyupgrade-890",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 22,
+    "find_file": 4,
+    "ls": 2,
+    "open": 7,
+    "python": 9,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 7
+   },
+   "instance_id": "asottile__pyupgrade-890",
+   "n_actions": 55,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 39,
+    "open": 1,
+    "search_dir": 1
+   },
+   "instance_id": "auth0__auth0-python-477",
+   "n_actions": 41,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "ls": 4,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "auth0__auth0-python-477",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 32,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1
+   },
+   "instance_id": "auth0__auth0-python-477",
+   "n_actions": 35,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 7,
+    "find_file": 2,
+    "ls": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "auth0__auth0-python-477",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 24,
+    "find": 2,
+    "ls": 3,
+    "open": 3,
+    "python": 8,
+    "search_dir": 2,
+    "search_file": 2
+   },
+   "instance_id": "auth0__auth0-python-477",
+   "n_actions": 45,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "ls": 4,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "auth0__auth0-python-477",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "aws": 1,
+    "cfn": 21,
+    "create": 2,
+    "curl": 83,
+    "edit": 2,
+    "wget": 1
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 110,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "curl": 2,
+    "edit": 1,
+    "html": 1,
+    "open": 1,
+    "python": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "wget": 2
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 3,
+    "open": 5,
+    "scroll_down": 2,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "find_file": 3,
+    "grep": 30,
+    "open": 13,
+    "python": 1
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 49,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 6,
+    "python": 11,
+    "rm": 5
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 24,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 5,
+    "edit": 13,
+    "open": 1,
+    "python": 13,
+    "search_dir": 1
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 33,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cfn": 2,
+    "create": 1,
+    "edit": 1,
+    "find_file": 15,
+    "ls": 28,
+    "open": 15,
+    "search_dir": 16
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 78,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cfn": 2,
+    "chmod": 1,
+    "create": 3,
+    "edit": 6,
+    "goto": 1,
+    "mv": 1,
+    "open": 3,
+    "search_dir": 8,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "aws-cloudformation__cloudformation-cli-python-plugin-236",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "python": 1,
+    "rm": 1,
+    "sas": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find": 8,
+    "find_file": 1,
+    "grep": 1,
+    "open": 13,
+    "python": 13,
+    "sas": 2,
+    "search_file": 5,
+    "wget": 12,
+    "which": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 59,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 3,
+    "create": 3,
+    "edit": 6,
+    "find": 1,
+    "goto": 2,
+    "grep": 1,
+    "open": 3,
+    "pip": 1,
+    "python": 3,
+    "scroll_down": 3,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "python": 1,
+    "rm": 1,
+    "sas": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 3,
+    "create": 3,
+    "edit": 11,
+    "goto": 2,
+    "ls": 4,
+    "open": 9,
+    "python": 4,
+    "sas": 1,
+    "scroll_down": 5,
+    "scroll_up": 3,
+    "search_dir": 3,
+    "search_file": 6
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 54,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "find_file": 16,
+    "google": 1,
+    "ls": 2,
+    "open": 1,
+    "sas": 1,
+    "scroll_down": 1,
+    "scroll_up": 17,
+    "search_dir": 17,
+    "search_file": 5
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 63,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 6,
+    "goto": 2,
+    "ls": 3,
+    "open": 5,
+    "python": 2,
+    "sas": 1,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "find": 2,
+    "goto": 2,
+    "grep": 2,
+    "ls": 1,
+    "open": 1,
+    "sas": 1,
+    "scroll_down": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 2,
+    "open": 2,
+    "scroll_down": 2,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 18,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 4,
+    "goto": 1,
+    "open": 1,
+    "python": 3,
+    "rm": 1,
+    "sas": 1,
+    "scroll_down": 2,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 6,
+    "find": 1,
+    "find_file": 6,
+    "goto": 1,
+    "ls": 4,
+    "open": 3,
+    "python": 2,
+    "rm": 1,
+    "sas": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 31,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 3,
+    "goto": 1,
+    "ls": 2,
+    "open": 2,
+    "python": 2,
+    "sas": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "chmod": 1,
+    "create": 2,
+    "edit": 3,
+    "find": 1,
+    "grep": 1,
+    "ls": 2,
+    "open": 4,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 2,
+    "find": 1,
+    "python": 1,
+    "rm": 1,
+    "sas": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 7,
+    "create": 2,
+    "edit": 4,
+    "find": 3,
+    "ls": 2,
+    "open": 1,
+    "python": 1,
+    "rm": 6,
+    "sas": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 3,
+    "goto": 1,
+    "grep": 8,
+    "open": 1,
+    "sas": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "benjamincorcoran__sasdocs-41",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 5,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 18,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 2,
+    "ls": 3,
+    "open": 1,
+    "pytest": 1,
+    "python": 2,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "find_file": 2,
+    "goto": 5,
+    "ls": 3,
+    "open": 4,
+    "python": 3,
+    "scroll_down": 2,
+    "scroll_up": 1,
+    "search_dir": 3,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 33,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "open": 2,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 13,
+    "find_file": 1,
+    "open": 3,
+    "python": 7,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 27,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find": 1,
+    "find_file": 1,
+    "goto": 1,
+    "ls": 2,
+    "open": 1,
+    "python": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "open": 3,
+    "python": 4,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 3,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "find_file": 1,
+    "open": 1,
+    "python": 5,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 2,
+    "open": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 8,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "goto": 1,
+    "open": 1,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "python": 4,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 3,
+    "ls": 2,
+    "open": 1,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 12,
+    "find_file": 1,
+    "open": 4,
+    "python": 11,
+    "scroll_down": 3,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 35,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "goto": 1,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "find_file": 1,
+    "open": 1,
+    "python": 5,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 5,
+    "find_file": 1,
+    "goto": 1,
+    "open": 2,
+    "python": 4,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 5,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 9,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 26,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "python": 23,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 55,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 16,
+    "goto": 2,
+    "open": 2,
+    "python": 8,
+    "scroll_down": 1,
+    "search_dir": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 31,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "bihealth__biomedsheets-23",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cat": 3,
+    "curl": 6,
+    "find": 3,
+    "grep": 4,
+    "wget": 5
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "browse": 1,
+    "create": 1,
+    "edit": 7,
+    "ls": 1,
+    "nslookup": 1,
+    "open": 2,
+    "ping": 1,
+    "python": 2,
+    "search": 1,
+    "search_dir": 1,
+    "search_issues": 1,
+    "submit": 1
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "find_file": 1,
+    "ls": 37,
+    "mkdir": 1,
+    "open": 27,
+    "scroll_down": 1
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 67,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "ls": 4,
+    "open": 1,
+    "search_dir": 181
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 186,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "ls": 1,
+    "open": 1,
+    "search_dir": 2
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "chmod": 1,
+    "create": 1,
+    "edit": 1,
+    "ls": 3,
+    "open": 7,
+    "search_dir": 6,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "find_file": 6,
+    "ls": 85,
+    "open": 83
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 174,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "ls": 26,
+    "open": 31,
+    "scroll_down": 1,
+    "search_web": 1
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 59,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "bash": 18,
+    "create": 1,
+    "ls": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "curl": 2,
+    "search_dir": 1
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 3,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "echo": 1,
+    "ls": 2,
+    "open": 3,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "casbin__pycasbin-53",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 13,
+    "find_file": 2,
+    "ls": 3,
+    "open": 2,
+    "search_dir": 1
+   },
+   "instance_id": "cytomining__pycytominer-62",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 5,
+    "open": 3,
+    "submit": 1
+   },
+   "instance_id": "cytomining__pycytominer-62",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 1,
+    "create": 1,
+    "edit": 14,
+    "ls": 3,
+    "open": 11,
+    "python": 6,
+    "rm": 1,
+    "search_dir": 4,
+    "submit": 1
+   },
+   "instance_id": "cytomining__pycytominer-62",
+   "n_actions": 42,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 28,
+    "grep": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 1
+   },
+   "instance_id": "cytomining__pycytominer-62",
+   "n_actions": 33,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 17,
+    "open": 2,
+    "search_dir": 1
+   },
+   "instance_id": "cytomining__pycytominer-62",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 4,
+    "ls": 4,
+    "open": 2,
+    "python": 6,
+    "scroll_down": 1,
+    "search_dir": 2,
+    "search_file": 5,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 26,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "goto": 1,
+    "ls": 3,
+    "open": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "ls": 52,
+    "open": 28,
+    "search_dir": 27,
+    "search_file": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 110,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "grep": 2,
+    "ls": 5,
+    "open": 2,
+    "pytest": 1,
+    "python": 3,
+    "scroll_down": 2,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 17,
+    "goto": 1,
+    "open": 1,
+    "scroll_down": 2,
+    "scroll_up": 2,
+    "search_dir": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 24,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "open": 1,
+    "scroll_down": 4,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "find_file": 2,
+    "goto": 1,
+    "open": 5,
+    "search_dir": 2,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 3,
+    "open": 6,
+    "scroll_down": 2,
+    "search_dir": 3,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 2,
+    "goto": 1,
+    "grep": 1,
+    "ls": 1,
+    "open": 3,
+    "scroll_down": 4,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 2,
+    "ls": 1,
+    "open": 2,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "ls": 2,
+    "open": 3,
+    "scroll_down": 4,
+    "scroll_up": 3,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 17,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 2,
+    "open": 2,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 1,
+    "open": 5,
+    "scroll_down": 8,
+    "search_dir": 2,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "ls": 6,
+    "open": 6,
+    "scroll_down": 11,
+    "search_dir": 13,
+    "search_file": 26
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 63,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 1,
+    "ls": 2,
+    "open": 3,
+    "pytest": 1,
+    "search_dir": 4,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 2,
+    "ls": 3,
+    "open": 5,
+    "scroll_down": 2,
+    "search_dir": 3,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "dask__dask-jobqueue-563",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 15,
+    "goto": 4,
+    "open": 4,
+    "python": 15,
+    "scroll_down": 1,
+    "search_dir": 7,
+    "search_file": 10
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 57,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 2,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "search_dir": 3,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 3,
+    "open": 4,
+    "scroll_down": 13,
+    "search_dir": 1,
+    "search_file": 3
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "goto": 15,
+    "next_match": 16,
+    "open": 1,
+    "search_dir": 8,
+    "search_file": 5
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 46,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "goto": 2,
+    "open": 1,
+    "search_dir": 2,
+    "search_file": 6,
+    "submit": 1
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 12,
+    "goto": 7,
+    "open": 5,
+    "search_dir": 8,
+    "search_file": 8
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 40,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 18,
+    "find_file": 2,
+    "goto": 2,
+    "ls": 2,
+    "open": 1,
+    "search_dir": 4,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 34,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 28,
+    "goto": 3,
+    "open": 2,
+    "search_dir": 3,
+    "search_file": 2
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 39,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 2,
+    "open": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cat": 1,
+    "create": 2,
+    "edit": 13,
+    "goto": 5,
+    "open": 3,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 2,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 32,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 3,
+    "goto": 7,
+    "open": 4,
+    "python": 2,
+    "scroll_up": 2,
+    "search_dir": 4,
+    "search_file": 13
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 37,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 20,
+    "goto": 3,
+    "ls": 2,
+    "open": 2,
+    "python": 7,
+    "search_dir": 4,
+    "search_file": 3
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 42,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 6,
+    "goto": 4,
+    "ls": 1,
+    "open": 4,
+    "python": 2,
+    "scroll_down": 5,
+    "scroll_up": 3,
+    "search_dir": 9,
+    "search_file": 2
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 37,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 8,
+    "find_file": 2,
+    "goto": 3,
+    "ls": 2,
+    "open": 2,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 22,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 3,
+    "edit": 1,
+    "goto": 8,
+    "ls": 1,
+    "open": 7,
+    "search_dir": 14,
+    "search_file": 24
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 58,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "find_file": 5,
+    "goto": 5,
+    "ls": 2,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 5,
+    "submit": 1
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 23,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 5,
+    "open": 2,
+    "python": 2,
+    "search_dir": 3,
+    "search_file": 4
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 16,
+    "goto": 2,
+    "ls": 5,
+    "open": 11,
+    "python": 4,
+    "search_file": 8
+   },
+   "instance_id": "delph-in__pydelphin-362",
+   "n_actions": 48,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "find_file": 1,
+    "goto": 2,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "find_file": 2,
+    "goto": 4,
+    "grep": 1,
+    "ls": 3,
+    "open": 1,
+    "search_file": 4,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 20,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "grep": 3,
+    "ls": 2,
+    "open": 1,
+    "python": 1,
+    "scroll_down": 4
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 7,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 3,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 21,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 11,
+    "find": 4,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 3,
+    "open": 2,
+    "python": 10,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 37,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 9,
+    "find_file": 2,
+    "goto": 2,
+    "ls": 3,
+    "open": 2,
+    "python": 5,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 28,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "find_file": 1,
+    "goto": 2,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "goto": 2,
+    "open": 1,
+    "search_dir": 2,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 6,
+    "open": 1,
+    "scroll_down": 4,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 19,
+    "find_file": 1,
+    "goto": 2,
+    "open": 1,
+    "python": 16,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "search_file": 1
+   },
+   "instance_id": "fairlearn__fairlearn-896",
+   "n_actions": 43,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "goto": 1,
+    "grep": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 12,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 2,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 14,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 11,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 2,
+    "open": 1,
+    "python": 3,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 14,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 11,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 11,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "find_file": 2,
+    "ls": 1,
+    "open": 1,
+    "python": 3,
+    "scroll_down": 1,
+    "scroll_up": 14,
+    "search_dir": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 4,
+    "create": 1,
+    "edit": 5,
+    "find": 1,
+    "find_file": 3,
+    "goto": 4,
+    "ls": 6,
+    "open": 5,
+    "python": 6,
+    "rm": 1,
+    "search_dir": 2,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 41,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 12,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 2,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 15,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 2,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 17,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 13,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 2,
+    "create": 1,
+    "edit": 2,
+    "ls": 1,
+    "open": 2,
+    "python": 3,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "geopandas__geopandas-3240",
+   "n_actions": 17,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 10,
+    "find_file": 1,
+    "ls": 3,
+    "open": 3,
+    "python": 7,
+    "scroll_down": 3,
+    "search_file": 1
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 29,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 31,
+    "ls": 3,
+    "open": 3,
+    "python": 1,
+    "scroll_down": 2
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 41,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 16,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "python": 2,
+    "scroll_down": 1,
+    "search_dir": 1
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 24,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "goto": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 2,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 19,
+    "find": 1,
+    "find_file": 2,
+    "ls": 5,
+    "open": 5,
+    "python": 16
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 49,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "goto": 2,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 2,
+    "search_file": 3,
+    "submit": 1
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 19,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 1,
+    "find_file": 1,
+    "grep": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 1,
+    "scroll_down": 10,
+    "scroll_up": 9
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 27,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 2,
+    "scroll_up": 2,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "ls": 6,
+    "open": 9,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 8,
+    "search_dir": 1,
+    "search_file": 12,
+    "submit": 1
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 44,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 3,
+    "python": 2,
+    "rm": 1,
+    "search_dir": 2,
+    "submit": 1
+   },
+   "instance_id": "google__latexify_py-67",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "goto": 2,
+    "open": 1,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 12,
+    "open": 3,
+    "python": 5,
+    "rm": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 25,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 2,
+    "edit": 16,
+    "open": 7,
+    "python": 8,
+    "scroll_down": 5,
+    "search_dir": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 39,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 1,
+    "edit": 7,
+    "ls": 2,
+    "open": 1,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "bash": 9
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 2,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 37,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 40,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 6,
+    "goto": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 1,
+    "edit": 5,
+    "ls": 2,
+    "open": 2,
+    "scroll_down": 2,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "cd": 1,
+    "edit": 3,
+    "find_file": 3,
+    "ls": 2,
+    "open": 3,
+    "pytest": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 14,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "ls": 3,
+    "open": 1,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "scroll_down": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 5,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 4,
+    "open": 1,
+    "scroll_down": 1,
+    "scroll_up": 1,
+    "search_dir": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 3,
+    "find_file": 1,
+    "open": 1,
+    "search_dir": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "ls": 3,
+    "open": 1,
+    "scroll_down": 1,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "ls": 1,
+    "open": 5,
+    "scroll_down": 1,
+    "search_dir": 4,
+    "search_file": 2,
+    "submit": 1
+   },
+   "instance_id": "google__mobly-472",
+   "n_actions": 16,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 5,
+    "goto": 2,
+    "open": 2,
+    "pypistats": 3,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 13,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 4,
+    "ls": 2,
+    "open": 1,
+    "python": 2,
+    "rm": 1,
+    "scroll_down": 2,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 14,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 4,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "python": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 17,
+    "open": 1,
+    "pypistats": 17
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 35,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 7,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 7,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 5,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 19,
+    "find_file": 1,
+    "open": 1,
+    "python": 15
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 37,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 3,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 7,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "pypistats": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 7,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 2,
+    "goto": 1,
+    "ls": 1,
+    "open": 2,
+    "python": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 12,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 5,
+    "open": 1,
+    "pypistats": 3,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 10,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "ls": 1,
+    "open": 1,
+    "pypistats": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "ls": 2,
+    "open": 1,
+    "pypistats": 2,
+    "rm": 2,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 9,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "pypistats": 2,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "chmod": 1,
+    "create": 1,
+    "edit": 2,
+    "open": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 7,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "goto": 1,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "search_file": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 10,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "pypistats": 2,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 5,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "open": 1,
+    "pypistats": 3,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 8,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 2,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 3,
+    "find_file": 1,
+    "open": 2,
+    "python": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 11,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 3,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 4,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 7,
+   "resolved": true
+  },
+  {
+   "actions": {
+    "create": 1,
+    "edit": 2,
+    "find_file": 1,
+    "open": 1,
+    "python": 1,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 8,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 20,
+    "open": 1,
+    "pypistats": 20
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 41,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "open": 1,
+    "pypistats": 2,
+    "rm": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 6,
+   "resolved": false
+  },
+  {
+   "actions": {
+    "edit": 1,
+    "find_file": 1,
+    "open": 1,
+    "submit": 1
+   },
+   "instance_id": "hugovk__pypistats-41",
+   "n_actions": 4,
+   "resolved": false
+  }
+ ],
+ "sample": "first 500 rows of train split"
+}
