@@ -1,0 +1,68 @@
+{
+  "n": 662,
+  "positives": 263,
+  "detectors": {
+    "strict": {
+      "tp": 27,
+      "fp": 0,
+      "fn": 236,
+      "tn": 399,
+      "cost_fp10_fn25": 5900,
+      "recall": 0.1027,
+      "fpr": 0.0
+    },
+    "lenient": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 263,
+      "tn": 399,
+      "cost_fp10_fn25": 6575,
+      "recall": 0.0,
+      "fpr": 0.0
+    }
+  },
+  "sweep": [
+    {
+      "fn_over_fp": 0.25,
+      "strict": 59.0,
+      "lenient": 65.75,
+      "cheaper": "strict"
+    },
+    {
+      "fn_over_fp": 0.5,
+      "strict": 118.0,
+      "lenient": 131.5,
+      "cheaper": "strict"
+    },
+    {
+      "fn_over_fp": 1,
+      "strict": 236,
+      "lenient": 263,
+      "cheaper": "strict"
+    },
+    {
+      "fn_over_fp": 2,
+      "strict": 472,
+      "lenient": 526,
+      "cheaper": "strict"
+    },
+    {
+      "fn_over_fp": 2.5,
+      "strict": 590.0,
+      "lenient": 657.5,
+      "cheaper": "strict"
+    },
+    {
+      "fn_over_fp": 5,
+      "strict": 1180,
+      "lenient": 1315,
+      "cheaper": "strict"
+    },
+    {
+      "fn_over_fp": 10,
+      "strict": 2360,
+      "lenient": 2630,
+      "cheaper": "strict"
+    }
+  ]
+}

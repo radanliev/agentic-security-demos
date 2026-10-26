@@ -1,0 +1,11 @@
+{
+  "n_cards": 60,
+  "covered": {
+    "threats": 17,
+    "evals": 56,
+    "agentic": 40,
+    "third_party": 6,
+    "mitigations": 11
+  },
+  "all_five": 3
+}
