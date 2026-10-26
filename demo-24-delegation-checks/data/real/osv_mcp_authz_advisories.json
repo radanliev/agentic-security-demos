@@ -1,0 +1,1144 @@
+{
+ "retrieved": "2026-10-26",
+ "rows": [
+  {
+   "aliases": [
+    "CVE-2026-111767"
+   ],
+   "cwe": [
+    "CWE-639",
+    "CWE-862"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-22jm-h49p-29qw",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2026-10-20T18:26:54Z",
+   "severity": "HIGH",
+   "summary": "MCP TypeScript SDK: Experimental tasks were not tied to the session that created them"
+  },
+  {
+   "aliases": [
+    "CVE-2026-25536"
+   ],
+   "cwe": [
+    "CWE-362"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-345p-7cg4-v4c7",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2026-02-04T20:04:16Z",
+   "severity": "HIGH",
+   "summary": "@modelcontextprotocol/sdk has cross-client data leak via shared server/transport instance reuse"
+  },
+  {
+   "aliases": [
+    "CVE-2026-111768"
+   ],
+   "cwe": [
+    "CWE-770"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-46jr-4wx8-v453",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2026-10-20T20:06:35Z",
+   "severity": "HIGH",
+   "summary": "MCP TypeScript SDK: One HTTP request within the default size limit could exhaust server memory during validation"
+  },
+  {
+   "aliases": [
+    "CVE-2026-111769"
+   ],
+   "cwe": [
+    "CWE-200"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6prh-2h8m-c8cw",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2026-10-20T18:26:30Z",
+   "severity": "MODERATE",
+   "summary": "MCP TypeScript client SDK: HTTP client transports and OAuth requests followed cross-origin redirects and re-sent custom headers and request bodies"
+  },
+  {
+   "aliases": [
+    "CVE-2026-104850"
+   ],
+   "cwe": [
+    "CWE-345",
+    "CWE-522"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6qxp-vccf-f47h",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2026-10-06T15:35:44Z",
+   "severity": "HIGH",
+   "summary": "MCP TypeScript SDK: OAuth client could send credentials to an authorization server chosen by the MCP server"
+  },
+  {
+   "aliases": [
+    "CVE-2026-0621"
+   ],
+   "cwe": [
+    "CWE-1333"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-8r9q-7v3j-jr4g",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2026-01-05T21:30:33Z",
+   "severity": "HIGH",
+   "summary": "Anthropic's MCP TypeScript SDK has a ReDoS vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2026-111771"
+   ],
+   "cwe": [
+    "CWE-863"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-rvq5-wwqv-78pq",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2026-10-20T19:43:36Z",
+   "severity": "MODERATE",
+   "summary": "MCP TypeScript SDK: Server bearer authentication accepted tokens issued for another service"
+  },
+  {
+   "aliases": [
+    "CVE-2025-66414"
+   ],
+   "cwe": [
+    "CWE-1188",
+    "CWE-350"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-w48q-cv73-mx4w",
+   "package": "@modelcontextprotocol/sdk",
+   "published": "2025-12-02T16:51:57Z",
+   "severity": "HIGH",
+   "summary": "Model Context Protocol (MCP) TypeScript SDK does not enable DNS rebinding protection by default"
+  },
+  {
+   "aliases": [
+    "CVE-2025-53366",
+    "PYSEC-2026-1616"
+   ],
+   "cwe": [
+    "CWE-248"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-3qhf-m339-9g5v",
+   "package": "mcp",
+   "published": "2025-07-04T22:06:49Z",
+   "severity": "HIGH",
+   "summary": "MCP Python SDK vulnerability in the FastMCP Server causes validation error, leading to DoS"
+  },
+  {
+   "aliases": [
+    "CVE-2026-59951"
+   ],
+   "cwe": [
+    "CWE-400",
+    "CWE-770",
+    "CWE-772"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-84m7-p3x7-pcfv",
+   "package": "mcp",
+   "published": "2026-10-15T20:13:13Z",
+   "severity": "MODERATE",
+   "summary": "MCP Python SDK: Unbounded Session Accumulation in StreamableHTTP Transport Enables Resource Exhaustion"
+  },
+  {
+   "aliases": [
+    "CVE-2025-66416",
+    "PYSEC-2026-1617"
+   ],
+   "cwe": [
+    "CWE-1188",
+    "CWE-350"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-9h52-p55h-vw2f",
+   "package": "mcp",
+   "published": "2025-12-02T16:52:08Z",
+   "severity": "HIGH",
+   "summary": "Model Context Protocol (MCP) Python SDK does not enable DNS rebinding protection by default"
+  },
+  {
+   "aliases": [
+    "CVE-2026-52870",
+    "PYSEC-2026-3481"
+   ],
+   "cwe": [
+    "CWE-862"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-hvrp-rf83-w775",
+   "package": "mcp",
+   "published": "2026-07-16T19:56:12Z",
+   "severity": "HIGH",
+   "summary": "MCP Python SDK: Experimental task handlers allow any client to access and cancel other clients' tasks"
+  },
+  {
+   "aliases": [
+    "CVE-2025-53365",
+    "PYSEC-2026-1618"
+   ],
+   "cwe": [
+    "CWE-248"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-j975-95f5-7wqh",
+   "package": "mcp",
+   "published": "2025-07-04T22:06:31Z",
+   "severity": "HIGH",
+   "summary": "MCP Python SDK has Unhandled Exception in Streamable HTTP Transport, Leading to Denial of Service"
+  },
+  {
+   "aliases": [
+    "CVE-2026-52869",
+    "PYSEC-2026-3482"
+   ],
+   "cwe": [
+    "CWE-639"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-jpw9-pfvf-9f58",
+   "package": "mcp",
+   "published": "2026-07-16T19:58:53Z",
+   "severity": "HIGH",
+   "summary": "MCP Python SDK: HTTP transports serve session requests without verifying the authenticated principal"
+  },
+  {
+   "aliases": [
+    "CVE-2026-59950",
+    "PYSEC-2026-3483"
+   ],
+   "cwe": [
+    "CWE-1385",
+    "CWE-346"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-vj7q-gjh5-988w",
+   "package": "mcp",
+   "published": "2026-07-16T20:14:34Z",
+   "severity": "HIGH",
+   "summary": "MCP Python SDK: WebSocket server transport does not support Host/Origin validation"
+  },
+  {
+   "aliases": [
+    "CVE-2025-53366",
+    "GHSA-3qhf-m339-9g5v"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1616",
+   "package": "mcp",
+   "published": "2026-07-07T16:02:56.172263Z",
+   "severity": null,
+   "summary": "MCP Python SDK vulnerability in the FastMCP Server causes validation error, leading to DoS"
+  },
+  {
+   "aliases": [
+    "CVE-2025-66416",
+    "GHSA-9h52-p55h-vw2f"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1617",
+   "package": "mcp",
+   "published": "2026-07-07T16:03:11.859199Z",
+   "severity": null,
+   "summary": "Model Context Protocol (MCP) Python SDK does not enable DNS rebinding protection by default"
+  },
+  {
+   "aliases": [
+    "CVE-2025-53365",
+    "GHSA-j975-95f5-7wqh"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1618",
+   "package": "mcp",
+   "published": "2026-07-07T16:02:56.105116Z",
+   "severity": null,
+   "summary": "MCP Python SDK has Unhandled Exception in Streamable HTTP Transport, Leading to Denial of Service"
+  },
+  {
+   "aliases": [
+    "CVE-2026-52870",
+    "GHSA-hvrp-rf83-w775"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-3481",
+   "package": "mcp",
+   "published": "2026-07-23T11:41:46.409906Z",
+   "severity": null,
+   "summary": "MCP Python SDK: Experimental task handlers allow any client to access and cancel other clients' tasks"
+  },
+  {
+   "aliases": [
+    "CVE-2026-52869",
+    "GHSA-jpw9-pfvf-9f58"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-3482",
+   "package": "mcp",
+   "published": "2026-07-23T11:41:46.472358Z",
+   "severity": null,
+   "summary": "MCP Python SDK: HTTP transports serve session requests without verifying the authenticated principal"
+  },
+  {
+   "aliases": [
+    "CVE-2026-59950",
+    "GHSA-vj7q-gjh5-988w"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-3483",
+   "package": "mcp",
+   "published": "2026-07-23T11:41:46.534440Z",
+   "severity": null,
+   "summary": "MCP Python SDK: WebSocket server transport does not support Host/Origin validation"
+  },
+  {
+   "aliases": [
+    "CVE-2025-69196",
+    "PYSEC-2026-2474"
+   ],
+   "cwe": [
+    "CWE-863"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-5h2m-4q8j-pqpj",
+   "package": "fastmcp",
+   "published": "2026-03-16T15:14:55Z",
+   "severity": "HIGH",
+   "summary": "FastMCP OAuth Proxy token reuse across MCP servers"
+  },
+  {
+   "aliases": [],
+   "cwe": [
+    "CWE-862"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-7xgj-8392-5q4r",
+   "package": "fastmcp",
+   "published": "2026-10-23T21:32:06Z",
+   "severity": "MODERATE",
+   "summary": "FastMCP: Post-transform component authorization is skipped on direct calls"
+  },
+  {
+   "aliases": [],
+   "cwe": [
+    "CWE-287"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-c2jp-c369-7pvx",
+   "package": "fastmcp",
+   "published": "2025-10-29T15:38:07Z",
+   "severity": "HIGH",
+   "summary": "FastMCP Auth Integration Allows for Confused Deputy Account Takeover"
+  },
+  {
+   "aliases": [
+    "CVE-2025-64340",
+    "PYSEC-2026-2475"
+   ],
+   "cwe": [
+    "CWE-78"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-m8x7-r2rg-vh5g",
+   "package": "fastmcp",
+   "published": "2026-03-31T22:24:15Z",
+   "severity": "MODERATE",
+   "summary": "FastMCP has a Command Injection vulnerability - Gemini CLI"
+  },
+  {
+   "aliases": [
+    "CVE-2025-62800",
+    "PYSEC-2026-1364"
+   ],
+   "cwe": [
+    "CWE-79"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-mxxr-jv3v-6pgc",
+   "package": "fastmcp",
+   "published": "2025-10-29T15:38:29Z",
+   "severity": "MODERATE",
+   "summary": "FastMCP vulnerable to reflected XSS in client's callback page"
+  },
+  {
+   "aliases": [],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "GHSA-rcfx-77hg-w2wv",
+   "package": "fastmcp",
+   "published": "2025-12-26T23:20:50Z",
+   "severity": "HIGH",
+   "summary": "FastMCP updated to MCP 1.23+ due to CVE-2025-66416"
+  },
+  {
+   "aliases": [
+    "CVE-2025-62801",
+    "PYSEC-2026-1365"
+   ],
+   "cwe": [
+    "CWE-78"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-rj5c-58rq-j5g5",
+   "package": "fastmcp",
+   "published": "2025-10-29T15:39:03Z",
+   "severity": "MODERATE",
+   "summary": "FastMCP vulnerable to windows command injection in FastMCP Cursor installer via server_name"
+  },
+  {
+   "aliases": [
+    "CVE-2026-27124",
+    "PYSEC-2026-2476"
+   ],
+   "cwe": [
+    "CWE-441"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-rww4-4w9c-7733",
+   "package": "fastmcp",
+   "published": "2026-03-31T22:32:28Z",
+   "severity": "HIGH",
+   "summary": "FastMCP: Missing Consent Verification in OAuth Proxy Callback Facilitates Confused Deputy Vulnerabilities"
+  },
+  {
+   "aliases": [],
+   "cwe": [
+    "CWE-287",
+    "CWE-522"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-vqqp-x5qm-5qp4",
+   "package": "fastmcp",
+   "published": "2026-10-23T21:31:30Z",
+   "severity": "MODERATE",
+   "summary": "FastMCP MCP client wrappers construct M2M OAuth providers without issuer binding \u2014 client secret redirectable to attacker-advertised authorization server"
+  },
+  {
+   "aliases": [
+    "CVE-2026-32871",
+    "PYSEC-2026-338"
+   ],
+   "cwe": [
+    "CWE-918"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-vv7q-7jx5-f767",
+   "package": "fastmcp",
+   "published": "2026-03-31T22:53:21Z",
+   "severity": "CRITICAL",
+   "summary": "FastMCP OpenAPI Provider has an SSRF & Path Traversal Vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2025-62800",
+    "GHSA-mxxr-jv3v-6pgc"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1364",
+   "package": "fastmcp",
+   "published": "2026-07-07T16:03:08.608105Z",
+   "severity": null,
+   "summary": "FastMCP vulnerable to reflected XSS in client's callback page"
+  },
+  {
+   "aliases": [
+    "CVE-2025-62801",
+    "GHSA-rj5c-58rq-j5g5"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1365",
+   "package": "fastmcp",
+   "published": "2026-07-07T16:03:08.659725Z",
+   "severity": null,
+   "summary": "FastMCP vulnerable to windows command injection in FastMCP Cursor installer via server_name"
+  },
+  {
+   "aliases": [
+    "CVE-2025-69196",
+    "GHSA-5h2m-4q8j-pqpj"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2474",
+   "package": "fastmcp",
+   "published": "2026-07-13T14:36:42.841072Z",
+   "severity": null,
+   "summary": "FastMCP OAuth Proxy token reuse across MCP servers"
+  },
+  {
+   "aliases": [
+    "CVE-2025-64340",
+    "GHSA-m8x7-r2rg-vh5g"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2475",
+   "package": "fastmcp",
+   "published": "2026-07-13T14:36:46.084219Z",
+   "severity": null,
+   "summary": "FastMCP has a Command Injection vulnerability - Gemini CLI"
+  },
+  {
+   "aliases": [
+    "CVE-2026-27124",
+    "GHSA-rww4-4w9c-7733"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2476",
+   "package": "fastmcp",
+   "published": "2026-07-13T14:36:46.223793Z",
+   "severity": null,
+   "summary": "FastMCP: Missing Consent Verification in OAuth Proxy Callback Facilitates Confused Deputy Vulnerabilities"
+  },
+  {
+   "aliases": [
+    "CVE-2026-32871",
+    "GHSA-vv7q-7jx5-f767"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-338",
+   "package": "fastmcp",
+   "published": "2026-06-29T11:50:45.183289Z",
+   "severity": null,
+   "summary": "FastMCP OpenAPI Provider has an SSRF & Path Traversal Vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2025-49596"
+   ],
+   "cwe": [
+    "CWE-306"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-7f8r-222p-6f5g",
+   "package": "@modelcontextprotocol/inspector",
+   "published": "2025-06-13T22:15:26Z",
+   "severity": "CRITICAL",
+   "summary": "MCP Inspector proxy server lacks authentication between the Inspector client and proxy"
+  },
+  {
+   "aliases": [
+    "CVE-2025-58444"
+   ],
+   "cwe": [
+    "CWE-79",
+    "CWE-84",
+    "CWE-94"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-g9hg-qhmf-q45m",
+   "package": "@modelcontextprotocol/inspector",
+   "published": "2025-09-08T21:14:23Z",
+   "severity": "HIGH",
+   "summary": "MCP Inspector is Vulnerable to Potential Command Execution via XSS When Connecting to an Untrusted MCP Server"
+  },
+  {
+   "aliases": [
+    "CVE-2025-6514"
+   ],
+   "cwe": [
+    "CWE-78"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-6xpm-ggf7-wc3p",
+   "package": "mcp-remote",
+   "published": "2025-07-09T15:30:44Z",
+   "severity": "CRITICAL",
+   "summary": "mcp-remote exposed to OS command injection via untrusted MCP server connections"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68143",
+    "PYSEC-2026-1621"
+   ],
+   "cwe": [
+    "CWE-22"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-5cgr-j3jf-jw3v",
+   "package": "mcp-server-git",
+   "published": "2025-12-17T19:49:54Z",
+   "severity": "MODERATE",
+   "summary": "mcp-server-git's unrestricted git_init tool allows repository creation at arbitrary filesystem locations"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68144",
+    "PYSEC-2026-1622"
+   ],
+   "cwe": [
+    "CWE-88"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-9xwc-hfwc-8w59",
+   "package": "mcp-server-git",
+   "published": "2025-12-17T22:50:29Z",
+   "severity": "MODERATE",
+   "summary": " mcp-server-git argument injection in git_diff and git_checkout functions allows overwriting local files"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68145",
+    "PYSEC-2026-1623"
+   ],
+   "cwe": [
+    "CWE-22"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-j22h-9j4x-23w5",
+   "package": "mcp-server-git",
+   "published": "2025-12-17T22:50:38Z",
+   "severity": "MODERATE",
+   "summary": "mcp-server-git has missing path validation when using --repository flag"
+  },
+  {
+   "aliases": [
+    "CVE-2026-27735",
+    "PYSEC-2026-2630"
+   ],
+   "cwe": [
+    "CWE-22"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-vjqx-cfc4-9h6v",
+   "package": "mcp-server-git",
+   "published": "2026-02-26T15:16:57Z",
+   "severity": "MODERATE",
+   "summary": "mcp-server-git : Path traversal in git_add allows staging files outside repository boundaries"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68143",
+    "GHSA-5cgr-j3jf-jw3v"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1621",
+   "package": "mcp-server-git",
+   "published": "2026-07-07T16:03:13.168871Z",
+   "severity": null,
+   "summary": "mcp-server-git's unrestricted git_init tool allows repository creation at arbitrary filesystem locations"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68144",
+    "GHSA-9xwc-hfwc-8w59"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1622",
+   "package": "mcp-server-git",
+   "published": "2026-07-07T16:03:13.214568Z",
+   "severity": null,
+   "summary": " mcp-server-git argument injection in git_diff and git_checkout functions allows overwriting local files"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68145",
+    "GHSA-j22h-9j4x-23w5"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1623",
+   "package": "mcp-server-git",
+   "published": "2026-07-07T16:03:13.261637Z",
+   "severity": null,
+   "summary": "mcp-server-git has missing path validation when using --repository flag"
+  },
+  {
+   "aliases": [
+    "CVE-2026-27735",
+    "GHSA-vjqx-cfc4-9h6v"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2630",
+   "package": "mcp-server-git",
+   "published": "2026-07-13T14:36:39.269283Z",
+   "severity": null,
+   "summary": "mcp-server-git : Path traversal in git_add allows staging files outside repository boundaries"
+  },
+  {
+   "aliases": [
+    "CVE-2025-53110"
+   ],
+   "cwe": [
+    "CWE-22"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-hc55-p739-j48w",
+   "package": "@modelcontextprotocol/server-filesystem",
+   "published": "2025-07-01T20:14:00Z",
+   "severity": "HIGH",
+   "summary": "@modelcontextprotocol/server-filesystem vulnerability allows for path validation bypass via colliding path prefix"
+  },
+  {
+   "aliases": [
+    "CVE-2025-53109"
+   ],
+   "cwe": [
+    "CWE-59"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-q66q-fx2p-7w4m",
+   "package": "@modelcontextprotocol/server-filesystem",
+   "published": "2025-07-01T20:13:56Z",
+   "severity": "HIGH",
+   "summary": "@modelcontextprotocol/server-filesystem allows for path validation bypass via prefix matching and symlink handling"
+  },
+  {
+   "aliases": [
+    "CVE-2024-37568",
+    "PYSEC-2024-52"
+   ],
+   "cwe": [
+    "CWE-284",
+    "CWE-327",
+    "CWE-347"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-5357-c2jx-v7qh",
+   "package": "authlib",
+   "published": "2024-06-09T21:30:33Z",
+   "severity": "HIGH",
+   "summary": "Authlib has algorithm confusion with asymmetric public keys"
+  },
+  {
+   "aliases": [
+    "CVE-2026-28490",
+    "PYSEC-2026-2116"
+   ],
+   "cwe": [
+    "CWE-203",
+    "CWE-327"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-7432-952r-cw78",
+   "package": "authlib",
+   "published": "2026-03-16T15:17:28Z",
+   "severity": "HIGH",
+   "summary": "Authlib Vulnerable to JWE RSA1_5 Bleichenbacher Padding Oracle"
+  },
+  {
+   "aliases": [
+    "CVE-2026-28802",
+    "PYSEC-2026-2118"
+   ],
+   "cwe": [
+    "CWE-347"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-7wc2-qxgw-g8gg",
+   "package": "authlib",
+   "published": "2026-03-04T20:55:47Z",
+   "severity": "HIGH",
+   "summary": "Authlib: Setting `alg: none` and a blank signature appears to bypass signature verification"
+  },
+  {
+   "aliases": [
+    "CVE-2025-59420",
+    "PYSEC-2026-1200"
+   ],
+   "cwe": [
+    "CWE-345",
+    "CWE-863"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-9ggr-2464-2j32",
+   "package": "authlib",
+   "published": "2025-09-22T14:42:12Z",
+   "severity": "HIGH",
+   "summary": "Authlib: JWS/JWT accepts unknown crit headers (RFC violation \u2192 possible authz bypass)"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68158",
+    "PYSEC-2026-1201"
+   ],
+   "cwe": [
+    "CWE-352"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-fg6f-75jq-6523",
+   "package": "authlib",
+   "published": "2026-01-08T22:40:56Z",
+   "severity": "MODERATE",
+   "summary": "Authlib has 1-click Account Takeover vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2025-62706",
+    "PYSEC-2026-1202"
+   ],
+   "cwe": [
+    "CWE-400",
+    "CWE-770"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-g7f3-828f-7h7m",
+   "package": "authlib",
+   "published": "2025-10-10T22:54:03Z",
+   "severity": "MODERATE",
+   "summary": "Authlib : JWE zip=DEF decompression bomb enables DoS"
+  },
+  {
+   "aliases": [
+    "CVE-2026-41425",
+    "PYSEC-2026-25"
+   ],
+   "cwe": [
+    "CWE-352"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-jj8c-mmj3-mmgv",
+   "package": "authlib",
+   "published": "2026-04-16T22:38:03Z",
+   "severity": "MODERATE",
+   "summary": "Authlib: Cross-site request forging when using cache"
+  },
+  {
+   "aliases": [
+    "CVE-2026-28498",
+    "PYSEC-2026-2117"
+   ],
+   "cwe": [
+    "CWE-354",
+    "CWE-573"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-m344-f55w-2m6j",
+   "package": "authlib",
+   "published": "2026-03-16T16:15:06Z",
+   "severity": "HIGH",
+   "summary": "Authlib: Fail-Open Cryptographic Verification in OIDC Hash Binding"
+  },
+  {
+   "aliases": [
+    "CVE-2025-61920",
+    "PYSEC-2026-1203"
+   ],
+   "cwe": [
+    "CWE-20",
+    "CWE-400",
+    "CWE-770"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-pq5p-34cr-23v9",
+   "package": "authlib",
+   "published": "2025-10-10T20:26:43Z",
+   "severity": "HIGH",
+   "summary": "Authlib is vulnerable to Denial of Service via Oversized JOSE Segments"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44681",
+    "PYSEC-2026-188"
+   ],
+   "cwe": [
+    "CWE-601",
+    "CWE-863"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-r95x-qfjj-fjj2",
+   "package": "authlib",
+   "published": "2026-05-13T01:36:03Z",
+   "severity": "MODERATE",
+   "summary": "Authlib OIDC Implicit/Hybrid Authorization Vulnerable to Open Redirect"
+  },
+  {
+   "aliases": [
+    "CVE-2026-41479",
+    "PYSEC-2026-2119"
+   ],
+   "cwe": [
+    "CWE-601"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-w8p2-r796-3vmq",
+   "package": "authlib",
+   "published": "2026-06-08T17:52:04Z",
+   "severity": "MODERATE",
+   "summary": "Authlib OAuth 2.0 has Open Redirect in Authorization API that allows attacker-controlled redirect_uri through unsupported response_type"
+  },
+  {
+   "aliases": [
+    "CVE-2026-27962",
+    "PYSEC-2026-287"
+   ],
+   "cwe": [
+    "CWE-347"
+   ],
+   "ecosystem": "PyPI",
+   "id": "GHSA-wvwj-cvrp-7pv5",
+   "package": "authlib",
+   "published": "2026-03-16T15:17:15Z",
+   "severity": "CRITICAL",
+   "summary": "Authlib JWS JWK Header Injection: Signature Verification Bypass"
+  },
+  {
+   "aliases": [
+    "CVE-2024-37568",
+    "GHSA-5357-c2jx-v7qh"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2024-52",
+   "package": "authlib",
+   "published": "2024-06-09T19:15:00Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2025-59420",
+    "GHSA-9ggr-2464-2j32"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1200",
+   "package": "authlib",
+   "published": "2026-07-07T16:03:05.178057Z",
+   "severity": null,
+   "summary": "Authlib: JWS/JWT accepts unknown crit headers (RFC violation \u2192 possible authz bypass)"
+  },
+  {
+   "aliases": [
+    "CVE-2025-68158",
+    "GHSA-fg6f-75jq-6523"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1201",
+   "package": "authlib",
+   "published": "2026-07-07T16:03:17.433137Z",
+   "severity": null,
+   "summary": "Authlib has 1-click Account Takeover vulnerability"
+  },
+  {
+   "aliases": [
+    "CVE-2025-62706",
+    "GHSA-g7f3-828f-7h7m"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1202",
+   "package": "authlib",
+   "published": "2026-07-07T16:03:07.522275Z",
+   "severity": null,
+   "summary": "Authlib : JWE zip=DEF decompression bomb enables DoS"
+  },
+  {
+   "aliases": [
+    "CVE-2025-61920",
+    "GHSA-pq5p-34cr-23v9"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-1203",
+   "package": "authlib",
+   "published": "2026-07-07T16:03:07.352723Z",
+   "severity": null,
+   "summary": "Authlib is vulnerable to Denial of Service via Oversized JOSE Segments"
+  },
+  {
+   "aliases": [
+    "CVE-2026-44681",
+    "GHSA-r95x-qfjj-fjj2"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-188",
+   "package": "authlib",
+   "published": "2026-05-27T20:16:37.463Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-28490",
+    "GHSA-7432-952r-cw78"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2116",
+   "package": "authlib",
+   "published": "2026-03-16T18:16:07.557Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-28498",
+    "GHSA-m344-f55w-2m6j"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2117",
+   "package": "authlib",
+   "published": "2026-03-16T18:16:07.717Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-28802",
+    "GHSA-7wc2-qxgw-g8gg"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2118",
+   "package": "authlib",
+   "published": "2026-03-06T07:16:01.053Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-41479",
+    "GHSA-w8p2-r796-3vmq"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-2119",
+   "package": "authlib",
+   "published": "2026-06-22T21:16:24.017Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-41425",
+    "GHSA-jj8c-mmj3-mmgv"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-25",
+   "package": "authlib",
+   "published": "2026-04-24T20:16:27.107Z",
+   "severity": null,
+   "summary": ""
+  },
+  {
+   "aliases": [
+    "CVE-2026-27962",
+    "GHSA-wvwj-cvrp-7pv5"
+   ],
+   "cwe": [],
+   "ecosystem": "PyPI",
+   "id": "PYSEC-2026-287",
+   "package": "authlib",
+   "published": "2026-06-29T11:50:45.440491Z",
+   "severity": null,
+   "summary": "Authlib JWS JWK Header Injection: Signature Verification Bypass"
+  },
+  {
+   "aliases": [
+    "CVE-2021-29443"
+   ],
+   "cwe": [
+    "CWE-203",
+    "CWE-696"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-58f5-hfqc-jgch",
+   "package": "jose",
+   "published": "2021-04-19T14:57:22Z",
+   "severity": "MODERATE",
+   "summary": "Padding Oracle Attack due to Observable Timing Discrepancy in jose"
+  },
+  {
+   "aliases": [
+    "CVE-2024-28176"
+   ],
+   "cwe": [
+    "CWE-400"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-hhhv-q57g-882q",
+   "package": "jose",
+   "published": "2024-03-07T17:40:57Z",
+   "severity": "MODERATE",
+   "summary": "jose vulnerable to resource exhaustion via specifically crafted JWE with compressed plaintext"
+  },
+  {
+   "aliases": [
+    "CVE-2022-36083"
+   ],
+   "cwe": [
+    "CWE-400",
+    "CWE-834"
+   ],
+   "ecosystem": "npm",
+   "id": "GHSA-jv3g-j58f-9mq9",
+   "package": "jose",
+   "published": "2022-09-16T17:44:42Z",
+   "severity": "MODERATE",
+   "summary": "JOSE vulnerable to resource exhaustion via specifically crafted JWE"
+  }
+ ],
+ "targets": [
+  [
+   "npm",
+   "@modelcontextprotocol/sdk"
+  ],
+  [
+   "PyPI",
+   "mcp"
+  ],
+  [
+   "PyPI",
+   "fastmcp"
+  ],
+  [
+   "npm",
+   "@modelcontextprotocol/inspector"
+  ],
+  [
+   "npm",
+   "mcp-remote"
+  ],
+  [
+   "Go",
+   "github.com/mark3labs/mcp-go"
+  ],
+  [
+   "PyPI",
+   "mcp-server-git"
+  ],
+  [
+   "npm",
+   "@modelcontextprotocol/server-filesystem"
+  ],
+  [
+   "PyPI",
+   "mcp-server-fetch"
+  ],
+  [
+   "npm",
+   "oauth4webapi"
+  ],
+  [
+   "PyPI",
+   "authlib"
+  ],
+  [
+   "npm",
+   "jose"
+  ]
+ ]
+}

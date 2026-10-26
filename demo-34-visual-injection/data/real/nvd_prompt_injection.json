@@ -1,0 +1,1213 @@
+{
+ "query": "keywordSearch='prompt injection' exact",
+ "retrieved": "2026-10-26",
+ "rows": [
+  {
+   "cwe": [
+    "CWE-74"
+   ],
+   "description": "In LangChain through 0.0.131, the LLMMathChain chain allows prompt injection attacks that can execute arbitrary code via the Python exec method.",
+   "id": "CVE-2023-29374",
+   "published": "2023-04-05T02:15:37.340"
+  },
+  {
+   "cwe": [
+    "CWE-74"
+   ],
+   "description": "In Langchain through 0.0.155, prompt injection allows an attacker to force the service to retrieve data from an arbitrary URL, essentially providing SSRF and potentially injecting content into downstream tasks.",
+   "id": "CVE-2023-32786",
+   "published": "2023-10-20T22:15:10.553"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "A vulnerability was identified in the `exec_utils` class of the `llama_index` package, specifically within the `safe_eval` function, allowing for prompt injection leading to arbitrary code execution. This issue arises due to insufficient validation of input, which can be exploited to bypass method restrictions and execute unauthorized code. The vulnerability is a bypass of the previously addressed CVE-2023-39662, demonstrated through a proof of concept that creates a file on the system by exploiting the flaw.",
+   "id": "CVE-2024-3098",
+   "published": "2024-04-10T17:15:56.213"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "The Vanna library uses a prompt function to present the user with visualized results, it is possible to alter the prompt using prompt injection and run arbitrary Python code instead of the intended visualization code. Specifically - allowing external input to the library\u2019s \u201cask\u201d method with \"visualize\" set to True (default behavior) leads to remote code execution.",
+   "id": "CVE-2024-5565",
+   "published": "2024-05-31T15:15:09.673"
+  },
+  {
+   "cwe": [
+    "CWE-74"
+   ],
+   "description": "The EmailGPT service contains a prompt injection vulnerability.\u00a0The service uses an API service that allows a malicious user to inject a direct prompt and take over the service logic. Attackers can exploit the issue by forcing the AI service to leak the standard hard-coded system prompts and/or execute unwanted prompts.\u00a0When engaging with EmailGPT by submitting a malicious prompt that requests harmful information, the system will respond by providing the requested data. This vulnerability can be exploited by any individual with access to the service.",
+   "id": "CVE-2024-5184",
+   "published": "2024-06-05T18:15:11.993"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "In the latest version of vanna-ai/vanna, the `vanna.ask` function is vulnerable to remote code execution due to prompt injection. The root cause is the lack of a sandbox when executing LLM-generated code, allowing an attacker to manipulate the code executed by the `exec` function in `src/vanna/base/base.py`. This vulnerability can be exploited by an attacker to achieve remote code execution on the app backend server, potentially gaining full control of the server.",
+   "id": "CVE-2024-5826",
+   "published": "2024-06-27T19:15:17.350"
+  },
+  {
+   "cwe": [
+    "CWE-77",
+    "CWE-80"
+   ],
+   "description": "Khoj is an application that creates personal AI agents. The Khoj Obsidian, Desktop and Web clients inadequately sanitize the AI model's response and user inputs. This can trigger Cross Site Scripting (XSS) via Prompt Injection from untrusted documents either indexed by the user on Khoj or read by Khoj from the internet when the user invokes the /online command. This vulnerability is fixed in 1.13.0.",
+   "id": "CVE-2024-25639",
+   "published": "2024-07-08T15:15:21.423"
+  },
+  {
+   "cwe": [
+    "CWE-74"
+   ],
+   "description": "stitionai/devika main branch as of commit cdfb782b0e634b773b10963c8034dc9207ba1f9f is vulnerable to Local File Read (LFI) by Prompt Injection. The integration of Google Gimini 1.0 Pro with `HarmBlockThreshold.BLOCK_NONE` for `HarmCategory.HARM_CATEGORY_HATE_SPEECH` and `HarmCategory.HARM_CATEGORY_HARASSMENT` in `safety_settings` disables content protection. This allows malicious commands to be executed, such as reading sensitive file contents like `/etc/passwd`.",
+   "id": "CVE-2024-6331",
+   "published": "2024-08-04T00:15:47.863"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "An issue was discovered in GitLab EE affecting all versions starting 17.0 to 17.1.6, 17.2 prior to 17.2.4, and 17.3 prior to 17.3.1 allows an attacker to execute arbitrary command in a victim's pipeline through prompt injection.",
+   "id": "CVE-2024-7110",
+   "published": "2024-08-22T16:15:10.627"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "Monica AI Assistant desktop application v2.3.0 is vulnerable to Exposure of Sensitive Information to an Unauthorized Actor. A prompt injection allows an attacker to modify chatbot answer with an unloaded image that exfiltrates the user's sensitive chat data of the current session to a malicious third-party or attacker-controlled server.",
+   "id": "CVE-2024-45989",
+   "published": "2024-09-26T18:15:08.667"
+  },
+  {
+   "cwe": [
+    "CWE-116"
+   ],
+   "description": "An issue has been discovered in GitLab EE affecting all versions starting from 16.0 prior to 17.2.8, from 17.3 prior to 17.3.4, and from 17.4 prior to 17.4.1. An AI feature was found to read unsanitized content in a way that could have allowed an attacker to hide prompt injection.",
+   "id": "CVE-2024-4099",
+   "published": "2024-09-26T23:15:02.873"
+  },
+  {
+   "cwe": [
+    "CWE-20"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Prior to Sep 27, 2024, if a user generated a terminal command via Cursor's Terminal Cmd-K/Ctrl-K feature and if the user explicitly imported a malicious web page into the Terminal Cmd-K prompt, an attacker with control over the referenced web page could have a significant chance of influencing a language model to output arbitrary commands for execution in the user's terminal. This scenario would require the user explicitly opt-in to including the contents of a compromised webpage, and it would require that the attacker display prompt injection text in the the contents of the compromised webpage.\n\nA server-side patch to not stream back newlines or control characters was released on September 27, 2024, within two hours of the issue being reported. Additionally, Cursor 0.42 includes client-side mitigations to prevent any newline or control character from being streamed into the terminal directly. It also contains a new setting, `\"cursor.terminal.usePreviewBox\"`, which, if set to true, streams the response into a preview box whose contents then have to be manually accepted before being inserted into the terminal. This setting is useful if you're working in a shell environment where commands can be executed without pressing enter or any control character. The patch has been applied server-side, so no additional action is needed, even on older versions of Cursor. Separately, Cursor's maintainers also recommend, as best practice, to only include trusted pieces of context in prompts.",
+   "id": "CVE-2024-48919",
+   "published": "2024-10-22T21:15:06.813"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "A prompt injection vulnerability in the chatbox of Blackbox AI v1.3.95 allows attackers to access and exfiltrate all previous and subsequent chat data between the user and the AI assistant via a crafted message.",
+   "id": "CVE-2024-48139",
+   "published": "2024-10-24T19:15:15.050"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "A prompt injection vulnerability in the chatbox of Butterfly Effect Limited Monica Your AI Copilot powered by ChatGPT4 v6.3.0 allows attackers to access and exfiltrate all previous and subsequent chat data between the user and the AI assistant via a crafted message.",
+   "id": "CVE-2024-48140",
+   "published": "2024-10-24T19:15:15.150"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "A prompt injection vulnerability in the chatbox of Zhipu AI CodeGeeX v2.17.0 allows attackers to access and exfiltrate all previous and subsequent chat data between the user and the AI assistant via a crafted message.",
+   "id": "CVE-2024-48141",
+   "published": "2024-10-24T19:15:15.240"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "A prompt injection vulnerability in the chatbox of Butterfly Effect Limited Monica ChatGPT AI Assistant v2.4.0 allows attackers to access and exfiltrate all previous and subsequent chat data between the user and the AI assistant via a crafted message.",
+   "id": "CVE-2024-48142",
+   "published": "2024-10-24T19:15:15.333"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "A prompt injection vulnerability in the chatbox of Fusion Chat Chat AI Assistant Ask Me Anything v1.2.4.0 allows attackers to access and exfiltrate all previous and subsequent chat data between the user and the AI assistant via a crafted message.",
+   "id": "CVE-2024-48144",
+   "published": "2024-10-24T19:15:15.510"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "A prompt injection vulnerability in the chatbox of Netangular Technologies ChatNet AI Version v1.0 allows attackers to access and exfiltrate all previous and subsequent chat data between the user and the AI assistant via a crafted message.",
+   "id": "CVE-2024-48145",
+   "published": "2024-10-24T19:15:15.607"
+  },
+  {
+   "cwe": [
+    "CWE-89"
+   ],
+   "description": "A vulnerability in the GraphCypherQAChain class of langchain-ai/langchainjs versions 0.2.5 and all versions with this class allows for prompt injection, leading to SQL injection. This vulnerability permits unauthorized data manipulation, data exfiltration, denial of service (DoS) by deleting all data, breaches in multi-tenant security environments, and data integrity issues. Attackers can create, update, or delete nodes and relationships without proper authorization, extract sensitive data, disrupt services, access data across different tenants, and compromise the integrity of the database.",
+   "id": "CVE-2024-7042",
+   "published": "2024-10-29T13:15:08.883"
+  },
+  {
+   "cwe": [
+    "CWE-74",
+    "CWE-89"
+   ],
+   "description": "A vulnerability in the GraphCypherQAChain class of langchain-ai/langchain version 0.2.5 allows for SQL injection through prompt injection. This vulnerability can lead to unauthorized data manipulation, data exfiltration, denial of service (DoS) by deleting all data, breaches in multi-tenant security environments, and data integrity issues. Attackers can create, update, or delete nodes and relationships without proper authorization, extract sensitive data, disrupt services, access data across different tenants, and compromise the integrity of the database.",
+   "id": "CVE-2024-8309",
+   "published": "2024-10-29T13:15:10.950"
+  },
+  {
+   "cwe": [],
+   "description": "PandasAI uses an interactive prompt function that is vulnerable to prompt injection and run arbitrary Python code that can lead to Remote Code Execution (RCE) instead of the intended explanation of the natural language processing by the LLM.",
+   "id": "CVE-2024-12366",
+   "published": "2025-02-11T13:15:29.193"
+  },
+  {
+   "cwe": [
+    "NVD-CWE-noinfo"
+   ],
+   "description": "An issue was discovered in GitLab EE affecting all versions starting from 16.0 prior to 17.6.5, starting from 17.7 prior to 17.7.4, and starting from 17.8 prior to 17.8.2, which allows an attacker to exfiltrate contents of a private issue using prompt injection.",
+   "id": "CVE-2024-3303",
+   "published": "2025-02-13T09:15:09.653"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "In binary-husky/gpt_academic version <= 3.83, the plugin `CodeInterpreter` is vulnerable to code injection caused by prompt injection. The root cause is the execution of user-provided prompts that generate untrusted code without a sandbox, allowing the execution of parts of the LLM-generated code. This vulnerability can be exploited by an attacker to achieve remote code execution (RCE) on the application backend server, potentially gaining full control of the server.",
+   "id": "CVE-2024-10950",
+   "published": "2025-03-20T10:15:22.110"
+  },
+  {
+   "cwe": [
+    "CWE-89"
+   ],
+   "description": "A vulnerability in the `default_jsonalyzer` function of the `JSONalyzeQueryEngine` in the run-llama/llama_index repository allows for SQL injection via prompt injection. This can lead to arbitrary file creation and Denial-of-Service (DoS) attacks. The vulnerability affects the latest version and is fixed in version 0.5.1.",
+   "id": "CVE-2024-12911",
+   "published": "2025-03-20T10:15:32.083"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "In versions prior to Aidex 1.7, an authenticated malicious user, taking advantage of an open registry, could execute unauthorised commands within the system. This includes executing operating system (Unix) commands, interacting with internal services such as PHP or MySQL, and even invoking native functions of the framework used, such as Laravel or Symfony. This execution is achieved by Prompt Injection attacks through the /api/<string-chat>/message endpoint, manipulating the content of the \u2018content\u2019 parameter.",
+   "id": "CVE-2025-3579",
+   "published": "2025-04-15T09:15:13.950"
+  },
+  {
+   "cwe": [
+    "NVD-CWE-Other"
+   ],
+   "description": "Mattermost versions 10.4.x <= 10.4.2, 10.5.x <= 10.5.0, 9.11.x <= 9.11.9 fail to restrict domains the LLM can request to contact upstream\u00a0which allows an authenticated user to\u00a0exfiltrate data from an arbitrary server accessible to the victim via performing a prompt injection\u00a0in the AI plugin's Jira tool.",
+   "id": "CVE-2025-31363",
+   "published": "2025-04-16T10:15:15.170"
+  },
+  {
+   "cwe": [
+    "CWE-200"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Prior to 0.51.0, by default, the setting json.schemaDownload.enable was set to True. This means that by writing a JSON file, an attacker can trigger an arbitrary HTTP GET request that does not require user confirmation. Since the Cursor Agent can edit JSON files, this means a malicious agent, for example, after a prompt injection attack already succeeded, could trigger a GET request to an attacker controlled URL, potentially exfiltrating other data the agent may have access to. This vulnerability is fixed in 0.51.0.",
+   "id": "CVE-2025-49150",
+   "published": "2025-06-11T18:15:26.400"
+  },
+  {
+   "cwe": [
+    "CWE-78"
+   ],
+   "description": "iOS Simulator MCP Server (ios-simulator-mcp) is a Model Context Protocol (MCP) server for interacting with iOS simulators. Versions prior to 1.3.3 are written in a way that is vulnerable to command injection vulnerability attacks as part of some of its MCP Server tool definition and implementation. The MCP Server exposes the tool `ui_tap` which relies on Node.js child process API `exec` which is an unsafe and vulnerable API if concatenated with untrusted user input. LLM exposed user input for `duration`, `udid`, and `x` and `y` args can be replaced with shell meta-characters like `;` or `&&` or others to change the behavior from running the expected command `idb` to another command. When LLMs are tricked through prompt injection (and other techniques and attack vectors) to call the tool with input that uses special shell characters such as `; rm -rf /tmp;#` and other payload variations, the full command-line text will be interepted by the shell and result in other commands except of `ps` executing on the host running the MCP Server. Version 1.3.3 contains a patch for the issue.",
+   "id": "CVE-2025-52573",
+   "published": "2025-06-26T14:15:30.577"
+  },
+  {
+   "cwe": [
+    "CWE-74"
+   ],
+   "description": "Roo Code is an AI-powered autonomous coding agent. Prior to version 3.20.3, there was an issue where the Roo Code agent's `search_files` tool did not respect the setting to disable reads outside of the VS Code workspace. This means that an attacker who was able to inject a prompt into the agent could potentially read a sensitive file and then write the information to a JSON schema. Users have the option to disable schema fetching in VS Code, but the feature is enabled by default. For users with this feature enabled, writing to the schema would trigger a network request without the user having a chance to deny. This issue is of moderate severity, since it requires the attacker to already be able to submit prompts to the agent. Version 3.20.3 fixed the issue where `search_files` did not respect the setting to limit it to the workspace. This reduces the scope of the damage if an attacker is able to take control of the agent through prompt injection or another vector.",
+   "id": "CVE-2025-53097",
+   "published": "2025-06-27T22:15:25.803"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "Roo Code is an AI-powered autonomous coding agent. The project-specific MCP configuration for the Roo Code agent is stored in the `.roo/mcp.json` file within the VS Code workspace. Because the MCP configuration format allows for execution of arbitrary commands, prior to version 3.20.3, it would have been possible for an attacker with access to craft a prompt to ask the agent to write a malicious command to the MCP configuration file. If the user had opted-in to auto-approving file writes within the project, this would have led to arbitrary command execution. This issue is of moderate severity, since it requires the attacker to already be able to submit prompts to the agent (for instance through a prompt injection attack), for the user to have MCP enabled (on by default), and for the user to have enabled auto-approved file writes (off by default). Version 3.20.3 fixes the issue by adding an additional layer of opt-in configuration for auto-approving writing to Roo's configuration files, including all files within the `.roo/` folder.",
+   "id": "CVE-2025-53098",
+   "published": "2025-06-27T22:15:25.993"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "@cyanheads/git-mcp-server is an MCP server designed to interact with Git repositories. Prior to version 2.1.5, there is a command injection vulnerability caused by the unsanitized use of input parameters within a call to child_process.exec, enabling an attacker to inject arbitrary system commands. Successful exploitation can lead to remote code execution under the server process's privileges. The server constructs and executes shell commands using unvalidated user input directly within command-line strings. This introduces the possibility of shell metacharacter injection (|, >, &&, etc.). An MCP Client can be instructed to execute additional actions for example via indirect prompt injection when asked to read git logs. This issue has been patched in version 2.1.5.",
+   "id": "CVE-2025-53107",
+   "published": "2025-07-01T18:15:25.990"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "langchain-ai v0.3.51 was discovered to contain an indirect prompt injection vulnerability in the GmailToolkit component. This vulnerability allows attackers to execute arbitrary code and compromise the application via a crafted email message. NOTE: this is disputed by the Supplier because the code-execution issue was introduced by user-written code that does not adhere to the LangChain security practices.",
+   "id": "CVE-2025-46059",
+   "published": "2025-07-29T15:15:35.003"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions below 1.3, an attacker can bypass the allow list in auto-run mode with a backtick (`) or $(cmd). If a user has swapped Cursor from its default settings (requiring approval for every terminal call) to an allowlist, an attacker can execute arbitrary command execution outside of the allowlist without user approval. An attacker can trigger this vulnerability if chained with indirect prompt injection. This is fixed in version 1.3.",
+   "id": "CVE-2025-54131",
+   "published": "2025-08-01T23:15:24.537"
+  },
+  {
+   "cwe": [
+    "CWE-918",
+    "NVD-CWE-noinfo"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions below 1.3, Mermaid (which is used to render diagrams) allows embedding images which then get rendered by Cursor in the chat box. An attacker can use this to exfiltrate sensitive information to a third-party attacker controlled server through an image fetch after successfully performing a prompt injection. A malicious model (or hallucination/backdoor) might also trigger this exploit at will. This issue requires prompt injection from malicious data (web, image upload, source code) in order to exploit. In that case, it can send sensitive information to an attacker-controlled external server. This is fixed in version 1.3.",
+   "id": "CVE-2025-54132",
+   "published": "2025-08-01T23:15:24.753"
+  },
+  {
+   "cwe": [
+    "CWE-285",
+    "NVD-CWE-Other"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Cursor allows writing in-workspace files with no user approval in versions less than 1.3.9. If the file is a dotfile, editing it requires approval but creating a new one doesn't. Hence, if sensitive editor files, such as the .vscode/settings.json file don't already exist in the workspace, an attacker can chain a indirect prompt injection vulnerability to hijack the context to write to the settings file and trigger RCE on the victim without user approval. This is fixed in version 1.3.9.",
+   "id": "CVE-2025-54130",
+   "published": "2025-08-05T01:15:41.247"
+  },
+  {
+   "cwe": [
+    "CWE-78"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Cursor allows writing in-workspace files with no user approval in versions below 1.3.9, If the file is a dotfile, editing it requires approval but creating a new one doesn't. Hence, if sensitive MCP files, such as the .cursor/mcp.json file don't already exist in the workspace, an attacker can chain a indirect prompt injection vulnerability to hijack the context to write to the settings file and trigger RCE on the victim without user approval. This is fixed in version 1.3.9.",
+   "id": "CVE-2025-54135",
+   "published": "2025-08-05T01:15:41.410"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Incomplete validation of dunder attributes allows an attacker to escape from the Local Python execution environment sandbox, enforced by smolagents. The attack requires a Prompt Injection in order to trick the agent to create malicious code.",
+   "id": "CVE-2025-9959",
+   "published": "2025-09-03T17:15:35.737"
+  },
+  {
+   "cwe": [
+    "CWE-79"
+   ],
+   "description": "5ire is a cross-platform desktop artificial intelligence assistant and model context protocol client. Version 0.13.2 contains a vulnerability in the chat page's script gadgets that enables content injection attacks through multiple vectors: malicious prompt injection pages, compromised MCP servers, and exploited tool integrations. This is fixed in version 0.14.0.",
+   "id": "CVE-2025-58357",
+   "published": "2025-09-04T10:42:32.810"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Roo Code is an AI-powered autonomous coding agent that lives in users' editors. Versions 3.25.23 and below contain a vulnerability where certain VS Code workspace configuration files (.code-workspace) are not protected in the same way as the .vscode folder. If the agent was configured to auto-approve file writes, an attacker able to influence prompts (for example via prompt injection) could cause malicious workspace settings or tasks to be written. These tasks could then be executed automatically when the workspace is reopened, resulting in arbitrary code execution. This issue is fixed in version 3.26.0.",
+   "id": "CVE-2025-58372",
+   "published": "2025-09-05T23:15:30.647"
+  },
+  {
+   "cwe": [
+    "CWE-79"
+   ],
+   "description": "Lobe Chat is an open-source artificial intelligence chat framework. Prior to version 1.129.4, there is a a cross-site scripting (XSS) vulnerability when handling chat message in lobe-chat that can be escalated to remote code execution on the user\u2019s machine. In lobe-chat, when the response from the server is like <lobeArtifact identifier=\"ai-new-interpretation\" ...> , it will be rendered with the lobeArtifact node, instead of the plain text. However, when the type of the lobeArtifact is image/svg+xml , it will be rendered as the SVGRender component, which internally uses dangerouslySetInnerHTML to set the content of the svg, resulting in XSS attack. Any party capable of injecting content into chat messages, such as hosting a malicious page for prompt injection, operating a compromised MCP server, or leveraging tool integrations, can exploit this vulnerability. This vulnerability is fixed in 1.129.4.",
+   "id": "CVE-2025-59417",
+   "published": "2025-09-18T15:15:38.557"
+  },
+  {
+   "cwe": [
+    "CWE-200"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions 1.6 and below, Mermaid (a to render diagrams) allows embedding images which then get rendered by Cursor in the chat box. An attacker can use this to exfiltrate sensitive information to a third-party attacker controlled server through an image fetch after successfully performing a prompt injection. A malicious model (or hallucination/backdoor) might also trigger this exploit at will. This issue requires prompt injection from malicious data (web, image upload, source code) in order to exploit. In that case, it can send sensitive information to an attacker-controlled external server. Some additional bypasses not covered in the initial fix to this issue were discovered, see GHSA-43wj-mwcc-x93p. This issue is fixed in version 1.7.",
+   "id": "CVE-2025-61589",
+   "published": "2025-10-03T07:15:45.470"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Versions 1.6 and below are vulnerable to Remote Code Execution (RCE) attacks through Visual Studio Code Workspaces. Workspaces allow users to open more than a single folder and save specific settings (pretty similar to .vscode/settings.json) for the folders / project. An untitled workspace is automatically created by VS Code (untitled.code-workspace), which contains all the folders and workspace settings from the user's current session, opening up an entire new attack vector if the user has a .code-workspace file in path (either untitled created automatically or a saved one). If an attacker is able to hijack the chat context of the victim (such as via a compromised MCP server), they can use prompt injection to make the Cursor Agent write into this file and modify the workspace. This leads to a bypass of CVE-2025-54130 which can lead to RCE by writing to the settings section. This issue is fixed in version 1.7.",
+   "id": "CVE-2025-61590",
+   "published": "2025-10-03T17:15:47.690"
+  },
+  {
+   "cwe": [
+    "CWE-829"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions 1.7 and below, automatic loading of project-specific CLI configuration from the current working directory (<project>/.cursor/cli.json) could override certain global configurations in Cursor CLI. This allowed users running the CLI inside a malicious repository to be vulnerable to Remote Code Execution through a combination of permissive configuration (allowing shell commands) and prompt injection delivered via project-specific Rules (<project>/.cursor/rules/rule.mdc) or other mechanisms. The fix for this issue is currently available as a patch 2025.09.17-25b418f. As of October 3, 2025 there is no release version.",
+   "id": "CVE-2025-61592",
+   "published": "2025-10-03T18:15:36.067"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions 1.7 and below, a vulnerability in the way Cursor CLI Agent protects its sensitive files (i.e. */.cursor/cli.json) allows attackers to modify the content of the files through prompt injection, thus achieving remote code execution. A prompt injection can lead to full RCE through modifying sensitive files on case-insensitive filesystems. This issue is fixed in a commit, 25b418f, but has yet to be released as of October 3, 2025.",
+   "id": "CVE-2025-61593",
+   "published": "2025-10-03T18:15:36.230"
+  },
+  {
+   "cwe": [
+    "CWE-178"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Versions 1.6.23 and below contain case-sensitive checks in the way Cursor IDE protects its sensitive files (e.g., */.cursor/mcp.json), which allows attackers to modify the content of these files through prompt injection and achieve remote code execution. A prompt injection can lead to full RCE through modifying sensitive files on case-insensitive fileystems. This issue is fixed in version 1.7.",
+   "id": "CVE-2025-59944",
+   "published": "2025-10-03T21:15:34.913"
+  },
+  {
+   "cwe": [],
+   "description": "A prompt injection vulnerability exists in Windsurft version 1.10.7 in Write mode using SWE-1 model.\n\nIt is possible to create a file name that will be appended to the user prompt causing Windsurf to follow its instructions.",
+   "id": "CVE-2025-36730",
+   "published": "2025-10-14T17:15:39.623"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "A path traversal vulnerability in all versions of the Windsurf IDE enables a threat actor to read and write arbitrary local files in and outside of current projects on an end user\u2019s system. The vulnerability can be reached directly and through indirect prompt injection.",
+   "id": "CVE-2025-62353",
+   "published": "2025-10-17T16:15:39.150"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "A path traversal vulnerability in all versions of the Qodo Qodo Gen IDE enables a threat actor to read arbitrary local files in and outside of current projects on an end user\u2019s system. The vulnerability can be reached directly and through indirect prompt injection.",
+   "id": "CVE-2025-62356",
+   "published": "2025-10-17T16:15:39.283"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions 1.7.52 and below, manipulating internal settings may lead to RCE. Cursor detects path manipulation via forward slashes (./.cursor/./././././mcp.json etc.), and requires human approval to complete the operation. However, the same kind of manipulation using backslashes was not correctly detected, allowing an attacker who had already achieved prompt injection or some other level of control to overwrite sensitive editor files without approval on Windows machines. This issue is fixed in version 2.0.",
+   "id": "CVE-2025-64107",
+   "published": "2025-11-04T23:15:44.330"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions 1.7.44 and below, various NTFS path quirks allow a prompt injection attacker to circumvent sensitive file protections and overwrite files which Cursor requires human approval to overwrite. Modification of some of the protected files can lead to RCE. Must be chained with a prompt injection or malicious model attach. Only affects systems supporting NTFS. This issue is fixed in version 2.0.",
+   "id": "CVE-2025-64108",
+   "published": "2025-11-04T23:15:44.470"
+  },
+  {
+   "cwe": [
+    "CWE-284"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. In versions 1.7.23 and below, a logic bug allows a malicious agent to read sensitive files that should be protected via cursorignore. An attacker who has already achieved prompt injection, or a malicious model, could create a new cursorignore file which can invalidate the configuration of pre-existing ones. This could allow a malicious agent to read protected files. This issue is fixed in version 2.0.",
+   "id": "CVE-2025-64110",
+   "published": "2025-11-05T00:15:34.957"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "MCP Server Kubernetes is an MCP Server that can connect to a Kubernetes cluster and manage it. Prior to 2.9.8, there is a security issue exists in the exec_in_pod tool of the mcp-server-kubernetes MCP Server. The tool accepts user-provided commands in both array and string formats. When a string format is provided, it is passed directly to shell interpretation (sh -c) without input validation, allowing shell metacharacters to be interpreted. This vulnerability can be exploited through direct command injection or indirect prompt injection attacks, where AI agents may execute commands without explicit user intent. This vulnerability is fixed in 2.9.8.",
+   "id": "CVE-2025-66404",
+   "published": "2025-12-03T21:15:53.233"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Neuron is a PHP framework for creating and orchestrating AI Agents. Versions 2.8.11 and below use MySQLSelectTool, which is vulnerable to Read-Only Bypass.  MySQLSelectTool is intended to be a read-only SQL tool (e.g., for LLM agent querying, however, validation based on the first keyword (e.g., SELECT) and a forbidden-keyword list does not block file-writing constructs such as INTO OUTFILE / INTO DUMPFILE. As a result, an attacker who can influence the tool input (e.g., via prompt injection through a public agent endpoint) may write arbitrary files to the DB server if the MySQL/MariaDB account has the FILE privilege and server configuration permits writes to a useful location (e.g., a web-accessible directory). This issue is fixed in version 2.8.12.",
+   "id": "CVE-2025-67509",
+   "published": "2025-12-10T23:15:48.823"
+  },
+  {
+   "cwe": [
+    "CWE-250"
+   ],
+   "description": "Neuron is a PHP framework for creating and orchestrating AI Agents. In versions 2.8.11 and below, the MySQLWriteTool executes arbitrary SQL provided by the caller using PDO::prepare() + execute() without semantic restrictions. This is consistent with the name (\u201cwrite tool\u201d), but in an LLM/agent context it becomes a high-risk capability: prompt injection or indirect prompt manipulation can cause execution of destructive queries such as DROP TABLE, TRUNCATE, DELETE, ALTER, or privilege-related statements (subject to DB permissions). Deployments that expose an agent with MySQLWriteTool enabled to untrusted input and/or run the tool with a DB user that has broad privileges are impacted. This issue is fixed in version 2.8.12.",
+   "id": "CVE-2025-67510",
+   "published": "2025-12-10T23:15:48.983"
+  },
+  {
+   "cwe": [
+    "CWE-1333"
+   ],
+   "description": "LangChain versions up to and including 0.3.1 contain a regular expression denial-of-service (ReDoS) vulnerability in the MRKLOutputParser.parse() method (libs/langchain/langchain/agents/mrkl/output_parser.py). The parser applies a backtracking-prone regular expression when extracting tool actions from model output. An attacker who can supply or influence the parsed text (for example via prompt injection in downstream applications that pass LLM output directly into MRKLOutputParser.parse()) can trigger excessive CPU consumption by providing a crafted payload, causing significant parsing delays and a denial-of-service condition.",
+   "id": "CVE-2024-58340",
+   "published": "2026-01-12T23:15:51.780"
+  },
+  {
+   "cwe": [
+    "CWE-15",
+    "CWE-77"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Prior to 2.3, hen the Cursor Agent is running in Auto-Run Mode with Allowlist mode enabled, certain shell built-ins can still be executed without appearing in the allowlist and without requiring user approval.\nThis allows an attacker via indirect or direct prompt injection to poison the shell environment by setting, modifying, or removing environment variables that influence trusted commands. This vulnerability is fixed in 2.3.",
+   "id": "CVE-2026-22708",
+   "published": "2026-01-14T17:16:08.980"
+  },
+  {
+   "cwe": [
+    "CWE-862"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Sandbox escape via writing .git configuration was possible in versions prior to 2.5. A malicious agent (ie prompt injection) could write to improperly protected .git settings, including git hooks, which may cause out-of-sandbox RCE next time they are triggered. No user interaction was required as Git executes these commands automatically. Fixed in version 2.5.",
+   "id": "CVE-2026-26268",
+   "published": "2026-02-13T17:16:14.227"
+  },
+  {
+   "cwe": [
+    "CWE-74"
+   ],
+   "description": "OpenClaw (formerly Clawdbot) is a personal AI assistant users run on their own devices. In versions 2026.2.2 and below, when the Slack integration is enabled, channel metadata (topic/description) can be incorporated into the model's system prompt. Prompt injection is a documented risk for LLM-driven systems. This issue increases the injection surface by allowing untrusted Slack channel metadata to be treated as higher-trust system input. This issue has been fixed in version 2026.2.3.",
+   "id": "CVE-2026-24764",
+   "published": "2026-02-19T07:17:44.957"
+  },
+  {
+   "cwe": [
+    "CWE-668"
+   ],
+   "description": "Skill Scanner is a security scanner for AI Agent Skills that detects prompt injection, data exfiltration, and malicious code patterns. A vulnerability in the API Server of Skill Scanner could allow a unauthenticated, remote attacker to interact with the server API and either trigger a denial of service (DoS) condition or upload arbitrary files. This vulnerability is due to an erroneous binding to multiple interfaces. An attacker could exploit this vulnerability by sending API requests to a device exposing the affected API Server. A successful exploit could allow the attacker to consume an excessive amount of resources (memory starvation) or to upload files to arbitrary folders on the affected device. This vulnerability affects Skill-scanner 1.0.1 and earlier releases when the API Server is enabled. The API Server is not enabled by default. Skill-scanner software releases 1.0.2 and later contain the fix for this vulnerability.",
+   "id": "CVE-2026-26057",
+   "published": "2026-02-19T19:22:29.537"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "OpenClaw is a personal AI assistant. Prior to OpenClaw version 2026.2.14, the Feishu extension previously allowed `sendMediaFeishu` to treat attacker-controlled `mediaUrl` values as local filesystem paths and read them directly. If an attacker can influence tool calls (directly or via prompt injection), they may be able to exfiltrate local files by supplying paths such as `/etc/passwd` as `mediaUrl`. Upgrade to OpenClaw `2026.2.14` or newer to receive a fix. The fix removes direct local file reads from this path and routes media loading through hardened helpers that enforce local-root restrictions.",
+   "id": "CVE-2026-26321",
+   "published": "2026-02-19T23:16:25.180"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Langflow is a tool for building and deploying AI-powered agents and workflows. Prior to version 1.8.0, the CSV Agent node in Langflow hardcodes `allow_dangerous_code=True`, which automatically exposes LangChain\u2019s Python REPL tool (`python_repl_ast`). As a result, an attacker can execute arbitrary Python and OS commands on the server via prompt injection, leading to full Remote Code Execution (RCE). Version 1.8.0 fixes the issue.",
+   "id": "CVE-2026-27966",
+   "published": "2026-02-26T02:16:23.833"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "OpenClaw versions prior to 2026.2.14 contain server-side request forgery vulnerabilities in the Feishu extension that allow attackers to fetch attacker-controlled remote URLs without SSRF protections via sendMediaFeishu function and markdown image processing. Attackers can influence tool calls through direct manipulation or prompt injection to trigger requests to internal services and re-upload responses as Feishu media.",
+   "id": "CVE-2026-28451",
+   "published": "2026-03-05T22:16:17.210"
+  },
+  {
+   "cwe": [
+    "CWE-78"
+   ],
+   "description": "The shell tool within GitHub Copilot CLI versions prior to and including 0.0.422 can allow arbitrary code execution through crafted bash parameter expansion patterns. An attacker who can influence the commands executed by the agent (e.g., via prompt injection through repository files, MCP server responses, or user instructions) can exploit bash parameter transformation operators to execute hidden commands, bypassing the safety assessment that classifies commands as \"read-only.\" This has been patched in version 0.0.423. \n\nThe vulnerability stems from how the CLI's shell safety assessment evaluates commands before execution. The safety layer parses and classifies shell commands as either read-only (safe) or write-capable (requires user approval). However, several bash parameter expansion features can embed executable code within arguments to otherwise read-only commands, causing them to appear safe while actually performing arbitrary operations.\n\nThe specific dangerous patterns are ${var@P}, ${var=value} / ${var:=value}, ${!var}, and nested $(cmd) or <(cmd) inside ${...} expansions. An attacker who can influence command text sent to the shell tool - for example, through prompt injection via malicious repository content (README files, code comments, issue bodies), compromised or malicious MCP server responses, or crafted user instructions containing obfuscated commands - could achieve arbitrary code execution on the user's workstation. This is possible even in permission modes that require user approval for write operations, since the commands can appear to use only read-only utilities to ultimately trigger write operations. Successful exploitation could lead to data exfiltration, file modification, or further system compromise.",
+   "id": "CVE-2026-29783",
+   "published": "2026-03-06T17:16:35.487"
+  },
+  {
+   "cwe": [
+    "CWE-706"
+   ],
+   "description": "WeKnora is an LLM-powered framework designed for deep document understanding and semantic retrieval. Prior to version 0.3.0,  a vulnerability involving tool name collision and indirect prompt injection allows a malicious remote MCP server to hijack tool execution. By exploiting an ambiguous naming convention in the MCP client (mcp_{service}_{tool}), an attacker can register a malicious tool that overwrites a legitimate one (e.g., tavily_extract). This enables the attacker to redirect LLM execution flow, exfiltrate system prompts, context, and potentially execute other tools with the user's privileges. This issue has been patched in version 0.3.0.",
+   "id": "CVE-2026-30856",
+   "published": "2026-03-07T17:15:53.210"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "A remote code execution (RCE) vulnerability in OpenClaw Agent Platform v2026.2.6 allows attackers to execute arbitrary code via a Request-Side prompt injection attack.",
+   "id": "CVE-2026-30741",
+   "published": "2026-03-11T16:16:41.530"
+  },
+  {
+   "cwe": [
+    "CWE-78"
+   ],
+   "description": "Cursor is a code editor built for programming with AI. Prior to 2.0 ,if a visited website contains maliciously crafted instructions, the model may attempt to follow them in order to \u201cassist\u201d the user. When combined with a bypass of the command whitelist mechanism, such indirect prompt injections could result in commands being executed automatically, without the user\u2019s explicit intent, thereby posing a significant security risk. This vulnerability is fixed in 2.0.",
+   "id": "CVE-2026-31854",
+   "published": "2026-03-11T17:16:58.917"
+  },
+  {
+   "cwe": [
+    "CWE-943"
+   ],
+   "description": "Graphiti is a framework for building and querying temporal context graphs for AI agents. Graphiti versions before 0.28.2 contained a Cypher injection vulnerability in shared search-filter construction for non-Kuzu backends. Attacker-controlled label values supplied through SearchFilters.node_labels were concatenated directly into Cypher label expressions without validation. In MCP deployments, this was exploitable not only through direct untrusted access to the Graphiti MCP server, but also through prompt injection against an LLM client that could be induced to call search_nodes with attacker-controlled entity_types values. The MCP server mapped entity_types to SearchFilters.node_labels, which then reached the vulnerable Cypher construction path. Affected backends included Neo4j, FalkorDB, and Neptune. Kuzu was not affected by the label-injection issue because it used parameterized label handling rather than string-interpolated Cypher labels. This issue was mitigated in 0.28.2.",
+   "id": "CVE-2026-32247",
+   "published": "2026-03-12T19:16:19.733"
+  },
+  {
+   "cwe": [
+    "CWE-79"
+   ],
+   "description": "Discourse is an open-source discussion platform. Versions prior to 2026.3.0-latest.1, 2026.2.1, and 2026.1.2 have a cross-site scripting vulnerability that arises because the system trusts the raw output from an AI Large Language Model (LLM) and renders it using htmlSafe in the Review Queue interface without adequate sanitization. A malicious attacker can use valid Prompt Injection techniques to force the AI to return a malicious payload (e.g., tags). When a Staff member (Admin/Moderator) views the flagged post in the Review Queue, the payload executes. Versions 2026.3.0-latest.1, 2026.2.1, and 2026.1.2 contain a patch. As a workaround, temporarily disable AI triage automation scripts.",
+   "id": "CVE-2026-27740",
+   "published": "2026-03-19T21:17:09.410"
+  },
+  {
+   "cwe": [
+    "CWE-20"
+   ],
+   "description": "SQLBot is an intelligent data query system based on a large language model and RAG. Versions 1.5.0 and below contain a Stored Prompt Injection vulnerability that chains three flaws: a missing permission check on the Excel upload API allowing any authenticated user to upload malicious terminology, unsanitized storage of terminology descriptions containing dangerous payloads, and a lack of semantic fencing when injecting terminology into the LLM's system prompt. Together, these flaws allow an attacker to hijack the LLM's reasoning to generate malicious PostgreSQL commands (e.g., COPY ... TO PROGRAM), ultimately achieving Remote Code Execution on the database or application server with postgres user privileges. The issue is fixed in v1.6.0.",
+   "id": "CVE-2026-32622",
+   "published": "2026-03-19T21:17:10.563"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "CKAN MCP Server is a tool for querying CKAN open data portals. Versions prior to 0.4.85 provide tools including ckan_package_search and sparql_query that accept a base_url parameter, making HTTP requests to arbitrary endpoints without restriction. A CKAN portal client has no legitimate reason to contact cloud metadata or internal network services. There is no URL validation on base_url parameter. No private IP blocking (RFC 1918, link-local 169.254.x.x), no cloud metadata blocking. The sparql_query and ckan_datastore_search_sql tools also accept arbitrary base URLs and expose injection surfaces. An attack can lead to internal network scanning, cloud metadata theft (IAM credentials via IMDS at 169.254.169.254), potential SQL/SPARQL injection via unsanitized query parameters. Attack requires prompt injection to control the base_url parameter. This issue has been fixed in version 0.4.85.",
+   "id": "CVE-2026-33060",
+   "published": "2026-03-20T08:16:11.923"
+  },
+  {
+   "cwe": [
+    "CWE-20"
+   ],
+   "description": "In its design for automatic terminal command execution, AI Code offers two options: Execute safe commands and execute all commands. The description for the former states that commands determined by the model to be safe will be automatically executed, whereas if the model judges a command to be potentially destructive, it still requires user approval. However, this design is highly susceptible to prompt injection attacks. An attacker can employ a generic template to wrap any malicious command and mislead the model into misclassifying it as a 'safe' command, thereby bypassing the user approval requirement and resulting in arbitrary command execution.",
+   "id": "CVE-2026-30304",
+   "published": "2026-03-27T15:16:53.263"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "nanobot is a personal AI assistant. Prior to version 0.1.6, an indirect prompt injection vulnerability exists in the email channel processing module (`nanobot/channels/email.py`), allowing a remote, unauthenticated attacker to execute arbitrary LLM instructions (and subsequently, system tools) without any interaction from the bot owner. By sending an email containing malicious prompts to the bot's monitored email address, the bot automatically polls, ingests, and processes the email content as highly trusted input, fully bypassing channel isolation and resulting in a stealthy, zero-click attack. Version 0.1.6 patches the issue.",
+   "id": "CVE-2026-33654",
+   "published": "2026-03-27T20:16:32.363"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "In its design for automatic terminal command execution, SakaDev offers two options: Execute safe commands and execute all commands. The description for the former states that commands determined by the model to be safe will be automatically executed, whereas if the model judges a command to be potentially destructive, it still requires user approval. However, this design is highly susceptible to prompt injection attacks. An attacker can employ a generic template to wrap any malicious command and mislead the model into misclassifying it as a 'safe' command, thereby bypassing the user approval requirement and resulting in arbitrary command execution.",
+   "id": "CVE-2026-30306",
+   "published": "2026-03-30T21:17:08.983"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "In its design for automatic terminal command execution, HAI Build Code Generator offers two options: Execute safe commands and Execute all commands. The description for the former states that commands determined by the model to be safe will be automatically executed, whereas if the model judges a command to be potentially destructive, it still requires user approval. However, this design is highly susceptible to prompt injection attacks. An attacker can employ a generic template to wrap any malicious command and mislead the model into misclassifying it as a 'safe' command, thereby bypassing the user approval requirement and resulting in arbitrary command execution.",
+   "id": "CVE-2026-30308",
+   "published": "2026-03-30T21:17:09.107"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "Prompt injection vulnerability in 1millionbot Millie chatbot that occurs when a user manages to evade chat restrictions using Boolean prompt injection techniques (formulating a question in such a way that, upon receiving an affirmative response ('true'), the model executes the injected instruction), causing it to return prohibited information and information outside its intended context. Successful exploitation of this vulnerability could allow a malicious remote attacker to abuse the service for purposes other than those originally intended, or even execute out-of-context tasks using 1millionbot's resources and/or OpenAI's API key. This allows the attacker to evade the containment mechanisms implemented during LLM model training and obtain responses or chat behaviors that were originally restricted.",
+   "id": "CVE-2026-4399",
+   "published": "2026-03-31T11:16:14.103"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "In its design for automatic terminal command execution, Sixth offers two options: Execute safe commands and Execute all commands. The description for the former states that commands determined by the model to be safe will be automatically executed, whereas if the model judges a command to be potentially destructive, it still requires user approval. However, this design is highly susceptible to prompt injection attacks. An attacker can employ a generic template to wrap any malicious command and mislead the model into misclassifying it as a 'safe' command, thereby bypassing the user approval requirement and resulting in arbitrary command execution.",
+   "id": "CVE-2026-30310",
+   "published": "2026-03-31T14:16:11.390"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "Claude SDK for TypeScript provides access to the Claude API from server-side TypeScript or JavaScript applications. From version 0.79.0 to before version 0.81.0, the local filesystem memory tool in the Anthropic TypeScript SDK validated model-supplied paths using a string prefix check that did not append a trailing path separator. A model steered by prompt injection could supply a crafted path that resolved to a sibling directory sharing the memory root's name as a prefix, allowing reads and writes outside the sandboxed memory directory. This issue has been patched in version 0.81.0.",
+   "id": "CVE-2026-34451",
+   "published": "2026-03-31T22:16:20.167"
+  },
+  {
+   "cwe": [
+    "CWE-78"
+   ],
+   "description": "PraisonAIAgents is a multi-agent teams system. Prior to 1.5.128, he memory hooks executor in praisonaiagents passes a user-controlled command string directly to subprocess.run() with shell=True at src/praisonai-agents/praisonaiagents/memory/hooks.py. No sanitization is performed and shell metacharacters are interpreted by /bin/sh before the intended command executes. Two independent attack surfaces exist. The first is via pre_run_command and post_run_command hook event types registered through the hooks configuration. The second and more severe surface is the .praisonai/hooks.json lifecycle configuration, where hooks registered for events such as BEFORE_TOOL and AFTER_TOOL fire automatically during agent operation. An agent that gains file-write access through prompt injection can overwrite .praisonai/hooks.json and have its payload execute silently at every subsequent lifecycle event without further user interaction. This vulnerability is fixed in 1.5.128.",
+   "id": "CVE-2026-40111",
+   "published": "2026-04-09T22:16:34.560"
+  },
+  {
+   "cwe": [
+    "CWE-79"
+   ],
+   "description": "PraisonAI is a multi-agent teams system. Prior to 4.5.128, the Flask API endpoint in src/praisonai/api.py renders agent output as HTML without effective sanitization. The _sanitize_html function relies on the nh3 library, which is not listed as a required or optional dependency in pyproject.toml. When nh3 is absent (the default installation), the sanitizer is a no-op that returns HTML unchanged. An attacker who can influence agent input (via RAG data poisoning, web scraping results, or prompt injection) can inject arbitrary JavaScript that executes in the browser of anyone viewing the API output. This vulnerability is fixed in 4.5.128.",
+   "id": "CVE-2026-40112",
+   "published": "2026-04-09T22:16:34.707"
+  },
+  {
+   "cwe": [
+    "CWE-862"
+   ],
+   "description": "PraisonAIAgents is a multi-agent teams system. Prior to 1.5.128, read_skill_file() in skill_tools.py allows reading arbitrary files from the filesystem by accepting an unrestricted skill_path parameter. Unlike file_tools.read_file which enforces workspace boundary confinement, and unlike run_skill_script which requires critical-level approval, read_skill_file has neither protection. An agent influenced by prompt injection can exfiltrate sensitive files without triggering any approval prompt. This vulnerability is fixed in 1.5.128.",
+   "id": "CVE-2026-40117",
+   "published": "2026-04-09T22:16:35.447"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "PraisonAIAgents is a multi-agent teams system. Prior to 1.5.128, the web_crawl() function in praisonaiagents/tools/web_crawl_tools.py accepts arbitrary URLs from AI agents with zero validation. No scheme allowlisting, hostname/IP blocklisting, or private network checks are applied before fetching. This allows an attacker (or prompt injection in crawled content) to force the agent to fetch cloud metadata endpoints, internal services, or local files via file:// URLs. This vulnerability is fixed in 1.5.128.",
+   "id": "CVE-2026-40150",
+   "published": "2026-04-09T22:16:35.900"
+  },
+  {
+   "cwe": [
+    "CWE-88"
+   ],
+   "description": "mcp-server-kubernetes is a Model Context Protocol server for Kubernetes cluster management. Versions 3.4.0 and prior contain an argument injection vulnerability in the port_forward tool in src/tools/port_forward.ts, where a kubectl command is constructed via string concatenation with user-controlled input and then naively split on spaces before being passed to spawn(). Unlike all other tools in the codebase which correctly use array-based argument passing with execFileSync(), port_forward treats every space in user-controlled fields (namespace, resourceType, resourceName, localPort, targetPort) as an argument boundary, allowing an attacker to inject arbitrary kubectl flags. This enables exposure of internal Kubernetes services to the network by injecting --address=0.0.0.0, cross-namespace targeting by injecting additional -n flags, and indirect exploitation via prompt injection against AI agents connected to the MCP server. This issue has been fixed in version 3.5.0.",
+   "id": "CVE-2026-39884",
+   "published": "2026-04-15T04:17:37.097"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "A prompt injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. When Windsurf processes attacker-controlled HTML content, malicious instructions can cause unauthorized modification of the local MCP configuration and automatic registration of a malicious MCP STDIO server, resulting in execution of arbitrary commands without further user interaction. Successful exploitation may allow attackers to execute commands on behalf of the user, persist malicious MCP configuration changes, and access sensitive information exposed through the application.",
+   "id": "CVE-2026-30615",
+   "published": "2026-04-15T16:16:36.177"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "Claude Code is an agentic coding tool. Prior to version 2.1.64, Claude Code's sandbox did not prevent sandboxed processes from creating symlinks pointing to locations outside the workspace. When Claude Code subsequently wrote to a path within such a symlink, its unsandboxed process followed the symlink and wrote to the target location outside the workspace without prompting the user for confirmation. This allowed a sandbox escape where neither the sandboxed command nor the unsandboxed app could independently write outside the workspace, but their combination could write to arbitrary locations, potentially leading to code execution outside the sandbox. Reliably exploiting this required the ability to add untrusted content into a Claude Code context window to trigger sandboxed code execution via prompt injection. Users on standard Claude Code auto-update have received this fix automatically. Users performing manual updates are advised to update to version 2.1.64 or later.",
+   "id": "CVE-2026-39861",
+   "published": "2026-04-21T01:16:06.647"
+  },
+  {
+   "cwe": [
+    "CWE-184"
+   ],
+   "description": "Flowise is a drag & drop user interface to build a customized large language model flow. Prior to 3.1.0, the specific flaw exists within the run method of the CSV_Agents class. The issue results from the lack of proper sandboxing when evaluating an LLM generated python script. An attacker can leverage this vulnerability to execute code in the context of the user running the server. Using prompt injection techniques, an unauthenticated attacker with the ability to send prompts to a chatflow using the CSV Agent node may convince an LLM to respond with a malicious python script that executes attacker controlled commands on the Flowise server. This vulnerability is fixed in 3.1.0.",
+   "id": "CVE-2026-41264",
+   "published": "2026-04-23T20:16:14.750"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "Flowise is a drag & drop user interface to build a customized large language model flow. Prior to 3.1.0, the specific flaw exists within the run method of the Airtable_Agents class. The issue results from the lack of proper sandboxing when evaluating an LLM generated python script. Using prompt injection techniques, an unauthenticated attacker with the ability to send prompts to a chatflow using the Airtable Agent node may convince an LLM to respond with a malicious python script that executes attacker controlled commands on the flowise server. This vulnerability is fixed in 3.1.0.",
+   "id": "CVE-2026-41265",
+   "published": "2026-04-23T20:16:14.890"
+  },
+  {
+   "cwe": [
+    "CWE-79"
+   ],
+   "description": "AnythingLLM is an application that turns pieces of content into context that any LLM can use as references during chatting. Prior to version 1.12.1, AnythingLLM's in-chat markdown renderer has an unsafe custom rule for images that interpolates the markdown image's `alt` text into an HTML `alt=\"...\"` attribute without any HTML encoding. Every call-site in the app wraps `renderMarkdown(...)` with `DOMPurify.sanitize(...)` as defense-in-depth \u2014 except the `Chartable` component, which renders chart captions with no sanitization. The chart caption is the natural-language text the LLM emits around a `create-chart` tool call, so any attacker who can influence the LLM's output \u2014 most cheaply via indirect prompt injection in a shared workspace document, or directly if they can create a chart record in a multi-user workspace \u2014 can trigger stored DOM-level XSS in every other user's browser when they open that conversation. AnythingLLM chat history is loaded server-side via `GET /api/workspace/:slug/chats` and rendered directly into the chat UI. Version 1.12.1 contains a patch for this issue.",
+   "id": "CVE-2026-41318",
+   "published": "2026-04-24T04:16:20.193"
+  },
+  {
+   "cwe": [
+    "CWE-89"
+   ],
+   "description": "SQLBot is an intelligent Text-to-SQL system based on large language models and RAG. In versions 1.7.0 and earlier, the Text2SQL chat interface is vulnerable to prompt injection. The user-provided question parameter is directly concatenated into the LLM prompt without filtering or escaping, and the SQL extracted from the LLM response is executed against the database without validation or sanitization. An authenticated attacker can craft a malicious question to manipulate the LLM into generating and executing arbitrary SQL statements. When connected to a PostgreSQL data source, this can lead to remote code execution via COPY FROM PROGRAM. This issue has been fixed in version 1.7.1.",
+   "id": "CVE-2026-33324",
+   "published": "2026-05-05T20:16:36.317"
+  },
+  {
+   "cwe": [
+    "CWE-89"
+   ],
+   "description": "Langroid is a framework for building large-language-model-powered applications. Prior to version 0.63.0, SQLChatAgent executes SQL produced by an LLM, which is influenceable by prompt injection. When configured with a database role that has privileges enabling code execution or filesystem access (e.g., PostgreSQL pg_execute_server_program, MySQL FILE, MSSQL xp_cmdshell), an attacker who can shape the agent's input \u2014 including indirectly via data returned to the LLM \u2014 can coerce execution of dialect-specific primitives such as `COPY ... FROM PROGRAM`, achieving RCE on the database host. Fixed in v0.63.0 by defaulting SQLChatAgent to a SELECT-only sqlglot-parsed statement allowlist with a dialect-aware dangerous-pattern blocklist; allow_dangerous_operations=True restores the previous unrestricted behavior for trusted deployments.",
+   "id": "CVE-2026-25879",
+   "published": "2026-06-01T23:16:21.930"
+  },
+  {
+   "cwe": [
+    "CWE-201"
+   ],
+   "description": "In Eclipse Theia versions prior to 1.71.0, the AI chat rendered Markdown image tags from AI responses, triggering HTTP requests to arbitrary external URLs without restriction. Combined with prompt injection in a malicious workspace, an attacker could induce the AI agent to construct image URLs encoding sensitive information from the workspace or conversation context, exfiltrating it to attacker-controlled servers. The workspace trust enforcement introduced in v1.71.0 mitigates the documented attack chain by disabling AI features in untrusted workspaces.",
+   "id": "CVE-2026-22551",
+   "published": "2026-06-18T16:16:52.960"
+  },
+  {
+   "cwe": [
+    "CWE-829"
+   ],
+   "description": "In Eclipse Theia versions prior to 1.71.0, the AI chat agent processed workspace file and directory names as part of its prompt context without distinguishing them from system instructions. An attacker could craft a malicious repository with adversarial directory or file names that, when analyzed by the AI agent, would cause the agent to follow attacker-controlled instructions (indirect prompt injection). Combined with other AI chat features available in untrusted workspaces, this enabled attack chains leading to data exfiltration via Markdown image rendering or arbitrary command execution via task definitions.",
+   "id": "CVE-2026-44688",
+   "published": "2026-06-18T16:16:53.977"
+  },
+  {
+   "cwe": [
+    "CWE-829"
+   ],
+   "description": "In Eclipse Theia versions prior to 1.71.0, files matching the pattern .prompts/*.prompttemplate in a workspace were automatically loaded and could override or extend the AI agent's system prompts. An attacker could craft a malicious repository containing prompt template files that, when the workspace was opened in Theia, replaced the AI's system instructions with attacker-controlled content (indirect prompt injection). Combined with other AI chat features available in untrusted workspaces, this enabled attack chains leading to data exfiltration via Markdown image rendering or arbitrary command execution via task definitions.",
+   "id": "CVE-2026-46580",
+   "published": "2026-06-18T16:16:54.213"
+  },
+  {
+   "cwe": [
+    "CWE-77"
+   ],
+   "description": "Read-only transaction bypass in the pgAdmin 4 AI Assistant allows an attacker who can influence database content that the assistant reads to execute arbitrary SQL with the privileges of the pgAdmin user's database role.\n\nThe AI Assistant's execute_sql_query tool runs LLM-generated SQL inside a BEGIN TRANSACTION READ ONLY wrapper to prevent data modification. The LLM-supplied query was forwarded to the database driver without restriction to a single statement or to read-only verbs, so a multi-statement payload beginning with COMMIT, END, ROLLBACK, or ABORT terminated the read-only transaction and ran subsequent statements in autocommit mode. The trailing ROLLBACK then had no effect.\n\nDelivery is via prompt injection: an attacker who can write content into any object the AI Assistant may inspect (a row, a column value, a comment) can cause the LLM to emit the multi-statement payload as a tool call. With ordinary write privileges on the pgAdmin user's role the attacker can perform unauthorised data modification. When the pgAdmin user's role is a PostgreSQL superuser or holds pg_execute_server_program, the chain extends to remote code execution on the database server host via COPY ... TO PROGRAM.\n\nFix validates the LLM-supplied query up front: it must parse to exactly one non-empty / non-comment statement whose leading real token (after stripping whitespace, comments, and punctuation) is one of SELECT, WITH, EXPLAIN, SHOW, VALUES, or TABLE. Transaction-control verbs, DML, DDL, CALL, COPY, DO, SET/RESET, and everything else are rejected before any database work happens. PostgreSQL's READ ONLY mode continues to backstop data-modifying CTEs, EXPLAIN ANALYZE on writes, and volatile side effects.\n\nThis issue affects pgAdmin 4: from 9.13 before 9.16.",
+   "id": "CVE-2026-12045",
+   "published": "2026-06-19T00:16:46.703"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Flowise before 2.1.4 allows configuration to be injected into the Chainflow during execution via the overrideConfig option, supported in both the frontend web integration and the backend Prediction API. Because this feature is enabled by default with no allow-list of permitted variables and relies on vm2 for sandboxing, an attacker can abuse it to achieve remote code execution and sandbox escape, denial of service by crashing the server, server-side request forgery, prompt injection, and server variable and data exfiltration. These issues are self-targeted and do not persist to other users.",
+   "id": "CVE-2024-58351",
+   "published": "2026-06-20T16:17:03.973"
+  },
+  {
+   "cwe": [
+    "CWE-552"
+   ],
+   "description": "GitHub Copilot 1.372.0 allows filesystem access outside of a workspace folder (without user approval) via a file-handler URI parameter to fetch_webpage. Therefore, exfiltration could occur if there is indirect prompt injection.",
+   "id": "CVE-2025-66389",
+   "published": "2026-06-22T14:16:24.073"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "Claude Code is an agentic coding tool.  From 2.1.38 until 2.1.163, Claude Code's worktree handling allowed creation of worktrees named \".git\" and navigation to worktrees outside the sandbox context, enabling git directory confusion attacks. By exploiting symlink manipulation and git fsmonitor execution during worktree operations, an attacker could overwrite files in the user's home directory (such as .zshenv), leading to code execution outside of seatbelt sandbox restrictions. Reliably exploiting this required the user to clone a malicious repository containing prompt injection content and run Claude Code against it. This vulnerability is fixed in 2.1.163.",
+   "id": "CVE-2026-55607",
+   "published": "2026-06-29T15:16:41.597"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "IBM Langflow OSS 1.0.0 through 1.9.6 contains a Server-Side Request Forgery (SSRF). The legacy RSSReaderComponent in rss.py and SearXNG component in searxng.py make unvalidated HTTP requests to user-controlled URLs, bypassing SSRF protections introduced in version 1.9.3. An authenticated attacker can exploit this to access internal resources including cloud metadata services (AWS/Azure/GCP IMDS), potentially exfiltrating IAM credentials and enumerating internal networks. The vulnerability can also be triggered through prompt injection in agentic workflows due to tool_mode=True exposure.",
+   "id": "CVE-2026-10564",
+   "published": "2026-06-30T20:17:27.387"
+  },
+  {
+   "cwe": [
+    "CWE-20"
+   ],
+   "description": "A vulnerability exists in the Kong Konnect Model Context Protocol (MCP) server prior to version 1.0.0, which could allow a remote attacker to perform an indirect prompt injection attack and execute unintended API requests.",
+   "id": "CVE-2026-13341",
+   "published": "2026-07-03T11:16:27.720"
+  },
+  {
+   "cwe": [
+    "CWE-200"
+   ],
+   "description": "The OpenAI Codex desktop app for macOS rendered remote images from Markdown in model responses. An attacker who could place an indirect prompt injection in content processed by Codex, such as a connected-tool result or another untrusted source, could induce the model to construct a remote image URL containing sensitive data. The app automatically fetched that URL when rendering the response, sending the embedded data to an attacker-controlled server without a separate user click. Successful exploitation could exfiltrate secrets and other information accessible in the Codex session, including API keys, source code, and data returned by connected tools. No direct integrity or availability impact was demonstrated, and there is no known exploitation in the wild.",
+   "id": "CVE-2026-14898",
+   "published": "2026-07-06T20:16:30.580"
+  },
+  {
+   "cwe": [
+    "CWE-73"
+   ],
+   "description": "Composio SDK before 0.2.32-beta.283 contains a path validation bypass vulnerability that allows attackers to read and exfiltrate sensitive files by exploiting a missing assertSafeFileUploadPath check in the readFileFromDisk function within tool-file-uploads.ts. Attackers can exploit prompt injection to manipulate file_uploadable parameters to reference sensitive paths such as SSH private keys, causing the CLI to upload credential files to attacker-controlled storage.",
+   "id": "CVE-2026-59807",
+   "published": "2026-07-08T20:16:57.123"
+  },
+  {
+   "cwe": [
+    "CWE-74"
+   ],
+   "description": "Langroid is a framework for building large-language-model-powered applications. Prior to version 0.65.5, Neo4jChatAgent passes LLM-generated Cypher queries straight to the Neo4j driver with no validation, no statement-type allowlist, and no opt-out gate. The query text is influenceable by prompt injection (direct user input or indirect content the agent reads back via RAG), so an attacker who can influence the prompt can read or destroy all graph data and, when APOC or dbms.security procedures are enabled on the server, achieve OS-command and filesystem access. This is the same defect class and threat model as the SQLChatAgent prompt-to-SQL-to-RCE issue fixed in version 0.63.0 (CVE-2026-25879); that fix did not extend to the neo4j module. Version 0.65.5 contains a fix for the neo4j module.",
+   "id": "CVE-2026-55615",
+   "published": "2026-07-10T00:16:33.867"
+  },
+  {
+   "cwe": [
+    "CWE-693"
+   ],
+   "description": "PraisonAI before 4.6.78 contains a prompt injection defense bypass vulnerability where the injection defense only blocks threats classified as CRITICAL, requiring three or more detector families to match simultaneously. Attackers can craft single or double-vector prompt injections that are classified as HIGH threat level and pass through unblocked to reach the model.",
+   "id": "CVE-2026-60086",
+   "published": "2026-07-10T15:16:49.417"
+  },
+  {
+   "cwe": [
+    "CWE-1188"
+   ],
+   "description": "PraisonAI versions before 4.6.78 contain a prompt injection defense misconfiguration where the block threshold defaults to CRITICAL severity, allowing HIGH-level threats to pass through unblocked. Attackers can submit single-vector prompt injection attacks such as instruction overrides or financial manipulation that trigger HIGH severity detection but are logged without blocking, enabling system prompt extraction and unauthorized tool invocations.",
+   "id": "CVE-2026-61439",
+   "published": "2026-07-11T14:16:22.870"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "PraisonAI before 1.6.78 contains a remote code execution vulnerability in CodeAgent._execute_python() that executes LLM-generated Python code without AST validation, import restrictions, or sandbox enforcement. Attackers can influence LLM output through prompt injection to exfiltrate all environment secrets and execute arbitrary code on the host system.",
+   "id": "CVE-2026-61447",
+   "published": "2026-07-11T14:16:23.377"
+  },
+  {
+   "cwe": [
+    "CWE-79"
+   ],
+   "description": "The BetterDocs  WordPress plugin before 4.5.5 does not sanitise an AI-generated documentation summary before storing and outputting it, and the feature that generates it is exposed to unauthenticated users, allowing them to store a malicious payload via prompt injection that executes in the browser of any visitor who views the affected page, including administrators.",
+   "id": "CVE-2026-11371",
+   "published": "2026-07-16T07:16:46.480"
+  },
+  {
+   "cwe": [
+    "CWE-306"
+   ],
+   "description": "AgenticMail gives AI agents real email addresses and phone numbers. In @agenticmail/claudecode prior to version 0.2.39, @agenticmail/codex prior to version 0.1.33, @agenticmail/core prior to version 0.9.43, and @agenticmail/openclaw prior to version 0.5.71, two inbound-mail handlers act on a privileged effect without verifying that the sender is the operator, while a sibling handler in the same repo does. The higher-impact one: any external email routed to the bridge inbox causes the dispatcher to resume the operator's Claude Code session with `permissionMode: 'bypassPermissions'`, embedding the attacker-controlled `from`/`subject`/`preview` verbatim into the prompt the resumed agent reads \u2014 an indirect prompt injection into a fully-privileged agent (Bash/Write/Edit/WebFetch + the agenticmail MCP toolbelt) running as the operator's OAuth identity. The sibling operator-query email-reply hook gates the same untrusted-From provenance with `isOperatorReplySender(replyFrom, config.operatorEmail)` (fail-closed); the bridge-wake path \u2014 a strictly higher-privilege effect \u2014 has no equivalent. @agenticmail/claudecode 0.2.39, @agenticmail/codex 0.1.33, @agenticmail/core 0.9.43, and @agenticmail/openclaw 0.5.71 contain a fix.",
+   "id": "CVE-2026-57495",
+   "published": "2026-07-20T22:17:17.107"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "mcp-webresearch 0.1.7 contains a server-side request forgery vulnerability that allows attackers to access internal network services by supplying loopback, link-local, or cloud metadata addresses to the visit_page tool, which only validates the URL protocol without filtering private or reserved IP ranges. Attackers can steer the LLM-controlled URL argument through prompt injection to navigate the server's Playwright browser to internal endpoints such as cloud instance metadata services, causing the server to return sensitive internal page content including credentials into the model context.",
+   "id": "CVE-2026-65056",
+   "published": "2026-07-21T21:16:54.287"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "A flaw was found in the Ansible Lightspeed Model Context Protocol (MCP) server. This vulnerability, known as path traversal, allows an attacker to manipulate an AI agent through indirect prompt injection. By doing so, the attacker can cause the server to write files to unauthorized locations on the user's system. This can result in the exposure of sensitive host information and enable the attacker to execute malicious commands, potentially leading to a full system compromise.",
+   "id": "CVE-2026-44192",
+   "published": "2026-07-22T12:18:00.063"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "BlenderMCP before commit 30a3308 contains a path traversal vulnerability in the download_polyhaven_asset method that allows attackers to write arbitrary files by injecting traversal sequences in API response include keys. Attackers performing MITM attacks or prompt injection can supply malicious paths like '../../.bashrc' to overwrite sensitive files and achieve persistent code execution.",
+   "id": "CVE-2026-66004",
+   "published": "2026-07-24T15:19:07.050"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "Kimi Code (@moonshot-ai/kimi-code) before 0.27.0 implements FetchURL SSRF hardening as a static hostname and IP-literal denylist in assertSafeFetchTarget, without resolving DNS or re-validating hosts after HTTP redirects. An attacker who can influence a FetchURL call (for example via prompt injection) can supply a crafted public hostname that resolves to loopback or another internal address, or a public URL that redirects to such a target, and thereby reach internal network services that the denylist was intended to block. FetchURL is included in the default auto-approve tool set, so the call does not require interactive user confirmation in manual mode.",
+   "id": "CVE-2026-17534",
+   "published": "2026-07-27T10:16:37.747"
+  },
+  {
+   "cwe": [
+    "CWE-923"
+   ],
+   "description": "Improper restriction of intended endpoints in the RabbitMQ broker connection tools of the Amazon MQ MCP Server (awslabs.amazon-mq-mcp-server) before 2.0.24 may allow a remote unauthenticated actor (via prompt injection) to obtain Amazon MQ for RabbitMQ broker credentials or OAuth access tokens sent to a crafted endpoint controlled through a broker hostname introduced in the MCP client context.\n\n\n\nTo remediate this issue, users should upgrade to version 2.0.24.",
+   "id": "CVE-2026-18655",
+   "published": "2026-08-03T20:17:17.557"
+  },
+  {
+   "cwe": [],
+   "description": "A prompt injection vulnerability in the shell tool in Amazon Strands Agents Tools before 0.8.0 might allow remote actors to execute arbitrary operating system commands on the agent's host via a crafted prompt that sets the non_interactive parameter to true, bypassing the human consent gate.\n\n\n\nTo remediate this issue, users should upgrade to version 0.8.0.",
+   "id": "CVE-2026-18733",
+   "published": "2026-08-03T21:16:37.963"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Flowise is a drag & drop user interface to build a customized large language model flow. Prior to 3.1.3, a prompt injection sent to a chatflow using a CSV Agent node can cause the LLM to respond with a malicious Python script that bypasses the blocklist validator and executes in an unsandboxed Pyodide environment. The specific flaw exists within the run method of the CSV_Agents class, where untrusted data is used to construct an LLM prompt and the resulting pythonCode is validated by validatePythonCodeForDataFrame before execution. An attacker can leverage this to execute arbitrary code in the context of the service account. This issue is fixed in 3.1.3.",
+   "id": "CVE-2026-70477",
+   "published": "2026-08-04T20:16:54.473"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "FrontMCP is a TypeScript-first framework for the Model Context Protocol (MCP). Prior to 1.5.7, the sandboxed codecall:execute\u00a0tool exposes live host Zod\u00a0schema instances to the script via\u00a0getTool(), and because Zod v4 defines\u00a0_zod as a non-configurable, non-writable own property, the ECMAScript Proxy invariants force the security membrane to hand back the raw host object, letting a script reach\u00a0_zod.constr.constructor\u00a0(the host Function\u00a0constructor) and execute arbitrary code in the server process. A single tools/call is sufficient to escape the sandbox and achieve remote code execution as the server user, exposing everything the process holds such as OAuth client secrets, JWT_SECRET, session keys, database credentials, and cloud instance metadata. Because the framework's\u00a0DEFAULT_AUTH_OPTIONS\u00a0is public mode, an unconfigured server serves this to unauthenticated callers, and on authenticated servers an indirect prompt injection in tool output or fetched content can trigger it without a human attackerThis issue is fixed in version 1.5.7.",
+   "id": "CVE-2026-67531",
+   "published": "2026-08-06T00:16:53.733"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "PapersGPT for Zotero 0.6.1 contains a remote code execution vulnerability that allows attackers to execute arbitrary JavaScript by returning malicious code from an LLM endpoint that is passed unsanitized to window.eval() in views.ts. Attackers can exploit this through prompt injection in PDFs, MITM interception of API requests, or a malicious custom LLM endpoint to execute arbitrary code in Zotero's chrome-privileged context, enabling file read/write, process execution, and access to all Zotero data.",
+   "id": "CVE-2026-73032",
+   "published": "2026-08-11T20:18:46.320"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Flowise before 3.1.3 contains a regex-based Python code validator bypass in CSV and Airtable Agent nodes that allows unauthenticated attackers to inject malicious code via prompt injection. Attackers can exploit unblocked pandas functions like pd.read_json() to exfiltrate datasets, perform SSRF against internal services, or achieve code execution through the unauthenticated prediction API.",
+   "id": "CVE-2026-73487",
+   "published": "2026-08-13T12:17:24.083"
+  },
+  {
+   "cwe": [],
+   "description": "HCL AION is affected by a vulnerability where indirect prompt injection can lead to HTML injection in rendered output. Injected markup may be displayed to users, potentially resulting in unintended behavior or security impact under certain conditions.",
+   "id": "CVE-2026-21832",
+   "published": "2026-08-13T14:16:55.723"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "CodeWhale (packages codewhale / codewhale-tui) versions >= 0.8.41 and < 0.8.64 contain a remote code execution vulnerability in the rlm_eval tool. The tool's approval_requirement() returns ApprovalRequirement::Auto, which the engine treats as 'never prompt,' causing arbitrary model-supplied Python code to run in a python3 interpreter without consulting the user's configured --approval-policy and without any approval prompt or audit step. An attacker can induce the agent to execute arbitrary code via prompt injection in untrusted content the agent reads (a web page, fetched URL, repository file, or MCP tool result); the companion rlm_open tool can stage such content. Code runs on the user's machine at the user's privilege level. Fixed in 0.8.64.",
+   "id": "CVE-2026-75858",
+   "published": "2026-08-18T16:18:21.653"
+  },
+  {
+   "cwe": [
+    "CWE-73"
+   ],
+   "description": "CodeWhale (codewhale / codewhale-tui) versions >= 0.8.41 and < 0.8.64 contain an argument injection vulnerability in the git_show tool. The model-supplied rev parameter is passed unvalidated into the git show argv without an --end-of-options sentinel, so a value beginning with --output= is interpreted as a git flag. Because the tool is registered as auto-approved and advertised as read-only, an attacker (via a malicious repository combined with prompt injection) can cause an unprompted arbitrary file write at the privilege of the invoking user, targeting sensitive files such as ~/.ssh/authorized_keys, ~/.bashrc, or ~/.gitconfig. Fixed in 0.8.64 by adding rev validation.",
+   "id": "CVE-2026-75913",
+   "published": "2026-08-18T16:18:23.363"
+  },
+  {
+   "cwe": [],
+   "description": "Context7 through 2.1.2 contains a prompt injection vulnerability that allows attackers to execute malicious instructions in connected AI coding agents by injecting unsanitized content through the Custom AI Instructions feature served via the MCP server. Attackers can poison the custom instructions to exfiltrate credentials from environment files to an attacker-controlled service and perform destructive file deletion on the victim's machine when the agent makes a routine library documentation request.",
+   "id": "CVE-2026-75130",
+   "published": "2026-08-18T18:19:34.197"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "Agno's PythonTools in libs/agno/agno/tools/python.py contains a path traversal vulnerability that allows attackers to read, write, or execute arbitrary files by supplying parent-directory traversal sequences in the file_name argument passed to read_file, save_to_file, or run_python_file tool actions. Attackers can inject traversal sequences such as '../../../../../../etc/passwd' through direct tool invocation or via prompt injection embedded in agent-processed content to escape the intended base_dir boundary and achieve arbitrary file read, arbitrary file write, or arbitrary Python code execution within the process user's authority.",
+   "id": "CVE-2026-76832",
+   "published": "2026-08-19T22:17:27.960"
+  },
+  {
+   "cwe": [
+    "CWE-184"
+   ],
+   "description": "The Continue CLI applies an incomplete denylist as its only barrier to destructive shell commands when running unattended. In headless mode and auto mode the default policy in extensions/cli/src/permissions/defaultPolicies.ts grants the Bash tool the allow permission, and permissionChecker.ts hard-blocks a command only when the terminal-security evaluator returns a disabled verdict, so isCriticalCommand in packages/terminal-security/src/evaluateTerminalCommandSecurity.ts is the sole control. Its dangerous-path test matches only /, /*, ~, ~/*, /usr, /etc, /bin and /sbin and their prefixes, so a recursive forced removal of /home, /root, /var, /opt or /srv is not disabled. The command line is parsed with shell-quote, which reduces $HOME to an empty token, so rm -rf $HOME also fails the dangerous-path test while the shell re-expands the variable when the command is spawned. find with -delete is rated high risk rather than disabled, and shred, wipefs, truncate and pkexec are not handled. Because the agent autonomously reads content it does not control, including fetched web pages, repository files and issue text, an indirect prompt injection in that content can cause an unattended run to destroy the invoking user's data.",
+   "id": "CVE-2026-76072",
+   "published": "2026-08-24T18:17:21.233"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "browse-mcp is a Playwright-based headless-browser MCP server for MCP-capable agents. Prior to 0.8.2, browser_download writes a fetched response body to join(save_dir, filename) without validating the caller-controlled save_dir, while browser_save_state and browser_load_state honor a caller-controlled path unchanged. A malicious MCP client, or an autonomous agent steered by indirect prompt injection on a visited page, can choose an arbitrary save_dir or state path and a URL whose response body becomes attacker-controlled file contents, allowing writes to any path the process can reach, including ~/.bashrc, autostart entries, or cron files, and potentially leading to host code execution. The force_fetch fallback also uses a raw fetch() that bypasses the BROWSE_MCP_ALLOWED_ORIGINS origin fence. This issue is fixed in version 0.8.2.",
+   "id": "CVE-2026-55557",
+   "published": "2026-08-25T17:17:32.357"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Agno up to and including 2.5.8 is vulnerable to Remote Code Execution (RCE) via prompt injection. The PythonTools and ShellTools components pass unsanitized, LLM-generated arguments directly to execution sinks including exec(), runpy.run_path(), and subprocess.run(). An unauthenticated attacker can exploit this by embedding malicious instructions in content processed by the agent (such as web pages or documents), allowing for arbitrary code and OS command execution on the host server.",
+   "id": "CVE-2026-37003",
+   "published": "2026-08-27T20:17:41.107"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "SiYuan before v3.8.1 contains a path traversal vulnerability in the asset.upload MCP tool that accepts arbitrary absolute file paths without workspace boundary validation. Attackers can induce the AI Agent to upload sensitive files such as SSH keys or credentials from outside the workspace into the asset directory through prompt injection.",
+   "id": "CVE-2026-82233",
+   "published": "2026-08-28T12:16:32.953"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "In Eclipse Theia versions 1.73.0 up to but not including 1.75.0, the AI \"Agent Mode\" file-change tools (writeFileContent, suggestFileContent, and the replacement and state helpers) resolved a model-supplied file path without a workspace-containment check. A crafted relative path such as ../.bashrc, an absolute path, or a ~-expanded path could therefore write or delete files outside the workspace with the privileges of the Theia backend OS user. Because the path argument is influenced by model output, it can be steered through indirect prompt injection, and in Agent Mode writes are applied without a confirmation dialog. Writing to a host-executed file such as a shell startup file or ~/.ssh/authorized_keys can escalate to code execution on the backend.",
+   "id": "CVE-2026-82217",
+   "published": "2026-08-31T14:17:26.610"
+  },
+  {
+   "cwe": [
+    "CWE-862"
+   ],
+   "description": "MCPHub is a unified hub for centrally managing and dynamically orchestrating multiple MCP servers/APIs into separate endpoints with flexible routing strategies. Prior to version 1.0.32, the built-in prompt and resource controllers perform no role checking. The mutating POST/PUT /api/prompts* and POST/PUT /api/resources* routes are attached to the authenticated router with no admin gate, and the handlers never read req.user. The DAO singletons they write are consulted first \u2014 ahead of any connected MCP server \u2014 for every session in handleGetPromptRequest / handleReadResourceRequest. A non-admin can therefore create, overwrite, and shadow global prompt templates and resources that all other users are served. The scored impact is the unauthorized integrity violation (creation/tampering/shadowing of globally-served records); stored prompt injection into other users' LLM sessions is a downstream consequence of that tampering. This issue has been patched in version 1.0.32.",
+   "id": "CVE-2026-79745",
+   "published": "2026-08-31T18:17:19.910"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "OWL's DocumentProcessingToolkit contains a server-side request forgery vulnerability in the extract_document_content tool that fetches caller-supplied URLs with no scheme, host, or IP filtering. Attackers can inject malicious URLs through prompt injection to make the server fetch internal resources, with responses returned to the agent context.",
+   "id": "CVE-2026-85675",
+   "published": "2026-09-04T15:17:45.763"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "LaVague 0.2.35 contains a remote code execution vulnerability in PythonFromMarkdownExtractor.extract_as_object that evaluates untrusted language model output derived from web page content. Attackers can inject malicious Python code through web pages using indirect prompt injection to execute arbitrary code on the operator's host without review.",
+   "id": "CVE-2026-85694",
+   "published": "2026-09-04T15:17:47.540"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "Contentful MCP Server is a Model Context Protocol server for the Contentful Management API. Prior to @contentful/mcp-server 1.7.19 and @contentful/mcp-tools 0.4.5, export_space and import_space in packages/mcp-tools/src/tools/jobs/space-to-space-migration/exportSpace.ts and packages/mcp-tools/src/tools/jobs/space-to-space-migration/importSpace.ts expose host, proxy, rawProxy, and insecure network options to LLM-controlled tool arguments and combine those options with the server's CONTENTFUL_MANAGEMENT_TOKEN. After space_to_space_migration_handler enables the migration tools, a direct MCP call or prompt injection through attacker-controlled Contentful content can redirect Contentful Management API requests and their Authorization header to an attacker-controlled host or proxy. The regular tools that use createToolClient are unaffected because those tools pin the host from server configuration. Exposure of the personal access token permits persistent out-of-band access to every Contentful space within the token's scope. This issue is fixed in @contentful/mcp-server 1.7.19 and @contentful/mcp-tools 0.4.5.",
+   "id": "CVE-2026-53957",
+   "published": "2026-09-15T15:17:17.367"
+  },
+  {
+   "cwe": [
+    "CWE-306"
+   ],
+   "description": "DBHub is a database MCP server for Postgres, MySQL, SQL Server, Oracle, MariaDB, SQLite. Versions prior to 0.22.5 expose an unauthenticated HTTP MCP endpoint when started with the documented HTTP transport mode, for example `--transport http --port 8080`. The HTTP server attempts to protect browser-origin access by checking whether the `Origin` hostname equals the `Host` hostname, then reflecting the validated `Origin` into `Access-Control-Allow-Origin`. This does not stop DNS rebinding. After an attacker-controlled hostname rebinds to a victim-accessible DBHub HTTP server, both `Origin` and `Host` can contain the attacker-controlled hostname, so DBHub accepts the request and dispatches MCP tool calls. As a result, a malicious website can deterministically invoke DBHub MCP tools from the victim's browser without prompt injection or model involvement. With the default demo configuration this can read and write the demo SQLite database; with a real configured database, the same primitive can read, enumerate, and potentially write database contents depending on DBHub's configured tool permissions and database credentials. Version 0.22.5 fixes the issue.",
+   "id": "CVE-2026-61742",
+   "published": "2026-09-24T18:17:16.173"
+  },
+  {
+   "cwe": [
+    "CWE-943"
+   ],
+   "description": "Rapid7 Bulk Export MCP versions 0.2.5 through 0.6.1 suffer from a GraphQL query injection issue in the export-status component (`get_export_status` in `src/export_manager.py`), whereby the `export_id` value \u2014 an unvalidated MCP tool argument reaching the function via the `check_rapid7_export_status` and `download_rapid7_export` tools \u2014 is interpolated directly into the GraphQL query string. A crafted `export_id` containing quote and brace characters can terminate the intended `export(id: \"...\")` selection early and append attacker-controlled root-level selections (for example, schema introspection), producing a single well-formed GraphQL document that is then sent to the Rapid7 export API under the operator's own API key.\n\nNotably, this issue does not grant an existing actor any access they do not already have: every injected query executes within the operator's own already-authenticated API scope, using the operator's own valid API key, and cannot cross a tenant or account boundary. A directly-malicious operator gains nothing they could not already do by calling the API directly; the realistic exposure is limited to a compromised or careless upstream MCP client, or indirect prompt injection forwarding an unvalidated identifier. This is fixed in version 0.6.2, which passes `export_id` as a parameterized GraphQL variable (`$exportId: ID!`).",
+   "id": "CVE-2026-97228",
+   "published": "2026-09-25T11:17:02.163"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "Open GenAI Stack (aka ogx-ai) 2026-06-11, as used in the Meta AI backend for WhatsApp and other products, allows code execution because prompt injection (with Jinja2 template syntax) can be used to achieve server-side expression evaluation without sanitization.",
+   "id": "CVE-2026-77177",
+   "published": "2026-09-29T16:17:11.363"
+  },
+  {
+   "cwe": [
+    "CWE-863"
+   ],
+   "description": "Ollama versions 0.14.0 before 0.31.2 contain an incorrect authorization vulnerability in the experimental agent mode Bash tool approval mechanism that fails to properly parse shell syntax. Attackers who can influence model output through prompt injection can execute additional shell commands by appending control operators like semicolons or logical operators to approved commands, bypassing the session approval requirement.",
+   "id": "CVE-2026-102697",
+   "published": "2026-09-29T17:17:08.150"
+  },
+  {
+   "cwe": [
+    "CWE-79"
+   ],
+   "description": "The AI Engine \u2013 The Chatbot, AI Framework & MCP for WordPress plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 3.8.0 This is due to a chain of missing input neutralization and output escaping across the /mwai-ui/v1/chats/submit REST endpoint, the PHP error-log parser (MeowKit_MWAI_Helpers::php_error_logs), the Advisor task (Meow_MWAI_Modules_Advisor::run_advisor), and the Advisor dashboard widget (advisor_metabox): the server-parameter denylist in chat_submit strips only exact key names such as 'model' while convert_keys() later canonicalizes 'model_' back to 'model', allowing an unauthenticated caller to place an attacker-controlled string (including CR/LF) into $query->model; final_checks() throws an Exception whose message embeds that raw string, and the non-streaming, non-admin catch branch writes it to the PHP error log unmodified \u2014 creating a forged log line that the plugin's own parser subsequently returns as recent PHP-error content; run_advisor() then appends that content verbatim to the AI prompt (indirect prompt injection \u2014 CWE-1427), the returned JSON is stored in the mwai_advisor_data option with no schema validation or HTML sanitization, and advisor_metabox() concatenates the resulting 'title' and 'description' values directly into the WordPress dashboard widget without esc_html(), wp_kses(), or equivalent escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever an administrator accesses the WordPress dashboard.",
+   "id": "CVE-2026-96561",
+   "published": "2026-10-01T04:18:22.110"
+  },
+  {
+   "cwe": [
+    "CWE-22"
+   ],
+   "description": "Office-PowerPoint-MCP-Server through 2.0.7 contains a path traversal vulnerability that allows MCP callers to write and read files outside the working directory by supplying absolute paths or ../ sequences. Attackers can steer an AI agent via prompt injection to abuse save_presentation, open_presentation, or manage_image output_path to overwrite any server-writable file or load external files.",
+   "id": "CVE-2025-71427",
+   "published": "2026-10-01T23:16:46.613"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "zotero-mcp 0.10.0 through 0.14.1 contains a server-side request forgery vulnerability that allows attackers to reach internal services because _fetch_embedded_metadata fetches URLs without destination validation. Attackers can steer the agent via prompt injection into calling zotero_add_by_url, causing requests to loopback, private, or link-local hosts directly or via redirects, leaking citation meta-tags and error details.",
+   "id": "CVE-2026-108583",
+   "published": "2026-10-10T16:16:31.667"
+  },
+  {
+   "cwe": [
+    "CWE-526"
+   ],
+   "description": "mini-swe-agent 1.10.0 through 2.4.6 contains an information exposure vulnerability in BubblewrapEnvironment because bwrap omits --clearenv, so sandboxed commands inherit the host environment. Attackers using prompt injection in processed task content can make the agent read API keys from the environment and exfiltrate them over the shared network.",
+   "id": "CVE-2026-108592",
+   "published": "2026-10-10T19:16:57.463"
+  },
+  {
+   "cwe": [
+    "CWE-59"
+   ],
+   "description": "phi 0.1.1 through 0.28.4 contains an improper link resolution vulnerability that allows malicious repositories to bypass workspace_only_writes by exploiting lexical-only path checks in the permission gate. Attackers can commit symlinks pointing outside the workspace and use prompt injection to make the write tool write attacker-influenced content to external files without approval.",
+   "id": "CVE-2026-108599",
+   "published": "2026-10-10T19:16:58.487"
+  },
+  {
+   "cwe": [
+    "CWE-59"
+   ],
+   "description": "open-multi-agent (@open-multi-agent/core) 1.5.0 through 1.21.2 contains a link following vulnerability in the file_write tool sandbox that allows attackers to create files outside the workspace root by using dangling symlinks. Attackers can plant a dangling symlink in the workspace and steer the agent via prompt injection to write attacker-influenced content anywhere the agent process can write.",
+   "id": "CVE-2026-108600",
+   "published": "2026-10-10T19:16:58.640"
+  },
+  {
+   "cwe": [
+    "CWE-862"
+   ],
+   "description": "Abilityai Trinity through 0.9.5 contains a missing authorization vulnerability in the Telegram router that allows agent-scoped MCP API keys to perform human-only binding operations. Attackers controlling an agent, typically via prompt injection, can send messages through the owner's bot token, replace the binding with their own token, or delete it.",
+   "id": "CVE-2026-108756",
+   "published": "2026-10-11T13:17:20.680"
+  },
+  {
+   "cwe": [
+    "CWE-20"
+   ],
+   "description": "Nginx UI is a web user interface for the Nginx web server. Prior to 2.4.1, internal/config/validation.go (ValidateConfigFile) is a security control that blocks dangerous nginx directives \u2014 js_*, perl_*, load_module of the njs/perl modules, and user root. It is enforced on three of the four config-write paths: api/config/add.go, api/config/modify.go, and mcp/config/config_modify.go. The fourth path \u2014 the MCP tool nginx_config_add (mcp/config/config_add.go) \u2014 does NOT call it: it writes the caller-supplied content straight to disk and reloads nginx. An authenticated MCP caller (or an MCP agent induced via prompt injection) can therefore inject exactly the directives the control is meant to block, leading to nginx code execution on deployments where the njs/perl module is available (e.g. the official Docker image). This issue is fixed in version 2.4.1.",
+   "id": "CVE-2026-84317",
+   "published": "2026-10-12T21:17:22.213"
+  },
+  {
+   "cwe": [
+    "CWE-436"
+   ],
+   "description": "Roo Code through 3.54.0 contains a command approval bypass vulnerability in getCommandDecision() that allows attackers to auto-approve denied shell commands by prefixing them with a bare >& redirect. Attackers using indirect prompt injection can make the allowlist match a redirect target like echo while the shell runs the denied command on the developer machine.",
+   "id": "CVE-2026-110202",
+   "published": "2026-10-13T19:18:43.543"
+  },
+  {
+   "cwe": [
+    "CWE-436"
+   ],
+   "description": "Roo Code through 3.54.0 contains a command approval bypass vulnerability that allows attackers to auto-approve denied shell commands by abusing quote-masking regex in parseCommandLine(). Attackers can use indirect prompt injection with escaped or single-quoted double quotes to hide command separators behind allowlisted prefixes like echo, executing commands without user approval.",
+   "id": "CVE-2026-110203",
+   "published": "2026-10-13T19:18:43.707"
+  },
+  {
+   "cwe": [
+    "CWE-436"
+   ],
+   "description": "Roo Code through 3.54.0 contains a command approval bypass vulnerability that allows attackers to run denied shell commands because parseCommandLine() treats ${ command; } substitutions as parameter expansions. Attackers using indirect prompt injection can embed denied commands inside an allowlisted command like echo to execute them without user approval on bash 5.3+ or ksh93.",
+   "id": "CVE-2026-110204",
+   "published": "2026-10-13T19:18:43.857"
+  },
+  {
+   "cwe": [
+    "CWE-184"
+   ],
+   "description": "Roo Code through 3.54.0 contains a command approval bypass vulnerability in parseCommandLine() that discards command substitutions placed next to * or ? glob characters. Attackers using indirect prompt injection can craft commands like echo *$(...) that match allowlisted prefixes, executing denied commands without user approval when auto-approval is enabled.",
+   "id": "CVE-2026-110205",
+   "published": "2026-10-13T19:18:44.003"
+  },
+  {
+   "cwe": [
+    "CWE-436"
+   ],
+   "description": "Roo Code through 3.54.0 contains a command approval bypass vulnerability in parseCommandLine() that allows attackers to auto-approve arbitrary shell commands by placing a command substitution in command position. Attackers using indirect prompt injection can submit commands like $(echo touch /tmp/x) that pass the echo allowlist check, causing the shell to execute the output without user approval.",
+   "id": "CVE-2026-110206",
+   "published": "2026-10-13T19:18:44.157"
+  },
+  {
+   "cwe": [
+    "CWE-862"
+   ],
+   "description": "IntentKit through 2.6.3, fixed in commit 5b91da5, contains an authorization bypass vulnerability where the executor validates tool calls against the full tool registry rather than the per-request narrowed tool advertisement enforced by ToolBindingMiddleware, allowing owner-only state-changing tools such as wallet transfer, posting, memory-write, and call-agent to execute without any human-in-the-loop or approval gate. An unauthenticated or public caller in WEB, API, TWITTER, or TELEGRAM contexts can exploit this by supplying the exact de-advertised tool name and arguments via indirect prompt injection or by replaying checkpoint and history data on a reused thread, achieving unauthorized execution of owner-restricted capabilities.",
+   "id": "CVE-2026-76066",
+   "published": "2026-10-15T02:20:15.603"
+  },
+  {
+   "cwe": [
+    "CWE-94"
+   ],
+   "description": "An issue in the context-compaction feature of DeepSeek Harness (dsh) commit c291e796 allows attackers to execute a prompt injection attack via crafted external content.",
+   "id": "CVE-2026-95183",
+   "published": "2026-10-16T15:17:37.050"
+  },
+  {
+   "cwe": [
+    "CWE-918"
+   ],
+   "description": "crewai-tools through 1.15.28 contains a server-side request forgery vulnerability in SeleniumScrapingTool that allows attackers to fetch internal resources because it never applies the validate_url private-address check. Attackers influencing agent tool input through prompt injection can direct headless Chrome to loopback, RFC1918, or cloud metadata addresses to disclose internal data and cloud credentials.",
+   "id": "CVE-2026-112308",
+   "published": "2026-10-19T16:17:06.887"
+  },
+  {
+   "cwe": [],
+   "description": "LangAlpha through 2026.09.07 contains an indirect prompt injection vulnerability that allows remote attackers to execute shell commands or Python by planting instructions in web content retrieved by the agent. Because Bash and ExecuteCode lack an allow-list and human-in-the-loop approval, attackers can run code in the workspace sandbox and exfiltrate vault secrets from _internal/.vault_secrets.json.",
+   "id": "CVE-2026-109440",
+   "published": "2026-10-20T01:17:10.103"
+  },
+  {
+   "cwe": [],
+   "description": "HKUDS Vibe-Trading from 0.1.0 before 0.1.7 contains an indirect prompt injection vulnerability that allows remote attackers to execute shell commands as root by planting instructions in documents or web pages the agent processes. BashTool and BackgroundRunTool pass model-emitted commands to subprocess.run with shell=True and no allow-list or approval step, and read_url fetches arbitrary URLs, enabling command execution and server-side request forgery.",
+   "id": "CVE-2026-114107",
+   "published": "2026-10-21T01:17:36.683"
+  }
+ ]
+}
