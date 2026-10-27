@@ -1,0 +1,9 @@
+{
+ "source": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+ "params": {
+  "cweId": "CWE-1427"
+ },
+ "retrieved_utc": "2026-10-26T13:44:04Z",
+ "notice": "This product uses the NVD API but is not endorsed or certified by the NVD.",
+ "totalResults": 0
+}
