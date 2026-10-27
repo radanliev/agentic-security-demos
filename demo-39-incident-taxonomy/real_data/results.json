@@ -1,0 +1,33 @@
+{
+  "n_reports": 1745,
+  "by_year_folder": {
+    "2022": 5,
+    "2023": 3,
+    "2025": 25,
+    "2026": 1712
+  },
+  "risk_domain": {
+    "Security": 1470,
+    "Performance": 87,
+    "Ethics": 56
+  },
+  "sep_view_top10": {
+    "S0100": 1111,
+    "S0403": 283,
+    "S0301": 112,
+    "P0204": 34,
+    "E0301": 30,
+    "P0401": 30,
+    "E0101": 24,
+    "S0300": 18,
+    "E0402": 13,
+    "P0402": 12
+  },
+  "pattern_screen_multilabel": {
+    "none-matched": 924,
+    "tool-misuse": 518,
+    "data-exfiltration": 154,
+    "prompt-injection": 140,
+    "privilege-escalation": 122
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "ingested_total": 3047,
+  "ingested_by_source": {
+    "deepset": 662,
+    "jackhhao": 1306,
+    "lakera": 1000,
+    "rubend18": 79
+  },
+  "within_source_duplicates": {
+    "deepset": 0,
+    "jackhhao": 17,
+    "lakera": 1,
+    "rubend18": 1
+  },
+  "unique_after_dedupe": 2992,
+  "digests_in_multiple_sources": {
+    "jackhhao+rubend18": 36
+  },
+  "releasable": 2950,
+  "blocked_unlicensed": 42,
+  "unique_by_first_source": {
+    "deepset": 662,
+    "jackhhao": 1289,
+    "lakera": 999,
+    "rubend18": 42
+  }
+}

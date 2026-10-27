@@ -1,0 +1,32 @@
+{
+  "advisories": 767,
+  "with_fix_and_dates": 614,
+  "no_fixed_version": 138,
+  "median_lag_days": 30.0,
+  "advisory_before_fix": 77,
+  "advisory_within_7d_after_fix": 118,
+  "advisory_over_90d_after_fix": 180,
+  "per_package": {
+    "langchain": 45,
+    "langchain-core": 18,
+    "langchain-community": 13,
+    "llama-index": 31,
+    "llama-index-core": 20,
+    "transformers": 56,
+    "vllm": 172,
+    "gradio": 101,
+    "mlflow": 164,
+    "litellm": 82,
+    "ray": 22,
+    "torch": 43
+  },
+  "alias_deduplicated": {
+    "advisories": 421,
+    "with_fix_and_dates": 341,
+    "median_lag_days": 17,
+    "advisory_before_fix": 56,
+    "within_7d": 78,
+    "over_90d": 54,
+    "no_fixed_version": 72
+  }
+}
