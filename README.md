@@ -65,21 +65,21 @@
 | 28 | **Memory Poisoning** | Persistent memory poisoning and the MemScope auditor toy | 🟢 WWW |
 | 29 | **Provenance Graphs** | Tamper-evident provenance for post-incident reconstruction | 🟠 S&P |
 | 30 | **Default Configs** | Insecure defaults in self-hosted LLM stacks | 🟠 S&P |
-| 31 | **Declaration Gap** | MCP registry declared-versus-exercised authority in agent integrations | 🔴 FAccT |
+| 31 | **Declaration Gap** | MCP registry declared-versus-exercised authority in agent integrations | 🟢 FAccT |
 | 32 | **Reproducibility Audit** | Artefact audit of the agent-security literature | 🔵 CSUR |
 | 33 | **Protocol Coverage** | Agent protocol element × threat coverage map | 🟠 S&P |
 | 34 | **Visual Injection** | Typographic injection against vision-language agents | 🔵 TPAMI |
 | 35 | **Scaling Meta-regression** | Agent misbehaviour versus scale across benchmarks | 🔵 TMLR |
 | 36 | **Card Debt** | Documentation debt across open model cards | 🟢 WWW |
-| 37 | **Detector Cost** | Injection-detector comparison with false-positive cost | 🔴 FAccT |
-| 38 | **Assurance Claims** | System-card assurance claims versus obligations | 🔴 FAccT |
-| 39 | **Incident Taxonomy** | Agentic-AI threat taxonomy for practitioners | 🔴 FAccT |
+| 37 | **Detector Cost** | Injection-detector comparison with false-positive cost | 🟢 FAccT |
+| 38 | **Assurance Claims** | System-card assurance claims versus obligations | 🟢 FAccT |
+| 39 | **Incident Taxonomy** | Agentic-AI threat taxonomy for practitioners | 🟢 FAccT |
 | 40 | **Corpus Union** | License-audited unified agentic-security corpus | 🔵 Sci Data |
 | 41 | **Ten Invariants** | Security invariants checklist synthesis | 🔵 CACM |
 | 42 | **Patch Lifecycle** | Vulnerability lifecycle and patch adoption lag | 🔵 TSE |
 | 43 | **Terms Coding** | Platform terms accountability allocation | 🟢 WWW |
 | 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | 🟡 CCS |
-| 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | 🔴 FAccT |
+| 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | 🟢 FAccT |
 | 46 | **Embedding-swap cosine shift** | `1 - cosine` on two synthetic vectors, compared with the frozen simulated-study mean 0.1222 (`radanliev/demo-46-simulated-embedding-drift-aibom`, private) | 🟠 AsiaCCS |
 | 47 | **Pre-reveal Seal** | Hash a localisation commitment before the answer key opens; a post-seal edit is a mismatch (`demo-47-blind-verification-eval-sais`, private; available on request) | 🟡 SAIS |
 | 48 | **OAuth Over-privilege** | Scope creep: OAuth scope over-privilege in agent integrations (`demo-48-scope-creep-oauth-overprivilege-tops`, private; available on request) | 🟡 TOPS |
@@ -213,21 +213,21 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 28 | 🟢 [WWW demo track](https://www2027.thewebconf.org/demos/) | 🔵 [DEF CON](https://www.defcon.org/)<br>🔵 [~1 May 2027](https://www.defcon.org/) | 🔵 [Black Hat Arsenal](https://www.blackhat.com/) |
 | 29 | 🟠 [IEEE S&P C2](https://sp2027.ieee-security.org/)<br>🟠 [abs 10 Nov · papers 17 Nov](https://sp2027.ieee-security.org/cfpapers.html) | 🔵 [IEEE TIFS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 30 | 🟠 [IEEE S&P C2](https://sp2027.ieee-security.org/)<br>🟠 [abs 10 Nov · papers 17 Nov](https://sp2027.ieee-security.org/cfpapers.html) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | 🔵 [IEEE TIFS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) |
-| 31 | 🔴 [FAccT](https://facctconference.org/)<br>🔴 [abs 27 Oct · papers 3 Nov](https://facctconference.org/2027/cfp.html) | 🔵 [ACM TOPS](https://dl.acm.org/journal/tops) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
+| 31 | 🟢 [FAccT](https://facctconference.org/) | 🔵 [ACM TOPS](https://dl.acm.org/journal/tops) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 32 | 🔵 [ACM CSUR](https://dl.acm.org/journal/csur) | 🔵 [COMST](https://www.comsoc.org/publications/journals/ieee-comst) / [DTRAP](https://dl.acm.org/journal/dtrap) / [Computers & Sec.](https://www.sciencedirect.com/journal/computers-and-security) | — |
 | 33 | 🟠 [IEEE S&P C2 SoK](https://sp2027.ieee-security.org/)<br>🟠 [abs 10 Nov · SoK papers 17 Nov](https://sp2027.ieee-security.org/cfpapers.html) | 🔵 [IEEE COMST](https://www.comsoc.org/publications/journals/ieee-comst) | 🔵 [Proc. IEEE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5) |
 | 34 | 🔵 [IEEE TPAMI](https://www.computer.org/csdl/journal/tp) | 🔵 [TNNLS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385) / [TIP](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83) / [TIFS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | — |
 | 35 | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [JMLR](https://jmlr.org/) / [DMLR](https://data.mlr.press) / [ICML](https://icml.cc/) | — |
 | 36 | 🟢 [WWW](https://www2027.thewebconf.org/) | 🔵 [Nature MI](https://www.nature.com/natmachintell/) | 🔵 [Patterns](https://www.cell.com/patterns) |
-| 37 | 🔴 [FAccT](https://facctconference.org/)<br>🔴 [abs 27 Oct · papers 3 Nov](https://facctconference.org/2027/cfp.html) | 🔵 [IEEE TIFS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
-| 38 | 🔴 [FAccT](https://facctconference.org/)<br>🔴 [abs 27 Oct · papers 3 Nov](https://facctconference.org/2027/cfp.html) | 🔵 [J. Cybersecurity](https://academic.oup.com/cybersecurity) | 🔵 [ACM JRC](https://dl.acm.org/journal/jrc) |
-| 39 | 🔴 [FAccT](https://facctconference.org/)<br>🔴 [abs 27 Oct · papers 3 Nov](https://facctconference.org/2027/cfp.html) | 🔵 [S&P Magazine](https://www.computer.org/csdl/magazine/sp) | 🔵 [CACM Practice](https://cacm.acm.org/) |
+| 37 | 🟢 [FAccT](https://facctconference.org/) | 🔵 [IEEE TIFS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
+| 38 | 🟢 [FAccT](https://facctconference.org/) | 🔵 [J. Cybersecurity](https://academic.oup.com/cybersecurity) | 🔵 [ACM JRC](https://dl.acm.org/journal/jrc) |
+| 39 | 🟢 [FAccT](https://facctconference.org/) | 🔵 [S&P Magazine](https://www.computer.org/csdl/magazine/sp) | 🔵 [CACM Practice](https://cacm.acm.org/) |
 | 40 | 🔵 [Scientific Data](https://www.nature.com/sdata/) | 🔵 [Data in Brief](https://www.sciencedirect.com/journal/data-in-brief) / [NeurIPS D&B](https://neurips.cc/) / [DMLR](https://data.mlr.press) | — |
 | 41 | 🔵 [CACM](https://cacm.acm.org/) | 🔵 [S&P Magazine](https://www.computer.org/csdl/magazine/sp) / [IEEE Computer](https://www.computer.org/) / [Queue](https://queue.acm.org/) | — |
 | 42 | 🔵 [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | 🔵 [ESE](https://link.springer.com/journal/10664) / [TOSEM](https://dl.acm.org/journal/tosem) / [ICSE](https://www.icse-conferences.org/) | — |
 | 43 | 🟢 [WWW](https://www2027.thewebconf.org/) | 🔵 [AIES](https://www.aies-conference.com/) | 🔵 [FAccT](https://facctconference.org/) |
 | 44 | 🟡 [CCS](https://www.sigsac.org/ccs/CCS2027/)<br>🟡 [Cycle A ~mid-Jan · Cycle B ~late Apr 2027](https://www.sigsac.org/ccs/CCS2027/) | 🔵 [NDSS](https://www.ndss-symposium.org/) | — |
-| 45 | 🔴 [FAccT](https://facctconference.org/)<br>🔴 [abs 27 Oct · papers 3 Nov](https://facctconference.org/2027/cfp.html) | 🟡 [USENIX Sec C2](https://www.usenix.org/conference/usenixsecurity27)<br>🟡 [papers 26 Jan (reg 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
+| 45 | 🟢 [FAccT](https://facctconference.org/) | 🟡 [USENIX Sec C2](https://www.usenix.org/conference/usenixsecurity27)<br>🟡 [papers 26 Jan (reg 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 46 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🟡 [SAIS](https://www.usenix.org/conference/sais27)<br>🟡 [papers 4 Feb](https://www.usenix.org/conference/sais27/call-for-papers) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 47 | 🟡 [SAIS](https://www.usenix.org/conference/sais27)<br>🟡 [papers 4 Feb](https://www.usenix.org/conference/sais27/call-for-papers) | 🔵 [EAAI](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence) | 🔵 [Info Sciences](https://www.sciencedirect.com/journal/information-sciences) |
 | 48 | 🟡 [ACM TOPS](https://dl.acm.org/journal/tops) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | — |

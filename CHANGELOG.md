@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (FAccT 2027 slate submitted, 1 November 2026)
+- Root `README`: marked all 5 ACM FAccT 2027 demos (31 Declaration Gap, 37 Detector Cost, 38 Assurance Claims, 39 Incident Taxonomy, 45 Exact Nulls for Localisation Claims) as 🟢 FAccT (submitted ahead of the 3 November 2026 AoE deadline). Option A cells in the venues table updated to 🟢 [FAccT].
+
 ### Changed (compact status marks, 23 October 2026)
 - Root `README` demos table: Status column is now plain text — a colour dot plus the venue abbreviation (replaces the small badge images; normal-size, readable, no dates shown there).
 - Root `README` venues table: option cells show the venue abbreviation (→ conference page) and a dates-only line underneath (→ submission portal); status wording, check marks, notes and undated markers (incl. TBD) removed. Colour-dot meanings are intentionally undocumented.
