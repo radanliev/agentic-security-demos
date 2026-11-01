@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (Demos table status hyperlinks, 1 November 2026)
+- Root `README`: converted the plain text venue status entries in the Demos table (`## 🎯 Demos`) into direct hyperlinks leading to venue and submission call-for-papers webpages across all 48 demonstrations.
+
 ### Changed (FAccT 2027 slate submitted, 1 November 2026)
 - Root `README`: marked all 5 ACM FAccT 2027 demos (31 Declaration Gap, 37 Detector Cost, 38 Assurance Claims, 39 Incident Taxonomy, 45 Exact Nulls for Localisation Claims) as 🟢 FAccT (submitted ahead of the 3 November 2026 AoE deadline). Option A cells in the venues table updated to 🟢 [FAccT].
 

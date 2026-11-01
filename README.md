@@ -35,54 +35,54 @@
 
 | # | Demo | Focus | Status |
 |---|------|-------|--------|
-| 01 | **Blind Verification** | Cryptographic verification of agent outputs without trusted execution environments | 🟢 ACM TOSEM |
-| 02 | **Supply Chain AIBOM Drift** | AI Bill of Materials tracking & drift detection across model updates | 🟢 EMSE |
-| 03 | **Eval Design Invariants** | Statistically rigorous evaluation frameworks with invariant guarantees | 🔵 NeurIPS |
-| 04 | **Prompt Injection & Tool Authority** | Capability-based authority mediation for tool-using agents | 🟠 S&P |
-| 05 | **Evidence Release Assurance** | Cryptographic evidence chains for agent accountability | 🟢 TDSC |
-| 06 | **Network Recon** | eBPF-backed network reconnaissance with formal admission control | 🔵 NDSS |
-| 07 | **Malware Triage** | Statistical reconstruction of malware triage decisions | 🔵 RAID |
-| 08 | **File Inclusion** | Provenance-tracked file inclusion for agent workflows | 🟠 AsiaCCS |
-| 09 | **MITM Interception** | Ephemeral buffer interception for credential extraction detection | 🟠 S&P |
-| 10 | **Vulnerability Assessment** | Cross-vendor vulnerability scanning with authoritative taxonomy | 🟡 USENIX |
-| 11 | **Degenerate Reporting** | Meta-science audit: evaluations that cannot rule out do-nothing policies | 🔵 RAID |
-| 12 | **Provenance-Bound Authorization** | Provenance-aware authorization for untrusted calendar content | 🟡 USENIX |
-| 13 | **Typed Commitments & Coverage Cues** | Wrong coverage cues and agreement-gate failures in LLM assessors | 🟡 USENIX |
-| 14 | **Conformal Action Gating** | Distribution-free risk control for tool execution and how it fails under benchmark shift | 🟡 ICML |
-| 15 | **Hijack Probes** | Hidden-state signatures of instruction hijack in open-weight agents | 🔵 ICLR |
-| 16 | **Infection Spread** | Epidemic dynamics of prompt-injection propagation in multi-agent systems | 🔵 AAAI |
-| 17 | **Report Fidelity** | Claims-versus-logs fidelity of coding agents | 🟡 IJCAI |
-| 18 | **Cross-lingual Gap** | Cross-lingual transfer of injections and the detector language gap | 🟢 WWW |
-| 19 | **Lineage Risk** | Inherited risk along fine-tune lineages on the model hub | 🟢 WWW |
-| 20 | **Agent Web Census** | Agent-facing files and in-the-wild injections across the web | 🟢 WWW |
-| 21 | **MCP Ecosystem Census** | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | 🟢 WWW |
-| 22 | **Memory Leakage** | Contextual-integrity leakage via agent memory stores | 🟠 PoPETs |
-| 23 | **Fault Injection** | Dependability of agent pipelines under pipeline faults | 🟠 DSN |
-| 24 | **Delegation Checks** | Authorization and agent-to-agent delegation properties | 🟡 CSF |
-| 25 | **Attestation Verifier** | Install-time provenance verification for agent supply chains | 🟡 ACNS |
-| 26 | **Sandbox Probes** | Agent sandbox isolation and exfiltration controls | 🟠 S&P |
-| 27 | **CI Trigger Scan** | Injection surface of coding agents wired to CI | 🟢 WWW |
-| 28 | **Memory Poisoning** | Persistent memory poisoning and the MemScope auditor toy | 🟢 WWW |
-| 29 | **Provenance Graphs** | Tamper-evident provenance for post-incident reconstruction | 🟠 S&P |
-| 30 | **Default Configs** | Insecure defaults in self-hosted LLM stacks | 🟠 S&P |
-| 31 | **Declaration Gap** | MCP registry declared-versus-exercised authority in agent integrations | 🟢 FAccT |
-| 32 | **Reproducibility Audit** | Artefact audit of the agent-security literature | 🔵 CSUR |
-| 33 | **Protocol Coverage** | Agent protocol element × threat coverage map | 🟠 S&P |
-| 34 | **Visual Injection** | Typographic injection against vision-language agents | 🔵 TPAMI |
-| 35 | **Scaling Meta-regression** | Agent misbehaviour versus scale across benchmarks | 🔵 TMLR |
-| 36 | **Card Debt** | Documentation debt across open model cards | 🟢 WWW |
-| 37 | **Detector Cost** | Injection-detector comparison with false-positive cost | 🟢 FAccT |
-| 38 | **Assurance Claims** | System-card assurance claims versus obligations | 🟢 FAccT |
-| 39 | **Incident Taxonomy** | Agentic-AI threat taxonomy for practitioners | 🟢 FAccT |
-| 40 | **Corpus Union** | License-audited unified agentic-security corpus | 🔵 Sci Data |
-| 41 | **Ten Invariants** | Security invariants checklist synthesis | 🔵 CACM |
-| 42 | **Patch Lifecycle** | Vulnerability lifecycle and patch adoption lag | 🔵 TSE |
-| 43 | **Terms Coding** | Platform terms accountability allocation | 🟢 WWW |
-| 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | 🟡 CCS |
-| 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | 🟢 FAccT |
-| 46 | **Embedding-swap cosine shift** | `1 - cosine` on two synthetic vectors, compared with the frozen simulated-study mean 0.1222 (`radanliev/demo-46-simulated-embedding-drift-aibom`, private) | 🟠 AsiaCCS |
-| 47 | **Pre-reveal Seal** | Hash a localisation commitment before the answer key opens; a post-seal edit is a mismatch (`demo-47-blind-verification-eval-sais`, private; available on request) | 🟡 SAIS |
-| 48 | **OAuth Over-privilege** | Scope creep: OAuth scope over-privilege in agent integrations (`demo-48-scope-creep-oauth-overprivilege-tops`, private; available on request) | 🟡 TOPS |
+| 01 | **Blind Verification** | Cryptographic verification of agent outputs without trusted execution environments | 🟢 [ACM TOSEM](https://dl.acm.org/journal/tosem) |
+| 02 | **Supply Chain AIBOM Drift** | AI Bill of Materials tracking & drift detection across model updates | 🟢 [EMSE](https://link.springer.com/journal/10664) |
+| 03 | **Eval Design Invariants** | Statistically rigorous evaluation frameworks with invariant guarantees | 🔵 [NeurIPS](https://neurips.cc/) |
+| 04 | **Prompt Injection & Tool Authority** | Capability-based authority mediation for tool-using agents | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
+| 05 | **Evidence Release Assurance** | Cryptographic evidence chains for agent accountability | 🟢 [TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
+| 06 | **Network Recon** | eBPF-backed network reconnaissance with formal admission control | 🔵 [NDSS](https://www.ndss-symposium.org/) |
+| 07 | **Malware Triage** | Statistical reconstruction of malware triage decisions | 🔵 [RAID](https://dl.acm.org/conference/raid) |
+| 08 | **File Inclusion** | Provenance-tracked file inclusion for agent workflows | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
+| 09 | **MITM Interception** | Ephemeral buffer interception for credential extraction detection | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
+| 10 | **Vulnerability Assessment** | Cross-vendor vulnerability scanning with authoritative taxonomy | 🟡 [USENIX](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) |
+| 11 | **Degenerate Reporting** | Meta-science audit: evaluations that cannot rule out do-nothing policies | 🔵 [RAID](https://dl.acm.org/conference/raid) |
+| 12 | **Provenance-Bound Authorization** | Provenance-aware authorization for untrusted calendar content | 🟡 [USENIX](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) |
+| 13 | **Typed Commitments & Coverage Cues** | Wrong coverage cues and agreement-gate failures in LLM assessors | 🟡 [USENIX](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) |
+| 14 | **Conformal Action Gating** | Distribution-free risk control for tool execution and how it fails under benchmark shift | 🟡 [ICML](https://icml.cc/) |
+| 15 | **Hijack Probes** | Hidden-state signatures of instruction hijack in open-weight agents | 🔵 [ICLR](https://iclr.cc/) |
+| 16 | **Infection Spread** | Epidemic dynamics of prompt-injection propagation in multi-agent systems | 🔵 [AAAI](https://aaai.org/Conferences/AAAI) |
+| 17 | **Report Fidelity** | Claims-versus-logs fidelity of coding agents | 🟡 [IJCAI](https://2027.ijcai.org/) |
+| 18 | **Cross-lingual Gap** | Cross-lingual transfer of injections and the detector language gap | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
+| 19 | **Lineage Risk** | Inherited risk along fine-tune lineages on the model hub | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
+| 20 | **Agent Web Census** | Agent-facing files and in-the-wild injections across the web | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
+| 21 | **MCP Ecosystem Census** | Tool-poisoning exposure, rug-pull dynamics and capability surface across 36k MCP servers (toy census) | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
+| 22 | **Memory Leakage** | Contextual-integrity leakage via agent memory stores | 🟠 [PoPETs](https://petsymposium.org/cfp27.php) |
+| 23 | **Fault Injection** | Dependability of agent pipelines under pipeline faults | 🟠 [DSN](https://dsn2027-berlin.github.io/call-for-contributions) |
+| 24 | **Delegation Checks** | Authorization and agent-to-agent delegation properties | 🟡 [CSF](https://csf2027.ieee-security.org/cfp.html) |
+| 25 | **Attestation Verifier** | Install-time provenance verification for agent supply chains | 🟡 [ACNS](https://acns2027.isg.rhul.ac.uk/calls/papers) |
+| 26 | **Sandbox Probes** | Agent sandbox isolation and exfiltration controls | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
+| 27 | **CI Trigger Scan** | Injection surface of coding agents wired to CI | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
+| 28 | **Memory Poisoning** | Persistent memory poisoning and the MemScope auditor toy | 🟢 [WWW](https://www2027.thewebconf.org/demos/) |
+| 29 | **Provenance Graphs** | Tamper-evident provenance for post-incident reconstruction | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
+| 30 | **Default Configs** | Insecure defaults in self-hosted LLM stacks | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
+| 31 | **Declaration Gap** | MCP registry declared-versus-exercised authority in agent integrations | 🟢 [FAccT](https://facctconference.org/2027/cfp.html) |
+| 32 | **Reproducibility Audit** | Artefact audit of the agent-security literature | 🔵 [CSUR](https://dl.acm.org/journal/csur) |
+| 33 | **Protocol Coverage** | Agent protocol element × threat coverage map | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
+| 34 | **Visual Injection** | Typographic injection against vision-language agents | 🔵 [TPAMI](https://www.computer.org/csdl/journal/tp) |
+| 35 | **Scaling Meta-regression** | Agent misbehaviour versus scale across benchmarks | 🔵 [TMLR](https://jmlr.org/tmlr/) |
+| 36 | **Card Debt** | Documentation debt across open model cards | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
+| 37 | **Detector Cost** | Injection-detector comparison with false-positive cost | 🟢 [FAccT](https://facctconference.org/2027/cfp.html) |
+| 38 | **Assurance Claims** | System-card assurance claims versus obligations | 🟢 [FAccT](https://facctconference.org/2027/cfp.html) |
+| 39 | **Incident Taxonomy** | Agentic-AI threat taxonomy for practitioners | 🟢 [FAccT](https://facctconference.org/2027/cfp.html) |
+| 40 | **Corpus Union** | License-audited unified agentic-security corpus | 🔵 [Sci Data](https://www.nature.com/sdata/) |
+| 41 | **Ten Invariants** | Security invariants checklist synthesis | 🔵 [CACM](https://cacm.acm.org/) |
+| 42 | **Patch Lifecycle** | Vulnerability lifecycle and patch adoption lag | 🔵 [TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) |
+| 43 | **Terms Coding** | Platform terms accountability allocation | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
+| 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | 🟡 [CCS](https://www.sigsac.org/ccs/CCS2027/) |
+| 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | 🟢 [FAccT](https://facctconference.org/2027/cfp.html) |
+| 46 | **Embedding-swap cosine shift** | `1 - cosine` on two synthetic vectors, compared with the frozen simulated-study mean 0.1222 (`radanliev/demo-46-simulated-embedding-drift-aibom`, private) | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
+| 47 | **Pre-reveal Seal** | Hash a localisation commitment before the answer key opens; a post-seal edit is a mismatch (`demo-47-blind-verification-eval-sais`, private; available on request) | 🟡 [SAIS](https://www.usenix.org/conference/sais27/call-for-papers) |
+| 48 | **OAuth Over-privilege** | Scope creep: OAuth scope over-privilege in agent integrations (`demo-48-scope-creep-oauth-overprivilege-tops`, private; available on request) | 🟡 [TOPS](https://dl.acm.org/journal/tops) |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
