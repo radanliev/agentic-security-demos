@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Scope helpers for Demo 31.
+"""Scope helpers for Demo 48.
 
 An integration is over-privileged when its requested scopes strictly
 superset its used scopes. The least-privilege set is the sorted union

@@ -9,6 +9,6 @@
     {"id": "i7", "provider": "chat", "requested": ["chat"], "used": ["chat"]},
     {"id": "i8", "provider": "drive", "requested": ["drive.read", "drive.write", "drive.admin"], "used": ["drive.read", "drive.write"]}
   ],
-  "seed": 31,
+  "seed": 48,
   "note": "Synthetic teaching fixture. Eight hand-built integrations; 5/8 request strictly more than they use."
 }

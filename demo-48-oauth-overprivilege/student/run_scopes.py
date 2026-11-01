@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluator for Demo 31.
+"""Evaluator for Demo 48.
 
 Flags over-privileged integrations and computes the least-privilege
 scope set over eight synthetic integrations.
@@ -34,7 +34,7 @@ def main() -> dict:
             }
         )
     out = {
-        "demo": "demo-31-scope-creep",
+        "demo": "demo-48-oauth-overprivilege",
         "experiment": "scope-creep",
         "seed": pack["seed"],
         "total": len(integrations),

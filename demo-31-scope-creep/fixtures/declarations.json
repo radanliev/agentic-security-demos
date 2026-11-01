@@ -1,0 +1,14 @@
+{
+  "integrations": [
+    {"id": "i1", "provider": "files", "declared": ["read", "write", "admin"], "exercised": ["read"]},
+    {"id": "i2", "provider": "files", "declared": ["read"], "exercised": ["read"]},
+    {"id": "i3", "provider": "files", "declared": ["read", "write"], "exercised": ["read", "write"]},
+    {"id": "i4", "provider": "calendar", "declared": ["calendar.read", "calendar.write", "mail.send"], "exercised": ["calendar.read"]},
+    {"id": "i5", "provider": "files", "declared": ["files.read", "files.write"], "exercised": ["files.read"]},
+    {"id": "i6", "provider": "repo", "declared": ["repo", "workflow"], "exercised": ["repo"]},
+    {"id": "i7", "provider": "chat", "declared": ["chat"], "exercised": ["chat"]},
+    {"id": "i8", "provider": "drive", "declared": ["drive.read", "drive.write", "drive.admin"], "exercised": ["drive.read", "drive.write"]}
+  ],
+  "seed": 31,
+  "note": "Synthetic teaching fixture. Eight hand-built integrations; 5/8 declare strictly more authority than they exercise."
+}
