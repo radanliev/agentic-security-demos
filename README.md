@@ -4,7 +4,7 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 47 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
+  <strong>A curated collection of 48 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
 </p>
 
 > 🐣 **Padawan-practice notice (read before citing).** These are teaching demos for agentic AI security — training missions for the classroom, not Jedi trials. Like Padawan exercises, each demo **may or may not be converted into a full paper**, and any paper **may or may not be accepted** at its listed venue. The venue column names the *training ground* that inspired the exercise, never a publication claim. No preprints, no datasets deposited, no reviewer verdicts — just lightsabers set to stun (synthetic fixtures, offline only).
@@ -65,7 +65,7 @@
 | 28 | **Memory Poisoning** | Persistent memory poisoning and the MemScope auditor toy | 🟢 WWW |
 | 29 | **Provenance Graphs** | Tamper-evident provenance for post-incident reconstruction | 🟠 S&P |
 | 30 | **Default Configs** | Insecure defaults in self-hosted LLM stacks | 🟠 S&P |
-| 31 | **Scope Creep** | OAuth scope over-privilege in agent integrations | 🔴 FAccT |
+| 31 | **Declaration Gap** | MCP registry declared-versus-exercised authority in agent integrations | 🔴 FAccT |
 | 32 | **Reproducibility Audit** | Artefact audit of the agent-security literature | 🔵 CSUR |
 | 33 | **Protocol Coverage** | Agent protocol element × threat coverage map | 🟠 S&P |
 | 34 | **Visual Injection** | Typographic injection against vision-language agents | 🔵 TPAMI |
@@ -82,6 +82,7 @@
 | 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | 🔴 FAccT |
 | 46 | **Embedding-swap cosine shift** | `1 - cosine` on two synthetic vectors, compared with the frozen simulated-study mean 0.1222 (`radanliev/demo-46-simulated-embedding-drift-aibom`, private) | 🟠 AsiaCCS |
 | 47 | **Pre-reveal Seal** | Hash a localisation commitment before the answer key opens; a post-seal edit is a mismatch (`demo-47-blind-verification-eval-sais`, private; available on request) | 🟡 SAIS |
+| 48 | **OAuth Over-privilege** | Scope creep: OAuth scope over-privilege in agent integrations (`demo-48-scope-creep-oauth-overprivilege-tops`, private; available on request) | 🟡 TOPS |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -106,7 +107,7 @@ pip install -e ".[dev]"
 # Run every demo's test suite
 make test
 
-# Run one demo's suite (folders demo-01 … demo-47)
+# Run one demo's suite (folders demo-01 … demo-48)
 make test DEMO=01
 ```
 
@@ -118,7 +119,7 @@ All demos run offline from the repository root — no API keys, no network.
 Each demo folder also has step-by-step `INSTRUCTIONS.md` with expected outputs.
 
 ```bash
-# Run a teaching demo (folders demo-01 … demo-47)
+# Run a teaching demo (folders demo-01 … demo-48)
 make demo DEMO=01   # Blind Verification
 make demo DEMO=04   # Prompt Injection Authority
 make demo DEMO=07   # Malware Triage
@@ -229,6 +230,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 45 | 🔴 [FAccT](https://facctconference.org/)<br>🔴 [abs 27 Oct · papers 3 Nov](https://facctconference.org/2027/cfp.html) | 🟡 [USENIX Sec C2](https://www.usenix.org/conference/usenixsecurity27)<br>🟡 [papers 26 Jan (reg 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 46 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🟡 [SAIS](https://www.usenix.org/conference/sais27)<br>🟡 [papers 4 Feb](https://www.usenix.org/conference/sais27/call-for-papers) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 47 | 🟡 [SAIS](https://www.usenix.org/conference/sais27)<br>🟡 [papers 4 Feb](https://www.usenix.org/conference/sais27/call-for-papers) | 🔵 [EAAI](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence) | 🔵 [Info Sciences](https://www.sciencedirect.com/journal/information-sciences) |
+| 48 | 🟡 [ACM TOPS](https://dl.acm.org/journal/tops) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | — |
 
 ---
 

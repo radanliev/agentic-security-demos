@@ -1,4 +1,4 @@
-# Demo 31: Integration Scope Creep
+# Demo 31: Declaration Gap
 
 <p align="center">
   <img src="https://img.shields.io/badge/Teaching%20demo-Synthetic%20only-blue?style=flat-square" alt="Teaching demo">
@@ -10,40 +10,41 @@
 
 ## Learning Objectives
 
-- Explain scope creep (an integration requests strictly more OAuth scopes than it uses)
-- Flag 5/8 synthetic integrations as over-privileged with a strict-superset rule
-- Compute the least-privilege set as the sorted union of used scopes
-- Distinguish OAuth scopes from capability classes (Demo 21) and delegation properties (Demo 24)
+- Explain the declaration gap (an integration declares authority it does not exercise)
+- Compare declared authority against exercised authority in MCP registry listings
+- Identify integrations whose declared authority exceeds their exercised authority
+- Distinguish declared authority from capability classes (Demo 21) and delegation properties (Demo 24)
 - Distinguish teaching demonstrations from validated research benchmarks
 
 ## Conceptual Explanation
 
-Agent integrations often copy broad scope lists. This toy checks eight
-hand-built integrations: over-privileged when `set(requested)` strictly
-supersets `set(used)`.
+Agent integrations in the MCP registry declare authority through listings,
+credentials, and run-time authorisation metadata. This toy checks eight
+hand-built integrations: a declaration gap exists when declared authority
+strictly supersedes exercised authority.
 
 | Check | Result |
 |-------|--------|
-| Over-privileged | 5/8 (i1, i4, i5, i6, i8) |
-| Tight (equal) | 3/8 (i2, i3, i7) |
-| Least-privilege | 8 scopes (union of all used) |
+| Declaration gap | 5/8 (i1, i4, i5, i6, i8) |
+| Declared equals exercised | 3/8 (i2, i3, i7) |
+| Full exercise | 8 authority items (union of all exercised) |
 
-Equal requests such as `i2` (`read`/`read`) are tight; `i8` requesting
-`drive.admin` it never uses is the classic creep case.
+Equal declarations such as `i2` (`read`/`read`) are tight; `i8` declaring
+`drive.admin` it never exercises is the classic gap case.
 
-### Why using more does not fix creep
+### Why declaring more does not close the gap
 
-Adding a requested scope to the used list (Step 5 of the instructions) leaves
-every other unused request in place: the verdict stays over-privileged while the
-least-privilege union grows. Only requesting less removes creep. That asymmetry
-is the least-privilege lesson.
+Adding exercised authority to the declared list (Step 5 of the instructions)
+leaves every other unused declaration in place: the verdict stays gapped while
+the exercised union grows. Only declaring less closes the gap. That asymmetry
+is the least-declaration lesson.
 
 ## Safety Notice
 
 ⚠️ **This is a teaching demonstration using synthetic fixtures only.**
 - No real providers, tokens, or credentials
 - No network access (standard library only)
-- All integrations and scopes are hand-built toys
+- All integrations and authority declarations are hand-built toys
 - Results demonstrate a mechanism; they are not evidence about real integrations
 
 ## Reproducibility Metadata
@@ -55,16 +56,16 @@ is the least-privilege lesson.
 | OS | Linux/macOS/Windows |
 | Tests | `python3 -m pytest tests/ -v` → 21 passed |
 | Command | `make demo DEMO=31` |
-| Results | `results/scopes.json` (standardized schema: demo, experiment, seed, totals, rows, notes) |
+| Results | `results/declarations.json` (standardized schema: demo, experiment, seed, totals, rows, notes) |
 
 ## Research Connection
 
 This demo illustrates the measurement question of a pending study of agent
-integration privileges. That study has **collected no
+integration authority declarations. That study has **collected no
 confirmatory data**; every quantity there is `[RESULT PENDING]`. Nothing here
 describes a publication, a venue result, or a measured effect size. Boundary:
-this demo covers OAuth scopes only, not capability classes (Demo 21) nor
-delegation properties (Demo 24).
+this demo covers MCP registry declarations only, not capability classes (Demo
+21) nor delegation properties (Demo 24).
 
 Provenance: distilled from `demo-31-agent-integration-scope-creep-tops` (private research repo).
 
@@ -72,8 +73,8 @@ Provenance: distilled from `demo-31-agent-integration-scope-creep-tops` (private
 
 | Aspect | Research study | This demo (benchmark) |
 |--------|----------------|----------------------|
-| Data | Integration manifests from a registry census (pending) | 8 hand-built integrations |
-| Method | Scope-use gap measurement with a catalogue oracle | Strict-superset check + union of used |
-| Claims | Falsifiable over-privilege hypotheses with registered margins | **No claims** — mechanism illustration only |
-| Verdicts | Sealed confirmatory runs after AD-90 registration | Fixed toy answers (5/8 over-privileged, 8-scope union) |
-| Artefact | Manifest analyser | Two tiny scope helpers |
+| Data | MCP registry declarations from a registry census (pending) | 8 hand-built integrations |
+| Method | Declared-versus-exercised authority gap measurement | Strict-superset check + union of exercised |
+| Claims | Falsifiable declaration-gap hypotheses with registered margins | **No claims** — mechanism illustration only |
+| Verdicts | Sealed confirmatory runs after AD-90 registration | Fixed toy answers (5/8 gapped, 8-scope union) |
+| Artefact | Declaration analyser | Two tiny authority helpers |

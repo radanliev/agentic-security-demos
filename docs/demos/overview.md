@@ -1,6 +1,6 @@
 # Demos Overview
 
-The catalogue now covers **47 demos**: 12 course-format modules (01–12, with full labs) and 35 short-format teaching toys (13–47, ~30 min each). The path diagram below shows the core progression through the 12 course modules; see the Quick Comparison table for all 47.
+The catalogue now covers **48 demos**: 12 course-format modules (01–12, with full labs) and 36 short-format teaching toys (13–48, ~30 min each). The path diagram below shows the core progression through the 12 course modules; see the Quick Comparison table for all 48.
 
 ## Learning Path (core modules 01–12)
 
@@ -60,7 +60,8 @@ graph TD
 | **28** | Memory Poisoning | Stored entries steer later actions | 30 min |
 | **29** | Provenance Graphs | Orphans cannot be attributed | 30 min |
 | **30** | Insecure Defaults | Three-clause rule finds 6/10 insecure | 30 min |
-| **31** | Scope Creep | Only requesting less removes creep | 30 min |
+| **31** | Declaration Gap | Declared versus exercised authority in MCP registry integrations | 30 min |
+| **48** | OAuth Over-privilege | Scope creep: requested versus used OAuth scopes | 30 min |
 | **32** | Reproducibility Audit | Reproducing implies sharing artefacts | 30 min |
 | **33** | Protocol Coverage | Known attack without stated mitigation | 30 min |
 | **34** | Visual Injection | Region defense is perfect but not free | 30 min |
@@ -77,6 +78,7 @@ graph TD
 | **45** | Exact Nulls | The null decides what the count means | 30 min |
 | **46** | Embedding Drift | Orthogonal swap dwarfs the frozen mean | 30 min |
 | **47** | Pre-Reveal Seal | A later edit is not a new answer | 30 min |
+| **48** | OAuth Over-privilege | Scope creep: requested versus used OAuth scopes | 30 min |
 
 ## Common Themes
 
@@ -85,7 +87,7 @@ graph TD
 | **Provenance Tracking** | 04, 06, 07, 08, 09, 10, 12, 19, 29, 44 | Data source determines authority |
 | **Fail-Closed Defaults** | 02, 04, 08, 09, 10, 12, 14, 25 | Default deny, explicit allow |
 | **Blind Evaluation** | 01, 03, 11, 13, 15, 45, 47 | No peeking at test conditions; seals and exact nulls |
-| **Scope Enforcement** | 02, 04, 06, 08, 10, 12, 24, 26, 31 | Explicit allowlists only |
+| **Scope Enforcement** | 02, 04, 06, 08, 10, 12, 24, 26, 31, 48 | Explicit allowlists only |
 | **Taint Tracking** | 09, 10, 44 | Track data source through pipeline |
 | **Oracle Separation** | 01, 11, 12, 17 | Labels never drive attempts; claims checked against logs |
 | **Cryptographic Evidence** | 05, 29, 47 | Hash chains, Merkle trees, pre-reveal seals |
@@ -129,7 +131,8 @@ graph TD
 | 28 | Strings, patterns | Stored injection, memory integrity |
 | 29 | Graphs, hashing | Forensics, tamper evidence |
 | 30 | Parsing, sets | Insecure defaults, pinning |
-| 31 | Set operations | Least privilege, OAuth scopes |
+| 31 | Set operations | Declared versus exercised authority, MCP registry |
+| 48 | Set operations | Requested versus used OAuth scopes, least privilege |
 | 32 | JSON, tables | Reproducibility, artefact audits |
 | 33 | Dictionaries | Protocol elements, mitigation gaps |
 | 34 | Regions, flags | Visual prompt injection |
@@ -167,11 +170,11 @@ graph TD
 11. **11** Degenerate Reporting — Audit any evaluation, including your own
 12. **12** ProvenanceBound — Provenance-aware authorization for untrusted content
 
-### Short-Format Toys (13–47)
+### Short-Format Toys (13–48)
 Each is one teaching toy (~30 min, standard library only): run the tests, run the script, read the table.
 1. **13–17, 19–21** — Pipeline and intelligence toys: agreement gates, conformal gating, probes, spread, claims-vs-logs, lineage, censuses
 2. **22–34, 36–44** — Capability, memory, supply-chain and documentation toys: injection channels, leakage, faults, delegation, attestations, sandboxes, defaults, coding exercises, lifecycle
-3. **45–47** — Measurement toys: exact nulls, embedding shifts, pre-reveal seals (pairs with 01)
+3. **45–48** — Measurement toys: exact nulls, embedding shifts, pre-reveal seals, OAuth over-privilege (pairs with 01)
 
 ## Cross-Demo Exercises
 
@@ -214,7 +217,8 @@ See [examples/](../examples/) for cross-demo integration exercises:
 | 28 | How does stored memory steer an agent? | Add a benign-safe entry |
 | 29 | Why is a5 unattributable? | Add a witness record for a5 |
 | 30 | Which three clauses flag a stack? | Add a publicly bound stack without auth |
-| 31 | How do you remove scope creep? | Add an integration requesting 5 unused scopes |
+| 31 | How do you detect a declaration gap? | Compare declared versus exercised authority in registry listings |
+| 48 | How do you remove scope creep? | Add an integration requesting 5 unused scopes |
 | 32 | What does a reproducibility audit check? | Add a paper that shares code but not data |
 | 33 | What makes a protocol gap? | Add an element with attack and no mitigation |
 | 34 | What does the region defense cost? | Add a benign untrusted image that is safe |

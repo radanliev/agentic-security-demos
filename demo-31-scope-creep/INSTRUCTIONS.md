@@ -1,4 +1,4 @@
-# Demo 31: Integration Scope Creep — Execution Instructions
+# Demo 31: Declaration Gap — Execution Instructions
 
 > **Step-by-step guide for students and study participants.**
 > For the conceptual background see [README.md](README.md).
@@ -95,13 +95,14 @@ python3 student/run_scopes.py
 ```
 
 **What this does**: Evaluates eight hand-built integrations with the
-strict-superset rule (`set(requested) > set(used)` means over-privileged) and
-computes the least-privilege set as the sorted union of all used scopes. Writes
-`results/scopes.json`.
+strict-superset rule (`set(declared) > set(exercised)` means a declaration gap)
+and computes the least-declaration set as the sorted union of all exercised
+authority. Writes `results/declarations.json`.
 
 **Why this step exists**: This is the *measurement*. Each integration declares
-what it requests and what it uses; the gap between the two is scope creep, and
-the union of used scopes is the policy that would grant nothing unused.
+what it requests and what it exercises; the gap between the two is the
+declaration gap, and the union of exercised authority is the policy that would
+grant nothing unused.
 
 **Expected output**:
 
