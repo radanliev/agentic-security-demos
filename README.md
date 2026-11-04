@@ -37,21 +37,21 @@
 |---|------|-------|--------|
 | 01 | **Blind Verification** | Cryptographic verification of agent outputs without trusted execution environments | 🟢 [ACM TOSEM](https://dl.acm.org/journal/tosem) |
 | 02 | **Supply Chain AIBOM Drift** | AI Bill of Materials tracking & drift detection across model updates | 🟢 [EMSE](https://link.springer.com/journal/10664) |
-| 03 | **Eval Design Invariants** | Statistically rigorous evaluation frameworks with invariant guarantees | 🔵 [NeurIPS](https://neurips.cc/) |
+| 03 | **Eval Design Invariants** | Statistically rigorous evaluation frameworks with invariant guarantees | 🟡 [IJCAI](https://2027.ijcai.org/ijcai-2027-call-for-papers-main-track/) |
 | 04 | **Prompt Injection & Tool Authority** | Capability-based authority mediation for tool-using agents | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
 | 05 | **Evidence Release Assurance** | Cryptographic evidence chains for agent accountability | 🟢 [TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
-| 06 | **Network Recon** | eBPF-backed network reconnaissance with formal admission control | 🔵 [NDSS](https://www.ndss-symposium.org/) |
-| 07 | **Malware Triage** | Statistical reconstruction of malware triage decisions | 🔵 [RAID](https://dl.acm.org/conference/raid) |
+| 06 | **Network Recon** | eBPF-backed network reconnaissance with formal admission control | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
+| 07 | **Malware Triage** | Statistical reconstruction of malware triage decisions | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/cfp.html) |
 | 08 | **File Inclusion** | Provenance-tracked file inclusion for agent workflows | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
 | 09 | **MITM Interception** | Ephemeral buffer interception for credential extraction detection | 🟠 [S&P](https://sp2027.ieee-security.org/cfpapers.html) |
-| 10 | **Vulnerability Assessment** | Cross-vendor vulnerability scanning with authoritative taxonomy | 🟡 [USENIX](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) |
-| 11 | **Degenerate Reporting** | Meta-science audit: evaluations that cannot rule out do-nothing policies | 🔵 [RAID](https://dl.acm.org/conference/raid) |
-| 12 | **Provenance-Bound Authorization** | Provenance-aware authorization for untrusted calendar content | 🟡 [USENIX](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) |
-| 13 | **Typed Commitments & Coverage Cues** | Wrong coverage cues and agreement-gate failures in LLM assessors | 🟡 [USENIX](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) |
-| 14 | **Conformal Action Gating** | Distribution-free risk control for tool execution and how it fails under benchmark shift | 🟡 [ICML](https://icml.cc/) |
-| 15 | **Hijack Probes** | Hidden-state signatures of instruction hijack in open-weight agents | 🔵 [ICLR](https://iclr.cc/) |
-| 16 | **Infection Spread** | Epidemic dynamics of prompt-injection propagation in multi-agent systems | 🔵 [AAAI](https://aaai.org/Conferences/AAAI) |
-| 17 | **Report Fidelity** | Claims-versus-logs fidelity of coding agents | 🟡 [IJCAI](https://2027.ijcai.org/) |
+| 10 | **Vulnerability Assessment** | Cross-vendor vulnerability scanning with authoritative taxonomy | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/cfp.html) |
+| 11 | **Degenerate Reporting** | Meta-science audit: evaluations that cannot rule out do-nothing policies | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/cfp.html) |
+| 12 | **Provenance-Bound Authorization** | Provenance-aware authorization for untrusted calendar content | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/cfp.html) |
+| 13 | **Typed Commitments & Coverage Cues** | Wrong coverage cues and agreement-gate failures in LLM assessors | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/cfp.html) |
+| 14 | **Conformal Action Gating** | Distribution-free risk control for tool execution and how it fails under benchmark shift | 🟠 [DSN](https://dsn2027-berlin.github.io/call-for-contributions) |
+| 15 | **Hijack Probes** | Hidden-state signatures of instruction hijack in open-weight agents | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
+| 16 | **Infection Spread** | Epidemic dynamics of prompt-injection propagation in multi-agent systems | 🟠 [DSN](https://dsn2027-berlin.github.io/call-for-contributions) |
+| 17 | **Report Fidelity** | Claims-versus-logs fidelity of coding agents | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/cfp.html) |
 | 18 | **Cross-lingual Gap** | Cross-lingual transfer of injections and the detector language gap | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
 | 19 | **Lineage Risk** | Inherited risk along fine-tune lineages on the model hub | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
 | 20 | **Agent Web Census** | Agent-facing files and in-the-wild injections across the web | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
@@ -78,7 +78,7 @@
 | 41 | **Ten Invariants** | Security invariants checklist synthesis | 🔵 [CACM](https://cacm.acm.org/) |
 | 42 | **Patch Lifecycle** | Vulnerability lifecycle and patch adoption lag | 🔵 [TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) |
 | 43 | **Terms Coding** | Platform terms accountability allocation | 🟢 [WWW](https://www2027.thewebconf.org/research-track-papers) |
-| 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | 🟡 [CCS](https://www.sigsac.org/ccs/CCS2027/) |
+| 44 | **Toolflow Taint** | Cross-tool dataflow integrity tracking | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/cfp.html) |
 | 45 | **Exact Nulls for Localisation Claims** | Exact hypergeometric significance for localisation claims, ratio-to-null transfer failures, second corpus, and design-limit corollary (`radanliev/demo-45-localisation-nulls`, private; available on request) | 🟢 [FAccT](https://facctconference.org/2027/cfp.html) |
 | 46 | **Embedding-swap cosine shift** | `1 - cosine` on two synthetic vectors, compared with the frozen simulated-study mean 0.1222 (`radanliev/demo-46-simulated-embedding-drift-aibom`, private) | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
 | 47 | **Pre-reveal Seal** | Hash a localisation commitment before the answer key opens; a post-seal edit is a mismatch (`demo-47-blind-verification-eval-sais`, private; available on request) | 🟡 [SAIS](https://www.usenix.org/conference/sais27/call-for-papers) |
@@ -187,10 +187,10 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 |:---:|---|---|---|
 | 01 | 🟢 [ACM TOSEM](https://dl.acm.org/journal/tosem) | 🔵 [EMSE](https://link.springer.com/journal/10664) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 02 | 🟢 [EMSE](https://link.springer.com/journal/10664) | 🔵 [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | 🔵 [MSR](https://www.msrconf.org/) |
-| 03 | 🔵 [NeurIPS D&B](https://neurips.cc/) | 🔵 [ICLR](https://iclr.cc/) / [TMLR](https://jmlr.org/tmlr/) | — |
+| 03 | 🟡 [IJCAI](https://2027.ijcai.org/)<br>🟡 [abs 4 Jan · papers 11 Jan](https://2027.ijcai.org/ijcai-2027-call-for-papers-main-track/) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [NeurIPS E&D (2027 call unconfirmed)](https://neurips.cc/) |
 | 04 | 🟠 [IEEE S&P C2](https://sp2027.ieee-security.org/)<br>🟠 [abs 10 Nov · papers 17 Nov](https://sp2027.ieee-security.org/cfpapers.html) | 🔵 [EuroS&P (if rejected)](https://eurosp2027.ieee-security.org/) / [USENIX Sec](https://www.usenix.org/conference/usenixsecurity27) | 🔵 [CCS Cycle B](https://www.sigsac.org/ccs/CCS2027/) |
 | 05 | 🟢 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | — | — |
-| 06 | 🔵 [NDSS](https://www.ndss-symposium.org/) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | — |
+| 06 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | 🔵 [DIMVA](https://dimva.org/) / [USENIX Sec](https://www.usenix.org/conference/usenixsecurity27) |
 | 07 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [RAID](https://dl.acm.org/conference/raid) / [DIMVA](https://dimva.org/) | 🔵 [ACSAC](https://www.acsac.org/) / [ESORICS](https://conf.laas.fr/esorics) |
 | 08 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🔵 [ESORICS C2](https://conf.laas.fr/esorics) | 🔵 [RAID](https://dl.acm.org/conference/raid) |
 | 09 | 🟠 [IEEE S&P C2](https://sp2027.ieee-security.org/)<br>🟠 [abs 10 Nov · papers 17 Nov](https://sp2027.ieee-security.org/cfpapers.html) | 🔵 [EuroS&P (if rejected)](https://eurosp2027.ieee-security.org/) / [ESORICS](https://conf.laas.fr/esorics) | 🔵 [RAID](https://dl.acm.org/conference/raid) / [ACSAC](https://www.acsac.org/) |
@@ -198,10 +198,10 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 11 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [RAID](https://dl.acm.org/conference/raid) / [DIMVA](https://dimva.org/) | 🔵 [ESORICS](https://conf.laas.fr/esorics) / [ACSAC](https://www.acsac.org/) |
 | 12 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [USENIX Sec](https://www.usenix.org/conference/usenixsecurity27) / [CCS](https://www.sigsac.org/ccs/CCS2027/) | 🔵 [NDSS](https://www.ndss-symposium.org/) |
 | 13 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [USENIX Sec](https://www.usenix.org/conference/usenixsecurity27) / [CSF](https://csf2027.ieee-security.org/) | 🔵 [CCS](https://www.sigsac.org/ccs/CCS2027/) / [NDSS](https://www.ndss-symposium.org/) |
-| 14 | 🟡 [ICML](https://icml.cc/)<br>🟡 [abs ~23 Jan · papers ~28 Jan](https://icml.cc/) | 🔵 [TMLR](https://jmlr.org/tmlr/) / [NeurIPS D&B](https://neurips.cc/) / [ICLR](https://iclr.cc/) | — |
-| 15 | 🔵 [ICLR](https://iclr.cc/)<br>🔵 [abs ~18 Sep · papers ~25 Sep 2027](https://iclr.cc/) | 🔵 [ICML](https://icml.cc/) / [TMLR](https://jmlr.org/tmlr/) / [NeurIPS D&B](https://neurips.cc/) | — |
-| 16 | 🔵 [AAAI](https://aaai.org/Conferences/AAAI)<br>🔵 [abs ~late Jul · papers ~early Aug 2027](https://aaai.org/Conferences/AAAI) | 🔵 [IJCAI](https://www.ijcai.org/) / [AAMAS](https://www.ifaamas.org/) / [SaTML](https://satml.org/) | — |
-| 17 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [IJCAI](https://www.ijcai.org/) / [AAAI](https://aaai.org/Conferences/AAAI) | 🔵 [AAMAS](https://www.ifaamas.org/) / [ECAI](https://ecai.eu/) |
+| 14 | 🟠 [DSN](https://dsn2027-berlin.github.io/)<br>🟠 [abs 25 Nov · papers 2 Dec](https://dsn2027-berlin.github.io/call-for-contributions) | 🔵 [TMLR](https://jmlr.org/tmlr/) / [NeurIPS D&B](https://neurips.cc/) | 🔵 [ICML (2027 call unconfirmed)](https://icml.cc/) / [ICLR](https://iclr.cc/) |
+| 15 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🔵 [ICML (2027 call unconfirmed)](https://icml.cc/) / [TMLR](https://jmlr.org/tmlr/) / [NeurIPS D&B](https://neurips.cc/) | 🔵 [ICLR 2028 (unconfirmed)](https://iclr.cc/) |
+| 16 | 🟠 [DSN](https://dsn2027-berlin.github.io/)<br>🟠 [abs 25 Nov · papers 2 Dec](https://dsn2027-berlin.github.io/call-for-contributions) | 🔵 [EuroS&P (first reserve)](https://eurosp2027.ieee-security.org/) / [SAIS](https://www.usenix.org/conference/sais27)<br>🟡 [papers 4 Feb](https://www.usenix.org/conference/sais27/call-for-papers) | 🔵 [AAAI-28 (unconfirmed)](https://aaai.org/Conferences/AAAI) / [IJCAI](https://www.ijcai.org/) / [AAMAS](https://www.ifaamas.org/) |
+| 17 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [IJCAI](https://www.ijcai.org/) / [AAAI](https://aaai.org/Conferences/AAAI) | 🔵 [AAMAS](https://www.ifaamas.org/) / [ECAI](https://ecai.eu/) / [TMLR](https://jmlr.org/tmlr/) |
 | 18 | 🟢 [WWW](https://www2027.thewebconf.org/) | 🔵 [ACL (ARR)](https://aclrollingreview.org/) | 🔵 [EMNLP](https://aclanthology.org/venues/emnlp/) |
 | 19 | 🟢 [WWW](https://www2027.thewebconf.org/) | 🔵 [ICSE](https://www.icse-conferences.org/)<br>🔵 [abs ~23 Jun 2027](https://www.icse-conferences.org/) | 🔵 [FSE](https://www.esec-fse.org/) |
 | 20 | 🟢 [WWW](https://www2027.thewebconf.org/) | 🟠 [WWW short](https://www2027.thewebconf.org/research-track-papers) / [IMC](https://conferences.sigcomm.org/imc/)<br>🟠 [16 Nov](https://www2027.thewebconf.org/research-track-papers) | — |
@@ -228,7 +228,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 41 | 🔵 [CACM](https://cacm.acm.org/) | 🔵 [S&P Magazine](https://www.computer.org/csdl/magazine/sp) / [IEEE Computer](https://www.computer.org/) / [Queue](https://queue.acm.org/) | — |
 | 42 | 🔵 [IEEE TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32) | 🔵 [ESE](https://link.springer.com/journal/10664) / [TOSEM](https://dl.acm.org/journal/tosem) / [ICSE](https://www.icse-conferences.org/) | — |
 | 43 | 🟢 [WWW](https://www2027.thewebconf.org/) | 🔵 [AIES](https://www.aies-conference.com/) | 🔵 [FAccT](https://facctconference.org/) |
-| 44 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [CCS](https://www.sigsac.org/ccs/CCS2027/) / [USENIX Sec](https://www.usenix.org/conference/usenixsecurity27) | 🔵 [NDSS](https://www.ndss-symposium.org/) |
+| 44 | 🟠 [EuroS&P](https://eurosp2027.ieee-security.org/)<br>🟠 [reg 25 Nov · papers 2 Dec](https://eurosp2027.ieee-security.org/cfp.html) | 🔵 [NDSS (next cycle)](https://www.ndss-symposium.org/) | 🔵 [CCS](https://www.sigsac.org/ccs/CCS2027/) / [USENIX Sec](https://www.usenix.org/conference/usenixsecurity27) |
 | 45 | 🟢 [FAccT](https://facctconference.org/) | 🟡 [USENIX Sec C2](https://www.usenix.org/conference/usenixsecurity27)<br>🟡 [papers 26 Jan (reg 19 Jan)](https://www.usenix.org/conference/usenixsecurity27/call-for-papers) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 46 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🟡 [SAIS](https://www.usenix.org/conference/sais27)<br>🟡 [papers 4 Feb](https://www.usenix.org/conference/sais27/call-for-papers) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) |
 | 47 | 🟡 [SAIS](https://www.usenix.org/conference/sais27)<br>🟡 [papers 4 Feb](https://www.usenix.org/conference/sais27/call-for-papers) | 🔵 [EAAI](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence) | 🔵 [Info Sciences](https://www.sciencedirect.com/journal/information-sciences) |
