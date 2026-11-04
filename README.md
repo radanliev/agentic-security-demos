@@ -181,7 +181,7 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 > activate only after the previous option's decision — the same work is never under review
 > in two places at once.
 >
-> **EuroS&P 2027 cap:** at most 7 papers per author ([CFP](https://eurosp2027.ieee-security.org/cfp.html)); 7 demos are allocated (07, 10, 11, 12, 13, 17, 44). IEEE S&P C2 demos list EuroS&P only as an after-rejection Plan B.
+> **EuroS&P 2027 cap:** at most 7 papers per author ([CFP](https://eurosp2027.ieee-security.org/cfp.html)); 7 demos are allocated (07, 10, 11, 12, 13, 17, 44). IEEE S&P C2 demos list EuroS&P only as an after-rejection Plan B. Demo 16 fits EuroS&P's scope but is first reserve (core multi-agent results still pending). Caps are per venue: IEEE S&P allows 6 per author per cycle (6 planned for Cycle 2), USENIX Security 7 per cycle, WWW 7 per submission type; the EuroS&P cap is not shared with them, but the same paper cannot be under review at two venues at once.
 
 | Demo | Option A | Option B | Option C |
 |:---:|---|---|---|
