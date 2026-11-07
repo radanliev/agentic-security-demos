@@ -9,7 +9,7 @@
 By the end of this module, you will be able to:
 
 1. Set up a fully offline, reproducible lab environment
-2. Verify that all 316 tests pass on your machine
+2. Verify that all 642 tests pass on your machine
 3. Run the safety verification and understand what it checks
 4. Execute your first demo and locate its JSON results
 5. Sign the safety contract and understand legal boundaries
@@ -98,7 +98,7 @@ Setup complete.
 make test
 ```
 
-**What this does**: Enters each of the 10 demo directories (and then `shared/`) and runs `pytest tests/ -v`. This executes **316 tests** covering every concept in the course; one of them (`demo-04`'s `test_traversal_is_blocked`) is an *expected* failure (`xfailed`) that Exercise 4.3 turns green.
+**What this does**: Enters each of the 48 demo directories (and then `shared/`) and runs `pytest tests/ -v`. This executes **642 tests** covering every concept in the course; one of them (`demo-04`'s `test_traversal_is_blocked`) is an *expected* failure (`xfailed`) that Exercise 4.3 turns green.
 
 **Why it matters**: This is your **baseline sanity check**. If any test fails here, your environment is broken — fix it *before* starting Module 1, or every later lab will confuse "my code is wrong" with "my environment is wrong."
 
@@ -223,9 +223,9 @@ ls demo-01-blind-verification/student/
 ls demo-01-blind-verification/tests/
 ```
 
-**What this does**: Lists the standard directory structure shared by all 10 demos.
+**What this does**: Lists the standard directory structure shared by all 48 demos.
 
-**Why it matters**: Once you learn one demo's anatomy, you know all ten. The pattern is always:
+**Why it matters**: Once you learn one demo's anatomy, you know all 48. The pattern is always:
 
 | Directory | Contents | You will... |
 |-----------|----------|-------------|
@@ -235,7 +235,7 @@ ls demo-01-blind-verification/tests/
 | `results/` | Your JSON outputs | Submit as evidence |
 | `README.md` | Objectives, safety notice | Read first, always |
 
-**Expected output**: Directory listings showing `fixtures/`, `student/`, `tests/`, `results/`, `Makefile`, `README.md` — identical structure in all ten demos.
+**Expected output**: Directory listings showing `fixtures/`, `student/`, `tests/`, `results/`, `Makefile`, `README.md` — identical structure in all 48 demos.
 
 ---
 
