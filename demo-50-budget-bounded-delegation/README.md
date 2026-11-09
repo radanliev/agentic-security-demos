@@ -78,7 +78,7 @@ Everything runs offline with the Python standard library.
 
 ## Venue plan
 
-Plan A (proposal): IEEE/IFIP DSN 2027, abstract 25 November 2026 and papers 2 December 2026 AoE, 11-page regular papers excluding references ([CFP](https://dsn2027-berlin.github.io/call-for-contributions), checked 9 November 2026). Plan B: ACM AsiaCCS 2027 round 2, papers 11 December 2026 ([CFP](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html), checked 9 November 2026). Plan C: USENIX Security 2027 Cycle 2, registration 19 January 2027 and papers 26 January 2027 ([CFP](https://www.usenix.org/conference/usenixsecurity27/call-for-papers), checked 9 November 2026). ESORICS 2027 and ACSAC 2027 calls were not verified as published at the time of checking.
+Plan A: ACM AsiaCCS 2027 round 2, papers 11 December 2026 AoE, 12+10 pages ([CFP](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html), checked 9 November 2026). DSN 2027 is CORE A for dependability but is not a CSRankings security top-10 venue, so it is not used as option A. Plan B: USENIX Security 2027 Cycle 2, registration 19 January 2027 and papers 26 January 2027 ([CFP](https://www.usenix.org/conference/usenixsecurity27/call-for-papers), checked 9 November 2026). Plan C: IEEE CSF 2027 Winter cycle, papers 28 January 2027 AoE, 12 pages excluding bibliography and appendices ([CFP](https://csf2027.ieee-security.org/cfp.html), verified 9 November 2026).
 
 ## Reproducibility Metadata
 
