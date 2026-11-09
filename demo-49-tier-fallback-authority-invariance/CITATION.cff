@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Demo 49: Authority invariance under model fallback in quota-constrained agent orchestration"
+version: "0.1.0"
+license: "MIT"
+authors:
+  - family-names: "Radanliev"
+    given-names: "Petar"
+    orcid: "https://orcid.org/0000-0001-5629-6857"
+    affiliation: "The Open University; University of Oxford"
+keywords:
+  - agentic AI security
+  - model routing
+  - reference monitor
+  - tool-use authority

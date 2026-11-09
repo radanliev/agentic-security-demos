@@ -1,0 +1,40 @@
+{
+  "codebook": [
+    "absent",
+    "mentioned",
+    "specified",
+    "enforced"
+  ],
+  "documents": [
+    {
+      "id": "p1",
+      "rater_a": "specified",
+      "rater_b": "specified"
+    },
+    {
+      "id": "p2",
+      "rater_a": "mentioned",
+      "rater_b": "mentioned"
+    },
+    {
+      "id": "p3",
+      "rater_a": "enforced",
+      "rater_b": "specified"
+    },
+    {
+      "id": "p4",
+      "rater_a": "absent",
+      "rater_b": "absent"
+    },
+    {
+      "id": "p5",
+      "rater_a": "mentioned",
+      "rater_b": "specified"
+    },
+    {
+      "id": "p6",
+      "rater_a": "enforced",
+      "rater_b": "enforced"
+    }
+  ]
+}

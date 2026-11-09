@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Demo 50: Budget-bounded delegation: cost containment in multi-agent pipelines"
+version: "0.1.0"
+license: "MIT"
+authors:
+  - family-names: "Radanliev"
+    given-names: "Petar"
+    orcid: "https://orcid.org/0000-0001-5629-6857"
+    affiliation: "The Open University; University of Oxford"
+keywords:
+  - agentic AI security
+  - multi-agent systems
+  - resource exhaustion
+  - delegation

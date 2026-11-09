@@ -1,0 +1,45 @@
+{
+  "_note": "Hand-written placeholder scores that exercise the audit functions. No text, no model and no person stands behind them; they carry no empirical claim. Variant names describe surface-style categories only.",
+  "global_threshold": 0.5,
+  "records": [
+    {"id": "s-p1", "pair_id": "p1", "variant": "standard", "label": "benign", "score": 0.10},
+    {"id": "s-p2", "pair_id": "p2", "variant": "standard", "label": "benign", "score": 0.15},
+    {"id": "s-p3", "pair_id": "p3", "variant": "standard", "label": "benign", "score": 0.20},
+    {"id": "s-p4", "pair_id": "p4", "variant": "standard", "label": "benign", "score": 0.35},
+    {"id": "s-q1", "variant": "standard", "label": "violating", "score": 0.80},
+    {"id": "s-q2", "variant": "standard", "label": "violating", "score": 0.90},
+    {"id": "s-q3", "variant": "standard", "label": "violating", "score": 0.95},
+
+    {"id": "t-p1", "pair_id": "p1", "variant": "speech_to_text", "label": "benign", "score": 0.20},
+    {"id": "t-p2", "pair_id": "p2", "variant": "speech_to_text", "label": "benign", "score": 0.30},
+    {"id": "t-p3", "pair_id": "p3", "variant": "speech_to_text", "label": "benign", "score": 0.55},
+    {"id": "t-p4", "pair_id": "p4", "variant": "speech_to_text", "label": "benign", "score": 0.60},
+    {"id": "t-q1", "variant": "speech_to_text", "label": "violating", "score": 0.78},
+    {"id": "t-q2", "variant": "speech_to_text", "label": "violating", "score": 0.88},
+    {"id": "t-q3", "variant": "speech_to_text", "label": "violating", "score": 0.93},
+
+    {"id": "d-p1", "pair_id": "p1", "variant": "dyslexia_pattern_spelling", "label": "benign", "score": 0.25},
+    {"id": "d-p2", "pair_id": "p2", "variant": "dyslexia_pattern_spelling", "label": "benign", "score": 0.45},
+    {"id": "d-p3", "pair_id": "p3", "variant": "dyslexia_pattern_spelling", "label": "benign", "score": 0.62},
+    {"id": "d-p4", "pair_id": "p4", "variant": "dyslexia_pattern_spelling", "label": "benign", "score": 0.70},
+    {"id": "d-q1", "variant": "dyslexia_pattern_spelling", "label": "violating", "score": 0.74},
+    {"id": "d-q2", "variant": "dyslexia_pattern_spelling", "label": "violating", "score": 0.85},
+    {"id": "d-q3", "variant": "dyslexia_pattern_spelling", "label": "violating", "score": 0.91},
+
+    {"id": "a-p1", "pair_id": "p1", "variant": "aac_telegraphic", "label": "benign", "score": 0.30},
+    {"id": "a-p2", "pair_id": "p2", "variant": "aac_telegraphic", "label": "benign", "score": 0.52},
+    {"id": "a-p3", "pair_id": "p3", "variant": "aac_telegraphic", "label": "benign", "score": 0.66},
+    {"id": "a-p4", "pair_id": "p4", "variant": "aac_telegraphic", "label": "benign", "score": 0.75},
+    {"id": "a-q1", "variant": "aac_telegraphic", "label": "violating", "score": 0.64},
+    {"id": "a-q2", "variant": "aac_telegraphic", "label": "violating", "score": 0.83},
+    {"id": "a-q3", "variant": "aac_telegraphic", "label": "violating", "score": 0.90},
+
+    {"id": "l-p1", "pair_id": "p1", "variant": "plain_language", "label": "benign", "score": 0.12},
+    {"id": "l-p2", "pair_id": "p2", "variant": "plain_language", "label": "benign", "score": 0.18},
+    {"id": "l-p3", "pair_id": "p3", "variant": "plain_language", "label": "benign", "score": 0.40},
+    {"id": "l-p4", "pair_id": "p4", "variant": "plain_language", "label": "benign", "score": 0.58},
+    {"id": "l-q1", "variant": "plain_language", "label": "violating", "score": 0.81},
+    {"id": "l-q2", "variant": "plain_language", "label": "violating", "score": 0.89},
+    {"id": "l-q3", "variant": "plain_language", "label": "violating", "score": 0.94}
+  ]
+}

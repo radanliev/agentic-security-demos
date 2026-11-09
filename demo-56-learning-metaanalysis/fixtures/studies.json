@@ -1,0 +1,25 @@
+{
+  "note": "Synthetic effect sizes for teaching. They are not taken from any published paper.",
+  "studies": [
+    {
+      "id": "S1",
+      "yi": 0.3,
+      "vi": 0.04
+    },
+    {
+      "id": "S2",
+      "yi": 0.5,
+      "vi": 0.09
+    },
+    {
+      "id": "S3",
+      "yi": 0.1,
+      "vi": 0.04
+    },
+    {
+      "id": "S4",
+      "yi": 0.4,
+      "vi": 0.01
+    }
+  ]
+}

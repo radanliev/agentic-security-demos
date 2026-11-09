@@ -1,0 +1,47 @@
+{
+  "threshold": 0.5,
+  "in_distribution": [
+    {
+      "id": "id1",
+      "score": 0.82,
+      "label": "attack"
+    },
+    {
+      "id": "id2",
+      "score": 0.77,
+      "label": "attack"
+    },
+    {
+      "id": "id3",
+      "score": 0.21,
+      "label": "benign"
+    },
+    {
+      "id": "id4",
+      "score": 0.18,
+      "label": "benign"
+    }
+  ],
+  "shifted": [
+    {
+      "id": "sh1",
+      "score": 0.41,
+      "label": "attack"
+    },
+    {
+      "id": "sh2",
+      "score": 0.39,
+      "label": "attack"
+    },
+    {
+      "id": "sh3",
+      "score": 0.22,
+      "label": "benign"
+    },
+    {
+      "id": "sh4",
+      "score": 0.19,
+      "label": "benign"
+    }
+  ]
+}

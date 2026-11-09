@@ -1,0 +1,52 @@
+{
+  "occupations": [
+    {
+      "id": "tutor",
+      "family": "teaching",
+      "tasks": [
+        {
+          "text": "mark a short answer",
+          "exposure": 0.8,
+          "agentic": true
+        },
+        {
+          "text": "hold an office hour",
+          "exposure": 0.2,
+          "agentic": false
+        }
+      ]
+    },
+    {
+      "id": "designer",
+      "family": "learning-design",
+      "tasks": [
+        {
+          "text": "write weekly guidance",
+          "exposure": 0.7,
+          "agentic": false
+        },
+        {
+          "text": "update a quiz bank",
+          "exposure": 0.6,
+          "agentic": true
+        }
+      ]
+    },
+    {
+      "id": "advisor",
+      "family": "student-support",
+      "tasks": [
+        {
+          "text": "route an enquiry",
+          "exposure": 0.5,
+          "agentic": true
+        },
+        {
+          "text": "meet a student in distress",
+          "exposure": 0.1,
+          "agentic": false
+        }
+      ]
+    }
+  ]
+}

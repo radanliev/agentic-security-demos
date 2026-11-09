@@ -1,0 +1,28 @@
+{
+  "propositions": [
+    {
+      "id": "P1",
+      "text": "Most distance-learning feedback will be first-drafted by a model (synthetic).",
+      "ratings": [
+        5,
+        6,
+        6,
+        7,
+        5
+      ],
+      "briefing_hash": "abc111"
+    },
+    {
+      "id": "P2",
+      "text": "A national regulator will require provenance labels on automated marks (synthetic).",
+      "ratings": [
+        2,
+        3,
+        2,
+        7,
+        3
+      ],
+      "briefing_hash": "abc111"
+    }
+  ]
+}

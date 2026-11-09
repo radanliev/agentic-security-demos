@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "a1",
+      "stratum": "code",
+      "text": "def add(x, y): return x + y",
+      "planted_error": false
+    },
+    {
+      "id": "a2",
+      "stratum": "code",
+      "text": "def add(x, y): return x - y",
+      "planted_error": true
+    },
+    {
+      "id": "a3",
+      "stratum": "code",
+      "text": "def mul(x, y): return x * y",
+      "planted_error": false
+    },
+    {
+      "id": "a4",
+      "stratum": "label",
+      "text": "positive",
+      "planted_error": false
+    },
+    {
+      "id": "a5",
+      "stratum": "label",
+      "text": "negative",
+      "planted_error": true
+    },
+    {
+      "id": "a6",
+      "stratum": "label",
+      "text": "neutral",
+      "planted_error": false
+    },
+    {
+      "id": "a7",
+      "stratum": "prose",
+      "text": "The mean rose.",
+      "planted_error": false
+    },
+    {
+      "id": "a8",
+      "stratum": "prose",
+      "text": "The mean fell.",
+      "planted_error": true
+    }
+  ],
+  "sample_ids": [
+    "a2",
+    "a4",
+    "a5",
+    "a8"
+  ]
+}

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Demo 53: Human Validation of Agent Outputs (teaching demo)"
+message: >-
+  If you use this teaching demo in coursework, please cite it as below.
+  All scenarios, numbers and verdicts are synthetic; this is not research
+  evidence.
+type: software
+authors:
+  - family-names: Radanliev
+    given-names: Petar
+license: MIT
+repository-code: "https://github.com/radanliev/agentic-security-demos"
+keywords:
+  - teaching
+  - agentic-ai-security
+  - synthetic-fixtures
+abstract: >-
+  Teaching demo: sampled validation coverage on synthetic agent outputs with planted errors.

@@ -1,0 +1,7 @@
+{
+  "alpha": 0.05,
+  "n_per_arm": 40,
+  "raw_difference": 0.4,
+  "residual_difference": 0.15,
+  "sd": 1.0
+}

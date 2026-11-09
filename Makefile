@@ -3,7 +3,7 @@
 
 SHELL := /bin/bash
 PYTHON := python3
-DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments demo-14-conformal-gating demo-15-hijack-probes demo-16-infection-spread demo-17-report-fidelity demo-18-crosslingual-gap demo-19-lineage-risk demo-20-agent-web-census demo-21-mcp-ecosystem demo-22-memory-leakage demo-23-fault-injection demo-24-delegation-checks demo-25-attestation-verifier demo-26-sandbox-probes demo-27-ci-trigger-scan demo-28-memory-poisoning demo-29-provenance-graphs demo-30-default-configs demo-31-scope-creep demo-32-reproducibility-audit demo-33-protocol-coverage demo-34-visual-injection demo-35-scaling-metaregression demo-36-card-debt demo-37-detector-cost demo-38-assurance-claims demo-39-incident-taxonomy demo-40-corpus-union demo-41-ten-invariants demo-42-patch-lifecycle demo-43-terms-coding demo-44-toolflow-taint demo-45-localisation-nulls demo-46-embedding-drift demo-47-blind-seal demo-48-oauth-overprivilege
+DEMO_DIRS := demo-01-blind-verification demo-02-supply-chain-aibom demo-03-eval-invariants demo-04-authoritybound demo-05-eviassure demo-06-reconscope demo-07-triagetrap demo-08-inclusiontrap demo-09-interceptbound demo-10-scanbound demo-11-degenerate-reporting demo-12-provenancebound demo-13-typed-commitments demo-14-conformal-gating demo-15-hijack-probes demo-16-infection-spread demo-17-report-fidelity demo-18-crosslingual-gap demo-19-lineage-risk demo-20-agent-web-census demo-21-mcp-ecosystem demo-22-memory-leakage demo-23-fault-injection demo-24-delegation-checks demo-25-attestation-verifier demo-26-sandbox-probes demo-27-ci-trigger-scan demo-28-memory-poisoning demo-29-provenance-graphs demo-30-default-configs demo-31-scope-creep demo-32-reproducibility-audit demo-33-protocol-coverage demo-34-visual-injection demo-35-scaling-metaregression demo-36-card-debt demo-37-detector-cost demo-38-assurance-claims demo-39-incident-taxonomy demo-40-corpus-union demo-41-ten-invariants demo-42-patch-lifecycle demo-43-terms-coding demo-44-toolflow-taint demo-45-localisation-nulls demo-46-embedding-drift demo-47-blind-seal demo-48-oauth-overprivilege demo-49-tier-fallback-authority-invariance demo-50-budget-bounded-delegation demo-51-guardrail-accessibility-equity demo-52-llm-sim-validation demo-53-human-validation demo-54-stress-test-transfer demo-55-scaffolding-retention demo-56-learning-metaanalysis demo-57-he-governance-corpus demo-58-work-ai-exposure demo-59-foresight-delphi demo-60-engbio-battery
 
 .PHONY: help setup test demo clean all-demos verify-safety
 
@@ -20,7 +20,7 @@ help:
 	@echo "Demonstrations:"
 	@echo "  make demo DEMO=01       # Run demo 01 (blind-verification)"
 	@echo "  make demo DEMO=02       # Run demo 02 (supply-chain-aibom)"
-	@echo "  ...                     # DEMO=03 through DEMO=48"
+	@echo "  ...                     # DEMO=03 through DEMO=60"
 	@echo ""
 	@echo "Maintenance:"
 	@echo "  make clean              # Remove generated files, caches, results"
@@ -146,3 +146,15 @@ demo-45: ; @$(MAKE) demo DEMO=45
 demo-46: ; @$(MAKE) demo DEMO=46
 demo-47: ; @$(MAKE) demo DEMO=47
 demo-48: ; @$(MAKE) demo DEMO=48
+demo-49: ; @$(MAKE) demo DEMO=49
+demo-50: ; @$(MAKE) demo DEMO=50
+demo-51: ; @$(MAKE) demo DEMO=51
+demo-52: ; @$(MAKE) demo DEMO=52
+demo-53: ; @$(MAKE) demo DEMO=53
+demo-54: ; @$(MAKE) demo DEMO=54
+demo-55: ; @$(MAKE) demo DEMO=55
+demo-56: ; @$(MAKE) demo DEMO=56
+demo-57: ; @$(MAKE) demo DEMO=57
+demo-58: ; @$(MAKE) demo DEMO=58
+demo-59: ; @$(MAKE) demo DEMO=59
+demo-60: ; @$(MAKE) demo DEMO=60

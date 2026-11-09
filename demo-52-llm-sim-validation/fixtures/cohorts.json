@@ -1,0 +1,36 @@
+{
+  "train_modules": [
+    {
+      "module": "AAA",
+      "year": 2013,
+      "pass_rate": 0.62,
+      "withdraw_rate": 0.18
+    },
+    {
+      "module": "BBB",
+      "year": 2013,
+      "pass_rate": 0.55,
+      "withdraw_rate": 0.22
+    }
+  ],
+  "heldout_modules": [
+    {
+      "module": "AAA",
+      "year": 2014,
+      "pass_rate": 0.6,
+      "withdraw_rate": 0.19
+    },
+    {
+      "module": "CCC",
+      "year": 2014,
+      "pass_rate": 0.48,
+      "withdraw_rate": 0.3
+    }
+  ],
+  "renamed_probe": {
+    "true_module": "AAA",
+    "presented_as": "ZZZ",
+    "year": 2014,
+    "pass_rate": 0.6
+  }
+}

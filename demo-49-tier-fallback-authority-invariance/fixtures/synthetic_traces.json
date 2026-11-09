@@ -1,0 +1,54 @@
+{
+  "_note": "Synthetic placeholder traces for exercising the checker. They describe no real system, model or person and carry no empirical claim.",
+  "policy": {
+    "intake_triage": ["read_form", "classify_request", "draft_reply", "route_to_adviser"]
+  },
+  "traces": [
+    {
+      "name": "compliant_switch",
+      "task": "intake_triage",
+      "expected_rules": [],
+      "steps": [
+        {"step": 1, "tier": "frontier", "event": "propose", "plan_id": "p1", "action": "read_form"},
+        {"step": 2, "tier": "frontier", "event": "execute", "plan_id": "p1", "action": "read_form", "decision": "allow", "revalidated": false},
+        {"step": 3, "tier": "frontier", "event": "propose", "plan_id": "p2", "action": "draft_reply"},
+        {"step": 4, "tier": "flash", "event": "tier_switch"},
+        {"step": 5, "tier": "flash", "event": "execute", "plan_id": "p2", "action": "draft_reply", "decision": "allow", "revalidated": true},
+        {"step": 6, "tier": "flash", "event": "propose", "plan_id": "p3", "action": "route_to_adviser"},
+        {"step": 7, "tier": "flash", "event": "execute", "plan_id": "p3", "action": "route_to_adviser", "decision": "allow", "revalidated": false}
+      ]
+    },
+    {
+      "name": "tier_dependent_decision",
+      "task": "intake_triage",
+      "expected_rules": ["R1"],
+      "steps": [
+        {"step": 1, "tier": "frontier", "event": "propose", "plan_id": "p1", "action": "export_records"},
+        {"step": 2, "tier": "frontier", "event": "execute", "plan_id": "p1", "action": "export_records", "decision": "deny", "revalidated": false},
+        {"step": 3, "tier": "flash", "event": "tier_switch"},
+        {"step": 4, "tier": "flash", "event": "propose", "plan_id": "p2", "action": "export_records"},
+        {"step": 5, "tier": "flash", "event": "execute", "plan_id": "p2", "action": "export_records", "decision": "allow", "revalidated": false}
+      ]
+    },
+    {
+      "name": "stale_plan_after_switch",
+      "task": "intake_triage",
+      "expected_rules": ["R2"],
+      "steps": [
+        {"step": 1, "tier": "frontier", "event": "propose", "plan_id": "p1", "action": "route_to_adviser"},
+        {"step": 2, "tier": "local", "event": "tier_switch"},
+        {"step": 3, "tier": "local", "event": "execute", "plan_id": "p1", "action": "route_to_adviser", "decision": "allow", "revalidated": false}
+      ]
+    },
+    {
+      "name": "unmediated_fallback",
+      "task": "intake_triage",
+      "expected_rules": ["R3"],
+      "steps": [
+        {"step": 1, "tier": "frontier", "event": "propose", "plan_id": "p1", "action": "classify_request"},
+        {"step": 2, "tier": "local", "event": "tier_switch"},
+        {"step": 3, "tier": "local", "event": "execute", "plan_id": "p1", "action": "classify_request"}
+      ]
+    }
+  ]
+}

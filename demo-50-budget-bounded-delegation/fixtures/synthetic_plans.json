@@ -1,0 +1,61 @@
+{
+  "_note": "Synthetic placeholder plans for a formative-feedback pipeline. Token figures are invented for exercising the ledger and carry no empirical claim.",
+  "plans": [
+    {
+      "name": "within_budget",
+      "root": "coordinator", "root_budget": 10000, "max_depth": 2, "max_fanout": 3,
+      "expected_denials": 0, "expected_total_spent": 9000, "expected_requested_spend": 9000,
+      "events": [
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_a", "tokens": 3000},
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_b", "tokens": 3000},
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_c", "tokens": 3000},
+        {"op": "spend", "node": "reviewer_a", "tokens": 2500},
+        {"op": "spend", "node": "reviewer_b", "tokens": 2800},
+        {"op": "spend", "node": "reviewer_c", "tokens": 2900},
+        {"op": "spend", "node": "coordinator", "tokens": 800}
+      ]
+    },
+    {
+      "name": "fanout_beyond_cap",
+      "root": "coordinator", "root_budget": 10000, "max_depth": 2, "max_fanout": 3,
+      "expected_denials": 4, "expected_total_spent": 2700, "expected_requested_spend": 4500,
+      "events": [
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_1", "tokens": 1000},
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_2", "tokens": 1000},
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_3", "tokens": 1000},
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_4", "tokens": 1000},
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_5", "tokens": 1000},
+        {"op": "spend", "node": "reviewer_1", "tokens": 900},
+        {"op": "spend", "node": "reviewer_2", "tokens": 900},
+        {"op": "spend", "node": "reviewer_3", "tokens": 900},
+        {"op": "spend", "node": "reviewer_4", "tokens": 900},
+        {"op": "spend", "node": "reviewer_5", "tokens": 900}
+      ]
+    },
+    {
+      "name": "chain_beyond_depth",
+      "root": "coordinator", "root_budget": 10000, "max_depth": 2, "max_fanout": 3,
+      "expected_denials": 2, "expected_total_spent": 5000, "expected_requested_spend": 6500,
+      "events": [
+        {"op": "delegate", "parent": "coordinator", "child": "agent_a", "tokens": 6000},
+        {"op": "delegate", "parent": "agent_a", "child": "agent_b", "tokens": 4000},
+        {"op": "delegate", "parent": "agent_b", "child": "agent_c", "tokens": 2000},
+        {"op": "spend", "node": "agent_c", "tokens": 1500},
+        {"op": "spend", "node": "agent_b", "tokens": 3500},
+        {"op": "spend", "node": "agent_a", "tokens": 1500}
+      ]
+    },
+    {
+      "name": "overspend_request",
+      "root": "coordinator", "root_budget": 5000, "max_depth": 1, "max_fanout": 2,
+      "expected_denials": 2, "expected_total_spent": 4000, "expected_requested_spend": 4800,
+      "events": [
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_1", "tokens": 2000},
+        {"op": "spend", "node": "reviewer_1", "tokens": 1500},
+        {"op": "spend", "node": "reviewer_1", "tokens": 800},
+        {"op": "delegate", "parent": "coordinator", "child": "reviewer_2", "tokens": 4000},
+        {"op": "spend", "node": "coordinator", "tokens": 2500}
+      ]
+    }
+  ]
+}
