@@ -1,0 +1,16 @@
+demo: 64
+slug: openset-ncm
+title: "Open-Set Nearest-Class-Mean Rejection for Histogram Patterns"
+option_a:
+  venue: "Pattern Recognition"
+  url: "https://www.sciencedirect.com/journal/pattern-recognition"
+  markdown: |-
+    🔵 [Pattern Recognition](https://shop.elsevier.com/journals/pattern-recognition/0031-3203)<br>🔵 [rolling](https://shop.elsevier.com/journals/pattern-recognition/0031-3203)
+option_b:
+  markdown: |-
+    🔵 [IEEE TPAMI](https://www.computer.org/csdl/journal/tp)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

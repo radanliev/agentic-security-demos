@@ -1,0 +1,16 @@
+demo: 70
+slug: contrast-sets
+title: "Contrast-Set Growth Rates Across Adjacent Time Windows"
+option_a:
+  venue: "KDD"
+  url: "https://kdd2027.kdd.org/research-track-call-for-papers/"
+  markdown: |-
+    🟡 [KDD 2027 C2](https://kdd2027.kdd.org/research-track-call-for-papers/)<br>🟡 [Feb 2027 (exact date UNVERIFIED)](https://kdd2027.kdd.org/research-track-call-for-papers/)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [ICLR 2028 (call unpublished)](https://iclr.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

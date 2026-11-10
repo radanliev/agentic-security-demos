@@ -1,0 +1,59 @@
+{
+  "note": "Synthetic teaching fixture. Users, roles and SoD pairs are labelled toys.",
+  "role_members": {
+    "teller": [
+      "u1",
+      "u2",
+      "u5"
+    ],
+    "auditor": [
+      "u3",
+      "u6"
+    ],
+    "admin": [
+      "u4",
+      "u7"
+    ],
+    "dual": [
+      "u8"
+    ]
+  },
+  "role_permissions": {
+    "teller": [
+      "post_payment",
+      "view_account"
+    ],
+    "auditor": [
+      "view_account",
+      "approve_audit"
+    ],
+    "admin": [
+      "create_user",
+      "approve_payment"
+    ],
+    "dual": [
+      "post_payment",
+      "approve_payment"
+    ]
+  },
+  "constraints": [
+    [
+      "post_payment",
+      "approve_payment"
+    ],
+    [
+      "create_user",
+      "approve_audit"
+    ]
+  ],
+  "users": [
+    "u1",
+    "u2",
+    "u3",
+    "u4",
+    "u5",
+    "u6",
+    "u7",
+    "u8"
+  ]
+}

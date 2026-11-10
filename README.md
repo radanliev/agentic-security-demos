@@ -4,7 +4,7 @@
 
 <h1 align="center">Agentic AI Security Demos</h1>
 <p align="center">
-  <strong>A curated collection of 60 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
+  <strong>A curated collection of 70 reproducible teaching demonstrations for agentic AI security, distilled from research targeting top-tier venues (SaTML, CCS, NeurIPS, IEEE SP, USENIX, NDSS, RAID, ASIACCS, ESORICS, ACSAC, ICML, ICLR, AAAI, IJCAI, ACL, ICSE, WWW, EuroS&P, PoPETs, DSN, CSF, ACNS, Black Hat, DEF CON, TIFS, TDSC, TOPS, CSUR, COMST, TPAMI, TMLR, Nature MI, Journal of Cybersecurity, IEEE S&P Magazine, Scientific Data, CACM, TSE, FAccT, Computers & Security, IEEE TAI, ACM TIST, Pattern Recognition, IEEE TNNLS, IEEE TKDE, JAIR, AIJ, AAAI, KDD). All scenarios, numbers and verdicts here are synthetic coursework — they describe no real publication.</strong>
 </p>
 
 > 🐣 **Padawan-practice notice (read before citing).** These are teaching demos for agentic AI security — training missions for the classroom, not Jedi trials. Like Padawan exercises, each demo **may or may not be converted into a full paper**, and any paper **may or may not be accepted** at its listed venue. The venue column names the *training ground* that inspired the exercise, never a publication claim. No preprints, no datasets deposited, no reviewer verdicts — just lightsabers set to stun (synthetic fixtures, offline only).
@@ -95,6 +95,16 @@
 | 58 | **Work Exposure** | Task-level exposure and an agentic-action share for synthetic HE roles | 🟡 [IJCAI](https://2027.ijcai.org/ijcai-2027-call-for-papers-main-track/) |
 | 59 | **Foresight Delphi** | Median, IQR and consensus on synthetic ratings bound to a briefing hash | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
 | 60 | **EngBio Battery** | Score three synthetic analysis tasks against predeclared references | 🟠 [AsiaCCS](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) |
+| 61 | **SoD Conflicts** | Deterministic detection of mutually exclusive permission pairs in effective RBAC assignments | 🔵 [Computers & Security](https://www.sciencedirect.com/journal/computers-and-security) |
+| 62 | **Feature-Erasure Search** | Complete heuristic search for the cheapest feature erasures that flip a linear score | 🔵 [IEEE TAI](https://cis.ieee.org/publications/ieee-transactions-on-artificial-intelligence/ieee-transactions-on-artificial-intelligence) |
+| 63 | **Control Mapping** | Set-based alignment of public technique catalogues to public control catalogues | 🔵 [ACM TIST](https://dl.acm.org/journal/tist) |
+| 64 | **Open-Set NCM** | Nearest-class-mean classification with a distance threshold that can reject unknowns | 🔵 [Pattern Recognition](https://www.sciencedirect.com/journal/pattern-recognition) |
+| 65 | **Lipschitz Bound** | Exact two-by-two spectral norms and the product Lipschitz bound of a two-layer linear map | 🔵 [IEEE TNNLS](https://cis.ieee.org/publications/t-neural-networks-and-learning-systems/tnnls) |
+| 66 | **Advisory Linkage** | Exact-identifier linkage of public advisories and measurement of severity-string disagreement | 🔵 [IEEE TKDE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69) |
+| 67 | **Patrol Search** | Exhaustive and greedy search for a k-node patrol set that covers attacker paths | 🔵 [JAIR](https://www.jair.org/index.php/jair/about) |
+| 68 | **Horn Repair** | Smallest clause-deletion set that stops forward chaining from deriving false | 🔵 [Artificial Intelligence](https://aij.ijcai.org/about-the-artificial-intelligence-journal/) |
+| 69 | **Sequential Covering** | Greedy sequential covering that learns an ordered list of single-feature rules | 🔵 [AAAI](https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/) |
+| 70 | **Contrast Sets** | Item support in two windows and the growth rate that marks an emerging contrast set | 🟡 [KDD](https://kdd2027.kdd.org/research-track-call-for-papers/) |
 
 Each demo is a **self-contained, reproducible research artifact** with:
 - 📦 Frozen dependencies & environment specifications
@@ -119,7 +129,7 @@ pip install -e ".[dev]"
 # Run every demo's test suite
 make test
 
-# Run one demo's suite (folders demo-01 … demo-60)
+# Run one demo's suite (folders demo-01 … demo-70)
 make test DEMO=01
 ```
 
@@ -131,7 +141,7 @@ All demos run offline from the repository root — no API keys, no network.
 Each demo folder also has step-by-step `INSTRUCTIONS.md` with expected outputs.
 
 ```bash
-# Run a teaching demo (folders demo-01 … demo-60)
+# Run a teaching demo (folders demo-01 … demo-70)
 make demo DEMO=01   # Blind Verification
 make demo DEMO=04   # Prompt Injection Authority
 make demo DEMO=07   # Malware Triage
@@ -259,6 +269,16 @@ All demos follow the **Agentic Security Reproducibility Standard**:
 | 58 | 🟡 [IJCAI](https://2027.ijcai.org/)<br>🟡 [abs 4 Jan · papers 11 Jan](https://2027.ijcai.org/ijcai-2027-call-for-papers-main-track/) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [FAccT 2028 (call unpublished)](https://facctconference.org/) |
 | 59 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [FAccT 2028 (call unpublished)](https://facctconference.org/) |
 | 60 | 🟠 [AsiaCCS R2](https://asiaccs2027.cityu.edu.mo/)<br>🟠 [papers 11 Dec](https://asiaccs2027.cityu.edu.mo/call-for-papers/index.html) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [SaTML 2028 (call unpublished)](https://satml.org/) / [NeurIPS 2027 (call unpublished)](https://neurips.cc/) |
+| 61 | 🔵 [Computers & Security](https://computersandsecurity.org/aims-and-scope/)<br>🔵 [rolling](https://computersandsecurity.org/aims-and-scope/) | 🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858) | 🔵 [ACM TOPS](https://dl.acm.org/journal/tops) |
+| 62 | 🔵 [IEEE TAI](https://cis.ieee.org/publications/ieee-transactions-on-artificial-intelligence/information-for-authors-tai)<br>🔵 [rolling](https://ieee.atyponrex.com/journal/tai-ieee) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/) |
+| 63 | 🔵 [ACM TIST](https://dl.acm.org/journal/tist/author-guidelines)<br>🔵 [rolling](https://dl.acm.org/journal/tist/author-guidelines) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [ICLR 2028 (call unpublished)](https://iclr.cc/) |
+| 64 | 🔵 [Pattern Recognition](https://shop.elsevier.com/journals/pattern-recognition/0031-3203)<br>🔵 [rolling](https://shop.elsevier.com/journals/pattern-recognition/0031-3203) | 🔵 [IEEE TPAMI](https://www.computer.org/csdl/journal/tp) | 🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/) |
+| 65 | 🔵 [IEEE TNNLS](https://cis.ieee.org/publications/t-neural-networks-and-learning-systems/tnnls)<br>🔵 [rolling](https://ieee.atyponrex.com/journal/tnnls) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/) |
+| 66 | 🔵 [IEEE TKDE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69)<br>🔵 [rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/) |
+| 67 | 🔵 [JAIR](https://www.jair.org/index.php/jair/about)<br>🔵 [rolling](https://www.jair.org/index.php/jair/about/submissions) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [ICLR 2028 (call unpublished)](https://iclr.cc/) |
+| 68 | 🔵 [AIJ](https://aij.ijcai.org/call-for-papers/)<br>🔵 [rolling](https://aij.ijcai.org/for-authors/) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/) |
+| 69 | 🔵 [AAAI 2028 (call unpublished)](https://aaai.org/conference/aaai/)<br>🔵 [AAAI-27 papers closed 28 Jul 2026](https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [ICML 2028 (call unpublished)](https://icml.cc/) |
+| 70 | 🟡 [KDD 2027 C2](https://kdd2027.kdd.org/research-track-call-for-papers/)<br>🟡 [Feb 2027 (exact date UNVERIFIED)](https://kdd2027.kdd.org/research-track-call-for-papers/) | 🔵 [TMLR](https://jmlr.org/tmlr/) | 🔵 [ICLR 2028 (call unpublished)](https://iclr.cc/) |
 
 ---
 

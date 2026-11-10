@@ -1,0 +1,84 @@
+{
+  "note": "Synthetic teaching fixture. Technique and control identifiers are labelled toys.",
+  "alignment": {
+    "T-phish": [
+      "AC-4",
+      "AT-2"
+    ],
+    "T-reuse": [
+      "IA-5",
+      "AC-2"
+    ],
+    "T-dump": [
+      "SC-28",
+      "AC-6"
+    ],
+    "T-lateral": [
+      "AC-6",
+      "SI-4"
+    ],
+    "T-exfil": [
+      "SC-7",
+      "AU-6"
+    ],
+    "T-priv": [
+      "AC-6",
+      "AU-2"
+    ]
+  },
+  "profiles": [
+    {
+      "id": "p1",
+      "techniques": [
+        "T-phish"
+      ]
+    },
+    {
+      "id": "p2",
+      "techniques": [
+        "T-phish",
+        "T-reuse"
+      ]
+    },
+    {
+      "id": "p3",
+      "techniques": [
+        "T-dump",
+        "T-exfil"
+      ]
+    },
+    {
+      "id": "p4",
+      "techniques": [
+        "T-lateral",
+        "T-priv"
+      ]
+    },
+    {
+      "id": "p5",
+      "techniques": [
+        "T-phish",
+        "T-dump",
+        "T-exfil"
+      ]
+    },
+    {
+      "id": "p6",
+      "techniques": []
+    },
+    {
+      "id": "p7",
+      "techniques": [
+        "T-unknown"
+      ]
+    },
+    {
+      "id": "p8",
+      "techniques": [
+        "T-reuse",
+        "T-priv",
+        "T-lateral"
+      ]
+    }
+  ]
+}

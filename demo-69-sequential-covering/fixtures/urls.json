@@ -1,0 +1,86 @@
+{
+  "note": "Synthetic teaching fixture. Lexical URL feature rows are labelled toys.",
+  "positive_label": 1,
+  "rows": [
+    {
+      "id": "r1",
+      "features": {
+        "has_at": 1,
+        "has_ip": 0,
+        "long_url": 0,
+        "has_hyphen": 0
+      },
+      "label": 1
+    },
+    {
+      "id": "r2",
+      "features": {
+        "has_at": 1,
+        "has_ip": 1,
+        "long_url": 0,
+        "has_hyphen": 0
+      },
+      "label": 1
+    },
+    {
+      "id": "r3",
+      "features": {
+        "has_at": 0,
+        "has_ip": 1,
+        "long_url": 0,
+        "has_hyphen": 0
+      },
+      "label": 1
+    },
+    {
+      "id": "r4",
+      "features": {
+        "has_at": 0,
+        "has_ip": 0,
+        "long_url": 1,
+        "has_hyphen": 1
+      },
+      "label": 0
+    },
+    {
+      "id": "r5",
+      "features": {
+        "has_at": 0,
+        "has_ip": 0,
+        "long_url": 1,
+        "has_hyphen": 0
+      },
+      "label": 0
+    },
+    {
+      "id": "r6",
+      "features": {
+        "has_at": 1,
+        "has_ip": 0,
+        "long_url": 1,
+        "has_hyphen": 0
+      },
+      "label": 1
+    },
+    {
+      "id": "r7",
+      "features": {
+        "has_at": 0,
+        "has_ip": 0,
+        "long_url": 0,
+        "has_hyphen": 0
+      },
+      "label": 0
+    },
+    {
+      "id": "r8",
+      "features": {
+        "has_at": 0,
+        "has_ip": 1,
+        "long_url": 1,
+        "has_hyphen": 0
+      },
+      "label": 1
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+demo: 62
+slug: feature-erasure-search
+title: "Minimum-Cost Feature Erasure Search for Linear Classifiers"
+option_a:
+  venue: "IEEE TAI"
+  url: "https://cis.ieee.org/publications/ieee-transactions-on-artificial-intelligence/ieee-transactions-on-artificial-intelligence"
+  markdown: |-
+    🔵 [IEEE TAI](https://cis.ieee.org/publications/ieee-transactions-on-artificial-intelligence/information-for-authors-tai)<br>🔵 [rolling](https://ieee.atyponrex.com/journal/tai-ieee)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

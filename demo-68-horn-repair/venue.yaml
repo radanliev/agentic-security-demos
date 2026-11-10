@@ -1,0 +1,16 @@
+demo: 68
+slug: horn-repair
+title: "Minimum Horn-Clause Deletion to Restore Consistency"
+option_a:
+  venue: "Artificial Intelligence"
+  url: "https://aij.ijcai.org/about-the-artificial-intelligence-journal/"
+  markdown: |-
+    🔵 [AIJ](https://aij.ijcai.org/call-for-papers/)<br>🔵 [rolling](https://aij.ijcai.org/for-authors/)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

@@ -1,0 +1,16 @@
+demo: 69
+slug: sequential-covering
+title: "Sequential Covering Decision Lists for Lexical URL Features"
+option_a:
+  venue: "AAAI"
+  url: "https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/"
+  markdown: |-
+    🔵 [AAAI 2028 (call unpublished)](https://aaai.org/conference/aaai/)<br>🔵 [AAAI-27 papers closed 28 Jul 2026](https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [ICML 2028 (call unpublished)](https://icml.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

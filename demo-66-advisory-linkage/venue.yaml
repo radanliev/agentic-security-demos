@@ -1,0 +1,16 @@
+demo: 66
+slug: advisory-linkage
+title: "Multi-Source Linkage and Severity Disagreement in Public Vulnerability Advisories"
+option_a:
+  venue: "IEEE TKDE"
+  url: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69"
+  markdown: |-
+    🔵 [IEEE TKDE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69)<br>🔵 [rolling](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

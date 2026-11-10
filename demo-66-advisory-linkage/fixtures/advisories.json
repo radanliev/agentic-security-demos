@@ -1,0 +1,87 @@
+{
+  "note": "Synthetic teaching fixture. Advisory identifiers are labelled toys.",
+  "source_a": [
+    {
+      "id": "CVE-TOY-0001",
+      "severity": "HIGH",
+      "product": "mail server alpine"
+    },
+    {
+      "id": "CVE-TOY-0002",
+      "severity": "MEDIUM",
+      "product": "web proxy"
+    },
+    {
+      "id": "CVE-TOY-0003",
+      "severity": "LOW",
+      "product": "image library"
+    },
+    {
+      "id": "CVE-TOY-0004",
+      "severity": "CRITICAL",
+      "product": "kernel module"
+    },
+    {
+      "id": "CVE-TOY-0005",
+      "severity": "HIGH",
+      "product": "vpn client"
+    },
+    {
+      "id": "CVE-TOY-0006",
+      "severity": "MEDIUM",
+      "product": "backup agent"
+    },
+    {
+      "id": "CVE-TOY-0007",
+      "severity": "LOW",
+      "product": "pdf parser"
+    },
+    {
+      "id": "CVE-TOY-0008",
+      "severity": "HIGH",
+      "product": "ssh daemon"
+    }
+  ],
+  "source_b": [
+    {
+      "id": "CVE-TOY-0001",
+      "severity": "HIGH",
+      "product": "mail server alpine"
+    },
+    {
+      "id": "CVE-TOY-0002",
+      "severity": "HIGH",
+      "product": "web proxy"
+    },
+    {
+      "id": "CVE-TOY-0003",
+      "severity": "LOW",
+      "product": "image codec library"
+    },
+    {
+      "id": "CVE-TOY-0004",
+      "severity": "CRITICAL",
+      "product": "kernel module"
+    },
+    {
+      "id": "CVE-TOY-0005",
+      "severity": "HIGH",
+      "product": "vpn-client"
+    },
+    {
+      "id": "CVE-TOY-0006",
+      "severity": "MEDIUM",
+      "product": "backup agent"
+    },
+    {
+      "id": "CVE-TOY-0009",
+      "severity": "LOW",
+      "product": "only in b"
+    },
+    {
+      "id": "CVE-TOY-0008",
+      "severity": "MEDIUM",
+      "product": "ssh daemon"
+    }
+  ]
+}
