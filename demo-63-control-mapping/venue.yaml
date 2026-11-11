@@ -1,0 +1,16 @@
+demo: 63
+slug: control-mapping
+title: "Knowledge-Base Alignment of Adversary Techniques to Compensating Controls"
+option_a:
+  venue: "ACM TIST"
+  url: "https://dl.acm.org/journal/tist"
+  markdown: |-
+    🔵 [ACM TIST](https://dl.acm.org/journal/tist/author-guidelines)<br>🔵 [rolling](https://dl.acm.org/journal/tist/author-guidelines)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [ICLR 2028 (call unpublished)](https://iclr.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

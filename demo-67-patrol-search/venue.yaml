@@ -1,0 +1,16 @@
+demo: 67
+slug: patrol-search
+title: "Anytime Search for Minimum-Uncovered Patrol Allocations"
+option_a:
+  venue: "JAIR"
+  url: "https://www.jair.org/index.php/jair/about"
+  markdown: |-
+    🔵 [JAIR](https://www.jair.org/index.php/jair/about)<br>🔵 [rolling](https://www.jair.org/index.php/jair/about/submissions)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [ICLR 2028 (call unpublished)](https://iclr.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

@@ -1,0 +1,251 @@
+{
+  "note": "Synthetic teaching fixture. Windowed itemsets are labelled toys.",
+  "min_support_b": 0.4,
+  "min_growth": 2.0,
+  "top_k": 2,
+  "cases": [
+    {
+      "id": "w1",
+      "window_a": [
+        [
+          "login"
+        ],
+        [
+          "login"
+        ],
+        [
+          "mail"
+        ],
+        [
+          "mail"
+        ]
+      ],
+      "window_b": [
+        [
+          "exfil"
+        ],
+        [
+          "exfil"
+        ],
+        [
+          "exfil"
+        ],
+        [
+          "login"
+        ]
+      ]
+    },
+    {
+      "id": "w2",
+      "window_a": [
+        [
+          "a"
+        ],
+        [
+          "a"
+        ],
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ],
+      "window_b": [
+        [
+          "a"
+        ],
+        [
+          "a"
+        ],
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "id": "w3",
+      "window_a": [
+        [
+          "rare"
+        ],
+        [
+          "common"
+        ],
+        [
+          "common"
+        ],
+        [
+          "common"
+        ]
+      ],
+      "window_b": [
+        [
+          "rare"
+        ],
+        [
+          "rare"
+        ],
+        [
+          "rare"
+        ],
+        [
+          "common"
+        ]
+      ]
+    },
+    {
+      "id": "w4",
+      "window_a": [
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "window_b": [
+        [
+          "y"
+        ],
+        [
+          "y"
+        ],
+        [
+          "y"
+        ],
+        [
+          "y"
+        ]
+      ]
+    },
+    {
+      "id": "w5",
+      "window_a": [
+        [
+          "p",
+          "q"
+        ],
+        [
+          "p"
+        ],
+        [
+          "q"
+        ],
+        [
+          "r"
+        ]
+      ],
+      "window_b": [
+        [
+          "p",
+          "q"
+        ],
+        [
+          "p",
+          "q"
+        ],
+        [
+          "p"
+        ],
+        [
+          "q"
+        ]
+      ]
+    },
+    {
+      "id": "w6",
+      "window_a": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "window_b": [
+        [
+          "z"
+        ],
+        [
+          "z"
+        ],
+        [
+          "z"
+        ],
+        [
+          "z"
+        ]
+      ]
+    },
+    {
+      "id": "w7",
+      "window_a": [
+        [
+          "only-a"
+        ],
+        [
+          "only-a"
+        ],
+        [
+          "shared"
+        ],
+        [
+          "shared"
+        ]
+      ],
+      "window_b": [
+        [
+          "only-b"
+        ],
+        [
+          "only-b"
+        ],
+        [
+          "shared"
+        ],
+        [
+          "shared"
+        ]
+      ]
+    },
+    {
+      "id": "w8",
+      "window_a": [
+        [
+          "burst"
+        ],
+        [
+          "other"
+        ],
+        [
+          "other"
+        ],
+        [
+          "other"
+        ]
+      ],
+      "window_b": [
+        [
+          "burst"
+        ],
+        [
+          "burst"
+        ],
+        [
+          "other"
+        ],
+        [
+          "other"
+        ]
+      ]
+    }
+  ]
+}

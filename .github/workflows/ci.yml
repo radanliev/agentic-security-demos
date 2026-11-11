@@ -255,6 +255,47 @@ jobs:
           cd demo-44-toolflow-taint
           make test
 
+      - name: Test demo-61-sod-conflicts
+        run: |
+          cd demo-61-sod-conflicts
+          make test
+      - name: Test demo-62-feature-erasure-search
+        run: |
+          cd demo-62-feature-erasure-search
+          make test
+      - name: Test demo-63-control-mapping
+        run: |
+          cd demo-63-control-mapping
+          make test
+      - name: Test demo-64-openset-ncm
+        run: |
+          cd demo-64-openset-ncm
+          make test
+      - name: Test demo-65-lipschitz-bound
+        run: |
+          cd demo-65-lipschitz-bound
+          make test
+      - name: Test demo-66-advisory-linkage
+        run: |
+          cd demo-66-advisory-linkage
+          make test
+      - name: Test demo-67-patrol-search
+        run: |
+          cd demo-67-patrol-search
+          make test
+      - name: Test demo-68-horn-repair
+        run: |
+          cd demo-68-horn-repair
+          make test
+      - name: Test demo-69-sequential-covering
+        run: |
+          cd demo-69-sequential-covering
+          make test
+      - name: Test demo-70-contrast-sets
+        run: |
+          cd demo-70-contrast-sets
+          make test
+
       - name: Verify no network access in tests
         run: |
           # Smoke check; real enforcement is by test design

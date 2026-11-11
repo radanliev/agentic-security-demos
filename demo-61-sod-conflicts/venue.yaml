@@ -1,0 +1,16 @@
+demo: 61
+slug: sod-conflicts
+title: "Separation-of-duty Conflicts in Role-Based Access Control"
+option_a:
+  venue: "Computers & Security"
+  url: "https://www.sciencedirect.com/journal/computers-and-security"
+  markdown: |-
+    🔵 [Computers & Security](https://computersandsecurity.org/aims-and-scope/)<br>🔵 [rolling](https://computersandsecurity.org/aims-and-scope/)
+option_b:
+  markdown: |-
+    🔵 [IEEE TDSC](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [ACM TOPS](https://dl.acm.org/journal/tops)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

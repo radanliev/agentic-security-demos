@@ -1,0 +1,16 @@
+demo: 65
+slug: lipschitz-bound
+title: "Spectral-Norm Lipschitz Bounds for Two-Layer Linear Maps"
+option_a:
+  venue: "IEEE TNNLS"
+  url: "https://cis.ieee.org/publications/t-neural-networks-and-learning-systems/tnnls"
+  markdown: |-
+    🔵 [IEEE TNNLS](https://cis.ieee.org/publications/t-neural-networks-and-learning-systems/tnnls)<br>🔵 [rolling](https://ieee.atyponrex.com/journal/tnnls)
+option_b:
+  markdown: |-
+    🔵 [TMLR](https://jmlr.org/tmlr/)
+  constraint: "Use only after option A's official notification."
+option_c:
+  markdown: |-
+    🔵 [NeurIPS 2027 (call unpublished)](https://neurips.cc/)
+  constraint: "Use only after option B's official notification. Not IJCAI 2027."

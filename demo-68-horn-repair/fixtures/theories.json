@@ -1,0 +1,165 @@
+{
+  "note": "Synthetic teaching fixture. Horn theories are labelled toys.",
+  "theories": [
+    {
+      "id": "t1",
+      "facts": [
+        "a"
+      ],
+      "clauses": [
+        {
+          "body": [
+            "a"
+          ],
+          "head": "b"
+        },
+        {
+          "body": [
+            "b"
+          ],
+          "head": null
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "facts": [
+        "a"
+      ],
+      "clauses": [
+        {
+          "body": [
+            "a"
+          ],
+          "head": "b"
+        },
+        {
+          "body": [
+            "c"
+          ],
+          "head": null
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "facts": [],
+      "clauses": [
+        {
+          "body": [],
+          "head": null
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "facts": [
+        "p"
+      ],
+      "clauses": [
+        {
+          "body": [
+            "p"
+          ],
+          "head": "q"
+        },
+        {
+          "body": [
+            "q"
+          ],
+          "head": "r"
+        },
+        {
+          "body": [
+            "r"
+          ],
+          "head": null
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "facts": [
+        "x",
+        "y"
+      ],
+      "clauses": [
+        {
+          "body": [
+            "x",
+            "y"
+          ],
+          "head": null
+        },
+        {
+          "body": [
+            "x"
+          ],
+          "head": "z"
+        }
+      ]
+    },
+    {
+      "id": "t6",
+      "facts": [
+        "a"
+      ],
+      "clauses": [
+        {
+          "body": [
+            "a"
+          ],
+          "head": "b"
+        },
+        {
+          "body": [
+            "b"
+          ],
+          "head": "c"
+        },
+        {
+          "body": [
+            "c"
+          ],
+          "head": "a"
+        }
+      ]
+    },
+    {
+      "id": "t7",
+      "facts": [
+        "a"
+      ],
+      "clauses": [
+        {
+          "body": [
+            "a"
+          ],
+          "head": null
+        },
+        {
+          "body": [
+            "b"
+          ],
+          "head": null
+        }
+      ]
+    },
+    {
+      "id": "t8",
+      "facts": [],
+      "clauses": [
+        {
+          "body": [],
+          "head": "a"
+        },
+        {
+          "body": [
+            "a"
+          ],
+          "head": null
+        }
+      ]
+    }
+  ]
+}
