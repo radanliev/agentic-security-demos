@@ -96,6 +96,18 @@ nav:
     - Embedding Drift: demos/46-embedding-drift.md
     - Pre-Reveal Seal: demos/47-blind-seal.md
     - OAuth Over-privilege: demos/48-oauth-overprivilege.md
+    - Tier Fallback: demos/49-tier-fallback.md
+    - Budget Delegation: demos/50-budget-delegation.md
+    - Guardrail Equity: demos/51-guardrail-equity.md
+    - Simulation V&V: demos/52-simulation-vv.md
+    - Human Validation: demos/53-human-validation.md
+    - Stress Transfer: demos/54-stress-transfer.md
+    - Scaffolding Retention: demos/55-scaffolding-retention.md
+    - Learning Meta-analysis: demos/56-learning-metaanalysis.md
+    - Governance Corpus: demos/57-governance-corpus.md
+    - Work Exposure: demos/58-work-exposure.md
+    - Foresight Delphi: demos/59-foresight-delphi.md
+    - EngBio Battery: demos/60-engbio-battery.md
   - Tutorials:
     - Beginner Exercises: tutorials/beginner.md
     - Standard Exercises: tutorials/standard.md

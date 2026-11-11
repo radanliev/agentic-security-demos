@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (AsiaCCS rebalance + teaching docs 49–60, 11 November 2026)
+- Root `README`: AsiaCCS R2 Option-A slate trimmed from 22 papers to 7 (06, 08, 25, 32-SoK, 42, 46, 60) to avoid one-author overload. Displaced demos moved to the nearest-fitting top-tier deadlines: ICML 2027 — 03, 15, 35, 55, 56 (abstracts ~23 Jan, papers ~28 Jan, projected); USENIX Security C2 — 41, 47, 48, 53, 54 (papers 26 Jan; USENIX now 6 of the 7-per-cycle cap with 51); CSF Winter — 49, 50 (papers 28 Jan); DSN 2027 — 52 (abstracts 25 Nov, papers 2 Dec; DSN now hosts 14, 16, 23, 52). Scope exceptions documented in the venues note: demo 57 → CSCW 2027 rolling as Option A; demo 59 → FAccT 2028 (call unpublished); both lack a nearer top-tier conference that fits. Demos table status cells updated to match; caps note rewritten (stale demo-16 sentence removed).
+- Teaching docs: 12 new pages `docs/demos/49…60` (tier fallback, budget delegation, guardrail equity, simulation V&V, human validation, stress transfer, scaffolding retention, learning meta-analysis, governance corpus, work exposure, foresight Delphi, engbio battery) with objectives, result tables, safety notices and run commands; `mkdocs.yml` nav extended; `docs/demos/overview.md` catalogue count 48→60 with comparison, prerequisites, theme and ordering entries for 49–60.
+
 ### Changed (Demos table status hyperlinks, 1 November 2026)
 - Root `README`: converted the plain text venue status entries in the Demos table (`## 🎯 Demos`) into direct hyperlinks leading to venue and submission call-for-papers webpages across all 48 demonstrations.
 
