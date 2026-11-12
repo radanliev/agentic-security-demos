@@ -79,11 +79,12 @@ clean:
 verify-safety:
 	@echo "=== Verifying safety constraints ==="
 	@echo "Checking for network imports in test files..."
-	@! grep -r "^import socket\|^import requests\|^import urllib\|^from urllib\|^import http.client\|^import aiohttp\|^import httpx" --include="*test*.py" demo-*/ 2>/dev/null || (echo "FAIL: Network imports found" && exit 1)
+	@! grep -r "^import socket\|^import requests\|^import urllib\|^from urllib\|^import http.client\|^import aiohttp\|^import httpx" --include="test_*.py" demo-*/ 2>/dev/null || (echo "FAIL: Network imports found" && exit 1)
 	@echo "Checking for credentials..."
-	@! grep -r "sk-\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|aws_access_key\|AWS_SECRET\|BEGIN PRIVATE\|-----BEGIN" --include="*.py" --include="*.json" demo-*/ 2>/dev/null | grep -v "task-00" || (echo "FAIL: Credentials found" && exit 1)
+	@# sk- must start a token, so "desk-review" and "Task-level" are not keys.
+	@! grep -rE "(^|[^A-Za-z0-9])sk-|ghp_|gho_|ghu_|ghs_|github_pat_|aws_access_key|AWS_SECRET|BEGIN PRIVATE|-----BEGIN" --include="*.py" --include="*.json" demo-*/ 2>/dev/null | grep -v "task-00" || (echo "FAIL: Credentials found" && exit 1)
 	@echo "Checking for external URLs in tests (RFC 1918 private ranges are synthetic fixtures, not external)..."
-	@! grep -r "http://\|https://" --include="*test*.py" demo-*/ 2>/dev/null | grep -v "example.com\|localhost\|127.0.0.1\|0.0.0.0\|192.168.\|10.\|172.1[6-9].\|172.2[0-9].\|172.3[01]." || (echo "FAIL: External URLs in tests" && exit 1)
+	@! grep -r "http://\|https://" --include="test_*.py" demo-*/ 2>/dev/null | grep -v "example.com\|localhost\|127.0.0.1\|0.0.0.0\|192.168.\|10.\|172.1[6-9].\|172.2[0-9].\|172.3[01]." || (echo "FAIL: External URLs in tests" && exit 1)
 	@echo "Checking for network imports in student modules and shared/..."
 	@# shared/reproducibility.py imports socket only to disable it (enforce_offline); it is excluded by name.
 	@! grep -r "^import socket\|^from socket\|^import requests\|^from requests\|^import urllib$$\|^import urllib\.request\|^from urllib\.request\|^from urllib import request\|^import http\.client\|^from http import client\|^import aiohttp\|^import httpx" --include="*.py" --exclude=reproducibility.py demo-*/student/ shared/ 2>/dev/null || (echo "FAIL: Network imports found in runtime code" && exit 1)

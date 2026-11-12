@@ -61,7 +61,6 @@ graph TD
 | **29** | Provenance Graphs | Orphans cannot be attributed | 30 min |
 | **30** | Insecure Defaults | Three-clause rule finds 6/10 insecure | 30 min |
 | **31** | Declaration Gap | Declared versus exercised authority in MCP registry integrations | 30 min |
-| **48** | OAuth Over-privilege | Scope creep: requested versus used OAuth scopes | 30 min |
 | **32** | Reproducibility Audit | Reproducing implies sharing artefacts | 30 min |
 | **33** | Protocol Coverage | Known attack without stated mitigation | 30 min |
 | **34** | Visual Injection | Region defense is perfect but not free | 30 min |

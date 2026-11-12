@@ -218,4 +218,4 @@ make verify-safety
 
 ---
 
-*Course version 1.1 | Aligned with repository v0.1.0 | 642 tests, seed=42, fully offline*
+*Course version 1.1 | Aligned with repository v0.1.0 | 688 tests, seed=42, fully offline*

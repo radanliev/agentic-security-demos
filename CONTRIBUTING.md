@@ -1,6 +1,6 @@
 # Contributing to agentic-security-demos
 
-Thank you for contributing to agentic-security-demos! This repository targets **Multi-venue (48 demos)** and maintains high standards for reproducibility, scientific rigor, and venue alignment.
+Thank you for contributing to agentic-security-demos! This repository targets **Multi-venue (60 demos)** and maintains high standards for reproducibility, scientific rigor, and venue alignment.
 
 ## 📋 Table of Contents
 - [Code of Conduct](#code-of-conduct)
@@ -141,7 +141,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 **Examples:**
 ```
-evidence(agentic-security-demos): add frozen evidence for Multi-venue (48 demos) submission v3
+evidence(agentic-security-demos): add frozen evidence for Multi-venue (60 demos) submission v3
 stats(agentic-security-demos): update power analysis for battery (n=200)
 feat(agentic-security-demos): add new detection rule for injection variant
 fix(agentic-security-demos): resolve eBPF map collision in capture_admission

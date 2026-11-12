@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "student"))
 
-from meta import fixed_effect, load
+from learning_meta import fixed_effect, load
 
 
 def main() -> None:

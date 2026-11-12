@@ -4,7 +4,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "student"))
 
-from meta import fixed_effect, load
+from learning_meta import fixed_effect, load
 
 
 def test_mean_between_min_and_max():
