@@ -197,7 +197,8 @@ graph TD
 Each is one teaching toy (~30 min, standard library only): run the tests, run the script, read the table.
 1. **13–17, 19–21** — Pipeline and intelligence toys: agreement gates, conformal gating, probes, spread, claims-vs-logs, lineage, censuses
 2. **22–34, 36–44** — Capability, memory, supply-chain and documentation toys: injection channels, leakage, faults, delegation, attestations, sandboxes, defaults, coding exercises, lifecycle
-3. **45–48** — Measurement toys: exact nulls, embedding shifts, pre-reveal seals, OAuth over-privilege (pairs with 01)\n4. **49–60** — Agentic-operations and measurement toys: tier fallback, budget delegation, guardrail equity, simulator V&V, human validation, stress transfer, analytic power, meta-analysis, governance coding, work exposure, Delphi foresight, engbio battery
+3. **45–48** — Measurement toys: exact nulls, embedding shifts, pre-reveal seals, OAuth over-privilege (pairs with 01)
+4. **49–60** — Agentic-operations and measurement toys: tier fallback, budget delegation, guardrail equity, simulator V&V, human validation, stress transfer, analytic power, meta-analysis, governance coding, work exposure, Delphi foresight, engbio battery
 
 ## Cross-Demo Exercises
 
@@ -241,7 +242,6 @@ See [examples/](../examples/) for cross-demo integration exercises:
 | 29 | Why is a5 unattributable? | Add a witness record for a5 |
 | 30 | Which three clauses flag a stack? | Add a publicly bound stack without auth |
 | 31 | How do you detect a declaration gap? | Compare declared versus exercised authority in registry listings |
-| 48 | How do you remove scope creep? | Add an integration requesting 5 unused scopes |
 | 32 | What does a reproducibility audit check? | Add a paper that shares code but not data |
 | 33 | What makes a protocol gap? | Add an element with attack and no mitigation |
 | 34 | What does the region defense cost? | Add a benign untrusted image that is safe |
@@ -258,6 +258,19 @@ See [examples/](../examples/) for cross-demo integration exercises:
 | 45 | What decides if a count is significant? | Shrink the pool and recompute p |
 | 46 | What does cosine shift measure? | Swap in a half-rotated vector |
 | 47 | Why is an edit after sealing invalid? | Re-seal before revealing |
+| 48 | How do you remove scope creep? | Add an integration requesting 5 unused scopes |
+| 49 | Why is a model-tier change a security event? | Add a fallback path with no monitor decision |
+| 50 | Which invariant bounds the whole delegation tree? | Add a plan that delegates more than the parent holds |
+| 51 | What does a 7x false-positive ratio mean? | Add a variant with the same FPR as standard |
+| 52 | Why can a memoriser pass an in-distribution check? | Rename a question and re-run the simulator |
+| 53 | What turns review into measurement? | Plant a second error and compute capture |
+| 54 | Why does in-distribution perfection fail under shift? | Add a shifted item with a new surface form |
+| 55 | Why is an underpowered null not evidence of decay? | Increase the sample size and recompute power |
+| 56 | What can pooling not repair? | Add a biased study and recompute the pooled mean |
+| 57 | What does kappa discount? | Code a ninth excerpt and recompute agreement |
+| 58 | Why tasks rather than occupations? | Split one occupation into two task rows |
+| 59 | Who decides consensus in a Delphi round? | Move one rating across the IQR boundary |
+| 60 | Why freeze references before the agent runs? | Add a task with a predeclared reference |
 
 ## Assessment Rubric
 
